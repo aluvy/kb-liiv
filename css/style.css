@@ -73,7 +73,7 @@ header{position:fixed; left: 50%; top:0; transform:translateX(-50%); width:100%;
 .guest__join-animation .heart3{animation:heart1 2.5s .6s infinite backwards;}
 .guest__join-btn{}
 
-.guest__bn{padding:20px;}
+.guest__bn{padding:20px 20px 0;}
 .guest__bn .page{width:86px; padding:20px 0 0 20px}
 
 .guest__card{text-align:center; padding:40px 0 0;}
