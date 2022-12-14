@@ -29,7 +29,7 @@ header{position:fixed; left: 50%; top:0; transform:translateX(-50%); width:100%;
 }
 .gnb{position:fixed; left:50%; bottom:0; transform: translateX(-50%); width: 100%; max-width: 390px; z-index:2;}
 .gnb-notice{position:absolute; right:31.5%; top:-7%; width:60%; transform:translate(50%, 0)}
-.gnb-notice.hidden{animation:gnbNotice .3s ease-out; animation-fill-mode:forwards}
+.gnb-notice.hidden{animation:gnbNotice .3s ease-out; animation-fill-mode:forwards; animation-delay: 0.5s;}
 
 
 
