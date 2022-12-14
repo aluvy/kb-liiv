@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png">
+    <title>To-be A type | Liiv M(리브모바일)</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <img src="./img/common-status_bar.png" />
+                <img src="./img/common-header.png" />
+            </div>
+        </header>
+        
+        <section class="container__wrap section__item section__guest">
+            <div class="guest__vis">
+                <div class="item1"><img src="./img/guest-vis1.png"></div>
+            </div>
+            <div class="guest__join">
+                <div class="guest__join-greeting">
+                    <span class="guest__join-animation">
+                        <div class="animation__group">
+                            <img src="./img/guest-join-gom.svg" class="gom">
+                            <img src="./img/guest-join-gom-son.svg" class="son">
+                            <!-- <img src="./img/guest-join-heart.svg" class="heart"> -->
+                            <svg class="heart_group" xmlns="http://www.w3.org/2000/svg" width="38" height="60" viewBox="0 0 38 60" fill="none">
+                                <path class="heart1" d="M10.2011 20.0759C8.62799 20.8674 7.87605 21.926 7.13401 24.1225C4.87819 23.5585 3.58208 23.6179 2.06831 24.5183C-0.543695 26.0716 -0.632741 29.3267 1.52414 31.7013C3.35452 33.7196 8.30149 35.9952 12.4075 33.7592C16.5135 31.5232 17.2654 26.131 16.553 23.4992C15.722 20.4024 12.9319 18.7204 10.211 20.0759H10.2011Z" fill="#FBDBE5"/>
+                                <path class="heart2" d="M22.7072 40.0659C21.7475 39.7097 21.0153 39.8186 19.7885 40.3726C19.1355 39.1952 18.6012 38.6808 17.6217 38.3938C15.9397 37.8991 14.5348 39.1458 14.3765 40.9959C14.2479 42.5691 15.2373 45.5472 17.7998 46.3881C20.3623 47.2291 22.9249 45.4284 23.756 44.0927C24.7355 42.5196 24.3397 40.6793 22.6973 40.0758L22.7072 40.0659Z" fill="#F4A8B5"/>
+                                <path class="heart3" d="M32.9982 0.0541636C31.5537 0.291618 30.7028 0.954513 29.5749 2.51776C27.9226 1.51847 26.8838 1.24144 25.459 1.58773C23.0053 2.17147 22.1347 4.74389 23.2626 7.14812C24.2223 9.19617 27.5763 12.2237 31.3756 11.452C35.1749 10.6803 37.0943 6.59406 37.1834 4.32835C37.2823 1.66688 35.4915 -0.361382 32.9982 0.0541636V0.0541636Z" fill="#FBDBE5"/>
+                            </svg>
+                        </div>
+                    </span>
+                    <span class="guest__join-text"><img src="./img/guest-join-text.png"></span>
+                </div>
+                <img src="./img/guest-join-btn.png" class="guest__join-btn" />
+            </div>
+            <span class="common__line"></span>
+            <div class="guest__bn">
+                <img src="./img/guest-bn.png">
+                <img src="./img/guest-bn-page.png" class="page">
+            </div>
+            <div class="guest__card">
+                <img src="./img/guest-card1.png" class="card">
+                <img src="./img/guest-card-page.png" class="page">
+            </div>
+            <div class="guest__pay"><img src="./img/guest-pay.png"></div>
+        </section>
+
+        <section class="container__wrap section__item section__main" style="display:none">
+            <div class="main__greeting"><img src="./img/main-greeting.png"></div>
+            <div class="main__myinfo"><img src="./img/main-myinfo.png"></div>
+            <div class="main__membership"><img src="./img/main-membership.png"></div>
+            <div class="main__used"><img src="./img/main-used.png"></div>
+            <span class="common__line"></span>
+            <div class="main__mymenu"><img src="./img/main-mymenu.png"></div>
+            <div class="main__card">
+                <img src="./img/main-card1.png" class="card">
+                <img src="./img/main-card-page.png" class="page">
+            </div>
+            <div class="main__bn">
+                <img src="./img/main-bn1.png">
+                <img src="./img/main-bn2.png">
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer__social"><img src="./img/common-social.png"></div>
+            <span class="common__line"></span>
+            <div class="footer__copy"><img src="./img/common-footer.png" /></div>
+        </footer>
+        <div class="gnb">
+            <img src="./img/common-gnb.png" />
+            <img src="./img/common-gnb-chat.png" class="gnb-notice" />
+        </div>
+        
+
+        <div class="bottom__fix-mymenu">
+            <img src="./img/mymenu.png">
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", ()=>{
+            getHeadH();
+            window.addEventListener("resize", getHeadH);
+            window.addEventListener("scroll", gnbNoticeHide)
+        })
+
+
+        const getHeadH = function(){
+            const headH = document.querySelector("header").offsetHeight;
+            const container = document.querySelector(".container__wrap");
+            container.style.paddingTop = `${headH}px`;
+        }
+
+        const gnbNoticeHide = function(){
+            const gnbNotice = document.querySelector(".gnb-notice");
+            let scrollTop = window.scrollY;
+            scrollTop > 50 ? gnbNotice.classList.add("hidden") : null;
+        }
+    </script>
+</body>
+</html>
