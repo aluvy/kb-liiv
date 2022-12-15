@@ -18,7 +18,7 @@
     <div id="wrap">
         <header>
             <div class="container">
-                <img src="./img/common-status_bar.png" />
+                <img src="./img/common-status_bar.png" class="mobile-hidden" />
                 <img src="./img/common-header.png" />
             </div>
         </header>
@@ -85,11 +85,19 @@
 
         <div class="bottom__fix-mymenu">
             <img src="./img/mymenu.png">
+            <img src="./img/mymenu-btn.png" class="mymenu__btn" />
         </div>
+
+        <div class="homebar"></div>
     </div>
 
     <script>
         window.addEventListener("load", ()=>{
+
+            const statusBar = document.querySelector(".mobile-hidden");
+            isMobile ? statusBar.style.display = "none" : null;
+            isMobile ? document.querySelector("body").classList.add("mobile") : null;
+
             getHeadH();
             window.addEventListener("resize", getHeadH);
             window.addEventListener("scroll", gnbNoticeHide)
@@ -107,6 +115,14 @@
             let scrollTop = window.scrollY;
             scrollTop > 50 ? gnbNotice.classList.add("hidden") : null;
         }
+
+        const MobilcChk = function(agent){
+            const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i]
+            return mobileRegex.some(mobile => agent.match(mobile))
+        }
+        const isMobile = MobilcChk(window.navigator.userAgent);
+
+            
     </script>
 </body>
 </html>

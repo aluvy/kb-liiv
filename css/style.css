@@ -31,13 +31,21 @@ header{position:fixed; left: 50%; top:0; transform:translateX(-50%); width:100%;
 .gnb-notice{position:absolute; right:31.5%; top:-7%; width:60%; transform:translate(50%, 0)}
 .gnb-notice.hidden{animation:gnbNotice .3s ease-out; animation-fill-mode:forwards; animation-delay: 0.5s;}
 
+.mobile .gnb{bottom:-15px;}
+
+
+/***** homebar */
+.homebar{position:fixed; left:50%; bottom:10px; width:130px; height:4px; transform:translateX(-50%); background:#000; border-radius:4px; z-index:9999;}
+.mobile .homebar{display:none;}
 
 
 
 /* mymenu */
 .bottom__fix-mymenu{position:fixed; left:50%; bottom:0; transform:translateX(-50%); width:100%; max-width:390px; height:100%; background-color:rgba(0,0,0,.6); display:flex; align-items:flex-end; z-index:3; display:none;}
+.bottom__fix-mymenu .mymenu__btn{position:absolute; bottom:15px;}
 .bottom__fix-mymenu.active{display:flex;}
 .bottom__fix-mymenu.active img{animation:show-mymenu .3s ease-out}
+.mobile .bottom__fix-mymenu{bottom:-15px;}
 
 
 
