@@ -53,11 +53,11 @@ header{position:fixed; left: 50%; top:0; transform:translateX(-50%); width:100%;
 .guest__vis .item1 img{box-shadow:0 0 20px rgba(0,0,0, 0.07); border-radius:12px;}
 
 @keyframes gom_son {
-	0%, 100%{transform:rotate(5deg) translate(-1px, -1px);}
-	50%{transform:rotate(-7deg) translate(-1px, 1px);}
+	0%, 100%{transform:rotate(5deg) translate(0, -3%);}
+	50%{transform:rotate(-7deg) translate(3%, 1%);}
 }
 @keyframes heart1 {
-	0%{opacity:0; transform:translate(0, 10%)}
+	0%{opacity:0; transform:translate(0, 15%)}
 	30%, 80%{opacity:1; transform:translate(0, 0)}
 	100%{opacity:0;}
 }
@@ -66,7 +66,7 @@ header{position:fixed; left: 50%; top:0; transform:translateX(-50%); width:100%;
 .guest__join-text{flex:0 0 50%; padding:5px 0 17px;}
 .guest__join-animation{position:relative; flex:0 0 17%;}
 .guest__join-animation .gom{width:100%}
-.guest__join-animation .son{position:absolute; right:-12%; top:34%; width:32%; transform-origin: left bottom; animation:gom_son 1.5s infinite linear;}
+.guest__join-animation .son{position:absolute; right:-10%; top:33.3%; width:32%; transform-origin: left bottom; animation:gom_son 1.5s infinite linear;}
 .guest__join-animation .heart_group{position:absolute; left:-82%; top:-14%; width:100%;}
 .guest__join-animation .heart1{animation:heart1 2.5s infinite backwards;}
 .guest__join-animation .heart2{animation:heart1 2.5s .3s infinite backwards;}
