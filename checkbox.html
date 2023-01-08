@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="./assets/css/img.css"> -->
+    <style>
+#wrap{padding:2rem;}
+/* box style */
+.box_item-line {border:1px solid #EAECED; border-radius:1.2rem;}
+
+/* toggle style */
+.toggle_group + .toggle_group {margin-top:1.2rem;}
+.toggle_title {position:relative;}
+.toggle_title .title{position:absolute; right:2rem; top:50%; display:block; width:2rem; height:2rem;}
+.toggle_content {border-top:1px solid #EAECED;}
+
+
+/* checkbox */
+.chk_group {padding:2.2rem 2rem;}
+.chk_group + .chk_group {padding-top:0;}
+
+.chk_item {position:relative;}
+.chk_item a{position:absolute; right:0; top:0; font-size:1.4rem; line-height:2.2rem; color:#999;}
+.chk_item > input {position:absolute; left:0; top:0; width:1px; height:1px; overflow: hidden;}
+.chk_item > label {position:relative; display:block; word-break: keep-all; padding:0 5rem 0 3.2rem; font-size:1.4rem; color:#222; line-height:2.2rem;}
+.chk_item > label::before {content:''; position:absolute; left:0; top:-0.2rem; display: block; width:2.4rem; height:2.4rem; border-radius:0.4rem; background-color:#EFEFEF}
+.chk_item > input:checked + label::before {background:#FFD338;}
+
+.chk_item-sub {position:relative; margin-left:3.2rem;}
+.chk_item + .chk_item-sub {margin-top:1.6rem;}
+.chk_item-sub + .chk_item-sub {margin-top:0.8rem;}
+.chk_item-sub > input {position:absolute; left:0; top:0; width:1px; height:1px; overflow: hidden;}
+.chk_item-sub > label {position:relative; display:block; padding-left:2.6rem; font-size:1.2rem; line-height:1.9rem; color:#555;}
+.chk_item-sub > label::before {content:''; position:absolute; left:0; top:-0.1rem; display: block; width:1.8rem; height:1.8rem; border-radius:0.4rem; background-color:#EFEFEF}
+.chk_item-sub > input:checked + label::before {background:#FFD338;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    
+    <section id="checkbox">
+
+        <div class="chk_group box_item-line">
+            <div class="chk_item">
+                <input type="checkbox" id="chk_all1" class="chk_all">
+                <label for="chk_all1">약관에 모두 동의합니다. [선택포함]</label>
+            </div>
+        </div>
+
+        <div class="toggle_group box_item-line">
+
+            <div class="toggle_title chk_group">
+                <div class="chk_item">
+                    <input type="checkbox" id="chk_all2" class="chk_all" />
+                    <label for="chk_all2">계약 체결·이행을 위한 상세 동의서 (필수)</label>
+                </div>
+                <a href="#" class="title" aria-expanded="true">닫기</a>
+            </div>
+
+            <div class="toggle_content">
+                <div class="chk_group">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_sub2_1" class="chk_all chk_sub" />
+                        <label for="chk_sub2_1">개인(신용)정보 수집·이용에 관한 사항 (필수)</label>
+                        <a href="#">링크</a>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_1_1" class="chk_sub" />
+                        <label for="chk_sub2_1_1">고유 식별정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_1_2" class="chk_sub" />
+                        <label for="chk_sub2_1_2">민감정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_1_3" class="chk_sub" />
+                        <label for="chk_sub2_1_3">개인신용정보 수집·이용 동의</label>
+                    </div>
+                </div>
+                <div class="chk_group">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_sub2_2" class="chk_all" />
+                        <label for="chk_sub2_2">개인(신용)정보 수집·이용에 관한 사항 (필수)</label>
+                        <a href="#">링크</a>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_2_1" class="chk_sub" />
+                        <label for="chk_sub2_2_1">고유 식별정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_2_2" class="chk_sub" />
+                        <label for="chk_sub2_2_2">민감정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_2_3" class="chk_sub" />
+                        <label for="chk_sub2_2_3">개인신용정보 수집·이용 동의</label>
+                    </div>
+                </div>
+                <div class="chk_group">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_sub2_3" class="chk_all" />
+                        <label for="chk_sub2_3">개인(신용)정보 수집·이용에 관한 사항 (필수)</label>
+                        <a href="#">링크</a>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_3_1" class="chk_sub" />
+                        <label for="chk_sub2_3_1">고유 식별정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_3_2" class="chk_sub" />
+                        <label for="chk_sub2_3_2">민감정보 수집·이용 동의</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub2_3_3" class="chk_sub" />
+                        <label for="chk_sub2_3_3">개인신용정보 수집·이용 동의</label>
+                    </div>
+                </div><!-- //chk_group -->
+            </div><!-- //toggle_content -->
+        </div><!-- //toggle_group -->
+
+        <div class="toggle_group box_item-line">
+            <div class="toggle_title chk_group">
+                <div class="chk_item">
+                    <input type="checkbox" id="chk_all3" class="chk_all" />
+                    <label for="chk_all3">상품 소개를 위한 상세 동의서 (선택)</label>
+                </div>
+                <a href="#" class="title" aria-expanded="true">닫기</a>
+            </div>
+            <div class="toggle_content">
+                <div class="chk_group">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_sub3_1" class="chk_sub" />
+                        <label for="chk_sub3_1">수집·이용에 관한 사항</label>
+                        <a href="#">링크</a>
+                    </div>
+                    그래프
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub3_1_1" class="chk_sub" />
+                        <label for="chk_sub3_1_1">수집·이용에 관한 사항</label>
+                    </div>
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub3_1_2" class="chk_sub" />
+                        <label for="chk_sub3_1_2">정보 보유·이용 기간</label>
+                    </div>
+                    1년~5년
+                    <div class="chk_item-sub">
+                        <input type="checkbox" id="chk_sub3_1_3" class="chk_sub" />
+                        <label for="chk_sub3_1_3">광고성 정보 수신 동의</label>
+                    </div>
+                    전체~ 전화(ARS)
+                </div>
+            </div><!-- // toggle_content -->
+        </div><!-- // toggle_group -->
+    </section>
+
+
+</div>
+
+<script>
+    const toggleTtl = Array.from(document.querySelectorAll(".toggle_title .title"));
+    toggleTtl.forEach((item,)=>{
+        item.addEventListener("click", (e)=>{
+            e.preventDefault();
+            console.log(item.getAttribute('aria-expanded'))
+            const toggleContent = item.parentNode.parentNode.querySelector(".toggle_content");
+            if ( item.getAttribute('aria-expanded') === "true" ){
+                item.innerHTML = "열기";
+                toggleContent.style.display = "none";
+                item.setAttribute('aria-expanded', false);
+            } else {
+                console.log('ㅇㅇㅇ');
+                item.innerHTML = "닫기";
+                toggleContent.style.display = "block";
+                item.setAttribute('aria-expanded', true);
+
+            }
+        })
+    })
+</script>
+</body>
+</html>
