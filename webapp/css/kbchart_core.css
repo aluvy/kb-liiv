@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* ///////////////////////////////////////////// */
+/* ///////////////////////////////////////////// */
+.ambGaugeBox {position:relative; line-height:0; margin:0 auto;}
+
+/* ///////////////////////////////////////////// */
+.ambGaugeWrap {min-width:; max-width:; text-align:center; padding:0; position:relative; width:100%;}
+
+.ambGaugeMain {position:relative; width:100%; margin:0 auto; font-size:0; line-height:0;}
+.ambGaugeMain:after {display:none; content:'';}
+
+.ambGaugeMain .gauge_chart {position:; width:100%;}
+
+.ambGaugeMain .gauge_chart .circle {fill:none; stroke-width:0.1rem; stroke-linecap: round; }
+.ambGaugeMain .gauge_chart .circle.bg       {}
+.ambGaugeMain .gauge_chart .circle.fill     {stroke-opacity:0;}
+.ambGaugeMain .gauge_chart .circle.gradient {}
+
+.ambGaugeMain .gauge_chart .circle,
+.ambGaugeMain .gauge_arrow .arrow {transition: all 0.3s;}
+
+.ambGaugeBox .gauge_text,
+.ambGaugeWrap .gauge_text,
+.ambGaugeMain .gauge_text {font-size:1.0rem; line-height:1; position:absolute; bottom:0px; width:100%; text-align:center;}
+
+.ambGaugeMain .gauge_text {width:calc(100% - 0px);}
+
+.ambGaugeBox .gauge_text .value,
+.ambGaugeBox .gauge_text .percent {display:inline-block; font-size:1.5rem; font-weight:700;}
+.ambGaugeBox .gauge_text .unit  {font-size:inherit;}
+
+/* hover ani */
+.ambGaugeWrap:hover .ambGaugeMain .gauge_chart .circle.fill {animation: ani_Gauge  0.4s ease-out 0s 1 alternate;}
+
+@keyframes ani_Gauge {
+  0%   {transform: rotate(0deg); stroke-dasharray:0, 100;}
+}
+@keyframes ani_Gauge2 {
+  0%   {stroke-dasharray:0, 100;}
+}
+
+/* gradient ---------- */
+.ambGaugeMain svg linearGradient >.start {stop-color: #e0e0e0;}
+.ambGaugeMain svg linearGradient >.end   {stop-color: #e0e0e0;}
+
+/* percentCircle ---------- */
+.ambGaugeWrap.pCircle {min-width:5rem; display:block; padding:;}
+.ambGaugeWrap.pCircle .ambGaugeMain {width:100%; min-width:6rem;}
+.ambGaugeWrap.pCircle .ambGaugeMain:after {padding-bottom:calc(100% + 0px);}
+.ambGaugeWrap.pCircle .ambGaugeMain:before {display:none;}
+
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart {}
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle {transform-origin:center center; backface-visibility:hidden;}
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle {stroke-width:4;}
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle.bg   {stroke: #dddddd;}
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle.fill {stroke: #2ba4fc; stroke-opacity:0;}
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle.fill.over {stroke: #e44343 !important;}
+
+.ambGaugeWrap.pCircle .ambGaugeMain .gauge_chart .circle{transition: all 0.5s;}
+
+.ambGaugeWrap.pCircle .gauge_text {bottom:auto; top:50%; transform:translateY(-50%);}
+.ambGaugeWrap.pCircle .gauge_text {margin-top:0px;}
+.ambGaugeWrap.pCircle .gauge_text .valueTxt {font-size:0;}
+.ambGaugeWrap.pCircle .gauge_text .value,
+.ambGaugeWrap.pCircle .gauge_text .percent,
+.ambGaugeWrap.pCircle .gauge_text .unit    {display:inline-block; font-size:1.4rem; letter-spacing:-0.05em; font-weight:400;}
+.ambGaugeWrap.pCircle .gauge_text .percent {font-weight:400;}
+
+.ambGaugeWrap.pCircle .gauge_text .valueTxt > em {font-size:1.4rem; font-weight: 700; letter-spacing:-0.05em; color:inherit;}
+.ambGaugeWrap.pCircle .gauge_text .valueTxt > p {display:block; line-height:1; font-size:1.1rem}
+
+.ambGaugeWrap.pCircle .gauge_label {display:block; font-size:1.8rem; letter-spacing:-0.05em; margin-top:0.8rem;}
+.ambGaugeWrap.pCircle .gauge_label * {line-height:1.2;}
+.ambGaugeWrap.pCircle .gauge_label [ambgauge-label] {font-size:1.3rem; color:#717171;}
+.ambGaugeWrap.pCircle .gauge_label [ambgauge-max],
+.ambGaugeWrap.pCircle .gauge_label [ambgauge-unit],
+.ambGaugeWrap.pCircle .gauge_label dd >em {font-size:1.3rem; font-weight:700; color:#111;}
+

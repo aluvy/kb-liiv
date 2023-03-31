@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/** @www.ncomz.com  | @Ncomz Design -  @mo, @lhj, @shj, @ksl, @lsy, @ljs, @lhs **/
+
+/* ///////////////////////////////////////////// */
+/* ambGraphWrap */
+.ambGraphWrap {display:inline-flex; align-items:center; height:100%; width:100%; vertical-align:middle; overflow:auto; padding:0 0; min-height:; line-height:0;}
+.ambGraphWrap .barChart {vertical-align:middle; max-height:100%; line-height:0;}
+
+.ambGraphWrap *,
+.ambGraphWrap *:before,
+.ambGraphWrap *:after {box-sizing:border-box;}
+
+/* barChart */
+.ambGraphWrap .barChart {display:block; width:100%; padding: 0; max-height:100%; overflow:auto; position:relative; font-size:1.5rem;}
+.ambGraphWrap .barChart > .unit {display:block; clear:both; position:relative; width:100%; padding:0.8rem 0; line-height:0;}
+.ambGraphWrap .barChart > .unit:before {display:inline-block; content:attr(data-label); float:left; font-size:0.85em; margin-top:0.15em; line-height:1; text-align:left;}
+.ambGraphWrap .barChart > .unit:before {text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; overflow:hidden;}
+.ambGraphWrap .barChart > .unit .num   {display:inline-block; float:right; font-size:1.2em; margin-bottom:5px; font-family:;}
+.ambGraphWrap .barChart > .unit .num > em {display:inline-block; line-height:1.0em; vertical-align:bottom; margin-top:0.1em;}
+.ambGraphWrap .barChart > .unit .num.right > em {/*float:right;*/}
+.ambGraphWrap .barChart > .unit .num.left > em  {/*float:left;*/}
+.ambGraphWrap .barChart > .unit .graph {display:block; position:relative; height:5px; background:rgba(0,0,0,0.1); overflow:hidden; border-radius:5px; width:100%; clear:both;}
+.ambGraphWrap .barChart > .unit .graph>em {display:block; position:absolute; left:0; top:0; right:100%; height:100%;}
+.ambGraphWrap .barChart > .unit .graph,
+.ambGraphWrap .barChart > .unit .graph>em,
+.ambGraphWrap .barChart > .unit .graph>em:after {color:inherit;}
+
+.ambGraphWrap .barChart > .unit .graph>em                     {transition:all 0.5s; }
+.ambGraphWrap .barChart > .unit:nth-of-type(even) .graph > em {transition-delay:0.1s;}
+
+.ambGraphWrap .barChart > .unit .graph>em                  {background-color:#666666;}
+.ambGraphWrap .barChart > .unit:nth-of-type(1)  .graph>em  {background-color:#5e89fe;}
+.ambGraphWrap .barChart > .unit:nth-of-type(2)  .graph>em  {background-color:#00a180;}
+.ambGraphWrap .barChart > .unit:nth-of-type(3)  .graph>em  {background-color:#f67e7d;}
+.ambGraphWrap .barChart > .unit:nth-of-type(4)  .graph>em  {background-color:#8a77c9;}
+.ambGraphWrap .barChart > .unit:nth-of-type(5)  .graph>em  {background-color:#24abe0;}
+.ambGraphWrap .barChart > .unit:nth-of-type(6)  .graph>em  {background-color:#f67e7d;}
+.ambGraphWrap .barChart > .unit:nth-of-type(7)  .graph>em  {background-color:#6a849e;}
+.ambGraphWrap .barChart > .unit:nth-of-type(8)  .graph>em  {background-color:#9bc95b;}
+.ambGraphWrap .barChart > .unit:nth-of-type(9)  .graph>em  {background-color:#d982bc;}
+.ambGraphWrap .barChart > .unit:nth-of-type(10) .graph>em  {background-color:#4487f3;}
+
+
+/* hover ani */
+.ambGraphWrap .barChart > .unit:hover .graph>em {animation: ani_down2 0.3s ease-out 0s 1 alternate;}
+@keyframes ani_down2 {
+  0%   {opacity:0; transform: translateY(2px);}
+  50%   {opacity:1; transform: translateY(-2px);}
+  100% {opacity:1; transform: translateY(0px);}
+}
+
+/* barChart dataBar*/
+.ambGraphWrap .barChart.dataBar > .unit {padding:0.9rem 0;}
+.ambGraphWrap .barChart.dataBar > .unit:before {display:none;}
+.ambGraphWrap .barChart.dataBar > .unit .graph {height:1.5rem; background-color:#e3e5e6; border-radius:1rem;}
+.ambGraphWrap .barChart.dataBar > .unit .graph > em {border-radius:1rem;}
+.ambGraphWrap .barChart.dataBar > .unit p[ambgraph-extext] {min-height:1.3rem; font-size:1.3rem; line-height:1; margin-top:0.8rem;}
+
+.ambGraphWrap .barChart.dataBar > .unit dl[ambgraph-datatext] {display:flex; justify-content:space-between;}
+.ambGraphWrap .barChart.dataBar > .unit dl[ambgraph-datatext] {padding:0; margin-bottom:0.6rem;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dt,
+.ambGraphWrap .barChart.dataBar > .unit dl> dd {padding:0;}
+
+.ambGraphWrap .barChart.dataBar > .unit dl> dt {font-size:1.5rem; color:#111;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd {font-size:1.3rem; color:#717171;}
+
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span{display:inline-block; position:relative; padding-left:0.6rem; margin-left:0.6rem; color:#717171;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span:before {display:inline-block; content:''; width:1px; height:0.8rem; background:#e3e5e6; position:absolute; left:0; top:50%; transform:translateY(-50%);}
+
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span:nth-of-type(2){color:#000;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span:first-of-type:before {display:none;}
+
+
+/* vertical  */
+.ambGraphWrap .barChart.vertical {display:table; margin:3rem 2.5% 3rem; height:calc(100% - 6rem);}
+.ambGraphWrap .barChart.vertical > .unit {display:table-cell; min-height:15rem; height:100%; color:#717171;} 
+.ambGraphWrap .barChart.vertical > .unit {padding:0px 0.2rem; width:auto; position:relative; text-align:center; border-bottom:1px solid rgba(0,0,0,0.2);}
+.ambGraphWrap .barChart.vertical > .unit:after {display:none;}
+.ambGraphWrap .barChart.vertical > .unit:before {float:none; margin-top:0; margin-right:0px; padding-right:0px; position:absolute; bottom:-2.5rem; left:50%; transform:translateX(-50%); font-size:1.3rem}
+.ambGraphWrap .barChart.vertical > .unit dl[ambgraph-datatext] {display:none;}
+.ambGraphWrap .barChart.vertical > .unit .num   {display:block; float:none; color:#000; font-size:1.0em; margin-bottom:0; padding-left:0px; z-index:1; position:absolute; left:50%; transform:translateX(-50%); top:-20px; text-align:center; white-space:nowrap;}
+.ambGraphWrap .barChart.vertical > .unit .graph {display:inline-block; position:relative; height:100%; background:rgba(0,0,0,0.0); overflow:visible; border-radius:0px; position:; width:25px; max-width:70%;}
+.ambGraphWrap .barChart.vertical > .unit .graph>em {border-radius:4px 4px 0 0; }
+.ambGraphWrap .barChart.vertical > .unit .graph>em {position:absolute; width:100%; height:auto; top:100%; bottom:0; right:0;}
+
+.ambGraphWrap .barChart.vertical > .unit .num {display:none;}
+.ambGraphWrap .barChart.vertical > .unit .graph>em:after {display:block; content:attr(data-num); position:absolute; top:-2.5rem; left:50%; transform:translateX(-50%); font-size:1.3rem; font-weight:400; font-family:inherit; word-break:keep-all; white-space:nowrap;}
+
+.ambGraphWrap .barChart.vertical > .unit.everage {}
+.ambGraphWrap .barChart.vertical > .unit.everage .graph>em:after {font-weight:700;}
+
+.ambGraphWrap .barChart.vertical:before {display:none; content:''; background: #f1f1f1; position:absolute; top:0; right:0; left:0; bottom:0;}
+.ambGraphWrap .barChart.vertical:before {background:repeating-linear-gradient(to top, rgba(0,0,0,0.05), rgba(0,0,0,0.05) 1px, transparent 1px, transparent 3rem);}
+
+.ambGraphWrap .barChart.vertical > .everageline {position:absolute; right:0; left:0; border:1px dashed #e3e5e6; margin-top:-1px; height:0; font:0; line-height:0;}
+
+
+
+
+
+/* 2023 커스텀 */
+.ambGraphWrap .barChart.vertical {display:flex !important; overflow:visible !important; margin:1.1rem 0 2.3rem; height:calc(100% - 3.4rem);}
+.ambGraphWrap .barChart.vertical > .everageline {display:none;}
+.ambGraphWrap .barChart.vertical > .unit {flex:1; display:block !important; min-height:auto !important; border-bottom:none; color:#555;}
+.ambGraphWrap .barChart.vertical > .unit:before {font-size:1.2rem; color:#555 !important; bottom:-2rem;}
+.ambGraphWrap .barChart.vertical > .unit .graph {width:3.6rem;}
+.ambGraphWrap .barChart.vertical > .unit .graph>em {border-radius:0.6rem;}
+.ambGraphWrap .barChart.vertical > .unit .graph>em:after {top:-1.7rem; font-size:1.2rem; font-weight:700;}
+
+.ambGraphWrap .barChart.dataBar > .unit {padding:0; margin-top:2rem; line-height:initial;}
+.ambGraphWrap .barChart.dataBar > .unit:first-of-type {margin-top:0;}
+.ambGraphWrap .barChart.dataBar > .unit dl[ambgraph-datatext] {margin-bottom:0.8rem;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dt {font-size:1.4rem; font-weight:700; color:#555;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd {font-size:1.4rem; font-weight:700;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span {padding-left: 0.2rem; margin-left: 0.2rem; color:#222;}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span:before {content:'/ '; position:relative; width:auto; height:auto; margin-right:0.2rem; background:transparent; transform:translateY(0);}
+.ambGraphWrap .barChart.dataBar > .unit dl> dd > span:nth-of-type(2) {color:#999;}
+.ambGraphWrap .barChart.dataBar > .unit .graph {height:1.2rem;}

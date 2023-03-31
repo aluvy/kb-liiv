@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/* ********** AS-IS ********** */
+
+figure {margin:0;}
+
+
+
+
+
+/* ***** 이용안내, 요금제 ***** */
+
+table.table_charge {margin-top: 2rem; text-align: center;}
+table.table_charge th {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:var(--bg_02, #F8F9FB); color:var(--gray_01, #222); font-size:1.2rem; font-weight:700; line-height:1.9rem; text-align:center!important;}
+table.table_charge td {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:#fff; color:var(--gray_01, #222); font-size:1.2rem; font-weight:normal; line-height:1.9rem;}
+table.table_charge tbody tr .txt_comm_wrap .txt_comm {display: inline-block; vertical-align: middle; font-size: 1rem; color: #0060e5; font-weight: bold; line-height: inherit; white-space: nowrap;}
+table.table_charge tbody th,
+table.table_charge tfoot th {background-color:#fff; font-weight:normal;}
+table.table_charge thead tr:first-of-type th,
+table.table_charge thead tr:first-of-type td,
+table.table_charge tbody tr:first-of-type th,
+table.table_charge tbody tr:first-of-type td {border-top:1px solid var(--line_02, #D6D6D6);}
+table.table_charge thead + tbody tr:first-of-type th,
+table.table_charge thead + tbody tr:first-of-type td {border-top:none;}
+table.table_charge th:first-of-type,
+table.table_charge td:first-child {border-left:none;}
+table.table_charge thead th:last-of-type,
+table.table_charge td:last-child {border-right:none;}
+table.table_charge .t_left {text-align: left;}
+
+
+table.table th {padding:1.6rem 0.4rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:var(--bg_02, #F8F9FB); color:var(--gray_01, #222); font-size:1.4rem; font-weight:700; line-height:2.1rem; text-align:center !important; word-break:break-all;}
+table.table td {padding:1.6rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:#fff; color:var(--gray_01, #222); font-size:1.2rem; font-weight:normal; line-height:1.9rem; word-break:break-word;}
+.table .center td {padding:1.6rem 0.4rem;}
+table.table tbody > th {background-color:var(--bg_02, #F8F9FB);}
+table.table thead + tbody th,
+table.table tfoot th {background-color:#fff; font-weight:normal;}
+table.table thead tr:first-of-type > th,
+table.table thead tr:first-of-type > td,
+table.table tbody tr:first-of-type > th,
+table.table tbody tr:first-of-type > td {border-top:1px solid var(--line_02, #D6D6D6);}
+table.table thead + tbody > tr:first-of-type > th,
+table.table thead + tbody > tr:first-of-type > td {border-top:none;}
+table.table th:first-of-type,
+table.table td:first-child {border-left:none;}
+table.table thead th:last-of-type,
+table.table td:last-child {border-right:none;}
+
+
+
+
+
+/* ***** 요금제 ***** */
+
+/* 상단 txt_help */
+.txt_help p {position: relative; margin-top: .8rem; padding-left: 0.6rem; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem; text-align:justify;}
+.txt_help p:first-child {margin-top: 0;}
+.txt_help p:not(.bullet):before {content: ''; position: absolute; left: 0; top: 0.8rem; display: block; width: 0.2rem; height: 0.2rem; border-radius: 50%; background-color: var(--gray_02, #555);}
+.rateplan_ct_mid + .txt_help {padding-top:2.4rem; margin-top:2rem; border-top:1px solid #eaeced;}
+
+/* common */
+.chargeinfo_wrap .pro_gr,
+.chargeinfo_wrap .chargeinfo_gr {margin-top:3.2rem;}
+
+.txt_comm2 {position: relative; margin-top: 2rem; padding-top: 2rem; color:#555; font-size:1.2rem; line-height:1.9rem; word-break:keep-all;}
+.txt_comm2::after {content: ""; display: block; position: absolute; top: 0; left: 0; margin-bottom: 2rem; width: 100%; border-top: 1px solid #F6F6F6;}
+
+/* btn */
+.chargeinfo_wrap .btn_area.type_insview a {margin-top: 2rem; width: 100%; border: 1px solid #ffd338; background: #ffd338; color: #222;}
+
+/* color */
+.chargeinfo_wrap .t_color02{color:#0060e5 !important;}
+.chargeinfo_wrap .t_color03{color:#1065dc !important;}
+
+
+/* promotion */
+.chargeinfo_wrap .promotion_type1 {margin-top: 3.2rem;}
+.chargeinfo_wrap .promotion_type1 .pro_gr {padding: 2rem 2rem; background-color: #eef5ff; border-radius: 1.2rem;}
+.chargeinfo_wrap .promotion_type1 .pro_gr:nth-child(2n) {background-color: #fff8e1;}
+.chargeinfo_wrap .promotion_type1 .pro_gr ~ .pro_gr {margin-top:2rem;}
+.chargeinfo_wrap .promotion_type1 .pro_gr .tit {position: relative; display: flex; align-items: center; min-height: 4.8rem; padding-right:6rem; font-size: 1.8rem; line-height: 2.4rem; color: #222; font-weight: 700; word-break: keep-all;}
+.chargeinfo_wrap .promotion_type1 .pro_gr .tit::after {content: ""; display: block; position: absolute; top: 50%; right: 0; width: 5.176rem; height: 5.215rem; transform: translateY(-50%); background: url(../img/img/flat_promotion.png) no-repeat center; background-size: 5.176rem auto;}
+.chargeinfo_wrap .promotion_type1 .pro_gr > p {margin-top: 1rem; font-size: 1.4rem; line-height: 2.2rem; color: #222; word-break: keep-all;}
+.chargeinfo_wrap .promotion_type1 .pro_gr > p:first-child {margin-top: 0;}
+.chargeinfo_wrap .promotion_type1 .pro_gr > ul {margin-top: 1.2rem;}
+.chargeinfo_wrap .promotion_type1 .pro_gr > ul li {position: relative; padding-left: 1.1rem; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222;}
+.chargeinfo_wrap .promotion_type1 .pro_gr > ul li::before {content: ''; position: absolute; left: 0; top: 0.8rem; display: block; width: .3rem; height: .3rem; border-radius: 50%; background-color: var(--gray_02, #555);}
+.chargeinfo_wrap .promotion_type1 .pro_gr > ul li em {display: none;}
+.chargeinfo_wrap .promotion_type1 .pro_gr .txt_help.type_sub {margin-top: 0.8rem;}
+
+/* star_type_bullet  */
+.chargeinfo_wrap .chargeinfo_gr .txt_help .bullet,
+.chargeinfo_wrap .promotion_type1 .pro_gr .txt_help.type_sub .bullet,
+.chargeinfo_wrap .chargeinfo_gr .info.type_notable .txt_help .bullet,
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in .info_gr .bullet, 
+.chargeinfo_wrap .chargeinfo_gr .type_service .info_sec .txt_help.table_help > ul > li,
+.chargeinfo_wrap .chargeinfo_gr .type_service .info_sec .txt_help > ul > li, 
+.chargeinfo_wrap .info.type_table .txt_help.type_bullet .bullet,
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar .txt_help.type_bullet .bullet {position: relative; padding-left: 1.1rem; margin-top: .8rem; color: #555; font-size: 1.2rem; line-height: 1.9rem; text-indent: 0;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help .bullet::before,
+.chargeinfo_wrap .promotion_type1 .pro_gr .txt_help.type_sub .bullet::before,
+.chargeinfo_wrap .chargeinfo_gr .info.type_notable .txt_help .bullet::before, 
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in .info_gr .bullet::before,
+.chargeinfo_wrap .chargeinfo_gr .type_service .info_sec .txt_help.table_help > ul > li::before,
+.chargeinfo_wrap .chargeinfo_gr .type_service .info_sec .txt_help > ul > li::before, 
+.chargeinfo_wrap .info.type_table .txt_help.type_bullet .bullet::before,
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar .txt_help.type_bullet .bullet::before  {content: ''; position: absolute; left: 0; top: 0.6rem; display: block; width: 0.7rem; height: 0.7rem; background-image: url(../img/common/icon_star_shape_gray_7.png); background-repeat: no-repeat; background-position: center; background-size: contain;}
+
+/* stitle_bar */
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar {display: table; position: sticky; left: 0; width: 100%;}
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar h2 {font-size: 1.6rem; line-height: 2.3rem; font-weight: 700; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar .unit_info {margin-top: 2rem; color: #555; font-size: 1.2rem; line-height: 1.7rem; text-align: right;}
+.chargeinfo_wrap .chargeinfo_gr .stitle_bar .txt_help {margin-top: 1.2rem; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .info.type_notable .stitle_bar h2 {font-size: 1.4rem; line-height: 2.2rem; font-weight: 700; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .info.type_notable .txt_help {margin-top: .8rem; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222;}
+
+/* chargeinfo_gr_in */
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in h2 {font-size: 1.6rem; line-height: 2.3rem; font-weight: 700; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in .info_gr {margin-top: 2rem;}
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in .info_gr .num_tit {font-size: 1.4rem; line-height: 2.2rem; font-weight: 700; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .chargeinfo_gr_in .info_gr p {margin-top: .8rem; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222;}
+
+/* table */
+.chargeinfo_wrap table.table_charge {margin-top: 1.2rem; text-align: center;}
+.chargeinfo_wrap table.table_charge th {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:var(--bg_02, #F8F9FB); color:var(--gray_01, #222); font-size:1.2rem; font-weight:700; line-height:1.9rem; text-align:center!important;}
+.chargeinfo_wrap table.table_charge td {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:#fff; color:var(--gray_01, #222); font-size:1.2rem; font-weight:normal; line-height:1.9rem;}
+.chargeinfo_wrap table.table_charge tbody tr .txt_comm_wrap .txt_comm {display: inline-block; vertical-align: middle; font-size: 1rem; color: #0060e5; font-weight: bold; line-height: inherit; white-space: nowrap;}
+.chargeinfo_wrap table.table_charge tbody th,
+.chargeinfo_wrap table.table_charge tfoot th {background-color:#fff; font-weight:normal;}
+.chargeinfo_wrap table.table_charge thead tr:first-of-type th,
+.chargeinfo_wrap table.table_charge thead tr:first-of-type td,
+.chargeinfo_wrap table.table_charge tbody tr:first-of-type th,
+.chargeinfo_wrap table.table_charge tbody tr:first-of-type td {border-top:1px solid var(--line_02, #D6D6D6);}
+.chargeinfo_wrap table.table_charge thead + tbody tr:first-of-type th,
+.chargeinfo_wrap table.table_charge thead + tbody tr:first-of-type td {border-top:none;}
+.chargeinfo_wrap table.table_charge th:first-of-type,
+.chargeinfo_wrap table.table_charge td:first-child {border-left:none;}
+.chargeinfo_wrap table.table_charge thead th:last-of-type,
+.chargeinfo_wrap table.table_charge td:last-child {border-right:none;}
+.chargeinfo_wrap table.table_charge .t_left {text-align: left;}
+.chargeinfo_wrap table.table_charge .t_left .txt_help.type_hyphen p {padding-left: 0; text-indent: 0;}
+.chargeinfo_wrap table.table_charge .tb_final_sum2,
+.chargeinfo_wrap table.table_charge .txt_comm {font-size: 1rem; color: #0966e9;}
+
+/* txt_help */
+.chargeinfo_wrap .chargeinfo_gr .txt_help {margin-top:2rem; font-size: 1.4rem; line-height: 2.2rem; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help > p {margin-top: 1.2rem; padding-left: 3rem; font-size:1.2rem; line-height:1.9rem; color: #555; text-indent: -2.4rem;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help p + p{margin-top:0.8rem;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help p > .t_color03 {margin-right:.1rem; color:#0060E5; white-space:nowrap;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help p:before {display: none;}
+.chargeinfo_wrap .chargeinfo_gr .txt_help > p[style*=padding] {padding-left: 2.3rem !important;}
+
+.chargeinfo_wrap .chargeinfo_gr .na_info.type_service .txt_help {margin-top: 1.2rem;}
+.chargeinfo_wrap .chargeinfo_gr .na_info.type_service .txt_help.type_num {margin-top:2rem; font-size: 1.4rem; line-height: 2.2rem; color: #222;}
+.chargeinfo_wrap .chargeinfo_gr .na_info.type_service .txt_help.type_num p {margin-top: .8rem; padding-left: 0; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222; text-indent: 0;}
+.chargeinfo_wrap .chargeinfo_gr .na_info.type_service .txt_help.type_num p > em,
+.chargeinfo_wrap .chargeinfo_gr .na_info.type_service .txt_help.type_num p > strong {display: inline-block; margin-bottom: .8rem; font-size: 1.4rem; line-height: 2.2rem; font-weight: 700; color: #222;}
+
+.chargeinfo_wrap .lte_info.type_service .info_sec > p {margin-top: .8rem; font-size: 1.4rem; line-height: 2.2rem; color: #222 !important;}
+
+/* 반려행복LTE 이용안내 */
+.chargeinfo_wrap .pet_guide_step {margin-top: 2rem;}
+.chargeinfo_wrap .pet_guide_step ul {display:table; width:100%;}
+.chargeinfo_wrap .pet_guide_step ul li {display:table-cell; width:33%; height:2rem; text-align:center; vertical-align:top;}
+.chargeinfo_wrap .pet_guide_step ul li.arrow_dv {width:1.4rem; padding-top:1rem;}
+.chargeinfo_wrap .pet_guide_step ul li.arrow_dv i{margin-top:1.4rem;}
+.chargeinfo_wrap .pet_guide_step ul li p {margin-top:.8rem; font-size:1.2rem; color:#222; font-weight:700; line-height:1.9rem}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide {display:inline-block; background-image:url(../img/charge_html/sp_pet_guide.png); background-repeat: no-repeat; background-size:auto 1.4rem;}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet01,
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet02,
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet03 {width:6rem; height:6rem; text-align:center; position:relative; border-radius:50%; background-image:none; padding:0; line-height:0; background-color:#f8f9fb;}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet01:before {display:inline-block; content:''; width:3.6rem; height:3.6rem; background-image:url(../img/charge_html/img_ic_pet01.png); background-repeat: no-repeat; background-size: auto 3.6rem; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet02:before {display:inline-block; content:''; width:3.6rem; height:3.6rem; background-image:url(../img/charge_html/img_ic_pet02.png); background-repeat: no-repeat; background-size: auto 3.6rem; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet03:before {display:inline-block; content:''; width:3.6rem; height:3.6rem; background-image:url(../img/charge_html/img_ic_pet03.png); background-repeat: no-repeat; background-size: auto 3.6rem; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)}
+.chargeinfo_wrap .pet_guide_step .sp_pet_guide.ic_pet_arr {width:1.4rem; height:1.4rem; background-image:url(../img/charge_html/img_arrow.png);}
+.chargeinfo_wrap .box.type_pet_noti {padding:2rem 2rem; background-color:#f8f9fb; border-radius: 1.2rem;}
+.chargeinfo_wrap .box.type_pet_noti h3 {font-size: 1.6rem; line-height: 2.3rem; color: #222;}
+.chargeinfo_wrap .box.type_pet_noti strong {font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: #222;}
+.chargeinfo_wrap .box.type_pet_noti .txt_help {margin-top: 1.2rem;}
+.chargeinfo_wrap .box.type_pet_noti .txt_help sup {color: #0966e9;}
+/* 테이블 이미지(반려행복LTE) */
+.chargeinfo_wrap .table_charge .th_img {padding:0;}
+.chargeinfo_wrap .table_charge .td_img {padding:.5rem 0.25rem 3.7rem !important; border-top-width:0;}
+.chargeinfo_wrap .table_charge .th_img img, .table_charge .td_img img {width:100%;}
+.chargeinfo_wrap .table_charge .th_img figure {margin-bottom:1.5rem;}
+.chargeinfo_wrap .table_charge .th_img figure figcaption, .table_charge .td_img figure figcaption {font-size: 1.4rem; line-height: 2.2rem; font-weight: 700;}
+
+/* LTE워치 */
+.chargeinfo_wrap .info.type_table .txt_help p {margin-top: 0; padding-left: 0; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222; text-indent: 0;}
+.chargeinfo_wrap .txt_help.type_num_em p:before {display: none;}
+.chargeinfo_wrap .box.type_matter {margin-top:1.2rem !important; padding:2rem; background-color:#f7f9fa; border-radius:1rem;}
+.chargeinfo_wrap .box.type_matter ul li { font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222;}
+.chargeinfo_wrap .box.type_matter ul li li {position: relative; padding-left:1rem; font-size:1.2rem; color: #717171;}
+.chargeinfo_wrap .box.type_matter > ul > li + li{margin-top:1rem;}
+.chargeinfo_wrap .box.type_matter ul ul{margin:0.5rem 0;}
+.chargeinfo_wrap .box.type_matter ul li li:before {position: absolute; left: 0; content:"-"; display: inline-block; width:1rem;}
+.chargeinfo_wrap .stitle_bar .box.type_matter strong{font-weight:400;}
+
+.chargeinfo_wrap .txt_help.type_bullet {margin-top: 1.2rem;}
+.chargeinfo_wrap .txt_help.type_bullet .bullet {margin-top: 1.2rem; font-size: 1.2rem !important; line-height: 1.9rem !important;}
+.chargeinfo_wrap .txt_help.type_bullet .bullet::before {display: none;}
+.chargeinfo_wrap .txt_help.type_bullet .bullet .t_color02 {color: #555 !important;}
+.chargeinfo_wrap .info.type_notable .txt_help.type_bullet .bullet .t_color02 strong {color: #555 !important; font-weight: 400;} 
+
+/* 골든라이프 X 배너 */
+.chargeinfo_wrap .link_banner.golden {position:relative; margin-top: 3rem; width: 100%; height:0; padding:61.25% 0 0; background:transparent url(../img/charge_html/banner_golden.png) no-repeat; background-size:100% auto; box-shadow: none; border-radius: 0; overflow:hidden;}
+.chargeinfo_wrap .link_banner.golden > *:not(a) {position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap; }
+.chargeinfo_wrap .link_banner.golden a {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0;}
+
+
+
+/* *** 요금제 이용안내 *** */
+
+.user_info_conet {margin-top: 3.2rem;}
+.user_info_conet p {font-size:1.3rem;}
+.user_info_conet h3,
+.user_info_conet h4 {font-size:1.6rem; font-weight:700; line-height: 2.3rem; color:#222;}
+.user_info_conet .txt_help ul li > em {position:relative;}
+
+.user_info_conet .list[class*='type_'] {margin-bottom:1.8rem;}
+.user_info_conet .list[class*='type_'],
+.user_info_conet .list[class*='type_'] * {font-size: 1.2rem; line-height: 1.9rem; color: #555;}
+.user_info_conet .list[class*='type_'] h3,
+.user_info_conet .list[class*='type_'] h4 {font-size:1.6rem; font-weight:700; line-height: 2.3rem; color:#222;}
+.user_info_conet .list[class*='type_'] ul + h3,
+.user_info_conet .list[class*='type_'] ul + h4 {padding-top:1rem;}
+.user_info_conet .list[class*='type_'] li {position:relative; padding-left:1.1rem; box-shadow:none; border-bottom:0; word-break:keep-all; margin-top: .8rem;}
+.user_info_conet .list[class*='type_'] li:before {content:'*'; position:absolute; left:0; display:inline-block;}
+.user_info_conet .list[class*='type_'] li a {display:inline-block; padding:0 0;}
+.user_info_conet .list[class*='type_'] li li:before {content:'-'; top:0rem;}
+
+.user_info_conet .list[class*='type_'] > li {padding-left:0;}
+.user_info_conet .list[class*='type_'] > li:before {display:none;}
+.user_info_conet .list[class*='type_'] .dp_1_table {margin:0.5rem 0;}
+
+.user_info_conet .list.type_chargeinfo > li, 
+.user_info_conet .list.type_chargeinfo > li > h3 {margin-top:2rem;}
+.user_info_conet .list.type_chargeinfo .dp_2 {position: relative; margin-top: .8rem;}
+.user_info_conet .list.type_chargeinfo .dp_2 > li:before {content:'-';}
+.user_info_conet .list.type_chargeinfo .dp_1 > li:before {content: ''; position: absolute; left: 0; top: 0.6rem; display: block; width: 0.7rem; height: 0.7rem; background-image: url(../img/common/icon_star_shape_gray_7.png); background-repeat: no-repeat; background-position: center; background-size: contain;}
+.user_info_conet .list.type_chargeinfo .type_num > li:before {display:none;}
+.user_info_conet .list.type_chargeinfo .type_num > li {padding-left:1.4rem;}
+.user_info_conet .list.type_chargeinfo .txt_comm2 {margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid #e9ebec; font-weight:700;}
+.user_info_conet .list.type_chargeinfo + h3 {padding-top:2rem;}
+
+.user_info_conet .dp_1 {margin-top: 1.2rem;}
+.user_info_conet .dp_1 > li,
+.user_info_conet .dp_1 .dp_2 > li {padding-left:1.2rem; position:relative;}
+.user_info_conet .dp_1 > li > em {display: none;}
+.user_info_conet .dp_1 .dp_2 > li {margin-top: 0; padding-left:.8rem; color: #555; font-size: 1.2rem; line-height: 1.9rem;}
+.user_info_conet .dp_1 .dp_2 > li:before {content:'-'; position:absolute; left:0;}

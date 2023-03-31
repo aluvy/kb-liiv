@@ -1,0 +1,561 @@
+/* **** img_item **** */
+.img_item {display:inline-block; background-size:100% auto; background-repeat:no-repeat; background-position:50% 50%;}
+.img_item.disabled {filter:grayscale(1); opacity:0.5;}
+
+/* **** img_item > visual **** */
+.img_item.visual.data {width:10.8rem; height:10.4rem; background-image:url(../img/img/visual_graph.png);}
+.img_item.visual.usim {width:15.7rem; height:8.2rem; background-image:url(../img/img/visual_usim.png);}
+.img_item.visual.guard{width:16.7rem; height:12.1rem; background-image:url(../img/img/visual_guard.png);}
+.img_item.visual.wallet{width:16.9rem; height:13rem; background-image:url(../img/img/visual_wallet.png);}
+.img_item.visual.security{width:13.4rem; height:14rem; background-image:url(../img/img/visual_security.png);}
+.img_item.visual.safe{width:11.73rem; height:14rem; background-image:url(../img/img/visual_safe.png);}
+.img_item.visual.flex{width:11.2rem; height:9.6rem; background-image:url(../img/img/visual_flex.png);}
+.img_item.visual.money{width:13.733rem; height:8.437rem; background-image:url(../img/img/visual_money.png);}
+.img_item.visual.touch{width:16.8rem; height:14rem; background-image:url(../img/img/visual_touch.png);}
+.img_item.visual.share {width:18rem; height:10.9rem; background-image:url(../img/img/visual_share.png);}
+.img_item.visual.share2 {width:18.9rem; height:12rem; background-image:url(../img/img/visual_share2.png);}
+.img_item.visual.discount {width:18.8rem; height:14rem; background-image:url(../img/img/visual_discount.png);}
+.img_item.visual.friend {width:23.2rem; height:14rem; background-image:url(../img/img/visual_friend.png);}
+.img_item.visual.membership {width:32rem; height:14rem; background-image:url(../img/img/visual_membership.png);}
+.img_item.visual.membership2 {width:32rem; height:14rem; background-image:url(../img/img/visual_membership2.png);}
+.img_item.visual.ota {width:21.9rem; height:12.9rem; background-image:url(../img/img/visual_ota.png);}
+.img_item.visual.recommend {width:32rem; height:14rem; background-image:url(../img/img/visual_recommend.png);}
+
+/* **** img_item > charactor **** */
+.img_item.char.bibi_love{width:4rem; height:4rem; background-image: url(../img/img/char_bibi_love.png);}
+.img_item.char.bibi_heart{width:8.959rem; height:8.706rem; background-image: url(../img/img/char_bibi_heart.png);}
+.img_item.char.bibi_hi{width:5rem; height:5rem; background-image: url(../img/img/char_bibi_hi.png);}
+.img_item.char.bibi_stand{width:6.5rem; height:7.4rem; background-image: url(../img/img/char_bibi_stand.png);}
+.img_item.char.bibi_stand2{width:6rem; height:5.5rem; background-image: url(../img/img/char_bibi_stand2.png);}
+.img_item.char.bibi_loading{width:16rem; height:16rem; background-image: url(../img/common/loading.gif);}
+.img_item.char.bibi_loading.sm{width:4rem; height:4rem; background-image: url(../img/common/loading.gif);}
+
+.img_item.char.lolo_sweat{width:8.3rem; height:13.7rem; margin-right:0.6rem; background-image: url(../img/img/char_lolo_sweat.png); background-position:center bottom -0.3rem;}
+.img_item.char.lolo_kb{width: 28rem; height:9.9rem; background-image: url(../img/img/char_lolo_kb.png); background-position:50% 100%;}
+.img_item.char.lolo_flex{width:11.1rem; height:6.363rem; background-image: url(../img/img/char_lolo_flex.png);}
+.img_item.char.lolo_heart{width:5.6rem; height:4.8rem; background-image: url(../img/img/char_lolo_heart.png);}
+.img_item.char.lolo_help{width:19.9rem; height:5.5rem; background-image: url(../img/img/char_lolo_help.png);}
+.img_item.char.lolo_heart2{width:5.6rem; height:4.8rem; background-image: url(../img/img/char_lolo_heart2.png);}
+.img_item.char.lolo_help2{width:19.9rem; height:5.5rem; background-image: url(../img/img/char_lolo_help2.png);}
+
+.img_item.char.luna_stand{width:4.8rem; height:9.2rem; background-image:url(../img/img/char_luna_stand.png);}
+.img_item.char.luna_this{width:5.715rem; height:7.56rem; background-image:url(../img/img/char_luna_this.png);}
+.img_item.char.luna_hi{width:5.1rem; height:7rem; background-image:url(../img/img/char_luna_hi.png);}
+
+.img_item.char.pos_sad{width:14.9rem; height:8rem; background-image:url(../img/img/char_pos_sad.png);}
+.img_item.char.pos_q{width:6.529rem; height:5.33rem; background-image:url(../img/img/char_pos_q.png);}
+.img_item.char.pos_qlg{width:6.8rem; height:6.4rem; background-image:url(../img/img/char_pos_qlg.png);}
+.img_item.char.pos_flex{width:11.6rem; height:9.571rem; background-image:url(../img/img/char_pos_flex.png);}
+
+.img_item.char.mel_run{width:2.86rem; height:3.4rem; background-image:url(../img/img/char_mel_run.png);}
+.img_item.char.mel_write{width:8.4rem; height:8rem; background-image:url(../img/img/char_mel_write.png);}
+
+/* **** img_item > 3d icon **** */
+#three .content li {flex:0 0 14rem; height:14rem;}
+.img_item.three {width:6.4rem; height:6.4rem;}
+.img_item.three.sm {width:4.8rem; height:4.8rem;}
+.img_item.three.move{background-image: url(../img/img/3d_move.png);}
+.img_item.three.fanfare{background-image: url(../img/img/3d_fanfare.png);}
+.img_item.three.new{background-image: url(../img/img/3d_new.png);}
+.img_item.three.usim{background-image: url(../img/img/3d_usim.png);}
+.img_item.three.esim{background-image: url(../img/img/3d_esim.png);}
+.img_item.three.nousim{background-image: url(../img/img/3d_nousim.png);}
+.img_item.three.yusim{background-image: url(../img/img/3d_yusim.png);}
+.img_item.three.person{background-image: url(../img/img/3d_person.png);}
+.img_item.three.person2{background-image: url(../img/img/3d_person2.png);}
+.img_item.three.business{background-image: url(../img/img/3d_business.png);}
+.img_item.three.business2{background-image: url(../img/img/3d_business2.png);}
+.img_item.three.family{width:7.2rem; background-image: url(../img/img/3d_family.png);}
+.img_item.three.auth{background-image: url(../img/img/3d_auth.png);}
+.img_item.three.credit{background-image: url(../img/img/3d_credit.png);}
+.img_item.three.sms{background-image: url(../img/img/3d_sms.png);}
+/* .img_item.three.security{width:5.4rem; height:6.5rem; background-image: url(../img/img/3d_security.png);} */
+.img_item.three.security{background-image: url(../img/img/3d_security.png);}
+.img_item.three.email{background-image: url(../img/img/3d_email.png);}
+.img_item.three.email2{background-image: url(../img/img/3d_email2.png);}
+.img_item.three.emailtime{background-image: url(../img/img/3d_emailtime.png);}
+.img_item.three.account{background-image: url(../img/img/3d_account.png);}
+.img_item.three.home{background-image: url(../img/img/3d_home.png);}
+.img_item.three.homex{background-image: url(../img/img/3d_homex.png);}
+.img_item.three.ars{background-image: url(../img/img/3d_ars.png);}
+.img_item.three.combi{background-image: url(../img/img/3d_combi.png);}
+.img_item.three.watch{background-image: url(../img/img/3d_watch.png);}
+.img_item.three.watch_a{background-image: url(../img/img/3d_watch_a.png);}
+.img_item.three.watch_g{background-image: url(../img/img/3d_watch_g.png);}
+.img_item.three.idcard1{background-image: url(../img/img/3d_idcard1.png);}
+.img_item.three.idcard2{background-image: url(../img/img/3d_idcard2.png);}
+.img_item.three.idcard3{background-image: url(../img/img/3d_idcard3.png);}
+.img_item.three.discount{width:2.6rem; height:2.65rem; background-image: url(../img/img/3d_discount.png);}
+
+
+
+.img_item.three.search{width:4rem; height:3.8rem; background-image: url(../img/img/3d_search.png);}
+.img_item.three.present{width:4.8rem; height:4.4rem; background-image: url(../img/img/3d_present.png);}
+.img_item.three.cost{width:3.3rem; height:4.1rem; background-image: url(../img/img/3d_cost.png);}
+.img_item.three.coin{width:4.3rem; height:3.8rem; background-image: url(../img/img/3d_coin.png);}
+.img_item.three.call{width:4.722rem; height:4.9rem; background-image: url(../img/img/3d_call.png);}
+.img_item.three.wifi{width:3.605rem; height:4.3rem; background-image: url(../img/img/3d_wifi.png);}
+.img_item.three.coupon{width:4.3rem; height:4.3rem; background-image: url(../img/img/3d_coupon.png);}
+.img_item.three.benefit{width:3.9rem; height:3.9rem; background-image: url(../img/img/3d_benefit.png);}
+.img_item.three.club{width:3.28rem; height:3.28rem; background-image: url(../img/img/3d_club.png);}
+.img_item.three.loc{width:2.4rem; height:2.4rem; background-image: url(../img/img/3d_loc.png);}
+.img_item.three.handcoin{width:5.3rem; height:5.5rem; background-image: url(../img/img/3d_handcoin.png);}
+    .img_item.three.handcoin.sm{width:3.8rem; height:3.7rem;}
+.img_item.three.faq{width:5.8rem; height:5.1rem; background-image: url(../img/img/3d_faq.png);}
+    .img_item.three.faq.sm{width:4.2rem; height:3.8rem;}
+.img_item.three.map{width:4.7rem; height:4.1rem; background-image: url(../img/img/3d_map.png);}
+.img_item.three.office{width:4.2rem; height:4.3rem; background-image: url(../img/img/3d_office.png);}
+.img_item.three.day{width:4.8rem; height:4.8rem; background-image: url(../img/img/3d_day.png);}
+.img_item.three.usim_comp{width:4.8rem; height:4.8rem; background-image: url(../img/img/3d_usim_comp.png);}
+
+/* **** img_item > line icon **** */
+#line .content li {flex: 0 0 14rem; height:14rem;}
+.img_item.line.join{width: 4.2rem; height: 4.2rem; background-image: url(../img/img/line_join.png);}
+.img_item.line.cost{width: 4.2rem; height: 4.2rem; background-image: url(../img/img/line_cost.png);}
+.img_item.line.set{width: 4.2rem; height: 4.2rem; background-image: url(../img/img/line_set.png);}
+.img_item.line.join{width: 4.2rem; height: 4.2rem; background-image: url(../img/img/line_join.png);}
+.img_item.line.time{width: 4.2rem; height: 4.2rem; background-image: url(../img/img/line_time.png);}
+.img_item.line.notice{width: 3.2rem; height: 3.6rem; background-image: url(../img/img/line_notice.png);}
+.img_item.line.gift{width: 3.3rem; height: 3.457rem; background-image: url(../img/img/line_gift.png);}
+.img_item.line.grade{width: 3.4rem; height: 4rem; background-image: url(../img/img/line_grade.png);}
+.img_item.line.coupon{width: 3.4rem; height: 4rem; background-image: url(../img/img/line_coupon.png);}
+.img_item.line.coin{width: 5.209rem; height: 3.6rem; background-image: url(../img/img/line_coin.png);}
+.img_item.line.pin{width: 2.696rem; height:3.048rem; background-image: url(../img/img/line_pin.png);}
+
+/* **** img_item > mini icon **** */
+#mini .content li {flex:0 0 14rem; height:14rem;}
+.img_item.mini {width:2rem; height:2rem;}
+.img_item.mini.sm {width:1.3rem; height:1.3rem;}
+.img_item.mini.coin2{background-image: url(../img/img/mini_coin2.png);}
+.img_item.mini.money{background-image: url(../img/img/mini_money.png);}
+.img_item.mini.cart{background-image: url(../img/img/mini_cart.png);}
+.img_item.mini.gift{background-image: url(../img/img/mini_gift.png);}
+.img_item.mini.gift_y{background-image: url(../img/img/mini_gift_y.png);}
+.img_item.mini.gift_p{background-image: url(../img/img/mini_gift_p.png);}
+.img_item.mini.gift_g{background-image: url(../img/img/mini_gift_g.png);}
+.img_item.mini.service{background-image: url(../img/img/mini_service.png);}
+.img_item.mini.wifi{background-image: url(../img/img/mini_wifi.png);}
+.img_item.mini.note{background-image: url(../img/img/mini_note.png);}
+.img_item.mini.doc{background-image: url(../img/img/mini_doc.png);}
+.img_item.mini.coin{background-image: url(../img/img/mini_coin.png);}
+.img_item.mini.bill{background-image: url(../img/img/mini_bill.png);}
+.img_item.mini.fire{background-image: url(../img/img/mini_fire.png);}
+.img_item.mini.usim{background-image: url(../img/img/mini_usim.png);}
+.img_item.mini.esim{background-image: url(../img/img/mini_esim.png);}
+.img_item.mini.write{background-image: url(../img/img/mini_write.png);}
+.img_item.mini.doc2{background-image: url(../img/img/mini_doc2.png);}
+.img_item.mini.box{background-image: url(../img/img/mini_box.png);}
+.img_item.mini.box2{background-image: url(../img/img/mini_box2.png);}
+.img_item.mini.done{background-image: url(../img/img/mini_done.png);}
+.img_item.mini.done2{background-image: url(../img/img/mini_done2.png);}
+.img_item.mini.cardcheck{background-image: url(../img/img/mini_card.png);}
+.img_item.mini.coin3{background-image: url(../img/img/mini_coin3.png);}
+.img_item.mini.call{background-image: url(../img/img/mini_call.png);}
+.img_item.mini.call2{background-image: url(../img/img/mini_call2.png);}
+.img_item.mini.call3{background-image: url(../img/img/mini_call3.png);}
+.img_item.mini.sms{background-image: url(../img/img/mini_sms.png);}
+.img_item.mini.data{background-image: url(../img/img/mini_data.png);}
+.img_item.mini.data2{background-image: url(../img/img/mini_data2.png);}
+.img_item.mini.kb{background-image: url(../img/img/mini_kb.png);}
+.img_item.mini.kbgray{background-image: url(../img/img/mini_kbgray.png);}
+.img_item.mini.kb2{background-image: url(../img/img/mini_kb2.png);}
+.img_item.mini.play{background-image: url(../img/img/mini_play.png);}
+.img_item.mini.heart{background-image: url(../img/img/mini_heart.png);}
+.img_item.mini.heart2{background-image: url(../img/img/mini_heart2.png);}
+.img_item.mini.heart3{background-image: url(../img/img/mini_heart3.png);}
+
+.img_item.mini.star{background-image: url(../img/img/mini_star.png);}
+.img_item.mini.star26{width:2.6rem; height:2.6rem; background-image: url(../img/img/mini_star.png);}
+.img_item.mini.star2{background-image: url(../img/img/mini_star2.png);}
+
+.img_item.mini.smile{background-image: url(../img/img/mini_smile.png);}
+.img_item.mini.smile2{background-image: url(../img/img/mini_smile2.png);}
+.img_item.mini.flight{background-image: url(../img/img/mini_flight.png);}
+.img_item.mini.phone{background-image: url(../img/img/mini_phone.png);}
+.img_item.mini.phone2{width:2.4rem; height:2.4rem; background-image: url(../img/img/mini_phone2.png);}
+.img_item.mini.phone3{background-image: url(../img/img/mini_phone3.png);}
+.img_item.mini.phone4{background-image: url(../img/img/mini_phone4.png);}
+.img_item.mini.phone5{background-image: url(../img/img/mini_phone5.png);}
+.img_item.mini.date{background-image: url(../img/img/mini_date.png);}
+.img_item.mini.pw{background-image: url(../img/img/mini_pw.png);}
+.img_item.mini.faceid{background-image: url(../img/img/mini_faceid.png);}
+.img_item.mini.face{background-image: url(../img/img/mini_face.png);}
+.img_item.mini.pattern{background-image: url(../img/img/mini_pattern.png);}
+.img_item.mini.id{background-image: url(../img/img/mini_id.png);}
+.img_item.mini.cut{background-image: url(../img/img/mini_cut.png);}
+.img_item.mini.location{background-image: url(../img/img/mini_location.png);}
+.img_item.mini.lock{background-image: url(../img/img/mini_lock.png);}
+.img_item.mini.card2{background-image: url(../img/img/mini_card2.png);}
+.img_item.mini.change{background-image: url(../img/img/mini_change.png);}
+
+/* **** img_item > flat icon **** */
+#flat .content li {flex:0 0 14rem; height:14rem;}
+.img_item.flat {width:2.8rem; height:2.8rem;}
+/* .img_item.flat.sm {width:1.3rem; height:1.3rem;} */
+.img_item.flat.warning{background-image: url(../img/img/flat_warning.png);}
+.img_item.flat.idcard{background-image: url(../img/img/flat_idcard.png);}
+.img_item.flat.phone{background-image: url(../img/img/flat_phone.png);}
+.img_item.flat.phone2{background-image: url(../img/img/flat_phone2.png);}
+.img_item.flat.phone4{background-image: url(../img/img/flat_phone4.png);}
+.img_item.flat.warning2{background-image: url(../img/img/flat_warning2.png);}
+.img_item.flat.lock{background-image: url(../img/img/flat_lock.png);}
+.img_item.flat.search{background-image: url(../img/img/flat_search.png);}
+.img_item.flat.usim{background-image: url(../img/img/flat_usim.png);}
+.img_item.flat.welfare{background-image: url(../img/img/flat_welfare.png);}
+.img_item.flat.house{background-image: url(../img/img/flat_house.png);}
+.img_item.flat.hand_money{background-image: url(../img/img/flat_hand_money.png);}
+.img_item.flat.flowerpot{background-image: url(../img/img/flat_flowerpot.png);}
+
+.img_item.flat.play{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_play.png);}
+.img_item.flat.star{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_star.png);}
+.img_item.flat.star_on{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_star_on.png);}
+.img_item.flat.heart{width:4.125rem; height:4rem; background-image: url(../img/img/flat_heart.png);}
+.img_item.flat.data{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_data.png);}
+.img_item.flat.data2{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_data2.png);}
+.img_item.flat.data3{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_data3.png);}
+.img_item.flat.phone3{width:6rem; height:6rem; background-image: url(../img/img/flat_phone3.png);}
+.img_item.flat.error{width:6rem; height:6rem; background-image: url(../img/img/flat_error.png);}
+.img_item.flat.write{width:2.5rem; height:2.5rem; background-image: url(../img/img/flat_write.png);}
+.img_item.flat.point1{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_point1.png);}
+.img_item.flat.point2{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_point2.png);}
+.img_item.flat.point3{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_point3.png);}
+.img_item.flat.starbucks{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_starbucks.png);}
+
+.img_item.flat.email{width:4rem; height:4rem; background-image: url(../img/img/flat_email.png);}
+.img_item.flat.chat{width:4rem; height:4rem; background-image: url(../img/img/flat_chat.png);}
+.img_item.flat.call{width:4rem; height:4rem; background-image: url(../img/img/flat_call.png);}
+.img_item.flat.gift{width:4rem; height:4rem; background-image: url(../img/img/flat_gift.png);}
+.img_item.flat.coupon{width:3.7rem; height:3.7rem; background-image: url(../img/img/flat_coupon.png);}
+.img_item.flat.coupon2{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_coupon2.png);}
+.img_item.flat.grade{width:3.7rem; height:3.7rem; background-image: url(../img/img/flat_grade.png);}
+.img_item.flat.money{width:3.7rem; height:3.7rem; background-image: url(../img/img/flat_money.png);}
+.img_item.flat.search_bill{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_search_bill.png);}
+.img_item.flat.print{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_print.png);}
+.img_item.flat.phone5{width:2.6rem; height:2.4rem; background-image: url(../img/img/flat_phone5.png);}
+.img_item.flat.store{width:3.6rem; height:3.4rem; background-image: url(../img/img/flat_store.png);}
+.img_item.flat.cert{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_cert.png);}
+
+.img_item.flat.cahnge{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_change.png);}
+.img_item.flat.cahnge2{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_change2.png);}
+.img_item.flat.doc{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_doc.png);}
+.img_item.flat.doc2{width:4.4rem; height:4.4rem; background-image: url(../img/img/flat_doc2.png);}
+.img_item.flat.doc3{width:4rem; height:4rem; background-image: url(../img/img/flat_doc3.png);}
+.img_item.flat.doc4{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_doc4.png);}
+.img_item.flat.down{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_down.png);}
+
+.img_item.flat.location{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_location.png);}
+.img_item.flat.box{width:4rem; height:4rem; background-image: url(../img/img/flat_box.png);}
+.img_item.flat.touch{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_touch.png);}
+.img_item.flat.promotion{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_promotion.png);}
+
+
+/* **** img_item > icon **** */
+#icon .content li {flex:0 0 14rem; height: 14rem;}
+.img_item.icon.search{width:2rem; height:2rem; background-image: url(../img/img/icon_search.png);}
+.img_item.icon.calendar{width:2rem; height:2rem; background-image: url(../img/img/icon_calendar.png);}
+.img_item.icon.add{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_add.png);}
+.img_item.icon.add_blue{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_add_blue.png);}
+.img_item.icon.more{width:3.2rem; height:3.2rem; background-image: url(../img/img/icon_more.png);}
+.img_item.icon.camera{width:2rem; height:2rem; background-image: url(../img/img/icon_camera.png);}
+.img_item.icon.doc{width:2rem; height:2rem; background-image: url(../img/img/icon_doc.png);}
+.img_item.icon.doc16{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_doc16.png);}
+.img_item.icon.download{width:2rem; height:2rem; background-image: url(../img/img/icon_download.png);}
+.img_item.icon.download2{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_download2.png);}
+.img_item.icon.download3{width:2rem; height:2rem; background-image: url(../img/img/icon_download3.png);}
+.img_item.icon.filter{width:2rem; height:2rem; background-image: url(../img/img/icon_filter.png);}
+.img_item.icon.write{width:2rem; height:2rem; background-image: url(../img/img/icon_write.png);}
+.img_item.icon.delete{width:2rem; height:2rem; background-image: url(../img/img/icon_delete.png);}
+.img_item.icon.alert{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_alert.png);}
+
+.img_item.icon.select{width:2rem; height:2rem; background-image: url(../img/img/icon_select.png);}
+.img_item.icon.select12{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_select.png);}
+.img_item.icon.select_close{width:2rem; height:2rem; background-image: url(../img/img/icon_select_close.png);}
+
+.img_item.icon.open{width:2rem; height:2rem; background-image: url(../img/img/icon_open.png);}
+.img_item.icon.open12{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_open.png);}
+.img_item.icon.close{width:2rem; height:2rem; background-image: url(../img/img/icon_close.png);}
+.img_item.icon.open2{width:2.4rem; height:2.4rem; background-image: url(../img/img/icon_open2.png);}
+.img_item.icon.close2{width:2.4rem; height:2.4rem; background-image: url(../img/img/icon_close2.png);}
+.img_item.icon.open3{width:3.2rem; height:3.2rem; background-image: url(../img/img/icon_open3.png);}
+.img_item.icon.close3{width:3.2rem; height:3.2rem; background-image: url(../img/img/icon_close3.png);}
+.img_item.icon.open4{width:2rem; height:2rem; background-image: url(../img/img/icon_open4.png);}
+.img_item.icon.close4{width:2rem; height:2rem; background-image: url(../img/img/icon_close4.png);}
+.img_item.icon.open5{width:2rem; height:2rem; background-image: url(../img/img/icon_open5.png);}
+.img_item.icon.close5{width:2rem; height:2rem; background-image: url(../img/img/icon_close5.png);}
+
+.img_item.icon.right{width:2rem; height:2rem; background-image: url(../img/img/icon_right.png);}
+.img_item.icon.right.sm{width:1.2rem; height:1.2rem;}
+.img_item.icon.right_black{width:2rem; height:2rem; background-image: url(../img/img/icon_right_black.png);}
+.img_item.icon.right_black.sm{width:1.2rem; height:1.2rem;}
+.img_item.icon.right_black_12{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_right_black_12.png);}
+.img_item.icon.right_blue{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_right_blue.png);}
+
+.img_item.icon.close_w{width:2rem; height:2rem; background-image: url(../img/img/icon_close_w.png);}
+.img_item.icon.close24_w{width:2.4rem; height:2.4rem; background-image: url(../img/img/icon_close24_w.png);}
+.img_item.icon.close12_w{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_close12_w.png);}
+.img_item.icon.close12{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_close12.png);}
+.img_item.icon.prev_w{width:2rem; height:2rem; background-image: url(../img/img/icon_prev_w.png);}
+.img_item.icon.next_w{width:2rem; height:2rem; background-image: url(../img/img/icon_next_w.png);}
+.img_item.icon.data{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_data.png);}
+.img_item.icon.tel{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_tel.png);}
+.img_item.icon.text{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_text.png);}
+.img_item.icon.data2{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_data2.png);}
+.img_item.icon.tel2{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_tel2.png);}
+.img_item.icon.text2{width:1.2rem; height:1.2rem; background-image: url(../img/img/icon_text2.png);}
+.img_item.icon.location{width:2.3rem; height:2.3rem; background-image: url(../img/img/icon_location.png);}
+.img_item.icon.kb{width:3rem; height:3rem; background-image: url(../img/img/icon_kb.png);}
+
+.img_item.icon.icon1{width:3.97rem; height:3.738rem; background-image: url(../img/img/icon_icon1.png);}
+.img_item.icon.icon2{width:3.97rem; height:3.738rem; background-image: url(../img/img/icon_icon2.png);}
+.img_item.icon.icon3{width:3.97rem; height:3.738rem; background-image: url(../img/img/icon_icon3.png);}
+
+.img_item.icon.tel3{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_tel3.png);}
+.img_item.icon.text3{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_text3.png);}
+.img_item.icon.data3{width:1.6rem; height:1.6rem; background-image: url(../img/img/icon_data3.png);}
+
+
+.img_item.map.current{width:2.4rem; height:2.4rem; background-image: url(../img/img/map_current.png);}
+.img_item.map.reset{width:2.4rem; height:2.4rem; background-image: url(../img/img/map_reset.png);}
+.img_item.map.sizeup{width:2.2rem; height:2.2rem; background-image: url(../img/img/map_sizeup.png);}
+.img_item.map.sizedown{width:2.2rem; height:2.2rem; background-image: url(../img/img/map_sizedown.png);}
+.img_item.map.ico{width:2rem; height:2rem; background-image: url(../img/img/map_ico.png);}
+.img_item.map.menu{width:2rem; height:2rem; background-image: url(../img/img/map_menu.png);}
+
+
+/* **** img_item > spr **** */
+#spr .content li {flex:0 0 14rem; height: 14rem;}
+#spr .content li:first-child {flex-basis:auto;}
+.spr12 {display:inline-block; width:1.2rem; height:1.2rem; background-image:url(../../img/common/spr_icon_12.png); background-repeat:no-repeat; background-size:20rem auto;}
+.spr20 {display:inline-block; width:2rem; height:2rem; background-image:url(../../img/common/spr_icon_20.png); background-repeat:no-repeat; background-size:40rem auto;}
+
+.spr24 {display:inline-block; width:2.4rem; height:2.4rem; background-image:url(../../img/common/spr_icon_24.png); background-repeat:no-repeat; background-size:20rem auto;}
+.spr24_w {display:inline-block; width:2.4rem; height:2.4rem; background-image:url(../../img/common/spr_icon_w_24.png); background-repeat:no-repeat; background-size:20rem auto;}
+
+/* **** img_item > bullet **** */
+#bullet .content li {flex:0 0 14rem; height: 14rem;}
+.img_item.bullet.star{width:0.7rem; height:0.7rem; background-image: url(../img/img/bullet_star.png);}
+.img_item.bullet.star_blue{width:0.7rem; height:0.7rem; background-image: url(../img/img/bullet_star_blue.png);}
+.img_item.bullet.error{width:1.2rem; height:1.2rem; background-image: url(../img/img/bullet_error.png);}
+.img_item.bullet.note{width:1.2rem; height:1.2rem; background-image: url(../img/img/bullet_note.png);}
+
+/* **** img_item > bank **** */
+#bank .content li {flex:0 0 14rem; height:14rem;}
+.img_item.bank {width:4rem; height:4rem;}
+.img_item.bank.sm {width:3.2rem; height:3.2rem;}
+.img_item.bank.kb{background-image: url(../img/img/bank_kb.png);}
+.img_item.bank.shinhan{background-image: url(../img/img/bank_shinhan.png);}
+.img_item.bank.woori{background-image: url(../img/img/bank_woori.png);}
+.img_item.bank.hana{background-image: url(../img/img/bank_hana.png);}
+.img_item.bank.ibk{background-image: url(../img/img/bank_ibk.png);}
+.img_item.bank.nh{background-image: url(../img/img/bank_nh.png);}
+.img_item.bank.nh2{background-image: url(../img/img/bank_nh2.png);}
+.img_item.bank.kakao{background-image: url(../img/img/bank_kakao.png);}
+.img_item.bank.toss{background-image: url(../img/img/bank_toss.png);}
+.img_item.bank.sh{background-image: url(../img/img/bank_sh.png);}
+.img_item.bank.post{background-image: url(../img/img/bank_post.png);}
+.img_item.bank.sc{background-image: url(../img/img/bank_sc.png);}
+.img_item.bank.kbank{background-image: url(../img/img/bank_kbank.png);}
+.img_item.bank.gwangju{background-image: url(../img/img/bank_gwangju.png);}
+.img_item.bank.daegu{background-image: url(../img/img/bank_daegu.png);}
+.img_item.bank.forest{background-image: url(../img/img/bank_forest.png);}
+.img_item.bank.sb{background-image: url(../img/img/bank_sb.png);}
+.img_item.bank.saemaeul{background-image: url(../img/img/bank_saemaeul.png);}
+.img_item.bank.bnk{background-image: url(../img/img/bank_bnk.png);}
+.img_item.bank.shinhyup{background-image: url(../img/img/bank_shinhyup.png);}
+.img_item.bank.citi{background-image: url(../img/img/bank_citi.png);}
+.img_item.bank.america{background-image: url(../img/img/bank_america.png);}
+
+.img_item[class*="c_"] {width:4rem; height:4rem;}
+.img_item.c_004 {background-image: url(../img/img/bank_kb.png);} /* 국민은행 */
+.img_item.c_003 {background-image: url(../img/img/bank_ibk.png);} /* 기업은행 */
+.img_item.c_011 {background-image: url(../img/img/bank_nh.png);} /* NH농협은행 */
+.img_item.c_012 {background-image: url(../img/img/bank_nh2.png);} /* 농협회원조합 */
+.img_item.c_088 {background-image: url(../img/img/bank_shinhan.png);}/* 신한은행 */
+.img_item.c_002 {background-image: url(../img/img/bank_kdb.png);} /* 산업은행 */
+.img_item.c_020 {background-image: url(../img/img/bank_woori.png);} /* 우리은행 */
+.img_item.c_027 {background-image: url(../img/img/bank_citi.png);} /* 한국씨티은행 */
+.img_item.c_081 {background-image: url(../img/img/bank_hana.png);} /* 하나은행 */
+.img_item.c_023 {background-image: url(../img/img/bank_sc.png);} /* SC제일은행 */
+.img_item.c_039 {background-image: url(../img/img/bank_bnk.png);} /* 경남은행 ********** */
+.img_item.c_034 {background-image: url(../img/img/bank_gwangju.png);} /* 광주은행 */
+.img_item.c_031 {background-image: url(../img/img/bank_daegu.png);} /* 대구은행 */
+.img_item.c_060 {background-image: url(../img/img/bank_america.png);} /* 뱅크오프아메리카 */
+.img_item.c_032 {background-image: url(../img/img/bank_bnk.png);} /* 부산은행 ********** */
+.img_item.c_064 {background-image: url(../img/img/bank_forest.png);} /* 산림조합중앙회 */
+.img_item.c_050 {background-image: url(../img/img/bank_sb.png);} /* 저축은행 */
+.img_item.c_045 {background-image: url(../img/img/bank_saemaeul.png);} /* 새마을금고중앙회 */
+.img_item.c_007 {background-image: url(../img/img/bank_sh.png);} /* 수협은행 */
+.img_item.c_048 {background-image: url(../img/img/bank_shinhyup.png);} /* 신협중앙회 */
+.img_item.c_071 {background-image: url(../img/img/bank_post.png);} /* 우체국 */
+.img_item.c_037 {background-image: url(../img/img/bank_gwangju.png);} /* 전북은행 */
+.img_item.c_035 {background-image: url(../img/img/bank_shinhan.png);} /* 제주은행 */
+.img_item.c_090 {background-image: url(../img/img/bank_kakao.png);} /* 카카오뱅크 */
+.img_item.c_089 {background-image: url(../img/img/bank_kbank.png);} /* 케이뱅크 */
+
+/* **** img_item > stock **** */
+#stock .content li {flex:0 0 14rem; height:14rem;}
+.img_item.stock {width:4rem; height:4rem;}
+.img_item.stock.sm {width:3.2rem; height:3.2rem;}
+.img_item.stock.kb{background-image: url(../img/img/stock_kb.png);}
+.img_item.stock.hana{background-image: url(../img/img/stock_hana.png);}
+.img_item.stock.nh{background-image: url(../img/img/stock_nh.png);}
+.img_item.stock.shinhan{background-image: url(../img/img/stock_shinhan.png);}
+.img_item.stock.daesin{background-image: url(../img/img/stock_daesin.png);}
+.img_item.stock.mirae{background-image: url(../img/img/stock_mirae.png);}
+.img_item.stock.ss{background-image: url(../img/img/stock_ss.png);}
+.img_item.stock.hanwha{background-image: url(../img/img/stock_hanwha.png);}
+.img_item.stock.shinyoung{background-image: url(../img/img/stock_shinyoung.png);}
+.img_item.stock.kyobo{background-image: url(../img/img/stock_kyobo.png);}
+.img_item.stock.sk{background-image: url(../img/img/stock_sk.png);}
+.img_item.stock.hyundai{background-image: url(../img/img/stock_hyundai.png);}
+.img_item.stock.yuanta{background-image: url(../img/img/stock_yuanta.png);}
+.img_item.stock.eugenefn{background-image: url(../img/img/stock_eugenefn.png);}
+.img_item.stock.ebest{background-image: url(../img/img/stock_ebest.png);}
+.img_item.stock.cape{background-image: url(../img/img/stock_cape.png);}
+.img_item.stock.kiwoom{background-image: url(../img/img/stock_kiwoom.png);}
+.img_item.stock.korea{background-image: url(../img/img/stock_korea.png);}
+.img_item.stock.hi{background-image: url(../img/img/stock_hi.png);}
+.img_item.stock.db{background-image: url(../img/img/stock_db.png);}
+.img_item.stock.meritz{background-image: url(../img/img/stock_meritz.png);}
+.img_item.stock.bookook{background-image: url(../img/img/stock_bookook.png);}
+
+.img_item.c_218 {background-image: url(../img/img/stock_kb.png);} /* KB증권 */
+.img_item.c_261 {background-image: url(../img/img/stock_kyobo.png);} /* 교보증권 */
+.img_item.c_267 {background-image: url(../img/img/stock_daesin.png);} /* 대신증권 */
+.img_item.c_279 {background-image: url(../img/img/stock_db.png);} /* DB금융투자 */
+.img_item.c_287 {background-image: url(../img/img/stock_meritz.png);} /* 메리츠종합금융증권 */
+.img_item.c_238 {background-image: url(../img/img/stock_mirae.png);} /* 미래에셋대우 */
+.img_item.c_290 {background-image: url(../img/img/stock_bookook.png);} /* 부국증권 */
+.img_item.c_240 {background-image: url(../img/img/stock_ss.png);} /* 삼성증권 */
+.img_item.c_291 {background-image: url(../img/img/stock_shinyoung.png);} /* 신영증권 */
+.img_item.c_278 {background-image: url(../img/img/stock_shinhan.png);} /* 신한금융투자 */
+.img_item.c_266 {background-image: url(../img/img/stock_sk.png);} /* 에스케이증권 */
+.img_item.c_263 {background-image: url(../img/img/stock_hyundai.png);} /* 현대차증권 */
+.img_item.c_209 {background-image: url(../img/img/stock_yuanta.png);} /* 유안타증권 */
+.img_item.c_280 {background-image: url(../img/img/stock_eugenefn.png);} /* 유진투자증권 */
+.img_item.c_265 {background-image: url(../img/img/stock_ebest.png);} /* 이베스트투자증권 */
+.img_item.c_292 {background-image: url(../img/img/stock_cape.png);} /* 케이프투자증권 */
+.img_item.c_264 {background-image: url(../img/img/stock_kiwoom.png);} /* 키움증권 */
+.img_item.c_270 {background-image: url(../img/img/stock_hana.png);} /* 하나금융투자 */
+.img_item.c_262 {background-image: url(../img/img/stock_hi.png);} /* 하이투자증권 */
+.img_item.c_243 {background-image: url(../img/img/stock_korea.png);} /* 한국투자증권 */
+.img_item.c_269 {background-image: url(../img/img/stock_hanwha.png);} /* 한화투자증권 */
+.img_item.c_247 {background-image: url(../img/img/stock_nh.png);} /* NH투자증권 */
+
+/* **** img_item > card **** */
+#card .content li {flex:0 0 14rem; height:14rem;}
+.img_item.card {width:3.6rem; height:4.8rem;}
+.img_item.card.sm {width:2.4rem; height:3.2rem;}
+.img_item.card.kb{background-image: url(../img/img/card_kb.png);}
+.img_item.card.shinhan{background-image: url(../img/img/card_shinhan.png);}
+.img_item.card.hyundai{background-image: url(../img/img/card_hyundai.png);}
+.img_item.card.lotte{background-image: url(../img/img/card_lotte.png);}
+.img_item.card.bc{background-image: url(../img/img/card_bc.png);}
+.img_item.card.woori{background-image: url(../img/img/card_woori.png);}
+.img_item.card.ibk{background-image: url(../img/img/card_ibk.png);}
+.img_item.card.hana{background-image: url(../img/img/card_hana.png);}
+.img_item.card.toss{background-image: url(../img/img/card_toss.png);}
+.img_item.card.citi{background-image: url(../img/img/card_citi.png);}
+.img_item.card.nh{background-image: url(../img/img/card_nh.png);}
+.img_item.card.samsung{background-image: url(../img/img/card_samsung.png);}
+
+.img_item.c_kb{background-image: url(../img/img/card_kb.png);} /* 국민카드 */
+.img_item.c_sh{background-image: url(../img/img/card_shinhan.png);} /* 신한카드 */
+.img_item.c_ss{background-image: url(../img/img/card_samsung.png);} /* 삼성카드 */
+.img_item.c_hd{background-image: url(../img/img/card_hyundai.png);} /* 현대카드 */
+.img_item.c_lt{background-image: url(../img/img/card_lotte.png);} /* 롯데카드 */
+.img_item.c_bc{background-image: url(../img/img/card_bc.png);} /* BC카드 */
+.img_item.c_ha{background-image: url(../img/img/card_hana.png);} /* 하나카드 */
+.img_item.c_nh{background-image: url(../img/img/card_nh.png);} /* NH카드 */
+.img_item.c_ct{background-image: url(../img/img/card_citi.png);} /* 씨티카드 */
+
+/* **** img_item > sns **** */
+#sns .content li {flex:0 0 14rem; height:14rem;}
+.img_item.sns {width:4rem; height:4rem;}
+.img_item.sns.kakao{background-image: url(../img/img/sns_kakao.png);}
+.img_item.sns.naver{background-image: url(../img/img/sns_naver.png);}
+.img_item.sns.apple{background-image: url(../img/img/sns_apple.png);}
+
+/* **** img_item > partner **** */
+#partner .content li {flex:0 0 14rem; height:14rem;}
+.img_item.partner {width:5.4rem; height:5.4rem;}
+.img_item.partner.kb_sec{background-image: url(../img/img/partner_kb_sec.png);}
+.img_item.partner.kb_life{background-image: url(../img/img/partner_kb_life.png);}
+.img_item.partner.kb_insure{background-image: url(../img/img/partner_kb_insure.png);}
+.img_item.partner.kb_capital{background-image: url(../img/img/partner_kb_capital.png);}
+.img_item.partner.kb_card{background-image: url(../img/img/partner_kb_card.png);}
+
+/* **** img_item > telco **** */
+.img_item.telco.skt{width: 4rem; height: 4rem; background-image: url(../img/img/telco_skt.png);}
+.img_item.telco.kt{width: 4rem; height: 4rem; background-image: url(../img/img/telco_kt.png);}
+.img_item.telco.uplus{width: 4rem; height: 4rem; background-image: url(../img/img/telco_uplus.png);}
+
+/* **** img_item > etc **** */
+.img_item.etc.usim01{width:18rem; height:21.742rem; background-image: url(../img/img/etc_usim01.png);}
+.img_item.etc.usim02{width:18rem; height:21.703rem; background-image: url(../img/img/etc_usim02.png);}
+.img_item.etc.usim03{width:18rem; height:21.703rem; background-image: url(../img/img/etc_usim03.png);}
+
+.img_item.etc.pdf{width:29.4rem; height:41.4rem; background-image: url(../img/img/etc_pdf.png);}
+
+.img_item.etc.sm.card_id{width:6.4rem; height:6.4rem; background-image: url(../img/img/etc_card_id2.png);}
+.img_item.etc.sm.card_driver{width:6.4rem; height:6.4rem; background-image: url(../img/img/etc_card_driver2.png);}
+.img_item.etc.card_id{width:12.1rem; height:7.1rem; background-image: url(../img/img/etc_card_id.png);}
+.img_item.etc.card_driver{width:12.1rem; height:7.1rem; background-image: url(../img/img/etc_card_driver.png);}
+
+.img_item.etc.card{width:19.1rem; height:11.9rem; background-image: url(../img/img/etc_card.png);}
+
+.img_item.etc.usimcard1{width:36rem; height:20rem; background-image: url(../img/img/usimcard1.png);}
+.img_item.etc.usimcard2{width:36rem; height:20rem; background-image: url(../img/img/usimcard2.png);}
+.img_item.etc.usimcard3{width:36rem; height:20rem; background-image: url(../img/img/usimcard3.png);}
+
+.img_item.etc.credit{width:23.8rem; height:14.992rem; background-image: url(../img/img/etc_credit.png);}
+.img_item.etc.credit2{width:28.7rem; height:18.079rem; background-image: url(../img/img/etc_credit2.png);}
+.img_item.etc.idcard{width:23.8rem; height:14.992rem; background-image: url(../img/img/etc_idcard.png);}
+.img_item.etc.license{width:23.8rem; height:14.992rem; background-image: url(../img/img/etc_license.png);}
+.img_item.etc.ocr{width:28.6rem; height:13.6rem; background-image: url(../img/img/etc_ocr.png);}
+
+.img_item.data.intro1{width:27.6rem; height:9.5rem; background-image: url(../img/img/data_intro1.png);}
+.img_item.data.intro2{width:28.6rem; height:8.8rem; background-image: url(../img/img/data_intro2.png);}
+
+.img_item.ect.certification {width: 28rem; height: 39.4rem; background-image: url(../img/img/etc_certification.png);}
+
+/* 셀프개통 서비스 .img_item.data.open01{width:18rem; height:21.8rem; background-image: url(../img/img/data_open01.png);}
+.img_item.data.open02_1{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_1.png);}
+.img_item.data.open02_2{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_2.png);}
+.img_item.data.open02_3{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_3.png);}
+.img_item.data.open02_4{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_4.png);}
+.img_item.data.open03_1{width:11.4rem; height:14rem; background-image: url(../img/img/data_open03_1.png);}
+.img_item.data.open03_2{width:11.4rem; height:14rem; background-image: url(../img/img/data_open03_2.png);}
+.img_item.data.open04{width:18rem; height:21.8rem; background-image: url(../img/img/data_open04.png);}
+.img_item.data.open05{width:18rem; height:21.8rem; background-image: url(../img/img/data_open05.png);}
+.img_item.data.open06_1{width:8.957rem; height:11rem; background-image: url(../img/img/data_open06_1.png);}
+.img_item.data.open06_2{width:8.957rem; height:11rem; background-image: url(../img/img/data_open06_2.png);} */
+
+
+.img_item.etc.tv{width:8.4rem; height:6.5rem; background-image: url(../img/img/etc_tv.png);}
+.img_item.etc.computer{width:9.8rem; height:5.152rem; background-image: url(../img/img/etc_computer.png);}
+
+.img_item.etc.kb{width:3rem; height:3rem; background-image: url(../img/img/etc_kb.png);}
+.img_item.etc.delete{width:3.2rem; height:3.2rem; background-image: url(../img/img/etc_delete.png);}
+.img_item.etc.profile{width:6rem; height:6rem; background-image: url(../img/img/etc_profile.png);}
+.img_item.etc.myinfo{width:6rem; height:6rem; background-image: url(../img/img/img_myinfo.png);}
+.img_item.etc.check{width:6rem; height:6rem; background-image: url(../img/img/etc_check.png);}
+
+.img_item.etc.give{width:4.8rem; height:4.8rem; background-image: url(../img/img/etc_give.png);}
+.img_item.etc.take{width:4.8rem; height:4.8rem; background-image: url(../img/img/etc_take.png);}
+
+.img_item.etc.star{width:3.6rem; height:3.6rem; border-radius:3.6rem; background-image: url(../img/img/etc_star.png); box-shadow:0 0.1rem 0.3rem 0.1rem rgba(13,72,127, 0.1);}
+.img_item.etc.star_on{width:3.6rem; height:3.6rem; border-radius:3.6rem; background-image: url(../img/img/etc_star_on.png); box-shadow:0 0.1rem 0.3rem 0.1rem rgba(13,72,127, 0.1)}
+
+.img_item.etc.usimcard1{width:36rem; height:23.6rem; background-image: url(../img/img/etc_usimcard1.png);}
+.img_item.etc.usimcard2{width:36rem; height:23.6rem; background-image: url(../img/img/etc_usimcard2.png);}
+.img_item.etc.usimcard3{width:36rem; height:23.6rem; background-image: url(../img/img/etc_usimcard3.png);}
+
+
+.img_item.etc.bill{width:8rem; height:8rem; background-image: url(../img/img/etc_bill.png);}
+.img_item.etc.graph_check{width:4.8rem; height:0.6rem; background-image: url(../img/img/etc_graph_check.png);}
+
+.img_item.login.faceid{width:10rem; height:10rem; background-image: url(../img/img/login_faceid.png);}
+.img_item.login.faceid_on{width:10rem; height:10rem; background-image: url(../img/img/login_faceid_on.png);}
+.img_item.login.fp{width:10rem; height:10rem; background-image: url(../img/img/login_fp.png);}
+.img_item.login.fp_on{width:10rem; height:10rem; background-image: url(../img/img/login_fp_on.png);}

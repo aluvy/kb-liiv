@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <!-- <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> -->
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+
+                <h1 class="title hidden">modal popup</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">modal popup</h2>
+                </div>
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">모달팝업 아이디 규칙</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>
+                            버튼 아이디는 btn_화면아이디로 한다.<br>
+                            <strong class="fc_blue">ex) btn_MERG06P01</strong>
+                        </li>
+                        <li>
+                            레이어 아이디는 화면아이디로 한다.<br>
+                            <strong class="fc_blue">ex) MERG06P01</strong>
+                        </li>
+                        <li>
+                            한 화면아이디에 여러 개의 팝업이 있을경우 _2을 붙인다.<br>
+                            ex) <strong class="fc_blue">btn_MERG06P01_2</strong><br>
+                            ex) <strong class="fc_blue">MERG06P01_2</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">레이어팝업 샘플</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>레이어 팝업에는 우측 상단에 X 버튼이 없다.</li>
+                        <li class="red">팝업 타이틀은 호출 시 title 옵션에서 지정한다.</li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_MERG06P01" class="btn primary">타이틀 없는 레이어팝업</button>
+                    </div>
+                    <div class="btn_wrap mgt8">
+                        <button type="button" id="btn_MERG06P01_2" class="btn primary">타이틀 있는 레이어팝업</button>
+                    </div>
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">알럿팝업 샘플</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>알럿팝업은 레이어팝업과 유사하지만 좌우 여백이 다르다.</li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_MERG06P01_7" class="btn primary">알럿팝업</button>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">바텀팝업</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>하단에서 올라오는 팝업이다.</li>
+                        <li>max-height가 자동으로 계산되어 적용된다. (창높이-헤더높이)</li>
+                    </ul>
+                    <div class="btn_wrap mgt12 row">
+                        <button type="button" id="btn_MERG06P01_3" class="btn primary">바텀팝업</button>
+                        <button type="button" id="btn_noticeLayer" class="btn primary">notice 팝업</button>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">셀렉트박스 바텀팝업</h3>
+                    </div>
+                    <div class="data_sort">
+                        <span class="total">총 <strong>23</strong>개</span>
+                        <span class="sort">
+                            <button type="button" id="btn_MERG06P01_6" class="btn_sort">인기순</button>
+                        </span>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">자유타이틀 팝업</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>타이틀 영역을 자유롭게 사용하고 싶을 때는 팝업레이어에 헤더영역(.ly_hd)을 포함하고 원하는 스타일을 준다.</li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_MERG06P01_4" class="btn primary">자유타이틀 팝업</button>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">풀페이지 팝업</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>팝업 호출 시 type : fullpopup 으로 적용한다.</li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_MERG06P01_5" class="btn primary">풀페이지 팝업</button>
+                    </div>
+                </div>
+
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">변수 팝업</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li>팝업 호출을 변수에 넣어서 호출하면 해당 팝업을 open(), close() 함수로 제어할 수 있다.</li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_MERG06P01_8" class="btn primary">변수 팝업</button>
+                    </div>
+                </div>
+                
+
+                
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">모달팝업 옵션</h3>
+                    </div>
+                    <h4 class="tit_item">팝업 호출 문 예제</h4>
+                    <div class="box_item no_shadow">
+<pre style="padding:1rem; font-size:1.2rem; font-family:inherit;">
+$(document).on('click', '#btn_MERG06P01', function(){
+    $.ohyLayer({
+        titleUse: true,
+        title: "타이틀명",
+        content: '#MERG06P01',
+        type: 'bottom',
+        dimAct: true,
+    });
+});
+</pre>
+                    </div>
+                    <ul class="bull_type lg">
+                        <li>
+                            <strong>titleUse</strong><br>
+                            true / false (default: true)<br>
+                            타이틀 사용 여부
+                        </li>
+                        <li>
+                            <strong>title</strong><br>
+                            문자열 (default: "알림")<br>
+                            컨펌창 타이틀
+                        </li>
+                        <li>
+                            <strong>content</strong><br>
+                            문자열<br>
+                            호출할 팝업 HTML컨텐츠의 ID (ex) #MERG06P01
+                        </li>
+                        <li>
+                            <strong>type</strong><br>
+                            alert, confirm, conrifm alert, buttom, photo, fullpopup (default: confirm)<br>
+                            레이어 타입 지정 (타입 별 디자인과 동작이 다르다.)
+                        </li>
+                        <li>
+                            <strong>closeUse</strong><br>
+                            true / false (default: true)<br>
+                            오른쪽 상단 닫기버튼 노출 (X버튼에는 {content}_dev id가 자동 생성됨)
+                        </li>
+                        <li>
+                            <strong>closeAct</strong><br>
+                            true / false (default: true)<br>
+                            오른쪽 상단 닫기버튼 동작 유무
+                        </li>
+                        <li>
+                            <strong>dimAct</strong><br>
+                            true / false (default: falst)<br>
+                            dim 클릭 시 팝업 닫기 동작 사용 유무
+                        </li>
+                        <li>
+                            <strong>openAuto</strong><br>
+                            true / false (default: false)<br>
+                            레이어를 변수명으로 호출할 때 정의한다
+                        </li>
+                    </ul>
+                </div>
+
+                
+
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">달력 선택 팝업</h3>
+                    </div>
+                    <ul class="star_type">
+                        <li><a href="cmn/cal_popup.html" target="blank">http://127.0.0.1:5500/pub/html/cmn/cal_popup.html</a></li>
+                    </ul>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" id="btn_cal" class="btn primary">달력 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+
+
+
+
+<!-- layer -->
+<div id="MERG06P01" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            작성중인 가입정보가 있습니다.<br>
+            이어서 작성하시겠습니까?
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">다시 작성</button>
+            <button type="button" class="btn primary" data-action="close">이어서 작성</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<!-- layer -->
+<div id="MERG06P01_2" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            기본텍스트
+            <div class="self_error">
+                <p>
+                    번호이동 사전동의 내역이 확인되지 않았습니다.<br>
+                    이동 전 통신사에서 번호이동 사전동의 후<br>
+                    진행해 주시기 바랍니다.
+                </p>
+                <div class="error_info">
+                    <p class="code">
+                        오류코드
+                        <strong>BF1039</strong>
+                    </p>
+                    <p class="cs">
+                        <span>KB Liiv M 고객센터 1522-9999</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+			<div class="radio_group">
+				<div class="radio_item box_type">
+					<input type="radio" id="line1" name="line" checked>
+					<label for="line1" class="label">
+						<span class="line_group">
+							<span class="badge skt">SKT</span>
+							<span>010-12**-56**</span>
+						</span>
+					</label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="line2" name="line">
+					<label for="line2" class="label">
+						<span class="line_group">
+							<span class="badge skt">SKT</span>
+							<span>010-98**-75**</span>
+						</span>
+					</label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="line3" name="line">
+					<label for="line3" class="label">
+						<span class="line_group">
+							<span class="badge skt">SKT</span>
+							<span>010-98**-75**</span>
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+
+<!-- layer -->
+<div id="MERG06P01_3" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="radio_group">
+				<div class="radio_item box_type">
+					<input type="radio" id="list1" name="allList" checked>
+					<label for="list1" class="label">
+                        <span class="line_group">
+                            <span class="badge yellow_light">번호이동</span>
+                            <span>2022.12.22 신청</span>
+                        </span>
+                    </label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="list2" name="allList">
+					<label for="list2" class="label">
+                        <span class="line_group">
+                            <span class="badge blue_light">신규가입</span>
+                            <span>2022.12.22 신청</span>
+                        </span>
+                    </label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="list3" name="allList">
+					<label for="list3" class="label">
+                        <span class="line_group">
+                            <span class="badge blue_light">신규가입</span>
+                            <span>2022.12.22 신청</span>
+                        </span>
+                    </label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="list4" name="allList">
+					<label for="list4" class="label">
+                        <span class="line_group">
+                            <span class="badge cyan_light">명의변경</span>
+                            <span>2022.12.22 신청</span>
+                        </span>
+                    </label>
+				</div>
+				<div class="radio_item box_type">
+					<input type="radio" id="list5" name="allList">
+					<label for="list5" class="label">
+                        <span class="line_group">
+                            <span class="badge cyan_light">명의변경</span>
+                            <span>2022.12.22 신청</span>
+                        </span>
+                    </label>
+				</div>
+			</div>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+
+<!-- layer : free head -->
+<div id="MERG06P01_4" class="layerHTML">
+    <div class="pdfpreview_head ly_hd">
+        <h1 class="pop_h1">약관 상세</h1>
+        <a href="#none" class="btn_download"><span class="img_item icon download"><span class="blind">다운로드</span></span></a>
+    </div>
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="pdf_preview"></div>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" data-action="close">동의</button>
+        </div>
+    </div>
+</div>
+<!-- //layer : free head -->
+
+
+
+
+<!-- layer -->
+<div id="MERG06P01_5" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            
+
+            <div class="tit_sec_wrap">
+                <h3 class="tit_sec">풀페이지 팝업</h3>
+            </div>
+
+            <div class="cam_area">
+                <div class="btn_wrap">
+                    <button type="button" id="MERG06P01_5_1" class="btn primary">카드촬영</button>
+                </div>
+                <p class="txt_alert">카드 촬영 시 정보가 자동으로 입력됩니다.</p>
+            </div>
+
+
+
+            <div class="login_cert_wrap">
+                <h3 class="hidden">카드 촬영하기</h3>
+
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">카드종류</h3>
+                </div>
+
+                <!-- 카드 종류 23/01/19 변경 -->
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="item_content">
+                            <div class="select">
+                                <select>
+                                    <option>카드종류를 선택해주세요</option>
+                                    <option value="option1">국민카드</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //카드 종류 -->
+
+                <h3 class="blind">카드 번호입력</h3>
+
+                <div class="form_area">
+                    <div class="form_group col">
+                        <div class="form_item card_type">
+                            <div class="item_content">
+                                <div class="label">카드번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 첫번째" class="focus">
+                                </div>
+                            </div>
+                            
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 두번째" class="focus">
+                                </div>
+                            </div>
+    
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 세번째" class="focus">
+                                </div>
+                            </div>
+    
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 네번째" class="focus">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>    
+                    </div>
+
+                    <ul class="star_type">
+                        <li>본인명의 개인 신용카드로 본인확인이 가능합니다. (법인카드, 체크카드, 가족카드, 선불카드 불가)</li>
+                        <li>비씨카드는 비씨로고가 표시된 카드만 이용 가능합니다.</li>
+                    </ul>
+                </div>
+
+                <h3 class="blind">휴대폰 번호 입력</h3>
+
+                <div class="phone_area">
+                    <div class="form_group">
+                        <div class="form_item">
+                            <div class="item_content">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-없이 입력해주세요'">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                </div>
+
+                <h3 class="blind">카드인증서비스 이용약관 동의</h3>
+
+                <div class="agree_area">
+                    <div class="check_group border">
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree3">
+                            <label for="agree3" class="label"><span>카드인증서비스 이용약관 동의 <strong>[필수]</strong></span></label>
+                        </div>
+                        <div class="check_sub_group">
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_1" name="agree1">
+                                <label for="agree1_1" class="label"><span>본인확인 서비스 이용약관</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_2" name="agree1">
+                                <label for="agree1_2" class="label"><span>카드사 서비스 이용약관</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_3" name="agree1">
+                                <label for="agree1_3" class="label"><span>개인정보 수집 및 이용동의</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_4" name="agree1">
+                                <label for="agree1_4" class="label"><span>고유식별정보 처리 동의</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <button type="button" class="btn primary">ARS인증요청</button>
+                </div>
+                <ul class="star_type">
+                    <li>ARS 연결 후 비밀번호 앞 2자리를 입력해주세요.</li>
+                    <li>통화 종료 후 '인증 완료'를 선택해야 본인인증이 완료됩니다.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" data-action="close">인증완료</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<!-- layer : select bottom sheet -->
+<div id="MERG06P01_6" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li><a href="#none" role="button" title="인기순">인기순</a></li>
+                    <li><a href="#none" role="button" title="추천순">추천순</a></li>
+                    <li><a href="#none" role="button" title="가격 높은 순">가격 높은 순</a></li>
+                    <li><a href="#none" role="button" title="가격 낮은 순">가격 낮은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 높은 순">데이터 높은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 낮은 순">데이터 낮은 순</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+<!-- layer : select bottom sheet -->
+
+<!-- layer -->
+<div id="MERG06P01_8" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            <p>본인인증을 위해 KB국민인증서 앱을 실행합니다.</p>
+            <ul class="star_type">
+                <li>취소 버튼을 누르면 팝업이 닫힙니다.</li>
+                <li>인증완료 버튼을 누르면 새로운 팝업이 뜹니다.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" id="btn_MERG06P01_8_1">인증완료</button>
+        </div>
+    </div>
+</div>
+<!-- layer -->
+
+<!-- layer -->
+<div id="MERG06P01_8_1" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+        <div class="section">
+            확인을 누르면 열려있는 팝업 2개가 모두 닫힙니다.
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item">
+                    <div class="item_content">
+                        <div class="label">휴대폰번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="'-없이 입력해주세요'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close" id="btn_MERG06P01_8_1_close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- layer -->
+
+
+<div id="MERG06P01_7" class="layerHTML">
+    <div class="ly_cnt ly_alert">
+        <div class="section center">
+            <div class="section">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="item_content">
+                            <div class="label">휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-없이 입력해주세요'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+            </div>
+            알럿 팝업 샘플
+            <div class="section">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="item_content">
+                            <div class="label">휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-없이 입력해주세요'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<div id="noticeLayer" class="layerHTML">
+    <div class="ly_cnt">
+        <a href="">
+            <img src="/img/event/new/notice_event01.png" alt="모두에게 매일매일 선물이 팡팡! 첫 만남 이벤트, CGV 영화티켓 2장 (10명), 여기요 상품권 (20명), KB포인트리 (전원) 2023.4.1(토) ~ 4.30(일) 까지 참여 가능">
+        </a>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn today" data-action="close">오늘 그만보기</button>
+            <button type="button" class="btn" data-action="close">닫기</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).on("click", "#btn_MERG06P01", ()=>{
+        $.ohyLayer({
+            titleUse : false,
+            content:'#MERG06P01',
+            type:'confirm',
+        });
+    })
+
+    $(document).on("click", "#btn_MERG06P01_2", ()=>{
+        $.ohyLayer({
+            title: "오류코드 안내",
+            content:'#MERG06P01_2',
+            type:'confirm',
+        });
+    })
+
+    $(document).on("click", "#btn_MERG06P01_3", ()=>{
+        $.ohyLayer({
+            title:'전체내역',
+            content:'#MERG06P01_3',
+            type:'bottom',
+        });
+    });
+
+    $(document).on("click", "#btn_MERG06P01_4", ()=>{
+        $.ohyLayer({
+            content:'#MERG06P01_4',
+            type:'confirm',
+            closeUse:false,
+        });
+    })
+
+    $(document).on("click", "#btn_MERG06P01_5", ()=>{
+        $.ohyLayer({
+            title:"풀페이지",
+            content:'#MERG06P01_5',
+            type:'fullpopup',
+        });
+    })
+
+    $(document).on("click", ".btn_sort", ()=>{
+        $.ohyLayer({
+            title:"정렬",
+            content:'#MERG06P01_6',
+            type:'bottom',
+            dimAct:true,
+        });
+    })
+
+    $(document).on("click", "#btn_MERG06P01_7", ()=>{
+        $.ohyLayer({
+            titleUse:false,
+            content:'#MERG06P01_7',
+            type:'confirm alert',
+        });
+    })
+
+    $(document).on("click", "#MERG06P01_5_1", ()=>{
+        $.ohyLayer({
+            titleUse : false,
+            content:'#MERG06P01',
+            type:'bottom',
+        });
+    })
+
+
+    
+    //변수 레이어 시작
+    $(()=>{
+        var _MERG06P01_8 =  $.ohyLayer({
+                                openAuto: true,
+                                title: 'KB국민인증서 본인인증',
+                                content: '#MERG06P01_8',
+                                type: 'confirm',
+                                closeUse: false,
+                                closeAct: false,
+                            });
+        $(document).on("click", "#btn_MERG06P01_8", ()=>{ _MERG06P01_8.open() });
+        $(document).on('click', "#btn_MERG06P01_8_1", ()=>{
+            $.ohyLayer({
+                title: '컨펌 레이어',
+                content: '#MERG06P01_8_1',
+                type: 'confirm',
+                closeUse: false,
+            });
+        });
+        $(document).on("click", "#btn_MERG06P01_8_1_close", ()=>{ _MERG06P01_8.close() });
+    })
+
+    // notice
+    $('#btn_noticeLayer').on('click', function(){
+        $.ohyLayer({
+            titleUse: false,
+            content: '#noticeLayer',
+            type: 'notice',
+            closeUse: false,
+        });
+    });
+
+    $("#btn_cal").on("click", function(){
+        _calendar.open( 'start_cal', '', '', '.');
+    })
+
+</script>
+</body>
+</html>

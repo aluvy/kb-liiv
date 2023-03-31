@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+.cmn_btn {margin: 2rem;}
+
+/* calendar 구성요소*/
+.cal_month {position:relative; padding:1rem 3.4rem; border-bottom:1px solid var(--fc_09, #ebeef0); font-size:0; text-align:center;}
+.cal_month .year_txt {display: inline-block; width:11.2rem; font-size:1.8rem; color:var(--fc_02, #26282c); font-weight:700; line-height:3.4rem;}
+.cal_month .year_txt .number {font-size:1.9rem;}
+.cal_month .btn {text-align:center; vertical-align: top;}
+.cal_month .btn.today {position:absolute; left:0; top:.9rem; min-width:4.8rem; height:3.4rem; font-size:1.4rem; text-decoration:underline; white-space:nowrap;}
+.cal_month .btn_ico {width:auto; height:3.4rem; padding:.6rem .3rem;}
+.cal_month .btn_ico:before {display:inline-block; content:''; width: 2rem; height: 2rem; background-image: url(/mnbank/app/img/common/spr_ico_20x.png); background-size: 25rem auto;}
+.cal_month .btn_ico.first:before {background-position: -4rem -2rem;}
+.cal_month .btn_ico.prev:before {background-position: -6rem -2rem;}
+.cal_month .btn_ico.next:before {background-position: -8rem -2rem;}
+.cal_month .btn_ico.end:before {background-position: -10rem -2rem;}
+.cal_month .btn_ico:disabled {background:var(--bg_01, #fff);}
+.cal_month .btn_ico[disabled].first:before {background-position: -4rem -4rem;}
+.cal_month .btn_ico[disabled].prev:before {background-position: -6rem -4rem;}
+.cal_month .btn_ico[disabled].next:before {background-position: -8rem -4rem;}
+.cal_month .btn_ico[disabled].end:before {background-position: -10rem -4rem;}
+
+.cal_tbl {padding-top:2rem;}
+.cal_tbl th {padding-bottom:0.2rem; font-size:1.4rem; color:var(--fc_04, #696e76); font-weight:400; text-align:center;}
+.cal_tbl th.saturday,
+.cal_tbl th.sunday {color:#707070;}
+.cal_tbl td {position:relative; height:6rem; background-color:var(--bg_01, #fff); text-align:center;}
+.cal_tbl td,
+.cal_tbl td.sunday, .cal_tbl td.sunday a, .cal_tbl td.sunday button,
+.cal_tbl td.saturday, .cal_tbl td.saturday a, .cal_tbl td.saturday button {color:var(--fc_05, #8c949e);}
+.cal_tbl td a, .cal_tbl td button {display:block; position:relative; width:3.6rem; height:3.6rem; margin:0 auto; line-height:3.6rem; font-size:1.7rem; font-family:'Roboto'; font-weight:700;}
+.cal_tbl td a,
+.cal_tbl td button {color:var(--fc_02, #26282c);}
+.cal_tbl td .today, 
+.cal_tbl td .selectable, 
+.cal_tbl td .on {-webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; color:#26282c;}
+.cal_tbl td .today {background-color:#ebeef0;}
+.cal_tbl td .active:before {content:''; position:absolute; left:50%; bottom:-1.2rem; width:.6rem; height:.6rem; margin-left:-.3rem; -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; background-color:#ffd338;}
+.cal_tbl td .on {background-color:#ffd338;}
+.cal_tbl td .selectable {border:1px solid #ffd338; color:var(--fc_02, #26282c);}
+.cal_tbl td .selectable.on {color:#26282c;}
+.cal_tbl td .today.selectable {background-color:#ffd338;}
+.cal_tbl td .today a:before {content:''; position:absolute; left:50%; top:.2rem; width:.6rem; height:.6rem; margin-left:-.3rem; -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; background-color:#ffd338;}
+.cal_tbl td a span {position:absolute; font-size:.1rem; line-height:.1rem; color:transparent;}
+.cal_tbl td .disabled, .cal_tbl td.saturday .disabled, .cal_tbl td.sunday .disabled {color:var(--fc_07, #c6cbd0);}
+
+/* calendar_wrap */
+/* type1 : 입출금 캘린더 */
+.calendar_wrap.type1 {margin:0 -.4rem;}
+.calendar_wrap.type1 .cal_month {margin:0 .4rem; border-bottom:1px solid var(--bdc_01, #ebeef0);}/* [전담반] 다크테마 */
+.calendar_wrap.type1 .cal_month + .list_data {border-top:0;}
+.calendar_wrap.type1 .cal_tbl th {padding-bottom:.8rem;}
+.calendar_wrap.type1 .cal_tbl td {height:7.6rem; vertical-align:top;}
+.calendar_wrap.type1 .cal_tbl td .day {font-weight:700; font-size:1.7rem; color:var(--fc_02, #26282c);}
+.calendar_wrap.type1 .cal_tbl td.saturday a, 
+.calendar_wrap.type1 .cal_tbl td.saturday button, 
+.calendar_wrap.type1 .cal_tbl td.sunday a, 
+.calendar_wrap.type1 .cal_tbl td.sunday button {color:var(--fc_02, #26282c);}
+.calendar_wrap.type1 .cal_tbl td .info {display:inline-block; margin-top:.3rem;}
+.calendar_wrap.type1 .cal_tbl td .info .in, .calendar_wrap.type1 .cal_tbl td .info .out {display:block; font-weight:700; font-size:1.3rem; font-family:'Roboto'; line-height:1.6rem;}
+.calendar_wrap.type1 .cal_tbl td .info .in {color:#287eff;}
+.calendar_wrap.type1 .cal_tbl td .info .out {color:#f23f3f;}
+.calendar_wrap.type1 .cal_tbl td a,
+.calendar_wrap.type1 .cal_tbl td button {border-radius:50%; }
+.calendar_wrap.type1 .cal_tbl td button:not(:disabled) {background-color:var(--fc_09, #ebeef0);}
+.calendar_wrap.type1 .cal_amount {margin:0 -2rem;}
+
+.calendar_wrap.type1 .cal_tbl td .info > span {position:relative;}
+.calendar_wrap.type1 .cal_tbl td .info > span:before {content:''; display:inline-block; width:.8rem; height:.8rem; margin-right:.2rem; background-image:url(/mnbank/app/img/reference/ico_updown.png); background-size:.8rem auto;}
+.calendar_wrap.type1 .cal_tbl td .info > .in:before {background-position:0 0;}
+.calendar_wrap.type1 .cal_tbl td .info > .out:before {background-position:0 -.8rem;}
+
+.calendar_wrap.type1 .cal_legend {position:relative; padding:.8rem .4rem 1.5rem; text-align:right;}
+.calendar_wrap.type1 .cal_legend .legend { margin-left:1.5rem; font-size:1.4rem; color:var(--fc_03, #484b51);}
+.calendar_wrap.type1 .cal_legend .legend:before {content:''; display:inline-block; width:1rem; height:1rem; margin-right:.5rem; background-image:url(/mnbank/app/img/reference/ico_updown.png); background-size:1rem auto;}
+.calendar_wrap.type1 .cal_legend .legend.in:before {background-position:0 0;}
+.calendar_wrap.type1 .cal_legend .legend.out:before {background-position:0 -1rem;}
+
+/* 버튼영역 - 페이지 하단 */
+.btn_confirm_wrap .btn_area {position:fixed; display:table; left:0; bottom:0; table-layout: fixed; width:100%; z-index:100;}
+.btn_confirm_wrap .btn_area > span {display:table-cell; vertical-align: top;}
+.btn_confirm_wrap .btn_area > span + span {width:60%; padding-left:0;}
+.btn_confirm_wrap .btn {display:block; width:100%; height:auto; padding:1.8rem 1rem; padding:1.8rem 1rem calc(constant(safe-area-inset-bottom) / 2 + 1.8rem); padding:1.8rem 1rem calc(env(safe-area-inset-bottom) / 2 + 1.8rem); line-height:1.2; border-radius: 0; font-size:2rem; font-weight:700;}
+.btn_confirm_wrap.nofix .btn_area {position:absolute;}
+.btn_confirm_wrap.no_ios .btn {height:6rem;}
