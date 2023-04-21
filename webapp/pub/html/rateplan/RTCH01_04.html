@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>요금제 진단하기</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1484052736|rpid=1066624051|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="hidden">요금제 진단하기</h1>
+                
+                <ol class="progress_wrap">
+                    <li class="step"><span>1 단계</span></li>
+                    <li class="step"><span>2 단계</span></li>
+                    <li class="step"><span>3 단계</span></li>
+                    <!-- <li class="step on"><span>4 단계</span></li> -->
+                </ol>
+
+                <!-- [03/03] .page .on div box 추가 -->
+                <div class="page on">
+
+                    <div class="tit_sub_wrap">
+                        <h2 class="tit_sub">약정이 있나요?</h2>
+                        <p class="summary">공시지원 / 선택약정</p>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="hidden">사용자 연령</h3>
+                        <div class="radio_group">
+                            <div class="radio_item box_type">
+                                <input type="radio" id="discount_1" name="discount">
+                                <label for="discount_1" class="label">있어요</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="discount_2" name="discount">
+                                <label for="discount_2" class="label">없어요</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn_confirm_wrap">
+                        <div class="btn_area">
+                            <button type="button" class="btn primary" disabled>다음</button>
+                        </div>
+                    </div>
+                </div><!-- .page -->
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+<script>
+    $(()=>{
+        $(document).find("input[name='discount']").on("change", function(){
+            $(".btn_area button").attr("disabled", false);
+        })
+    })
+</script>
+</body>
+</html>

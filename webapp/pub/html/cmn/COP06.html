@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>KB국민인증서 본인인증</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_609386820|rpid=736681986|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">KB국민인증서 본인인증</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">KB국민인증서 본인인증</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_COP06" class="btn secondary sm">[팝업] 인증방법 - KB국민인증서 confirm 팝업 클릭</button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="COP06" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <!-- [02/24]  폼마크업 수정, '전송'버튼 추가 -->
+                <div class="form_group">
+                    <div class="form_item fix error">
+                        <div class="item_content btn_auth">
+                            <div class="label">휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-'없이 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <p class="txt_alert">에러문구</p> -->
+                    <div class="form_error">에러문구</div>
+                </div>
+                 <!-- [02/24]  폼마크업 수정, '전송'버튼 추가 -->
+                <div class="btn_wrap mgt20">
+					<button type="button" class="btn primary">전송</button>
+				</div>
+            </div>
+            <div class="section">
+                <div class="kb_auth_notice">
+                    <p>스마트폰에 PUSH 알림이 오지 않는다면 이렇게 조치해주세요.</p>
+                    <ul class="normal_type">
+                        <li>1. KB스타뱅킹 [설정>알림설정]에서 알림(PUSH)동의를 해주세요. 알림(PUSH) 동의임에도 알림이 오지 않는다면, 알림동의 OFF 후 재동의 필수</li>
+                        <li>2. KB스타뱅킹 삭제 및 재설치 후 KB모바일 인증서를 재발급해주세요. [인증/보안 > KB모바일 인증서]</li>
+                    </ul>
+                </div>
+                <ul class="star_type">
+                    <li>인증이 만료되지 않은 상태에서 종료된 경우 다시 '전송' 버튼을 눌러 진행해주세요.</li>
+                    <li>'인증완료'를 선택해야 본인 인증이 완료됩니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary" data-action="close">인증완료</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+
+    // 팝업
+    $('#btn_COP06').on('click', function(){
+        $.ohyLayer({
+            title:"KB국민인증서 본인인증",
+            content:'#COP06',
+            type:'confirm',
+            closeUse:false,
+        });
+    });
+    
+</script>
+</body>
+</html>

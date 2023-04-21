@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-917845172|rpid=426054216|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">명의 변경 안내</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        명의 변경 안내
+                    </h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="layer3" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="htmlTest2" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p class="pop_txt">
+                    명의주는 고객의 변경 신청이 <strong>사전 승인된 경우에만</strong>
+                    명의 변경 단계가 진행됩니다.<br>
+                    명의 변경 사전 승인 여부 확인을 위해 명의 주는 고객
+                    휴대폰번호를 확인해주세요.
+                </p>
+
+                <div class="form_group mgt32">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">명의 주는 고객 휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-'없이 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close" id="twoLayer2">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest5" class="layerHTML">
+        <div class="ly_cnt">            
+            <div class="section">
+                현재 명의 변경 신청중입니다.<br>
+                신청현황으로 이동하시겠습니까?
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+    
+    <!-- layer -->
+    <!-- <div id="htmlTest5" class="layerHTML">
+        <div class="ly_cnt">            
+            <div class="section">
+                명의 변경 신청 내역을 확인할 수 없습니다.<br>
+                KB Liiv M 고객센터에 문의해주세요.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div> -->
+    <!-- //layer -->
+
+    
+
+<script>
+    //바텀시트
+    $('#layer3').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"사전승인확인",
+            content:'#htmlTest2',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+
+    $(document).on('click', '#twoLayer1', function(){
+        $.ohyLayer({                
+            title:"바텀시트",
+            content:'#htmlTest5',
+            type:'bottom',
+            closeUse:true,
+        });
+    });
+
+    $(document).on('click', '#twoLayer2', function(){
+        $.ohyLayer({
+            title:'컨펌 레이어',          
+            content:'#htmlTest5',
+            type:'confirm',
+            closeUse:false,
+        });
+    });
+</script>
+</body>
+</html>

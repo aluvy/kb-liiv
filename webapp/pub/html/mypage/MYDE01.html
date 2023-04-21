@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>법정대리인 정보 변경</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1645105895|rpid=-1378360644|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">법정대리인 정보 변경</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">법정대리인 정보 변경</h2>
+                </div>
+
+                <div class="section">
+                    <div class="banner_item small"> <!-- 23.02.16 basic > small 클래스 변경 -->
+                        <div class="icon_area">
+                            <span class="img_item flat warning"></span>
+                        </div>
+                        <div class="txt_area"> <!-- 23.02.16 warning_txt 클래스 제거 -->
+                            법정대리인 정보 변경을 위해 법정대리인의 신분증 진위 확인과 법정대리인 본인인증을 진행해주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="myfile_box_wrap">
+                        <div class="tit_sec_wrap">
+                            <h3 class="tit_sec">법정대리인 정보</h3>
+                        </div>
+                        <div class="myfile_list_wrap">
+                            <ul class="myfile_list">
+                                <li>
+                                    <span class="list_tit">이름</span>
+                                    <strong class="list_txt">김*민</strong>
+                                </li>
+                                <li>
+                                    <span class="list_tit">관계</span>
+                                    <strong class="list_txt">부모</strong>
+                                </li>
+                                <li>
+                                    <span class="list_tit">휴대폰번호</span>
+                                    <strong class="list_txt">010-66**-55**</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section"> <!-- 2023.02.08 info_input 클래스 제거 -->
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">변경하실 법정대리인 정보를 입력해주세요</h3>
+                    </div>
+
+                    <div class="form_group mgt20"> <!-- 2023.02.08 mgt20 클래스 추가 -->
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">이름</div>
+                                <div class="input">
+                                    <input type="text" placeholder="이름 입력">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div> <!-- 2023.02.08 추가 -->
+                    </div>
+
+                    <div class="form_group col">
+                        <div class="form_item fix jumin req">
+                            <div class="item_content">
+                                <div class="label">주민등록번호</div>
+                                <div class="input">
+                                    <input type="number" maxlength="6" placeholder="주민등록번호 앞자리">
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="number" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div> <!-- 2023.02.08 주석제거 -->
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">관계</div>
+                                <div class="select">
+                                    <!-- 23.02.15 id값 변경 btn_MYDE02_A -->
+                                    <button type="button" id="btn_MYDE02_A" class="btn_select">관계를 선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div> <!-- 2023.02.08 추가 -->
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="number" placeholder="‘-’없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div> <!-- 2023.02.08 주석제거 -->
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">신분증 진위확인</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="rdo_select_wrap">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio6" name="radioType3" checked="">
+                                <label for="radio6" class="label">
+                                    <span class="icon img_item etc sm card_id"></span>
+                                    <span>주민등록증</span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio7" name="radioType3">
+                                <label for="radio7" class="label">
+                                    <span class="icon img_item etc sm card_driver"></span>
+                                    <span>운전면허증</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 라디오 콘텐츠 내용 -->
+                    <!-- 23.02.15 촬영하기 버튼 추가 -->
+                    <div class="login_cert_wrap">
+                        <h3 class="hidden">촬영하기</h3>
+                        
+                        <div class="cam_area">
+                            <div class="btn_wrap">
+                                <button type="button" class="btn primary">촬영하기</button>
+                            </div>
+                            <p class="txt_alert">신분증 촬영 시 정보가 자동으로 입력됩니다.</p>
+                        </div>
+                    </div>
+                    <!-- // 23.02.15 촬영하기 버튼 추가 -->
+
+                    <div class="radio_cont_wrap mgt20"> <!-- 23.02.16 mgt20 클래스추가 -->
+                        <div class="radio_cont">
+                            <div class="form_group">
+                                <div class="form_item fix">
+                                    <div class="item_content">
+                                        <div class="label">발급일자</div>
+                                        <div class="input" style="padding-right: 0px;">
+                                            <input type="text" placeholder="발급일자">
+                                        <button type="button" class="btn_clear" style="display: none;"><span class="hidden">입력내용 초기화</span></button></div>
+                                    </div>
+                                </div>
+                                <div class="form_error"></div>
+                            </div>
+                        </div>
+
+                        <div class="radio_cont">
+                            <!-- 23.02.13 수정 -->
+                            <div class="form_group">
+                                <div class="form_item license fix">
+                                    <div class="item_content">
+                                        <div class="label">면허번호</div>
+                                        <div class="select">
+                                            <button type="button" id="btn_MYDE01" class="btn_select">지역선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                        </div>
+                                        <!-- <div class="input">
+                                            <input type="text" placeholder="면허번호" value="서울12">
+                                        </div> -->
+                                    </div>
+                                    <div class="bar"></div>
+                                    <div class="item_content">
+                                        <div class="input">
+                                            <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_error">유효성 check</div>
+                            </div>
+                            <!-- // 23.02.13 수정 -->
+
+                            <div class="form_group">
+                                <div class="form_item fix">
+                                    <div class="item_content">
+                                        <div class="label">발급일자</div>
+                                        <div class="input" style="padding-right: 0px;">
+                                            <input type="text" placeholder="발급일자">
+                                        <button type="button" class="btn_clear" style="display: none;"><span class="hidden">입력내용 초기화</span></button></div>
+                                    </div>
+                                </div>
+                                <div class="form_error"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 라디오 콘텐츠 내용 -->
+
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">인증방법</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="rdo_select_wrap triple">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio3" name="radioType2" checked="">
+                                <label for="radio3" class="label">
+                                    <div class="img_area"><i class="img_item three auth sm"></i></div>
+                                    <div class="text_area"><span>KB국민<br>인증서</span></div>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio4" name="radioType2">
+                                <label for="radio4" class="label">
+                                    <div class="img_area"><i class="img_item three credit sm"></i></div>
+                                    <div class="text_area"><span>신용카드</span></div>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio5" name="radioType2">
+                                <label for="radio5" class="label">
+                                    <div class="img_area"><i class="img_item three security sm"></i></div>
+                                    <div class="text_area"><span>휴대폰</span></div>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+    
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 23.02.15 관계 팝업 수정 -->
+    <div id="MYDE02_A" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="관계1">관계1</a></li>
+                        <li><a href="#none" role="button" title="관계2">관계2</a></li>
+                        <li><a href="#none" role="button" title="관계3">관계3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 23.02.15 관계 팝업 수정 -->
+
+    <!-- 23.02.13 지역선택팝업 추가 -->
+    <div id="MYDE01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button">경기</a></li>
+                        <li><a href="#none" role="button">서울</a></li>
+                        <li><a href="#none" role="button">경기북부</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">선택</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 23.02.13 지역선택팝업 추가 -->
+
+<script>
+    // 23.02.15 관계 팝업 수정
+    $(document).on("click", "#btn_MYDE02_A", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"관계",
+            content:'#MYDE02_A',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 23.02.13 지역선택팝업 추가
+    $(document).on("click", "#btn_MYDE01", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"면허번호",
+            content:'#MYDE01',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+</script>
+</body>
+</html>

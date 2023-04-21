@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1805736627|rpid=-294761382|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">명의양도자 정보입력</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        명의양도자 정보입력
+                    </h2>
+                </div>
+                
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">명의변경 방식을 선택해주세요</h3><!-- 23/02/17 수정 : 텍스트 수정 -->
+                    </div>
+
+                    <div class="form_group">
+                        <div class="rdo_select_wrap">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio1" name="radioType1" checked>
+                                <label for="radio1" class="label">
+                                    <i class="icon img_item three family"></i>
+                                    <span>가족명의 변경</span>
+                                    <span class="img_type_subtxt">예시: 부모 &gt; 자녀로 변경</span><!-- 23/02/17 수정 : 텍스트 수정 -->
+                                </label>
+                                
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio2" name="radioType1">
+                                <label for="radio2" class="label">
+                                    <i class="icon img_item three person"></i>
+                                    <span>본인명의 변경</span>
+                                    <span class="img_type_subtxt">예시: 개인 &gt; 개인 사업자로 변경</span>
+                                </label>
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">명의주는 고객 본인 확인</h3><!-- 23/02/17 수정 : 텍스트 수정 -->
+                    </div>
+
+                    <h4 class="tit_item">명의변경 회선</h4>
+
+                    <div class="droptype_btn_wrap"> <!-- 23/03/30 select_line 클래스제거 -->
+                        <a href="#" role="button" id="MYCH03" class="droptype_btn"> <!-- 23/03/30 id="MYCH03" 추가 -->
+                            <span class="badge red_light">SKT</span> 
+                            <span class="info">010-12**-56**</span>
+                            <i class="icon icon_arr_down_gray"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">이름</div><!-- 23/02/17 수정 : 텍스트 수정 -->
+                                <div class="input">
+                                    <input type="text" placeholder="이름을 입력해주세요"><!-- 23/02/17 수정 : 플레이스홀더 텍스트 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                    <div class="form_group col">
+                        <div class="form_item jumin fix"><!-- 23/02/17 수정 : 클래스 제거 .req -->
+                            <div class="item_content">
+                                <div class="label">주민등록번호</div>
+                                <div class="input">
+                                    <input type="text" maxlength="6" placeholder="주민등록번호" ><!-- 23/02/17 수정 : 플레이스홀더 텍스트 수정 -->
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" maxlength="7" placeholder=""><!-- 02/08 maxlength 변경 --><!-- 23/02/17 수정 : 플레이스홀더 텍스트 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix"><!-- 23/02/17 수정 : 클래스 제거 .req -->
+                            <div class="item_content">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요"><!-- 23/02/17 수정 : 플레이스홀더 텍스트 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">인증방법</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="rdo_select_wrap triple">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio3" name="radioType2" checked="">
+                                <label for="radio3" class="label">
+                                    <div class="img_area"><i class="img_item three auth sm"></i></div>
+                                    <div class="text_area"><span>KB국민<br>인증서</span></div>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio4" name="radioType2">
+                                <label for="radio4" class="label">
+                                    <div class="img_area"><i class="img_item three credit sm"></i></div>
+                                    <div class="text_area"><span>신용카드</span></div>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio5" name="radioType2">
+                                <label for="radio5" class="label">
+                                    <div class="img_area"><i class="img_item three security sm"></i></div>
+                                    <div class="text_area"><span>휴대폰</span></div>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div id="htmlSelectLine" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line1" name="line" checked>
+                        <label for="line1" class="label">
+                            <span class="line_group">
+                                <span class="badge red_light">SKT</span>
+                                <span>010-12**-56**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line2" name="line">
+                        <label for="line2" class="label">
+                            <span class="line_group">
+                                <span class="badge red_light">SKT</span>
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap"> <!-- 02/08 COP18 공통화 -->
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    // 회선선택 팝업
+    $(document).off("click", "#MYCH03").on("click", "#MYCH03", function(){ // 23/03/30 호출값 변경 .select_line -> #MYCH03
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#htmlSelectLine',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+</script>
+</body>
+</html>

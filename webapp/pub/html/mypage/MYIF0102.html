@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_43090245|rpid=1373565059|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">요금제 변경</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">요금제 변경</h2>
+                </div>
+
+                <div class="section">
+                    <div class="droptype_btn_wrap">
+                        <a href="#" role="button" class="droptype_btn select_line">
+                            <span class="badge skt">KT</span>
+                            <span class="info">010-12**-56**</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">사용중인 요금제</h3>
+
+                        <!-- [02/20] 요금제 변경이력 버튼 마크업 추가 -->
+                        <a href="#" role="button" class="link btn_text">요금제 변경이력</a>
+                        
+                    </div>
+                    <div class="card_item line mgt12">
+                        <div class="item_main">
+                            <div class="lt">
+                                <div class="badge_group">
+                                    <span class="badge lte">LTE</span>
+                                    <span class="badge lg_u">LG U+</span>
+                                </div>
+                                <span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+                            </div>
+                            <div class="rt">
+                                <span class="item_price_sub">기본료 월 29,900원</span>
+                                <span class="item_price">월<strong>24,800원</strong></span>
+                                <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                            </div>
+                        </div>
+                        <div class="info_list">
+                            <ul class="item_info">
+                                <li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+                                <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">변경할 요금제</h3>
+                        <!-- 요금제 검색 버튼은 요금제가 선택되었을때만 노출됩니다. -->
+                        <!-- <a href="#" class="link btn_text">요금제 검색</a> -->
+                        <!-- // 요금제 검색 버튼은 요금제가 선택되었을때만 노출됩니다. -->
+                    </div>
+                    <!-- 변경할 요금제 선택 전 화면 -->
+                    <div class="change_item_none">
+                        <a href="#" role="button" class="search_item">
+                            변경할 요금제를 선택해주세요
+                            <span>요금제 검색하기</span>
+                        </a>
+                    </div>
+                    <!-- // 변경할 요금제 선택 전 화면 -->
+
+                    <!-- 변경할 요금제 선택 후 화면 -->
+                    <!-- <div class="card_item line mgt12">
+                        <div class="item_main">
+                            <div class="lt">
+                                <div class="badge_group">
+                                    <span class="badge lte">LTE</span>
+                                    <span class="badge lg_u">LG U+</span>
+                                </div>
+                                <span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+                            </div>
+                            <div class="rt">
+                                <span class="item_price_sub">기본료 월 29,900원</span>
+                                <span class="item_price">월<strong>24,800원</strong></span>
+                                <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                            </div>
+                        </div>
+                        <div class="info_list">
+                            <ul class="item_info">
+                                <li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+                                <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <!-- // 변경할 요금제 선택 후 화면 -->
+
+                    <ul class="star_type mgt20">
+                        <li>현재 이용중이신 통신망과 다른 통신망의 요금제 이용을 원하실 경우, 요금제 변경이 아닌 가입/개통(번호이동) 절차 진행을 통해 변경하시기 바랍니다. (예시 : LG U+망->KG망, KT망->SKT망, SKT망->LG U+망)</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">변경일자</h3>
+                    </div>
+
+                    <div class="radio_group flex mgt12">
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="change_now" name="change_date" checked>
+                            <label for="change_now" class="label">
+                                <span>당일 변경</span>
+                                <span class="ex">(즉시 변경)</span>
+                            </label>
+                        </div>
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="change_reserv" name="change_date">
+                            <label for="change_reserv" class="label">
+                                <span>예약 변경</span>
+                                <span class="ex">(익월 1일 변경)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- [02/14] 수정 : 변경일자 > 예약 변경 선택 시 내용 추가 -->
+                    <div class="form_group change_reserv">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">예약변경 정보</div>
+                                <div class="input">
+                                    <input type="text" placeholder="예약변경 정보" value="2023.03.01" readonly>
+                                </div>
+                                <button type="button" class="btn_type">예약취소</button>
+                            </div>
+                        </div>
+                        <!-- <div class="form_error">유효성 check</div> -->
+                    </div>
+
+                    <!-- [02/15] 수정 : 'mgt20' 클래스 삭제 -->
+                    <ul class="star_type">
+                        <li>당일 선택 시 즉시 변경됩니다.</li>
+                        <li>예약 변경일 다음날 반드시 변경결과를 확인하시기 바랍니다.</li>
+                        <li>월중 요금제 변경 시, 변경 전 요금제와 변경 후 요금제의 이용일수에 따라 요금이 계산되어 청구됩니다.</li>
+                        <li>월기본제공량(음성, 문자, 데이터, 부가/영상통화)은 한달 사용을 기준으로 제공되며, 변경일을 기준으로 월기본제공량이 일할 계산되어 초과사용분은 청구될 수 있습니다.</li>
+                    </ul>
+                    <!-- // [02/14] 수정 : 변경일자 > 예약 변경 선택 시 내용 추가 -->
+                </div>
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">요금 세부내역</h3>
+                    </div>
+
+                    <div class="rateplan_detail">
+                        <dl class="rate_exp">
+                            <dt>월 예상 납부금액</dt>
+                            <dd>
+                                <span class="rate_price">
+                                    <strong>11,900 원</strong><br>
+                                    (부가세 포함)
+                                </span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>통신요금</dt>
+                            <dd>
+                                <span class="rate_price">
+                                    0원 (부가세금액)
+                                </span>
+                            </dd>
+                            <!-- [02/16] 수정 : 텍스트 수정 -->
+                            <dt>할인금액</dt>
+                            <dd>
+                                <span class="rate_price">
+                                    <strong>- 7,500원</strong>
+                                </span>
+                            </dd>
+                        </dl>
+                        <!-- [02/16] 수정 : rate_detail 영역 추가 -->
+                        <dl class="rate_detail">
+                            <dt>KB카드 이벤트할인</dt>
+                            <dd>- 2,200원</dd>  
+                            <dt>주거래우대</dt>
+                            <dd>- 8,800원</dd>
+                            <dt>스타클럽(골드/프리미엄)</dt>
+                            <dd>- 2,200원</dd>
+                        </dl>
+                        <dl class="rate_total">
+                            <dt>합계</dt>
+                            <dd>
+                                <span class="rate_price">
+                                    11,900원
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <ul class="star_type mgt20">
+                        <li>할인 예상금액은 부가세 포함금액으로 실제 청구금액과 다를 수 있습니다.</li>
+                        <li>요금할인은 변경될 수 있으며, 월기본료에 일할 계산됩니다.</li>
+                        <li>일시정지 시 KB든든할인은 적용되지 않습니다.</li>
+                        <li>타 이벤트 및 동일한 할인 혜택과 중복되지 않습니다.</li>
+                    </ul>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section mgt0">
+                    <ul class="list_acc type2 js_accordion">
+                        <li>
+                            <a href="#none" role="button" class="title" aria-expanded="false">
+                                <span>이용안내</span>
+                            </a>
+                            <div class="content_panel" role="region">
+
+                                <!-- [02/15] 이용안내 내용 추가 -->
+                                <div class="using_guide">
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">LTE 든든 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다.
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 요금제별로 정한 한도내에서 무료 이용 가능(든든 1~5GB, 든든 무제한 1GB+ : 월 50분 / 든든 7GB, 든든무제한 5GB+, 7GB+, 11GB+(신) : 월 300분)</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지되며 해당 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)</li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다. (부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS,LMS(건): 22원 / MMS 텍스트(건) : 44원 MMS 사진(건) : 220원 / MMS 동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB든든할인 및 이벤트 할인은 적용되지 않습니다.</li>
+                                        <li>이벤트 할인 및 KB든든할인은 중복적용 가능하나, 기타 이벤트 할인 및 나눔할인은 중복적용되지 않습니다.<br>(나눔할인 신청시 나눔할인 혜택만 적용됩니다.)</li>
+                                        <li>KB든든할인 및 이벤트 할인은 변경될 수 있으며, 적용대상 및 범위, 할인 금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터 한도내에서 이용가능하며 기본 제공데이터를 모두 사용하면 테더링 이용이 차단됩니다.</li>
+                                                <li>든든 무제한 요금제는 기본 제공데이터 소진 후 속도제어(1Mbps 또는 3Mbps)시 테더링 이용이 불가합니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            데이터쉐어링에 사용되는 데이터는 요금제별 데이터 월 제공량 내에서 합산하여 차감되며, 월 제공량 소진 시 자동차단됩니다.
+                                            <ul class="dash_type">
+                                                <li>단, 든든 1GB, 든든 무제한1GB+ 요금제는 데이터쉐어링은 사용이 불가능 합니다.</li>
+                                                <li>든든 무제한 5GB+/7GB+ 요금제는 월제공량 (5GB/7GB)내에서 합산하여 차감되며, 월 제공량 소진 후 데이터쉐어링 사용시 별도 과금됩니다.</li>
+                                                <li>든든 무제한 11GB+(신) 요금제는 월 제공량(11GB) 및 일 제공량(2GB) 내에서 합산하여 차감되며, 월 제공량 및 일 제공량 소진 후 데이터쉐어링 사용 시 별도 과금됩니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 : 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>요금제별 기본 제공 데이터 한도 내에서 해당 요금제의 mVoIP 허용량 만큼 mVoIP서비스 이용이 가능합니다.</li>
+                                                <li>든든 무제한 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다. (단, 데이터 속도가 1Mbps 또는 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">주니어 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            주니어 LTE 750MB+ 요금제의 경우 무선(통신사번호 : 010,011등), 유선(지역번호 : 02,031등), 인터넷 전화(070) 이용 시 사용량에 관계 없이 무제한 무료통화 가능하며 다른 통신사 이용고객에게 보내는 메시지도 무료입니다.
+                                        </li>
+                                        <li>
+                                            주니어 LTE 2GB+ 요금제의 경우 기본제공량 (음성 100분/ 문자 100건)초과시 정상요금 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고·상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)</li>
+                                                <li>상업용 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드배달원, 대리운전업종사자 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과시 적용요율은 아래와 같습니다 (부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건) : 22원 / MMS-텍스트(건) : 44원 / MMS-사진(건) : 220원 / MMS-동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            기본 제공량을 모두 사용하면 문자메시지로 알려드리며 이후 최대 400Kbps 속도로 이용가능합니다.
+                                            <ul class="dash_type">
+                                                <li>50%, 80%, 100% 소진 시 본인 및 법정대리인앞 SMS발송</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본데이터를 모두 이용하면 핫스팟 이용이 차단됩니다.
+                                        </li>
+                                    </ul>
+                                    
+                                    <h4 class="tit_item">U+Zone 무료 제공 여부</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            전 요금제 유플러스 와이파이 공유기가 있는 곳 어디서나 무선인터넷을 이용가능합니다.
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">핫스팟 이용(핫스팟 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)</h4>
+                                    <!-- [04/04] 데이터 누락 수정 :: start -->
+                                    <ul class="dash_type">
+                                        <li>핫스팟은 요금제별 기본 제공데이터 한도내에서 이용가능합니다.</li>
+                                    </ul>
+                                    <!-- [04/04] 데이터 누락 수정 :: end -->
+
+                                    <h4 class="tit_item">mVoIP(데이터 음성통화 ; 보이스톡)</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            요금제별 기본 제공 데이터 한도 내에서 해당 요금제의 mVoIP 허용량만큼 mVoIP서비스 이용이 가능합니다.
+                                        </li>
+                                        <li>
+                                            Liiv M 주니어 요금제는 허용량 제한없이 mVoIP서비스 이용이 가능합니다.(단. 데이터 속도가 400kbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다)
+                                        </li>
+                                        <li>
+                                            통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.
+                                        </li>
+                                    </ul>
+                                    
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">Flex LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화 / 문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            무선(통신사번호 : 010,011등), 유선(지역번호 : 02,031등), 인터넷 전화(070) 이용 시 사용량에 관계 없이 무제한 무료통화 가능하며 다른 통신사 이용고객에게 보내는 메시지도 무료입니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우 (음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고·상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우 (수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)</li>
+                                                <li>상업용 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종사자 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과시 적용요율은 아래와 같습니다.(부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건) : 22원 / MMS-텍스트(건) : 44원 / MMS 사진(건) : 220원 / MMS 동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            매일 5GB를 모두 사용하면 이후 최대 5Mbps 속도로 추가과금없이 이용가능합니다.
+                                            <ul class="star_type">
+                                                <li>테더링은 월 11GB 별도 제공되며 모두 사용시 자동차단됩니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">U+zone 무료 제공 여부</h4>
+                                    <ul class="num_type">
+                                        <li>전 요금제 유플러스 와이파이 공유기가 있는 곳 어디서나 무선인터넷을 이용가능합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">mVoIP(데이터 음성통화 ; 보이스톡)</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            요금제별 기본 제공 데이터 한도 내에서 해당 요금제의 mVoIP 허용량만큼 mVoIP서비스 이용이 가능합니다.
+                                        </li>
+                                        <li>
+                                            요금제별 기본 mVoIP 허용량이 초과된 경우 데이터 속도가 제어되어 mVoIP서비스 이용이 제한됩니다. 이경우 통화연결은 가능하나 서비스 연결이 원활하지 않을 수 있습니다.
+                                        </li>
+                                        <li>
+                                            통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용가능합니다.
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">태블릿 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">사용가능기기</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            태블릿, 패드, 라우터, 워치, 빔, 액션캠 등 스마트 기기 중 아래 두 조건에 해당해야 가입할 수 있습니다.
+                                            <ul class="dash_type">
+                                                <li>유심(가입자정보저장)카드로 사용할 수 있는 기기</li>
+                                                <li>LTE 주파수 대역 850MHz, 2.1GHz, 2.6GHz로 사용할 수 있는기기</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">음성통화 / 문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            수신과 발신을 지원하는 기기에서 이용할 수 있습니다.
+                                        </li>
+                                        <li>
+                                            요금제의 음성 및 메시지 기본제공량은 없으며 아래 요율에 따라 추가요금이 과금됩니다.(부가세포함금액)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건) : 22원 / MMS-텍스트(건) : 44원 / MMS-사진(건) : 220원 / MMS-동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>10GB/20GB 요금제는 제공데이터 소진시 데이터 초과사용이 자동 차단됩니다.</li>
+                                        <li>데이터 추가사용을 원할 경우 데이터 사용차단을 해제할 수 있는 '데이터사용 차단 해제' 부가서비스를 별도로 신청하셔야 합니다.</li>
+                                        <li>25GB+ 요금제는 월 25GB소진시 일 2GB 제공되며, 일 2GB 소진시 최대 3Mbps 속도로 추가 과금없이 이용가능합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">U+zone 무료 제공 여부</h4>
+                                    <ul class="num_type">
+                                        <li>전 요금제 유플러스 와이파이 공유기가 있는 곳 어디서나 무선인터넷을 이용 가능합니다.</li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">나라사랑 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다.
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 300분(월) 내에서 무료 이용 가능</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)
+                                                </li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다.(부가세포함)
+                                            <div class="table">
+                                                <table class="center">
+                                                    <caption class="blind">기본제공량 초과시 적용요율 상세정보</caption>
+                                                    <colgroup>
+                                                        <col style="width: 60%">
+                                                        <col style="width: 40%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">초과요율</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>국내음성통화</td>
+                                                            <td>1.98원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>국내영상통화</td>
+                                                            <td>3.3원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SMS, LMS</td>
+                                                            <td>22원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>텍스트 MMS</td>
+                                                            <td>44원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>사진/그림/배경음악 MMS</td>
+                                                            <td>220원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>동영상 MMS</td>
+                                                            <td>440원/건</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 11GB데이터 소진후 일 2GB 제공되며, 일 2GB 소진시 최대 3Mbps속도로 추가 과금없이 무제한 이용 가능합니다.
+                                        </li>
+                                        <li>
+                                            기본 제공량을 모두 사용하면 문자메시지로 알려드립니다.
+                                            <ul class="dash_type">
+                                                <li>50%, 80%, 100% 소진 시 SMS 발송</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB나라사랑할인은 적용되지 않습니다.</li>
+                                        <li>타 이벤트 할인 혜택은 중복적용되지 않습니다 (KB할인 중복적용 불가, 단 Liiv M 나눔할인 중복적용 가능)</li>
+                                        <li>KB나라사랑 할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 및 데이터쉐어링 이용
+                                            <ul class="dash_type">
+                                                <li>테더링 및 데이터쉐어링은 기본 제공데이터(월 11GB + 일 2GB) 한도내에서 이용가능합니다.</li>
+                                                <li>기본데이터를 모두 사용하면 테더링 이용이 차단됩니다. (일 2GB 소진후 3Mbps 속도제어 시 테더링 이용 불가)</li>
+                                                <li>데이터쉐어링은 일 2GB 소진후에도 이용가능하나, 추가요금이 과금됩니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>나라사랑 LTE 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.<br>(단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2020-2116-2호(2020.10.23), 유효기간 2020.12.31까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">QR체크인 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            요금제의 음성 및 메시지 기본제공량은 없으며 아래 요율에 따라 추가요금이 과금됩니다. (부가세포함금액)
+                                            <div class="table">
+                                                <table class="center">
+                                                    <caption class="blind">음성 및 메시지 이용 상세정보</caption>
+                                                    <colgroup>
+                                                        <col style="width: 50%">
+                                                        <col style="width: 50%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">요율</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>국내음성통화(Volte 및 기타통화포함)</td>
+                                                            <td>1.98원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>국내영상통화</td>
+                                                            <td>3.3원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SMS</td>
+                                                            <td>22원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>텍스트 LMS</td>
+                                                            <td>44원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>사진/그림/배경음악 MMS</td>
+                                                            <td>220원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>동영상 MMS</td>
+                                                            <td>440원/건</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            부가통화 이용시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료가 발생될 수 있습니다.
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터 요금</h4>
+                                    <ul class="num_type">
+                                        <li>기본제공량 초과사용시 부가세포함 1MB당 14.08원이 발생합니다.</li>
+                                        <li>초과사용 데이터 6GB까지는 27,500원 이상 부과되지 않습니다.</li>
+                                        <li>초과사용 데이터가 6GB를 초과하는 경우 부가세 포함 1MB당 14.08원이 발생됩니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>KB할인, 나눔할인 등 별도 할인 혜택이 적용되지 않습니다.</li>
+                                        <li>기본요금 등 변경 사항은 변경 전 웹페이지(www.liivm.com) 를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 요금제별 기본제공 데이터 한도 내에서 이용가능하며 기본 제공 데이터를 모두 사용하면 테더링 이용이 차단됩니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>요금제별 기본 제공 데이터 한도 내에서 이용이 가능합니다.</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2020-1915-2호(2020.09.24), 유효기간 2020.10.30까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">The주는 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화는 1초 이용시 1초 차감, 영상통화는 1초 이용시 1.66초 차감</li>
+                                                <li>무료 통화 및 무료 메시지는 국내 통화에 한하여 제공되며, 미소진 잔여량은 이월되지 않습니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            부가통화 이용시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료가 발생될 수 있습니다.
+                                        </li>
+                                        <li>
+                                            문자메시지는 SMS, MMS를 개당 1건씩 제공량 내에서 차감하여 이용 가능합니다. (단, 본문(텍스트)과 첨부파일을 같이 발신하는 MMS는 2건 차감)
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            1GB,4GB 요금제는 기본제공량 초과 사용시 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>초과 사용 3GB까지 22.53원/MB 부과하며, 이때 19,800원 이상은 부과되지 않습니다.</li>
+                                                <li>3GB 초과 사용 이후에는 6.76원/MB으로 추가 요금이 발생합니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            15GB+ 요금제는 월 15GB 데이터 소진시 최대 3Mbps 속도로 추가과금 없이 이용이 가능합니다.
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능하나, 요금제 변경시 적금 결합혜택이 제공되지 않습니다.</li>
+                                        <li>「The주는 Liiv M 적금」 중도해지 또는 적금 만기 전 「The주는 LTE 요금제」 해지시 결합혜택은 제공되지 않습니다.</li>
+                                        <li>「The주는 Liiv M 적금」 만기해지 시점에 Liiv M 통신비 미납요금이 있는 경우 미납요금 납부 후 결합혜택을 받으실 수 있습니다.</li>
+                                        <li>「The주는 Liiv M 적금」 이외의 다른 적금 가입시 결합 혜택이 제공되지 않습니다.</li>
+                                        <li>「The주는 Liiv M 적금」은 예금자보호법에 따라 예금보험공사가 보호하되, 보호 한도는 본 은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다. 만기해지 요건 등 계약 전반에 관한사항은 「The주는 Liiv M 적금」특약, 적립식예금약관 및 예금거래기본약관에 따릅니다.</li>
+                                        <li>「The주는 보너스혜택」 은 타 이벤트 할인 혜택과 중복적용되지 않습니다.(KB할인 및 나눔할인 중복적용 불가)</li>
+                                        <li>「The주는 보너스혜택」 적용대상 및 범위, 월 보너스금액 등 변경 사항은 변경 전 웹페이지(www.liivm.com) 를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 요금제별 기본제공 데이터 한도 내에서 이용가능하며 기본 제공 데이터를 모두 사용하면 테더링 이용이 차단됩니다.(15GB+요금제는 월 15GB 소진후 3Mbps 속도제어시 테더링 이용이 불가능합니다)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>요금제별 기본 제공 데이터 한도 내에서 이용이 가능합니다.</li>
+                                                <li>15GB+ 요금제는 허용량 제한없이 이용이 가능하나, 3Mbps 속도제어시 서비스 연결이 원할하지 않을 수 있습니다.</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며, Wi-Fi망에서는 요금제와 상관없이 사용가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2020-2131-2호(2020.10.27) 유효기간 2021.04.30까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">국민든든 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다.
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 300분(월) 내에서 무료 이용 가능</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)
+                                                </li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다.(부가세포함)
+                                            <div class="table">
+                                                <table class="center">
+                                                    <caption class="blind">기본제공량 초과시 적용요율 상세정보</caption>
+                                                    <colgroup>
+                                                        <col style="width: 60%">
+                                                        <col style="width: 40%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">초과요율</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>국내음성통화</td>
+                                                            <td>1.98원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>국내영상통화</td>
+                                                            <td>3.3원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SMS, LMS</td>
+                                                            <td>22원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>텍스트 MMS</td>
+                                                            <td>44원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>사진/그림/배경음악 MMS</td>
+                                                            <td>220원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>동영상 MMS</td>
+                                                            <td>440원/건</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 11GB데이터 소진후 일 2GB 제공되며, 일 2GB 소진시 최대 3Mbps속도로 추가 과금없이 무제한 이용 가능합니다.
+                                        </li>
+                                        <li>
+                                            기본 제공량을 모두 사용하면 문자메시지로 알려드립니다.
+                                            <ul class="dash_type">
+                                                <li>50%, 80%, 100% 소진 시 SMS 발송</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB국민든든 할인은 적용되지 않습니다.</li>
+                                        <li>타 이벤트 할인 혜택은 중복적용되지 않습니다 (KB할인 중복적용 불가, 단 Liiv M 나눔할인 중복적용 가능)</li>
+                                        <li>KB 국민든든 할인은 고객의 거래 실적에 따라 1개월 단위로 변경 적용됩니다.<br>(단, Liiv M <strong>1년 이상</strong> 거래 고객에 대한 장기고객우대할인은 가입 월 기준으로 1회 검증하여 계속 적용)</li>
+                                        <li>KB국민든든 할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터(월 11GB + 일 2GB) 한도내에서 이용가능하며 기본데이터를 모두 사용하면 테더링 이용이 차단됩니다.<br>(일 2GB 소진후 3Mbps 속도제어 시 테더링 이용이 불가합니다)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>국민든든 LTE 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.<br>(단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2020-2401-2호(2020.12.14), 유효기간 2021.07.31까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">반려행복 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 300분(월) 내에서 무료 이용 가능</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)</li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다 (부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS,LMS(건): 22원 / MMS 텍스트(건) : 44원 / MMS 사진(건) : 220원 / MMS 동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 11GB데이터 소진후 일 2GB 제공되며, 일 2GB 소진시 최대 3Mbps속도로 추가 과금없이 무제한 이용 가능합니다.
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월) 월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 미지견/묘(유기동물) 입양할인은 적용되지 않습니다.</li>
+                                        <li>타 이벤트 할인 혜택은 중복적용되지 않습니다 (KB할인 및 나눔할인 중복적용 불가)</li>
+                                        <li>미지견/묘(유기동물) 입양할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">U+ 스마트홈 펫케어 패키지 서비스 혜택</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            혜택 : U+ 스마트 홈 펫케어 패키지(홈 CCTV( 맘카 ), 수면등, 간식로봇) 무료제공
+                                        </li>
+                                        <li>
+                                            제공기간 : 36개월 (36개월 약정조건으로 가입)
+                                        </li>
+                                        <li>
+                                            신청방법 : 「반려행복 LTE 요금제」 가입 시 LG U+ 앞으로 별도 신청
+                                        </li>
+                                        <li>
+                                            유의사항
+                                            <ul class="dash_type">
+                                                <li>U+ 스마트 홈 펫케어 패키지 서비스는 LG U+에서 제공하는 서비스로 LG U+와 고객간의 별도 계약 체결을 통해 서비스가 제공됩니다.</li>
+                                                <li>약정기간(36개월) 내 요금제변경 및 해지, 명의변경 시 LG U+에서 할인반환금을 청구할 수 있습니다.</li>
+                                                <li>할인반환금 및 기타 U+ 스마트 홈 펫케어 패키지 서비스 상세내용은 「U+ 스마트홈 서비스 이용약관」 및 「U+ IoT맘카 이용약관」에서 정하는바에 따릅니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터(월 11GB + 일 2GB) 한도내에서 이용가능하며 기본데이터를 모두 사용하면 테더링 이용이 차단됩니다.<br>(일 2GB 소진후 3Mbps 속도제어 시 테더링 이용이 불가합니다.)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            데이터쉐어링에 사용되는 데이터는 월 제공량(11GB) 및 일 제공량(2GB) 내에서 합산하여 차감되며, 월 제공량(11GB) 및 일 제공량(2GB) 소진 후 데이터쉐어링 사용 시 별도 과금됩니다.
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>반려행복 LTE 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.(단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">무궁화 LTE / 공무원 LTE / 선생님 LTE 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 300분(월) 내에서 무료 이용 가능</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)
+                                                </li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다.(부가세포함)
+                                            <div class="table">
+                                                <table class="center">
+                                                    <caption class="blind">기본제공량 초과시 적용요율 상세정보</caption>
+                                                    <colgroup>
+                                                        <col style="width: 60%">
+                                                        <col style="width: 40%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">요율</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>국내음성통화</td>
+                                                            <td>1.98원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>국내영상통화</td>
+                                                            <td>3.3원/초</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SMS, LMS</td>
+                                                            <td>22원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>텍스트 MMS</td>
+                                                            <td>44원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>사진 MMS</td>
+                                                            <td>220원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>동영상 MMS</td>
+                                                            <td>440원/건</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DATA</td>
+                                                            <td>22.53원/MB</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>월 11GB데이터 소진후 일 2GB 제공되며, 일 2GB 소진시 최대 3Mbps속도로 추가 과금없이 무제한 이용 가능합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB무궁화/공무원/선생님 할인은 적용되지 않습니다.</li>
+                                        <li>타 이벤트 할인 혜택은 중복적용되지 않습니다.(KB할인 및 나눔할인 중복적용 불가)</li>
+                                        <li>KB무궁화/공무원/선생님 할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터(월 11GB + 일 2GB) 한도내에서 이용가능하며 기본데이터를 모두 사용하면 테더링 이용이 차단됩니다.<br>(일 2GB 소진후 3Mbps 속도제어 시 테더링 이용이 불가합니다)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>무궁화 LTE / 공무원 LTE / 선생님 LTE 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.(단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">5G 든든 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다.
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 요금제별로 정한 한도내에서 무료 이용 가능<br>5G 든든 2GB, 4GB :월 50분 / 5G 든든 6GB, 8GB, 5G 든든무제한 요금제 : 월 300분)</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.
+                                        </li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지되며 해당 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분(5G 든든 2GB/4GB/6GB/8GB, 5G 든든무제한 12GB+) 또는 10,000분(5G 든든무제한 150GB+/180GB+)을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)
+                                                </li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다. (부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS,LMS(건): 22원 / MMS 텍스트(건) : 44원 MMS 사진(건) : 220원 / MMS 동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB든든할인은 적용되지 않습니다.</li>
+                                        <li>기타 이벤트 할인 및 나눔할인은 중복적용되지 않습니다.<br> (나눔할인 신청시 나눔할인 혜택만 적용.)</li>
+                                        <li>KB든든할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            5G 미제공 지역에서는 LTE를 통해 서비스가 제공되며 기본제공량에서 5G와 동일하게 차감됩니다. (단, LTE 통화가 가능한 단말기에 한함)
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터 한도내에서 이용가능하며 기본 제공데이터를 모두 사용하면 테더링 이용이 차단됩니다. (든든무제한 12GB+의 경우, 월 12GB내에서 이용가능하며, 1Mbps 속도제어시 자동차단됨)</li>
+                                                <li>단, 든든무제한 150GB+, 180GB+ 요금제는 테더링에 사용되는 별도 데이터가 아래와 같이 제공되며 테더링 데이터 소진시 테더링은 자동 차단됩니다. (150GB+ : 10GB, 180GB+ : 20GB)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 : 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>요금제별 기본 제공 데이터 한도 내에서 해당 요금제의 mVoIP 허용량 만큼 mVoIP서비스 이용이 가능합니다.</li>
+                                                <li>든든 무제한 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.<br> (단, 데이터 속도가 1Mbps, 5Mbps, 10Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2021-1592호(2021.06.24), 광고물 유효기한 2022.12.31까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">5G 든든 30GB</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화는 1초 이용시 1초 차감, 영상통화는 1초 이용시 1.66초 차감</li>
+                                                <li>무료 통화 및 무료 메시지는 국내 통화에 한하여 제공되며, 미소진 잔여량은 이월되지 않음</li>
+                                                <li>기본제공량 초과시 요율 : 음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건): 22원 / MMS-텍스트(건): 44원 / MMS-사진(건) : 220원 /MMS-동영상(건): 440원</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            부가통화 이용시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료가 발생될 수 있습니다.
+                                        </li>
+                                        <li>
+                                            문자메시지는 SMS, MMS를 개당 1건씩 제공량 내에서 차감하여 이용 가능합니다. (단, 본문(텍스트)과 첨부파일을 같이 발신하는 MMS는 2건 차감)
+                                        </li>
+                                        <li>
+                                            기본제공량 초과시 아래 요율로 과금됩니다.
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 30GB 데이터 소진후 정상요금이 부과됩니다.
+                                            <ul class="dash_type">
+                                                <li>초과 사용 3GB까지 22.53원/MB 으로 과금되며 19,800원 이상 부과되지 않습니다.</li>
+                                                <li>3GB 초과 사용분은 6.76원/MB 으로 과금됩니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제변경은 가입 1개월 이후에 가능합니다.</li>
+                                        <li>타 이벤트 할인 혜택은 중복적용되지 않습니다 (KB할인, Liiv M 나눔할인 중복적용 불가)</li>
+                                        <li>이벤트할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            5G 미제공 지역에서는 LTE를 통해 서비스가 제공되며 기본제공량에서 5G와 동일하게 차감됩니다.(단, LTE 통화가 가능한 단말기에 한함)
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>월 기본제공 데이터(30GB)내에서 이용가능하며 기본데이터를 모두 사용하면 테더링 이용이 차단됩니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 ; 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>월 기본제공 데이터(30GB)내에서 mVoIP서비스 이용이 가능합니다.</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">LTE 든든실속 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화는 1초 이용시 1초 차감, 영상통화는 1초 이용시 1.66초 차감 </li>
+                                                <li>무료 통화 및 무료 메시지는 국내 통화에 한하여 제공되며, 미소진 잔여량은 이월되지 않음</li>
+                                                <li>기본제공량 초과시 요율 : 음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건): 22원 / MMS-텍스트(건): 44원 / MMS-사진(건) : 220원 / MMS-동영상(건): 440원</li>
+                                            </ul>
+                                        </li>
+                                        <li>국제전화는 별도요율로 과금됩니다.</li>
+                                        <li>부가통화 이용시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료가 발생될 수 있습니다.</li>
+                                        <li>문자메시지는 SMS, MMS를 개당 1건씩 제공량 내에서 차감하여 이용 가능합니다.<br>(단, 본문(텍스트)과 첨부파일을 같이 발신하는 MMS는 2건 차감)</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            든든실속 5GB, 10GB 요금제는 기본제공량 초과 사용시 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>초과사용 0MB ~ 880MB까지 22.53원/MB, 880MB ~ 3GB까지 19,800원 정액과금, 3GB 초과는 6.76원/MB으로 추가 요금이 발생합니다.</li>   
+                                            </ul>
+                                        </li>
+                                        <li>든든실속 7GB+ 요금제는 월 7GB 데이터 소진시 최대 3Mbps 속도로 추가과금 없이 이용이 가능합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 KB든든할인은 적용되지 않습니다.</li>
+                                        <li>LTE든든실속 프로모션 기간 중 기타 이벤트 할인 및 나눔할인은 중복적용되지 않습니다. (나눔할인 신청불가)</li>
+                                        <li>KB든든할인 및 LTE든든실속 프로모션 내용은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.
+                                        </li>
+                                        <li>
+                                            VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.
+                                        </li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터 한도내에서 이용가능하며 기본 제공데이터를 모두 사용하면 테더링 이용이 차단됩니다.</li> 
+                                                <li>든든실속 7GB+ 요금제는 기본 제공데이터 소진 후 속도제어(3Mbps)시 테더링 이용이 불가합니다.</li>   
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            데이터쉐어링에 사용되는 데이터는 요금제별 데이터 월 제공량 내에서 합산하여 차감되며, 월 제공량 소진 시 자동차단됩니다. 
+                                            <ul class="dash_type">
+                                                <li>든든실속 7GB+ 요금제는 월제공량(7GB)내에서 합산하여 차감되며, 월 제공량 소진 후 데이터쉐어링 사용시 별도 과금됩니다.</li>   
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 : 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>요금제별 기본 제공 데이터 한도 내에서 해당 요금제의 mVoIP 허용량 만큼 mVoIP서비스 이용이 가능합니다.</li>   
+                                                <li>든든 무제한 요금제는 데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다.<br>(단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">LTE 워치 요금제</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부가됩니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화는 1초 이용시 1초 차감, 영상통화는 1초 이용시 1.66초 차감 </li>
+                                                <li>무료 통화 및 무료 메시지는 국내 통화에 한하여 제공되며, 미소진 잔여량은 이월되지 않음</li>
+                                                <li>기본제공량 초과시 요율 : 음성(초) : 1.98원 / 영상(초): 3.3원 / SMS, LMS(건): 22원 / MMS-텍스트(건): 44원 / MMS-사진(건) : 220원 / MMS-동영상(건): 440원</li>
+                                            </ul>
+                                        </li>
+                                        <li>국제전화는 별도요율로 과금됩니다.</li>
+                                        <li>부가통화 이용시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료가 발생될 수 있습니다.</li>
+                                        <li>문자메시지는 SMS, MMS를 개당 1건씩 제공량 내에서 차감하여 이용 가능합니다.<br>(단, 본문(텍스트)과 첨부파일을 같이 발신하는 MMS는 2건 차감)</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">데이터</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            기본제공량 초과 사용시 정상요금이 부가됩니다.  
+                                            <ul class="dash_type">
+                                                <li>초과사용 0MB ~ 880MB까지 22.53원/MB, 880MB ~ 3GB까지 19,800원 정액과금, 3GB 초과는 6.76원/MB으로 추가 요금이 발생합니다.</li>
+                                            </ul>
+                                        </li>                                               
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>LTE 워치요금제는 번호이동 가입 및 요금제 변경이 제한됩니다.</li>
+                                        <li>일시정지시 모바일결합 할인은 적용되지 않습니다.</li>
+                                        <li>LTE워치요금제는 나눔할인은 적용되지 않습니다.</li>
+                                        <li>모바일결합할인 내용은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이지(www.liivm.com)를 통해 사전 고지합니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">                                                
+                                        <li>
+                                            아래 모바일요금제를 이용하는 경우, LTE 워치요금제와 결합이 불가능합니다.       
+                                            <ul class="dash_type">
+                                                <li>주니어 LTE, QR체크인 LTE, 태블릿 LTE, 5G 요금제, 법인 요금제</li>
+                                            </ul>
+                                        </li>
+                                        <li>1개의 모바일회선에는 1개의 워치요금제만 연동하여 개통이 가능합니다.</li> 
+                                        <li>
+                                            모바일회선이 데이터쉐어링 요금제와 연결하여 이용 중인 경우, LTE 워치와 모바일 회선의 기본제공량을 공유(쉐어링)할 수 없습니다.<br>
+                                            모바일회선이 LTE워치와 연결하여 모바일 회선의 기본제공량을 공유(쉐어링)하여 이용 중인 경우, 데이터쉐어링 요금제에 가입할 수 없습니다.
+                                        </li>
+                                        <li>
+                                            갤럭시워치의 경우 휴대폰회선과 결합하고 U+ 원넘버 APP을 설치하여 원넘버 서비스를 설정 후 이용이 가능합니다.
+                                            <ul class="dash_type">
+                                                <li>원넘버 서비스를 해제하거나 휴대폰을 해지, 정지하는 경우 또는 결합 불가 요금제로 변경하면 휴대폰 제공량을 공유할 수 없습니다.</li>
+                                            </ul>
+                                        </li> 
+                                        <li>휴대폰회선과 결합시 듀얼넘버서비스 및 착신전환 부가서비스는 이용 불가능합니다.</li> 
+                                        <li>
+                                            mVoIP(데이터 음성통화 : 보이스톡)            
+                                            <ul class="dash_type">
+                                                <li>기본 제공 데이터 한도(250MB) 내에서 mVoIP서비스 이용이 가능합니다.</li>
+                                                <li>통화연결시 데이터는 소모될 수 있습니다.</li>
+                                            </ul>		
+                                        </li>
+                                        <li>데이터쉐어링 및 테더링은 이용불가능합니다.</li> 
+                                    </ul>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">청년희망 LTE</h3>
+                                    </div>
+                                    <h4 class="tit_item">음성통화/문자</h4>
+                                    <ul class="num_type">
+                                        <li>
+                                            음성통화/문자 월 기본 제공량은 아래와 같습니다.
+                                            <ul class="dash_type">
+                                                <li>무선(통신사번호 : 010, 011 등), 유선(지역번호 : 02, 031 등), 인터넷전화(070) 이용 시 사용량에 관계없이 무제한 무료 통화 가능</li>
+                                                <li>그 외 부가통화 전국대표번호(15XX,16XX), 평생개인번호(050X), 주파수공용통신(013 등)의 경우 300분(월) 내에서 무료 이용 가능</li>
+                                                <li>부가통화 이용 시 부가통화 사업자가 정하는 바에 따라 별도의 정보이용료 발생 가능</li>
+                                                <li>다른 통신사 이용고객에게 보내는 메시지 무료</li>
+                                            </ul>
+                                        </li>
+                                        <li>월 기본 제공량을 모두 사용한 뒤에는 정상요금이 부과됩니다.</li>
+                                        <li>
+                                            스팸 등 상업적 목적으로 사용하는 경우 요금을 청구하거나 이용이 정지. 기준은 다음과 같습니다.
+                                            <ul class="dash_type">
+                                                <li>음성통화량이 일 600분을 초과하는 횟수가 월 중 3회가 넘는 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>음성통화량이 월 6,000분을 초과할 경우(영상통화는 음성의 1.66배로 계산)</li>
+                                                <li>TM/폰팅 등과 같이 음성/영상통화를 광고·상업적 목적으로 이용하는 경우(음성/영상 통화 수신처가 월 1,000개 회선을 초과하는 경우에는 광고 · 상업적 목적으로 이용하는 것으로 간주함)</li>
+                                                <li>메시지 사용 건수가 일 500건을 초과하는 경우</li>
+                                                <li>메시지 사용 건수가 일 150건을 초과하는 회수가 월 중 10회를 초과하는 경우</li>
+                                                <li>메시지를 광고성 스팸 메시지 발송과 같이 상업적 목적으로 이용하거나, 물리적 장치 또는 자동발송 프로그램을 이용하는 경우<br>(수신처가 월 2,000개 회선을 초과하는 경우에는 본 항에 해당하는 것으로 간주함)</li>
+                                                <li>상업적 목적이 아닌 직업상 다량 문자 이용자(예시 : 택배업종사자, 콜택시운전원, 신용카드 배달원, 대리운전업종자사 등의 개인)의 경우 별도 확인절차를 통해 상기 기준 예외 적용 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            국제전화는 별도요율로 과금됩니다.
+                                        </li>
+                                        <li>
+                                            기본제공량 초과 및 음성/문자의 과도한 사용에 대한 정상요금 부과 시 적용요율은 아래와 같습니다. (부가세포함)
+                                            <ul class="dash_type">
+                                                <li>음성(초) : 1.98원 / 영상(초): 3.3원 / SMS,LMS(건): 22원 / MMS 텍스트(건) : 44원 MMS 사진(건) : 220원 / MMS 동영상(건) : 440원 / DATA(MB) : 22.53원</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="tit_item">유의사항</h4>
+                                    <ul class="num_type">
+                                        <li>월 중 가입하는 경우, 기본료는 일할 계산됩니다.</li>
+                                        <li>기본료를 제외한 통신비는 할인 제외되며, 할인은 월 기본료에 일할 계산됩니다.</li>
+                                        <li>요금제는 가입 1개월 이후에 변경가능합니다.</li>
+                                        <li>일시정지시 청년할인 및 희망할인은 적용되지 않습니다.</li>
+                                        <li>기타 이벤트 할인 및 나눔할인은 중복적용되지 않습니다. (나눔할인 신청시 나눔할인 혜택만 적용되며, 청년할인 및 희망할인은 적용되지 않습니다.</li>
+                                        <li>청년할인 및 희망할인은 변경될 수 있으며, 적용대상 및 범위, 할인금액 등 변경사항은 변경 전 웹페이이지(<a href="www.livvm.com" target="_Blank">www.liivm.com</a>)를 통해 사전 고지합니다.</li>
+                                        <li>개통월 중 해지 또는 요금제변경시 희망할인은 적용되지 않습니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">[청년희망적금 관련 유의사항]</h4>
+                                    <ul class="num_type">
+                                        <li>본 상품은 관련 정책 및 법률 등이 변경될 경우 가입이 중단될 수 있습니다.</li>
+                                        <li>전 금융기관을 포함하여 1인 1계좌만 가입이 가능합니다.</li>
+                                        <li>이 적금은 'KB국민은행'과 '서민금융진흥원'의 업무협약에 의해 운영되는 상품으로, 향후 업무협약 및 관련 법 변경에 따라 상품내용이 변경될 수 있습니다.</li>
+                                        <li>만기 전 해지할 경우 계약에서 정한 이율보다 낮은 중도해지이율이 적용됩니다.</li>
+                                        <li>상품의 계약은 KB청년희망적금 특약, 적립식예금약관 및 예금거래기본약관의 적용을 받습니다. 약관은 창구 및 KB국민은행 홈페이지(www.kbstar.com : 고객센터→서식/약관/설명서)에서 교부 및 열람이 가능합니다.</li>
+                                        <li>이 예금은 예금자보호법에 따라 예금보호공사가 보호하되, 보호 한도는 본 은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</li>
+                                        <li>기타 상품에 대한 자세한 내용은 KB국민은행 고객센터(1588-9999) 혹은 서민금융진흥원 콜센터(1397)로 문의하시거나 KB국민은행 홈페이지(www.kbstar.com)를 참조하시기 바랍니다.</li>
+                                        <li>일반금융소비자는 은행이 계약체결을 권유하는 경우 일반금융소비자가 설명을 요청하는 경우에도 중요한 사항을 이해할 수 있도록 설명 받을 권리가 있습니다.</li>
+                                    </ul>
+
+                                    <h4 class="tit_item">기타</h4>
+                                    <ul class="num_type">
+                                        <li>U+ ZONE 무료제공 : 전국에 설치된 U+ 무선랜 공유기를 하나의 네트워크로 연결하여, 무선인터넷 이용가능합니다.</li>
+                                        <li>VoLTE 통화가능 단말의 경우 VoLTE 통화가 자동 적용됩니다.</li>
+                                        <li>
+                                            테더링 이용(테더링 : 내 휴대폰과 연결하여 다른 기기에서 와이파이 사용)
+                                            <ul class="dash_type">
+                                                <li>테더링은 기본 제공데이터 한도내에서 이용가능하며 기본 제공데이터를 모두 사용하면 테더링 이용이 차단됩니다.</li>
+                                                <li>기본 제공데이터 소진 후 속도제어(3Mbps)시 테더링 이용이 불가합니다.</li>
+                                            </ul>
+                                        </li>
+                                        <li>데이터쉐어링에는 월 데이터 제공량(11GB) 및 일 제공량(2GB) 내에서 합산하여 차감되며, 월 제공량 및 일 제공량 소진 후 데이터쉐어링 사용 시 별도 과금됩니다.</li>
+                                        <li>
+                                            mVoIP(데이터 음성통화 : 보이스톡)
+                                            <ul class="dash_type">
+                                                <li>데이터 허용량 제한없이 mVoIP서비스 이용이 가능합니다. (단, 데이터 속도가 3Mbps로 제어되는 경우 서비스 연결이 원활하지 않을 수 있습니다.)</li>
+                                                <li>통화연결로 발생하는 데이터는 소모될 수 있으며 Wi-Fi망에서는 요금제와 상관없이 사용 가능합니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="using_guide_notice"><strong>준법감시인 심의필 제2021-0000호(2021.12.00), 광고물 유효기간 2022.12.31까지</strong></p>
+
+                                    
+
+                                    <div class="tit_sec_wrap">
+                                        <h3 class="tit_sec">요금제 변경 유의사항</h3>
+                                    </div>
+                                    <ul class="num_type">
+                                        <li>요금제 변경은 변경 시점 후 1개월 경과 후 변경 가능합니다. (단, KT망의 경우 익월 1일 부터 변경 가능)</li>
+                                        <li>기존 요금제 사용 중 다른 요금제로 전환이 가능하며, 기존 요금제와 변경한 요금제는 이용일 수에 따라 날짜 계산되어 요금이 청구됩니다.</li>
+                                        <li>요금제를 월 중간에 변경할 경우 변경한 날 전/후로 각각 날짜계산되어 다음달에 합산청구됩니다. <br> &lt;예시&gt; 7월 15일 요금제 변경시 <br>
+                                            <ul class="dash_type">
+                                                <li>7/1~14일까지는 변경 전 요금제로 날짜 계산되고, 7/15~말일까지는 변경 후 요금제로 날짜 계산되며, 두 요금이 합산되어 8월에 청구됩니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div><!-- .using_guide -->
+                                <!-- // [02/15] 이용안내 내용 추가 -->
+
+
+                            </div><!-- content_panel -->
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">취소</button>
+                        <button type="button" class="btn primary">변경</button>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<div id="MYIF0102_2" class="layerHTML">
+    <div class="ly_cnt ly_alert">
+        <div class="section center">
+            <p>
+                변경일자를 예약한 후 고객센터를 통해 별도로 요금제 변경을 하신 경우 변경일자 예약취소를 해주셔야 정상적으로 요금제가 변경되오니 참고하시기 바랍니다.
+            </p>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // <!-- [02/14] 수정 : 변경일자 > 예약 변경 선택 시 내용 추가 -->
+    $(()=>{
+        const alert = function(){
+            $.ohyLayer({
+                titleUse: false,
+                content: '#MYIF0102_2',
+                type: 'confirm',
+            });
+        }
+
+        $("input[name='change_date']").on("change", function(e){
+            $("#change_reserv").is(":checked") ? $(".change_reserv").show() : $(".change_reserv").hide();
+            $("#change_reserv").is(":checked") ? alert() : null;
+        });
+
+        $(".change_reserv .btn_type").on("click", function(){
+            $(".change_reserv").hide();
+            $("#change_now").prop("checked", true);
+        })
+    })
+</script>
+</body>
+</html>

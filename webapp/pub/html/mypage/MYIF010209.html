@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1173438798|rpid=-959722910|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">요금제 변경</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">요금제 변경</h2>
+                </div>
+
+                <div class="section">
+                    <button type="button" id="btn_MYIF010209" class="btn secondary">정보제공동의 안내</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- // layer -->
+    <div id="MYIF010209" class="layerHTML">
+        <div class="ly_cnt">
+
+            <div class="section">
+                <div class="box_item no_shadow pb20">
+                    <!-- [02/24] p 태그에 클래스 추가 -->
+                    <p class="fc_black">주니어 LTE 요금할인을 위한 법정대리인의 오픈뱅킹 가입정보 제공에 동의합니다.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="tit_item_wrap">
+                    <h4 class="tit_item">개인정보제공동의 <span class="fc_red">(필수)</span></h4>
+                    <div class="link_wrap">
+                        <a href="#" class="btn_text">동의서보기</a>
+                    </div>
+                </div>
+                
+                <div class="form_group small_radio mgt20">
+                    <span class="form_check">
+                        <input type="radio" id="radio01" name="radio" checked>
+                        <label for="radio01" class="label"><span>동의</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio02" name="radio">
+                        <label for="radio02" class="label"><span>미동의</span></label>
+                    </span>
+                </div>
+
+                <ul class="star_type">
+                    <li>미동의시 오픈뱅킹 할인혜탹이 제공되지 않습니다.</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // layer -->
+
+    <script>
+        $(document).off("click", "#btn_MYIF010209").on("click", "#btn_MYIF010209", function(){
+            $.ohyLayer({
+                title:"증빙서류 및 정보제공동의 안내",
+                content:'#MYIF010209',
+                type:'bottom', // confirm
+            });
+        });
+    </script>
+</body>
+</html>

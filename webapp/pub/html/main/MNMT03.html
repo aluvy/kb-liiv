@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 01/31 viewport-fit=cover 추가 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="KB Liiv M 설명">
+    <!-- SNS -->
+    <meta property="og:title" content="KB Liiv M">
+    <meta property="og:description" content="KB Liiv M 설명">
+    <meta property="og:image" content="대표 이미지">
+    <meta property="og:url" content="URL">
+    <meta name="twitter:title" content="KB Liiv M">
+    <meta name="twitter:description" content="KB Liiv M 설명">
+    <meta name="twitter:image" content="대표 이미지">
+    <meta name="twitter:card" content="summary">
+    <title>KB Liiv M Main</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1460816582|rpid=132318060|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/common/util.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+</head>
+<body style="height:100vh;position:static !important;"> <!-- 23/03/13 style 추가, popup 호출시 해당 페이지에서만 class="noScroll" 삭제해주세요! --> 
+    <!-- KB partner -->
+    <div class="kbplus_wrap">
+        <div class="kbplus_list">
+            <ul class="kb_plus">
+                <li><h2 class="title"><span class="txt">KB Plus</span></h2></li>
+            </ul>
+            <ul class="kb_service">
+                <li><h3 class="title"><span class="txt">KB 스타뱅킹 서비스</span></h3></li> <!-- 23/04/19 수정 -->
+                <li><a href="#none"><span class="kbstar theme_01"></span><em>조회/이체</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_02"></span><em>카드</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_03"></span><em>보험</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_04"></span><em>대출</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_05"></span><em>자동차</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_06"></span><em>여행</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_07"></span><em>부동산</em></a></li>
+                <li><a href="#none"><span class="kbstar theme_08"></span><em>주식</em></a></li>
+            </ul>
+            <ul class="kb_partner">
+                <li><h3 class="title"><span class="txt">KB 금융그룹</span></h3></li><!-- 23/03/15 html 변경 -->
+                <li><a href="#none"><span class="partner group_01"></span><em>리브NEXT</em></a></li>
+                <li><a href="#none"><span class="partner group_02"></span><em>KB부동산</em></a></li>
+                <li><a href="#none"><span class="partner group_03"></span><em>M-able</em></a></li>
+                <li><a href="#none"><span class="partner group_04"></span><em>KB손해보험<br>다이렉트</em></a></li>
+                <li><a href="#none"><span class="partner group_05"></span><em>KB Pay</em></a></li>
+                <li><a href="#none"><span class="partner group_06"></span><em>Kiwi</em></a></li>
+                <li><a href="#none"><span class="partner group_07"></span><em>KB라이프</em><em>(구)KB생명보험</em></a></li>
+                <li><a href="#none"><span class="partner group_08"></span><em>KB라이프</em><em>(구)푸르덴셜</em></a></li>
+            </ul>
+            <button class="btn"><span class="hidden">레이어창 닫기</span></button>
+        </div>
+    </div>
+
+    
+<script>
+    // KB partner
+    $(()=>{
+        $('.kbplus_wrap').addClass('on').parents('body').addClass('no_scroll bg_trans');
+        
+        let btmKb = $('.kbplus_list > ul > li');
+        for(let i=0; i < btmKb.length; i++){
+            setTimeout(function(){
+                $(btmKb[i]).addClass('on');
+            }, 60 * i)
+        }
+        $('.kbplus_list .btn').on('click', function(){
+            $('.kbplus_wrap').removeClass('on').parents('body').removeClass();
+            $('.kbplus_list > ul > li').removeClass('on');
+        });
+    });
+
+</script>
+</body>
+</html>

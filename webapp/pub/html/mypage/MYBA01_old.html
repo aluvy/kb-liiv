@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-644985459|rpid=213605147|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">정보제공 동의</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">정보제공 동의</h2>
+                </div>
+
+                <!-- 23.02.10 <div class="info_agree"> 제거 -->
+
+                <!-- 23.02.21 agree_type 추가 -->
+                <div class="agree_type"> 
+                    <div class="tab_wrap line">
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1">혜택정보 수신동의</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">직업정보 제공동의</button></div>
+                        </div>
+    
+                        <!-- 혜택정보 수신동의 -->
+                        <div class="tab_panel on" role="tabpanel" id="tab_line_panel_1">
+                            <h3 class="hidden">혜택정보 수신동의</h3>
+                            <!-- 23.02.10 수정 -->
+                            <div class="section info_agree"> <!-- 23.02.10 agree_acco > info_agree 변경 -->
+                                <!-- 23.02.10 <ul class="list_acc js_accordion">, <li class="on">, <div class="title btn_type"> 제거 -->
+                                <div class="agree_acco"> <!-- 23.02.10 <div class="agree_acco"> 추가 -->
+                                    <div class="check_group">
+                                        <div class="check_item basic mid">
+                                            <input type="checkbox" id="agree_all">
+                                            <label for="agree_all" class="label"><span>상품서비스 안내 등 선택동의 사항</span></label>
+                                        </div>
+                                        <ul class="star_type">
+                                            <li>유용한 혜택과 소식을 알려드릴게요</li>
+                                        </ul>
+    
+                                        <!-- 23.02.10 버튼제거 -->
+                                    </div>
+
+                                    <!-- ****************** 23/03/07 ****************** -->
+                                    <div class="check_group pb0"> <!-- 23/03/07  pb0 클래스추가 -->
+                                        <div class="check_item basic">
+                                            <input type="checkbox" id="agree1" name="agree1">
+                                            <!-- 23/03/07 제공 텍스트제거 -->
+                                            <label for="agree1" class="label"><span>개인(신용)정보 수집∙이용 동의서 (상품서비스 안내 등) <strong>(선택)</strong></span></label>
+                                            <!-- // 23/03/07 제공 텍스트제거 -->
+                                            <a href="#" id="btn_EMRR01_P" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+
+                                        <!-- 23/03/07 수정 -->
+                                        <div class="nor_agree">
+                                            <span>수집&middot;이용 동의</span>
+                                            <span>광고성 정보 수신 동의</span>
+                                        </div>
+                                        <div class="check_sub_group chk_box_bg"> <!-- 23/03/07 chk_box_bg 클래스추가 -->
+                                            <span>상품서비스 안내수단</span> <!-- 23/03/07 추가 -->
+                                            <div class="check_group col ar_chk_box2">
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk2" class="sub_chk" name="boxCheck" checked="">
+                                                    <label for="boxChk2" class="label">문자</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk3" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk3" class="label">이메일</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk4" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk4" class="label">DM</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk5" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk5" class="label">전화 (ARS)</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // 23/03/07 수정 -->
+
+                                        <div class="check_item basic">
+                                            <input type="checkbox" id="agree2" name="agree2">
+                                            <label for="agree2" class="label"><span>개인(신용)정보 수집&middot;이용&middot;제공 동의서 (상품서비스 안내 등)[계열사 정보제공용] <strong>(선택)</strong></span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+
+                                        <!-- 23/03/07 추가 -->
+                                        <div class="nor_agree">
+                                            <span>수집&middot;이용&middot;제공 동의</span>
+                                            <span>광고성 정보 수신 동의</span>
+                                        </div>
+                                        <div class="check_sub_group chk_box_bg2"> <!-- 23/03/07 chk_box_bg2 클래스추가 -->
+                                            <span>상품서비스 안내수단</span>
+                                            <div class="check_group col ar_chk_box2">
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk6" class="sub_chk" name="boxCheck" checked="">
+                                                    <label for="boxChk6" class="label">문자</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk7" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk7" class="label">이메일</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk8" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk8" class="label">DM</label>
+                                                </div>
+                                                <div class="check_item boxbull_type">
+                                                    <input type="checkbox" id="boxChk9" class="sub_chk" name="boxCheck">
+                                                    <label for="boxChk9" class="label">전화 (ARS)</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // 23/03/07 추가 -->
+                                    </div>
+                                </div>
+                                <!-- // 23.02.10 <div class="agree_acco"> 추가 -->
+                                    
+                                <!-- 23/03/07 추가 -->
+                                <p class="txt_alert mgt9">선택동의는 거부할 수 있으며 거부에 따른 불이익은 없습니다.</p>
+                                <!-- // 23/03/07 추가 -->
+                                
+                                <!-- ****************** 23/03/07 ****************** -->
+                            </div>
+                        </div>
+                        <!-- // 혜택정보 수신동의 -->
+    
+                        <!-- 직업정보 제공동의 -->
+                        <div class="tab_panel" role="tabpanel" id="tab_line_panel_2">
+                            <h3 class="hidden">직업정보 제공동의</h3>
+                            <!-- 23.02.10 section 하나로 묶어줌 / info_agree 클래스추가 -->
+                            <div class="section info_agree">
+                                <div class="banner_item small"> <!-- 23.02.16 basic > small 클래스 변경 -->
+                                    <div class="icon_area">
+                                        <span class="img_item flat warning"></span>
+                                    </div>
+                                    <div class="txt_area"> <!-- 23.02.16 warning_txt 클래스 제거 -->
+                                        법정대리인 정보 변경을 위해 법정대리인의 신분증 징위 확인과 법정대리인의 본인인증을 진행해주세요.
+                                    </div>
+                                </div>
+    
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">동의대상 확인하기</h3>
+                                </div>
+    
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content btn_search">
+                                            <div class="label">접수번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="접수번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">신청현황</h3>
+                                </div>
+    
+                                <div class="radio_group mgt12">
+                                    <div class="radio_item box_type">
+                                        <input type="radio" id="radio1" name="prd" checked="">
+                                        <label for="radio1" class="label">김국민 (신청일 : 2021.04.01)</label>
+                                    </div>
+                                    <div class="radio_item box_type">
+                                        <input type="radio" id="radio2" name="prd">
+                                        <label for="radio2" class="label">김국민 (신청일 : 2021.04.01)</label>
+                                    </div>
+                                    <div class="radio_item box_type">
+                                        <input type="radio" id="radio3" name="prd">
+                                        <label for="radio3" class="label">김국민 (신청일 : 2021.04.01)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form_group mgt32"> <!-- 23.02.10 mgt32 -->
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">이름</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="이름 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error"></div> <!-- 23.02.10 추가 -->
+                                </div>
+    
+                                <div class="form_group col">
+                                    <div class="form_item fix jumin req">
+                                        <div class="item_content">
+                                            <div class="label">주민등록번호</div>
+                                            <div class="input">
+                                                <input type="number" maxlength="6" placeholder="주민등록번호 앞자리">
+                                            </div>
+                                        </div>
+                                        <div class="bar"></div>
+                                        <div class="item_content">
+                                            <div class="input">
+                                                <input type="number" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div> <!-- 23.02.10 주석처리 제거 -->
+        
+                                    <p class="txt_alert">정보제공동의를 하는 직업군인 본인의 정보를 입력해주세요</p>
+                                </div>
+    
+                                <hr class="hr_divide_f" aria-hidden="true"> <!-- 23.02.10 hr_divide_f 클래스 변경 -->
+
+                                <div class="board_list_wrap board_list_type2 mgt32"> <!-- 23.02.10 mgt32 -->
+                                    <ul class="board_list">
+                                        <li class="list_item">
+                                            <a href="#">
+                                                <strong class="list_tit">개인(신용)정보 수집이용동의 <em>(필수)</em></strong>
+                                                <i class="icon icon_btn_right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <p class="add_txt">가족이 [나라사랑LTE요금제]에 가입하는 경우, 직업군인 본인의 직업정보 제공 동의가 필요합니다.</p>
+            
+                                <div class="box_wrap_ia form_check_type2">
+                                    <div class="form_group">
+                                        <span class="form_check">
+                                            <input type="radio" id="radio11" name="radioType2" checked="">
+                                            <label for="radio11" class="label"><span>동의</span></label>
+                                        </span>
+                                        <span class="form_check">
+                                            <input type="radio" id="radio12" name="radioType2">
+                                            <label for="radio12" class="label"><span>미동의</span></label>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <p class="txt_alert">미동의 시 가입이 취소됩니다.</p>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 직업정보 제공동의 -->
+                </div>
+                <!-- // 23.02.21 agree_type 추가 -->
+            
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<script>
+
+</script>
+</body>
+</html>

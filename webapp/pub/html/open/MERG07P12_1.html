@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 팝업 - [팝업] 신청현황 완료</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1611463467|rpid=1515553182|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">유심 개통 완료</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">유심 개통 완료</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MERG07P12_1" class="btn primary">유심 개통 완료 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- layer -->
+<div id="MERG07P12_1" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section mgt0">
+            <p>배송 받은 유심을 휴대폰에 장착 후 재부팅해주세요.</p>
+        </div>
+        <div class="section">
+            <div class="join_time box_item no_shadow">
+                <p>KB Liiv M 가입 가능시간</p>
+                <dl>
+                    <dt>신규가입</dt>
+                    <dd>
+                        <strong>08:00 ~ 20:00</strong> <span>(365일)</span>
+                    </dd>
+                    <dt>번호이동</dt>
+                    <dd>
+                        <strong>10:00 ~ 20:00</strong><br>
+                        <span>(일요일, 공휴일 제외)</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<script>
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                title:'축하합니다~ 드디어 개통완료!',  //  23/03/10 수정 : 문구 수정
+                content:'#MERG07P12_1',
+                type:'bottom',
+            });
+        }
+        popupLoad();
+        $("#btn_MERG07P12_1").on("click", popupLoad);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1818097607|rpid=1325936107|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">고객 정보</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">고객 정보</h2>
+                </div>
+
+                <div class="section">
+                    <div class="myp_info_result">
+                        <ul>
+                            <li>
+                                <span class="myp_info_th">
+                                    가입자명
+                                </span>
+                                <span class="myp_info_td">
+                                    <span>홍*동</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    아이디
+                                </span>
+                                <span class="myp_info_td">
+                                    kb*****
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    비밀번호
+                                </span>
+                                <span class="myp_info_td">
+                                    ************
+                                    <span>
+                                        <a href="#none" class="btn_text">변경하기</a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    이메일
+                                    <button type="button" id="MYIF0104_01">
+                                        <span class="img_item icon alert"></span>
+                                    </button>
+                                </span>
+                                <span class="myp_info_td">
+                                    kb*****@kbstar.com
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    주소
+                                    <button type="button" id="MYIF0104_02">
+                                        <span class="img_item icon alert"></span>
+                                    </button>
+                                </span>
+                                <span class="myp_info_td">
+                                    (09331) 서울 영등포구
+                                    <span>국제금용로 8길 26</span>
+                                    <span>**************</span>
+                                    <span>
+                                        <a href="#none" class="btn_text">변경하기</a>
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    유심배송주소
+                                    <button type="button" id="MYIF0104_03">
+                                        <span class="img_item icon alert"></span>
+                                    </button>
+                                </span>
+                                <span class="myp_info_td">
+                                    (09331) 서울 영등포구
+                                    <span>국제금용로 8길 26</span>
+                                    <span>**************</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    SNS 연동관리
+                                </span>
+                                <span class="myp_info_td">
+                                    <span class="switch_item type1"><!-- 23/02/16 수정 : 클래스 수정 .type1 -->
+                                        <span class="txt">네이버</span>
+                                        <input type="checkbox" id="switch2_1">
+                                        <label for="switch2_1"><span class="blind">활성화</span></label>
+                                    </span>
+                                    <span class="switch_item type1"><!-- 23/02/16 수정 : 클래스 수정 .type1 -->
+                                        <span class="txt">카카오톡</span>
+                                        <input type="checkbox" id="switch2_2" checked="">
+                                        <label for="switch2_2"><span class="blind">활성화</span></label>
+                                    </span>
+                                    <!-- 23/02/23 수정 : Apple 스위치 추가 -->
+                                    <span class="switch_item type1">
+                                        <span class="txt">Apple</span>
+                                        <input type="checkbox" id="switch2_3">
+                                        <label for="switch2_3"><span class="blind">활성화</span></label>
+                                    </span>
+                                    <!-- // 23/02/23 수정 : Apple 스위치 추가 -->
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    총 이용기간
+                                    <button type="button" id="MYIF0104_04">
+                                        <span class="img_item icon alert"></span>
+                                    </button>
+                                </span>
+                                <span class="myp_info_td">
+                                    1년 3개월 5일
+                                    <span class="myp_info_td2">(D+395일)</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="myp_info_th">
+                                    개인정보 이용내역
+                                </span>
+                                <span class="myp_info_td">
+                                    <a href="#none" class="btn_text">조회하기</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>   
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 이메일 layer -->
+    <div id="MYIF0104_E" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                이메일 주소는 가입/개통 시 안내문 발송 등에 필요하므로 정확하게 입력해주시기 바랍니다.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 이메일 layer -->
+
+    <!-- 주소변경 layer -->
+    <div id="MYIF0104_A" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                주소 변경 시 은행정보와 연동하여 변공되며, 유심배송/수령 주소는 변경되지 않습니다.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 주소변경 layer -->
+
+    <!-- 유심 배송 주소 layer -->
+    <div id="MYIF0104_U" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                유심배송 시에 필요한 주소입니다.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 유심 배송 주소 layer -->
+
+    <!-- 총 이용기간 layer -->
+    <div id="MYIF0104_T" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                KB Liiv M을 이용하신 전체기간입니다.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 총 이용기간 layer -->
+
+<script>
+    //이메일 팝업
+    $(document).on("click", "#MYIF0104_01", ()=>{
+        $.ohyLayer({
+            title: "이메일",
+            content:'#MYIF0104_E',
+            type:'confirm',
+        });
+    })
+
+    //주소변경 팝업
+    $(document).on("click", "#MYIF0104_02", ()=>{
+        $.ohyLayer({
+            title: "주소 변경",
+            content:'#MYIF0104_A',
+            type:'confirm',
+        });
+    })
+
+    //유심배송주소 팝업
+        $(document).on("click", "#MYIF0104_03", ()=>{
+        $.ohyLayer({
+            title: "유심 배송 주소",
+            content:'#MYIF0104_U',
+            type:'confirm',
+        });
+    })
+
+    //총 이용기간 팝업
+    $(document).on("click", "#MYIF0104_04", ()=>{
+        $.ohyLayer({
+            title: "총 이용기간",
+            content:'#MYIF0104_T',
+            type:'confirm',
+        });
+    })
+</script>
+</body>
+</html>

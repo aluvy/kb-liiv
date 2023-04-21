@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>통합 검색</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_2009645303|rpid=-1930324325|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+
+                <div class="section mgt0 searchScroll"> <!-- 02/09 스크롤 고정 영역 추가 -->
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_search" id="search_input">
+                                <div class="input">
+                                    <input type="text" placeholder="검색어를 입력해주세요.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section search_keyword" id="search_keyword" style="display:none;">
+                    <ul>
+                        <li><button><span class="fc_blue">메</span>뉴위치</button></li>
+                        <li><button><span class="fc_blue">메</span>인</button></li>
+                        <li><button><span class="fc_blue">메</span>뉴별</button></li>
+                        <li><button><span class="fc_blue">메</span>신저</button></li>
+                        <li><button><span class="fc_blue">메</span>시지</button></li>
+                        <li><button>멤버십</button></li>
+                        <li><button><span class="fc_blue">메</span>뉴 설정</button></li>
+                    </ul>
+                </div>
+
+                <div class="section search_recent" id="search_recent">
+                    <div class="search_tit">
+                        <h3>최근검색어</h3>
+                        <button class="del">전체삭제</button>
+                    </div>
+                    <ul>
+                        <li>
+                            <button>요금제</button>
+                            <button class="del"><span class="hidden">삭제</span></button>
+                        </li>
+                        <li>
+                            <button>보이스 피싱예방</button>
+                            <button class="del"><span class="hidden">삭제</span></button>
+                        </li>
+                        <li>
+                            <button>멤버십</button>
+                            <button class="del"><span class="hidden">삭제</span></button>
+                        </li>
+                        <li>
+                            <button>KT</button>
+                            <button class="del"><span class="hidden">삭제</span></button>
+                        </li>
+                        <li>
+                            <button>개인정보</button>
+                            <button class="del"><span class="hidden">삭제</span></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section search_popular" id="search_popular">
+                    <div class="search_tit">
+                        <h3>인기검색어</h3>
+                        <div class="dat">11.29</div>
+                    </div>
+                    <ol>
+                        <li><button>요금제</button></li>
+                        <li><button>회원가입</button></li>
+                        <li><button>이벤트</button></li>
+                        <li><button>멤버십</button></li>
+                        <li><button>고객센터</button></li>
+                        <li><button>KT</button></li>
+                        <li><button>LGU+</button></li>
+                        <li><button>SKT</button></li>
+                        <li><button>친구결합 할인</button></li>
+                        <li><button>보이스 피싱예방</button></li>
+                    </ol>
+                </div>
+
+                <div class="search_result_wrap" id="search_result" style="display:none;">
+                    <div class="tab_wrap line searchScroll"> <!-- 02/09 스크롤 고정 영역 추가 -->
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_1">챗봇 답변</button></div>
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_2">통합검색 결과(124)</button></div>
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_line_panel_1">
+                            <h3 class="hidden">챗봇 답변</h3>
+                            <div class="section">
+                                챗봇 답변
+                            </div>
+                        </div> <!-- // tab_line_panel_1 -->
+                        <div class="tab_panel" role="tabpanel" id="tab_line_panel_2">
+                            <h3 class="hidden">통합검색 결과(124)</h3>
+
+                            <!-- <div class="none_data">
+                                <p>검색 결과가 없습니다.</p>
+                            </div> -->
+
+                            <div class="filter_list">
+                                <button type="button" class="btn_acc" aria-expanded="false"><span class="blind">필터 펼쳐 보기</span></button>
+                                <ul> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                    <li><a href="#none" role="button" class="item on">전체</a></li>
+                                    <li><a href="#none" role="button" class="item">메뉴</a></li>
+                                    <li><a href="#none" role="button" class="item">요금제</a></li>
+                                    <li><a href="#none" role="button" class="item">FAQ</a></li>
+                                    <li><a href="#none" role="button" class="item">소식</a></li>
+                                    <li><a href="#none" role="button" class="item">이벤트</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="section">
+                                <div class="search_rList02">
+                                    <div class="search_tit">
+                                        <h3>메뉴 (<em>20</em>)</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <em>요금제</em> &gt; KB Liiv M <em>요금제</em> &gt; LG U+망
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <em>요금제</em> &gt; KB Liiv M <em>요금제</em> &gt; KT망
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <em>요금제</em> &gt; KB Liiv M <em>요금제</em> &gt; SKT망
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <em>요금제</em> &gt; 내게 맞는 <em>요금제</em> 찾기
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <em>요금제</em> &gt; 법인 <em>요금제</em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap_more">
+                                    <button type="button" class="btn_more">더보기</button>
+                                </div>
+                            </div><!-- // 메뉴 -->
+                            
+                            <hr class="hr_divide">
+                            
+                            <div class="section">
+                                <div class="search_rList">
+                                    <div class="search_tit">
+                                        <h3>요금제 (<em>20</em>)</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    LTE든든
+                                                </div>
+                                                <div class="rTex">다양한 구성의 KB Liiv M 대표 <em>요금제</em> 음성·문자는 기본제공, 데이터는 필요한 만큼 선택!</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    청년희망 LTE ( Ⅱ )
+                                                </div>
+                                                <div class="rTex">청년들을 위한 데이터무제한 LTE <em>요금제</em></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    Flex LTE
+                                                </div>
+                                                <div class="rTex">데이터 사용량이 많은 분들을 위한 플렉스한 무제한 <em>요금제</em>~!</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    나라사랑 LTE
+                                                </div>
+                                                <div class="rTex">군장병들을 위한 데이터무제한 <em>요금제</em></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    공무원/선생님/무궁화 LTE
+                                                </div>
+                                                <div class="rTex">KB를 거래하는 공무원, 선생님, 경찰을 위한 데이터 무제한 <em>요금제</em></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap_more">
+                                    <button type="button" class="btn_more">더보기</button>
+                                </div>
+                            </div><!-- // 요금제 -->
+
+                            <hr class="hr_divide">
+
+                            <div class="section">
+                                <div class="search_rList">
+                                    <div class="search_tit">
+                                        <h3>FAQ (<em>20</em>)</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이틀 전에 <em>요금제</em> 변경했는데, 또 변경할 수 있나요?
+                                                </div>
+                                                <div class="rTex">아닙니다. 가입 및 변경리 포함 30일 이내에는 <em>요금제</em> 변경이 불가하며, 30일 기준 1회 변경 가능합니다</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    「Flex LTE」 <em>요금제</em> 가입 대상에 제한이 있나요?
+                                                </div>
+                                                <div class="rTex">가입연령 등에 제한은 없으나, 「Flex LTE」 요금제는 데이터 사용량이 많은 고객님께서 사용하시기 좋은</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    「Flex LTE」 가입 회선 수에 제한이 있나요?
+                                                </div>
+                                                <div class="rTex">「Flex LTE」 <em>요금제</em> 가입 회선수를 따로 제한하고 있지는 않으나, KB Liiv M 에서 개통한 전체 회선 수가 1인 3회선</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    음성/문자/데이터가 남으면 어떻게 되나요?
+                                                </div>
+                                                <div class="rTex">음성/문자/데이터가 남으면 어떻게 되나요? 음성/문자/데이터 기본제공량 중 해당월에 모두 소진하지 못하고 남은 기본제공량은 다음달로 이월되</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    로밍 부가서비스에 가입하지 않고 해외에서 데이터를 사용하면 어떻게 되나요?
+                                                </div>
+                                                <div class="rTex">로밍 부가서비스에 가입하지 않고 해외에서 데이터 사용시(MMS수신/발신) 해외 방문국가에 따라 별도 과</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap_more">
+                                    <button type="button" class="btn_more">더보기</button>
+                                </div>
+                            </div><!-- // FAQ -->
+
+                            <hr class="hr_divide">
+
+                            <div class="section">
+                                <div class="search_rList">
+                                    <div class="search_tit">
+                                        <h3>소식 (<em>20</em>)</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이동통신 이용약관 개정 안내
+                                                </div>
+                                                <div class="rDat">2022.11.30</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이동통신 이용약관 개정 안내
+                                                </div>
+                                                <div class="rDat">2022.11.30</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이동통신 이용약관 개정 안내
+                                                </div>
+                                                <div class="rDat">2022.11.30</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이동통신 이용약관 개정 안내
+                                                </div>
+                                                <div class="rDat">2022.11.30</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    이동통신 이용약관 개정 안내
+                                                </div>
+                                                <div class="rDat">2022.11.30</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap_more">
+                                    <button type="button" class="btn_more">더보기</button>
+                                </div>
+                            </div><!-- // 소식 -->
+
+                            <hr class="hr_divide">
+
+                            <div class="section">
+                                <div class="search_rList">
+                                    <div class="search_tit">
+                                        <h3>이벤트 (<em>20</em>)</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    FLEX LTE <em>요금제</em> 24개월간 29,900원!
+                                                    <span class="badge lte">D-30</span>
+                                                </div>
+                                                <div class="rDat">2022.12.01 ~ 2022.12.31</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    FLEX LTE <em>요금제</em> 24개월간 29,900원!
+                                                    <span class="badge lte">D-30</span>
+                                                </div>
+                                                <div class="rDat">2022.12.01 ~ 2022.12.31</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    FLEX LTE <em>요금제</em> 24개월간 29,900원!
+                                                    <span class="badge lte">D-30</span>
+                                                </div>
+                                                <div class="rDat">2022.12.01 ~ 2022.12.31</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    FLEX LTE <em>요금제</em> 24개월간 29,900원!
+                                                    <span class="badge lte">D-30</span>
+                                                </div>
+                                                <div class="rDat">2022.12.01 ~ 2022.12.31</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="rTit">
+                                                    FLEX LTE <em>요금제</em> 24개월간 29,900원!
+                                                    <span class="badge lte">D-30</span>
+                                                </div>
+                                                <div class="rDat">2022.12.01 ~ 2022.12.31</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap_more">
+                                    <button type="button" class="btn_more">더보기</button>
+                                </div>
+                            </div><!-- 이벤트 -->
+
+                        </div> <!-- // tab_line_panel_2 -->
+                    </div>
+                </div> <!-- // search_result_wrap -->
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+    <script>
+        // 셈플
+        $(document).ready(function(){
+
+            // 02/09 스크롤 고정 영역 추가
+            const searchScroll = $(".searchScroll");
+            const searchScrollTop = function(){
+                const scroll = $(document).scrollTop();
+                scroll > 0 ? searchScroll.addClass("on") : searchScroll.removeClass("on");
+            }
+            searchScrollTop();
+            $(document).on("scroll", searchScrollTop );
+
+
+
+            $(document).on('keyup', '#search_input .input input', function(){
+                if($(this).val().length ) {
+                    $('#search_keyword').show();
+                    $('#search_recent').hide();
+                    $('#search_popular').hide();
+                } else {
+                    $('#search_keyword').hide();
+                    $('#search_recent').show();
+                    $('#search_popular').show();
+                }
+            });
+
+            $(document).on('click', '#search_input .input .btn_clear', function(){
+                $('#search_keyword').hide();
+                $('#search_recent').show();
+                $('#search_popular').show();
+            });
+
+            $(document).on('click', '#search_input .btn_type', function(){
+                if($(this).siblings('.input').find('input').val().length ) {
+                    // $('#search_keyword').hide();
+                    // $('#search_recent').hide();
+                    // $('#search_popular').hide();
+                    // $('#search_result').show();
+                    // $('#search_input').find('.input input').focus();
+                }
+            });
+
+
+            // 최근검색어
+            $(document).on('click', '.search_recent ul .del', function(){
+                $(this).parent('li').remove();
+            });
+
+            $(document).on('click', '.search_recent .search_tit .del', function(){
+                $(this).closest('.search_recent').find('li').remove();
+                $(this).closest('.search_recent').hide();
+            });
+
+        });
+    </script>
+</body>
+</html>

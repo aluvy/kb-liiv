@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 개통 - 예비팝업 - [팝업] 카드등록</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_160463747|rpid=-1269635455|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">카드등록</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">카드등록</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MESPP0002" class="btn primary">카드등록 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- layer -->
+<div id="MESPP0002" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="btn_wrap mgt0">
+                <button type="button" class="btn primary">카드촬영</button>
+            </div>
+            <p class="txt_alert">카드 촬영 시 정보가 자동으로 입력됩니다.</p>
+        </div>
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item fix">
+                    <div class="item_content">
+                        <div class="label">카드사</div>
+                        <div class="select">
+                            <button type="button" class="btn_select">카드사를 선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="select_inline">
+                    <ul>
+                        <li><a href="#" role="button" title="국민카드">국민카드</a></li>
+                        <li><a href="#" role="button" title="신한카드">신한카드</a></li>
+                        <li><a href="#" role="button" title="우리카드">우리카드</a></li>
+                        <li><a href="#" role="button" title="하나카드">하나카드</a></li>
+                        <li><a href="#" role="button" title="농협카드">농협카드</a></li>
+                        <li><a href="#" role="button" title="기업카드">기업카드</a></li>
+                        <li><a href="#" role="button" title="국민카드">국민카드</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form_group mgt36">
+                <div class="form_item card_type">
+                    <div class="item_content fix">
+                        <div class="label">카드번호</div>
+                        <div class="input">
+                            <input type="text" placeholder="카드번호 첫번째" class="focus" value="1234">
+                        </div>
+                    </div>
+                    
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" placeholder="카드번호 두번째" class="focus">
+                        </div>
+                    </div>
+
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" placeholder="카드번호 세번째" class="focus">
+                        </div>
+                    </div>
+
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" placeholder="카드번호 네번째" class="focus">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>    
+            </div>
+
+            <div class="form_group">
+                <div class="form_item fix">
+                    <div class="item_content">
+                        <div class="label">유효기간</div>
+                        <div class="input">
+                            <input type="text" placeholder="유효기간" value="1027">
+                        </div>
+                    </div>
+                </div>
+                <p class="txt_alert">본인 명의 신용/체크카드 정보를 입력해주세요.</p>
+                <div class="form_error">유효성 check</div>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">등록완료</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<script>
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                title: "카드등록",
+                content:'#MESPP0002',
+                type:'bottom',
+            });
+        }
+        popupLoad();
+        $("#btn_MESPP0002").on("click", popupLoad);
+    })
+</script>
+</body>
+</html>

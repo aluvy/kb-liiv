@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>공통</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1085675433|rpid=1647014590|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub">
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">알림함</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">알림함</h2>
+                </div>
+
+                <div class="tab_wrap line noti_type">
+                    <div class="tab_list" role="tablist">
+                        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_all">전체</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_notice">공지</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_mypage">My</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_membership">멤버십</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_event">이벤트</button></div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_all">
+                        <h3 class="hidden">전체</h3>
+                        <div class="section">
+                            <div class="noti_list_wrap">
+                                <!-- 23/03/16 추가 : no data 케이스 추가 -->
+                                <div class="none_data">
+                                    <p>조회된 데이터가 없습니다.</p>
+                                </div>
+                                <!--// 23/03/16 추가 : no data 케이스 추가 -->
+                                
+                                <ul class="noti_list">
+                                    <li class="new">
+                                        <a href="#" target="blank">
+                                            <div class="list_top_wrap">
+                                                <span class="cate notice">공지사항</span>
+                                                <span class="time">6시간 전</span>
+                                            </div>
+                                            <div class="list_cont_wrap">
+                                                <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                            </div>
+                                        </a>
+                                        <button type="button" class="btn_list_delete">지우기</button>
+                                    </li>
+                                    <li class="new">
+                                        <a href="#">
+                                            <div class="list_top_wrap">
+                                                <span class="cate event">이벤트</span>
+                                                <span class="time">12월 8일</span>
+                                            </div>
+                                            <div class="list_cont_wrap">
+                                                <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                            </div>
+                                        </a>
+                                        <button type="button" class="btn_list_delete">지우기</button>
+                                    </li>
+                                    <li class="new">
+                                        <a href="#">
+                                            <div class="list_top_wrap">
+                                                <span class="cate member">멤버십</span>
+                                                <span class="time">12월 8일</span>
+                                            </div>
+                                            <div class="list_cont_wrap">
+                                                <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰을 사용하셨어요!</strong>
+                                                <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 소모되었습니다.</div>
+                                            </div>
+                                        </a>
+                                        <button type="button" class="btn_list_delete">지우기</button>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="list_top_wrap">
+                                                <span class="cate member">멤버십</span>
+                                                <span class="time">12월 8일</span>
+                                            </div>
+                                            <div class="list_cont_wrap">
+                                                <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                            </div>
+                                        </a>
+                                        <button type="button" class="btn_list_delete">지우기</button>
+                                    </li>
+                                    <li class="new">
+                                        <a href="#">
+                                            <div class="list_top_wrap">
+                                                <span class="cate mypage">마이페이지</span>
+                                                <span class="time">11월 30일</span>
+                                            </div>
+                                            <div class="list_cont_wrap">
+                                                <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                            </div>
+                                        </a>
+                                        <button type="button" class="btn_list_delete">지우기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_notice">
+                        <h3 class="hidden">공지사항</h3>
+                        <div class="section">
+                            <div class="section">
+                                <div class="noti_list_wrap">
+                                    <ul class="noti_list">
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate notice">공지사항</span>
+                                                    <span class="time">6시간 전</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate notice">공지사항</span>
+                                                    <span class="time">6시간 전</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate notice">공지사항</span>
+                                                    <span class="time">6시간 전</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate notice">공지사항</span>
+                                                    <span class="time">6시간 전</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate notice">공지사항</span>
+                                                    <span class="time">6시간 전</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">시스템 점검으로 인한 서비스 중단 안내</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>항상 KB Liiv M을 이용해주셔서 감사합니다. <br>KB Liiv M 이용통신 이용약관 개정 내용을 안내드립니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_mypage">
+                        <h3 class="hidden">마이페이지</h3>
+                        <div class="section">
+                            <div class="section">
+                                <div class="noti_list_wrap">
+                                    <ul class="noti_list">
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate mypage">마이페이지</span>
+                                                    <span class="time">11월 30일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate mypage">마이페이지</span>
+                                                    <span class="time">11월 30일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate mypage">마이페이지</span>
+                                                    <span class="time">11월 30일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate mypage">마이페이지</span>
+                                                    <span class="time">11월 30일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate mypage">마이페이지</span>
+                                                    <span class="time">11월 30일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 개통을 축하드립니다!</strong>
+                                                    <div class="list_txt">안녕하세요 KB Liiv M 고객님! <br>KB Liiv M을 이용해주셔서 감사합니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_membership">
+                        <h3 class="hidden">멤버십</h3>
+                        <div class="section">
+                            <div class="section">
+                                <div class="noti_list_wrap">
+                                    <ul class="noti_list">
+                                        <li>
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate member">멤버십</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                    <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate member">멤버십</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                    <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate member">멤버십</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                    <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate member">멤버십</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                    <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate member">멤버십</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Liiv M 멤버십 전용 뚜레쥬르 할인쿠폰이 들어왔어요!</strong>
+                                                    <div class="list_txt">멤버십 전용 뚜레쥬르 5,000원 할인 쿠폰이 발급되었습니다.</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_event">
+                        <h3 class="hidden">이벤트</h3>
+                        <div class="section">
+                            <div class="section">
+                                <div class="noti_list_wrap">
+                                    <ul class="noti_list">
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate event">이벤트</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                    <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate event">이벤트</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                    <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate event">이벤트</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                    <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate event">이벤트</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                    <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                        <li class="new">
+                                            <a href="#">
+                                                <div class="list_top_wrap">
+                                                    <span class="cate event">이벤트</span>
+                                                    <span class="time">12월 8일</span>
+                                                </div>
+                                                <div class="list_cont_wrap">
+                                                    <strong class="list_tit">KB Wallet 수험표 등록하고 KB Liiv M 통신비 최대 2개월 무료혜택 받으세요!</strong>
+                                                    <div class="list_txt">이벤트 기간: 2022.12.01 ~ 2022.12.31</div>
+                                                </div>
+                                            </a>
+                                            <button type="button" class="btn_list_delete">지우기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<script src="/js/lib/hammer.min.js"></script>
+<script src="/js/alarm.js"></script><!-- [03/21] 스크립트 파일 분리 -->
+<script>
+    // $(window).scroll(function(){
+    //     let wTop = $(document).scrollTop() + 60;
+    //     let tabTop = $('.tab_wrap').offset().top;
+    //     // console.log(wTop, tabTop)
+    //     wTop > tabTop ? $('.tab_wrap').addClass('fixed') : $('.tab_wrap').removeClass('fixed');
+    // });
+    // $('.tab_list button').on('click', function(){ window.scrollTo(0,0) });
+
+    // // link
+    // $(document).on("click mousedown", ".noti_list li a", function(e){ e.preventDefault() })
+
+    // // hammer
+    // $(()=>{
+    //     let list = $(document).find(".noti_list li a");
+
+    //     list.each((idx, item)=>{
+
+    //         let mc = new Hammer(item);
+    //         // wrap.get('pan').set({direction: Hammer.DIRECTION_VERTICAL});    // [03/10] Hammer Event 수정
+    //         let x, angle;
+            
+    //         mc.off("panleft panright").on("panleft panright", function(e){
+    //             let btn = $(item).parents("li").find(".btn_list_delete").width() * -1;  // 23/03/08 수정: 라인 이동
+
+    //             $(item).parents("li").siblings("li").css({ "transform" : "matrix(1, 0, 0, 1, 0, 0)" });
+
+    //             x = e.deltaX;
+    //             angle = e.angle;
+
+    //             x = ( x <= btn ) ? btn : x;                     // min (btn)
+    //             x = ( x >= 0 ) ? 0 : x;                         // max (0)
+
+    //             if (   ( angle >= -180 && angle <= -165 )
+    //                 || ( angle >= 165 && angle <= 180 )
+    //                 || ( angle >= -20 && angle <= 20 ) ){
+    //                 $(item).parents("li").css({ "transform" : `matrix(1, 0, 0, 1, ${x}, 0)` });
+    //             }
+
+    //             if( e.changedPointers[0].type == "pointerup" ){
+    //                 x = ( x >= btn / 2 ) ? 0 : btn;
+    //                 $(item).parents("li").css({ "transform" : `matrix(1, 0, 0, 1, ${x}, 0)` });
+    //             }
+    //             ( x == 0 ) ? $(item).parents("li").removeClass("on") : $(item).parents("li").addClass("on");
+
+    //         })
+
+    //         mc.off("tap").on("tap", function(e){
+
+    //             if( $(item).parents("li").hasClass("on") ){
+    //                 x = 0;
+    //                 $(item).parents("li").css({ "transform" : `matrix(1, 0, 0, 1, ${x}, 0)` })
+    //                 $(item).parents("li").removeClass("on");
+
+    //             } else {
+    //                 let href = $(item).attr("href");
+    //                 let target = $(item).attr("target") || "self";
+    //                 if ( href != "#" ) {
+    //                     if ( target == "self" ){
+    //                         window.location.href = href;
+    //                     } else {
+    //                         window.open(href);
+    //                     }
+    //                 }
+
+    //             }
+    //         })
+    //     })
+
+    // })
+</script>
+</body>
+</html>

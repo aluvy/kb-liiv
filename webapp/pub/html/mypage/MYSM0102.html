@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1640159810|rpid=-1528059600|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">단말기 정보등록</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">단말기 정보등록</h2>
+                </div>
+
+                <div class="section">
+                    <div class="tab_wrap line">
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_android">안드로이드</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_iphone">아이폰</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_watch">워치</button></div>
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_android">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">모델명, 일련번호 확인 경로</h3>
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>설정 > 휴대전화 정보 > 규제정보</li>
+                                </ul>
+
+                                <!-- 23/03/03 추가 : 이미지영역 추가 -->
+                                <div class="box_img_wrap mgt20">
+                                    <span class="img_item usim_info android"></span>
+                                    <div class="hidden">
+                                        규제 정보
+                                        모델명 : SM-N950N
+                                        제조자 : OOOO
+                                        상호명 : OOOO
+                                        제조국가 : 한국
+                                        기자재의명칭 : LTE OOOO
+                                        정격 : OOOO
+                                        제조연월 : 201807
+                                        일련번호 : 1234567
+                                        IMEI : 123456789012345
+                                        S/N : R12345690
+                                        A/S문의 : 1588-1234
+                                    </div>
+                                </div>
+                                <!--// 23/03/03 추가 : 이미지영역 추가 -->
+
+                                <div class="form_group mgt24">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">현재 휴대폰 모델명</div>
+                                            <div class="input">
+                                                <input type="text" value="LGU-OMPHONE">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content btn_search">
+                                            <div class="label">변경할 휴대폰 모델명</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="모델번호를 검색해주세요." readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group"><!-- 23/02/07 수정 : .mgt24 클래스 제거 -->
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">일련번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="예시) FFQTD12YHPKD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">MAC</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="영문숫자 혼합 12자리를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <ul class="star_type"><!-- 23/02/07 수정 : .mgt20 클래스 제거 -->
+                                    <li>KB Liiv M 휴대폰 분실파손보험 가입 시 안드로이드폰은 OMD, 아이폰은 ULK가 실제 모델명 앞에 반드시 확인되어야 합니다.<br>(해당 모델명으로 미 등록시 휴대폰 보험 가입 불가)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_iphone">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">모델명, 일련번호 확인 경로</h3>
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>설정 > 휴대전화 정보 > 규제정보</li>
+                                </ul>
+
+                                <!-- 23/03/03 추가 : 이미지영역 추가 -->
+                                <div class="box_img_wrap mgt20">
+                                    <span class="img_item usim_info iphone"></span>
+                                    <div class="hidden">
+                                        모델명 iPhone 13 Pro
+                                        모델번호 A2215
+                                        클릭 시 정보변경
+                                        일련 번호 A2BCD3EFGHI4
+                                        노래 0
+                                        비디오 81
+                                        사진 848
+                                        응용 프로그램 146
+                                        전체 공간 256GB
+                                        사용 가능 공간 215.29GB
+                                        Wi-Fi 주소 1C:E2:3C:45:B6:7A
+                                        Bluetooth 6C:E8:5C:4C:7A:93
+                                        IMEI 12 123456789012 0                                        
+                                    </div>
+                                </div>
+                                <!--// 23/03/03 추가 : 이미지영역 추가 -->
+                                
+                                <div class="form_group mgt24">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">현재 휴대폰 모델명</div>
+                                            <div class="input">
+                                                <input type="text" value="LGU-OMPHONE">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content btn_search">
+                                            <div class="label">변경할 휴대폰 모델명</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="모델번호를 검색해주세요." readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group"><!-- 23/02/07 수정 : .mgt24 클래스 제거 -->
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">일련번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="일련번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">Wi-Fi 주소</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="영문숫자 혼합 12자리를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">IMEI</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="숫자 14자리를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <ul class="star_type"><!-- 23/02/07 수정 : .mgt20 클래스 제거 -->
+                                    <li>KB Liiv M 휴대폰 분실파손보험 가입 시 안드로이드폰은 OMD, 아이폰은 ULK가 실제 모델명 앞에 반드시 확인되어야 합니다.<br>(해당 모델명으로 미 등록시 휴대폰 보험 가입 불가)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_watch">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">단말기 유형</h3>
+                                </div>
+
+                                <div class="radio_group flex mgt12">
+                                    <div class="radio_item box_type center">
+                                        <input type="radio" id="apple_watch" name="wacth_type" checked>
+                                        <label for="apple_watch" class="label">애플워치</label>
+                                    </div>
+                                    <div class="radio_item box_type center">
+                                        <input type="radio" id="galaxy_watch" name="wacth_type">
+                                        <label for="galaxy_watch" class="label">갤럭시워치</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form_group mgt32">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">워치 모델</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="워치 모델번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group"><!-- 23/02/07 수정 : .mgt24 클래스 제거 -->
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">일련번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="워치 일련번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">IMEI</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="IMEI를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="label">EID</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="EID를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+
+                                <ul class="star_type"><!-- 23/02/07 수정 : .mgt20 클래스 제거 -->
+                                    <li>애플워치 : 설정 > 일반 > 정보 에서 확인</li>
+                                    <li>애플워치 자급제는 모델명 앞에 'ULK-'를 붙여 작성해주세요.(예시 : ULK-A2375)</li>
+                                    <li>갤럭시워치 : 설정 > 정보 에서 확인</li>
+                                    <li>워치요금제 개통시 고객센터에서 단말등록(확정기변)을 요청합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">이전</button>
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 휴대폰 모델번호 검색 팝업 -->
+    <div id="MYES01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="모델번호1">모델번호1</a></li>
+                        <li><a href="#none" role="button" title="모델번호2">모델번호2</a></li>
+                        <li><a href="#none" role="button" title="모델번호3">모델번호3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 휴대폰 모델번호 검색 팝업 -->
+
+<script>
+    // 휴대폰 모델번호 검색 팝업
+    $(document).on("click", ".btn_search", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"휴대폰 모델번호",
+            content:'#MYES01',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+</script>
+</body>
+</html>

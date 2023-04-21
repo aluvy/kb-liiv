@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1353466663|rpid=1911413610|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">가입사실확인서 발급</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">가입사실확인서 발급</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="layer1" class="btn secondary sm">발급 목적 및 제출처 선택</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MYPA0201" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="form_group">
+                    <div class="radio_group flex">
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="radio1" name="radioType" checked>
+                            <label for="radio1" class="label"><span>A/S센터 제출용</span></label>
+                        </div>
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="radio2" name="radioType">
+                            <label for="radio2" class="label"><span>보험회사 제출용</span></label>
+                        </div>
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="radio3" name="radioType">
+                            <label for="radio3" class="label"><span>세무서 제출용</span></label>
+                        </div>
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="radio4" name="radioType">
+                            <label for="radio4" class="label"><span>기타 증빙용</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#layer1').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"항목을 선택해주세요",
+            content:'#MYPA0201',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

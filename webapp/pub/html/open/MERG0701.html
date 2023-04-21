@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 가입신청 취소</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_952043615|rpid=1800949123|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">더욱 열심히 하는 리브모바일이 되겠습니다!</h1><!-- 23/03/10 수정 : 문구 수정 -->
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">더욱 열심히 하는<br>리브모바일이 되겠습니다!</h2><!-- 23/03/10 수정 : 문구 수정 -->
+                </div>
+                <div class="section">
+                    <div class="banner_item small">
+                        <div class="icon_area">
+                            <span class="img_item flat warning"></span>
+                        </div>
+                        <div class="txt_area">가입신청 취소 시 입력한 모든 정보가 삭제되며 유심 배송이 진행되지 않습니다.</div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="form_group row">
+                        <span class="form_check">
+                            <input type="radio" id="reason1" name="reason">
+                            <label for="reason1" class="label"><span>가입정보 착오입력 (신규/번호이동 오입력 등)</span></label>
+                        </span>
+                        <span class="form_check">
+                            <input type="radio" id="reason2" name="reason">
+                            <label for="reason2" class="label"><span>가입정보 변경 (요금제 변경 등)</span></label>
+                        </span>
+                        <span class="form_check">
+                            <input type="radio" id="reason3" name="reason">
+                            <label for="reason3" class="label"><span>유심배송 불만 (영업점에서 즉시 수령)</span></label>
+                        </span>
+                        <span class="form_check">
+                            <input type="radio" id="reason4" name="reason">
+                            <label for="reason4" class="label"><span>단순 변심 (가입의사 없어짐)</span></label>
+                        </span>
+                        <span class="form_check">
+                            <input type="radio" id="reason_etc" name="reason">
+                            <label for="reason_etc" class="label"><span>기타 (사유를 입력해 주세요)</span></label>
+                        </span>
+                    </div>
+                    <!-- [03/09] mgt20 클래스 변경 -->
+                    <div class="form_group mgt20 reason_etc">
+                        <div class="form_item">
+                            <div class="textarea">
+                                <textarea placeholder="100자 이내로 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">이전</button>
+                        <button type="button" class="btn primary">가입신청 취소</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<script>
+$(()=>{
+    $("input[name='reason']").on("change", function(){
+        $("#reason_etc").is(":checked") ? $(".reason_etc").show() : $(".reason_etc").hide();
+    })
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>[COP24] 카드등록</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1974967168|rpid=-1383464262|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">[COP24] 카드등록</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">[COP24] 카드등록</h2>
+                </div>
+
+                <div class="section">
+                    <button type="button" id="btn_cardIn" class="btn secondary sm">카드 등록 방법을 선택하세요.</button><br><br>
+                    <button type="button" id="btn_COP24" class="btn secondary sm">[COP24] 카드등록</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div id="cardIn" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p class="fs14 fc_gray">카드 촬영 시 정보가 자동으로 입력됩니다.</p>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">직접 입력</button>
+                <button type="button" class="btn primary" data-action="close">카드 촬영</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- layer -->
+    <div id="COP24" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="btn_wrap mgt0">
+					<button type="button" class="btn primary">카드촬영</button>
+				</div>
+                <p class="txt_alert mgt8">카드 촬영시 정보가 자동으로 입력됩니다.</p>
+            </div>
+
+            <div class="section">
+                
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">카드사</div>
+                            <div class="select">
+                                <button type="button" class="btn_select">카드사를 선택해주세요</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select_inline">
+                        <ul class="card_select" style="max-height:28rem;"> <!-- 02/15 수정 -->
+                            <li><a href="#none" role="button" class="item c_kb" title="국민카드">국민카드</a></li>
+                            <li><a href="#none" role="button" class="item c_sh" title="신한카드">신한카드</a></li>
+                            <li><a href="#none" role="button" class="item c_ss" title="삼성카드">삼성카드</a></li>
+                            <li><a href="#none" role="button" class="item c_hd" title="현대카드">현대카드</a></li>
+                            <li><a href="#none" role="button" class="item c_lt" title="롯데카드">롯데카드</a></li>
+                            <li><a href="#none" role="button" class="item c_bc" title="BC카드">BC카드</a></li>
+                            <li><a href="#none" role="button" class="item c_ha" title="하나카드">하나카드</a></li>
+                            <li><a href="#none" role="button" class="item c_nh" title="NH카드">NH카드</a></li>
+                            <li><a href="#none" role="button" class="item c_ct" title="씨티은행카드">씨티은행카드</a></li>
+                        </ul>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item card_type fix">
+                        <div class="item_content">
+                            <div class="label">카드번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="txt_alert">본인명의의 신용/체크카드 정보를 입력해주세요</p>
+                    <div class="form_error"></div>    
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">유효기간</div>
+                            <div class="input">
+                                <input type="text" placeholder="MM/YY">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">소유자명</div>
+                            <div class="input">
+                                <input type="text" placeholder="카드 소유자 본인 이름을 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">생년월일</div>
+                            <div class="input">
+                                <input type="text" placeholder="생년월일 8자리 (ex. 19850101)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">등록완료</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+
+    $('#btn_COP24').on('click', function(){
+        $.ohyLayer({
+            title: '카드등록',
+            content: '#COP24',
+            type: 'bottom',
+            closeUse: true,
+        });
+    });
+
+    $('#btn_cardIn').on('click', function(){
+        $.ohyLayer({
+            title:"카드 등록 방법을 선택하세요",
+            content:'#cardIn',
+            type:'bottom',
+            closeUse:true,
+        });
+    })
+    
+</script>
+</body>
+</html>

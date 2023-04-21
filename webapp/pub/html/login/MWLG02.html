@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>아이디 로그인</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-14014120|rpid=-1987649815|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header layer"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content login">
+                <h1 class="title hidden">아이디 로그인</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">아이디 로그인</h2>
+                </div>
+
+                <!-- 아이디 입력 -->
+                <div class="section">
+                    <div class="form_group">
+                        <div class="form_item fix req">
+                            <div class="item_content">
+                                <div class="label">아이디</div>
+                                <div class="input">
+                                    <input type="text" placeholder="아이디">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 비밀번호 입력 -->
+                    <div class="tab_wrap box pw_tab">
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_box_panel_1">비밀번호</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_box_panel_2">간편 비밀번호</button></div>
+                        </div>
+                        <div class="tab_panel on" role="tabpanel" id="tab_box_panel_1">
+                            <h3 class="hidden">비밀번호</h3>
+                            <div class="section">
+                                <div class="form_group">
+                                    <div class="form_item fix req">
+                                        <div class="item_content">
+                                            <div class="label">비밀번호</div>
+                                            <div class="input">
+                                                <input type="password" placeholder="비밀번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">아이디 또는 비밀번호가 일치하지 않아요</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_box_panel_2">
+                            <h3 class="hidden">간편 비밀번호</h3>
+                            <div class="section">
+                                <div class="form_group">
+                                    <div class="form_item fix req">
+                                        <div class="item_content">
+                                            <div class="label">간편 비밀번호</div>
+                                            <div class="input">
+                                                <input type="password" placeholder="간편 비밀번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">아이디 또는 비밀번호가 일치하지 않아요</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 아이디저장 -->
+                    <div class="check_group save_box">
+                        <div class="check_item boxbull_type">
+                            <input type="checkbox" id="boxChk1" class="all_chk" name="boxCheck">
+                            <label for="boxChk1" class="label">아이디 저장</label>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn primary lg">로그인</button>
+                    </div>
+                    <ul class="list_join">
+                        <li><a href="#" class="link">아이디 찾기</a></li>
+                        <li><a href="#" class="link">(간편) 비밀번호 재설정</a></li>
+                        <li><a href="#" class="link">가입하기</a></li>
+                    </ul>
+                    <ul class="star_type mgt20 center"><!-- 23/04/04 수정 : 클래스 추가 .center -->
+                        <li>접수번호로 개통하실 고객은 <a href="#" id="confirm_btn" class="underline"><strong>접수번호 셀프개통</strong></a>을 이용해주세요.</li>
+                    </ul>
+                </div>
+                <div class="login_bottom">
+                    <ul class="list_sns">
+                        <li><a href="#" class="link kakao"><span class="blind">카카오톡ID로 로그인하기</span></a></li>
+                        <li><a href="#" class="link naver"><span class="blind">네이버ID로 로그인하기</span></a></li>
+                        <li><a href="#" class="link apple"><span class="blind">애플ID로 로그인하기</span></a></li>
+                    </ul>
+                    <button type="button" id="layer1" class="link_others">다른 로그인 방법</button>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- self layer -->
+    <div id="confirm_html" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">셀프 개통을 진행하시겠습니까?</div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary" data-action="close" id="var_test">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // self layer -->
+
+    <!-- other layer -->
+    <div id="htmlTest_var" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <ul class="list_login_others">
+                    <li><a href="#" class="item_id">아이디</a></li>
+                    <li><a href="#" class="item_kb"><span>KB국민인증서</span><span class="badge best">추천</span></a></li>
+                    <li><a href="#" class="item_phone">휴대폰번호</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- // other layer -->
+
+<script>
+    // self layer
+    $('#confirm_btn').on('click', function(){
+        $.ohyLayer({                 
+            titleUse:false,
+            // title:'',
+            content:'#confirm_html',
+            type:'confirm', 
+            closeUse:true,
+            closeAct:true,
+        });
+    });
+
+    // other layer
+    $('#layer1').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"로그인 방법을 선택해주세요",
+            content:'#htmlTest_var',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

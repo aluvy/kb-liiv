@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>알림설정</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_210775941|rpid=408174392|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">알림설정</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">알림설정</h2>
+                    <div class="summary">
+                        KB Liiv M에서 보내드리는 유익한 요금제&middot;서비스&middot;이벤트 정보 등 다양한 혜택을 받으실 수 있어요.
+                    </div>
+                </div>
+
+                <hr class="hr_divide" aria-hidden="true">
+
+                <div class="section">
+
+                    <div class="board_list_wrap">
+                        <ul class="board_list type2"> <!-- 23/03/21 type2 클래스추가 -->
+
+                            <li class="list_item type2">
+                                <strong class="list_tit">알림(Push) 동의</strong>
+                                <span class="switch_item type1">
+                                    <input type="checkbox" id="switch1" checked>
+                                    <label for="switch1"><span class="blind">활성화</span></label>
+                                </span>
+                            </li>
+                            <li class="list_item type2">
+                                <div class="list_left">
+                                    <strong class="list_tit">알림 방해금지 시간 설정</strong>
+                                    <a href="#" class="btn_text">
+                                        <span>09:00 ~ 18:00</span>
+                                    </a>
+                                </div>
+                                <span class="switch_item type1">
+                                    <input type="checkbox" id="switch2">
+                                    <label for="switch2"><span class="blind">활성화</span></label>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>   
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 알림 팝업 -->
+    <div id="MYST0101" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+
+                <p class="pop_txt">
+                    알림(Push)동의를 하지 않으시는 경우 KB Liiv M에서 제공하는 유용한 혜택 및 이벤트,
+                    <!-- 23/03/17 html 수정 -->
+                    <strong>보안 및 주요안내사항에 대한 중요한 정보를 받으실 수 없습니다.</strong><br>
+                    <strong>알림을 계속 받으시겠습니까?</strong>
+                    <!-- //23/03/17 html 수정 -->
+                </p>
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close" id="btn_MYST0101_d">취소</button>
+                <button type="button" class="btn primary" id="btn_MYST0101_a">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 알림 팝업 -->
+
+<script>
+    $(()=>{
+        // 바텀팝업
+        $("#switch1").on("change", function(){
+            if($(this).is(":checked") == true) {
+                $.toast({
+                    type:"bottom",
+                    content: "[KB Liiv M] 2023.01.01 알림(Push)<br> 수신 동의 처리되었습니다.",
+                });
+            } else {
+                var _MYST0101 =  $.ohyLayer({
+                    titleUse:true,
+                    title:"알림",
+                    content:'#MYST0101',
+                    type:'bottom',
+                    closeUse: true,
+                    closeAct: false,
+                });
+            };
+
+            $('#btn_MYST0101_a').on('click', function(){
+                _MYST0101.close();
+    
+                $.toast({
+                    type:"bottom",
+                    content: "[KB Liiv M] 2023.01.01 알림(Push)<br> 수신 동의 처리되었습니다.",
+                });
+            });
+
+            $('#btn_MYST0101_d').on('click', function(){
+                _MYST0101.close();
+    
+                $.toast({
+                    type:"bottom",
+                    content: "[KB Liiv M] 2023.01.01 알림(Push)<br> 수신 거부 처리되었습니다.",
+                });
+            });
+        });
+
+    });
+    
+        // $(document).on("click", "#btn_MERG06P01_8", ()=>{ _MYST0101.open() });
+        // $(document).on("click", "#btn_MERG06P01_8_1_close", ()=>{ _MYST0101.close() });
+</script>
+</body>
+</html>

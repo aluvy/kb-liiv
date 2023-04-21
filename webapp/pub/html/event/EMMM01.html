@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>혜택</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
-    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1202439977|rpid=-2031020470|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
 </head>
 <body>
     <div class="wrap">
@@ -65,8 +65,19 @@
                     <div class="section">
                         <div class="coupon_near_partner">
                             <button type="button" class="btn_acc">가까운 멤버십 제휴처 위치를 확인하세요</button>
-
-                            <div class="partner_slide_wrap">
+                            <div class="partner_area" id="marquee_area">
+                                <ul class="partner_wrap marquee-wrap">
+                                    <li class="partner_item marquee-item">
+                                        <span class="slide_ico slide-starbucks">STARBUCKS</span>
+                                        <span class="slide_ico slide-cu">CU</span>
+                                        <span class="slide_ico slide-tj">TOUS les JOURS</span>
+                                        <span class="slide_ico slide-gs25">GS25</span>
+                                        <span class="slide_ico slide-kb">KB 국민은행</span>
+                                        <span class="slide_ico slide-happycon">Happy Con</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <div class="partner_slide_wrap">
                                 <div class="partner_slide swiper">
                                     <div class="swiper-wrapper">
                                         <ul class="swiper-slide">
@@ -79,7 +90,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -115,7 +126,7 @@
 
                                                             <div class="coupon_info">
                                                                 <p class="brand">스타벅스</p>
-                                                                <p class="tit">카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T</p>
+                                                                <p class="tit">카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T 카페 아메리카노 T</p>
                                                                 <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
                                                                 <!-- <p class="date">
                                                                     <strong>사용기간</strong>
@@ -533,7 +544,7 @@
                                     <li>
                                         KB스타클럽등급에 따른 연간 사용횟수는 아래와 같습니다.
                                         <ul class="dash_type">
-                                            <li>- MVP/로얄(연 6회), 골드/프리미엄(연 4회), 일반(연 2회)</li>
+                                            <li>MVP/로얄(연 6회), 골드/프리미엄(연 4회), 일반(연 2회)</li>
                                         </ul>
                                     </li>
                                     <li>KB Liiv M 멤버십 혜택은 매달 변경 될 수 있습니다.</li>
@@ -567,28 +578,35 @@
             $(document).find(".tab_icon_panel").removeClass("on");
             $(document).find(`#${elem}`).addClass("on");
 
+            // [04/20] swiper 제거 (다른곳에서 추가된 swiper관련 스크립트도 제거해 주세요)
             // [03/14] 활성화 탭 클랙 예외처리
-            if( $(this).parents("li").hasClass("coupon") ){
-                partnerSlide.autoplay.stop();
-                partnerSlide.autoplay.start();
-            }
+            // if( $(this).parents("li").hasClass("coupon") ){
+            //     partnerSlide.autoplay.stop();
+            //     partnerSlide.autoplay.start();
+            // }
         })
 
-        var partnerSlide = new Swiper(".partner_slide", {
-            autoplay: {
-                delay: 0,
-                stopOnLastSlide: false,
-                disabledOnInteraction: false, 
-            },
-            speed: 8000,
-            loop: true,
-            slidesPerView: "auto",
-            // spaceBetween: 20,
-            observer: true,
-            observerParents: true,
-            paginationClickable: true,
-            allowTouchMove: false,  // [03/03] swiper 설정추가
+        // [04/20] marquee 호출문 추가
+        $.marquee({
+            content:'#marquee_area',
         });
+
+        // [04/20] swiper 제거
+        // var partnerSlide = new Swiper(".partner_slide", {
+        //     autoplay: {
+        //         delay: 0,
+        //         stopOnLastSlide: false,
+        //         disabledOnInteraction: false, 
+        //     },
+        //     speed: 8000,
+        //     loop: true,
+        //     slidesPerView: "auto",
+        //     // spaceBetween: 20,
+        //     // observer: true,
+        //     // observerParents: true,
+        //     paginationClickable: true,
+        //     allowTouchMove: false,  // [03/03] swiper 설정추가
+        // });
     })
 </script>
 </body>

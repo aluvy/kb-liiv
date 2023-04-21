@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>아이디 찾기</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1038217864|rpid=2103330414|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">아이디 찾기</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">아이디 찾기</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="blind">가입자 구분</h3>
+                    <div class="form_group">
+                        <div class="rdo_select_wrap"><!-- 23/01/31 class="triple" 추가, 23/02/02 삭제 -->
+                            <span class="form_check img_type">
+                                <input type="radio" id="MALG0701_1" name="MALG0701"><!-- 23/01/31 id 변경, script 관련 -->
+                                <label for="MALG0701_1" class="label">
+                                    <i class="icon icon_join_personal"></i>
+                                    <span>개인</span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="MALG0701_2" name="MALG0701">
+                                <label for="MALG0701_2" class="label">
+                                    <i class="icon icon_join_business"></i>
+                                    <span>개인 사업자</span>
+                                </label>
+                            </span>
+                            <!-- 23/01/31 미성년자 항목 추가,  23/02/02 삭제 -->
+                            <!-- <span class="form_check img_type">
+                                <input type="radio" id="MALG0701_3" name="MALG0701">
+                                <label for="MALG0701_3" class="label">
+                                    <i class="icon icon_join_minor"></i>
+                                    <span>미성년자</span>
+                                </label>
+                            </span> -->
+                            <!-- // 23/01/31 미성년자 항목 추가 -->
+                        </div>
+                    </div>
+
+                    <div class="form_group mgt32">
+                        <div class="form_item fix jumin req">
+                            <div class="item_content">
+                                <div class="label">주민등록번호</div>
+                                <div class="input">
+                                    <input type="text" maxlength="6" placeholder="생년월일 6자리" >
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <!-- 01/17 class="masking" 추가 -->
+                                <div class="input"><!-- 01/18 class="masking" 삭제 -->
+                                    <input type="text" maxlength="7" placeholder="뒷 7자리">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">주민등록번호를 정확히 입력해주세요</div>
+                    </div>
+
+                    <!-- 개인 사업자인 경우만 show 처리 -->
+                    <div id="form_business" class="form_group none">
+                        <div class="form_item fix req">
+                            <div class="item_content">
+                                <div class="label">사업자등록번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">사업자등록번호를 정확히 입력해주세요</div>
+                    </div>
+
+                    <div class="tit_sec_wrap mgt12">
+                        <h3 class="tit_sec">인증방법</h3>
+                    </div>
+                    <div class="form_group">
+                        <div class="rdo_select_wrap triple">
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_kb" name="idchk">
+                                <label for="idchk_kb" class="label">
+                                    <span class="img_area"><i class="img_item three auth sm"></i></span>
+                                    <span class="text_area"><span>KB국민<br>인증서</span></span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_card" name="idchk">
+                                <label for="idchk_card" class="label">
+                                    <span class="img_area"><i class="img_item three credit sm"></i></span>
+                                    <span class="text_area"><span>신용카드</span></span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_phone" name="idchk">
+                                <label for="idchk_phone" class="label">
+                                    <span class="img_area"><i class="img_item three security sm"></i></span>
+                                    <span class="text_area"><span>휴대폰</span></span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="star_type">
+                        <li>SNS 로그인 계정과 비밀번호는 해당 SNS업체에 문의해 주세요.</li>
+                    </ul>
+                    <p class="cert_msg">신용카드 본인인증을 완료하였습니다.</p><!-- [03/13] 인증 메세지 마크업 추가 -->
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<script>
+    $(document).on("change", ".rdo_select_wrap input[name=MALG0701]", function(){
+        if($("#MALG0701_2").is(":checked")){
+            $('#form_business').removeClass('none');
+        } else {
+            $('#form_business').addClass('none');
+        }
+    })
+</script>
+</body>
+</html>

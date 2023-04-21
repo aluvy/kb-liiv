@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-2045241265|rpid=1857670978|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">명의 주기</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">명의 주기</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_MYCH0401" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 2023.01.25 기획검수 수정요청 변경 -->
+    <!-- layer -->
+    <div id="MYCH0401" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <!-- 23/02/17 수정 : 폼 구조 수정 -->
+                <div class="form_group row">
+                    <span class="form_check">
+                        <input type="radio" id="radio1" name="radioGroup">
+                        <label for="radio1" class="label"><span>부</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio2" name="radioGroup" checked>
+                        <label for="radio2" class="label"><span>모</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio3" name="radioGroup">
+                        <label for="radio3" class="label"><span>기타</span></label>
+                    </span>
+                </div>
+                <!--// 23/02/17 수정 : 폼 구조 수정 -->
+            </div>
+        </div>
+        <!-- 23/02/17 수정 : 버튼 추가 -->
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+        <!--// 23/02/17 수정 : 버튼 추가 -->
+    </div>
+    <!-- //layer -->
+    <!-- //2023.01.25 기획검수 수정요청 변경 -->
+
+<script>
+    //바텀시트
+    $('#btn_MYCH0401').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"관계를 선택해주세요",
+            content:'#MYCH0401',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

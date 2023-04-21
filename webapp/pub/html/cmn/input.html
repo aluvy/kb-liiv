@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
-    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_724242084|rpid=-1444474263|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
 
     <style>
         .ia_input_wrap .form_group {margin-top:3.2rem;}
@@ -50,7 +50,7 @@
                             <div class="item_content">
                                 <div class="label">레이블명</div>
                                 <div class="input">
-                                    <input type="text" placeholder="힌트텍스트" id="test">
+                                    <input type="text" placeholder="힌트텍스트">
                                 </div>
                             </div>
                         </div>
@@ -263,6 +263,7 @@
                         <h3 class="tit_sec">이메일</h3>
                     </div>
 
+
                     <div class="form_group email">
                         <div class="form_item fix">
                             <div class="item_content">
@@ -274,11 +275,30 @@
                             <div class="email_col">@</div>
                             <div class="item_content">
                                 <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select">전체</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                    <button type="button" id="btn_email" class="btn_select" readonly>직접입력</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="form_error"></div>
+                        <!-- 직접입력을 선택한 경우만 show -->
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="이메일을 입력해 주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //직접입력을 선택한 경우만 show -->
+    
+                        <div class="form_error">유효성 check</div>
+                        <!-- <div class="select">
+                            <select>
+                                <option value="all">직접입력</option>
+                                <option value="option1">naver.com</option>
+                                <option value="option2">hotmail.com</option>
+                                <option value="option3">daum.net</option>
+                                <option value="option4">nate.com</option>
+                            </select>
+                        </div> -->
                     </div>
 
                     <!-- 면허번호 -->
@@ -316,6 +336,10 @@
                         </div>
                         <div class="form_error"></div>
                     </div>
+                    <ul class="bull_type lg mgt0">
+                        <li>모달 팝업을 클릭으로 호출 시, 클릭되는 엘리먼트에는 <b class="fc_red">id가 필수.</b></li>
+                        <li>id는 페이지 내에 <b class="fc_red">유일</b>해야 한다.</li>
+                    </ul>
 
 
                 </div>
@@ -536,7 +560,7 @@
                         <div>
                             <p>div.form_group</p>
                             <div>
-                                <p>div.form_item (.fix .req)</p>
+                                <p>div.form_item (.fix .req .error)</p>
                                 <div>
                                     <p>div.item_content (.focus .done .error) (.btn_xxx .js_timer)</p>
                                     <div>
@@ -553,44 +577,79 @@
                             </div>
                         </div>
                     </div><!-- .form_input_structure -->
-                    <ul class="star_type">
+                    <ul class="bull_type lg">
                         <li>
-                            <strong class="fc_black">div.form_item.fix</strong><br>
-                            .label 영역이 fix 된다
+                            <strong class="fc_black">div.form_group</strong>
+                            <ul class="star_type">
+                                <li>폼 영역을 싸고있는 div</li>
+                            </ul>
                         </li>
                         <li>
+                            <strong class="fc_black">div.form_item (.fix .req .error)</strong>
+                            <ul class="star_type">
+                                <li>
+                                    <strong class="fc_black">.fix</strong>
+                                    <ul class="bull_type">
+                                        <li>.label 영역이 fix 된다</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.req</strong>
+                                    <ul class="bull_type">
+                                        <li>필수 입력사항으로 input에 value값이 없는 상태에서 blur 이벤트가 발생할 경우 에러메세지가 노출된다.</li>
+                                        <li>label 우측에 <span class="fc_red">*</span> 표시</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.error</strong>
+                                    <ul class="bull_type">
+                                        <li>에러메세지 영역 노출됨 (.form_group .form_item.error ~ .form_error)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li>
                             <strong class="fc_black">div.form_item.req</strong><br>
                             필수입력 사항으로 input에 value 값이 없는 상태에서 blur 이벤트가 발생할 경우 에러메세지가 노출된다.<br>
                             label우측에 <span class="fc_red">*</span> 표시
-                        </li>
+                        </li> -->
                         <li>
-                            <strong class="fc_black">div.item_content.focus</strong><br>
-                            input에 focus 이벤트가 일어난 상태
-                        </li>
-                        <li>
-                            <strong class="fc_black">div.item_content.done</strong><br>
-                            input에 value값이 입력되고 blur 이벤트가 일어난 상태
-                        </li>
-                        <li>
-                            <strong class="fc_black">div.item_content.error</strong><br>
-                            input에 입력한 value값이 잘못되고, blur 이벤트가 일어난 상태
-                        </li>
-                        <li>
-                            <strong class="fc_black">div.item_content.btn_xxx</strong><br>
-                            btn_xxx 클래스명에 따라 자동으로 버튼이 삽입된다.
-                        </li>
-                        <li>
-                            <strong class="fc_black">div.item_content.js_timer</strong><br>
-                            인증번호 입력 시 제한시간 timer 영역이 자동으로 삽입된다. (MALG0108 참고)
+                            <strong class="fc_black">div.item_content (.focus .done .error) (.btn_xxx .js_timer)</strong>
+                            <ul class="star_type">
+                                <li>
+                                    <strong class="fc_black">.focus</strong>
+                                    <ul class="bull_type">
+                                        <li>input에 focus 이벤트가 일어난 상태</li>
+                                        <li>검은색 2px 라인 표시됨 (.form_group .item_content::after)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.done</strong>
+                                    <ul class="bull_type">
+                                        <li>input에 value값이 입력되고 blur 이벤트가 일어난 상태</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.error</strong>
+                                    <ul class="bull_type">
+                                        <li>빨간색 2px 라인 표시 됨 (.form_group .item_content.error::after)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.btn_xxx</strong>
+                                    <ul class="bull_type">
+                                        <li>btn_xxx 클래스명에 따라 자동으로 버튼이 삽입된다.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong class="fc_black">.js_timer</strong>
+                                    <ul class="bull_type">
+                                        <li>인증번호 입력 시 제한시간 timer 영역이 자동으로 삽입된다. (MALG0108 참고)</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </div>
-
-                <div class="btn_confirm_wrap">
-                    <div class="btn_area">
-                        <button type="button" class="btn secondary">취소</button>
-                        <button type="button" class="btn primary">확인</button>
-                    </div>
                 </div>
 
             </div>

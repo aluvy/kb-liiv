@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>SNS 연동 실패 - 로그인</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-635673542|rpid=581973901|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">SNS 연동 실패</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">SNS 연동 실패</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_MALG07P01" class="btn secondary sm">[팝업] SNS 연동 실패</button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MALG07P01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <ul class="sns_fail">
+                    <li>
+                        <a href="#">
+                            <strong>SNS 연동</strong>
+                            <p class="txt">회원인 경우<br> SNS 로그인 설정을<br> ON 해주세요.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>가입하기</strong>
+                            <p class="txt">회원인 아닌 경우<br> 신규가입을<br> 진행해주세요.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    // 팝업
+    $(document).on("click", "#btn_MALG07P01", ()=>{
+        $.ohyLayer({
+            title : "회원정보를 찾을 수 없습니다",
+            content:'#MALG07P01',
+            type:'confirm',
+            closeUse:false,
+        });
+    });
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_944412181|rpid=2076389724|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <style>
+        .ia_calendar_info {border-radius:1.2rem; background:var(--bg_02, #F8F9FB); padding:2rem;}
+        .ia_calendar_info .tit_item{margin:3rem 0 0; padding:0;}
+        .ia_calendar_info .tit_item:nth-of-type(1){margin:0; padding:0;}
+        .ia_calendar_info p {margin:1.2rem 0 0; font-size:1.2rem; font-weight:700;}
+        .ia_calendar_info p span {color:var(--main_02);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">달력 팝업</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">달력 팝업</h2>
+                </div>
+
+                <div class="section">
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">달력 선택 팝업 (마크업)</h3>
+                        <a href="https://zmnbank.kbstar.com/mnbank/html/common/BFE000250.html" target="blank" class="link btn_text">참고페이지</a>
+                    </div>
+
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_calendar_html" class="btn primary">달력 선택 팝업</button>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">달력 선택 팝업 (스크립트 포함)</h3>
+                        <a href="https://zmnbank.kbstar.com/mnbank/cache/resource/html/D002228" target="blank" class="link btn_text">참고페이지</a>
+                    </div>
+                    
+                    <div class="btn_wrap row">
+                        <button type="button" id="btn_calendar" class="btn primary">달력 선택 팝업(스크립트 포함)</button>
+                    </div>
+
+                    <div class="form_group mgt32">
+                        <div class="form_item fix date">
+                            <div class="item_content btn_date">
+                                <div class="label">날짜</div>
+                                <div class="input">
+                                    <input type="text" placeholder="날짜를 선택하세요" id="idInput">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                    <div class="form_group col">
+                        <div class="form_item fix date">
+                            <div class="item_content btn_s_date">
+                                <div class="label">검색 시작일</div>
+                                <div class="input">
+                                    <input type="text" placeholder="시작일" id="start_date">
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content btn_e_date">
+                                <div class="label">검색 종료일</div>
+                                <div class="input">
+                                    <input type="text" placeholder="종료일" id="end_date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                    <div class="ia_calendar_info">
+                        <h4 class="tit_item">달력 팝업 호출하기</h4>
+                        <p>_calendar.open( <span>'idCal', 'idInput', '20230223', '-', { 'minDate':20230302, 'maxDate':20230317 }</span> );</p>
+
+                        <h4 class="tit_item">@param</h4>
+                        <ul class="star_type">
+                            <li><b>idCal</b> : 생성할 달력 팝업의 ID</li>
+                            <li><b>idInput</b> : 선택한 날짜를 입력받을 input ID</li>
+                            <li>
+                                <b>20230223</b> : 기본 날짜설정
+                                <ul class="dash_type">
+                                    <li>ex) <b>''</b> : 공백으로 처리하면 오늘날짜가 기본으로 선택됨</li>
+                                    <li>ex) <b>$(document).find("#idInput").val()</b> : 과 같은 방법으로 사용가능</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>-</b> : 입력한 문자열로 년/월/일이 구분됨 (보내지 않으면 기본 '-' )
+                                <ul class="dash_type">
+                                    <li>ex) <b>''</b> : 00001122 (구문문자 없음)</li>
+                                    <li>ex) <b>'.'</b> : 0000.11.22</li>
+                                    <li>ex) <b>'/'</b> : 0000/11/22</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>{ 'minDate':20230302, 'maxDate':20230317 }</b> : minDate, maxDate 설정
+                                <ul class="dash_type">
+                                    <li>형식에 맞지 않는 데이터를 보낼 경우 작동 안함</li>
+                                    <li>ex) <b>{ 'minDate':20230302 }</b> : minDate만 설정 가능</li>
+                                    <li>ex) <b>{ 'maxDate':20230317 }</b> : maxDate 설정 가능</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+
+
+
+<!-- layer -->
+<div id="calendar_html" class="layerHTML">
+    <div class="ly_cnt">
+        <!-- 캘린더 -->
+        <div class="ly_calendar">
+
+            <div class="cal_month">
+                <button type="button" class="btn_ico first" disabled><span class="hidden">전년도</span></button><!-- disabled -->
+                <button type="button" class="btn_ico prev" disabled><span class="hidden">이전달</span></button><!-- disabled -->
+                <span class="year_txt"><span class="number">2023.01</span></span>
+                <button type="button" class="btn_ico next"><span class="hidden">다음달</span></button>
+                <button type="button" class="btn_ico end"><span class="hidden">다음년도</span></button>
+                <button type="button" class="today">오늘<span class="hidden">선택</span></button>                    
+            </div>
+            
+            <table class="cal_tbl">
+                <caption>달력-일,월,화,수,목,금,토 항목으로 구성</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="sunday">일</th>
+                        <th scope="col">월</th>
+                        <th scope="col">화</th>
+                        <th scope="col">수</th>
+                        <th scope="col">목</th>
+                        <th scope="col">금</th>
+                        <th scope="col" class="saturday">토</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="holiday">1</td>
+                        <td><button type="button" class="selectable" disabled>2</button></td><!-- disabled -->
+                        <td><button type="button" class="selectable" disabled>3</button></td><!-- disabled -->
+                        <td><button type="button" class="selectable">4</button></td>
+                        <td><button type="button" class="selectable">5</button></td>
+                        <td><button type="button" class="selectable">6</button></td>
+                        <td class="saturday"><button type="button">7</button></td>
+                    </tr>
+                    <tr>
+                        <td class="holiday"><button type="button">8</button></td>
+                        <td><button type="button" class="on" title="선택 됨">9</button></td><!-- 선택 됨 -->
+                        <td><button type="button" class="today" title="오늘 날짜">10</button></td><!-- 오늘 날짜 표시 -->
+                        <td><button type="button" class="selectable">11</button></td>
+                        <td><button type="button" class="today on" title="오늘 날짜, 선택 됨">12</button></td><!-- 오늘 날짜 + 선택 -->
+                        <td><button type="button" class="selectable">13</button></td>
+                        <td class="saturday"><button type="button">14</button></td>
+                    </tr>
+                    <tr>
+                        <td class="holiday"><button type="button">15</button></td>
+                        <td><button type="button" class="selectable">16</button></td>
+                        <td><button type="button" class="selectable">17</button></td>
+                        <td><button type="button" class="selectable">18</button></td>
+                        <td><button type="button" class="selectable">19</button></td>
+                        <td><button type="button" class="selectable">20</button></td>
+                        <td class="saturday"><button type="button">21</button></td>
+                    </tr>
+                    <tr>
+                        <td class="holiday"><button type="button">22</button></td>
+                        <td class="holiday"><button type="button" class="selectable">23</button></td>
+                        <td class="holiday"><button type="button" class="selectable">24</button></td>
+                        <td><button type="button" class="selectable">25</button></td>
+                        <td><button type="button" class="selectable">26</button></td>
+                        <td><button type="button" class="selectable">27</button></td>
+                        <td class="saturday"><button type="button">28</button></td>
+                    </tr>
+                    <tr>
+                        <td class="holiday"><button type="button">29</button></td>
+                        <td><button type="button" class="selectable">30</button></td>
+                        <td><button type="button" class="selectable">31</button></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="saturday"></td>
+                    </tr>
+            <!-- //210712 : 날짜표기방법수정 -->                    
+                </tbody>
+            </table>
+        </div>
+        <!-- //캘린더 -->
+    </div>
+
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+
+
+
+
+
+<script>
+$(()=>{
+    let calendar_html = function(){
+        $.ohyLayer({               
+            title:"날짜 선택",
+            content:'#calendar_html',
+            type:'bottom',
+            closeUse:true,
+        });
+    };
+    // calendar_html();
+    $(document).on('click', '#btn_calendar_html', calendar_html);
+
+    
+    // 달력
+    let calendar = function(){
+        /**
+         * _calendar.open( idCal, idInput, dateVal ) : 달력 레이어팝업 호출
+         * @param {string} idCal		    : 달력 팝업 내 DIV ID       (idCal)
+         * @param {string} idInput		    : 달력에서 날짜 선택 시 날짜를 받을 input id
+         * @param {string} dateVal			: 기본 선택되어 있는 날짜    (20230223)
+         */
+        _calendar.open( 'idCal', 'idInput', '20230223');
+    }
+    // calendar();
+    
+    $(document).on('click', '#btn_calendar', calendar);
+
+    let calInput = $(document).find("#idInput");
+    let calbtn = $(document).find("#idInput").parents(".item_content").find(".btn_type");
+    calbtn.on("click", calbtn, calendar);
+    
+
+    // 검색시작일, 종료일
+    let btn_start = $(document).find("#start_date").parents(".item_content").find(".btn_type");
+    let btn_end = $(document).find("#end_date").parents(".item_content").find(".btn_type");
+    btn_start.on("click", function(){
+        // _calendar.open( 'start_cal', 'start_date', '20000101', '.');
+        _calendar.open( 'start_cal', 'start_date', $(document).find("#start_date").val(), '.', { 'minDate':20230302, 'maxDate':20230317 });
+    });
+    btn_end.on("click", function(){
+        // _calendar.open( 'end_cal', 'end_date', '', '/');
+        _calendar.open( 'start_cal', 'end_date', $(document).find("#end_date").val(), '/', { 'maxDate':20230405 });
+    });
+
+})
+</script>
+</body>
+</html>

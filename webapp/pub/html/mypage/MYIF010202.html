@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-744119673|rpid=-1045030006|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">요금제 검색</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">요금제 검색</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MYIF010202" class="btn secondary">요금제 검색 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<div id="MYIF010202" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="form_group">
+                <div class="form_item fix">
+                    <div class="item_content btn_search">
+                        <div class="input">
+                            <input type="text" placeholder="검색어를 입력해주세요">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form_error">유효성 check</div> -->
+            </div>
+
+            <!-- [03/16] 필터 마크업 전체 수정 START -->
+            <div class="rateplan_search_filter_wrap">
+                <h4 class="tit_item">통신망</h4>
+                <div class="filter_list scrollX"><!-- [03/15] .filter_list.scrollX 클래스 변경 -->
+                    <ul>
+                        <li><a href="#none" role="button" class="item on">전체</a></li>
+                        <li><a href="#none" role="button" class="item">LG U+</a></li>
+                        <li><a href="#none" role="button" class="item">KT</a></li>
+                        <li><a href="#none" role="button" class="item">SKT</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rateplan_search_filter_wrap">
+                <h4 class="tit_item">타입</h4><!-- [03/16] 종류 > '타입' 으로 변경 -->
+                <div class="filter_list scrollX"><!-- [03/15] .filter_list.scrollX 클래스 변경 -->
+                    <ul>
+                        <li><a href="#none" role="button" class="item on">전체</a></li>
+                        <li><a href="#none" role="button" class="item">LTE</a></li>
+                        <li><a href="#none" role="button" class="item">5G</a></li>
+                        <li><a href="#none" role="button" class="item">태블릿/워치</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rateplan_search_filter_wrap">                
+                <h4 class="tit_item">데이터</h4>
+                <div class="filter_list scrollX"><!-- [03/15] .filter_list.scrollX 클래스 변경 -->
+                    <ul>
+                        <li><a href="#none" role="button" class="item on">전체</a></li>
+                        <li><a href="#none" role="button" class="item">10GB 미만</a></li>
+                        <li><a href="#none" role="button" class="item">10GB 이상 ~ 100GB 미만</a></li>
+                        <li><a href="#none" role="button" class="item">100GB 이상</a></li>
+                    </ul>
+                </div>
+                <div class="form_group">
+                    <span class="form_check">
+                        <input type="checkbox" id="unlimited_data" name="unlimited_data">
+                        <label for="unlimited_data" class="label">
+                            <span><b>데이터 무제한</b></span><!-- [03/15] checkbox label 에 b태그 추가 -->
+                        </label>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="rateplan_search_filter_wrap">
+                <h4 class="tit_item">요금</h4>
+                <div class="filter_list scrollX"><!-- [03/15] .filter_list.scrollX 클래스 변경 -->
+                    <ul>
+                        <li><a href="#none" role="button" class="item on">전체</a></li>
+                        <li><a href="#none" role="button" class="item">1만원 미만</a></li>
+                        <li><a href="#none" role="button" class="item">1만원 이상 ~ 3만원 미만</a></li>
+                        <li><a href="#none" role="button" class="item">3만원 이상 ~ 5만원 미만</a></li>
+                        <li><a href="#none" role="button" class="item">5만원 이상</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [03/16] 필터 마크업 전체 수정 END -->
+
+        </div>
+        
+        <hr class="hr_divide">
+        <div class="section">
+            <div class="data_sort">
+                <span class="total">총 <strong>23</strong>개</span>
+                <span class="sort">
+                    <button type="button" id="btn_MERG06P01_6" class="btn_sort">인기순</button>
+                </span>
+            </div>
+            <div class="mgt12">
+				<div class="card_item line">
+					<a href="#">
+						<div class="item_main">
+							<div class="lt">
+								<div class="badge_group">
+									<span class="badge tablet">태블릿</span>
+									<span class="badge lg_u">LG U+</span>
+								</div>
+								<span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+							</div>
+							<div class="rt">
+								<span class="item_price">월<strong>24,800원</strong></span>
+							</div>
+						</div>
+						<div class="info_list">
+							<ul class="item_info">
+								<li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+								<li><i class="icon icon_call"></i><span>기본제공</span></li>
+								<li><i class="icon icon_msg"></i><span>기본제공</span></li>
+							</ul>
+						</div>
+					</a>
+				</div>
+
+				<div class="card_item line">
+					<a href="#">
+						<div class="item_main">
+							<div class="lt">
+								<div class="badge_group">
+									<span class="badge lte">LTE</span>
+									<span class="badge tablet">태블릿</span>
+								</div>
+								<span class="item_tit">데이터같이쓰기 240분</span>
+							</div>
+							<div class="rt">
+								<span class="item_price">월<strong>24,800원</strong></span>
+							</div>
+						</div>
+						<div class="info_list">
+							<ul class="item_info">
+								<li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+								<li><i class="icon icon_call"></i><span>기본제공</span></li>
+								<li><i class="icon icon_msg"></i><span>기본제공</span></li>
+							</ul>
+						</div>
+					</a>
+				</div>
+
+				<div class="card_item line">
+					<a href="#">
+						<div class="item_main">
+							<div class="lt">
+								<div class="badge_group">
+									<span class="badge lte">LTE</span>
+									<span class="badge tablet">태블릿</span>
+								</div>
+								<span class="item_tit">데이터같이쓰기 240분</span>
+							</div>
+							<div class="rt">
+								<span class="item_price">월<strong>24,800원</strong></span>
+							</div>
+						</div>
+						<div class="info_list">
+							<ul class="item_info">
+								<li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+								<li><i class="icon icon_call"></i><span>기본제공</span></li>
+								<li><i class="icon icon_msg"></i><span>기본제공</span></li>
+							</ul>
+						</div>
+					</a>
+				</div>
+			</div>
+            
+        </div>
+    </div>
+    
+    <!-- [03/15] 하단 버튼 마크업 삭제 -->
+    <!-- <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">닫기</button>
+        </div>
+    </div> -->
+
+</div>
+
+<!-- layer : select bottom sheet -->
+<div id="datasort" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li class="on"><a href="#none" role="button" title="인기순">인기순</a></li><!-- [03/16] 인기순 기본선택 -->
+                    <li><a href="#none" role="button" title="추천순">추천순</a></li>
+                    <li><a href="#none" role="button" title="가격 높은 순">가격 높은 순</a></li>
+                    <li><a href="#none" role="button" title="가격 낮은 순">가격 낮은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 높은 순">데이터 높은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 낮은 순">데이터 낮은 순</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+<!-- layer : select bottom sheet -->
+
+<script>
+    // $(document).off("click", "#btn_MYIF010202").on("click", "#btn_MYIF010202", function(){
+    $(()=>{
+        $.ohyLayer({
+            title:"요금제 검색",    // [03/15] 팝업 타이틀 변경
+            content:'#MYIF010202',
+            type:'bottom',
+            // type:'confirm',
+        });
+    });
+    // });
+
+    // 데이터 정렬
+    $(document).on("click", ".btn_sort", ()=>{
+        $.ohyLayer({
+            title:"정렬",
+            content:'#datasort',
+            type:'bottom',
+            dimAct:true,
+        });
+    })
+</script>
+</body>
+</html>

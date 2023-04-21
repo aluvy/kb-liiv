@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 팝업 - [팝업] 증빙서류 제출</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-502013109|rpid=-1622998369|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">증빙서류 제출</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">증빙서류 제출</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MERG07P09" class="btn primary">증빙서류 제출 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- layer -->
+<div id="MERG07P09" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section mgt0">
+            <!-- [03/09] word_keep 클래스 추가 -->
+            <p class="word_keep">
+                <!-- 증빙서류를 제출해 주세요.<br> --><!-- 23/03/10 수정 : 문구 삭제 -->
+                증빙서류 확인 후 가입 완료 및 유심발송이 시작되오니 반드시 <span class="fc_blue">가입신청 후 10일 이내에 서류</span>를 제출해주시기 바랍니다.
+            </p>
+            <div class="open_step">
+                <div class="step_item start on"><span>접수완료</span></div>
+                <div class="step_item doc ing"><span>서류제출</span></div>
+                <div class="step_item usim"><span>유심발송</span></div>
+                <div class="step_item complete"><span>개통완료</span></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="join_time box_item no_shadow">
+                <p>KB Liiv M 가입 가능시간</p>
+                <dl>
+                    <dt>신규가입</dt>
+                    <dd>
+                        <strong>08:00 ~ 20:00</strong> <span>(365일)</span>
+                    </dd>
+                    <dt>번호이동</dt>
+                    <dd>
+                        <strong>10:00 ~ 20:00</strong><br>
+                        <span>(일요일, 공휴일 제외)</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">신청현황 확인</button>
+            <button type="button" class="btn primary" data-action="close">증빙서류 제출</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<script>
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                title:'증빙서류를 제출해주세요',  //  23/03/10 수정 : 문구 수정
+                content:'#MERG07P09',
+                type:'bottom',
+            });
+        }
+        popupLoad();
+        $("#btn_MERG07P09").on("click", popupLoad);
+    })
+</script>
+</body>
+</html>

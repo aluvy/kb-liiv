@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_896886940|rpid=275825624|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">번호변경</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        번호변경
+                    </h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="layer3" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="htmlTest2" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p class="txt_alert mgt0">과거 1년 동안의 이력입니다.</p><!-- 23/02/16 수정 : 클래스 추가 .mgt0 -->
+
+                <div class="table">
+                    <table class="center"><!-- 23/02/16 수정 : 클래스 추가 .center -->
+                        <caption>테이블 캡션</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">변경처리일</th>
+                                <th scope="col">변경 전 번호</th>
+                                <th scope="col">변경 후 번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="gray_02">22.06.23</span></td>
+                                <td>010-1234-5678</td>
+                                <td>010-7894-5612</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gray_02">22.06.23</span></td>
+                                <td>010-1234-5678</td>
+                                <td>010-7894-5612</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- [02/23] 더보기 / nodata 마크업 수정 -->
+                <div class="btn_wrap_more">
+                    <button type="button" class="btn_more">더보기</button>
+                </div>
+
+                <div class="nor_box">
+                    <span class="img_item flat doc3"></span>
+                    <span class="nor_txt">정지 이력이 없어요</span>
+                </div>
+                <!-- // [02/23] 더보기 / nodata 마크업 수정 -->
+                
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close" id="twoLayer2">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    // 번호변경 이력 레이어
+    $('#layer3').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호변경 이력",
+            content:'#htmlTest2',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

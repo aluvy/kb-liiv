@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_484283984|rpid=-1876809732|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">KB Liiv M 해지</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        미납 안내 (미납요금이 있는 미성년자 납부 바텀 팝업)
+                    </h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_MYCL0101" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MYCL0101" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p class="fs14 fc_gray">고객님의 미납 요금은 <b class="fc_blue">22,000원</b>으로 KB Liiv M 고객센터를 통해 해지 가능합니다.</p>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">KB Liiv M 고객센터</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <script>
+        //바텀시트
+        $('#btn_MYCL0101').on('click', function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"미납 안내",
+                content:'#MYCL0101',
+                type:'bottom',
+                closeUse:true,                                     
+            });
+        });
+    </script>
+</body>
+</html>

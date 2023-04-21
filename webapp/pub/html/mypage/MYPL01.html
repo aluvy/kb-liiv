@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-480335518|rpid=1386092974|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">요금 납부</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        요금 납부 <!-- 02/06 텍스트 수정 -->
+                    </h2>
+                </div>
+                
+                <div class="section">
+                    
+                    <div class="droptype_btn_wrap"> <!-- 23/03/30 select_line 클래스제거 -->
+                        <a href="#" role="button" id="MYPL01" class="droptype_btn"> <!-- 23/03/30 id="MYPL01" 추가 -->
+                            <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                            <span class="info">010-12**-56**</span>
+                            <i class="icon icon_arr_down_gray"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="section">
+
+                    <div class="pay_info_box">
+                        <p class="tit_pay_info">12월 청구금액</p>
+                        <p class="pay_info_date">2023.01.31까지 납부하실 금액</p>
+                        <p class="pay_info_pee">24,800원</p>
+                    </div>
+
+                    <div class="top_line_row">
+                        <ul class="star_type">
+                            <li>당사 통신요금은 후불제(전월 사용요금)입니다.</li>
+                            <li>납부하실 금액은 미납요금 및 부가세(VAT) 포함한 금액입니다.</li>
+                            <li>자세한 요금내역은 ‘청구내역’을 참조하시기 바랍니다.</li>
+                            <li>KB Liiv M 고객센터 : 1522-9999(유료), 휴대폰 114(무료),<br>
+                            KB Liiv M 홈페이지 www.liivm.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">즉시 납부 금액 선택</h3>
+                    </div>
+                    <!-- 02/06 radio => checkbox 변경 -->
+                    <div class="check_group mgt12">
+                        <div class="check_item box_type">
+                            <input type="checkbox" id="boxChk1" class="all_chk" name="boxCheck">
+                            <label for="boxChk1" class="label">21년 10월 미납금액 9,000원</label>
+                        </div>
+                        <div class="check_item box_type">
+                            <input type="checkbox" id="boxChk2" class="sub_chk" name="boxCheck" checked="">
+                            <label for="boxChk2" class="label">21년 11월 미납금액 15,000원</label>
+                        </div>
+                        <div class="check_item box_type">
+                            <input type="checkbox" id="boxChk3" class="sub_chk" name="boxCheck" disabled="">
+                            <label for="boxChk3" class="label">22년 10월 미납금액 45,200원</label>
+                        </div>
+                    </div>
+                    <!-- <div class="radio_group mgt12">
+                        <div class="radio_item box_type">
+                            <input type="radio" id="a150" name="prd">
+                            <label for="a150" class="label">21년 10월 미납금액 9,000원</label>
+                        </div>
+                        <div class="radio_item box_type">
+                            <input type="radio" id="a120" name="prd" checked="">
+                            <label for="a120" class="label">21년 11월 미납금액 15,000원</label>
+                        </div>
+                        <div class="radio_item box_type">
+                            <input type="radio" id="a90" name="prd" disabled="">
+                            <label for="a90" class="label">22년 10월 미납금액 45,200원</label>
+                        </div>
+                    </div> -->
+                    <!-- // 02/06 radio => checkbox 변경 -->
+                    <div class="current_pee">
+                        <span><i class="img_item mini coin"></i> 총 납부금액</span>
+                        <span>24,000원</span>
+                    </div>
+                    <div class="top_line_row">
+                        <ul class="star_type">
+                            <li>자동납부는 마이페이지 > 정보변경 > 납부방법 변경을 이용해 주시기 바랍니다.</li>
+                            <li>납부 금액은 건별로 수납됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="btn_confirm_wrap">
+					<div class="btn_area">
+						<button type="button" id="btn_MYPL01" class="btn secondary">부분 납부</button>
+						<button type="button" id="btn_MYPL01_2" class="btn primary">즉시 납부</button>
+					</div>
+				</div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div id="htmlSelectLine" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line1" name="line" checked>
+                        <label for="line1" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-12**-56**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line2" name="line">
+                        <label for="line2" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 23/02/16 수정 : 버튼 추가 -->
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+        <!--// 23/02/16 수정 : 버튼 추가 -->
+    </div>
+
+    <div id="MYPL0101" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_price">
+                            <div class="label">부분 납부금액</div>
+                            <div class="input">
+                                <input type="text" placeholder="납부할 금액을 입력해주세요">
+                            </div>
+                            <span class="inp_won">원</span>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button> <!-- 02/13 수정 -->
+            </div>
+        </div>
+    </div>
+
+    <div id="MYPL0102" class="layerHTML">
+        <div class="ly_cnt scroll">
+            <div class="section">
+                <div class="box_item no_shadow">
+                    <div class="current_pee type2">
+                        <span class="tit_current_pee">총 납부금액</span>
+                        <span class="num_current_pee">37,500원</span>
+                    </div>
+                </div>
+                <div class="tit_sec_wrap mgt32">
+                    <h3 class="tit_sec">납부 방법 선택</h3>
+                </div>
+                <div class="form_group">
+                    <div class="rdo_select_wrap">
+                        <span class="form_check img_type">
+                            <input type="radio" id="radio3" name="radioType2">
+                            <label for="radio3" class="label">
+                                <i class="icon img_item three credit"></i>
+                                <span>신용카드</span>
+                            </label>
+                            
+                        </span>
+                        <span class="form_check img_type">
+                            <input type="radio" id="radio4" name="radioType2">
+                            <label for="radio4" class="label">
+                                <i class="icon img_item three account"></i>
+                                <span>가상계좌</span>
+                            </label>
+                            
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 신용카드 -->
+                <!-- 02/13 수정 -->
+                <div class="form_group mgt32">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">결제카드</div>
+                            <div class="input">
+                                <input type="text" placeholder="" value="국민카드" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form_error">유효성 check</div> -->
+                </div>
+
+                <div class="form_group mgt20">
+                    <div class="form_item card_type fix">
+                        <div class="item_content">
+                            <div class="label">카드번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="" value="1234" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="" value="5678" disabled>
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="" value="9877" disabled>
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="" value="2119" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form_error"></div> -->
+                </div>
+
+                <!-- <div class="form_group mgt20">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">유효기간</div>
+                            <div class="input">
+                                <input type="text" placeholder="" value="10/27" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div> --> <!-- 02/14 삭제 -->
+
+                <div class="form_group mgt20">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">할부개월</div>
+                            <div class="select">
+                                <button type="button" class="btn_select checked" id="installMonth">일시불</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form_error">유효성 check</div> -->
+                </div>
+                
+                <div class="btn_wrap mgt20">
+					<button type="button" class="btn primary">카드등록</button> <!-- COP24 -->
+				</div>
+
+                <p class="txt_alert mgt8">다른카드로 납부하시려면 카드를 등록해주세요.</p>
+                <!-- // 02/13 수정 -->
+                <!-- //신용카드 -->
+                
+                <!-- 결제계좌 -->
+                <!-- 02/16 수정 -->
+                <div class="form_group mgt32"> <!-- 02/13 수정 -->
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">결제계좌</div>
+                            <!-- <div class="select">
+                                <button type="button" id="btn_acountSelect" class="btn_select">계좌 발급 받으실 은행을 선택해주세요</button>
+                            </div> -->
+                            <div class="input">
+                                <input type="text" placeholder="" value="국민은행" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="가상 계좌번호" value="123456-00-123456" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="txt_alert">해당 가상계좌는 2023.02.07 까지 사용 가능합니다.</p>
+                    <!-- <div class="form_error">유효성 check</div> -->
+                </div>
+                <!-- // 02/16 수정 -->
+                
+                <div class="btn_wrap mgt20"> <!-- 02/17 추가 -->
+					<button type="button" class="btn primary">가상계좌 발급</button>
+				</div>
+
+                <ul class="star_type">
+                    <li>현재 발급된 가상계좌는 계좌사용가능일까지만 사용가능하며, 원 단위까지 정확한 금액 입금 부탁드립니다.</li>
+                    <li>정확한 금액이 아닌 경우 입금이 되지 않을 수 있으니 입금 시 납부금액 재확인 부탁드립니다.</li>
+                    <li>가상계좌번호 및 납부하실 금액은 KB Liiv M에서 발송된 문자메시지로 확인 가능합니다.</li>
+                </ul>
+                <!-- //결제계좌 -->
+                
+            </div>
+            
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close" disabled>납부</button> <!-- 02/13 수정 -->
+            </div>
+        </div>
+    </div>
+
+    <div id="MYCH0501" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="결제계좌1">결제계좌1</a></li>
+                        <li><a href="#none" role="button" title="결제계좌2">결제계좌2</a></li>
+                        <li><a href="#none" role="button" title="결제계좌3">결제계좌3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="MYCH0502" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="신용카드1">신용카드1</a></li>
+                        <li><a href="#none" role="button" title="신용카드2">신용카드2</a></li>
+                        <li><a href="#none" role="button" title="신용카드3">신용카드3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="MYPL01_3" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="일시불">일시불</a></li>
+                        <li><a href="#none" role="button" title="1개월">1개월</a></li>
+                        <li><a href="#none" role="button" title="2개월">2개월</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // 회선선택 팝업
+    $(document).off("click", "#MYPL01").on("click", "#MYPL01", function(){ // 23/03/30 호출값 변경 .select_line -> #MYPL01
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#htmlSelectLine',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // [팝업] 부분 납부하기
+    $(document).on("click", "#btn_MYPL01", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"부분 납부하기",
+            content:'#MYPL0101',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // [팝업] 즉시 납부하기
+    $(document).on("click", "#btn_MYPL01_2", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"즉시 납부하기",
+            content:'#MYPL0102',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 결제계좌 팝업
+    $(document).on("click", "#btn_acountSelect", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"결제계좌",
+            content:'#MYCH0501',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    // 신용카드 팝업
+    $(document).on("click", "#btn_ccardSelect", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"신용카드",
+            content:'#MYCH0502',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 할부 개월 선택
+    $(document).off("click", "#installMonth").on("click", "#installMonth", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"할부개월 선택",
+            content:'#MYPL01_3',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+</script>
+</body>
+</html>

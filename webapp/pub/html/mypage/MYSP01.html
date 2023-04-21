@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_290240707|rpid=-1721176898|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">일시정지 신청</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">일시정지 신청</h2>
+                </div>
+
+                <div class="section">
+                    <div class="droptype_btn_wrap">
+                        <a href="#" role="button" class="droptype_btn" id="btn_MYSP01_1">
+                            <span class="badge kt">KT</span>
+                            <!-- <span class="badge skt">SKT</span> -->
+                            <!-- <span class="badge lg_u">LGU+</span> -->
+                            <span class="info">010-12**-56**</span>
+                        </a>
+                    </div>
+
+                    <div class="banner_item small">
+                        <div class="icon_area">
+                            <span class="img_item flat warning"></span>
+                        </div>
+                        <div class="txt_area">
+                            한번에 최대 3개월까지 신청 가능하며 3개월 경과 시 자동 해제됩니다. (군입대, 해외근무/유학, 장기체류 등 별도 사유 예외)
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <h3 class="blind">일시정지 사유</h3>
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="info"><button type="button" class="btn_text" id="btn_MYSP01_2">일시정지 이력</button></div>
+                                <div class="label">일시정지 사유</div>
+                                <div class="select">
+                                    <button type="button" id="btn_MERG04_2" class="btn_select" disabled>일반</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="blind">일시정지 기간</h3>
+
+                    <!-- [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가 -->
+                    <div class="form_group mgt32">
+                        <div class="form_item date fix">
+                            <div class="item_content btn_s_date">
+                                <div class="label">일시정지 기간</div>
+                                <div class="input">
+                                    <input type="text" placeholder="시작일" id="start_date">
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content btn_e_date">
+                                <div class="info">
+                                    <span class="badge blue_light">신청중</span>
+                                    <a href="#none" role="button" class="btn_text">신청취소</a>
+                                </div>
+                                <div class="input">
+                                    <input type="text" placeholder="종료일" id="end_date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">일시정지 항목</h3>
+                    </div>
+                    <div class="radio_group flex mgt12">
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="category1" name="cate_pause" checked>
+                            <label for="category1" class="label">수신/발신 모두 정지</label>
+                        </div>
+                        <div class="radio_item box_type center">
+                            <input type="radio" id="category2" name="cate_pause">
+                            <label for="category2" class="label">발신만 정지</label>
+                        </div>
+                    </div>
+                    
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">서류첨부</h3>
+                        <div class="info"> <!-- 23/03/06 class name 변경 -->
+                            <a href="#" class="btn_text">서류안내</a>
+                        </div>
+                    </div>
+
+                    <!-- 02/17 변경 -->
+                    <!-- <div class="doc_group mgt12">
+                        !-- 첨부된 파일이 없을 경우 이 부분이 노출됩니다. --
+                        <div class="doc_item_add">
+                            <input type="file" id="file_add" />
+                            <label for="file_add"><span class="img_item icon doc"></span><p>클릭하여 서류를 첨부하세요</p></label>
+                        </div>
+                        !-- // 첨부된 파일이 없을 경우 이 부분이 노출됩니다. --
+        
+                        !-- 첨부된 파일이 있을 경우 이 부분이 노출됩니다. --
+                        <div class="doc_item_group">
+                            <div class="doc_item">
+                                <div class="doc_area">
+                                    <div class="info">
+                                        <p>서류01.exl</p>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="bar"><span style="width:60%;"></span></div>
+                                </div>
+                                <a href="#none" class="btn_remove"><span class="blind">첨부된 서류 삭제</span></a>
+                            </div>
+                            <div class="doc_item">
+                                <div class="doc_area">
+                                    <div class="info">
+                                        <p>서류01.exl</p>
+                                        <span>100%</span>
+                                    </div>
+                                    <div class="bar"><span style="width:100%;"></span></div>
+                                </div>
+                                <a href="#none" class="btn_remove"><span class="blind">첨부된 서류 삭제</span></a>
+                            </div>
+                            <div class="doc_item">
+                                <div class="doc_area">
+                                    <div class="info">
+                                        <p>서류01.exl</p>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="bar"><span style="width:60%;"></span></div>
+                                </div>
+                                <a href="#none" class="btn_remove"><span class="blind">첨부된 서류 삭제</span></a>
+                            </div>
+                            <div class="doc_item">
+                                <div class="doc_area">
+                                    <div class="info">
+                                        <p>서류01.exl</p>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="bar"><span style="width:50%;"></span></div>
+                                </div>
+                                <a href="#none" class="btn_remove"><span class="blind">첨부된 서류 삭제</span></a>
+                            </div>
+                            <div class="doc_item">
+                                <div class="doc_area">
+                                    <div class="info">
+                                        <p>서류01.exl</p>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="bar"><span style="width:60%;"></span></div>
+                                </div>
+                                <a href="#none" class="btn_remove"><span class="blind">첨부된 서류 삭제</span></a>
+                            </div>
+                            <div class="doc_item_add">
+                                <input type="file" id="file_add" />
+                                <label for="file_add"><p>추가 첨부하기</p></label>
+                            </div>
+                        </div>
+                        !-- // 첨부된 파일이 있을 경우 이 부분이 노출됩니다. --
+                    </div> -->
+                    <div class="file_group mgt12">
+                        <div class="file_item_add">
+                            <input type="file" id="file_add" />
+                            <label for="file_add"><span class="img_item icon camera"></span><em>서류첨부</em></label> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                        </div>
+                        <div class="file_item_group">
+                            <div class="file_item_scroll">
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 02/17 변경 -->
+                    
+                    <p class="txt_alert mgt12">주민등록번호 뒷자리는 안보이게 처리(마스킹) 후 첨부해 주세요.</p>
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">일시정지 / 해제 문자안내 <em>(선택)</em></h3>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">휴대폰 번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                
+                <div class="section mgt0">
+                    <ul class="list_acc type2 js_accordion">
+                        <li>
+                            <a href="#none" role="button" class="title" aria-expanded="false">
+                                <span>유의사항</span>
+                            </a>
+                            <div class="content_panel" role="region">
+                                <ul class="star_type mgt0"><!-- 23/04/04 수정 : 클래스 수정 .star_type --><!-- 23/03/16 수정 : 클래스 추가 .mgt0 -->
+                                    <li>일시정지 기간동안 KT망의 경우 월 3,850원(부가세포함), LG U+망의 경우 월 3,200원(부가세포함) 의 기본요금이 부과됩니다. (단, 군입대 정지의 경우 정지 기본요금 없음)</li>
+                                    <li>군입대를 할 경우에 최대 2년까지 일시정지가 가능합니다.</li>
+                                    <li>해외근무, 유학, 장기해외체류 등 해당 사유가 있을 경우, 기간 제한 없이 일시정지가 가능합니다.</li>
+                                    <li>장기 일시정지 1년 경과 후, 1만원이상 미납 발생 시 이용정지 후 직권해지될 수 있습니다.</li>
+                                    <li>KT망의 경우 장기일시정지는 모바일웹에서 신청 불가하며, 고객센터[(무료) 휴대폰에서 114, (유료) 1522-9999)]로 연락하여 주시기 바랍니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">신청</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 회선선택 팝업 -->
+    <div id="MYSP01_1" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line1" name="line" checked>
+                        <label for="line1" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span>
+                                <span>010-12**-56**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line2" name="line">
+                        <label for="line2" class="label">
+                            <span class="line_group">
+                                <span class="badge kt">KT</span>
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line3" name="line">
+                        <label for="line3" class="label">
+                            <span class="line_group">
+                                <span class="badge lg_u">LG U+</span>
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap"> <!-- 02/23 수정 : 버튼 추가(COP18 공통화) -->
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!--// 회선선택 팝업 -->
+
+    <!-- 일시정지 이력 팝업 -->
+    <div id="MYSP01_2" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li><a href="#none" role="button" title="이력내역">이력내역</a></li>
+                        <li><a href="#none" role="button" title="이력내역">이력내역</a></li>
+                        <li><a href="#none" role="button" title="이력내역">이력내역</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!--// 일시정지 이력 팝업 -->
+
+<script>
+    // 회선선택 팝업
+    $(document).on("click", "#btn_MYSP01_1", ()=>{
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#MYSP01_1',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    });
+
+    // 일시정지 이력 팝업
+    $(document).on("click", "#btn_MYSP01_2", ()=>{
+        $.ohyLayer({
+            title:"일시정지 이력",
+            content:'#MYSP01_2',
+            type:'bottom',
+            dimAct:true,
+        });
+    })
+
+    
+    // [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가
+    $(()=>{
+        let btn_start = $(document).find("#start_date").parents(".item_content").find(".btn_type");
+        let btn_end = $(document).find("#end_date").parents(".item_content").find(".btn_type");
+        btn_start.on("click", function(){
+            _calendar.open( 'start_cal', 'start_date', '');
+        });
+        btn_end.on("click", function(){
+            _calendar.open( 'end_cal', 'end_date', '');
+        });
+    })
+</script>
+</body>
+</html>

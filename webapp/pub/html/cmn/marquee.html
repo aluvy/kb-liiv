@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
-    <title>혜택</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
-    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1971572612|rpid=-1847092130|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <style>
+        .ia_marquee_structure {margin-top:1.2rem;}
+        .ia_marquee_structure div {padding:1rem; background:rgba(0,0,0, 0.1);}
+        .ia_marquee_structure p {font-size:1.2rem; line-height:1.4;}
+    </style>
 </head>
 <body>
     <div class="wrap">
@@ -24,25 +29,20 @@
         <!-- container -->
         <div class="container">
             <div class="content">
-                <h1 class="title hidden">멤버십</h1>
+                <h1 class="title hidden">Marquee</h1>
                 
                 <div class="tit_sub_wrap">
-                    <h2 class="tit_sub">멤버십</h2>
+                    <h2 class="tit_sub">Marquee</h2>
                 </div>
 
-                <div class="section">                    
-                    <div class="mbs_mygrade">
-                        <p class="txt_main">
-                            홍*동님의 KB스타클럽 등급은<br>
-                            <strong>프리미엄스타</strong>입니다.
-                        </p>
-                        <p class="txt_sub">등급혜택 적용기간 2022.01.01 ~ 2023.12.31</p>
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">requestAnimationFrame()</h3>
                     </div>
 
                     <ul class="mbs_tab" role="tablist">
                         <li class="coupon">
                             <a href="#" role="tab" aria-selected="true" aria-controls="tab_icon_panel_1">
-                                <!-- 23/02/08 수정 : "쿠폰 발급하기" => "쿠폰발급" 텍스트 변경  -->
                                 <span>쿠폰 발급</span>
                             </a>
                         </li>
@@ -60,483 +60,65 @@
                 </div>
 
                 <div class="tab_icon_panel on" role="tabpanel" id="tab_icon_panel_1">
-                    <!-- 23/02/08 수정 : "쿠폰 발급하기" => "쿠폰발급" 텍스트 변경  -->
                     <h3 class="hidden">쿠폰 발급</h3>
                     <div class="section">
                         <div class="coupon_near_partner">
                             <button type="button" class="btn_acc">가까운 멤버십 제휴처 위치를 확인하세요</button>
 
-                            <div class="partner_slide_wrap">
-                                <div class="partner_slide swiper">
-                                    <div class="swiper-wrapper">
-                                        <ul class="swiper-slide">
-                                            <li><a href="#" class="slide_ico slide-starbucks">STARBUCKS</a></li>
-                                            <li><a href="#" class="slide_ico slide-cu">CU</a></li>
-                                            <li><a href="#" class="slide_ico slide-tj">TOUS les JOURS</a></li>
-                                            <li><a href="#" class="slide_ico slide-gs25">GS25</a></li>
-                                            <li><a href="#" class="slide_ico slide-kb">KB 국민은행</a></li>
-                                            <li><a href="#" class="slide_ico slide-happycon">Happy Con</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-<style>
-.partner_area {position:relative; height:4rem; background:#f8f9fb; border-radius:4rem; overflow: hidden;}
-.partner_wrap {position:absolute; left:0; top:0; display:flex; align-items:center; width:fit-content; height:4rem; overflow: hidden;}
-.partner_item {display:flex; align-items:center; width:fit-content; height:4rem; padding-left:2rem; overflow: hidden;}
-.partner_item span + span {margin-left:2rem;}
-
-.marquee_notice {position:relative; width:100%; height:4.6rem; background:#f4efff; z-index:3;}
-.notice_mask {position:relative; height:4.6rem; margin:0 var(--sar_2) 0 var(--sal_2);  mask-image: linear-gradient(90deg, transparent 2%, black 20%, black 74%, transparent 96%); -webkit-mask-image: linear-gradient(90deg, transparent 2%, black 20%, black 74%, transparent 96%); overflow: hidden;}
-.notice_wrap {position:absolute; left:0; top:0; display:flex; align-items:center; width: fit-content; height: 4.6rem; overflow: hidden;}
-.notice_wrap .notice_item {display:flex; align-items:center; width:fit-content; height:4.6rem; overflow: hidden;}
-.notice_wrap .notice_item li a {display:block; width:fit-content; height:4.6rem; white-space:nowrap; font-size:1.4rem; font-weight:700; line-height:4.6rem; padding-left:2rem;}
-.marquee_notice .swiper-button-close {position:absolute; right:calc(var(--sar) + .6rem); top:0; bottom:0; width:4rem; height:4rem; margin:auto 0; background:url(../img/img/icon_close12.png) no-repeat center center / 1.2rem auto; z-index:3;}
-</style>
-                    <div class="section">
-                        <div class="partner_area" id="marquee_area">
-                            <ul class="partner_wrap marquee-wrap">
-                                <li class="partner_item marquee-item">
-                                    <span class="slide_ico slide-starbucks">STARBUCKS</span>
-                                    <span class="slide_ico slide-cu">CU</span>
-                                    <span class="slide_ico slide-tj">TOUS les JOURS</span>
-                                    <span class="slide_ico slide-gs25">GS25</span>
-                                    <span class="slide_ico slide-kb">KB 국민은행</span>
-                                    <span class="slide_ico slide-happycon">Happy Con</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button type="button" id="marquee_area_stop">stop</button>
-                    <button type="button" id="marquee_area_play">play</button>
-
-
-
-
-                    <!-- 흐르는 공지사항 -->
-                    <div class="marquee_notice" id="marquee_notice">
-                        <div class="notice_mask">
-                            <div class="notice_wrap marquee-wrap">
-                                <ul class="notice_item marquee-item">
-                                    <li><a href="#">컨슈머인사이트 조사 3회 연속 알뜰폰 고객체감만족도 1위</a></li>
-                                    <li><a href="#">다양한 KB Liiv M 앱 오픈이벤트에 참여해보세요</a></li>
+                            <div class="partner_area" id="marquee_area">
+                                <ul class="partner_wrap marquee-wrap">
+                                    <li class="partner_item marquee-item">
+                                        <span class="slide_ico slide-starbucks">STARBUCKS</span>
+                                        <span class="slide_ico slide-cu">CU</span>
+                                        <span class="slide_ico slide-tj">TOUS les JOURS</span>
+                                        <span class="slide_ico slide-gs25">GS25</span>
+                                        <span class="slide_ico slide-kb">KB 국민은행</span>
+                                        <span class="slide_ico slide-happycon">Happy Con</span>
+                                    </li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <button type="button" class="swiper-button-close"><span class="blind">공지사항 닫기</span></button>
-                    </div>
-                    <!-- //흐르는 공지사항 -->
-
-
-
-                    <hr class="hr_divide">
-                    <div class="section mgt0">
-                        <div class="tab_wrap line mgt16">
-                            <div class="tab_list" role="tablist">
-                                <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1">사용가능 쿠폰</button></div>
-                                <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">보유 쿠폰</button></div>
+                            
+                            <div class="btn_wrap">
+                                <button type="button" class="btn secondary" id="marquee_area_stop">STOP</button>
+                                <button type="button" class="btn primary" id="marquee_area_play">PLAY</button>
+                                <button type="button" class="btn primary" id="marquee_area_close">CLOSE</button>
                             </div>
-                            <!-- [03/09] mgt24 클래스 추가 -->
-                            <div class="tab_panel mgt24" role="tabpanel" id="tab_line_panel_1">
-                                <h3 class="blind">사용가능 쿠폰</h3>
-                                <div class="filter_list scroll-x">
-                                    <ul>
-                                        <li><a href="#none" role="button" class="item on">전체</a></li>
-                                        <li><a href="#none" role="button" class="item">생활혜택</a></li>
-                                        <li><a href="#none" role="button" class="item">금융혜택</a></li>
-                                        <li><a href="#none" role="button" class="item">통신할인</a></li>
-                                    </ul>
-                                </div>
 
-                                <div class="coupon_list_wrap">
-                                    <ul class="coupon_list">
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-starbucks"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-
-                                                            <div class="coupon_info">
-                                                                <p class="brand">스타벅스</p>
-                                                                <p class="tit">카페 아메리카노 T</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <!-- [02/09] 수정 : .coupon_unit.dim 클래스 추가 -->
-                                            <div class="coupon_unit dim">
-                                            <!-- // [02/09] 수정 : .coupon_unit.dim 클래스 추가 -->
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-gs25"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">GS25</p>
-                                                                <p class="tit">5,000원 금액권</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">발급</div>
-                                                    </div>
-                
-                                                    <div class="dim">
-                                                        <div class="l">
-                                                            <div class="in">
-                                                                <div class="coupon_error">
-                                                                    <p>
-                                                                        쿠폰 발급 시 오류가 발생하였습니다.<br>
-                                                                        고객센터로 문의해주세요.
-                                                                    </p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <strong>KB Liiv M 고객센터</strong> : 1522-9999
-                                                                        </li>
-                                                                        <li>
-                                                                            <strong>쿠프마케팅 고객센터</strong> : 1644-5094
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="r"><div class="in"></div></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit wait">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-gs25"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">GS25</p>
-                                                                <p class="tit">5,000원 금액권</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">데이터<br>충전시<br>사용가능</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit comp">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-cu"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">CU</p>
-                                                                <p class="tit">5,000원 금액권</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">사용완료</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit wait">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-genie"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">지니뮤직</p>
-                                                                <p class="tit">지니뮤직 지니뮤직 지니뮤직 지니뮤직</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">발급<br>준비중</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-touslesjours"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">뚜레쥬르</p>
-                                                                <p class="tit">뚜레쥬르 뚜레쥬르 뚜레쥬르 뚜레쥬르</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">재발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-happycon"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">해피콘</p>
-                                                                <p class="tit">해피콘 해피콘 해피콘 해피콘 해피콘</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">재발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-kb"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">KB국민은행</p>
-                                                                <p class="tit">프리미엄 금리우대</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">재발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-genie"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">지니뮤직</p>
-                                                                <p class="tit">지니뮤직 지니뮤직 지니뮤직 지니뮤직</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">재발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div><!-- .coupon_list_wrap -->
-
-
-                            </div><!-- //사용가능 쿠폰 -->
-                            <!-- [03/09] mgt24 클래스 추가 -->
-                            <div class="tab_panel mgt24" role="tabpanel" id="tab_line_panel_2">
-                                <h3 class="blind">보유 쿠폰</h3>
-                                <div class="filter_list scroll-x">
-                                    <ul>
-                                        <li><a href="#none" role="button" class="item on">전체</a></li>
-                                        <li><a href="#none" role="button" class="item">생활혜택</a></li>
-                                        <li><a href="#none" role="button" class="item">금융혜택</a></li>
-                                        <li><a href="#none" role="button" class="item">통신할인</a></li>
-                                    </ul>
-                                </div>
-                                
-
-                                <!-- [02/17] 보유 쿠폰 마크업 추가 -->
-                                <div class="coupon_list_wrap">
-                                    <ul class="coupon_list">
-                                        <li>
-                                            <div class="coupon_unit">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <div class="brand_ico brand-starbucks"></div>
-                                                            <div class="coupon_info">
-                                                                <p class="brand">스타벅스</p>
-                                                                <p class="tit">카페 아메리카노 T</p>
-                                                                <p class="date">발급일자 : 2023-02-17</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">재발급</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        
-                                        <li>
-                                            <div class="coupon_unit comp">
-                                                <a href="#" role="button">
-                                                    <div class="con">
-                                                        <div class="in">
-                                                            <!-- [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="brand_ico brand-cu"></div>
-                                                            <!-- // [02/13] 수정 : 아이콘 클래스명 수정 -->
-                                                            <div class="coupon_info">
-                                                                <p class="brand">CU</p>
-                                                                <p class="tit">5,000원 금액권</p>
-                                                                <!-- [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                                <!-- <p class="date">
-                                                                    <strong>사용기간</strong>
-                                                                    <span>~ 2023.12.31</span>
-                                                                </p> -->
-                                                                <!-- // [02/09] 수정 : 쿠폰 사용기간 삭제 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="sta">
-                                                        <div class="in">발급완료</div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-
-                                <!-- no data -->
-                                <div class="card_nodata autoheight">
-                                    <p>사용가능한 쿠폰이 없습니다.</p>
-                                </div>
-                                <!-- // no data -->
-
-                            </div><!-- .보유 쿠폰 -->
-                        </div><!-- .tab_wrap -->
+                        </div>
                     </div>
+                    
+                    <div class="section_f mgt32">
+
+                        <!-- 흐르는 공지사항 -->
+                        <div class="marquee_notice" id="marquee_notice">
+                            <div class="notice_mask">
+                                <div class="notice_wrap marquee-wrap">
+                                    <ul class="notice_item marquee-item">
+                                        <li><a href="#">컨슈머인사이트 조사 3회 연속 알뜰폰 고객체감만족도 1위</a></li>
+                                        <li><a href="#">다양한 KB Liiv M 앱 오픈이벤트에 참여해보세요</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button type="button" class="swiper-button-close"><span class="blind">공지사항 닫기</span></button>
+                        </div>
+                        <!-- //흐르는 공지사항 -->
+                    </div>
+                            
+                    <div class="btn_wrap">
+                        <button type="button" class="btn secondary" id="marquee_notice_stop">STOP</button>
+                        <button type="button" class="btn primary" id="marquee_notice_play">PLAY</button>
+                        <button type="button" class="btn primary" id="marquee_notice_close">CLOSE</button>
+                    </div>
+
                 </div><!-- .tab_icon_panel_1 -->
 
                 <div class="tab_icon_panel" role="tabpanel" id="tab_icon_panel_2">
-                    <h3 class="hidden">나의 등급</h3>
                     <hr class="hr_divide">
                     <div class="section">
                         <div class="tit_sec_wrap">
                             <h3 class="tit_sec">등급별 혜택안내</h3>
                         </div>
-
-                        <div class="abs_grade_graph">
-                            <p class="my">프리미엄 스타 : 연 4회, 월 1회 쿠폰 사용 가능</p>
-                            <ul>
-                                <li class="grade1">
-                                    <p class="name">일반</p>
-                                    <p class="benefit">연 2회<br>(월 1회)</p>
-                                </li>
-                                <li class="grade2">
-                                    <p class="name">프리미엄</p>
-                                    <p class="benefit">연 4회<br>(월 1회)</p>
-                                </li>
-                                <li class="grade3">
-                                    <p class="name">골드</p>
-                                    <p class="benefit">연 4회<br>(월 1회)</p>
-                                </li>
-                                <li class="grade4 on">
-                                    <p class="name">로얄</p>
-                                    <p class="benefit">연 6회<br>(월 1회)</p>
-                                </li>
-                                <li class="grade5">
-                                    <p class="name">MVP</p>
-                                    <p class="benefit">연 6회<br>(월 1회)</p>
-                                </li>
-                            </ul>
-                            <div class="btn_wrap mgt20">
-                                <button type="button" class="btn primary">KB 스타클럽 안내</button>
-                            </div>
-                        </div>
-                        <!-- [03/08] mgt20 클래스 추가 -->
-                        <ul class="bull_type mgt20">
-                            <li>멤버십 사용횟수는 멤버십 가입 당시 기준이며, 매년 1월 10일 기준으로 1월 17일 이내에 업데이트됩니다.</li>
-                            <li>KB금융그룹 내 계열사(KB국민은행, KB증권, KB손해보험, KB 국민카드, KB생명보험)와 거래하신 모든 상품 및 각종 거래실적을 종합하여 KB스타클럽 등급을 선정하고 기본 우대 서비스, 비금융 혜택을 드리는 특별 우대 서비스 등을 제공하고 있습니다.</li>
-                        </ul>
     
                     </div>
     
@@ -546,13 +128,11 @@
                     <h3 class="hidden">올해 남은 혜택</h3>
                     <hr class="hr_divide">
                     <div class="section">
-                        <h3 class="blind">올해 남은 혜택 안내</h3>
                         <div class="abs_benefit_ttl">
                             <p>올해 남은 혜택은 <strong>3개</strong> 입니다.</p>
                             <p>연 4회, 월 1회 혜택 사용 가능</p>
                         </div>
                         <div class="abs_benefit_used">
-                            <!-- [03/08] 타이틀 문구수정 -->
                             <div class="ttl">내가 받은 혜택</div>
                             <dl>
                                 <dt class="life">생활혜택</dt>
@@ -567,50 +147,130 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- .tab_icon_panel_3 -->
+                </div>
+
 
 
                 <hr class="hr_divide">
-                <div class="section mgt0">
-                    <ul class="list_acc type2 js_accordion">
-                        <li>
-                            <a href="#none" role="button" class="title" aria-expanded="false">
-                                <span>유의사항</span>
-                            </a>
-                            <div class="content_panel" role="region">
-
-                                <ul class="star_type mgt0"><!-- [04/04] 유의사항 디자인 공통 변경으로 수정 -->
-                                    <li>혜택 사용횟수 내 매월 생활 혜택 및 금융 혜택 중 1개의 혜택만 이용 가능합니다.</li>
-                                    <li>
-                                        KB스타클럽등급에 따른 연간 사용횟수는 아래와 같습니다.
-                                        <ul class="dash_type">
-                                            <li>MVP/로얄(연 6회), 골드/프리미엄(연 4회), 일반(연 2회)</li>
-                                        </ul>
-                                    </li>
-                                    <li>KB Liiv M 멤버십 혜택은 매달 변경 될 수 있습니다.</li>
-                                    <li>모바일상품권 신청 이후에는 취소 및 변경하실 수 없습니다.</li>
-                                </ul>
-
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">Marquee 마크업 구조</h3>
+                    </div>
+                    <div class="ia_marquee_structure">
+                        <p>#marquee_area (호출문 옵션 content 에 넣을 ID)</p>
+                        <div>
+                            <p>.marquee-wrap (left 값을 받을 엘리먼트)</p>
+                            <div>
+                                <p>.marquee-item (clone 될 엘리먼트)</p>
                             </div>
+                        </div>
+                    </div>
+                    <ul class="star_type">
+                        <li class="red">CSS스타일이 맞지 않으면 제대로 동작하지 않음</li>
+                    </ul>
+                    <ul class="bull_type lg">
+                        <li>
+                            <b>#marquee_area</b><br>
+                            호출문 옵션 중 content에 넣을 ID
+                        </li>
+                        <li>
+                            <b>.marquee-wrap</b>
+                            <ul class="dash_type">
+                                <li>고정 class</li>
+                                <li>position:absolute 를 가짐</li>
+                                <li>left 값을 받아 이동할 엘리먼트</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>.marquee-item</b>
+                            <ul class="dash_type">
+                                <li>고정 class</li>
+                                <li>clone이 될 엘리먼트</li>
+                            </ul>
                         </li>
                     </ul>
-                    
-                    <a href="#none" class="banner_box membership">
-                        <div class="txt_area">KB Liiv M 멤버십 혜택이 궁금하세요?</div>
-                    </a>
+                </div>
+
+
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">Marquee 호출문</h3>
+                    </div>
+                    <div class="box_item no_shadow">
+<pre style="padding:1rem; font-size:1.2rem; font-family:inherit;">
+$.marquee({
+    content:'#marquee_notice'
+});
+</pre>
+                    </div>
+
+                    <ul class="bull_type lg">
+                        <li>
+                            <b>content</b><br>
+                            marquee 애니메이션 적용할 엘리먼트 ID
+                        </li>
+                        <li>
+                            <b>speed</b><br>
+                            숫자 (default: 1)<br>
+                            애니메이션 속도
+                        </li>
+                        <li>
+                            <b>playUse</b><br>
+                            true / false (default:true)<br>
+                            로딩 시 애니메이션 시작 여부
+                        </li>
+                        <li>
+                            <b>clone</b><br>
+                            숫자 (default: 2)<br>
+                            클론 갯수
+                        </li>
+                    </ul>
 
                 </div>
+                
+
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">STOP / PLAY / CLOSE 버튼</h3>
+                    </div>
+
+                    <ul class="bull_type lg">
+                        <li>
+                            #marquee_area<b>_stop</b>
+                            <ul class="dash_type">
+                                <li>marquee 애니메이션 멈춤</li>
+                            </ul>
+                        </li>
+                        <li>
+                            #marquee_area<b>_play</b>
+                            <ul class="dash_type">
+                                <li>marquee 애니메이션 멈춘 후 play</li>
+                            </ul>
+                        </li>
+                        <li>
+                            #marquee_area<b>_close</b>
+                            <ul class="dash_type">
+                                <li>instance가 <b class="fc_red">삭제</b>되며 다시 play할 수 없음</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+
 
             </div><!-- //.content -->
         </div><!-- //.container -->
     </div>
 <script>
-    let marquee1;
     $(()=>{
-        // [02/15] 탭 및 스와이퍼 스크립트 수정
+
         // tab
-        $(document).off("click", ".mbs_tab li a").on("click", ".mbs_tab li a", function(e){   // [03/14] 활성화 탭 클랙 예외처리
-            if( $(this).attr("aria-selected") == "true" ) return;   // [03/14] 활성화 탭 클랙 예외처리
+        $(document).off("click", ".mbs_tab li a").on("click", ".mbs_tab li a", function(e){
+            if( $(this).attr("aria-selected") == "true" ) return;
 
             $(this).parents("li").siblings("li").find("a").attr("aria-selected", "false");
             $(this).attr("aria-selected", "true");
@@ -618,18 +278,13 @@
             let elem = $(this).attr('aria-controls');
             $(document).find(".tab_icon_panel").removeClass("on");
             $(document).find(`#${elem}`).addClass("on");
-
-            // [03/14] 활성화 탭 클랙 예외처리
-            if( $(this).parents("li").hasClass("coupon") ){
-                // partnerSlide.autoplay.stop();
-                // partnerSlide.autoplay.start();
-            }
         })
 
 
-        marquee1 = $.marquee({
+        $.marquee({
             content:'#marquee_area',
             // playUse: false,
+            // clone: 5,
         });
         
         $.marquee({
@@ -637,22 +292,6 @@
             speed: 0.5,
         });
     })
-
-    var partnerSlide = new Swiper(".partner_slide", {
-        autoplay: {
-            delay: 0,
-            stopOnLastSlide: false,
-            disabledOnInteraction: false, 
-        },
-        speed: 8000,
-        loop: true,
-        slidesPerView: "auto",
-        // spaceBetween: 20,
-        // observer: true,
-        // observerParents: true,
-        paginationClickable: true,
-        allowTouchMove: false,  // [03/03] swiper 설정추가
-    });
 </script>
 </body>
 </html>

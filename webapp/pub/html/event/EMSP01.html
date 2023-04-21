@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>혜택</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
-    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1104037146|rpid=1832932923|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
 </head>
 <body>
     <div class="wrap">
@@ -206,15 +206,45 @@
 
                     <!-- [02/16] 수정 : 가맹점 상세보기 추가 -->
                     <div class="mbs_map-store">
+
+                        <!-- [04/11] 가맹점 상세보기 수정 (coupon_item / store_item 분리) :: start -->
                         <div class="store_item">
-                            <p class="tit">GS25 여의도 한점</p>
-                            <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
-                            <p class="info">
+                            <div class="store_item-info">
                                 <span class="cate">해피콘</span>
-                                <span class="useinfo">파리크라상 아메리카노 사용가능</span>
-                            </p>
-                            <a href="#" class="btn_coupon">쿠폰받기</a>
+                                <p class="tit">GS25 여의도 한점</p>
+                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                            </div>
+                            <div class="store_item-coupon">
+                                <a href="#" class="btn_coupon">
+                                    쿠폰 사용하기
+                                    <i>22</i>
+                                </a>
+                            </div>
                         </div>
+
+                        <div class="store_item">
+                            <div class="store_item-info">
+                                <span class="cate">해피콘</span>
+                                <p class="tit">GS25 여의도 한점</p>
+                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                            </div>
+                            <div class="store_item-coupon">
+                                <a href="#" class="btn_coupon_download">
+                                    쿠폰받기
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="store_item">
+                            <div class="store_item-info">
+                                <span class="cate">해피콘</span>
+                                <p class="tit">GS25 여의도 한점</p>
+                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                            </div>
+                        </div>
+                        <!-- [04/11] 가맹점 상세보기 수정 (coupon_item / store_item 분리) :: end -->
+
                     </div><!-- .mbs_map-store -->
 
                 </div><!-- .mbs_map-bottom -->
@@ -229,7 +259,7 @@
         </div><!-- //.container -->
     </div>
 <!-- <script src="/js/lib/hammer.min.js"></script> -->
-<script src="../../../js/membership_place_search.js"></script>  <!-- [03/20] 퍼블 스크립트 파일 분리 -->
+<script src="/js/membership_place_search.js"></script>  <!-- [03/20] 퍼블 스크립트 파일 분리 -->
 <script>
 
     // 퍼블 테스트용 start

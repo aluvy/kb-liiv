@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1323170479|rpid=618311637|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">통신 부가서비스</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        통신 부가서비스
+                    </h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="layer3" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div class="section">
+        <div class="state_check">
+            <div><span class="img_item etc check"></span></div>
+            <div class="ttl">
+                휴대폰 분실/파손보험<br>
+                신청을 완료하였습니다.
+            </div>
+            <p>제출 서류 확인 및 가입심사 후 최종 가입 완료됩니다.</p>
+            <ul class="star_type">
+                <li>최대 7일 이내 심사 진행 후 최종 가입 처리되며, 확인 후 보험 가입 대상이 아닌 경우 가입이 불가할 수 있습니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- layer -->
+    <div id="htmlTest2" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="form_group row">
+                    <span class="form_check">
+                        <input type="radio" id="radio1" name="radioType2">
+                        <label for="radio1" class="label"><span>통화품질 불만</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio2" name="radioType2">
+                        <label for="radio2" class="label"><span>장기부재 (이민, 유학 등)</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio3" name="radioType2">
+                        <label for="radio3" class="label"><span>타사 신규 가입에 의한 해지</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio4" name="radioType2">
+                        <label for="radio4" class="label"><span>서비스 불만 (요금, 부가서비스 등)</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio5" name="radioType2">
+                        <label for="radio5" class="label"><span>서비스 이용불만 (이용채널 등)</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio6" name="radioType2">
+                        <label for="radio6" class="label"><span>기타 (해지사유 직접 신청)</span></label>
+                    </span>
+                </div>
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="textarea">
+                            <textarea placeholder="해지사유를 입력해주세요(1,000자 이내)"></textarea>
+                        </div>
+                        <div class="textarea_info">
+                            <div class="lt">
+                                <em class="curr on">0</em>
+                                <span class="limit">1,000</span>
+                            </div>
+                            <div class="rt">
+                                <button type="button" class="btn_reset">입력 내용 초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close" id="twoLayer2">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#layer3').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"해지사유를 선택해주세요",
+            content:'#htmlTest2',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

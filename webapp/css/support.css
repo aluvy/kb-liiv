@@ -351,6 +351,10 @@
 .usim_map-head {position:fixed; left:0; top:calc(var(--sat) + 8rem); width:100%; padding:0 var(--sar_2) 0 var(--sal_2); text-align:center; z-index:10;}
 .usim_map-bottom {position:absolute; left:0; bottom:0; width:100%; height:calc(100% - var(--sat) - 6rem - 8.6rem); z-index:9; transform:translateY(calc(100% - var(--sab) - 17rem)); transition:transform .3s; z-index:20;}
 
+@media all and (max-height:320px) {
+    .usim_map-bottom {transform:translateY(0);}
+}
+
 .usim_map-bottom .map_control {position:relative;}
 
 .usim_map-bottom.on {transform:translateY(0);}

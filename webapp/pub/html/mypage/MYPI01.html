@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_647060575|rpid=-620386152|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+
+    <!-- AS-IS bar 차트 core js -->
+    <script src="/js/kbchart_bar.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/kbchart_core_bar.css">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">청구서 조회</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        청구서 조회
+                    </h2>
+                </div>
+                
+                <div class="section">
+                    
+                    <div class="droptype_btn_wrap"> <!-- 23/03/30 select_line 클래스제거 -->
+                        <a href="#" role="button" id="MYPI01" class="droptype_btn"> <!-- 23/03/30 id="MYPI01" 추가 -->
+                            <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                            <span class="info">010-12**-56**</span>
+                            <i class="icon icon_arr_down_gray"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <div class="invoice_look">
+                        <div class="form_group">
+                            <div class="form_item fix">
+                                <div class="item_content">
+                                    <div class="select">
+                                        <button type="button" id="btn_MYPI0101" class="btn_select">2022년 12월</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="live_state_top type2">
+                            <div class="live_state_info">
+                                <p class="tit_live_state">홍*동 고객님의<br>
+                                    2022년 12월 청구금액은<br>
+                                    <em>45,200원</em> 입니다.
+                                </p>
+                                <p class="live_state_period"><strong>사용기간</strong> 2022.11.30 ~ 2022.11.30</p>
+                                <p class="live_state_period"><strong>작성기준일</strong> 2022.02.16</p>
+                            </div>
+                        </div>
+
+                        <div class="btn_wrap">
+                            <button type="button" class="btn primary">즉시 납부하기</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <div class="tab_wrap line">
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_panel_1">청구내역</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_panel_2">상세내역</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_panel_3">청구서</button></div>
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_panel_4">영수증</button></div>
+                        </div>
+
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_1">
+                            <h3 class="hidden">청구내역</h3>
+
+                            <div class="section">
+                                
+                                <div class="ing_pee_box">
+                                                
+                                    <div class="ing_pee_in">
+                                        <ul class="tit_ing_pee">
+                                            <li>통신서비스 요금 ①</li>
+                                            <li>20,000 원</li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">월정액</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">음성통화료</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">데이터통화료</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">문자이용료</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">연체료</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">할인금액</span>
+                                                <span class="usage_pee_p fc_blue">-20,000원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="usage_pee_sale">
+                                            <li>
+                                                <span class="usage_pee_p">- A할인</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">- B할인</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">- 할인조정</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">- 원단위 절사금액</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="ing_pee_in">
+                                        <ul class="tit_ing_pee">
+                                            <li>콘텐츠&부가서비스 사용 요금 ①</li>
+                                            <li>20,000 원</li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">콘텐츠 이용료 </span>
+                                                <span class="usage_pee_p">0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">부가서비스 사용</span>
+                                                <span class="usage_pee_p">0원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="ing_pee_in">
+                                        <ul class="tit_ing_pee">
+                                            <li>기타요금 ③</li>
+                                            <li>0 원</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="ing_pee_in">
+                                        <ul class="tit_ing_pee">
+                                            <li>미납요금 ④</li>
+                                            <li>20,000 원</li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">2022.12. 미납금액 </span>
+                                                <span class="usage_pee_p">0,000원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="usage_pee_sale">
+                                            <li>
+                                                <span class="usage_pee_p"> - 2022.12. 청구금액</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+
+                                <div class="current_pee">
+                                    <span><i class="img_item mini coin"></i> 총 납부금액 <em>① + ② + ③ + ④</em></span>
+                                    <span>24,000원</span>
+                                </div>
+
+                                <div class="top_line_row">
+                                    <ul class="star_type">
+                                        <li>당사 통신요금은 후불제(전월 사용요금)입니다.</li>
+                                        <li>납부하실 금액은 미납요금 및 부가세(VAT) 포함한 금액입니다.</li>
+                                        <li>납기일이 지나면 2%의 가산금이 두 달 후에 청구됩니다.</li>
+                                        <li>'*' 표시 항목은 부가가치세가 포함된 요금으로 청구서에는 별도로 표기하지 않습니다.</li>
+                                        <li>KB Liiv M 고객센터 : 1522-9999(유료), 휴대폰 114(무료) KB Liiv M 홈페이지: www.liivm.com</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">12월 할인상세내역</h3>
+                                    <a href="#none" id="btn_MYPI0102" class="link btn_text">최근 3개월 할인 내역</a>
+                                </div>
+
+                                <div class="ing_pee_box">
+                                                
+                                    <div class="ing_pee_in">
+                                        <ul class="tit_ing_pee">
+                                            <li>할인요금 계</li>
+                                            <li>20,000 원</li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">든든할인(최대 할인금액 : 0,000원) </span>
+                                                <span class="usage_pee_p fc_blue">0원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="usage_pee_sale">
+                                            <li>
+                                                <span class="usage_pee_p">- A할인</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">- B할인</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">- C할인</span>
+                                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                                            </li>
+                                        </ul>
+                                    
+                                        <ul class="pee_sale_pt">
+                                            <li>
+                                                <span class="usage_pee_p">나눔할인</span>
+                                                <span class="usage_pee_p fc_blue">-11,500원</span>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="pee_sale_pt">
+                                            <li>
+                                                <span class="usage_pee_p">기타할인</span>
+                                                <span class="usage_pee_p fc_blue">-0,000원</span>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="usage_pee_sale">
+                                            <li>
+                                                <span class="usage_pee_p">할인조정 </span>
+                                                <span class="usage_pee_p">-0,300원</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">서비스불편보상</span>
+                                                <span class="usage_pee_p">-0,000원</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section_f">
+                                <ul class="list_acc js_accordion type2"><!-- 23/02/16 수정 : 클래스 수정 .mgt12 -> .type2 -->
+                                    <li>
+                                        <a href="#none" role="button" class="title" aria-expanded="false">
+                                            <span>이용요금 할인 팁 </span>
+                                        </a>
+                                        <div class="content_panel" role="region">
+                                            <ul class="star_type mgt0"><!-- [04/07] 수정 : mgt0 추가 -->
+                                                <li>KB Liiv M 이용요금을 KB카드로 자동납부 시 0,000원 추가 할인가능</li>
+                                                <li>KB카드 결제계좌를 KB국민은행으로 변경 시 0,000원 추가 할인가능</li>
+                                                <li>청년희망적금 가입 시 0,000원 추가 할인 가능</li>
+                                                <li>할인 적용 시기는 가입 또는 변경 시기에 따라 최대 2개월 소요될 수 있습니다.</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_2">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">사용중인 요금제</h3>
+                                </div>
+                                <div class="card_item line mgt12">
+                                    <div class="item_main">
+                                        <div class="lt">
+                                            <div class="badge_group">
+                                                <span class="badge lte">LTE</span>
+                                                <span class="badge lg_u">LG U+</span>
+                                            </div>
+                                            <span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+                                        </div>
+                                        <div class="rt">
+                                            <span class="item_price">월<strong>24,800원</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">최근 3개월 이용 요금 </h3>
+                                </div>
+                                <div class="graph_area bg">
+                                    <div id="graph01" class="ambGraphWrap"></div>
+                                    <script>
+                                        var graph01 = [
+                                            {
+                                                type: 'everage',
+                                                label: '3개월 평균',
+                                                barColor: '#0966e9',                   
+                                                value: 18500
+                                            },{
+                                                label: '10월',
+                                                barColor: '#d6d6d6',
+                                                value: 19200
+                                            },{
+                                                label: '11월',
+                                                barColor:'#d6d6d6',
+                                                value: 17500
+                                            },{
+                                                label: '12월',
+                                                barColor:'#d6d6d6',
+                                                value: 18500
+                                            }
+                                        ]
+                            
+                                        $(window).on('load', function(){
+                                            $('#graph01').AmbGraph({
+                                                cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                                speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                                setUnit :{
+                                                    text : '원', // 단위 표시 필요시
+                                                },
+                                                data : graph01 // 불러올 data
+                                            });
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="table">
+                                    <table class="center">
+                                        <caption>최근 3개월 이용 요금</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr><th scope="col">구분</th>
+                                            <th scope="col">2021.10</th>
+                                            <th scope="col">2021.11</th>
+                                            <th scope="col">2021.12</th>
+                                        </tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>통신서비스 요금</td>
+                                                <td>100,000원</td>
+                                                <td>7,500원</td>
+                                                <td>7,500원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>콘텐츠&부가사용 요금</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>부가가치세</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>기타요금</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>콘텐츠 이용료</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>로밍서비스</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                                <td>0원</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong><span class="fc_blue">납부금액</span></strong></td>
+                                                <td><strong><span class="fc_blue">10,000원</span></strong></td>
+                                                <td><strong><span class="fc_blue">10,000원</span></strong></td>
+                                                <td><strong><span class="fc_blue">10,000원</span></strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">1월 사용량</h3>
+                                </div>
+                                <div class="graph_area">
+                                    <div id="graph02" class="ambGraphWrap"></div>
+                                    <script>
+                                        var graph02 = [
+                                            {
+                                                label: '데이터',
+                                                type: '',
+                                                unit: 'GB',
+                                                barColor:'#4a6ff2',
+                                                bgColor:'#edf1fe',
+                                                max: 11,
+                                                used:10,
+                                            },{
+                                                label: '데이터',
+                                                type: '',
+                                                unit: 'GB',
+                                                barColor:'#4a6ff2',
+                                                bgColor:'#edf1fe',
+                                                max: '무제한',
+                                                used:10,
+                                            },{
+                                                label: '음성통화',
+                                                type: 'time', // 시간 단위 s
+                                                unit: '',
+                                                barColor:'#10dd87',
+                                                bgColor:'#e6f7f0',
+                                                max: 3600 * 3, // 시간 단위 s
+                                                used:3600 + 10, // 시간 단위 s
+                                            },{
+                                                label: '음성통화',
+                                                type: 'time', // 시간 단위 s
+                                                unit: '',
+                                                barColor:'#10dd87',
+                                                bgColor:'#e6f7f0',
+                                                max: '무제한', 
+                                                used:3600 + 10, // 시간 단위 s
+                                            },{
+                                                label: '문자',
+                                                type: '',
+                                                unit: '건',
+                                                barColor:'#fcbf24',
+                                                bgColor:'#fff9ea',
+                                                max: 200,
+                                                used: 152,
+                                            },{
+                                                label: '문자',
+                                                type: '',
+                                                unit: '건',
+                                                barColor:'#fcbf24',
+                                                bgColor:'#fff9ea',
+                                                max: '기본제공',
+                                                used: 15,
+                                            },{
+                                                label: '영상·부가',
+                                                type: 'time', // 시간 단위 s
+                                                unit: '',
+                                                barColor:'#b27afa',
+                                                bgColor:'#f7f2ff',
+                                                max: 3600 * 5, // 시간 단위 s
+                                                used:3600 + 30, // 시간 단위 s
+                                            }
+                                        ]
+                    
+                                        $(window).on('load', function(){
+                                            $('#graph02').AmbGraph({
+                                                cName : 'dataBar', // core css에서 class명으로 모양을 결정함
+                                                speed : 2000,      // ani 속도 단위 ms // 최소 100
+                                                data : graph02 // 불러올 data
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">최근 3개월 사용량</h3>
+                                </div>
+                                <div class="tab_wrap box">
+                                    <div class="tab_list" role="tablist">
+                                        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_box_panel_1">데이터</button></div>
+                                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_box_panel_2">통화</button></div>
+                                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_box_panel_3">문자</button></div>
+                                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_box_panel_4">영상&middot;부가</button></div>
+                                    </div>
+                                    <div class="tab_panel on" role="tabpanel" id="tab_box_panel_1">
+                                        <h3 class="hidden">데이터</h3>
+                                        <div class="section">
+                                            <div class="graph_area bg">
+                                                <div id="graph_tab01" class="ambGraphWrap"></div>
+                                                <script>
+                                                    var graph_tab01 = [
+                                                        {
+                                                            type: 'everage',
+                                                            label: '3개월 평균',
+                                                            barColor: '#0966e9',                   
+                                                            value: 8
+                                                        },{
+                                                            label: '10월',
+                                                            barColor: '#d6d6d6',
+                                                            value: 11
+                                                        },{
+                                                            label: '11월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 7
+                                                        },{
+                                                            label: '12월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 8
+                                                        }
+                                                    ]
+                                        
+                                                    $(window).on('load', function(){
+                                                        $('#graph_tab01').AmbGraph({
+                                                            cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                                            speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                                            setUnit :{
+                                                                text : 'GB', // 단위 표시 필요시
+                                                            },
+                                                            data : graph_tab01 // 불러올 data
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab_panel" role="tabpanel" id="tab_box_panel_2">
+                                        <h3 class="hidden">통화</h3>
+                                        <div class="section">
+                                            <div class="graph_area bg">
+                                                <div id="graph_tab02" class="ambGraphWrap"></div>
+                                                <script>
+                                                    var graph_tab02 = [
+                                                        {
+                                                            type: 'everage',
+                                                            dataType: 'time',
+                                                            label: '3개월 평균',
+                                                            barColor: '#0966e9',                   
+                                                            value: 3600 + 10, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '10월',
+                                                            barColor: '#d6d6d6',
+                                                            value: 3600 + 200, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '11월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 3600 + 0, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '12월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 3600 + 1000, // 시간 단위 s
+                                                        }
+                                                    ]
+                                        
+                                                    $(window).on('load', function(){
+                                                        $('#graph_tab02').AmbGraph({
+                                                            cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                                            speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                                            // setUnit :{
+                                                            //     text : 'GB', // 단위 표시 필요시
+                                                            // },
+                                                            data : graph_tab02 // 불러올 data
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab_panel" role="tabpanel" id="tab_box_panel_3">
+                                        <h3 class="hidden">문자</h3>
+                                        <div class="section">
+                                            <div class="graph_area bg">
+                                                <div id="graph_tab03" class="ambGraphWrap"></div>
+                                                <script>
+                                                    var graph_tab03 = [
+                                                        {
+                                                            type: 'everage',
+                                                            label: '3개월 평균',
+                                                            barColor: '#0966e9',                   
+                                                            value: 58
+                                                        },{
+                                                            label: '10월',
+                                                            barColor: '#d6d6d6',
+                                                            value: 100
+                                                        },{
+                                                            label: '11월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 50
+                                                        },{
+                                                            label: '12월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 20
+                                                        }
+                                                    ]
+                                        
+                                                    $(window).on('load', function(){
+                                                        $('#graph_tab03').AmbGraph({
+                                                            cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                                            speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                                            setUnit :{
+                                                                text : '건', // 단위 표시 필요시
+                                                            },
+                                                            data : graph_tab03 // 불러올 data
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab_panel" role="tabpanel" id="tab_box_panel_4">
+                                        <h3 class="hidden">영상&middot;부가</h3>
+                                        <div class="section">
+                                            <div class="graph_area bg">
+                                                <div id="graph_tab04" class="ambGraphWrap"></div>
+                                                <script>
+                                                    var graph_tab04 = [
+                                                        {
+                                                            type: 'everage',
+                                                            dataType: 'time',
+                                                            label: '3개월 평균',
+                                                            barColor: '#0966e9',                   
+                                                            value: 3600 + 10, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '10월',
+                                                            barColor: '#d6d6d6',
+                                                            value: 3600 + 300, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '11월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 3600 + 20, // 시간 단위 s
+                                                        },{
+                                                            dataType: 'time',
+                                                            label: '12월',
+                                                            barColor:'#d6d6d6',
+                                                            value: 3600 + 2000, // 시간 단위 s
+                                                        }
+                                                    ]
+                                        
+                                                    $(window).on('load', function(){
+                                                        $('#graph_tab04').AmbGraph({
+                                                            cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                                            speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                                            // setUnit :{
+                                                            //     text : 'GB', // 단위 표시 필요시
+                                                            // },
+                                                            data : graph_tab04 // 불러올 data
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="star_type">
+                                        <li>음성, 문자, 데이터 사용량은 월 기본제공량을 포함한 실제 총 사용량입니다. (요금제 변경 전/후 사용량 합산)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">이번 달 이용서비스 상세내역서</h3>
+                                </div>
+
+                                <ul class="list_link type2 mgt12"><!-- 23/02/16 수정 : 클래스 추가 .mgt12 -->
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_01" class="title">소액결제</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_02" class="title">정보이용료</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_03" class="title">해외로밍서비스</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_04" class="title">이전통신사요금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_05" class="title">국제전화</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_06" class="title">수신자부담요금(국내)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_07" class="title">통신사 스토어 구매내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_08" class="title">구글 스토어 구매내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" id="btn_usageServiceLayer_09" class="title">애플 스토어 구매내역</a>
+                                    </li>
+                                </ul>
+
+                                <ul class="star_type">
+                                    <li>부가서비스는 신규가입/해지 시점의 사용일자에 따라 일할계산 되어 청구됩니다.(선불형 상품 및 1개월 의무사용 부가서비스는 1개월 사용료가 청구됩니다.)</li>
+                                    <li>납기일이 지나면 2%의 가산금이 두 달 후에 청구됩니다.</li>
+                                    <li>'*' 표시 항목은 부가가치세가 포함된 요금으로 청구서에는 별도로 표기하지 않습니다</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_3">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">청구정보</h3>
+                                </div>
+
+                                <div class="ing_pee_box">
+                                                
+                                    <div class="ing_pee_in">
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">고객명</span>
+                                                <span class="usage_pee_p">홍*동</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">고객번호</span>
+                                                <span class="usage_pee_p">123456789000000</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">서비스번호</span>
+                                                <span class="usage_pee_p">010-91**-**07</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="ing_pee_in">
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">사용기간</span>
+                                                <span class="usage_pee_p">2022.01.01~2022.01.31</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">작성일자</span>
+                                                <span class="usage_pee_p">2022.01.31</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">작성일자</span>
+                                                <span class="usage_pee_p">2022.01.31</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="ing_pee_in">
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">공급자등록/번호</span>
+                                                <span class="usage_pee_p">1234-67890</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">공급가액</span>
+                                                <span class="usage_pee_p">18,000원</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">부가가치세</span>
+                                                <span class="usage_pee_p">2,000원</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">당월요금 ①</span>
+                                                <span class="usage_pee_p">2,000원</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">미납요금 ②</span>
+                                                <span class="usage_pee_p">0원</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="current_pee">
+                                    <span><i class="img_item mini coin"></i> 이번달 납부금액 <em>① + ②</em></span>
+                                    <span>45,100원</span>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">납부정보</h3>
+                                </div>
+
+                                <div class="ing_pee_box">
+                                                
+                                    <div class="ing_pee_in">
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">납부방법</span>
+                                                <span class="usage_pee_p">신용카드</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">금융기관</span>
+                                                <span class="usage_pee_p">국민은행</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">예금주명</span>
+                                                <span class="usage_pee_p">홍*동</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">계좌/카드번호</span>
+                                                <span class="usage_pee_p">123455-**123455</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">납기일자</span>
+                                                <span class="usage_pee_p">2022.01.31</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">승인예정일</span>
+                                                <span class="usage_pee_p">2022.01.31</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">추가승인예정일</span>
+                                                <span class="usage_pee_p">10일, 18일, 23일, 28일</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>출금일 이후 미납요금에 대하여 연체 가산금이 다음달 청구서에 포함되어 청구됩니다.</li>
+                                    <li>출금월의 말일까지 출금 및 납부가 된 경우에는 연체가산금이 부과되지 않습니다.</li>
+                                    <li>연체가산금은 당월 미납요금에 대하여 2%가 부과되며, 다음달 청구서에 한번만 부과됩니다.</li>
+                                    <li>자동이체 이외의 납부내역은 포함되어 있지 않습니다.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_4">
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">12월 영수증</h3>
+                                </div>
+                                <div class="ing_pee_box">
+                                                
+                                    <div class="ing_pee_in">
+                                        <!-- <ul class="tit_ing_pee">
+                                            <li>통신서비스 요금 ①</li>
+                                            <li>20,000 원</li>
+                                        </ul> 02/02 삭제 -->
+                                        <ul>
+                                            <li>
+                                                <span class="usage_pee_p">고객명</span>
+                                                <span class="usage_pee_p">홍*동</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">고객번호</span>
+                                                <span class="usage_pee_p">123456789000000</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">서비스번호</span>
+                                                <span class="usage_pee_p">010-91**-**07</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">금융기관</span>
+                                                <span class="usage_pee_p">국민카드</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">예금주명</span>
+                                                <span class="usage_pee_p">홍*동</span>
+                                            </li>
+                                            <li>
+                                                <span class="usage_pee_p">계좌/카드번호</span>
+                                                <span class="usage_pee_p">1234-****-****-5678</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="table">
+                                    <table class="center">
+                                        <caption>12월 영수증</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr><th scope="col">납부일</th>
+                                            <th scope="col">영수금액</th>
+                                            <th scope="col">납부방법</th>
+                                        </tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2022.01.31</td>
+                                                <td>45,200원</td>
+                                                <td>신용카드</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+                                <div class="tit_sec_wrap">
+                                    <h3 class="tit_sec">납부내역</h3>
+                                </div>
+
+                                <div class="table">
+                                    <table class="center">
+                                        <caption>납부내역</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr><th scope="col">납부일</th>
+                                            <th scope="col">영수금액</th>
+                                            <th scope="col">납부방법</th>
+                                        </tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2022.01.31</td>
+                                                <td>2022.01</td>
+                                                <td>45,200원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022.01.31</td>
+                                                <td>2022.01</td>
+                                                <td>45,200원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022.01.31</td>
+                                                <td>2022.01</td>
+                                                <td>45,200원</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>출금일 이후 미납요금에 대하여 연체료가 다음달 청구서에 포함되어 청구됩니다.</li>
+                                    <li>출금월의 말일까지 출금 및 납부가 된 경우에는 연체료가 부과되지 않습니다.</li>
+                                    <li>연체가산금은 당월 미납요금에 대하여 2%가 부과되며, 다음달 청구서에 한번만 부과됩니다.</li>
+                                    <li>자동이체 이외의 납부내역은 포함되어 있지 않습니다.</li>
+                                    <li>소액결제 연체가산금은 소액결제사가 정한 연체가산금 기준에 따라 부과됩니다.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div id="htmlSelectLine" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line1" name="line" checked>
+                        <label for="line1" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-12**-56**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line2" name="line">
+                        <label for="line2" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="MYPI0101" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line021" name="line02" checked>
+                        <label for="line021" class="label">
+                            2022년 12월
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line022" name="line02">
+                        <label for="line022" class="label">
+                            2022년 11월
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line023" name="line02">
+                        <label for="line023" class="label">
+                            2022년 10월
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="MYPI0102" class="layerHTML">
+        <div class="ly_cnt">
+
+            <div class="section">
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">2022년 12월</h3>
+                </div>
+                <div class="ing_pee_box">
+                    <div class="ing_pee_in">
+                        <ul class="tit_ing_pee">
+                            <li>할인요금 계</li>
+                            <li>20,000 원</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="usage_pee_p">든든할인(최대 할인금액 : 0,000원) </span>
+                                <span class="usage_pee_p fc_blue">0원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">- A할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- B할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- C할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">나눔할인</span>
+                                <span class="usage_pee_p fc_blue">-11,500원</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">기타할인</span>
+                                <span class="usage_pee_p fc_blue">-0,000원</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">할인조정 </span>
+                                <span class="usage_pee_p">-0,300원</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">서비스불편보상</span>
+                                <span class="usage_pee_p">-0,000원</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">2022년 11월</h3>
+                </div>
+                <div class="ing_pee_box">
+                    <div class="ing_pee_in">
+                        <ul class="tit_ing_pee">
+                            <li>할인요금 계</li>
+                            <li>20,000 원</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="usage_pee_p">든든할인(최대 할인금액 : 0,000원) </span>
+                                <span class="usage_pee_p fc_blue">0원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">- A할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- B할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- C할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">나눔할인</span>
+                                <span class="usage_pee_p fc_blue">-11,500원</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">기타할인</span>
+                                <span class="usage_pee_p fc_blue">-0,000원</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">할인조정 </span>
+                                <span class="usage_pee_p">-0,300원</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">서비스불편보상</span>
+                                <span class="usage_pee_p">-0,000원</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">2022년 10월</h3>
+                </div>
+                <div class="ing_pee_box">
+                    <div class="ing_pee_in">
+                        <ul class="tit_ing_pee">
+                            <li>할인요금 계</li>
+                            <li>20,000 원</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="usage_pee_p">든든할인(최대 할인금액 : 0,000원) </span>
+                                <span class="usage_pee_p fc_blue">0원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">- A할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- B할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">- C할인</span>
+                                <span class="usage_pee_p">-0,000원(부가세금액)</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">나눔할인</span>
+                                <span class="usage_pee_p fc_blue">-11,500원</span>
+                            </li>
+                        </ul>
+                        <ul class="pee_sale_pt">
+                            <li>
+                                <span class="usage_pee_p">기타할인</span>
+                                <span class="usage_pee_p fc_blue">-0,000원</span>
+                            </li>
+                        </ul>
+                        <ul class="usage_pee_sale">
+                            <li>
+                                <span class="usage_pee_p">할인조정 </span>
+                                <span class="usage_pee_p">-0,300원</span>
+                            </li>
+                            <li>
+                                <span class="usage_pee_p">서비스불편보상</span>
+                                <span class="usage_pee_p">-0,000원</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>소액결제 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">결제일자</th>
+                                <th scope="col" rowspan="2">전화번호</th>
+                                <th scope="col" colspan="2">이용site/서비스</th>
+                                <th scope="col" colspan="2">실판매자정보</th>
+                                <th scope="col" rowspan="2">결제금액</th>
+                                <th scope="col" colspan="2">결제대행업체</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">상호명</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">상호명</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">상호명</th>
+                                <th scope="col">전화번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2020-03-01</td>
+                                <td>010-12**-56**</td>
+                                <td>배말의민족</td>
+                                <td>1600-1234</td>
+                                <td>-</td>
+
+                                <td>-</td>
+                                <td>15,000원</td>
+                                <td>다날</td>
+                                <td>010-12**-56**</td>
+                            </tr>
+                            <tr>
+                                <td>2020-03-01</td>
+                                <td>010-12**-56**</td>
+                                <td>배말의민족 배말의민족배말의민족배말의민족</td>
+                                <td>1600-1234</td>
+                                <td>-</td>
+
+                                <td>-</td>
+                                <td>15,000원</td>
+                                <td>다날</td>
+                                <td>010-12**-56**</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">합계</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                                <td></td>
+                                <td>30,000원</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_02" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>정보이용료 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">사용일자</th>
+                                <th scope="col">서비스명</th>
+                                <th scope="col">사용금액(원)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>2022-03-01</td>
+                                <td>SMS 정보이용료</td>
+                                <td>50원</td>
+                            </tr>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>2022-03-01</td>
+                                <td>SMS 정보이용료</td>
+                                <td>50원</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="3" class="left">총 이용금액</th>
+                                <td>100원</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_03" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>해외로밍서비스 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">로밍통화료</th>
+                                <th scope="col">로밍수신 국제통화료</th>
+                                <th scope="col">합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>4,193</td>
+                                <td>1,248</td>
+                                <td>5,441</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="star_type">
+                    <li>해외로밍요금 청구주기는 일반 국내통화요금 청구 주기와 일치하지 않을 수 있으며, 해외로밍 서비스 이용기간에 따라 사용요금이 분할 청구될 수 있습니다.(문의 : 02-3416-7010)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_04" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>이전통신사 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:5rem;">
+                            <col style="width:10rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">서비스번호</th>
+                                <th scope="col" rowspan="2">사용년월</th>
+                                <th scope="col" rowspan="2">이동 전 사업자</th>
+                                <th scope="col" rowspan="2">사용기간</th>
+                                <th scope="col">사용금액</th>
+                                <th scope="col" rowspan="2">이동 전 단말기 대금</th>
+                                <th scope="col" rowspan="2">이동수수료</th>
+                                <th scope="col" rowspan="2">이동 전 총청구 금액</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">미납금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>2020년 10월</td>
+                                <td>KT</td>
+                                <td>22.03.01 ~ 22.03.31</td>
+                                <td>101,900</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>101,900</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_05" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>국제전화 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">발신번호</th>
+                                <th scope="col">수신번호</th>
+                                <th scope="col">통화일자</th>
+                                <th scope="col">통화시작 시간</th>
+                                <th scope="col">사용시간</th>
+                                <th scope="col">통화료</th>
+                                <th scope="col">사용국가 및 지역</th>
+                                <th scope="col">사업자명</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" rowspan="2">국제통화</th>
+                                <td>010-12**-56**</td>
+                                <td>002123456***</td>
+                                <td>20220301</td>
+                                <td>6:13:16 AM</td>
+                                <td>12:01:00 AM</td>
+                                <td>150</td>
+                                <td>-</td>
+                                <td>KT</td>
+                                <td>표준</td>
+                            </tr>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>002123456***</td>
+                                <td>20220301</td>
+                                <td>6:13:16 AM</td>
+                                <td>3:12:00 PM</td>
+                                <td>150</td>
+                                <td>-</td>
+                                <td>KT</td>
+                                <td>표준</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">합계</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>30,000원</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <ul class="star_type">
+                    <li>요율에 대한 상세정보는 위 박스안에 기재된 해당 사업자의 고객센터로 문의하시면 확인 하실 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_06" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>수신자부담요금(국내) 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:11rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">사업자명</th>
+                                <th scope="col">사용금액</th>
+                                <th scope="col">사업자고객센터번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>010-12**-56**</td>
+                                <td>KT</td>
+                                <td>334원</td>
+                                <td>국번없이 100</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="2">합계</th>
+                                <td>334원</td>
+                                <td>50원</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <ul class="star_type">
+                    <li>전월에 번호를 변경하신 경우, 실제 수신자부담을 사용한 번호와 다르게 표기될 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_07" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>통신사 스토어 구매내역 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">거래일자</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">아이템명</th>
+                                <th scope="col">판매자명</th>
+                                <th scope="col">판매자 정보</th>
+                                <th scope="col">구매금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022-03-01  12:20:36 PM</td>
+                                <td>010-12**-56**</td>
+                                <td>Youtube</td>
+                                <td>google</td>
+                                <td>http://g.co/helppay</td>
+                                <td>8,630</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="5">합계</th>
+                                <td>138,568</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_08" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>구글스토어 구매내역 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:12rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">거래일자</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">아이템명</th>
+                                <th scope="col">판매자명</th>
+                                <th scope="col">판매자 정보</th>
+                                <th scope="col">구매금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022-03-01  12:20:36 PM</td>
+                                <td>010-12**-56**</td>
+                                <td>Youtube</td>
+                                <td>google</td>
+                                <td>http://g.co/helppay</td>
+                                <td>8,630</td>
+                            </tr>
+                        </tbody>
+                        <!--
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="5">합계</th>
+                                <td>138,568</td>
+                            </tr>
+                        </tfoot>
+                        -->
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <div id="usageServiceLayer_09" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="table scroll_x">
+                    <table class="center">
+                        <caption>애플스토어 구매내역 상세 정보</caption>
+                        <colgroup>
+                            <col style="width:12rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                            <col style="width:8rem;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">거래일자</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">아이템명</th>
+                                <th scope="col">판매자명</th>
+                                <th scope="col">판매자 정보</th>
+                                <th scope="col">구매금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022-03-01  12:20:36 PM</td>
+                                <td>010-12**-56**</td>
+                                <td>apple music</td>
+                                <td>apple</td>
+                                <td>http://g.co/helppay</td>
+                                <td>8,630</td>
+                            </tr>
+                        </tbody>
+                        <!--
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="5">합계</th>
+                                <td>138,568</td>
+                            </tr>
+                        </tfoot>
+                        -->
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    // 회선선택 팝업
+    $(document).off("click", "#MYPI01").on("click", "#MYPI01", function(){ // 23/03/30 호출값 변경 .select_line -> #MYPI01
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#htmlSelectLine',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 월별 청구서 조회 선택
+    $(document).on("click", "#btn_MYPI0101", function(){ // 2023.01.25 오타 수정
+        $.ohyLayer({
+            titleUse:true,
+            title:"월별 청구서 조회 선택",
+            content:'#MYPI0101',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 최근 3개월 할인 내역
+    $(document).on("click", "#btn_MYPI0102", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"최근 3개월 할인 내역",
+            content:'#MYPI0102',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+    // 이번 달 이용서비스 상세내역서
+    $(document).on("click", "#btn_usageServiceLayer_01", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"소액결제",
+            content:'#usageServiceLayer_01',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_02", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"정보이용료",
+            content:'#usageServiceLayer_02',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_03", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"해외로밍서비스",
+            content:'#usageServiceLayer_03',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_04", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"이전통신사요금",
+            content:'#usageServiceLayer_04',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_05", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"국제전화",
+            content:'#usageServiceLayer_05',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_06", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"수신자부담요금(국내)",
+            content:'#usageServiceLayer_06',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_07", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"통신사 스토어 구매내역",
+            content:'#usageServiceLayer_07',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_08", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"구글 스토어 구매내역",
+            content:'#usageServiceLayer_08',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+    $(document).on("click", "#btn_usageServiceLayer_09", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"애플 스토어 구매내역",
+            content:'#usageServiceLayer_09',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+</script>
+</body>
+</html>

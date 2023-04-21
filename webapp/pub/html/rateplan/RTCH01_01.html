@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>요금제 진단하기</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_148403517|rpid=797474468|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="hidden">요금제 진단하기</h1>
+                
+                <ol class="progress_wrap">
+                    <li class="step on"><span>1 단계</span></li>
+                    <li class="step"><span>2 단계</span></li>
+                    <li class="step"><span>3 단계</span></li>
+                </ol>
+
+                <!-- [03/03] .page .on div box 추가 -->
+                <div class="page on">
+                    <div class="tit_sub_wrap">
+                        <h2 class="tit_sub">
+                            월 통신비는 얼마인가요?
+                        </h2>
+                        <p class="summary">기기 할부금 제외</p>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="hidden">월 통신비</h3>
+                        <div class="radio_group">
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_1" name="rateplan">
+                                <label for="rateplan_1" class="label">3만원 이하</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_2" name="rateplan">
+                                <label for="rateplan_2" class="label">3만원 대</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_3" name="rateplan">
+                                <label for="rateplan_3" class="label">4만원 대</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_4" name="rateplan">
+                                <label for="rateplan_4" class="label">5만원 대</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_5" name="rateplan">
+                                <label for="rateplan_5" class="label">6만원 대</label>
+                            </div>
+                            <div class="radio_item box_type">
+                                <input type="radio" id="rateplan_6" name="rateplan">
+                                <label for="rateplan_6" class="label">7만원 이상</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn_confirm_wrap">
+                        <div class="btn_area">
+                            <button type="button" class="btn primary" disabled>다음</button>
+                        </div>
+                    </div>
+                </div><!-- .page -->
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+<script>
+    $(()=>{
+        $(document).find("input[name='rateplan']").on("change", function(){
+            $(".btn_area button").attr("disabled", false);
+        })
+    })
+</script>
+</body>
+</html>

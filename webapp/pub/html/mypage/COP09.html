@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>약관상세</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1023069433|rpid=-867846847|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">약관상세</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">약관상세</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_COP09" class="btn secondary sm">[팝업] 약관상세 (취소/동의 버튼)</button>
+                    <button type="button" id="btn_COP09_2" class="btn secondary sm">[팝업] 약관상세 (확인 버튼)</button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="COP09" class="layerHTML">
+        <div class="pdfpreview_head ly_hd">
+            <!-- [02/24] 띄어쓰기 수정 -->
+            <h1 class="pop_h1">상세내용</h1>
+            <a href="#none" class="btn_download"><span class="img_item icon download"><span class="blind">다운로드</span></span></a>
+        </div>
+        <div class="ly_cnt">            
+            <div class="section">
+                <div class="preview_wrap">
+                    <iframe id="pdfViewPage" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary">동의</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="COP09_2" class="layerHTML">
+        <div class="pdfpreview_head ly_hd">
+            <!-- [02/24] 띄어쓰기 수정 -->
+            <h1 class="pop_h1">상세내용</h1>
+            <a href="#none" class="btn_download"><span class="img_item icon download"><span class="blind">다운로드</span></span></a>
+        </div>
+        <div class="ly_cnt">            
+            <div class="section">
+                <div class="preview_wrap">
+                    <iframe id="pdfViewPage" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+
+    // 팝업
+    $('#btn_COP09').on('click', function(){
+        $.ohyLayer({
+            content:'#COP09',
+            type:'confirm',
+            closeUse:false,      
+        });
+    });
+    $('#btn_COP09_2').on('click', function(){
+        $.ohyLayer({
+            content:'#COP09_2',
+            type:'confirm',
+            closeUse:false,      
+        });
+    });
+    
+</script>
+</body>
+</html>

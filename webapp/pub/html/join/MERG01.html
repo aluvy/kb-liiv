@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1395500600|rpid=42632058|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">지금부터 가입을 준비해 볼까요?</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        <span class="txt">지금부터 가입을</span>
+                        <span class="txt">준비해 볼까요?</span>
+                    </h2>
+                    <!-- 23/01/27 수정 : h2타이틀 우측 링크 추가 -->
+                    <a href="#none" id="btn_MERG01" class="link btn_text_go">미성년자/개인사업자</a>
+                    <!-- // 23/01/27 수정 : h2타이틀 우측 링크 추가 -->
+                </div>
+                <div class="section">
+
+                    <!-- // 23/01/27 수정 : 툴팁영역 삭제됨 -->
+                    
+                    <!-- 23/01/26 수정 : 마크업 수정 -->
+                    <ul class="join_select mgt12">
+                        <li class="item_id">
+                            <p><strong>본인 명의 신분증</strong></p>
+                            <p class="txt">주민등록증, 운전면허증</p>
+                        </li>
+                        <li class="item_account">
+                            <p><strong>KB국민은행 입출금 계좌</strong></p>
+                            <div class="btn_area">
+                                <a href="#none" class="btn secondary">계좌개설</a>
+                            </div>
+                        </li>
+                        <li class="item_auth">
+                            <p><strong>KB국민인증서</strong> 또는 <br> <strong>본인명의 신용카드</strong></p>
+                            <div class="btn_area">
+                                <a href="#none" class="btn secondary">KB국민인증서 발급</a><!-- 23/01/30 수정 : 버튼 텍스트 수정 -->
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- // 23/01/26 수정 : 마크업 수정 -->
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">모두 준비되었어요</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- 23/01/27 수정 : 팝업 추가 -->
+<!-- layer -->
+<div id="MERG01" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="join_material">
+                <strong>미성년자이신가요?</strong>
+                <p>법정대리인 신분증, 가족관계증명서, 기본 증명서를 준비해주세요.</p>
+                <strong>개인사업자이신가요?</strong>
+                <p>사업자등록증, 세금계산기 발행용 이메일주소를 준비해주세요.</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- layer -->
+
+
+<script>
+    // 23/01/26 수정 : 툴팁영역 추가
+    $('#btn_tooltip').on('click', function(){
+        const wrap = $(this).parents(".tooltip_area");
+        wrap.find('.tooltip_wrap, .tooltip_box').toggle();
+    })
+    // // 23/01/27 수정 : 스크립트 수정
+
+    
+
+    // 23/01/27 수정 : 팝업추가
+    $(document).on("click", "#btn_MERG01", ()=>{
+        $.ohyLayer({
+            titleUse:false,
+            content:'#MERG01',
+            type:'confirm',
+        });
+    })
+    // // 23/01/27 수정 : 팝업추가
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-981908225|rpid=245946954|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <!-- 23/02/22 수정 : 문구 수정 -->
+                <h1 class="title hidden">명의 주는 고객 정보가 필요합니다</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        <span class="txt">명의 주는 고객 정보가</span>
+                        <span class="txt">필요합니다</span>
+                    </h2>
+                </div>
+                <!-- //23/02/22 수정 : 문구 수정 -->
+
+                <div class="section">
+                    <h3 class="blind">고객 정보</h3>
+
+                    <div class="form_group mgt32">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">이름</div>
+                                <div class="input">
+                                    <input type="text" placeholder="이름을 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="number" placeholder="'-'없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">관계선택</div>
+                                <div class="select">
+                                    <button type="button" class="btn_select" id="btn_MERG08">선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <p class="txt_alert">명의 주는 고객과 받는 고객은 같은 통신망을 사용하고 있어야 합니다.</p><!-- 23/02/27 위치 변경 -->
+                    </div>
+                    <div class="btn_wrap mgt20"><!-- 23/02/27 추가 -->
+                        <button type="button" class="btn primary">명의정보 확인</button>
+                    </div>
+                </div>
+
+                <!-- 23/02/27 추가 -->
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">개통 유형을 선택해주세요</h3>
+                    </div>
+                    <div class="form_group">
+                        <div class="rdo_select_wrap">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio1_1" name="radioType1">
+                                <label for="radio1_1" class="label">
+                                    <i class="icon icon_join_usim"></i>
+                                    <span>유심(USIM) 개통</span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio1_2" name="radioType1">
+                                <label for="radio1_2" class="label">
+                                    <i class="icon icon_join_esim"></i>
+                                    <span>eSIM 개통</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="star_type mgt20">
+                        <li>eSIM개통 가능 단말기는 제조사 홈페이지에서 확일하실 수 있습니다.</li>
+                        <li>워치요금제를 가입하시는 경우 “eSIM 개통＂을 선택해주세요.</li>
+                    </ul>
+                </div>
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">유심정보를 확인해주세요</h3>
+                    </div>
+                    <div class="form_group">
+                        <div class="rdo_select_wrap">
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio2_1" name="radioType2">
+                                <label for="radio2_1" class="label">
+                                    <i class="icon icon_nousim"></i>
+                                    <span>유심이 없어요</span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="radio2_2" name="radioType2">
+                                <label for="radio2_2" class="label">
+                                    <i class="icon icon_usim"></i>
+                                    <span>유심이 있어요</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="star_type mgt20">
+                        <li>배송비 없이 유심을 보내드릴게요. <br> 바로 수령받고 싶으시면 가까운 KB국민은행 영업점에서 유심을 수령해주세요.</li>
+                    </ul>
+                </div>
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">유심정보 입력</h3>
+                        <a href="#none" role="button" class="btn_text">유심 정보 확인방법</a><!-- 23/03/13 수정 : 문구 수정 -->
+                    </div>
+                    <ul class="star_type mgt20">
+                        <li>유심 촬영 시 정보가 자동으로 입력됩니다.</li>
+                        <li>카메라 아이콘 클릭 시 카메라 촬영 기능이 나오지 않을 시 설정 > 애플리케이션 > 삼성 인터넷 > 카메라 권한이 OFF이면 ON으로 변경 후 촬영해주세요.</li>
+                    </ul>
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_camera">
+                                <div class="label">유심 모델번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="모델번호를 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                    <div class="btn_wrap mgt12">
+                        <button type="button" class="btn primary">유심번호입력</button>
+                    </div>
+                </div>
+                <!-- //23/02/27 추가 -->
+                
+                <!-- 23/02/27 삭제 -->
+                <!-- [04/12] 유의사항 복원 :: start  -->
+                <hr class="hr_divide">
+                <div class="section mgt0">
+                    <ul class="list_acc type2 js_accordion">
+                        <li>
+                            <a href="#none" role="button" class="title" aria-expanded="false">
+                                <span>유의사항</span>
+                            </a>
+                            <div class="content_panel" role="region">
+                                <h4 class="tit_item mgt0">1. 사전확인사항</h4>
+                                <ul class="star_type"><!-- [04/12] 리스트 클래스 변경 -->
+                                    <li>가족간 명의변경만 가능합니다.</li>
+                                    <li>KB Liiv M 서비스는 KB국민은행 계좌가 필수로 요구되는 서비스로, 양수인은 KB국민은행 입출금 계좌 보유 시에만 가입 가능합니다.</li>
+                                    <li>양수인과 양도인이 동일 통신망 이용 시에만 가입 가능합니다.</li>
+                                </ul>
+                                <h4 class="tit_item">2. 필요 서류</h4>
+                                <ul class="star_type"><!-- [04/12] 리스트 클래스 변경 -->
+                                    <li>양수인 신청시 가족관계증명서(상세) 서류 첨부</li>
+                                </ul>
+                                <h4 class="tit_item">3. 명의변경 제한</h4>
+                                <ul class="star_type"><!-- [04/12] 리스트 클래스 변경 -->
+                                    <!-- [04/12] 리스트 클래스 변경 :: start -->
+                                    <li>
+                                        가입일 기준 3개월 이후 명의변경이 가능합니다.
+                                        <ul class="dash_type">
+                                            <li>최근 3개월 사용이력(연속통화)이 있을 경우 명의변경 신청 가능</li>
+                                        </ul>
+                                    </li>
+                                    <!-- [04/12] 리스트 클래스 변경 :: end -->
+                                    <li>양수인 가입제한 사유가 있는 경우 명의변경 불가합니다.</li>
+                                    <li>명의변경 양도 신청 이후 7일이내 양수인이 명의변경 신청을 완료하지 않으면 명의변경이 자동취소 됩니다.</li>
+                                </ul>
+                                <h4 class="tit_item">4. 주의사항</h4>
+                                <ul class="star_type"><!-- [04/12] 리스트 클래스 변경 -->
+                                    <li>명의변경 후 유심(USIM) 변경이 필요하며, 유심 수령 방법에 따라 당일 명의변경이 불가할 수 있습니다.</li>
+                                    <li>명의변경 시, 친구결합 할인 등 기존 할인 혜택이 종료되오니 유의하시기 바랍니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- [04/12] 유의사항 복원 :: end  -->
+                <!-- //23/02/27 삭제 -->
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">네 완료했어요</button><!-- 23/02/22 수정 : 문구 수정 -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<!-- 23/01/27 기획수정요청 : 관계선택 팝업 추가 -->
+<!-- 관계선택 팝업 -->
+<div id="MERG08" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li class="on"><a href="#none" role="button" title="관계1">관계1</a></li>
+                    <li><a href="#none" role="button" title="관계2">관계2</a></li>
+                    <li><a href="#none" role="button" title="관계3">관계3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+<!-- // 관계선택 팝업 -->
+
+<script>
+    // 관계선택 팝업
+    $(document).on("click", "#btn_MERG08", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"관계",
+            content:'#MERG08',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+</script>
+<!--// 23/01/27 기획수정요청 : 관계선택 팝업 추가 -->
+</body>
+</html>

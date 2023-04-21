@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1792560239|rpid=564557592|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">실시간 사용현황</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        실시간 사용현황
+                    </h2>
+                </div>
+                
+                <div class="section">
+                    
+                    <div class="droptype_btn_wrap"> <!-- 23/03/30 select_line 클래스제거 -->
+                        <a href="#" role="button" id="MYPY01" class="droptype_btn"> <!-- 23/03/30 id="MYPY01" 추가 -->
+                            <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                            <span class="info">010-12**-56**</span>
+                            <i class="icon icon_arr_down_gray"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section mgt0"><!-- 23/02/16 수정 : 클래스 추가 .mgt0 -->
+
+                    <div class="tab_wrap line mgt16"><!-- 23/02/16 수정 : 클래스 추가 .mgt16 -->
+                        <div class="tab_list" role="tablist">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_panel_1">잔여량 조회</button></div> <!-- 02/07 텍스트 수정 -->
+                            <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_panel_2">실시간 요금</button></div>
+                        </div>
+                        
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_1">
+                            <h3 class="hidden">실시간 사용량</h3>
+                            <div class="section">
+                                
+                                <div class="live_state_top">
+
+                                    <div class="live_state_info">
+                                        <p class="live_state_period">사용기간 2022.12.01 ~ 현재</p>
+                                        <p class="tit_live_state">
+                                            <!-- 이번달,<br>
+                                            현재까지 잔여 데이터는<br> !-- 02/07 텍스트 수정 --
+                                            <em>7,56GB</em> 입니다. -->
+                                            현재까지 <em>월 7GB</em> 의<br>
+                                            데이터가 남아있습니다.
+                                            <!-- 02/08 텍스트 수정 -->
+                                        </p>
+                                    </div>
+                                    
+                                    <!-- 02/24 수정 -->
+                                    <div class="live_state_dia">
+                                        <div class="live_dia_main">
+                                            <div class="wave_chart" id="wave_chart01">
+                                                <div class="wave_wrap">
+                                                    <div class="wave_box">
+                                                        <div class="wave_value">
+                                                            <span class="data-val">0</span><em>GB</em>
+                                                        </div>
+                                                        <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG01);">
+                                                                <defs>
+                                                                    <linearGradient gradientTransForm="rotate(157.79)" id="linearG01">
+                                                                        <stop offset="25.16%" stop-color="#8ea7ff"></stop>
+                                                                        <stop offset="86.54%" stop-color="#4a6ff2"></stop>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="wave_label">
+                                                    <dt>데이터</dt>
+                                                    <dd>
+                                                        <div><span class="data-val">0</span><em>GB</em></div>
+                                                        <div>월 <span class="data-max">0</span><em>GB</em></div> <!-- 02/08 텍스트 수정 -->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="live_dia_sub">
+                                            <div class="wave_chart" id="wave_chart02">
+                                                <div class="wave_wrap">
+                                                    <div class="wave_box">
+                                                        <div class="wave_value">
+                                                            <span class="data-val">0</span><em>GB</em>
+                                                        </div>
+                                                        <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG02);">
+                                                                <defs>
+                                                                    <linearGradient gradientTransForm="rotate(157.79)" id="linearG02">
+                                                                        <stop offset="25.16%" stop-color="#8ea7ff"></stop>
+                                                                        <stop offset="86.54%" stop-color="#4a6ff2"></stop>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="wave_label">
+                                                    <dt>추가데이터</dt>
+                                                    <dd>
+                                                        <div><span class="data-val">0</span><em>GB</em></div>
+                                                        <div>일 <span class="data-max">0</span><em>GB</em></div> <!-- 02/08 텍스트 수정 -->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="live_state_dia">
+                                        <div class="live_dia_main">
+                                            <div class="wave_chart" id="wave_chart03">
+                                                <div class="wave_wrap">
+                                                    <div class="wave_box">
+                                                        <div class="wave_value">
+                                                            <span class="data-val">0</span><em>GB</em>
+                                                        </div>
+                                                        <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG01);">
+                                                                <defs>
+                                                                    <linearGradient gradientTransForm="rotate(157.79)" id="linearG03">
+                                                                        <stop offset="25.16%" stop-color="#8ea7ff"></stop>
+                                                                        <stop offset="86.54%" stop-color="#4a6ff2"></stop>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="wave_label">
+                                                    <dt>데이터</dt>
+                                                    <dd>
+                                                        <div><span class="data-val">0</span><em>GB</em></div>
+                                                        <div>월 <span class="data-max">0</span><em>GB</em></div> <!-- 02/08 텍스트 수정 -->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="live_dia_sub">
+                                            <div class="wave_chart" id="wave_chart04">
+                                                <div class="wave_wrap">
+                                                    <div class="wave_box">
+                                                        <div class="wave_value">
+                                                            <span class="data-val">0</span><em>GB</em>
+                                                        </div>
+                                                        <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                            <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG02);">
+                                                                <defs>
+                                                                    <linearGradient gradientTransForm="rotate(157.79)" id="linearG04">
+                                                                        <stop offset="25.16%" stop-color="#8ea7ff"></stop>
+                                                                        <stop offset="86.54%" stop-color="#4a6ff2"></stop>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                                                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                                                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="wave_label">
+                                                    <dt>추가데이터</dt>
+                                                    <dd>
+                                                        <div><span class="data-val">0</span><em>GB</em></div>
+                                                        <div>일 <span class="data-max">0</span><em>GB</em></div>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <script>
+                                        $(window).on('load', function(){
+                                            
+                                            waveChart('#wave_chart01', 100, 20);
+                                            waveChart('#wave_chart02', 3, 3);
+                                            waveChart('#wave_chart03', 100, 110);
+                                            waveChart('#wave_chart04', 3, 0);
+                    
+                                        });
+                    
+                                        function waveChart(obj, max, val) {
+                                            var _this = $(obj);
+                                            
+                                            _this.find('.data-max').text(max);
+                    
+                                            if(val > 0 && val <= max) {
+                                                _this.find('.data-val').text(val);
+
+                                                var cent = Math.floor((val * 100) / max);
+                                                var water = _this.find('.wave_water')[0];
+                                                var percent = 0;
+                                                var interval;
+                                                interval = setInterval(function () {
+                                                    percent++;
+                                                    water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
+                                                    if (percent == 60) {
+                                                        _this.find('.wave_value').css('color', '#fff');
+                                                    }
+                                                    if (percent == cent) {
+                                                        clearInterval(interval);
+                                                    }
+                                                }, 40);
+                                            } else if(val <= 0 || val > max) {
+                                                var water = _this.find('.wave_water')[0];
+                                                water.style.transform = 'translate(0, 110%)';
+                                                
+                                                if(val > max) {
+                                                    var dVal = val - max;
+                                                    _this.find('.wave_value').addClass('fc_red');
+                                                    _this.find('.wave_value .data-val').text(dVal);
+                                                    _this.find('.wave_value em').text('GB 초과');
+                                                    _this.find('.wave_label > dd > div:first-child').addClass('fc_red');
+                                                    _this.find('.wave_label > dd > div:first-child .data-val').text(dVal);
+                                                    _this.find('.wave_label > dd > div:first-child em').text('GB 초과');
+                                                } else if(val <= 0) { // 03/02 조건 추가
+                                                    _this.find('.wave_value').addClass('fc_lightgray');
+                                                    _this.find('.wave_value .data-val').text('');
+                                                    _this.find('.wave_value em').text('소진');
+                                                }
+                                            }
+                                            // 무제한 요금제 : 데이터, 추가데이터 데이터 잔여량 0 "소진"으로 표기 (val <= 0)
+                                            // 제한 요금제 : 데이터 초과량기재 (val > max)
+                                        }
+                                    </script>
+                                    <!-- // 02/24 수정 -->
+
+                                </div>
+                            </div>
+
+                            <div class="btn_wrap mgt20">
+                                <button type="button" class="btn primary">데이터 충전 / 선물하기</button>
+                            </div>
+
+                            <div class="section">  
+
+                                <div class="live_state_list">
+                                    <ul>
+                                        <li>
+                                            <span class="tit_live_list">음성</span>
+                                            <span class="live_list_info">무제한</span> <!-- 02/08 텍스트 수정 -->
+                                        </li>
+                                        <li>
+                                            <span class="tit_live_list">문자</span>
+                                            <span class="live_list_info">무제한</span> <!-- 02/08 텍스트 수정 -->
+                                        </li>
+                                        <li>
+                                            <span class="tit_live_list">영상/부가음성</span>
+                                            <span class="live_list_info"><em>20분</em> / 100분</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit_live_list">쉐어링회선</span>
+                                            <span class="live_list_info"><em>20GB</em> / 월 100GB</span> <!-- 02/08 텍스트 수정 -->
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f mgt12"><!-- 23/02/16 수정 : 클래스 추가 .mgt12 -->
+
+                            <div class="section_f">
+                                <ul class="list_acc js_accordion type2"><!-- 23/02/16 수정 : 클래스 수정 .mgt12 -> .type2 -->
+                                    <li>
+                                        <a href="#none" role="button" class="title" aria-expanded="false">
+                                            <span>알아두세요</span>
+                                        </a>
+                                        <div class="content_panel" role="region">
+                                            <ul class="star_type mgt0"><!-- [04/07] 수정 : mgt0 추가 -->
+                                                <li>실시간 사용량 정보는 시스템 환경에 따라 현재 정보와 상이할 수 있음을 참고하여 주시기 바랍니다.</li>
+                                                <!-- <li>실시간 사용량 조회의 원형 그래프 내 표기되는 정보는 사용량 기준입니다. (제공량을 초과하여 이용한 경우, 초과 사용량이 붉은색으로 표기됩니다.)</li> !-- 01/31 텍스트 수정 --
+                                                <li>3개월 평균 및 월별 사용량 조회의 원형 그래프 내 표기되는 정보는 사용량 기준 입니다.</li> --> <!-- 02/07 텍스트 삭제 -->
+                                                <li>국제전화요금, 소액결제 등은 포함되지 않으며, 발송되는 통신 요금 청구서에서 확인이 가능합니다.</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- <a href="#none" class="banner_box support bill mgt12">
+                                    <div class="txt_area">이번 달 청구금액이 궁금하신가요?</div>
+                                </a> -->
+                                <a href="#none" class="banner_box support live mgt12">
+                                    <div class="txt_area">실시간 요금이 궁금하신가요?</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="tab_panel" role="tabpanel" id="tab_panel_2">
+                            <h3 class="hidden">실시간 요금</h3>
+                            
+                            <div class="section">
+                                
+                                <div class="live_state_top">
+
+                                    <div class="live_state_info">
+                                        <p class="live_state_period">사용기간 2022.12.01 ~ 현재</p>
+                                        <p class="tit_live_state"><!-- 이번달,<br> --><!-- 23/02/16 수정 : 텍스트 삭제 -->
+                                            <!-- 02/24 수정 -->
+                                            현재까지 사용 요금은<br>
+                                            <em>23,760원</em> 입니다.
+                                            <!-- // 02/24 수정 -->
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                
+                                <ul class="list_acc js_accordion usage_pee">
+                                    <li class="on">
+                                        <a href="#none" role="button" class="title" aria-expanded="true">
+                                            <span>2022년 12월 예상요금</span>
+                                            <span class="ing_pee">23,760원</span>
+                                        </a>
+                                        <div class="content_panel" role="region">
+                                            <div class="ing_pee_box">
+                                                
+                                                <div class="ing_pee_in">
+                                                    <ul class="tit_ing_pee">
+                                                        <li>통신서비스 요금</li>
+                                                        <li>20,000 원</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <span class="usage_pee_p">월정액</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">음성통화료</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">데이터통화료</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">문자이용료</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">연체료</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">할인금액</span>
+                                                            <span class="usage_pee_p fc_blue">- 20,000원(부가세금액)</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="usage_pee_sale">
+                                                        <li>
+                                                            <span class="usage_pee_p">- A할인</span>
+                                                            <span class="usage_pee_p">- 0,000원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">- B할인</span>
+                                                            <span class="usage_pee_p">- 0,000원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">- 할인조정</span>
+                                                            <span class="usage_pee_p">- 0,000원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">- 원단위 절사금액</span>
+                                                            <span class="usage_pee_p">- 0,000원(부가세금액)</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="ing_pee_in">
+                                                    <ul class="tit_ing_pee">
+                                                        <li>콘텐츠&부가서비스 사용 요금 </li>
+                                                        <li>20,000 원</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <span class="usage_pee_p">콘텐츠 이용료 </span>
+                                                            <span class="usage_pee_p">0,000원(부가세금액)</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="usage_pee_p">부가서비스 사용</span>
+                                                            <span class="usage_pee_p">0원(부가세금액)</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="ing_pee_in">
+                                                    <ul class="tit_ing_pee">
+                                                        <li>기타요금 </li>
+                                                        <li>0 원</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="ing_pee_in">
+                                                    <ul class="tit_ing_pee">
+                                                        <li>미납요금</li>
+                                                        <li>20,000 원</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>
+                                                            <span class="usage_pee_p">2022.12. 미납금액 </span>
+                                                            <span class="usage_pee_p">0,000원(부가세금액)</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="usage_pee_sale">
+                                                        <li>
+                                                            <span class="usage_pee_p">- 2022.12. 청구금액</span>
+                                                            <span class="usage_pee_p">- 0,000원(부가세금액)</span>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="on">
+                                        <a href="#none" role="button" class="title" aria-expanded="true">
+                                            <span>할인 예상금액</span>
+                                            <span class="cost_pee">- 3,060원</span>
+                                        </a>
+                                        <div class="content_panel" role="region">
+                                            상세내용
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="star_type">
+                                    <li>KB카드 이벤트 할인은 최대 24개월간 제공되며, 통신비 납부방법 및 KB카드 결제계좌 변경시 혜택이 제공되지 않습니다.</li>
+                                    <li>할인 예상금액은 부가세 포함금액으로 실제 청구금액과 다를 수 있습니다.</li>
+                                    <li>요금할인은 변경될 수 있으며, 월 기본료에 일할계산됩니다.</li>
+                                    <li>일시정지시 KB든든할인은 적용되지 않습니다.</li>
+                                    <li>타 이벤트 및 동일한 할인혜택, 나눔할인과 중복되지 않습니다.</li>
+                                    <li>( )표시 항목은 부가가치세액, (*)은 부가가치세 제외 대상입니다.</li>
+                                </ul>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section">
+
+                                <div class="current_pee">
+                                    <span><i class="img_item mini coin"></i>당월 예상요금</span>
+                                    <span>24,000원</span>
+                                </div>
+
+                            </div>
+
+                            <hr class="hr_divide_f">
+
+                            <div class="section_f">
+                                <ul class="list_acc js_accordion type2"><!-- 23/02/16 수정 : 클래스 수정 .mgt12 -> .type2 -->
+                                    <li>
+                                        <a href="#none" role="button" class="title" aria-expanded="false">
+                                            <span>알아두세요</span>
+                                        </a>
+                                        <div class="content_panel" role="region">
+                                            <ul class="star_type mgt0"><!-- [04/07] 수정 : mgt0 추가 -->
+                                                <li>이번달 1일부터 현재까지의 이동전화 요금입니다.</li>
+                                                <li>실제 요금안내서와 다를 수 있으므로 단순 참고용으로 활용 부탁드립니다.</li>
+                                                <li>월 중 가입 시 기본료 및 할인이 일할계산되어 청구됩니다.</li>
+                                                <li>이벤트성 할인은 할인 예상 금액에 표출되지않는 경우가 있으므로, 정확한 할인액은 청구서를 참고하여 주시기 바랍니다.</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- <a href="#none" class="banner_box support bill mgt12">
+                                    <div class="txt_area">이번 달 청구금액이 궁금하신가요?</div>
+                                </a> -->
+                                <a href="#none" class="banner_box support live mgt12">
+                                    <div class="txt_area">실시간 요금이 궁금하신가요?</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <div id="htmlSelectLine" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="radio_group">
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line1" name="line" checked>
+                        <label for="line1" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-12**-56**</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="radio_item box_type">
+                        <input type="radio" id="line2" name="line">
+                        <label for="line2" class="label">
+                            <span class="line_group">
+                                <span class="badge skt">SKT</span> <!-- 02/14 수정 -->
+                                <span>010-98**-75**</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap"> <!-- 02/23 수정 : 버튼 추가(COP18 공통화) -->
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // 회선선택 팝업
+    $(document).off("click", "#MYPY01").on("click", "#MYPY01", function(){ // 23/03/30 호출값 변경 .select_line -> #MYPY01
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#htmlSelectLine',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+</script>
+</body>
+</html>

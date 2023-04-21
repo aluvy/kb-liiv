@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1048691797|rpid=-954223134|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">eSIM 정보등록</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">eSIM 정보등록</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_MYES0101" class="btn secondary sm">[팝업] 안드로이드 정보확인</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MYES0101" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <!-- 23/03/03 추가 : 이미지영역 추가 -->
+                <div class="box_img_wrap">
+                    <div class="tit_item_wrap center">
+                        <h4 class="tit_item">1. 모델번호, IMEI1, IMEI(eSIM) 확인 경로</h4>
+                        <p class="summary fc_blue">설정 > 휴대전화 정보</p>
+                    </div>
+                    <span class="img_item esim_info1 android"></span>
+                    <div class="hidden">
+                        휴대전화 정보
+                        Z FLIP 4
+                        편집
+                        전화번호 010-1234-5678
+                        모델명 Galaxy Z Flip4
+                        모델번호 SM-F721N
+                        시리얼 번호 R3AB12CDEFG
+                        IMEI 123456789012345
+                        IMEI(eSIM) 543210987654321
+                        상태 정보
+                        법률 정보
+                        규제 정보
+                        소프트웨어 정보
+                        배터리 정보
+                        
+                    </div>
+                </div>
+                <div class="box_img_wrap mgt20">
+                    <div class="tit_item_wrap center">
+                        <h4 class="tit_item">2. EID 확인 경로</h4>
+                        <p class="summary fc_blue">설정 > 휴대전화 정보 > 상태정보</p>
+                    </div>
+                    <span class="img_item esim_info2 android"></span>
+                    <div class="hidden">
+                        상태 정보
+                        SIM 카드 상태
+                        IMEI 정보
+                        Wi-Fi MAC 주소
+                        EID
+                        12345679801234567890123456789012
+                        휴대전화 Wi-Fi MAC 주소
+                        1A:2B:3C:11:22:33
+                        블루투스 주소
+                        이더넷 MAC 주소
+                        사용할 수 없음
+                        시리얼 번호
+                        가동 시간
+                        최초 통화일
+                    </div>
+                </div>
+                <div class="box_img_wrap mgt20">
+                    <div class="tit_item_wrap center">
+                        <h4 class="tit_item">3. 일련번호 확인 경로</h4>
+                        <p class="summary fc_blue">설정 > 휴대전화 정보 > 규제 정보</p>
+                    </div>
+                    <span class="img_item esim_info3 android"></span>
+                    <div class="hidden">
+                        규제 정보
+                        모델명 : SM-F721N
+                        제조자 : OOOO
+                        상호명 : OOOO
+                        제조국가 : 한국
+                        기자재의명칭 : LTE OOOO
+                        정격 : OOOO
+                        제조연월 : 201807
+                        일련번호 : 1234567
+                        IMEI : 123456789012345
+                        S/N : R1234567890
+                        A/S문의 : 1588-1234
+                    </div>
+                </div>
+                <!--// 23/03/03 추가 : 이미지영역 추가 -->
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    // 바텀시트
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"안드로이드 정보확인",
+                content:'#MYES0101',
+                type:'bottom',
+                closeUse:true,
+            });
+        }
+        popupLoad();
+        $("#btn_MYES0101").on("click", popupLoad);
+    });
+</script>
+</body>
+</html>

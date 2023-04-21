@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>로그인</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-23293567|rpid=-1922772231|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header layer"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">KB국민인증서 로그인</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">KB국민인증서 로그인</h2>
+                    <div class="sub_txt login">
+                        <p>빠르고 안전한</p>
+                        <p>KB국민인증서로 로그인하세요</p>
+                    </div>
+                </div>
+
+                <div class="visual_box">
+                    <a href="#" id="btn-1" role="button" class="btn_kb_auth">
+                        <span>KB국민인증서</span>
+                        <span>로그인</span>
+                    </a>
+                </div>
+                <div class="login_bottom">
+                    <button type="button" id="btn-2" class="link_others">다른 로그인 방법</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- layer -->
+    <div id="MALG01-1" class="layerHTML">
+        <div class="ly_hd">
+            <h1 class="pop_h1">
+                KB국민인증서가 처음이세요? <br>
+                동의만 하시면 지금 바로 <br>
+                사용할 수 있어요.
+            </h1>
+        </div>
+        <div class="ly_cnt">
+            <div class="section">
+
+                <!-- 23/01/30 수정 : 동의 ui 마크업 변경 -->
+                <div class="check_group">
+                    <div class="check_item basic">
+                        <input type="checkbox" id="agree3">
+                        <label for="agree3" class="label"><span>[필수] 개인(신용)정보 수집〮이용〮제공 동의서</span></label>
+                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                    </div>
+                </div>
+                <!-- // 23/01/30 수정 : 동의 ui 마크업 변경 -->
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">이용 동의하고 시작하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+    <!-- layer -->
+    <div id="MALG01-2" class="layerHTML">
+        <div class="ly_cnt ly_login"><!-- 23/03/17 class="ly_login" 추가 -->
+            <div class="section">
+                <ul class="list_login_others">
+                    <li><a href="#" class="item_kb"><span>KB국민인증서</span><span class="badge best">추천</span></a></li>
+                    <li><a href="#" class="item_pw disabled">간편 비밀번호</a></li>
+                    <li><a href="#" class="item_face">Face ID / 지문 인증</a></li>
+                    <li><a href="#" class="item_pattern">패턴인증</a></li>
+                    <li><a href="#" class="item_id">아이디</a></li>
+                    <li><a href="#" class="item_phone">휴대폰번호</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+<script>
+    $(document).on("click", "#btn-1", function(e){
+        $.ohyLayer({
+            //titleUse:true,
+            content:'#MALG01-1',
+            type:'bottom',
+        });
+    });
+    $(document).on("click", "#btn-2", function(e){
+        $.ohyLayer({
+            titleUse:true,
+            title:"로그인 방법을 선택해주세요",
+            content:'#MALG01-2',
+            type:'bottom',
+        });
+    });
+</script>
+</body>
+</html>

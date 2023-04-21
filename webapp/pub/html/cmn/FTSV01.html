@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>서비스 커버리지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_274409448|rpid=1784426482|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">서비스 커버리지</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">서비스 커버리지</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_FTSV01" class="btn secondary sm">[팝업] 서비스 커버리지 confirm 팝업 클릭</button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="FTSV01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <h4 class="tit_item">이동통신사 망별 서비스 커버리지 보기</h4>
+                <div class="sv_cvr_wrap mgt20">
+
+                    <div class="telco_list">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <span class="img_item telco uplus"></span>
+                                    <span class="telco_txt">LG U+</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="img_item telco kt"></span>
+                                    <span class="telco_txt">KT</span>
+                                </a>
+                            </li>
+                            <!-- 23.03.09 주석처리 -->
+                            <!-- <li>
+                                <a href="">
+                                    <span class="img_item telco skt"></span>
+                                    <span class="telco_txt">SKT</span>
+                                </a>
+                            </li> -->
+                            <!-- // 23.03.09 주석처리 -->
+                        </ul>
+                    </div>
+                    <p>KB Liiv M 은 금융혁신지원 특별법에 따라 혁신금융서비스로 지정 받은 KB국민은행의 가상이동통신망(MVNO) 기반 금융•통신 융합서비스입니다.</p>
+                    <ul class="star_type">
+                        <li>MVNO(Mobile Virtual Network Operator): 이동통신망사업자(SKT, KT, LG U+)로부터 설비를 임대하여 독자적인 이동통신서비스를 제공하는 가상이동통신망사업자</li>
+                    </ul>
+                    <p>
+                        KB Liiv M 은 이동통신사업자의 통신망을 임대하여 통신서비스를 제공하고 있어 통화품질은 망제공 사업자와 동일하지만 KB Liiv M 만의 독자적인 요금체계로 더욱 더 저렴하고 다양한 통신서비스를 제공받으실 수 있는 장점이 있습니다. 
+                        또한, 망제공사업자는 더 빠르고 안정적인 5G 서비스를 제공하기 위해 5G 통신 이용 가능 지역 확대에 힘쓰고 있으며 읍/면과 전파 환경에 따라 일부 도심 행정 경계 지역에서는 안정적인 통신망 제공을 위해 다른 전기통신사업자의 5G/LTE망(설비 등)으로 서비스를 제공하고 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+
+    // 팝업
+    $('#btn_FTSV01').on('click', function(){
+        $.ohyLayer({
+            title:"서비스 커버리지",
+            content:'#FTSV01',
+            type:'confirm',
+            closeUse:false,
+        });
+    });
+    
+</script>
+</body>
+</html>

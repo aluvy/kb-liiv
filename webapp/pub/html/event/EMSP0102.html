@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>혜택</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_673052648|rpid=393085603|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title">내 주변 멤버십 찾기</h1>
+
+                <div class="mbs_map-head">
+                    <button type="button" class="btn_map_reset">재검색</button>
+                </div>
+
+                <!-- [02/17] mbs_map-bottom view => 'view' 클래스 추가 -->
+                <div class="mbs_map-bottom view">
+                    <div class="map_control">
+                        <button type="button" class="btn_location"><span class="blind">현위치 안내</span></button>
+                        <button type="button" class="btn_list">목록보기</button>
+                        <div class="btn_zoom">
+                            <button type="button" class="btn_zoomin"><span class="blind">확대</span></button>
+                            <button type="button" class="btn_zoomout"><span class="blind">축소</span></button>
+                        </div>
+                    </div>
+
+                    <div class="mbs_map-store">
+                        <div class="store_item">
+                            <p class="tit">GS25 여의도 한점</p>
+                            <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                            <p class="info">
+                                <span class="cate">해피콘</span>
+                                <span class="useinfo">파리크라상 아메리카노 사용가능</span>
+                            </p>
+                            <a href="#" class="btn_coupon">쿠폰받기</a>
+                        </div>
+                    </div><!-- .mbs_map-store -->
+
+                    
+                </div><!-- .mbs_map-bottom -->
+
+                <!-- 지도 -->
+                <div class="mbs_map">
+                    <!-- [02/21] 이미지 태그 제거 -->
+                    <!-- <img src="/img/event/map.png" alt="지도"> -->
+
+
+                    <!-- maker : 그룹 -->
+                    <div class="map_maker" style="left:21.2rem; top:35.2rem;">
+                        <button type="button" class="maker group">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-gs25"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                            <span class="group_length">+5</span>
+                        </button>
+                    </div>
+                    <!-- // maker : 그룹 -->
+
+                    <!-- maker : maker 그룹 클릭 시 -->
+                    <div class="maker_group_list" style="display:none">
+                        <ul>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-cafe"></span>
+                                    <span>스타벅스 KBS점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-store"></span>
+                                    <span>GS25 여의도 한강점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-cafe"></span>
+                                    <span>스타벅스 KBS점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-store"></span>
+                                    <span>GS25 여의도 한강점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-store"></span>
+                                    <span>GS25 여의도 한강점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-store"></span>
+                                    <span>GS25 여의도 한강점</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // maker : maker 그룹 클릭 시 -->
+
+                    <!-- maker : 선택 됨 -->
+                    <div class="map_maker" style="left:50%; top:50%;">
+                        <button type="button" class="maker on">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-gs25"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <!-- // maker : 선택 됨 -->
+
+                    <!-- maker -->
+                    <div class="map_maker" style="left:5.4rem; top:14.4rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-dunkin"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:21.5rem; top:16.6rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-parisbaguette"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:8.1rem; top:25.3rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-starbucks"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:9.1rem; top:24.3rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-baskinrabbins"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:10.3rem; top:28.8rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-pariscroissant"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:12rem; top:28rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-linas"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <div class="map_maker" style="left:11.3rem; top:18.4rem;">
+                        <button type="button" class="maker">
+                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="brand_ico brand-piginthegarden"></span>
+                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                            <span class="blind">GS25</span>
+                        </button>
+                    </div>
+                    <!-- //maker -->
+                    
+                </div>
+
+            </div><!-- //.content -->
+        </div><!-- //.container -->
+    </div>
+
+<script src="/js/lib/hammer.min.js"></script>
+<script>
+    $(()=>{
+        $(document).find(".container .content .title").removeClass("hidden"); // h1 활성화
+        $("html, body").css({"overflow" : "hidden"});   // noScroll
+
+        $(document).find(".mbs_map-bottom").css({"bottom" : "0"});
+
+        // maker_group_list
+        $(document).on("click", ".maker.group", ()=>{ $(document).find(".maker_group_list").show() })
+        $(document).on("click", ".maker_group_list a", ()=>{ $(document).find(".maker_group_list").hide() })
+    });
+</script>
+</body>
+</html>

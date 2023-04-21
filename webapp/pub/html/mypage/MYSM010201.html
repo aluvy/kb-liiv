@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>마이페이지</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-151096061|rpid=1479179216|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content mypage">
+                <h1 class="title hidden">단말기 정보등록</h1>
+                
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">단말기 정보등록</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="btn_MYSM010201" class="btn secondary sm">[팝업] 휴대폰 모델명 검색</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MYSM010201" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_search">
+                            <div class="label">모델번호 검색</div>
+                            <div class="input">
+                                <input type="text" placeholder="모델번호를 검색해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                <ul class="star_type"><!-- 23/02/07 수정 : .mgt20 클래스 제거 -->
+                    <li>휴대폰 모델명은 앞자리만 입력해도 검색 가능합니다.<br>(예시) SM-G960N의 경우 SM 또는 960만 입력해도 검색 가능</li>
+                    <li>아이폰의 경우 모델번호 우측 란에 부품번호가 나와 있으며, 부품 번호를 탭 하여 나오는 모델번호를 입력해야 합니다.<br>(예시) 한국에서 출시된 아이폰11 PRO 모델의 경우 A2215</li>
+                </ul>
+            </div>
+            <div class="section">
+                <div class="form_group">
+                    <div class="radio_group">
+                        <div class="radio_item box_type">
+                            <input type="radio" id="radio1" name="radioType" checked>
+                            <label for="radio1" class="label"><span>A2215-250</span></label>
+                        </div>
+                        <div class="radio_item box_type">
+                            <input type="radio" id="radio2" name="radioType">
+                            <label for="radio2" class="label"><span>A2215-251</span></label>
+                        </div>
+                        <div class="radio_item box_type">
+                            <input type="radio" id="radio3" name="radioType">
+                            <label for="radio3" class="label"><span>A2215-252</span></label>
+                        </div>
+                        <div class="radio_item box_type">
+                            <input type="radio" id="radio4" name="radioType">
+                            <label for="radio4" class="label"><span>A2215-253</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h3 class="blind">변경할 휴대폰 모델명</h3>
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content done">
+                            <div class="label">휴대폰 모델번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="휴대폰 모델번호" value="A2215-251" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#btn_MYSM010201').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"휴대폰 모델번호 검색",
+            content:'#MYSM010201',
+            type:'bottom',
+            closeUse:true,
+        });
+    });
+</script>
+</body>
+</html>
