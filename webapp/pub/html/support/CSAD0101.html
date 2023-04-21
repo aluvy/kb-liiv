@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>고객지원</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1105411104|rpid=-589718171|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <!-- <div class="header sub clear_type"> -->
+        <!-- </div> -->
+        <!-- header_sub.html -->
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content_slide_wrap no_header">
+                <h1 class="title hidden">금융에 통신을 더한 KB Liiv M 앱에서 다양한 혜택을 쉽고 간편하게</h1>
+
+                <div class="swiper app_down_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide_content slide1">
+                            <div class="tit_slide_wrap main">
+                                <h2 class="tit_slide">
+                                    금융에 통신을 더한<br>
+                                    <strong>KB Liiv M 앱</strong>에서<br>
+                                    다양한 혜택을 <strong>쉽고 간편하게</strong>
+                                </h2>
+                                <div class="btn_wrap">
+                                    <button type="button" class="btn_web">웹으로 이용하기</button>
+                                    <button type="button" class="btn_app_down">앱 다운로드</button>
+                                </div>
+                            </div>
+                            <div class="bg_wrap"></div>
+                            <span class="scroll_down"></span>
+                        </div>
+
+                        <div class="swiper-slide slide_content slide2">
+                            <div class="tit_slide_wrap">
+                                <span class="tit_des blue">새로운 로그인 방식</span>
+                                <h2 class="tit_slide">안전하고<br>편리한 생체로그인</h2>
+                            </div>
+                            <div class="bg_wrap"></div>
+                        </div>
+
+                        <div class="swiper-slide slide_content slide3">
+                            <div class="tit_slide_wrap">
+                                <span class="tit_des blue">통신사&middot;데이터량&middot;요금까지 내 맘대로</span>
+                                <h2 class="tit_slide">맞춤 필터 설정하고<br>내게 맞는 요금제 찾기</h2>
+                            </div>
+                            <div class="bg_wrap"></div>
+                        </div>
+
+                        <div class="swiper-slide slide_content slide4">
+                            <div class="tit_slide_wrap">
+                                <span class="tit_des blue">놓치기 아까운 소식을 빠르게!</span>
+                                <h2 class="tit_slide">푸시알림 받고<br>혜택 챙기기</h2>
+                            </div>
+                            <div class="bg_wrap"></div>
+                        </div>
+
+                        <div class="swiper-slide slide_content slide5">
+                            <div class="tit_slide_wrap">
+                                <span class="tit_des blue">다양한 혜택이 넘치는 이벤트!</span>
+                                <h2 class="tit_slide">미션 달성하고<br>선물 받기</h2>
+                            </div>
+                            <div class="bg_wrap"></div>
+                        </div>
+                    </div>
+                    <div class="pagination hide"></div>
+                </div>
+                <div class="btn_confirm_wrap" style="display:none;">
+					<div class="btn_area">
+						<button type="button" class="btn primary lg">앱 다운로드</button>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<script>
+    // const appDownSlide = new Swiper('.app_down_slide', {
+    //     direction: 'vertical',
+    //     pagination: {
+    //         el: ".pagination",
+    //         clickable: true,
+    //     }
+    // });
+    // appDownSlide.on('transitionEnd',()=>{
+    //     appDownSlide.realIndex > 0
+    //         ? $('.app_down_slide .pagination').removeClass('hide')
+    //         : $('.app_down_slide .pagination').addClass('hide');
+    // });
+    
+    // 23/03/14 접근성 추가
+    const appDownSlide = new Swiper('.app_down_slide', {
+            direction: 'vertical',
+            pagination: {
+                el: '.pagination',
+                clickable: true,
+                renderBullet: function(idx, className) {
+                    var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+                    return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+                }
+            },
+            on: {
+                afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    });
+                },
+                transitionEnd: function() {
+                    // s: 03/22 수정
+                    // appDownSlide.realIndex > 0
+                    // ? $('.app_down_slide .pagination').removeClass('hide')
+                    // : $('.app_down_slide .pagination').addClass('hide');
+                    if(appDownSlide.realIndex > 0) {
+                        $('.app_down_slide .pagination').removeClass('hide');
+                        $('.btn_confirm_wrap').show();
+                    } else {
+                        $('.app_down_slide .pagination').addClass('hide');
+                        $('.btn_confirm_wrap').hide();
+                    }
+                    // e: 03/22 수정
+
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                    this.$el.find('.swiper-pagination-bullet').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-pagination-bullet-active')) {
+                            _this.attr('title', '선택됨').siblings().attr('title', '');
+                        };
+                    });
+                },
+            },
+        });
+</script>
+</body>
+</html>

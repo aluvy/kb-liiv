@@ -84,7 +84,8 @@ let paramMode = {};
 
 function popalarm(opt) {
 	
-		if(getOsInfo().indexOf("app") === -1){
+		if(getOsInfo().indexOf("app") === -1 || 
+				(!isEmpty(opt.okParam) && opt.okParam == '/info/agree/benefit-info-agree')){
 			setTimeout(()=>{
 				$('#confirmPopup > .ly_cnt > .section').html(opt.msg);
 				if(!opt.cfrmYn){
@@ -169,11 +170,11 @@ function popalarm(opt) {
 				}else if(!isEmpty(opt.okParam) && typeof opt.okParam == 'string'){
 					paramMode[opt.okParam.name] = 'string';
 				}
-			}else if(typeof opt.okCallback === "string" && isEmpty(opt.okParam)){
+			}else if(!isEmpty(opt.okCallback) && typeof opt.okCallback === "string" && isEmpty(opt.okParam)){
 				opt.okParam = opt.okCallback;
-				opt.okCallback = setFocus;
+				opt.okCallback = 'setFocus';
 
-				context['setFocus'] = opt.okCallback;
+				context['setFocus'] = setFocus;
 			}
 			
 			callAppService({
@@ -185,10 +186,10 @@ function popalarm(opt) {
 					 title : opt.title,
 					 cancelBtnText : opt.cancelBtnText,
 					 okBtnText : opt.okBtnText,
-					 cancelCallback : opt.cancelCallback,
-					 okCallback : opt.okCallback,
-					 okParam : opt.okParam,
-					 cancelParam : opt.cancelParam
+					 cancelCallback : (isEmpty(opt.cancelCallback) ? "" : opt.cancelCallback),
+					 okCallback : (isEmpty(opt.okCallback) ? "" : opt.okCallback),
+					 okParam : (isEmpty(opt.okParam) ? "" : opt.okParam),
+					 cancelParam : (isEmpty(opt.cancelParam) ? "" : opt.cancelParam)
 				}  
 			});
 		}
@@ -241,8 +242,10 @@ window.modalLayer = {
     	}
      },
      hide:function(){
-    	 $('.layer_wrap[aria-hidden=false]').find('.ly_in').addClass('off');
-    	  johyLayer.instances.slice(-1)[0].close();
+    	 if(johyLayer.instances.length > 0){
+    		 $('.layer_wrap[aria-hidden=false]').find('.ly_in').addClass('off');
+    		 johyLayer.instances.slice(-1)[0].close();
+    	 }
      }
 };
 
@@ -784,45 +787,45 @@ function kcbReturnCode(resultCode){
 	
 	switch(resultCode){
 	case 'T090': 
-		strErr = '인증에 실패하였습니다. 입력정보 또는 본인인증 대상 카드 여부를 확인해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '인증에 실패하였습니다. 입력정보 또는 본인인증 대상 카드 여부를 확인해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T091': 
-		strErr = '인증에 실패하였습니다. 신용카드 발급사 확인이 필요합니다.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '인증에 실패하였습니다. 신용카드 발급사 확인이 필요합니다.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T093': 
-		strErr = '법인/가족/선불카드는 본인인증 대상 카드가 아닙니다.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '법인/가족/선불카드는 본인인증 대상 카드가 아닙니다.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T095': 
-		strErr = '체크카드는 이용이 불가합니다.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '체크카드는 이용이 불가합니다.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T097': 
 	case 'T098': 
 	case 'T899': 
 	case 'T998': 
 	case 'T999': 
-		strErr = '일시적인 시스템 오류입니다. 잠시 후 다시 시도해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '일시적인 시스템 오류입니다. 잠시 후 다시 시도해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T099': 
-		strErr = '인증에 실패하였습니다. 다시 시도해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '인증에 실패하였습니다. 다시 시도해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T100': 
-		strErr = 'ARS인증 또는 앱카드 인증 완료 후 인증 완료를 선택해 주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = 'ARS인증 또는 앱카드 인증 완료 후 인증 완료를 선택해 주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T699': 
-		strErr = '입력 카드사 응답이 지연되고 있습니다. 잠시 후 다시 시도해 주시거나 다른 신용카드를 이용해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '입력 카드사 응답이 지연되고 있습니다. 잠시 후 다시 시도해 주시거나 다른 신용카드를 이용해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T440': 
 	case 'T441': 
 	case 'T442': 
 	case 'T443': 
-		strErr = '인증 완료 중복 시도로 인한 인증 실패 입니다. 다시 시도해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '인증 완료 중복 시도로 인한 인증 실패 입니다. 다시 시도해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T599': 
-		strErr = '인증 재시도 횟수 또는 인증 제한 시간이 초과 되었습니다. 다시 시도해주세요.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '인증 재시도 횟수 또는 인증 제한 시간이 초과 되었습니다. 다시 시도해주세요.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	case 'T887': 
 	case 'T888': 
-		strErr = '카드사 시스템 점검으로 인하여 이용이 불가합니다. 다른 카드사를 이용해주시길 바랍니다.</br></br> 오류코드 ('+resultCode+')';
+		strErr = '카드사 시스템 점검으로 인하여 이용이 불가합니다. 다른 카드사를 이용해주시길 바랍니다.<br/><br/> 오류코드 ('+resultCode+')';
 		break;
 	}
 	

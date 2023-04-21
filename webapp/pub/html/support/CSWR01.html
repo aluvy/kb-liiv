@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>고객지원</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_478580567|rpid=883870894|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub">
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">고객 후기</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">고객 후기</h2>
+                </div>
+                
+                <div class="section">
+                    <div class="review_percent_wrap">
+                        <ul class="percent_list">
+                            <li class="list_item">
+                                <i class="icon icon_heart"></i>
+                                <span class="item_tit">가성비</span>
+                                <strong class="item_percent">95<em>%</em></strong>
+                            </li>
+                            <li class="list_item">
+                                <i class="icon icon_star"></i>
+                                <span class="item_tit">품질</span>
+                                <strong class="item_percent">95<em>%</em></strong>
+                            </li>
+                            <li class="list_item">
+                                <i class="icon icon_face"></i>
+                                <span class="item_tit">만족도</span>
+                                <strong class="item_percent">95<em>%</em></strong>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 23/03/08 수정 : 후기작성 버튼 수정 및 위치 이동 -->
+                    <div class="btn_wrap mgt20">
+                        <button type="button" class="btn primary">후기작성</button><!-- 23/03/24 수정 : 후기작성 버튼 수정 -->
+                    </div>
+                    <!--// 23/03/08 수정 : 후기작성 버튼 수정 및 위치 이동 -->
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <div class="review_list_wrap">
+                        <div class="review_head_group">
+
+                            <!-- 23/02/20 수정 : 솔팅버튼 공통 적용 -->
+                            <!-- <div class="select_sort">
+                                <select>
+                                    <option value="">별점 높은 순</option>
+                                    <option value="">option1</option>
+                                    <option value="">option2</option>
+                                </select>
+                            </div> -->
+
+                            <!-- 23/03/08 추가 : 내가 쓴 후기 체크박스 추가 -->
+                            <span class="check_item basic">
+                                <input type="checkbox" id="CSWR01_2" name="CSWR01_2">
+                                <label for="CSWR01_2" class="label"><span>내가 쓴 후기</span></label>
+                            </span>
+                            <!--// 23/03/08 추가 : 내가 쓴 후기 체크박스 추가 -->
+
+                            <div class="data_sort">
+                                <span class="sort">
+                                    <button type="button" id="btn_CSWR01" class="btn_sort">별점 높은 순</button>
+                                </span>
+                            </div>
+                            <!--// 23/02/20 수정 : 솔팅버튼 공통 적용 -->
+
+                            <!-- <button type="button" class="btn primary">후기작성</button> --><!-- 23/03/08 수정 : 후기작성 버튼 수정 및 위치 이동 -->
+                        </div>
+
+                        <ul class="review_list">
+                            <li>
+                                <div class="item_tit_wrap">
+                                    <strong class="item_tit">LTE 든든무제한 11GB+(신)</strong>
+                                    <div class="item_writer_info">
+                                        <span class="user_id">kbus***</span>
+                                        <span class="date">2022.01.03</span>
+                                    </div>
+                                    <!-- 내 작성글인 경우 -->
+                                    <div class="item_edit_wrap">
+                                        <button type="button" class="btn_edit"><span class="blind">수정하기</span></button>
+                                        <button type="button" class="btn_delete"><span class="blind">삭제하기</span></button>
+                                    </div>
+                                    <!--// 내 작성글인 경우 -->
+                                </div>
+                                <div class="item_cont_wrap">
+                                    <div class="txt_wrap">
+                                        <div class="thumb">
+                                            <a href="#" id="popBtn1">
+                                                <img src="/img/support/no_img.png" alt="예시 이미지">
+                                            </a>
+                                        </div>
+                                        <p>용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다.</p>
+                                    </div>
+                                    <div class="grade_wrap">
+                                        <ul class="grade_list">
+                                            <li>
+                                                <span class="grade_tit">가성비</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">품질</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4.5</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">만족도</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item_tit_wrap">
+                                    <strong class="item_tit">LTE 든든무제한 11GB+(신)</strong>
+                                    <div class="item_writer_info">
+                                        <span class="user_id">kbus***</span>
+                                        <span class="date">2022.01.03</span>
+                                    </div>
+                                    <!-- 내 작성글인 경우 -->
+                                    <!-- <div class="item_edit_wrap">
+                                        <button type="button" class="btn_edit"><span class="blind">수정하기</span></button>
+                                        <button type="button" class="btn_delete"><span class="blind">삭제하기</span></button>
+                                    </div> -->
+                                    <!--// 내 작성글인 경우 -->
+                                </div>
+                                <div class="item_cont_wrap">
+                                    <div class="txt_wrap">
+                                        <!-- 23/02/24 설명 추가 : 등록 이미지 없을시 .thumb 태그 없애기 또는 display:none; -->
+                                        <!-- <div class="thumb">
+                                            <a href="#">
+                                                <img src="/img/support/no_img.png" alt="예시 이미지">
+                                            </a>
+                                        </div> -->
+                                        <p>용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다.</p>
+                                    </div>
+                                    <div class="grade_wrap">
+                                        <ul class="grade_list">
+                                            <li>
+                                                <span class="grade_tit">가성비</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">품질</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4.5</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">만족도</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item_tit_wrap">
+                                    <strong class="item_tit">LTE 든든무제한 11GB+(신)</strong>
+                                    <div class="item_writer_info">
+                                        <span class="user_id">kbus***</span>
+                                        <span class="date">2022.01.03</span>
+                                    </div>
+                                    <!-- 내 작성글인 경우 -->
+                                    <!-- <div class="item_edit_wrap">
+                                        <button type="button" class="btn_edit"><span class="blind">수정하기</span></button>
+                                        <button type="button" class="btn_delete"><span class="blind">삭제하기</span></button>
+                                    </div> -->
+                                    <!--// 내 작성글인 경우 -->
+                                </div>
+                                <div class="item_cont_wrap">
+                                    <div class="txt_wrap">
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="/img/support/no_img.png" alt="예시 이미지">
+                                            </a>
+                                        </div>
+                                        <p>용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다. 용기가 열락의 하는 원질이 못할 오아이스도 얼음에 때문이다.</p>
+                                    </div>
+                                    <div class="grade_wrap">
+                                        <ul class="grade_list">
+                                            <li>
+                                                <span class="grade_tit">가성비</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">품질</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4.5</strong>
+                                            </li>
+                                            <li>
+                                                <span class="grade_tit">만족도</span>
+                                                <i class="icon icon_star"></i>
+                                                <strong class="grade_num">4</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- 23/03/08 추가 : no data 케이스 추가 -->
+                        <div class="card_nodata">
+                            <p class="txt">내가 쓴 후기가 없어요.</p>
+                        </div>
+                        <!--// 23/03/08 추가 : no data 케이스 추가 -->
+
+                        <div class="btn_wrap_more">
+                            <button type="button" class="btn_more">더보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    
+    <!-- 23/02/20 수정 : 솔팅버튼 공통 적용 -->
+    <!-- layer : select bottom sheet -->
+    <div id="CSWR01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li><a href="#none" role="button" title="별점 높은 순">별점 높은 순</a></li>
+                        <li><a href="#none" role="button" title="최신순">최신순</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!-- layer : select bottom sheet -->
+    <!-- 23/02/20 수정 : 솔팅버튼 공통 적용 -->
+
+
+
+
+    
+<!-- 팝업 -->
+<div id="CSWR0102" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            
+            <div class="photo"><img src="/img/event/map.png" alt="고객후기 이미지"></div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 23/02/20 수정 : 솔팅버튼 공통 적용
+    $(document).on("click", "#btn_CSWR01", ()=>{
+        $.ohyLayer({
+            title:"정렬",
+            content:'#CSWR01',
+            type:'bottom',
+            dimAct:true,
+        });
+    })
+
+    $('#popBtn1').on('click', function(){
+        $.ohyLayer({
+            content:'#CSWR0102',
+            type:'photo',
+            dimAct:true,
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Liiv Mobile App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1734252174|rpid=1371643663|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/pub/ia_resource/ia.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+	<div class="guide_cnts_wrap">
+        <h2 class="title">vertical</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <!-- AS-IS bar 차트 core js -->
+                <script src="/js/kbchart_bar.js"></script>
+                <link rel="stylesheet" type="text/css" href="/css/kbchart_core_bar.css">
+
+                <div class="graph_area bg">
+                    <div id="everChart_pay" class="ambGraphWrap"></div>
+                    <script>
+                        var everChart_pay = [
+                            {
+                                type: 'everage',
+                                label: '3개월 평균',
+                                barColor: '#0966e9',                   
+                                value: 18500
+                            },{
+                                label: '10월',
+                                barColor: '#d6d6d6',
+                                value: 19200
+                            },{
+                                label: '11월',
+                                barColor:'#d6d6d6',
+                                value: 17500
+                            },{
+                                label: '12월',
+                                barColor:'#d6d6d6',
+                                value: 18500
+                            }
+                        ]
+            
+                        $(window).on('load', function(){
+                            $('#everChart_pay').AmbGraph({
+                                cName : 'vertical', // core css에서 class명으로 모양을 결정함
+                                speed : 2000, // ani 속도 단위 ms // 최소 100 
+                                setUnit :{
+                                    text : '원', // 단위 표시 필요시
+                                },
+                                data : everChart_pay // 불러올 data
+                            });
+                        });
+                    </script>
+                </div>
+                
+            </div>
+            <!-- <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div> -->
+        </div>
+
+        <h2 class="title">dataBar</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <div class="graph_area">
+                    <div id="usageChart" class="ambGraphWrap"></div>
+                    <script>
+                        var usageChart = [
+                            {
+                                label: '데이터',
+                                type: '',
+                                unit: 'GB',
+                                barColor:'#4a6ff2',
+                                bgColor:'#edf1fe',
+                                max: 11,
+                                used:10,
+                            },{
+                                label: '데이터',
+                                type: '',
+                                unit: 'GB',
+                                barColor:'#4a6ff2',
+                                bgColor:'#edf1fe',
+                                max: '무제한',
+                                used:10,
+                            },{
+                                label: '음성통화',
+                                type: 'time', // 시간 단위 s
+                                unit: '',
+                                barColor:'#10dd87',
+                                bgColor:'#e6f7f0',
+                                max: 3600 * 3, // 시간 단위 s
+                                used:3600 + 10, // 시간 단위 s
+                            },{
+                                label: '음성통화',
+                                type: 'time', // 시간 단위 s
+                                unit: '',
+                                barColor:'#10dd87',
+                                bgColor:'#e6f7f0',
+                                max: '무제한', 
+                                used:3600 + 10, // 시간 단위 s
+                            },{
+                                label: '문자',
+                                type: '',
+                                unit: '건',
+                                barColor:'#fcbf24',
+                                bgColor:'#fff9ea',
+                                max: 200,
+                                used: 152,
+                            },{
+                                label: '문자',
+                                type: '',
+                                unit: '건',
+                                barColor:'#fcbf24',
+                                bgColor:'#fff9ea',
+                                max: '기본제공',
+                                used: 15,
+                            },{
+                                label: '영상·부가',
+                                type: 'time', // 시간 단위 s
+                                unit: '',
+                                barColor:'#b27afa',
+                                bgColor:'#f7f2ff',
+                                max: 3600 * 5, // 시간 단위 s
+                                used:3600 + 30, // 시간 단위 s
+                            }
+                        ]
+    
+                        $(window).on('load', function(){
+                            $('#usageChart').AmbGraph({
+                                cName : 'dataBar', // core css에서 class명으로 모양을 결정함
+                                speed : 2000,      // ani 속도 단위 ms // 최소 100
+                                data : usageChart // 불러올 data
+                            });
+                        });
+                    </script>
+                </div>
+                
+            </div>
+            <!-- <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div> -->
+        </div>
+
+        <h2 class="title">Circle</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <!-- AS-IS Circle 차트 core js -->
+                <script src="/js/kbchart_pie.js"></script>
+                <link rel="stylesheet" type="text/css" href="/css/kbchart_core.css">
+
+                <div class="graph_area">
+                    <div id="dataMain_main" class="ambGaugeWrap" ambGaugeText="true" ambGaugelabel="true"></div>
+                    <script>
+                        var dataMain_main = [
+                            {
+                                label : '데어터',
+                                unit: 'GB',
+                                max: 11,
+                                value: 10,
+                            }
+                        ]
+
+                        $(window).on('load', function(){
+                            $('#dataMain_main').AmbPie({
+                                cName : 'pCircle',     // core css에서 class명으로 모양을 결정함
+                                maxWidth : '15rem',        // Gauge chart max-width 
+                                setColor :{				
+                                    strokeColor : '#3bc3e5', // #2ba4fc
+                                    textColor : '#098aaa', // #2ba4fc
+                                },
+                                data : dataMain_main   // 불러올 data	
+                            });
+                        });									
+                    </script>
+                </div>
+
+                <div class="graph_area">
+                    <div id="dataMain_add" class="ambGaugeWrap" ambGaugeText="true" ambGaugelabel="true"></div>
+                    <script>
+                        var dataMain_add = [
+                            {
+                                label : '추가 데어터',
+                                unit: 'GB',
+                                max: 3,
+                                value: 1,
+                                type: '초과',
+                                //cutomTxt_PieValue: '1분00초',
+                                //cutomTxt_labelValue: '10000건',
+                            }
+                        ]
+
+                        $(window).on('load', function(){
+                            $('#dataMain_add').AmbPie({
+                                cName : 'pCircle',     // core css에서 class명으로 모양을 결정함
+                                maxWidth : '15rem',        // Gauge chart max-width 
+                                setColor :{				
+                                    strokeColor : '#9fb4c0', // #2ba4fc
+                                    textColor : '#618392', // #2ba4fc
+                                },
+                                data : dataMain_add   // 불러올 data	
+                            });
+                        });									
+                    </script>
+                </div>
+
+                <div class="graph_area">
+                    <div id="dataEtc_voice" class="ambGaugeWrap" ambGaugeText="true" ambGaugelabel="true"></div>
+                    <script>
+                        var dataEtc_voice = [
+                            {
+                                label : '음성',
+                                unit: '분',
+                                max: 100,
+                                value: 60,
+                            }
+                        ]
+
+                        $(window).on('load', function(){
+                            $('#dataEtc_voice').AmbPie({
+                                cName : 'pCircle',     // core css에서 class명으로 모양을 결정함
+                                maxWidth : '15rem',        // Gauge chart max-width 
+                                setColor :{				
+                                    strokeColor : '#a6ce39', // #2ba4fc
+                                    textColor : '#8cb718', // #2ba4fc
+                                },
+                                data : dataEtc_voice   // 불러올 data	
+                            });
+                        });									
+                    </script>
+                </div>
+
+                <div class="graph_area">
+                    <div id="dataEtc_mms" class="ambGaugeWrap" ambGaugeText="true" ambGaugelabel="true"></div>
+                    <script>
+                        var dataEtc_mms = [
+                            {
+                                label : '문자',
+                                unit: '건',
+                                max: 100,
+                                value: 56,
+                            }
+                        ]
+
+                        $(window).on('load', function(){
+                            $('#dataEtc_mms').AmbPie({
+                                cName : 'pCircle',  
+                                maxWidth : '15rem', 
+                                setColor :{				
+                                    strokeColor : '#febd36', // #2ba4fc
+                                    textColor : '#eaa61a', // #2ba4fc
+                                },
+                                data : dataEtc_mms   // 불러올 data
+                            });
+                        });									
+                    </script>
+                </div>
+
+                <div class="graph_area">
+                    <div id="dataEtc_etc" class="ambGaugeWrap" ambGaugeText="true" ambGaugelabel="true"></div>
+                    <script>
+                        var dataEtc_etc = [
+                            {
+                                label : '영상/부가음성',
+                                unit: '분',
+                                max: 100,
+                                value: 35,
+                            }
+                        ]
+
+                        $(window).on('load', function(){
+                            $('#dataEtc_etc').AmbPie({
+                                cName : 'pCircle',  
+                                maxWidth : '15rem', 
+                                setColor :{				
+                                    strokeColor : '#f391bc', // #2ba4fc
+                                    textColor : '#e16fa1', // #2ba4fc
+                                },
+                                data : dataEtc_etc   // 불러올 data
+                            });
+                        });									
+                    </script>
+                </div>
+                
+            </div>
+            <!-- <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div> -->
+        </div>
+
+        <h2 class="title">wave</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <div class="wave_chart" id="wave_chart01">
+                    <div class="wave_wrap">
+                        <div class="wave_box">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart" id="wave_chart02">
+                    <div class="wave_wrap">
+                        <div class="wave_box">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart" id="wave_chart06">
+                    <div class="wave_wrap">
+                        <div class="wave_box">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart over" id="wave_chart07">
+                    <div class="wave_wrap">
+                        <div class="wave_box">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart" id="wave_chart03">
+                    <div class="wave_wrap">
+                        <div class="wave_box" style="background:#fff;">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG01);">
+                                    <defs>
+                                        <linearGradient gradientTransForm="rotate(157.79)" id="linearG01">
+                                            <stop offset="25.16%" stop-color="#8ea7ff"></stop>
+                                            <stop offset="86.54%" stop-color="#4a6ff2"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart" id="wave_chart04">
+                    <div class="wave_wrap">
+                        <div class="wave_box" style="background:#fff;">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water" style="background:linear-gradient(157.79deg, #5bf2b2 25.16%, #10dd86 86.54%);">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back" style="fill:#5bf2b2;">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG02);">
+                                    <defs>
+                                        <linearGradient gradientTransForm="rotate(157.79)" id="linearG02">
+                                            <stop offset="25.16%" stop-color="#5bf2b2"></stop>
+                                            <stop offset="86.54%" stop-color="#10dd86"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="wave_chart" id="wave_chart05">
+                    <div class="wave_wrap">
+                        <div class="wave_box" style="background:#fff;">
+                            <div class="wave_value">
+                                <span class="data-val">0</span><em>GB</em>
+                            </div>
+                            <div class="wave_water" style="background:linear-gradient(157.79deg, #ffd364 25.16%, #ffb700 86.54%);">
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_back" style="fill:#ffd364;">
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                                <svg viewBox="0 0 560 20" class="water_wave water_wave_front" style="fill:url(#linearG03);">
+                                    <defs>
+                                        <linearGradient gradientTransForm="rotate(157.79)" id="linearG03">
+                                            <stop offset="25.16%" stop-color="#ffd364"></stop>
+                                            <stop offset="86.54%" stop-color="#ffb700"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <dl class="wave_label">
+                        <dt>데이터</dt>
+                        <dd>
+                            <div><span class="data-val">0</span><em>GB</em></div>
+                            <div><span class="data-max">0</span><em>GB</em></div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <script>
+                    $(window).on('load', function(){
+                        
+                        waveChart('#wave_chart01', 50, 30);
+                        waveChart('#wave_chart02', 100, 110);
+                        waveChart('#wave_chart03', 100, 80);
+                        waveChart('#wave_chart04', 100, 80);
+                        waveChart('#wave_chart05', 100, 30);
+                        waveChart('#wave_chart06', 100, 0);
+                        waveChart('#wave_chart07', 100, 0);
+
+                    });
+
+                    function waveChart(obj, max, val) {
+                        var _this = $(obj);
+                        
+                        _this.find('.data-max').text(max);
+
+                        if(val > 0 && val <= max) {
+                            _this.find('.data-val').text(val);
+
+                            var cent = Math.floor((val * 100) / max);
+                            var water = _this.find('.wave_water')[0];
+                            var percent = 0;
+                            var interval;
+                            interval = setInterval(function () {
+                                percent++;
+                                water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
+                                if (percent == 60) {
+                                    _this.find('.wave_value').css('color', '#fff');
+                                }
+                                if (percent == cent) {
+                                    clearInterval(interval);
+                                }
+                            }, 40);
+                        } else if(val <= 0 || val > max) {
+                            var water = _this.find('.wave_water')[0];
+                            water.style.transform = 'translate(0, 110%)';
+                            
+                            if(val > max) {
+                                var dVal = val - max;
+                                _this.find('.wave_value').addClass('fc_red');
+                                _this.find('.wave_value .data-val').text(dVal);
+                                _this.find('.wave_value em').text('GB 초과');
+                                _this.find('.wave_label > dd > div:first-child').addClass('fc_red');
+                                _this.find('.wave_label > dd > div:first-child .data-val').text(dVal);
+                                _this.find('.wave_label > dd > div:first-child em').text('GB 초과');
+                            } else if(val <= 0) {
+                                if(_this.hasClass('over')) {
+                                    let html = `
+                                        <dl>
+                                            <dt>추가데이터</dt>
+                                            <dd>일2GB</dd>
+                                        </dl>
+                                    `;
+                                    _this.find('.wave_value').html('').append(html);
+                                } else {
+                                    _this.find('.wave_value').addClass('fc_lightgray');
+                                    _this.find('.wave_value .data-val').text('');
+                                    _this.find('.wave_value em').text('소진');
+                                }
+                            }
+                        }
+                        // 무제한 요금제 : 데이터, 추가데이터 데이터 잔여량 0 "소진"으로 표기 (val <= 0)
+                        // 제한 요금제 : 데이터 초과량기재 (val > max)
+                    }
+                </script>
+                <style>
+                    .wave_chart .wave_box .wave_value dl {text-align:center;}
+                    .wave_chart .wave_box .wave_value dt {font-size:1.2rem; font-weight:400; line-height:1.9rem;}
+                    .wave_chart .wave_box .wave_value dd {line-height:2.2rem; color:#0966e9;}
+                </style>
+                
+            </div>
+            <!-- <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div> -->
+        </div>
+
+        <h2 class="title">coupon test</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="coupon_list_wrap">
+                    <ul class="coupon_list">
+                        <li>
+                            <div class="coupon_unit">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-starbucks"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">스타벅스</p>
+                                                <p class="tit">카페 아메리카노 T</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">발급</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit dim">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-gs25"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">GS25</p>
+                                                <p class="tit">5,000원 금액권</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">발급</div>
+                                    </div>
+
+                                    <div class="dim">
+                                        <div class="l">
+                                            <div class="in">
+                                                <div class="coupon_error">
+                                                    <p>
+                                                        쿠폰 발급 시 오류가 발생하였습니다.<br>
+                                                        고객센터로 문의해주세요.
+                                                    </p>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Liiv M 고객센터</strong> : 1522-9999
+                                                        </li>
+                                                        <li>
+                                                            <strong>쿠프마케팅 고객센터</strong> : 1644-5094
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r"><div class="in"></div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit wait">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-gs25"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">GS25</p>
+                                                <p class="tit">5,000원 금액권</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">데이터<br>충전시<br>사용가능</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit comp">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-cu"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">CU</p>
+                                                <p class="tit">5,000원 금액권</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">사용완료</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit wait">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-genie"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">지니뮤직</p>
+                                                <p class="tit">지니뮤직 지니뮤직 지니뮤직 지니뮤직</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">발급<br>준비중</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-touslesjours"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">뚜레쥬르</p>
+                                                <p class="tit">뚜레쥬르 뚜레쥬르 뚜레쥬르 뚜레쥬르</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">재발급</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-happycon"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">해피콘</p>
+                                                <p class="tit">해피콘 해피콘 해피콘 해피콘 해피콘</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">재발급</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-kb"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">KB국민은행</p>
+                                                <p class="tit">프리미엄 금리우대</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">재발급</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon_unit agai">
+                                <a href="#" role="button">
+                                    <div class="con">
+                                        <div class="in">
+                                            <div class="brand_ico brand-genie"></div>
+                                            <div class="coupon_info">
+                                                <p class="brand">지니뮤직</p>
+                                                <p class="tit">지니뮤직 지니뮤직 지니뮤직 지니뮤직</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sta">
+                                        <div class="in">재발급</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!-- .coupon_list_wrap -->
+            </div>
+
+            <div class="sample">
+                
+                <div class="my_coupon">
+                    <div class="coupon">
+                        <div class="brand_ico brand-starbucks"></div>
+                        <div class="coupon_info">
+                            <p class="brand">스타벅스</p>
+                            <p class="tit">카페 아메리카노 T</p>
+                            <p class="date">발급일자 : 2023-02-17</p>
+                        </div>
+                    </div>
+                    <div class="coupon_bg">
+                        <div class="top"></div>
+                        <div class="mid"></div>
+                        <div class="btm"></div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+
+    </div>
+
+<script>
+
+</script>
+</body>
+</html>

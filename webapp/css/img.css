@@ -20,6 +20,7 @@
 .img_item.visual.membership2 {width:32rem; height:14rem; background-image:url(../img/img/visual_membership2.png);}
 .img_item.visual.ota {width:21.9rem; height:12.9rem; background-image:url(../img/img/visual_ota.png);}
 .img_item.visual.recommend {width:32rem; height:14rem; background-image:url(../img/img/visual_recommend.png);}
+.img_item.visual.spam {width:32rem; height:14rem; background-image:url(../img/img/visual_spam.png);}
 
 /* **** img_item > charactor **** */
 .img_item.char.bibi_love{width:4rem; height:4rem; background-image: url(../img/img/char_bibi_love.png);}
@@ -247,6 +248,10 @@
 .img_item.flat.box{width:4rem; height:4rem; background-image: url(../img/img/flat_box.png);}
 .img_item.flat.touch{width:3.2rem; height:3.2rem; background-image: url(../img/img/flat_touch.png);}
 .img_item.flat.promotion{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_promotion.png);}
+.img_item.flat.no_usim{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_no_usim.png);}
+.img_item.flat.no_delivery{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_no_delivery.png);}
+.img_item.flat.no_wait{width:3.6rem; height:3.6rem; background-image: url(../img/img/flat_no_wait.png);}
+.img_item.flat.data_block{width:2.4rem; height:2.4rem; background-image: url(../img/img/flat_data_block.png);}
 
 
 /* **** img_item > icon **** */
@@ -501,6 +506,7 @@
 .img_item.etc.sm.card_driver{width:6.4rem; height:6.4rem; background-image: url(../img/img/etc_card_driver2.png);}
 .img_item.etc.card_id{width:12.1rem; height:7.1rem; background-image: url(../img/img/etc_card_id.png);}
 .img_item.etc.card_driver{width:12.1rem; height:7.1rem; background-image: url(../img/img/etc_card_driver.png);}
+.img_item.etc.card_biz {width:8.0rem; height:4.2rem; background-image:url(../img/img/etc_card_biz.png);}
 
 .img_item.etc.card{width:19.1rem; height:11.9rem; background-image: url(../img/img/etc_card.png);}
 

@@ -3,7 +3,9 @@ $(function(){
 		loading('start', e);
 	});
 	$(document).ajaxStop(function(e) {
-		loading('stop', e);
+//		setTimeout(()=>{
+			loading('stop', e);
+//		}, 101);
 	});
 });
 
@@ -31,55 +33,59 @@ function fn_transCall(url, data, callBack, errorCallback, postAction){
 		contentType = data.contentType;
 	}
 
-	$.ajax({
-		type : "post",
-		url : url,
-		data : data,
-		cache: false,
-		dataType:  'json',		
-		async: true,
-		contentType: contentType,
-		beforeSend : function(xhr, set) {
-			let token = $("meta[name='_csrf']").attr("content");
-			let header = $("meta[name='_csrf_header']").attr("content");
-			xhr.setRequestHeader(header, token);
-		},
-		success : function(result, status, xhr) {
-			if(typeof objCallBack == 'function'){
-				objCallBack(tranId, result, status, data);
-			}else{
-				fn_callBack(tranId, result, status, data);
-			}
-		},
-		error: function(xhr, status, error){
-			switch(xhr.status){
-			case 400:					
-			case 401:					
-			case 404:
-			case 500:
-//					location.href = '/error/error.jsp';
-//					break;				
-			default:				
-				if(typeof objErrorCallback == 'function'){
-					objErrorCallback(tranId, xhr, status, error);
+//	setTimeout(()=>{
+		$.ajax({
+			type : "post",
+			url : url,
+			data : data,
+			cache: false,
+			dataType:  'json',		
+			async: true,
+			contentType: contentType,
+			beforeSend : function(xhr, set) {
+				let token = $("meta[name='_csrf']").attr("content");
+				let header = $("meta[name='_csrf_header']").attr("content");
+				xhr.setRequestHeader(header, token);
+			},
+			success : function(result, status, xhr) {
+				if(typeof objCallBack == 'function'){
+					objCallBack(tranId, result, status, data);
 				}else{
-					let opt = {
-							msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
-							cfrmYn : false
-					};
-					setTimeout(function(){ popalarm(opt); }, 10);
-					console.log(xhr.responseText);
+					fn_callBack(tranId, result, status, data);
 				}
+			},
+			error: function(xhr, status, error){
+				switch(xhr.status){
+				case 0:
+					console.log('status : '+xhr.status);
+					break;
+				case 400:					
+				case 401:					
+				case 404:
+				case 500:
+				default:				
+					if(typeof objErrorCallback == 'function'){
+						objErrorCallback(tranId, xhr, status, error);
+					}else{
+						setTimeout(function(){ 
+							popalarm({
+								msg : "오류가 발생하였습니다. 다시 시도해 주세요.",
+								cfrmYn : false
+							}); }, 10);
+						console.log(xhr.responseText);
+					}
 				break;
+				}
+			},
+			complete: function(xhr, status){
+				loading('stop');
+				if(typeof objPostAction == 'function'){
+					objPostAction(tranId, xhr, status);
+				}
 			}
-		},
-		complete: function(xhr, status){
-			loading('stop');
-			if(typeof objPostAction == 'function'){
-				objPostAction(tranId, xhr, status);
-			}
-		}
-	});
+		});
+//	}, 100);
+	
 };
 
 /**
@@ -139,7 +145,7 @@ function fn_transFormSubmit(opt){
 					if(!type){
 						opt.msg = "정상적으로 첨부되지 않았습니다. 다시 한번 진행해 주세요.";
 					}else{
-						opt.msg = "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.";
+						opt.msg = "오류가 발생하였습니다. 다시 시도해 주세요.";
 					}
 					opt.cfrmYn =  false;
 					setTimeout(function(){ popalarm(opt); }, 10);
@@ -208,17 +214,13 @@ function kbplusLogout() {
 
 // KBPLUS 이벤트
 function kbplusEvent() {
-	callAppService({
+    console.log('[kbplusEvent] checkLoginStep=' + checkLoginStep);
+    if(getOsInfo().indexOf('app') != -1){
+	    callAppService({
 			action_code : 'A0314',	// genKey
-	});
-
-	if(getOsInfo() === 'android_app'){
-		callAppService({
-			action_code : 'A0315',	// history삭제
-		});
+	    });
+	    location.replace('/');
 	}
-
-	location.replace('/');
 }
 
 //메인페이지로 이동
@@ -233,15 +235,17 @@ function goToMain() {
 
 function goLogin(url){
 	if(getOsInfo().indexOf('app') != -1){
+		getDeviceInfo();
 		// APP 로그인
 		callAppService({
 			action_code : 'A0105',
 			action_param : 
 			{
-				r_login : (isEmpty(sessionStorage.getItem('r_login')) ? "id" : sessionStorage.getItem('r_login')),
+				c_login : (isEmpty(sessionStorage.getItem('c_login')) ? "" : sessionStorage.getItem('c_login')),
 				redirectUrl : (isEmpty(url) ? "" : url)
 			}  
 		});
+		sessionStorage.removeItem('c_login');
 	}else{
 		if(isEmpty(url)){
 			location.replace("/system/login/login");
@@ -256,9 +260,7 @@ function goLogin(url){
  * @param state
  */
 function loading(state, e) {
-	if(location.href.indexOf('/join/open/desire-number') != -1 && !isEmpty(e)){		// 셀프개통(번호찾기) 제외
-		return;
-	}
+
 	if(location.href.indexOf('/membership/place-search') != -1){		// 멤버십 찾기 제외
 		return;
 	}
@@ -268,7 +270,10 @@ function loading(state, e) {
 	if(location.href.indexOf('search/result') != -1){	// 통합검색 로딩이미지 제외
 		return;
 	}
-	if(location.href.indexOf('open/open-request-new') != -1 || location.href.indexOf('open/open-request-transfer') != -1){         // 개통 유심입력(신규) 로딩 이미지제외
+	if(location.href.indexOf('/open/open-request-new') != -1
+	    || location.href.indexOf('/open/open-request-transfer') != -1
+	    || location.href.indexOf('/open/desire-number') != -1
+	    || location.href.indexOf('/open/transfer-agree') != -1){         // 셀프개통 제외
 		return;
 	}
 	if(getOsInfo().indexOf('app') != -1){		// APP 로딩이미지 제외
@@ -300,9 +305,6 @@ function loading(state, e) {
  *  join: 가입/개통
  */
 function setHeaderType(t){
-	if(location.pathname == '/support/docs/apps'){
-		$(".header").addClass("clear_type");
-	}
 	if(t == 'sub'){
 		$('.back_area').show();
 		$('#btnHeaderHome').show();
@@ -437,10 +439,12 @@ function urlFilter(url){
  */
 function goPrevPage(){
 	if(getOsInfo() === 'android_app'){
-		if(johyLayer.instances.length > 0){
-			modalLayer.hide()
-			return;
-		}
+		try{
+			if(johyLayer.instances.length > 0){
+				modalLayer.hide()
+				return;
+			}
+		}catch(e){ console.log(e); }
 	}
 	if(document.referrer === "http://"+location.host+"/"
 			|| document.referrer === "https://"+location.host+"/"
@@ -453,6 +457,25 @@ function goPrevPage(){
 }
 
 /**
+ * 안드로이드 팝업닫기
+ * @returns
+ */
+function closePopup(){
+	if(getOsInfo() === 'android_app'){
+		try{
+			if(johyLayer.instances.length > 0){
+				modalLayer.hide()
+				return;
+			}
+		}catch(e){ console.log(e); }
+		
+		callAppService({
+			action_code : 'A0211'	// 팝업닫기
+		});
+	}
+}
+
+/**
  * 안드로이드 빽버튼 메뉴닫기 이벤트
  * @returns
  */
@@ -460,3 +483,98 @@ function closeMenu(){
 	fn_gnbOnOff();
 	_aside.close();
 }
+
+/**
+ * 안드로이드 메인화면 빽버튼 이벤트
+ * @returns {Boolean}
+ */
+function btnMainBack(){
+	if(getOsInfo() === 'android_app'){
+		let yn = 'N';
+		if($(document).find('.header').find('.aside_wrap').hasClass('on')){
+			_aside.close();
+			callAppService({
+				action_code : 'A0204',	// APP GNB ON
+			});
+			yn = 'Y';
+		}
+
+		//팝업 창이 1개인 경우일 때만 
+		//팝업이 2개 떠있는 경우가 있음 * 긴급점검 팝업
+		if(johyLayer.instances.length == 1){
+			modalLayer.hide();
+			
+			callAppService({
+				action_code : 'A0204',	// APP GNB ON
+			});
+ 
+			yn = 'Y';
+		}
+		callAppService({
+			action_code : 'A0319',	// 메인화면 빽버튼
+			action_param : { execYn : yn}	// 웹에서 버튼 이벤트 수행시 'Y' 아닐시 'N' 
+		});
+	}
+}
+
+//IOS 카메라 권한 동의 여부 체크 호출
+function callIosCameraAuth(){
+	callAppService({
+		action_code : 'A0320',
+		callBack : 'callbackIosCameraAuth' 
+	});	
+
+	//*호출화면 마다 하단 콜백 함수 작성 필요
+	//callbackIosCameraAuth
+}
+
+// KB Liiv M 챗봇 상담이동
+function goLiivMChatBotPage() {
+	
+	if(getOsInfo().indexOf("app") != -1) {
+		
+		callAppService({
+			action_code : 'A0213'
+		});	
+		
+	} else {
+		// 모바일웹 : KB Liiv M 챗봇 상담이동 
+		var properties = "width="+screen.width+",height="+screen.height+",fullscreen=yes";
+		
+		var LiivMChatbotWindow = window.open('about:blank', 'LiivMChatbotWindow', properties);
+
+		var eleChat = document.createElement('a');
+		eleChat.target = "LiivMChatbotWindow";
+		eleChat.href= "/support/customer/chatbot";
+		eleChat.click();
+	}
+}
+
+var dLiivMChatbotMessage = function(e){	
+	if(getOsInfo().indexOf("app") === -1) {
+		var data = e.data;
+		if(e.origin == "https://dliivmchatbot.kbstar.com:27443") {
+			//개발    
+			if( data.exec == "login.complete" ) {
+				setTimeout(function(){
+					location.reload();
+				},2000);
+			}
+		} else if( e.origin == "https://tliivmchatbot.kbstar.com:7443" ) {
+			//스테이지
+			if( data.exec == "login.complete" ) {
+				setTimeout(function(){
+					location.reload();
+				},2000);
+			}
+		} else if( e.origin == "https://liivmchatbot.kbstar.com" ) {
+			//운영
+			if( data.exec == "login.complete" ) {
+				setTimeout(function(){
+					location.reload();
+				},2000);
+			}
+		}
+	}
+};
+window.addEventListener("message", dLiivMChatbotMessage);

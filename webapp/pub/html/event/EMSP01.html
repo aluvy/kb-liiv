@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>혜택</title>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"> <!-- 개발에서 class="sub" 필요없음 -->
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title">내 주변 멤버십 찾기</h1>
+
+                <div class="mbs_map-head">
+                    <!-- [03/08] 버튼명 수정 -->
+                    <button type="button" class="btn_map_reset">이 지역에서 재검색</button>
+                </div>
+
+                <div class="mbs_map-bottom">
+                    <div class="map_control">
+                        <button type="button" class="btn_location"><span class="blind">현위치 안내</span></button>
+                        <!-- [02/16] 수정 : 가맹점 상세보기 추가 -->
+                        <button type="button" class="btn_list">목록보기</button>
+                        <div class="btn_zoom">
+                            <button type="button" class="btn_zoomin"><span class="blind">확대</span></button>
+                            <button type="button" class="btn_zoomout"><span class="blind">축소</span></button>
+                        </div>
+                    </div>
+
+                    <div class="mbs_map-content">
+                        <div class="content_head-fix">
+                            <button type="button" class="btn_open"><span class="blind">리스트 열기</span></button>
+                            <div class="mbs_map_partner_list">
+                                <h3 class="blind">제휴처 브랜드 목록</h3>
+                                <ul>
+                                    <li class="on">
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-all"></span>
+                                            <p>전체</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-kb"></span>
+                                            <p>국민은행</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-gs25"></span>
+                                            <p>GS25</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-cu"></span>
+                                            <p>CU</p>
+                                        </a>
+                                    </li>
+                                    <li class="happycon">
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-happycon"></span>
+                                            <p>해피콘</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-starbucks"></span>
+                                            <p>스타벅스</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-touslesjours"></span>
+                                            <p>뚜레쥬르</p>
+                                        </a>
+                                    </li>
+                                    <!-- <li>
+                                        <a href="#" role="button">
+                                            <span class="partner_ico partner-genie"></span>
+                                            <p>지니뮤직</p>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="filter_list scroll-x">
+                                <ul>
+                                    <li><a href="#none" role="button" class="item on">전체</a></li>
+                                    <li><a href="#none" role="button" class="item">베이커리/떡/케익</a></li>
+                                    <li><a href="#none" role="button" class="item">카페/아이스크림</a></li>
+                                    <li><a href="#none" role="button" class="item">치킨/피자/버거</a></li>
+                                    <li><a href="#none" role="button" class="item">레스토랑/외식</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- .content_head-fix -->
+
+                        <div class="content_body">
+                            <a href="#none" class="banner_box around_coupon">
+                                <div class="txt_area">내 주변 멤버십 <b>쿠폰 받기</b></div><!-- [03/09] <b>쿠폰 받기</b> b태그 추가 -->
+                            </a>
+
+                            <div class="partner_list">
+                                <h3 class="blind">제휴처 목록</h3>
+                                <!-- list -->
+                                <ul id="partner_list">
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-touslesjours"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-genie"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-pascucci"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-gs25"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-gs25"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                                <p class="useinfo">파리크라상 아메리카노 사용가능</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="button">
+                                            <!-- [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="brand_ico brand-gs25"></div>
+                                            <!-- // [02/13] 수정 : 아이콘 클래스 수정 -->
+                                            <div class="partner_info">
+                                                <p class="tit">GS25 여의도 한점</p>
+                                                <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- // list -->
+
+                                <!-- no data -->
+                                <!-- <div class="card_nodata autoheight">
+                                    <p>현위치에는 사용처가 없습니다.</p>
+                                </div> -->
+                                <!-- // no data -->
+                            </div>
+
+                            <button type="button" class="btn_viewmap">지도보기</button>
+                        </div><!-- .content_body -->
+
+                    </div><!-- .mbs_map-content -->
+
+                    <!-- [02/16] 수정 : 가맹점 상세보기 추가 -->
+                    <div class="mbs_map-store">
+                        <div class="store_item">
+                            <p class="tit">GS25 여의도 한점</p>
+                            <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                            <p class="info">
+                                <span class="cate">해피콘</span>
+                                <span class="useinfo">파리크라상 아메리카노 사용가능</span>
+                            </p>
+                            <a href="#" class="btn_coupon">쿠폰받기</a>
+                        </div>
+                    </div><!-- .mbs_map-store -->
+
+                </div><!-- .mbs_map-bottom -->
+
+                <!-- 지도 -->
+                <div class="mbs_map">
+                    <!-- [02/21] 이미지 태그 제거 -->
+                    <!-- <img src="/img/event/map.png" alt="지도"> -->
+                </div>
+
+            </div><!-- //.content -->
+        </div><!-- //.container -->
+    </div>
+<!-- <script src="/js/lib/hammer.min.js"></script> -->
+<script src="../../../js/membership_place_search.js"></script>  <!-- [03/20] 퍼블 스크립트 파일 분리 -->
+<script>
+
+    // 퍼블 테스트용 start
+    $(()=>{
+        $("#partner_list").html("");
+        testData(5);
+    })
+    let dataSize = 40;
+    var fnDataReset = function(type){}
+
+    var fnDataMore = function(){
+        console.log("fnDataMore");
+        testData(5);
+    }
+
+    var testData = function(num){
+        // console.log(dataSize);
+        let partner_list = $("#partner_list");
+        let html = '';
+        if( dataSize <= 0 ){ return; }
+        for(let i=0; i<=num; i++){
+            dataSize--;
+            if( dataSize <= 0 ){ break; }
+            html += `
+                <li>
+                    <a href="#" class="button">
+                        <div class="brand_ico brand-gs25"></div>
+                        <div class="partner_info">
+                            <p class="tit">GS25 여의도 한점 ${dataSize}</p>
+                            <p class="address"><strong>360m</strong> 서울시 영등포구 여의대로 56 (여의도동)</p>
+                        </div>
+                    </a>
+                </li>
+            `;
+        }
+        partner_list.append(html);
+    }
+
+    $(document).on("click", ".btn_viewmap", function(){
+        mapBottomFix.type = 0;
+        setBottomLayout(mapBottomFix.type);
+    });
+
+    $(document).on("click", "#partner_list li a", function(){
+        viewStoreDetail();
+    })
+
+    $(document).on("click", ".btn_map_reset", function(){
+        mapBottomFix.type = 0;
+        setBottomLayout(mapBottomFix.type);
+    })
+
+    // 퍼블 테스트용 end
+
+</script>
+</body>
+</html>

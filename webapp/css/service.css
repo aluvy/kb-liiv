@@ -11,7 +11,7 @@
 .extra_main .extra_box li .cost_extra {display:block;}
 .extra_main .extra_box li + li {margin-top:1.2rem;}
 .extra_main .tit_extra {font-size:1.6rem; color:#222; font-weight:bold; line-height:2.3rem;}
-.extra_main .txt_extra {margin-top:0.8rem; font-size:1.2rem; color:#555; line-height:1.9rem;}
+.extra_main .txt_extra {margin-top:0.8rem; font-size:1.4rem; color:#555; line-height:1.9rem;}
 .extra_main .cost_extra {margin-top:0.8rem; text-align:right; font-size:1.6rem; color:#1065dc; font-weight:bold; line-height:2.4rem;}
 .extra_main .tab_panel .section {padding-top:0;}
 
@@ -115,6 +115,11 @@
 .amount_pay_wrap .amount_pay_hidden ul {padding-left:0.8rem;}
 .amount_pay_wrap .amount_pay_hidden ul li {display:flex; justify-content:space-between; color:#555; font-size:1.2rem; line-height:1.9rem;}
 .amount_pay_wrap .amount_pay_hidden ul li + li {margin-top:1.2rem;}
+
+.amount_pay_wrap.none_hidden .btn_amount_pay,
+.amount_pay_wrap.none_hidden .amount_pay_hidden.on {display:none;}
+.amount_pay_wrap.none_hidden .amount_pay_row,
+.amount_pay_wrap.none_hidden .total_amount_pay {padding-right:0;}
 
 .nation_hidden_area {margin-top:1.2rem; display:none;}
 .nation_hidden_area ul li {padding:1.6rem 2rem; font-size:1.6rem; color:#242424; background-color:#f8f9fb;}
@@ -269,3 +274,17 @@
 
 /* [ADLO0106] 부가서비스 > 휴대폰 분실파손보험 > 해지신청 */
 .coverage_cancel .form_check {border-top:1px solid #f6f6f6; padding-top:3.2rem;}
+
+
+
+/* [ADFD01] 부가서비스 > 사칭 전화번호 확인서비스 */
+.spam_chk_status_nodata {text-align:center; background:#f8f9fb; border-radius:1.2rem; padding:3.2rem 2rem; font-size:1.4rem; line-height:2.2rem; color:#555;}
+.spam_chk_status_nodata::before {content:''; display:block; width:4rem; height:4rem; background:url(../img/service/spam_status_nodata.png) 0 0 no-repeat; background-size:100% auto; margin:0 auto 0.8rem;}
+
+.spam_chk_result .data_sort .total{font-size:1.4rem; line-height:2rem; color:#222;}
+
+.spam_chk_status {text-align:center; border-top:1px solid #f6f6f6; padding:2rem 0 2rem; margin-top:1.2rem; font-size:1.4rem; line-height:2.2rem; color:#ff3d00; font-weight:700;}
+.spam_chk_status::before {content:''; display:block; width:4rem; height:4rem;  background:url(../img/service/spam_status.png) 0 0 no-repeat; background-size:100% auto;  margin:0 auto 0.4rem;}
+
+.spam_chk_cs {display:flex; align-items:center; margin-top:2rem; font-size:1.4rem; line-height:2.2rem; color:#222; font-weight:700; border:1px solid #eaeced; border-radius:1.2rem; padding:2rem;}
+.spam_chk_cs::before {content:''; display:block; width:2rem; height:2rem; background:url(../img/img/mini_call.png) 0 0 no-repeat; background-size:100% auto; margin-right:0.8rem;}

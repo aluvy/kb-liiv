@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
     /*
@@ -276,7 +274,7 @@ $(function(){
 
             _this.setContent();
 
-            _this.$layer.attr("tabindex",0).focus();
+            // _this.$layer.attr("tabindex",0).focus();    // focus 이동
 
             _this.$closeDevBtn.attr("id", (_this.content.replace("#",""))+"_dev");
             if(this.closeAct == true) _this.$closeDevBtn.attr("data-action","close");
@@ -300,10 +298,6 @@ $(function(){
         },
         open : function(){
             var _this = this;
-            var $lastFocused = $('body').find(':focus');
-            var $focusId = $lastFocused.attr("id");
-
-            console.log('open', $focusId, $lastFocused);
 
             _this.buildHTML();
             
@@ -314,7 +308,24 @@ $(function(){
 
             (_this.title == '') ? _this.$title.html("알림") : _this.$title.html(_this.title);
             if(_this.closeUse === false) _this.$layer.addClass("noBtn");
-            _this.$layer.focus().attr("rel", $focusId);
+
+            // ios focus 대응 setTimeout
+            setTimeout(()=>{
+                var $lastFocused = $('body').find(':focus');
+                var $focusId = $lastFocused.attr("id");
+
+                _this.$layer.focus().attr("rel", $focusId);
+
+                let targetBtn = _this.$layer.attr("rel");
+                $(document).find(`#${targetBtn}`).addClass("on");   // 누른 target에 class on
+
+                // console.log( ' 전', $('body').find(':focus')  );
+
+                _this.$layer.attr("tabindex",0).focus();            // focus 이동
+                // console.log( ' 후', $('body').find(':focus')  );
+            }, 0)
+
+
 
             // aria-hidden
             $(".wrap", window.parent.document).attr("aria-hidden", "true");
@@ -325,6 +336,7 @@ $(function(){
 
             if( $(document).find(".layer_wrap.open").length <= 1 ){ // 팝업이 이미 떠있는지 체크
                 var $scrollTop = $(window).scrollTop();
+
                 // let isMain = $(document).find(".header .inner_main").length > 0;    // 메인일때
                 // let isSub = $(document).find(".header .inner_sub").length > 0;      // 서브일때
 
@@ -333,15 +345,17 @@ $(function(){
                 setTimeout(function(){
                     $(".wrap").css({
                         "top":-$scrollTop,
-                        "position" : "relative"
+                        "position" : "relative",
+                        // "position" : "fixed"
                     });
                     $("html, body").addClass("noScroll");
                     if( _front.isMain() ){
-                        ( $scrollTop > 0 ) ? $header.addClass("on") : null;  // 메인일때 .header.on 예외처리
+                        ( $scrollTop > 60 ) ? $header.addClass("on") : null;  // 메인일때 .header.on 예외처리
                     } else if ( _front.isSub() ){
+                        // console.log("isSub", $scrollTop, $title.length );
                         ( $scrollTop > 0 && $title.length > 0 ) ? $title.removeClass("hidden") : null;  // 서브일때 h1.title 예외처리
-                    }                    
-                },0);
+                    }
+                }, 0);
             }
 
             ( _this.type !== "alert" ) ? $("html, body").addClass("noScroll") : null; // noScroll
@@ -393,8 +407,6 @@ $(function(){
             
             $(_this.content).trigger("onload");
             accordionButton.accordion_popup(_this.$el); // popup accordion
-            
-            $("body").addClass("popup-on");
 
             return true;
         },
@@ -414,7 +426,6 @@ $(function(){
 
             _this.$con.html($html);
 
-            
             // 버튼 없는 바텀 팝업 하단 패딩
             let $btn_pop = _this.$con.find(".btn_pop_confirm_wrap");
             if( _this.type == 'bottom' && $btn_pop.length <= 0 ){
@@ -428,6 +439,9 @@ $(function(){
             var $lastFocused = _this.$layer.attr("rel");
             var $scrollTop = parseInt($(".wrap").css("top"))*-1;
             var $win = $(window);
+            
+            let targetBtn = _this.$layer.attr("rel");
+            $(document).find(`#${targetBtn}`).removeClass("on");   // 누른 target에 remove class on
 
             $("#"+$lastFocused).focus().closest(".layer_wrap").removeAttr("aria-hidden");
             _this.$parent.prev(".layer_wrap").removeAttr("aria-hidden");
@@ -439,7 +453,7 @@ $(function(){
                         _this.$el.prev(".layer_wrap").attr("aria-hidden", false);
                     } else {
                         $("html, body").removeClass("noScroll");    // noScroll
-                        $("body").removeClass("popup-on");
+                        // $("body").removeClass("popup-on");
 
                         $(".wrap").css("top","");
                         $win.scrollTop($scrollTop);
@@ -447,7 +461,6 @@ $(function(){
                         let wrap = $(".wrap", window.parent.document);
                         wrap.css("position", "");
                         wrap.removeAttr("aria-hidden");
-
                     }
                     $(_this.content).html($html);               // element reset
                     if( _this.type == "calendar" ){
@@ -466,18 +479,20 @@ $(function(){
 
             
             // droptype_btn 으로 열렸을 때 .droptype_btn에 .on class 제거
-            console.log($lastFocused, $(`#${$lastFocused}`));
-            if( $lastFocused != undefined ){
-                let isDroptypeBtn = $(`#${$lastFocused}`).hasClass("droptype_btn");
-                if(isDroptypeBtn) $(`#${$lastFocused}`).removeClass("on");
-            } else {
+            // console.log($lastFocused, $(`#${$lastFocused}`));
+            // if( $lastFocused != undefined ){
+            //     let isDroptypeBtn = $(`#${$lastFocused}`).hasClass("droptype_btn");
+            //     if(isDroptypeBtn) $(`#${$lastFocused}`).removeClass("on");
+            // } else {
                 // IOS focus 대응 수정
-                let idx = _front.target.length - 1;
-                let targetElem = _front.target[idx];
-                let isDroptypeBtn = $(`#${targetElem}`).hasClass("droptype_btn");
-                if(isDroptypeBtn) $(`#${targetElem}`).removeClass("on");
-                _front.target.splice(idx, 1);   // 배열 마지막값 삭제
-            }
+                // let idx = _front.target.length - 1;
+                // let targetElem = _front.target[idx];
+                // let isDroptypeBtn = $(`#${targetElem}`).hasClass("droptype_btn");
+                // let isBtnSort = $(`#${targetElem}`).hasClass("btn_sort");
+                // let isBtnSelect = $(`#${targetElem}`).hasClass("btn_select");
+                // if( isDroptypeBtn || isBtnSort || isBtnSelect ) $(`#${targetElem}`).removeClass("on");
+                // _front.target.splice(idx, 1);   // 배열 마지막값 삭제
+            // }
 
             
         },
@@ -508,6 +523,136 @@ $(function(){
 
 
 
+$(function(){
+    "use strict";
+
+    var _w = window;
+    $.marquee = function(options){
+
+        // let id = options.content;
+
+        if(typeof options === 'undefined') element = {};
+        if(typeof options === 'string') {
+            options = {
+                content : options,
+                title : (option2) ? option2 : false,
+            };
+        }
+
+        return _w.jmarquee(options);
+    }
+
+    _w.jmarquee = function(options){
+        if(typeof options === 'undefined') options = {};
+
+        var pluginOptions = $.extend(true, {}, _w.jmarquee.pluginDefaults);
+        (_w.jmarquee.defaults) ? pluginOptions = $.extend(true, pluginOptions, _w.jmarquee.defaults) : '' ;
+        pluginOptions = $.extend(true, {}, pluginOptions, options);
+
+        var instance = new _w.Jmarquee(pluginOptions);
+        _w.jmarquee.instances.push(instance);
+
+        return instance;
+    };
+    
+
+    _w.Jmarquee = function(options){
+        $.extend(this, options);
+        this.init();
+    };
+
+    _w.Jmarquee.prototype = {
+        init : function(){
+            this.set();
+        },
+        buildHTML : function(){
+            var _this = this;
+
+            _this.$marquee; // requestAnimationFrame();
+            _this.$left = 0;
+
+            _this.$id = _this.content;
+
+            _this.$area = $(_this.content);
+            _this.$wrap = _this.$area.find(".marquee-wrap");
+
+            setTimeout(() => {
+                _this.$item = _this.$area.find(".marquee-item");
+                _this.$itemWidth = Math.floor(_this.$item.width());
+                // _this.$item.css({"width": `${_this.$itemWidth}px` });
+                _this.$item.css({"width": `${_this.$itemWidth * 0.1}rem` });
+                _this.$itemSize = _this.$itemWidth*-1;
+                
+                for(let i=0; i<_this.clone; i++){
+                    let clone = _this.$item.clone();
+                    _this.$wrap.append(clone);
+                }
+                
+            }, 0);
+        },
+        set: function(){
+            var _this = this;
+
+            _this.buildHTML();
+            _this.play();
+
+        },
+        play: function(){
+            var _this = this;
+
+            // console.log(_this);
+
+            if( _this.playUse == true ){
+                _this.$marquee = requestAnimationFrame(ani);
+            }
+
+            function ani(){
+                // _this.$wrap.css({"left" : _this.$left});
+                _this.$wrap.css({"left" : `${_this.$left * 0.1}rem`});
+                _this.$left = _this.$left - _this.speed;
+
+                _this.$marquee = requestAnimationFrame(ani);                // callback
+                if( _this.$left <= _this.$itemSize ) _this.$left = 0;        // reset
+            }
+
+            // stop
+            $(`${_this.$id}_stop`).off("click").on("click", function(){
+                cancelAnimationFrame(_this.$marquee);
+            });
+
+            // stop
+            $(`${_this.$id}_play`).off("click").on("click", function(){
+                cancelAnimationFrame(_this.$marquee);
+                _this.$marquee = requestAnimationFrame(ani);
+            });
+
+            // close
+            $(`${_this.$id}_close`).off("click").on("click", function(){
+                cancelAnimationFrame(_this.$marquee);
+                _this.close();
+            });
+
+        },
+        close: function(){
+            var _this = this;
+            _w.jmarquee.instances.find(function(o, i){
+                if(o == _this){
+                    _w.jmarquee.instances.splice(i, 1);
+                }
+            });
+        }
+    };
+ 
+    _w.jmarquee.instances = [];
+    _w.jmarquee.pluginDefaults = {
+        playUse: true,
+        stopUse: true,
+        speed: 1,
+        clone: 2,
+    };
+});
+
+
 
 var _calendar = {
 
@@ -536,7 +681,7 @@ var _calendar = {
         _calendar.idInput = ( idInput != '' || idInput != undefined ) ? idInput : '';       // input setting
         _calendar.format = (format != undefined) ? format : ".";                            // format setting
 
-        console.log(object);
+        // console.log(object);
 
         // 초기화
         _calendar.minDate = { year: 0000, month: 00, day: 00 };
@@ -1023,6 +1168,7 @@ var _layout = {
         const getH1Layout = function(){
 
             if( _front.isMain() ) return;     // 메인이면 실행 X
+            if( !_front.isSub() ) return;     // 서브 아니면 실행 X (ia error 대응)
             
             let headerinnerW = $(document).find(".header .inner_sub").width();
             let headerInnerPadL = $(document).find(".header .inner_sub").css("padding-left").replace("px", "") * 1;
@@ -1040,9 +1186,20 @@ var _layout = {
         // pageTitle
         const pageTtl = $(".content h1.title");
         const onPageTtl = function(){
-            if( _front.isMain() ) return;     // 메인이면 실행 X
+            if( _front.isMain() ) return;               // 메인이면 실행 X
+            if( $(".layer_wrap").length > 0 )return;    // 팝업 떠있으면 실행 X
             const scroll = $(document).scrollTop();
-            scroll > 60 ? pageTtl.removeClass("hidden"): pageTtl.addClass("hidden");
+
+            if( scroll > 60 ){
+                pageTtl.removeClass("hidden");
+            } else {
+                pageTtl.addClass("hidden");
+                if( $(document).find(".layer_wrap").length > 0 ){
+                    pageTtl.removeClass("hidden");
+                }
+            }
+
+            // scroll > 60 ? pageTtl.removeClass("hidden") : pageTtl.addClass("hidden");
         }
 
         setTimeout(() => {
@@ -1086,48 +1243,66 @@ var _layout = {
 
 var _front = {
     init : function(){
-        _front.formBtn();       // input button setting
-        _front.formTimer();     // input timer setting
+        _front.OSchk();             // os check
+        _front.accessibility();     // accessibility code
+        _front.formBtn();           // input button setting
+        _front.formTimer();         // input timer setting
         _front.form();
         _front.switch();
-        _front.select();
-        _front.droptype();
+        _front.expandedSelect();    // expanded select
         _front.cardItem();
+        _front.bottom_select();
         _front.step();
         _front.isKeyboard();
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault();});
 
-        //hr aria-hidden 추가 : 접근성
-        $('hr').attr('aria-hidden','true');
+        // ios 대응 button, a 클릭 시 focus 이동
+        $(document).on("click", "button, a", function(){
+            // $(this).focus();
+            this.focus();
+        })
 
-        // modal popup 추가 : 접근성
-        $('.layerHTML').attr('aria-hidden','true').attr('role','dialog');
-
-        // mobile check
-        if( _front.isMobile ) $("body").addClass("mobile");
-        // IOS check
-        if( _front.isIOS ) $("body").addClass("ios");
     },
-    isMobile: function(){
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    },
-    isIOS: function(){
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    },
-    isPC: function(){
+    OSchk: function(){
+        const elem = $("body");
+        const userAgent = navigator.userAgent;
+        const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        const ios = /iPhone|iPad|iPod/i;
+        const iosApp = /liivm_ios/i;
+        const aos = /Android/i;
+        const aosApp = /liivm_android/i;
+        
+        ( mobile.test(userAgent) ) ? elem.addClass("mobile") : null;
+        ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
+        ( iosApp.test(userAgent) ) ? elem.addClass("ios_app") : null;
+        ( aos.test(userAgent) ) ? elem.addClass("aos") : null;
+        ( aosApp.test(userAgent) ) ? elem.addClass("aos_app") : null;
         
     },
-    isKeyboard: function(){
-        let target = "input[type=text], input[type=date], input[type=number], input[type=password], input[type=email], input[type=tel], input[type=url], textarea";
-        $(document).on("focus", target, function(){
-            $("body").addClass("keyboard-on");
+    isKeyboard: function(e){
+        if( !$("body").hasClass("mobile") ) return;     // 예외처리 추가
+
+        const matches = window.matchMedia("(hover:hone), (pointer:coarse)");
+        if ( !matches.matches ) return;  // 예외처리 추가
+
+        let target = "input[type=text], input[type=date], input[type=number], input[type=password], input[type=email], input[type=tel], input[type=url], input[type=search], textarea";
+
+        $(document).on("focus", target, function(e){
+            let elem = $(e.target);
+            if(
+                elem.prop("readonly")
+                || elem.prop("disabled")
+                || elem.hasClass("readonly")
+                || elem.hasClass("disabled")
+                || elem.hasClass("nppfs-npv")
+            ) return;  // 예외처리 추가
+            
+            $("body").addClass("keyboard-on")
         });
-        $(document).on("blur", target, function(){
-            $("body").removeClass("keyboard-on");
-        });
+        $(document).on("blur", target, function(){ $("body").removeClass("keyboard-on") });
     },
-    target: [],     // IOS 대응 팝업 오픈 시 버튼 id 저장 배열
+    // target: [],     // IOS 대응 팝업 오픈 시 버튼 id 저장 배열
     isMain: function(){
         return $(document).find(".inner_main").length > 0;
     },
@@ -1221,22 +1396,31 @@ var _front = {
                 const child = elem.parents(".form_item").find(".input input");
                 child.each((idx, item)=>{
                     const input = $(item).parents(".item_content");
-                    $(item).val().length < 1 ? input.addClass("error") : input.remove("error");
+                    $(item).val().length < 1 ? input.addClass("error") : input.removeClass("error");
                 })
                 elem.parents(".form_item").addClass("error");
                 elem.parents(".form_group").find(".form_error").html("필수 입력 사항입니다.");
             },
     
             isDisabled : function(elem){
-                let result;
-                result = elem.is('[readonly], [disabled]') ? true : false;
+                let result = false;
+                if(
+                    elem.prop("readonly")
+                    || elem.prop("disabled")
+                    || elem.hasClass("readonly")
+                    || elem.hasClass("disabled")
+                    // || elem.hasClass("nppfs-npv")
+                ){
+                    result = true;
+                }
+
+                // result = elem.is('[readonly], [disabled]') ? true : false;
                 return result;
             }
         }
 
         //input init
         $(".input input").each(function(e){
-
             ($(this).val().length > 0) ? $(this).parents(".item_content").addClass("done") : null;  // load시 value값 체크
 
             _doc.off("keyup", ".input input").on("keyup", ".input input", function(){
@@ -1244,7 +1428,7 @@ var _front = {
                 var _form_item = _this.parents(".form_item");
                 var _parent = _this.parents(".input");
 
-                if( !_this.is(':not([type=tel])') && this.is('[readonly], [disabled]') ){ return; }
+                if( !_this.is(':not([type=tel])') && _this.is('[readonly], [disabled]') ){ return; }
 
                 //input clear 추가
                 _parent.find('.btn_clear').remove();
@@ -1288,15 +1472,24 @@ var _front = {
             })
         })
     },
-    select : function(){
+    /**
+     * 클릭 시 아래로 늘어나는 .btn_select
+     * .form_group 안에 .select_inline 클래스가 있는지 체크 후,
+     * 그 조건에 해당하는 .btn_select 에만 접근성마크 추가 및 클릭 이벤트 부여
+     */
+    expandedSelect : function(){
         // s : 접근성 수정
         if($(".btn_select").length) {
             $(".btn_select").each(function(){
-                var _this = $(this).closest(".form_group").find(".select_inline");
-                if(_this.length <= 0) return;
-                $(this).hasClass("on") ? $(this).attr('aria-expanded', 'true') : $(this).attr('aria-expanded', 'false');
-                if(_this.hasClass("notclose")) return;
-                $(this).hasClass("checked") ? $(this).attr('aria-selected', 'true') : $(this).attr('aria-selected', 'false');
+                if($(this).closest(".form_group").find(".select_inline").length) {
+                    var _this = $(this).closest(".form_group").find(".select_inline");
+                    if(_this.length <= 0) return;
+                    $(this).hasClass("on") ? $(this).attr('aria-expanded', 'true') : $(this).attr('aria-expanded', 'false');
+                    if(_this.hasClass("notclose")) return;
+                    $(this).hasClass("checked") ? $(this).attr('aria-selected', 'true') : $(this).attr('aria-selected', 'false');
+                } else {
+                    // $(this).attr("aria-haspopup", true);
+                }
             });
         }
     
@@ -1308,7 +1501,9 @@ var _front = {
         }
     
         // droptype
-        $(document).on("click", ".btn_select", function(e){
+        $(document).on("click", ".btn_select[aria-expanded]", function(e){
+            if( $(this).hasClass("readonly") || $(this).hasClass("disabled") || $(this).attr("readonly") || $(this).attr("disabled")) return;
+            
             const _this = $(this).closest('.item_content').index();
             const _thisNot = $(this).closest('.item_content').prevAll(':not(.item_content)').length;
             const _thisIndex = _this - _thisNot;
@@ -1337,29 +1532,46 @@ var _front = {
             }
         })
         // e : 접근성 수정
-
-        // selectbox bottom popup
-        $(document).on("click", ".bottom_select li a", function(){
-            $(this).parents(".bottom_select").find("li").removeClass("on");
-            $(this).parents("li").addClass("on");
-        })
     },
-    droptype: function(){
-        //  click => popup
-        $(document).find(".droptype_btn_wrap .droptype_btn").each((idx, item)=>{
-            if( $(item).hasClass("no_item") || $(item).hasClass("right_type") || $(item).hasClass("readonly") ) return;
-            $(item).attr("aria-haspopup", true);   // 접근성 추가
-        });
-        $(document).on("click", ".droptype_btn_wrap .droptype_btn", function(){
-            if( $(this).hasClass("no_item") || $(this).hasClass("right_type") || $(this).hasClass("readonly") ) return;
-            $(this).toggleClass("on");
+    /**
+     * 접근성 코드 추가
+     *      hr                  : aria-hidden="true"
+     *      .layerHTML          : aria-hidden="true" role="dialog"
+     *      .droptype_btn       : aria-haspopup="true"
+     *      .btn_sort           : aria-haspopup="true"
+     *      .btn_select         : aria-haspopup="true" ( 아래로 늘어나는 btn_select 제외 )
+     */
+    accessibility: function(){   // 클릭 시 팝업
 
-            _front.target.push($(this).attr("id")); // IOS focus 대응 target id 배열로 저장
-        });
+        $('hr').attr('aria-hidden','true'); // hr aria-hidden
+
+        $('.layerHTML').attr('aria-hidden','true').attr('role','dialog');   // modal popup
+
+        // droptype_btn
+        let droptypeBtn = $(document).find(".droptype_btn_wrap .droptype_btn");
+        droptypeBtn = droptypeBtn.filter((idx, item)=> !$(item).hasClass("no_item") )       // no_item 클래스 제외
+                    .filter((idx2, item2)=> !$(item2).hasClass("right_type") )              // right_type 클래스 제외
+                    .filter((idx3, item3)=> !$(item3).hasClass("readonly") )                // readonly 클래스 제외
+                    .filter((idx4, item4)=> $(item4).attr("id") != undefined );             // id 없는것 제외
+        droptypeBtn.attr("aria-haspopup", true);
+
+        // .btn_sort (인기순~)
+        $(document).find(".data_sort .btn_sort").each((idx, item)=>{
+            if( $(item).hasClass("readonly") || $(item).hasClass("disabled") ) return;
+            $(item).attr("aria-haspopup", true);   // 접근성 추가
+        })
+
+        // .btn_select ( 아래로 늘어나는 .btn_select 제외 )
+        let btnSelect = $(document).find(".form_group .select .btn_select");
+        btnSelect = btnSelect.filter((idx, item)=> $(item).prop("disabled") == false )      // disabled true 제외
+                    .filter((idx2, item2)=> $(item2).attr("aria-expanded") == undefined )   // aria-expanded 제외
+                    .filter((idx3, item3)=> $(item3).attr("id") != undefined );             // id 없는것 제외
+        btnSelect.attr("aria-haspopup", true);
+
     },
     cardItem: function(){
         // 접근성
-        if($(".item_info").length) {
+        if( $(".item_info").length ) {
             $(".item_info").each(function(){
                 $(this).find(".icon_data").prepend("<span class='blind'>데이타</span>");
                 $(this).find(".icon_call").prepend("<span class='blind'>전화</span>");
@@ -1368,6 +1580,13 @@ var _front = {
         }
         $(document).off("click", ".card_select_wrap .card_item").on("click", ".card_select_wrap .card_item", function(){
             $(this).addClass('on').siblings('.card_item').removeClass('on');
+        })
+    },
+    bottom_select: function(){
+        // selectbox bottom popup
+        $(document).on("click", ".bottom_select li a", function(){
+            $(this).parents(".bottom_select").find("li").removeClass("on");
+            $(this).parents("li").addClass("on");
         })
     },
     step: function(){
@@ -1391,6 +1610,44 @@ var _front = {
         }
     }
 };
+
+
+// ios keyboard open && touch event
+$(window).on("touchstart", function(e){
+    if(    $("body").hasClass("ios")
+        && $("body").hasClass("keyboard-on")
+        && $(document).find(":focus").parents(".layer_wrap").length > 0
+    ){
+        let result = isInputTouch(e.target);    // false를 반환했을 때 blur처리
+        if( !result ) $(document).find(":focus").blur();
+    }
+})
+
+/**
+ * @param {*} target element 
+ * @returns 터치영역의 target을 체크하여 false를 반환하면 :focus blur 처리된다.
+ */
+const isInputTouch = function(target){
+    let result = false;
+
+    const isFormItem = $(target).parents(".form_item").length > 0;  // form_item 영역을 touch 했는지 체크
+    if( !isFormItem ) return false;
+
+    const btnClear = $(target).hasClass("btn_clear");   // btn_clear를 touch했을때 return false
+    if( btnClear ) return true;
+
+    let inputType = ["text", "date", "number", "password", "email", "tel", "url", "search", "textarea"];
+    let check = [];
+
+    const isInput = target.nodeName == "INPUT";     // target이 INPUT tag 인지 체크
+    if( isInput )       check = inputType.filter((item, idx)=> $(target).attr("type") == item );
+    else {              check = inputType.filter((item, idx)=> $(target).find(`input[type=${item}]`).length > 0 );
+    }
+
+    if( check.length > 0 ) result = true;
+
+    return result;
+}
 
 
 // slide swiper
@@ -1850,19 +2107,22 @@ $(()=>{
     });
 })
 
-const getIframeSize= function(){
+const getIframeSize = function(){
     let layer = $(`.layer_wrap[aria-hidden = "false"]`);
-    let previewWrap = layer.find(".preview_wrap");
-    let iframePage = previewWrap.find("#pdfViewPage");
+    // let previewWrap = layer.find(".preview_wrap");
+    let iframePage = layer.find("#pdfViewPage");
+
+    // console.log('test', iframePage.length );
+    // let iframePage = previewWrap.find("#pdfViewPage");
     
-    if(iframePage.length <= 0) return;
+    if( iframePage.length <= 0 ) return;
 
     let lyCnt = layer.find(".ly_cnt");
     let lyCntH = _frontFormatter.Number(lyCnt.css("max-height"));
     let lyCntPd = _frontFormatter.Number(lyCnt.css("padding-top")) + _frontFormatter.Number(lyCnt.css("padding-bottom"));
     let previewH = lyCntH - lyCntPd;
     
-    previewWrap.css({"height":`${previewH}px`});
+    // previewWrap.css({"height":`${previewH}px`});
     iframePage.css({"height":`${previewH}px`, "width":"100%"});
 }
 

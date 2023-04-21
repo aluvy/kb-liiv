@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-934161145|rpid=1476571148|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">사칭 전화번호 확인서비스</h1>
+                <div class="tit_sub_wrap center"><!-- [04/19] 타이틀 가운데정렬 .center 클래스 추가 -->
+                    <h2 class="tit_sub">사칭 전화번호 확인서비스</h2>
+                </div>
+                <div class="section">
+
+                    <div class="visual_group">
+
+                        <div class="visual_box"><span class="img_item visual spam"></span></div>
+
+                        <p class="txt_main"><span>사칭 전화번호 확인</span>서비스란?</p>
+                        <p class="txt_sub14 mgt12">
+                            그동안 고객님들께서 KB국민은행으로 제보해 주신<br>
+                            사칭 번호를 데이터화하여 제공해드리는 서비스입니다.
+                        </p>
+                        <ul class="star_type blue left">
+                            <li>사칭 번호로 조회되지 않더라도 사칭 또는 피싱 으로 의심이 가신다면 즉시 문자를 삭제하고, KB국민은행 고객센터(1588-9999) 로 신고해주시기 바랍니다.</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">의심되는 번호를 입력해주세요</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">전화번호</div>
+                                <div class="input">
+                                    <input type="text" maxlength="11" placeholder="'-' 없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 상황에 따라 아래 2개 중 1개만 노출되게 해주세요. -->
+                        <div class="txt_tip">tip) 전화번호를 복사해서 붙여 넣어보세요</div>
+                        <div class="form_error">휴대폰번호를 정확히 입력해주세요</div>
+
+                    </div>
+
+                    <div class="btn_wrap mgt0">
+                        <button type="button" class="btn secondary" disabled>조회하기</button><!-- [04/18] 수정 disabled추가 -->
+                        <!--
+                            [04/18] 수정 disabled추가
+                            휴대폰번호 입력 시 활성화
+                            1) .secondary 클래스를 .primary로 변경
+                            2) disabled 속성 제거
+                        -->
+                    </div>
+                </div>
+
+                <!-- 검색 후 노출 영역 -->
+                <div class="section">
+                    <div class="spam_chk_result">
+
+                        <!-- 검색결과 없을 때 -->
+                        <div class="spam_chk_status_nodata">
+                            사칭 번호로 신고된 번호가 아닙니다.
+                        </div>
+                        <!-- // 검색결과 없을 때 -->
+
+                        <!-- 검색 결과 있을 때 -->
+                        <div class="data_sort">
+                            <span class="total">총 <strong>3</strong>건</span>
+                        </div>
+                        <div class="spam_chk_status">
+                            KB은행 사칭 신고이력이 있는 번호입니다.
+                        </div>
+                        <div class="table">
+                            <table class="center">
+                                <caption>테이블 캡션</caption>
+                                <colgroup>
+                                    <col style="width:48px">
+                                    <col style="width:84px">
+                                    <col style="width:84px">
+                                    <col style="width:104px">
+                                </colgroup>
+                                <thead>
+                                    <th scope="col">순번</th>
+                                    <th scope="col">접수번호</th>
+                                    <th scope="col">접수일자</th>
+                                    <th scope="col">사칭전화번호</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="gray_02">1</td>
+                                        <td>23-000002</td>
+                                        <td>2023/03/22</td>
+                                        <td>010-1234-5678</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_02">2</td>
+                                        <td>23-000002</td>
+                                        <td>2023/03/22</td>
+                                        <td>010-1234-5678</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray_02">3</td>
+                                        <td>23-000002</td>
+                                        <td>2023/03/22</td>
+                                        <td>010-1234-5678</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //검색 결과 있을 때 -->
+
+                    </div><!-- .spam_chk_result -->
+                </div>
+                <!-- // 검색 후 노출 영역 -->
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">KB 고객센터로 제보하기</h3>
+                    </div>
+
+                    <div class="spam_chk_cs" role="button" onclick="">1588-9999</div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    
+<script>
+
+</script>
+</body>
+</html>

@@ -39,26 +39,26 @@
 <meta http-equiv="Cache-Control" content="No-Cache" >
 <meta http-equiv="Pragma" content="No-Cache" >
 <meta http-equiv="Expires" content="-1" >
-<meta name="_csrf" content="e136b494-9791-4000-b3bd-9f1e1e3aceee"/>
+<meta name="_csrf" content="3778eccc-bba6-448a-b0d8-6152fb73a788"/>
 <meta name="_csrf_header" content="X-XSRF-TOKEN"/>
 <!-- SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
 <meta name="description" content="일반통신사의 서비스를 동일하게 누리면서, 요금은 합리적으로 줄일 수 있는 KB국민은행 Liiv M(리브모바일)을 이용해보세요!">
 <title>알뜰폰 서비스 - KB국민은행 Liiv M(리브모바일)</title>
 <!-- //SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
-<link rel="apple-touch-icon-precomposed" href="./img/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
 <link rel="icon" href="/img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="./css/style.css">
-<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="./js/lib/jquery-ui.min.js"></script>
-<script type="text/javascript" src="./js/lib/jQuery.Form.min.js"></script>
-<script type="text/javascript" src="./js/lib/swiper.min.js"></script>
-<script type="text/javascript" src="./js/lib/nppfs-1.13.0.js"></script>
-<script type="text/javascript" src="./js/common/common.js"></script>
-<script defer type="text/javascript" src="./js/front.js"></script>
-<script type="text/javascript" src="./js/common/util.js"></script>
-<script type="text/javascript" src="./js/common/formatter.js"></script>
-<script type="text/javascript" src="./js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
-<script type="text/javascript" src="./js/lib/lottie-player.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/lib/jQuery.Form.min.js"></script>
+<script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="/js/lib/nppfs-1.13.0.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script defer type="text/javascript" src="/js/front.js"></script>
+<script type="text/javascript" src="/js/common/util.js"></script>
+<script type="text/javascript" src="/js/common/formatter.js"></script>
+<script type="text/javascript" src="/js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
+<script type="text/javascript" src="/js/lib/lottie-player.js"></script>
 <script type="text/javascript">
 	let checkLoginStep = '1';
 	let tg = "dev";
@@ -71,10 +71,6 @@
 		if(isEmpty(sessionStorage.getItem("UUID"))){
 			getDeviceInfo();
 		}
-		
-		// $(window).on("load", function(){
-		// 	fn_gnbOnOff();
-		// })
 	});
 </script>
 <script type="text/javascript" src="/js/common/certification.js"></script>
@@ -113,7 +109,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 	<form name="frmMenuHandle">
-		<input type="hidden" name="_csrf" value="e136b494-9791-4000-b3bd-9f1e1e3aceee" />
+		<input type="hidden" name="_csrf" value="3778eccc-bba6-448a-b0d8-6152fb73a788" />
 	</form>
 	<div class="loading_wrap"></div>
     <div class="wrap">
@@ -526,7 +522,7 @@ function offLimit() {
 /* 고객센터 가능 메뉴  */
 function posLimit() {
 	popalarm({
-		msg : "Liiv M 고객센터(1522-9999)로<br/>문의하시기 바랍니다.",
+		msg : "KB Liiv M 고객센터(1522-9999)로<br/>문의하시기 바랍니다.",
 		cfrmYn : false
 	});
 	return;
@@ -783,7 +779,7 @@ function fn_asideCallback(tranId, data, status, inputData){
 			location.replace("/");//callbackGoApplOnSide(); // on *side.jsp 신청현황으로 이동
 		} else if(data.svcInfoVO.ctrtStat == '20') {
 			if(data.svcInfoVO.dsharStat == '15' && data.svcInfoVO.dsharRelCd == 'C'){
-				location.replace("/join/data/data/dataSharing?soId="+data.soId+"&prodCd="+data.prodCd);
+				location.replace("/join/data/data-sharing?soId="+data.soId+"&prodCd="+data.prodCd);
 			}else{
 				//location.replace("/");
 				//movePage('/info/mypage/svc-info');
@@ -927,14 +923,13 @@ function selfOpenActionOnSide() {
 				});
 	 		} else {
 	 			if (data.applTp == 'M' ) {
-	 				let alertMessage = "<span style='font-size: 2.0rem; color:red;font-weight: 700;'>번호이동시</span>, 이전 통신사 해지에 따라 통신망이 끊어집니다.<br/>꼭 <span style='font-size: 2.0rem; color:red;font-weight: 700;'>WIFI 환경</span>에서 진행해 주세요.";
-		    			alertMessage += "<br/>WIFI 사용이 어려운 경우, Liiv M 고객센터(1522-9999)를 통해 개통할 수 있습니다.";
-		    			alertMessage += "<br/>셀프 개통을 진행하시겠습니까?";
-	 				popalarm({
-	 						msg : alertMessage,
-	 						cfrmYn : true,
-	 						okCallback: goSelfOpen
-	 				});
+                    $.ohyLayer({
+                        title : '번호이동 안내',
+                        titleUse : false,
+                        closeUse : false,
+                        content: '#openTransferLayerOnside',
+                        type: 'confirm'
+                    });
 	 			}else if (data.applTp == 'T' ) {
 	 				popalarm({
  						msg : "명의변경이신 경우 신청현황 하단의 명의변경 버튼으로 신청해주시기 바랍니다.",
@@ -1038,7 +1033,7 @@ function goMenu(toUrl, needSessionYn, isOpenSvc, age) {
             <!-- aside area -->
             <div class="aside_wrap">
                 <div class="aside_head">
-                    <h2 class="title"><span onclick="location.href='/system/main/popupTest'">전체</span></h2>
+                    <h2 class="title">전체</h2>
                 </div>
                 <div class="aside_body">
             		<div class="aside_top">
@@ -1120,6 +1115,25 @@ function goMenu(toUrl, needSessionYn, isOpenSvc, age) {
              </div> -->
             <!-- partner link -->
 
+
+    <!-- 번호이동 개통안내 팝업-->
+    <div id="openTransferLayerOnside" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <span style='color:#FF3D00;'><strong>번호이동시</strong></span>, 이전 통신사 해지에 따라 통신망이 끊어집니다.
+                <br/>꼭 <span style='color:#FF3D00;'><strong>WIFI 환경</strong></span>에서 진행해 주세요.
+                <br/>WIFI 사용이 어려운 경우, KB Liiv M 고객센터(1522-9999)를 통해 개통할 수 있습니다.
+                <br/>셀프 개통을 진행하시겠습니까?
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close" >취소</button>
+                <button type="button" class="btn primary" data-action="close" onClick="goSelfOpen();">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 번호이동 개통안내 팝업-->
 
     <!-- 개통가능시간안내 팝업 시작-->
     <div id="openTimeLayerOnSide" class="layerHTML">
@@ -1284,10 +1298,13 @@ $(function(){
     });
     // 띠배너 처리 [END]
 
-    //로그인 전, 로그인후(개통전)인 경우만 베스트 요금제 호출  [START]
+    //로그인 전, 로그인 후(개통전)인 경우만 베스트 요금제 호출  [START]
     if(!isEmpty('') && '' != '10') { // 로그인 && 개통 //kje.
         // 당월 청구 금액 조회
         searchThisMonthPay();
+
+        // 내 데이터 잔여량 조회 [버튼 클릭시 조회 부터 그리는데까지 느린 이슈가 존재 하여 onLoad시 바로 조회 되도록] => 2023.04.06
+        mainRealTimeFuncCallOnLoad();
         
         //공지사항 팝업 호출
         openNoticePopup();
@@ -1598,8 +1615,14 @@ function mainRealTimeFuncCall(){
         $("#real-time-button").text("내 잔여량 한번에 보기");
     }
 }
-//내 잔여량 한번에 보기 클릭 [END]
 
+//화면 onLoad시 바로 사용량 조회 추가 => 2023.04.06 추가
+function mainRealTimeFuncCallOnLoad() {
+    fn_transCall('/system/main/getServerNow', {} , getServerNow_callBack_onLoad);
+    realUseScr = "Y";
+}
+
+//내 잔여량 한번에 보기 클릭 [END]
 
 function getServerNow_callBack(tranId, data, status, inputData) {
     
@@ -1610,9 +1633,20 @@ function getServerNow_callBack(tranId, data, status, inputData) {
         
         showRtUseValue(svcInfo);
     }
-
 }
-//그래프 테스트용 함수 2023.03.02 [END]
+
+
+function getServerNow_callBack_onLoad(tranId, data, status, inputData) {
+    
+    if(data.curdttm.substr(8,2) >= "00" && data.curdttm.substr(8,2) <= "02"){
+        realUseScr = "N";
+    } else {
+        var svcInfo = JSON.parse($("#userMajorSvc").attr("data-map").replace(/'/gi, "\""));
+        
+        showRtUseValue(svcInfo);
+    }
+}
+
 
 // 배너 슬라이더 스와이퍼 세팅 2023.02.21 [START]
 function bannerSliderSwiper(){
@@ -1624,6 +1658,16 @@ function bannerSliderSwiper(){
             spaceBetween: 0,
             loop: true,
             loopAdditionalSlides: 1,
+            effect: "creative",  /* 23/03/13 추가 */
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate:["-10%", 0, -1],
+                },
+                next: {
+                    translate:["100%", 0, 0],
+                },
+            }, /* 23/03/13 추가 */            
             autoplay: {
                 delay: 2000,
                 disableOnInteraction: false,
@@ -1906,11 +1950,7 @@ function fn_callBack(tranId, data, status){
 			let opt ={
 					msg: "정상적으로 변경되었습니다",
 					cfrmYn: false,
-					okCallback: function(){
-                        //modalLayer.hide('menuSetAdminLayer');
-                        location.replace("/");
-                    }
-
+					okCallback: goToMain
 			}
 			popalarm(opt);
 		}else{
@@ -2024,16 +2064,16 @@ function getYYYYMMDD() {
                         <div class="swiper-wrapper">
                             
                                 <div class="swiper-slide">
-                                    <a href="/biz/mgm/mgm-guide" class="link case_01">
-                                        <div class="info"><span class="txt">추천리워드</span></div>
+                                    <a href="/biz/event/mssnEvent" class="link case_00">
+                                        <div class="info"><span class="txt">미션 달성 이벤트</span></div>
                                         <div class="title">
-                                            <p>초대하면<strong> 5만P</strong></p><p>초대받으면<strong> 커피 2잔</strong></p>
+                                            <p>미션 달성하고</p><p><strong>선물 받자!</strong></p>
                                         </div>
                                     </a>
                                 </div>    
                             
                                 <div class="swiper-slide">
-                                    <a href="/rateplan/plans/product-detailed?soId=01&prodGrpCd=U19&prodCd=PD00000949" class="link case_02">
+                                    <a href="/rateplan/plans/product-detailed?soId=01&prodGrpCd=U19&prodCd=PD00000949" class="link case_01">
                                         <div class="info"><span class="txt">청년희망 LTE(III)</span></div>
                                         <div class="title">
                                             <p>청년 데이터 무제한</p><p><strong>최저 월 25,900원</strong></p>
@@ -2042,10 +2082,19 @@ function getYYYYMMDD() {
                                 </div>    
                             
                                 <div class="swiper-slide">
-                                    <a href="/rateplan/plans/product-detailed?soId=02&prodGrpCd=K01&prodCd=PD00000703" class="link case_03">
-                                        <div class="info"><span class="txt">LTE 무제한 11GB+</span></div>
+                                    <a href="" class="link case_02">
+                                        <div class="info"><span class="txt">SKT망 요금제 4종</span></div>
                                         <div class="title">
-                                            <p>데이터 최대 71GB</p><p><strong>최저 월 30,300원</strong></p>
+                                            <p>24개월 기본료 할인</p><p><strong>3만P 혜택까지</strong></p>
+                                        </div>
+                                    </a>
+                                </div>    
+                            
+                                <div class="swiper-slide">
+                                    <a href="" class="link case_03">
+                                        <div class="info"><span class="txt">SKT망 요금제 5종</span></div>
+                                        <div class="title">
+                                            <p>통신비 6개월 무료</p><p><strong>최대 약 11만원 혜택!</strong></p>
                                         </div>
                                     </a>
                                 </div>    
@@ -2060,28 +2109,55 @@ function getYYYYMMDD() {
                                 </div>    
                             
                                 <div class="swiper-slide">
-                                    <a href="/rateplan/plans/product-detailed?soId=02&prodGrpCd=K01&prodCd=PD00000702" class="link case_05">
+                                    <a href="/biz/mgm/mgm-guide" class="link case_05">
+                                        <div class="info"><span class="txt">추천리워드</span></div>
+                                        <div class="title">
+                                            <p>초대하면<strong> 5만P</strong></p><p>초대받으면<strong> 커피 2잔</strong></p>
+                                        </div>
+                                    </a>
+                                </div>    
+                            
+                                <div class="swiper-slide">
+                                    <a href="" class="link case_06">
+                                        <div class="info"><span class="txt">LTE 무제한 11GB+</span></div>
+                                        <div class="title">
+                                            <p>데이터 최대 71GB</p><p><strong>최저 월 30,300원</strong></p>
+                                        </div>
+                                    </a>
+                                </div>    
+                            
+                                <div class="swiper-slide">
+                                    <a href="" class="link case_07">
                                         <div class="info"><span class="txt">LTE 무제한 7GB+</span></div>
                                         <div class="title">
-                                            <p>데이터 7GB</p><p><strong>최저 월 19,000원</strong></p>
+                                            <p>데이터 최대 7GB</p><p><strong>최저 월 19,000원</strong></p>
                                         </div>
                                     </a>
                                 </div>    
                             
                                 <div class="swiper-slide">
-                                    <a href="/rateplan/plans/product-detailed?soId=01&prodGrpCd=U06&prodCd=PD00000937" class="link case_06">
-                                        <div class="info"><span class="txt">나라사랑 LTE(신)</span></div>
+                                    <a href="" class="link case_08">
+                                        <div class="info"><span class="txt">인터넷 / IPTV 결합</span></div>
                                         <div class="title">
-                                            <p>군인 전용 프로모션</p><p><strong>최저 월 25,400원</strong></p>
+                                            <p>모바일 할인</p><p><strong>최대 13.2만원</strong></p>
                                         </div>
                                     </a>
                                 </div>    
                             
                                 <div class="swiper-slide">
-                                    <a href="/rateplan/plans/product-detailed?soId=01&prodGrpCd=U12&prodCd=PD00000943" class="link case_07">
-                                        <div class="info"><span class="txt">공무원 3종 요금제</span></div>
+                                    <a href="" class="link case_09">
+                                        <div class="info"><span class="txt">LG U+망 데이터 무료 증정</span></div>
                                         <div class="title">
-                                            <p>공무원 전용 프로모션</p><p><strong>최저 월 25,900원</strong></p>
+                                            <p>2년간 최대 5,304GB</p><p><strong>최대 월 150GB 무료!</strong></p>
+                                        </div>
+                                    </a>
+                                </div>    
+                            
+                                <div class="swiper-slide">
+                                    <a href="" class="link case_10">
+                                        <div class="info"><span class="txt">KT망 데이터 무료 증정</span></div>
+                                        <div class="title">
+                                            <p>KT망 무제한 요금제</p><p><strong>최대 월 150GB 무료!</strong></p>
                                         </div>
                                     </a>
                                 </div>    
@@ -2591,7 +2667,8 @@ function getYYYYMMDD() {
                                         <div class="desc">
                                             
                                                 
-                                                    가입해 보니 저렴하고 좋네요. &amp;#10; 진작에 바꾸지 않았을까 후회되구..
+                                                    
+                                                    <p>가입해 보니 저렴하고 좋네요. 진작에 바꾸지 않았을까 후회되구요. 많은 사람에게 추천하..</p>
                                                 
                                                 							
                                                                                         
@@ -2607,9 +2684,10 @@ function getYYYYMMDD() {
                                         <div class="desc">
                                             
                                                 
-                                                    동해물과 백두산이 마르고 닳도록
+                                                    
+                                                    <p>동해물과 백두산이 마르고 닳도록
 하느님이 보우하사 우리 나라 만세
-무..
+무궁화 삼천리 화..</p>
                                                 
                                                 							
                                                                                         
@@ -2626,7 +2704,7 @@ function getYYYYMMDD() {
                                             
                                                 
                                                 
-                                                    첨부파일 없이 후기
+                                                    <p>첨부파일 없이 후기</p>
                                                 							
                                                                                         
                                         </div>
@@ -2642,7 +2720,7 @@ function getYYYYMMDD() {
                                             
                                                 
                                                 
-                                                    T E S T ! @ # $ % ^ & * < >
+                                                    <p>T E S T ! @ # $ % ^ & * < ></p>
                                                 							
                                                                                         
                                         </div>
@@ -2728,19 +2806,19 @@ function getYYYYMMDD() {
                             
                                 <div class="swiper-slide">
                                     <a href="#none" class="event_open" style="background:#456dfb" onclick="movePage('/biz/event/event-firstLogin')">
-                                        <img src="../../../img/banner/bnr_open_1.png" alt="모두에게 매일매일 선물이 팡팡!, 첫 만남 이벤트, 2023년 4월 17일 월요일 부터 5월 16일 화요일 까지" />
+                                        <img src="../../../img/banner/bnr_open_1.png" alt="모두에게 매일매일 선물이 팡팡!, 첫 만남 이벤트, 2023년 4월 24일 월요일 부터 5월 23일 화요일 까지" />
                                     </a>
                                 </div>
                             
                                 <div class="swiper-slide">
                                     <a href="#none" class="event_open" style="background:#112C4C" onclick="movePage('/biz/event/join-event')">
-                                        <img src="../../../img/banner/bnr_open_2.png" alt="KB Liiv M에서 APPLE 쏜다, 2023년 4월 17일 월요일 부터 5월 16일 화요일 까지" />
+                                        <img src="../../../img/banner/bnr_open_2.png" alt="KB Liiv M에서 APPLE 쏜다, 2023년 4월 24일 월요일 부터 5월 23일 화요일 까지" />
                                     </a>
                                 </div>
                             
                                 <div class="swiper-slide">
                                     <a href="#none" class="event_open" style="background:#0c6a3d" onclick="movePage('/biz/event/mssnEvent')">
-                                        <img src="../../../img/banner/bnr_open_3.png" alt="미션 달성하고 선물받자, 2023년 4월 17일 월요일 부터 5월 16일 화요일 까지" />
+                                        <img src="../../../img/banner/bnr_open_3.png" alt="미션 달성하고 선물받자, 2023년 4월 24일 월요일 부터 5월 23일 화요일 까지" />
                                     </a>
                                 </div>
                             
@@ -2790,8 +2868,16 @@ function getYYYYMMDD() {
         	$('.footer').addClass('web');
         }
 });   
- 
+         
 function coverageMap(){
+    
+    if(getOsInfo().indexOf("app") != -1){
+        //GNB 버튼 내리기
+        callAppService({
+            action_code : 'A0205',	// APP GNB OFF
+        });    
+    }
+
 	modalLayer.show({
         titleUse:true,
         title: "서비스 커버리지",
@@ -2800,6 +2886,18 @@ function coverageMap(){
         closeUse:false,                                     
     });
 }
+
+function openGnbButton(){
+
+    if(getOsInfo().indexOf("app") != -1){
+        //GNB 버튼 내리기
+        callAppService({
+            action_code : 'A0204',	// APP GNB ON
+        });
+    }
+    
+}
+
 </script>
         <div class="footer">
             <div class="footer_top">
@@ -2811,8 +2909,8 @@ function coverageMap(){
             </div>            
             <div class="footer_middle">
                 <p class="cc">KB Liiv M 고객센터</p>
-                <p class="tel_free" onClick="connectCall114();"><span>114</span>(무료, KB Liiv M 가입자 대상)</p>
-                <p class="tel_pay"  onClick="connectCallCenter();"><span>1522-9999</span>(유료)</p>
+                <p class="tel_free"><span onClick="connectCall114();">114</span>(무료, KB Liiv M 가입자 대상)</p>
+                <p class="tel_pay"><span onClick="connectCallCenter();">1522-9999</span>(유료)</p>
                 <p class="time">평일 9시 ~ 18시(주말/공휴일 휴무)</p>
                 <span class="info_biz">사업자정보<span class="hidden">접기</span></span>
             </div>
@@ -2905,7 +3003,7 @@ function coverageMap(){
         </div>
         <div class="btn_pop_confirm_wrap">
             <div class="btn_area">
-                <button type="button" class="btn primary" data-action="close">확인</button>
+                <button type="button" class="btn primary" data-action="close" onClick="openGnbButton();">확인</button>
             </div>
         </div>
     </div>

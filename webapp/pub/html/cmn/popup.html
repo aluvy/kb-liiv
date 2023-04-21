@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
     <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
+    <link rel="icon" href="../../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../../css/style.css">
 	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
     <script type="text/javascript" src="../../../js/front.js"></script>
-    <!-- <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> -->
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
 <body>
     <div class="wrap">
         <!-- header -->
@@ -240,32 +241,50 @@ $(document).on('click', '#btn_MERG06P01', function(){
     <div class="ly_cnt">
         <div class="section">
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
-        </div>
-        <div class="section">
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
             작성중인 가입정보가 있습니다.<br>
             이어서 작성하시겠습니까?
-        </div>
-        <div class="section">
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
             </div>
         </div>
     </div>
@@ -301,19 +320,6 @@ $(document).on('click', '#btn_MERG06P01', function(){
             </div>
         </div>
         <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
-        <div class="section">
 			<div class="radio_group">
 				<div class="radio_item box_type">
 					<input type="radio" id="line1" name="line" checked>
@@ -343,20 +349,43 @@ $(document).on('click', '#btn_MERG06P01', function(){
 					</label>
 				</div>
 			</div>
-		</div>
-        <div class="section">
+
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
-        </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            
+
+		</div>
     </div>
     <div class="btn_pop_confirm_wrap">
         <div class="btn_area">
@@ -371,19 +400,6 @@ $(document).on('click', '#btn_MERG06P01', function(){
 <!-- layer -->
 <div id="MERG06P01_3" class="layerHTML">
     <div class="ly_cnt">
-        <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
         <div class="section">
             <div class="radio_group">
 				<div class="radio_item box_type">
@@ -431,33 +447,45 @@ $(document).on('click', '#btn_MERG06P01', function(){
                         </span>
                     </label>
 				</div>
+
 			</div>
-        </div>
-        <div class="section">
+
+
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
-        </div>
-        <div class="section">
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            
+            
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">
@@ -475,35 +503,47 @@ $(document).on('click', '#btn_MERG06P01', function(){
         <h1 class="pop_h1">약관 상세</h1>
         <a href="#none" class="btn_download"><span class="img_item icon download"><span class="blind">다운로드</span></span></a>
     </div>
-    <div class="ly_cnt">
-        <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
+    <div class="ly_cnt">            
         <div class="section">
             <div class="pdf_preview"></div>
         </div>
         <div class="section">
+            
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+
+
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">
@@ -670,19 +710,6 @@ $(document).on('click', '#btn_MERG06P01', function(){
 <!-- layer : select bottom sheet -->
 <div id="MERG06P01_6" class="layerHTML">
     <div class="ly_cnt">
-        <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
         <div class="section_f">
             <div class="bottom_select">
                 <ul>
@@ -696,17 +723,53 @@ $(document).on('click', '#btn_MERG06P01', function(){
             </div>
         </div>
         <div class="section">
+            
             <div class="form_group">
-                <div class="form_item">
+                <div class="form_item req fix">
                     <div class="item_content">
-                        <div class="label">휴대폰번호</div>
+                        <div class="label">레이블명</div>
                         <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
                 </div>
-                <div class="form_error">유효성 check</div>
+                <div class="form_error"></div>
             </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            
+
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">
@@ -721,37 +784,11 @@ $(document).on('click', '#btn_MERG06P01', function(){
 <div id="MERG06P01_8" class="layerHTML">
     <div class="ly_cnt">
         <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
-        <div class="section">
             <p>본인인증을 위해 KB국민인증서 앱을 실행합니다.</p>
             <ul class="star_type">
                 <li>취소 버튼을 누르면 팝업이 닫힙니다.</li>
                 <li>인증완료 버튼을 누르면 새로운 팝업이 뜹니다.</li>
             </ul>
-        </div>
-        <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">
@@ -767,33 +804,7 @@ $(document).on('click', '#btn_MERG06P01', function(){
 <div id="MERG06P01_8_1" class="layerHTML">
     <div class="ly_cnt">
         <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
-        </div>
-        <div class="section">
             확인을 누르면 열려있는 팝업 2개가 모두 닫힙니다.
-        </div>
-        <div class="section">
-            <div class="form_group">
-                <div class="form_item">
-                    <div class="item_content">
-                        <div class="label">휴대폰번호</div>
-                        <div class="input">
-                            <input type="text" placeholder="'-없이 입력해주세요'">
-                        </div>
-                    </div>
-                </div>
-                <div class="form_error">유효성 check</div>
-            </div>
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">
@@ -808,33 +819,54 @@ $(document).on('click', '#btn_MERG06P01', function(){
 <div id="MERG06P01_7" class="layerHTML">
     <div class="ly_cnt ly_alert">
         <div class="section center">
-            <div class="section">
-                <div class="form_group">
-                    <div class="form_item">
-                        <div class="item_content">
-                            <div class="label">휴대폰번호</div>
-                            <div class="input">
-                                <input type="text" placeholder="'-없이 입력해주세요'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form_error">유효성 check</div>
-                </div>
-            </div>
             알럿 팝업 샘플
-            <div class="section">
-                <div class="form_group">
-                    <div class="form_item">
-                        <div class="item_content">
-                            <div class="label">휴대폰번호</div>
-                            <div class="input">
-                                <input type="text" placeholder="'-없이 입력해주세요'">
-                            </div>
+
+            
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
                         </div>
                     </div>
-                    <div class="form_error">유효성 check</div>
                 </div>
+                <div class="form_error"></div>
             </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            <div class="form_group">
+                <div class="form_item req fix">
+                    <div class="item_content">
+                        <div class="label">레이블명</div>
+                        <div class="input">
+                            <input type="text" placeholder="힌트텍스트">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>
+            </div>
+            
         </div>
     </div>
     <div class="btn_pop_confirm_wrap">

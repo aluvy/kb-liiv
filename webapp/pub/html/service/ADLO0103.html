@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-209463409|rpid=-1004808701|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content bill_send">
+
+                <h1 class="title hidden">구매 영수증 제출</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">구매 영수증 제출</h2>
+                </div>
+
+                <div class="section">
+                    <div class="banner_item basic">
+                        <div class="icon_area">
+                            <span class="img_item flat warning"></span>
+                        </div>
+                        <div class="txt_area">
+                            휴대폰 구매를 증빙할 수 있는 구매일자로부터 30일 이내의 휴대폰 구매영수증을 첨부해주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">구매일자</h3>
+                    </div>
+
+                     <!-- 23/01/18 수정 : 구매일자 화면 ui 변경되었습니다. -->
+                     <!-- [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가 -->
+                    <div class="form_group mgt8">
+                        <div class="form_item fix date">
+                            <div class="item_content btn_date">
+                                <!-- <div class="label">조회 시작일</div> -->
+                                <div class="input">
+                                    <input type="text" placeholder="날짜를 선택해주세요" id="btn_cal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">유효성 check</div>
+                    </div>
+                </div>
+                <!-- // 23/01/18 수정 : 구매일자 화면 ui 변경되었습니다. -->
+
+                <div class="section mgt4">
+                    <div class="tit_sec_wrap mgt0">
+                        <h3 class="tit_sec">구매영수증</h3>
+                    </div>
+
+                    <div class="file_group">
+                        <div class="file_item_add">
+                            <input type="file" id="file_add" />
+                            <label for="file_add"><span class="img_item icon camera"></span><em>사진첨부</em></label> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                        </div>
+                        <div class="file_item_group">
+                            <div class="file_item_scroll">
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                                <div class="file_item">
+                                    <div class="img_area"><img src="/img/img/etc_bill.png" alt="구매영수증" /></div>
+                                    <a href="#none" class="btn_remove"><span class="blind">첨부된 파일 삭제</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="star_type mgt20">
+                        <li>휴대폰 구매일자 확인이 가능한 휴대폰 구매영수증을 첨부해주세요.(구매일자로부터 30일 이내의 구매영수증만 가능)</li>
+                        <li>제출서류 확인 및 가입심사 후 최종 가입 완료됩니다.</li>
+                    </ul>
+                    <p class="txt_alert red">보험가입신청서를 반드시 다운로드 하시기 바랍니다.</p>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" class="btn primary lg">가입신청서발급</button>
+                    </div>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">이전</button>
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+<script>
+    // [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가
+    $(()=>{
+        let btn_cal = $(document).find("#btn_cal").parents(".item_content").find(".btn_type");
+        btn_cal.on("click", function(){
+            _calendar.open( 'calendar', 'btn_cal', '');
+        });
+    })
+</script>
+</body>
+</html>

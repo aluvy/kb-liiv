@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1730013360|rpid=-1980816494|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">데이터 충전/선물하기</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        데이터 충전/선물하기
+                    </h2>
+                </div>
+                
+                <div class="section">
+
+                    <button type="button" id="layer3" class="btn secondary sm">bottom 팝업 클릭</button>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="ADCH0102" class="layerHTML">
+        <div class="ly_cnt pb0"><!-- 03/09 pb0 추가 -->
+            <div class="section">
+                <h1 class="title hidden">부가서비스</h1>
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">선물 보낼 데이터</h3>
+                </div>
+                <div class="extra_data_box">
+                    <div class="card_data_list info"> <!-- 23/01/19 info 추가 -->
+                        <ul>
+                            <li>
+                                <div class="card_data_num">
+                                    <i class="icon icon_data_uplus"></i>
+                                    <span class="tit_card_data"><em>50</em>MB</span>
+                                </div>
+                                <div class="card_data_price">
+                                    <span>1,000원</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="star_type"> <!-- 03/28 수정 -->
+                    <li>결제금액은 익월 청구서에 청구되며, 부가세포함 금액입니다.</li>
+                    <li>3Mbps, 5Mbps 가 포함된 요금제는 충전/선물이 불가능합니다.</li>
+                    <li>충전/선물 후 취소 불가능합니다.</li>
+                </ul>
+
+                <div class="tit_sec_wrap">
+                    <h3 class="tit_sec">선물 받을 친구 검색</h3>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">이름 입력</div>
+                            <div class="input">
+                                <input type="text" placeholder="이름 입력">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">친구 휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-없이 입력해주세요'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close" id="var_test">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#layer3').on('click', function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"선물 보낼 데이터",
+                content:'#ADCH0102',
+                type:'bottom',
+                closeUse:true,                                     
+            });
+        });
+</script>
+</body>
+</html>

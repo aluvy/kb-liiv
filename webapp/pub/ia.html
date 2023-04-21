@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>KB Liiv M Publishing List</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-335501919|rpid=370972825|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1681996879308|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/pub/ia_resource/ia.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="top">
+                <h1>KB Liiv M 퍼블리싱 현황</h1>
+                <div class="etc">
+                    <a href="ia_guide.html" target="_blank">퍼블리싱 가이드</a>
+                </div>
+            </div>
+            <ul class="menu_list">
+                <li class="active"><a href="html/cmn_list.html" target="main">공통</a></li>
+                <li><a href="html/main_list.html" target="main">메인</a></li>
+                <li><a href="html/login_list.html" target="main">로그인영역</a></li>
+                <li><a href="html/join_list.html" target="main">가입/개통</a></li>
+                <li><a href="html/join_popup_list.html" target="main">가입/개통 팝업</a></li>
+                <li><a href="html/open_list.html" target="main">개통</a></li>
+                <!-- <li><a href="html/login_list.html" target="main">로그인영역</a></li>
+                <li><a href="html/menu_list.html" target="main">메뉴</a></li>
+                <li><a href="html/footer_list.html" target="main">푸터</a></li>
+                <li><a href="html/widget_list.html" target="main">위젯/아이콘</a></li> -->
+
+                <!-- <li><a href="html/cmn_list.html" target="main">공통</a></li>
+                <li class="active"><a href="html/main_list.html" target="main">메인</a></li>
+                <li><a href="html/join_list.html" target="main">가입 및 개통</a></li>
+                <li><a href="html/menu_list.html" target="main">메뉴</a></li>
+                <li><a href="html/footer_list.html" target="main">푸터</a></li>
+                <li><a href="html/widget_list.html" target="main">위젯/아이콘</a></li> -->
+                
+                <li><a href="html/rateplan_list.html" target="main">요금제</a></li>
+                <li><a href="html/service_list.html" target="main">부가서비스</a></li>
+                <li><a href="html/event_list.html" target="main">혜택</a></li>
+                <li><a href="html/support_list.html" target="main">고객지원</a></li>
+                <li><a href="html/mypage_list.html" target="main">마이페이지</a></li>
+            </ul>
+        </div>
+    
+        <div class="box_iframe">
+			<div class="box_iframe_in"><iframe src="html/cmn_list.html" name="main" ></iframe></div>
+		</div>
+	</div>
+
+	<script>
+		$(".menu_list li").on("click", function(){
+			if($(this).siblings().hasClass("active")){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			}
+		});
+
+        $(()=>{ setWrapPad() })
+        $(window).on("resize", ()=>{ setWrapPad() })
+
+        const setWrapPad = function(){
+            let menuH = $(document).find(".header").height();
+            $(document).find(".wrap").css({"padding-top" : `${menuH}px`});
+        }
+	</script>
+</body>
+</html>

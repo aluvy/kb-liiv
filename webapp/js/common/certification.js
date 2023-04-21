@@ -55,7 +55,7 @@ function fn_callApiKbsign003(type) {
 						dataHeader: {},
 						dataBody: {
 											serialNo: sessionStorage.getItem("serialNo"),
-											groupCoCd: "KBO"
+											groupCoCd: "KB0"
 										}
 					};
 
@@ -66,6 +66,7 @@ function fn_callApiKbsign003(type) {
  * KB모바일인증서 전자서명 요청
  */
 function fn_callApiKbsign004() {
+
 	if(tg != 'prod'){
 		//개발, 스테이지 무조건 인증
 		setTimeout( function() {
@@ -83,6 +84,7 @@ function fn_callApiKbsign004() {
 		
 		fn_transCall(url, JSON.stringify(data), fn_callBackApiKbsign);
 	}
+
 };
 
 /**
@@ -94,7 +96,7 @@ function fn_callApiKbsign006() {
 		popalarm({
 			msg : "[개발/스테이지 PASS]인증에 성공하였습니다.("+tg+")",
 			cfrmYn : false,
-			okCallback : callbackFromNormalOnBody2	
+			okCallback : callbackFromNormalOnBody2
 		});
 	}else{
 		let url = '/appIf/v1/kbsign/verifi/KBSIGN006';
@@ -156,10 +158,29 @@ function fn_callBackApiKbsign(tranId, result, status, inputData){
 			console.log("serialNo="+serialNo);
 			sessionStorage.setItem("serialNo", serialNo);
 
-			let url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:"+serialNo+",authtype:1,urlScheme:screen=A,kind:kbbank,chnId:AI,pagId:" + getPageId();
-			if(JSON.parse(inputData).type === 'M'){
-				url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:"+serialNo+",authtype:1,urlScheme:screen=A,kind:kbbank,chnId:AI,pagId:C066263";
+            /***************************************
+             * 스타뱅킹 호출 APP/WEB 분기처리
+             ***************************************/
+            let url = "";
+            if(getOsInfo().indexOf('app') !== -1){
+                //앱인 경우 안드로이드 3번 encodeURIComponent / IOS 2번 encodeURIComponent
+			    let urlScheme =  "";
+		        if(getOsInfo().indexOf('android') !== -1){
+			        urlScheme = encodeURIComponent(encodeURIComponent(encodeURIComponent("kbliivm://")));
+			    }else{
+			        urlScheme = encodeURIComponent(encodeURIComponent("kbliivm://"));
+			    }
+			    url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:" + serialNo + ",authtype:2,urlScheme:" + urlScheme + ",kind:kbliivm,chnId:AI,pagId:" + getPageId();
+                if(JSON.parse(inputData).type === 'M'){
+                    url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:" + serialNo + ",authtype:2,urlScheme:" + urlScheme + ",kind:kbliivm,chnId:AI,pagId:C066263";
+                }
+			}else{
+			    url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:"+serialNo+",authtype:2,urlScheme:screen=A,kind:kbbank,chnId:AI,pagId:" + getPageId();
+			    if(JSON.parse(inputData).type === 'M'){
+				    url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C063953&urlparam=serno:"+serialNo+",authtype:2,urlScheme:screen=A,kind:kbbank,chnId:AI,pagId:C066263";
+			    }
 			}
+
 			fn_includeKbsignStartApp(url);
 			
 			// 로그인
@@ -226,6 +247,15 @@ function fn_callBackApiKbsign(tranId, result, status, inputData){
 					};
 					popalarm(opt);
 				}
+			}else if(JSON.parse(inputData).type === 'S'){
+			    //SSO 재인증용
+			    //계열사+기기값 변경시에 국민인증서 재인증 필요.
+				let opt = {
+							msg: "인증에 성공하였습니다.",
+							cfrmYn: false,
+							okCallback: callbackFromNormalOnBody
+				};
+				popalarm(opt);
 			}
 			
 		} else {
@@ -251,8 +281,23 @@ function fn_callBackApiKbsign(tranId, result, status, inputData){
 			let serialNo = result.dataBody.serialNo;
 			console.log("serialNo="+serialNo);
 			sessionStorage.setItem("serialNo", serialNo);
-			
-			let url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C064350&urlparam=serno:" + serialNo + ",authtype:1,chnId:AI,pagId:" + getPageId();
+
+            /***************************************
+             * 스타뱅킹 호출 APP/WEB 분기처리
+             ***************************************/
+            let url = "";
+            if(getOsInfo().indexOf('app') !== -1){
+                //앱인 경우 안드로이드 3번 encodeURIComponent / IOS 2번 encodeURIComponent
+			    let urlScheme =  "";
+		        if(getOsInfo().indexOf('android') !== -1){
+			        urlScheme = encodeURIComponent(encodeURIComponent(encodeURIComponent("kbliivm://")));
+			    }else{
+			        urlScheme = encodeURIComponent(encodeURIComponent("kbliivm://"));
+			    }
+			    url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C064350&urlparam=serno:" + serialNo + ",authtype:2,urlScheme:" + urlScheme + ",kind:kbliivm,chnId:AI,pagId:" + getPageId();
+			}else{
+                url = "kbbank://call?cmd=move_to&id=web&url=/mquics?page=C064350&urlparam=serno:" + serialNo + ",authtype:2,chnId:AI,pagId:" + getPageId();
+			}
 
 			fn_includeKbsignStartApp(url);
 			
@@ -417,10 +462,10 @@ function fn_includeKbsignStartApp(url){
 			},1000);
 		}
 	} else if(typeOS.indexOf('ios') !== -1){
-		if(new Date - openAt < 5000){
+		if(new Date - openAt < 2000){
 			setTimeout( function(){
 				location.href = "https://itunes.apple.com/kr/app/id373742138";
-			},2500);
+			},1000);
 		}
 		location.href = url;
 	}

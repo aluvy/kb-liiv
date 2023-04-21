@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_678040272|rpid=-1159875644|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+
+                <h1 class="title hidden">본인인증</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">본인인증</h2>
+                    <div class="summary">
+                        본인인증 후 최종 신청이 완료됩니다.<br>
+                        본인인증을 진행해 주세요.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">인증방법</h3>
+                    </div>
+                    <div class="form_group">
+                        <div class="rdo_select_wrap triple">
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_kb" name="idchk" checked>
+                                <label for="idchk_kb" class="label">
+                                    <span class="img_area"><i class="img_item three auth sm"></i></span>
+                                    <span class="text_area"><span>KB국민<br>인증서</span></span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_card" name="idchk">
+                                <label for="idchk_card" class="label">
+                                    <span class="img_area"><i class="img_item three credit sm"></i></span>
+                                    <span class="text_area"><span>신용카드</span></span>
+                                </label>
+                            </span>
+                            <span class="form_check img_type">
+                                <input type="radio" id="idchk_phone" name="idchk">
+                                <label for="idchk_phone" class="label">
+                                    <span class="img_area"><i class="img_item three security sm"></i></span>
+                                    <span class="text_area"><span>휴대폰</span></span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">이전</button>
+                        <button type="button" class="btn primary">다음</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+
+
+
+
+<!-- layer : KB국민인증서 -->
+<div id="html_kb" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            모바일인증서 본인인증 레이어 팝업
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn_kb_confirm btn primary">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<!-- layer : KB국민인증서 > 확인 -->
+<div id="html_confirm_kb" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            KB모바일인증서 본인인증을 완료하였습니다.
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn_kb_confirm2 btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+
+
+
+
+
+
+
+<!-- layer : 신용카드 -->
+<div id="html_card" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            카드 본인인증 레이어 팝업
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn_card_confirm btn primary">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<!-- layer : 신용카드 > 확인 -->
+<div id="html_confirm_card" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            신용카드 본인인증을 완료하였습니다.
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn_card_confirm2 btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+
+
+
+
+
+
+
+<!-- layer : 휴대폰 -->
+<div id="html_phone" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            PASS앱 실행
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn_phone_confirm btn primary">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<!-- layer : 휴대폰 > 확인 -->
+<div id="html_confirm_phone" class="layerHTML">
+    <div class="ly_cnt">            
+        <div class="section center">
+            휴대폰 본인인증을 완료하였습니다.
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn_phone_confirm2 btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<script>
+    $(()=>{
+        
+        // KB
+        var _html_kb = $.ohyLayer({
+                        openAuto : true,
+                        titleUse:true,
+                        title:'모바일 인증서 본인인증',
+                        content:'#html_kb',
+                        type:'confirm',
+                        closeUse:false,
+                        closeAct:false,
+                    });
+        $(document).on('click', ".btn_kb_confirm", function(){
+            $.ohyLayer({
+                title:'알림',          
+                content:'#html_confirm_kb',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+        $(document).on("click", "#idchk_kb", function(e){ _html_kb.open() })
+        $(document).on("click", ".btn_kb_confirm2", function(){ _html_kb.close() });
+
+        
+        
+        // card
+        var _html_card = $.ohyLayer({
+                        openAuto : true,
+                        titleUse:true,
+                        title:'카드 본인인증',
+                        content:'#html_card',
+                        type:'confirm',
+                        closeUse:false,
+                        closeAct:false,
+                    });
+        $(document).on('click', ".btn_card_confirm", function(){
+            $.ohyLayer({
+                title:'알림',          
+                content:'#html_confirm_card',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+        $(document).on("click", "#idchk_card", function(e){ _html_card.open() })
+        $(document).on("click", ".btn_card_confirm2", function(){ _html_card.close() });
+
+        
+        
+        // phone
+        var _html_phone = $.ohyLayer({
+                        openAuto : true,
+                        titleUse:true,
+                        title:'휴대폰 본인인증',
+                        content:'#html_phone',
+                        type:'confirm',
+                        closeUse:false,
+                        closeAct:false,
+                    });
+        $(document).on('click', ".btn_phone_confirm", function(){
+            $.ohyLayer({
+                title:'알림',          
+                content:'#html_confirm_phone',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+        $(document).on("click", "#idchk_phone", function(e){ _html_phone.open() })
+        $(document).on("click", ".btn_phone_confirm2", function(){ _html_phone.close() });
+        
+
+    })
+</script>
+</body>
+</html>

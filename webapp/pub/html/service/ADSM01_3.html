@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>부가서비스 - 휴대폰 소액결제</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_300758167|rpid=1472317935|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content payment">
+                <h1 class="title hidden">부가서비스</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">휴대폰 소액결제</h2>
+                </div>
+
+                <div class="section">
+                    <div class="droptype_btn_wrap">
+                        <a href="#" role="button" class="droptype_btn select_line">
+                            <span class="badge lg_u">LG U+</span> 
+                            <span class="info">010-12**-56**</span>
+                            <i class="icon icon_arr_down_gray"></i>
+                        </a>
+                    </div>
+
+                    <!-- 이용중일때 -->
+                    <!-- <div class="droptype_btn_wrap">
+                        <a href="#" role="button" class="droptype_btn type2">
+                            <div class="circle_tag using">
+                                <span>이용중</span>
+                            </div>
+                            <span class="info">홍*동<em>010-12**-56**</em></span>
+                            <span class="badge kt">KT</span>
+                        </a>
+                    </div> -->
+                    <!--// 이용중일때 -->
+
+                    <div class="phone_pay_wrap">
+                        <div class="icon_wrap">
+                            <span class="img_item mini phone2"></span>
+                        </div>
+                        <dl>
+                            <dt>휴대폰 소액결제란?</dt>
+                            <dd>휴대폰을 이용해서 본인인증 후 간편하게 결제하는 서비스입니다.</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <hr class="hr_divide">
+
+                <div class="section">
+                    <div class="tit_sec_wrap flex">
+                        <h3 class="tit_sec">소액결제 이용동의 설정</h3>
+
+                        <span class="switch_item type1">
+                            <input type="checkbox" id="switch">
+                            <label for="switch"><span class="blind">활성화</span></label>
+                        </span>
+                    </div>
+
+                    <div class="payment_agr_wrap" style="display:block;"><!-- 상단 스위치 활성화시 활성화-->
+                        <!-- 23/02/28 수정 : 인풋타입 수정 radio > checkbox -->
+                        <div class="form_group">
+                            <span class="form_check">
+                                <input type="checkbox" id="ADSM01_3_1" name="ADSM01_3">
+                                <label for="ADSM01_3_1" class="label"><span>일반결제</span></label>
+                            </span>
+                            <span class="form_check">
+                                <input type="checkbox" id="ADSM01_3_2" name="ADSM01_3">
+                                <label for="ADSM01_3_2" class="label"><span>월 자동결제</span></label>
+                            </span>
+                        </div>
+                        <!--// 23/02/28 수정 : 인풋타입 수정 radio > checkbox -->
+
+                        <ul class="bull_type">
+                            <li>일반결제 : 1회성 결제 시 사용</li>
+                            <li>월 자동결제 : 월 정액권(정기적) 서비스 결제 시 사용</li>
+                            <li>휴대폰 소액결제를 이용하시려면 소액결제 서비스 이용 동의를 하셔야 합니다.</li>
+                            <li>소액결제 이용동의 철회는 불가합니다. (1년간 변경불가, 소액결제 차단 설정만 가능</li>
+                            <li>다회선 사용 고객일 경우 이용동의 및 차단설정은 전화번호 별로 각각 신청해야 합니다.</li>
+                        </ul>
+
+                        <!-- 23/01/17 수정 : 확인 버튼 추가 -->
+                        <div class="btn_wrap mgt20">
+                            <button type="button" class="btn primary">확인</button>
+                        </div>
+                        <!--// 23/01/17 수정 : 확인 버튼 추가 -->
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">이용내역</h3>
+                    </div>
+
+                    <!-- 23/01/17 수정 : 날짜선택 버튼 추가 -->
+                    <div class="droptype_btn_wrap"><!-- 23/02/10 class="btn_type" 추가 --><!-- 23/03/27 수정 : 클래스 제거 .btn_type -->
+                        <a href="#" role="button" class="droptype_btn select_date"><!-- 23/01/19 수정 : 날짜선택 버튼 클래스 추가 .select_date -->
+                            <span class="info">2022년 12월</span>
+                        </a>
+                        <!-- 23/03/27 수정 : 버튼 삭제 -->
+                        <!--<button type="button" class="btn"><span class="hidden">오픈</span></button>--><!-- 23/02/10 button 추가 -->
+                        <!--// 23/03/27 수정 : 버튼 삭제 -->
+                    </div>
+                    <!--// 23/01/17 수정 : 날짜선택 버튼 추가 -->
+
+                    <div class="detail_sum_wrap">
+                        <div class="total_wrap">
+                            <div class="item_tit">1월 이용금액</div>
+                            <div class="item_term">2022.01.01 ~ 2022.01.30</div>
+                            <div class="item_price"><strong>77,777</strong>원</div>
+                        </div>
+                        <div class="edit_wrap">
+                            <div class="item_tit">잔여한도</div>
+                            <div class="item_price">
+                                <span class="price">99,999,999원</span>
+                                <a href="#" class="btn_text_go">한도 변경</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail_list_wrap">
+                        <!-- 23/01/27 수정 : no data 케이스 추가 -->
+                        <!-- <div class="result_nodata">
+                            <p class="txt">이용내역이 없어요</p>
+                        </div> -->
+                        <!--// 23/01/27 수정 : no data 케이스 추가 -->
+
+                        <div class="list_info">
+                            <div class="count">총<strong>4</strong>건</div>
+                        </div>
+                        <ul class="detail_list">
+                            <li>
+                                <div class="item_tit">
+                                    <span>스트리밍 **모바일</span>
+                                    <strong>6,600원</strong>
+                                </div>
+                                <div class="item_info">
+                                    <span>일반결제</span>
+                                    <span>2022.01.01 12:30:30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item_tit">
+                                    <span>스트리밍 **모바일</span>
+                                    <strong>6,600원</strong>
+                                </div>
+                                <div class="item_info">
+                                    <span>일반결제</span>
+                                    <span>2022.01.01 12:30:30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item_tit">
+                                    <span>스트리밍 **모바일</span>
+                                    <strong>6,600원</strong>
+                                </div>
+                                <div class="item_info">
+                                    <span>일반결제</span>
+                                    <span>2022.01.01 12:30:30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item_tit">
+                                    <span>스트리밍 **모바일</span>
+                                    <strong>6,600원</strong>
+                                </div>
+                                <div class="item_info">
+                                    <span>일반결제</span>
+                                    <span>2022.01.01 12:30:30</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="hr_divide mgt8 mgb0">
+                
+                <div class="section mgt0">
+                    <ul class="list_acc type2 js_accordion">
+                        <li>
+                            <a href="#none" role="button" class="title" aria-expanded="false">
+                                <span>이용안내</span>
+                            </a>
+                            <!-- 23/01/16 수정 : 이용안내 .content_panel 내 구조 및 타이틀 수정 -->
+                            <div class="content_panel" role="region">
+                                <h4 class="tit_item mgt0">소액결제 안내</h4><!-- 23/04/03 수정 : 클래스 추가 .mgt0 -->
+                                <ul class="star_type mgt8"><!-- 23/04/03 수정 : 클래스 추가 .mgt8 -->
+                                    <li>디지털상품 및 실물 소액물품 구입금액 발생 시 당월 사용 분에 대하여 이동전화 요금에 통합하여 익월에 청구함. (단, 인증을 통하여 거래가 확인된 건에 대해서만 청구 가능)</li>
+                                    <li>이용실적 및 신용상태(등급)에 따라 매월 또는 일정기간 사용에 대하여 다음의 항목으로 별도 제한할 수 있으며 Online에 동일하게 적용됩니다.</li>
+                                    <li>
+                                        <span>LG U+망</span>
+                                        <ul class="dash_type">
+                                            <li>신규고객 : 월 30만원(신규가입/번호이동/명의변경)</li>
+                                            <li>기존고객 : 월 30만원 ~100만원(※ 신규→기존고객 변경 시점 : 처음 가입한 달을 기준으로 5개월 차가 되는 달의 1일 자정 12시에 변경)</li>
+                                            <li>소액결제 잔여한도는 앱스토어 휴대폰 결제 잔여한도(콘텐츠 이용료)가 포함되어 있습니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>KT망</span>
+                                        <ul class="dash_type">
+                                            <li>신규고객(약 2일) : 월 4만원 ~ 30만원(신규가입/번호이동 구분없음)</li>
+                                            <li>일반고객 : 월 30만원 ~100만원</li>
+                                            <li>콘텐츠 이용료(구글 플레이스토어, 원스토어, 애플 앱스토어 등)는 KT정책에 의해 결제가 불가합니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>한도는 명의자 주민번호 기준으로 부여</li>
+                                </ul>
+
+                                <h4 class="tit_item">소액결제 제한</h4>
+                                <ul class="star_type mgt8"><!-- 23/04/03 수정 : 클래스 추가 .mgt8 -->
+                                    <li>
+                                        <span>LG U+망</span>
+                                        <ul class="dash_type">
+                                            <li>명의자의 주민등록번호 앞 7자리와 온라인에 입력한 주민등록번호 앞 7자리가 불일치한 경우</li>
+                                            <li>현재 상태가 미납으로 인해 사용정지 또는 해지된 경우</li>
+                                            <li>현재 요금 체납 상태인 경우</li>
+                                            <li>법인 고객 또는 만 19세 미만 미성년고객인 경우</li>
+                                            <li>선불(PPS) 요금제 이용자인 경우</li>
+                                            <li>번호가 일시 정지 상태인 경우</li>
+                                            <li>듀얼넘버를 통해 결제를 시도하는 경우</li>
+                                            <li>휴대폰소액결제 차단등록이 되어 있는 경우</li>
+                                            <li>휴대폰이 분실 등록된 경우</li>
+                                            <li>1년 이상 휴대폰소액결제 미이용 고객으로, 결제사기 피해예방을 위해 자동차단 설정된 경우</li>
+                                            <li>휴대폰 가입 시, 휴대폰소액결제 이용에 동의하지 않은 경우 (부가서비스 신청 필요 : 무료)</li>
+                                            <li>착신전환 서비스를 이용하고 있는 경우</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>KT망</span>
+                                        <ul class="dash_type">
+                                            <li>만 19세 미만의 미성년자, 개인사업자, 법인사업자, 선불가입자인 경</li>
+                                            <li>현재 상태가 해지된 경우</li>
+                                            <li>미납 고객의 경우 PG사의 차단여부에 따라 결제 가능여부 결정</li>
+                                            <li>정지된 경우(정지 상태 무관(발신정지/착발신정지 무관) 정지 시 소액결제 불가</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--// 23/01/16 수정 : 이용안내 .content_panel 내 구조 및 타이틀 수정 -->
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+<!-- 23/01/19 수정 : 날짜선택 팝업 추가 -->
+<!-- 23/01/16 수정 : 회선선택 팝업 추가 -->
+<div id="htmlSelectLine" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <div class="radio_group">
+                <div class="radio_item box_type">
+                    <input type="radio" id="line1" name="line" checked>
+                    <label for="line1" class="label">
+                        <span class="line_group">
+                            <span class="badge skt">SKT</span>
+                            <span>010-12**-56**</span>
+                        </span>
+                    </label>
+                </div>
+                <div class="radio_item box_type">
+                    <input type="radio" id="line2" name="line">
+                    <label for="line2" class="label">
+                        <span class="line_group">
+                            <span class="badge kt">KT</span>
+                            <span>010-98**-75**</span>
+                        </span>
+                    </label>
+                </div>
+                <div class="radio_item box_type">
+                    <input type="radio" id="line3" name="line">
+                    <label for="line3" class="label">
+                        <span class="line_group">
+                            <span class="badge lg_u">LG U+</span>
+                            <span>010-98**-75**</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap"> <!-- 02/23 수정 : 버튼 추가(COP18 공통화) -->
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="htmlSelectDate" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li><a href="#none" role="button" title="2022년 12월">2022년 12월</a></li>
+                    <li><a href="#none" role="button" title="2022년 11월">2022년 11월</a></li>
+                    <li><a href="#none" role="button" title="2022년 10월">2022년 10월</a></li>
+                    <li><a href="#none" role="button" title="2022년 9월">2022년 9월</a></li>
+                    <li><a href="#none" role="button" title="2022년 8월">2022년 8월</a></li>
+                    <li><a href="#none" role="button" title="2022년 7월">2022년 7월</a></li>
+                    <li><a href="#none" role="button" title="2022년 6월">2022년 6월</a></li>
+                    <li><a href="#none" role="button" title="2022년 5월">2022년 5월</a></li>
+                    <li><a href="#none" role="button" title="2022년 4월">2022년 4월</a></li>
+                    <li><a href="#none" role="button" title="2022년 3월">2022년 3월</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 회선선택 팝업
+    $(document).off("click", ".select_line").on("click", ".select_line", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"번호 선택",
+            content:'#htmlSelectLine',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    });
+
+    $(document).off("click", ".select_date").on("click", ".select_date", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"월 선택하기",
+            content:'#htmlSelectDate',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    });
+</script>
+<!--// 23/01/16 수정 : 회선선택 팝업 추가 -->
+<!--// 23/01/19 수정 : 날짜선택 팝업 추가 -->
+</body>
+</html>

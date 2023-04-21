@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Form - Liiv Mobile App</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1906721856|rpid=642212557|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/pub/ia_resource/ia.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<body>
+	<div class="guide_cnts_wrap">
+
+        <!-- input -->
+		<h2 class="title">Input</h2>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <p>input 관련 내용은 <b><a href="../html/cmn/input.html" target="blank" class="fc_blue">[ input.html ]</a></b> 을 참고한다.</p>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia" style="display:none;">
+
+            <div class="sample">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="item_content done">
+                            <div class="label">이름 입력</div>
+                            <div class="input">
+                                <input type="text" placeholder="이름 입력" value="홍길동">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="txt_alert">value를 가지고 있는 input에는 .item_content.done 클래스를 적용한다.</p>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                
+
+                <div class="form_group">
+                    <div class="form_item fix req">
+                        <div class="item_content btn_check">
+                            <div class="label">아이디</div>
+                            <div class="input">
+                                <input type="text" placeholder="아이디">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                <!-- 주소 1단 주석 처리 -->
+                <!-- <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_address">
+                            <div class="label">주소</div>
+                            <div class="input">
+                                <input type="text" placeholder="주소">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div> -->
+                <!-- 주소 2단 -->
+                <div class="form_group address">
+                    <div class="form_item fix">                          
+                        <div class="item_content btn_address">
+                            <div class="label">사업장 주소</div>
+                            <div class="input">
+                                <input type="text" placeholder="기본주소를 검색해주세요" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="상세주소를 입력해 주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <!-- 이메일 -->
+                <!-- 컨펌전 -->
+                <div class="form_group email">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">이메일</div>
+                            <div class="input">
+                                <input type="text" placeholder="이메일">
+                            </div>
+                        </div>
+                        <div class="email_col">@</div>
+                        <div class="item_content">
+                            <div class="select" title="메일사 선택">
+                                <button type="button" id="btn_email" class="btn_select" readonly>직접입력</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 직접입력을 선택한 경우만 show -->
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="이메일을 입력해 주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //직접입력을 선택한 경우만 show -->
+
+                    <div class="form_error">유효성 check</div>
+                    <!-- <div class="select">
+                        <select>
+                            <option value="all">직접입력</option>
+                            <option value="option1">naver.com</option>
+                            <option value="option2">hotmail.com</option>
+                            <option value="option3">daum.net</option>
+                            <option value="option4">nate.com</option>
+                        </select>
+                    </div> -->
+                </div>
+                
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_search">
+                            <div class="label">검색</div>
+                            <div class="input">
+                                <input type="text" placeholder="검색">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_camera">
+                            <div class="label">유심 모델번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="모델번호를 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+				<!-- 주민번호 -->
+                <div class="form_group col">
+					<div class="form_item fix jumin req">
+						<div class="item_content">
+							<div class="label">주민등록번호</div>
+							<div class="input">
+								<input type="text" maxlength="6" placeholder="주민등록번호 앞자리" >
+							</div>
+						</div>
+						<div class="bar"></div>
+						<div class="item_content">
+							<div class="input">
+								<input type="text" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+							</div>
+						</div>
+					</div>
+					<div class="form_error">유효성 check</div>
+				</div>
+
+                <!-- 면허번호 -->
+                <div class="form_group">
+                    <div class="form_item license fix">
+                        <div class="item_content">
+                            <div class="label">면허번호</div>
+                            <div class="select">
+                                <button type="button" id="btn_MERG04P06" class="btn_select" readonly>지역선택</button>
+                            </div>
+                        </div>
+                        <div class="bar"></div>
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                <div class="form_group">
+                    <div class="form_item license fix">
+                        <div class="item_content error">
+                            <div class="label">면허번호</div>
+                            <div class="select">
+                                <button type="button" id="btn_MERG04P06" class="btn_select" readonly>지역선택</button>
+                            </div>
+                        </div>
+                        <div class="bar"></div>
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                
+				<!-- 달력 -->
+                <div class="form_group col">
+                    <div class="form_item fix date">
+                        <div class="item_content btn_s_date">
+                            <div class="label">시작일</div>
+                            <div class="input">
+                                <input type="text" placeholder="시작일" id="start_date">
+                            </div>
+                        </div>
+                        <div class="bar"></div>
+                        <div class="item_content btn_e_date">
+                            <div class="label">종료일</div>
+                            <div class="input">
+                                <input type="text" placeholder="종료일" id="end_date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <!-- disabled -->
+                <div class="form_group col">
+                    <div class="form_item fix req">
+                        <div class="item_content">
+                            <div class="label">이름 입력</div>
+                            <div class="input">
+                                <input type="text" placeholder="이름 입력" >
+                            </div>
+                        </div>
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" value="Disabled" placeholder="이름 입력" disabled>
+                            </div>
+                        </div>
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" value="Readonly" placeholder="이름 입력" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix req">
+                        <div class="item_content">
+                            <div class="label">fix label 영역</div>
+                            <div class="input">
+                                <input type="text" placeholder="form_item 에 fix class를 추가하면 label이 고정된다">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix req">
+                        <div class="item_content">
+                            <div class="info">
+                                <a href="#none" role="button" class="btn_text">유심 정보 확인방법</a>
+                                <!-- <button type="button" class="btn_text">유심 정보 확인방법</button> -->
+                            </div>
+                            <div class="label">유심 정보 입력</div>
+                            <div class="input">
+                                <input type="text" placeholder="일련번호를 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="txt_alert">알럿 텍스트 샘플</p>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <!-- 카드번호 -->
+                <!-- 컨펌전 -->
+                <div class="form_group col">
+                    <div class="form_item card_type fix">
+                        <div class="item_content">
+                            <div class="label">카드번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="카드번호 첫번째" class="focus">
+                            </div>
+                        </div>
+                        
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="카드번호 두번째" class="focus">
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="카드번호 세번째" class="focus">
+                            </div>
+                        </div>
+                        <div class="item_content">
+                            <div class="input">
+                                <input type="text" placeholder="카드번호 네번째" class="focus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error"></div>    
+                </div>
+
+                <!-- 휴대폰번호 - 부가서비스 -->
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_auth">
+                            <div class="label">휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-'없이 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content js_timer">
+                            <div class="label">인증번호 입력</div>
+                            <div class="input">
+                                <input type="text" placeholder="'-'없이 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content btn_acc">
+                            <div class="label">계좌번호</div>
+                            <div class="input">
+                                <input type="text" placeholder="가상 계좌번호">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">value 값이 입력되어 있는 상태</div>
+                            <div class="input">
+                                <input type="text" placeholder="이름을 입력해주세요" value="김리브">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+
+
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>
+<b>필수입력항목</b>
+- .form_item.req 클래스를 함께 준다.
+- 필수입력항목 내 input에 blur event가 일어날 경우 밸류값을 체크하여 _input.req()함수 실행
+   => error 클래스가 추가됨 .form_item.req.error(안내문구가 보여짐) / .input.error(빨간색 밑줄 표시)
+
+<b>error</b>
+- input에 blur event가 일어날 경우 밸류값이 "error"(임시값)일 경우 _input.error()함수 실행
+   => error 클래스가 추가됨 .form_item.req.error(안내문구가 보여짐) / .input.error(빨간색 밑줄 표시)
+
+<b>버튼추가</b>
+- .item_content에 .btn_check or .btn_address or .btn_search 등등(추가예정) 클래스를 추가하면 자동으로 버튼이 생성됨
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!-- //input -->
+		<!-- select box -->
+        <h2 class="title">Select box</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">select popup readonly</div>
+                            <div class="select">
+                                <button type="button" class="btn_select checked" readonly>LG U+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- disabled -->
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">select popup disabled</div>
+                            <div class="select">
+                                <button type="button" class="btn_select" disabled>통신사</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">select popup</div>
+                            <div class="select">
+                                <button type="button" class="btn_select">통신사</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 이용 시작 시간 - 부가서비스 -->
+                <div class="form_group">
+					<div class="form_item fix hours_use">
+						<div class="item_content">
+							<div class="label">이용 시작 시간</div>
+							<div class="select" title="이용 시작 시간 : 시간">
+                                <button type="button" class="btn_select">시간</button>
+                            </div>
+						</div>
+						<div class="bar"></div>
+						<div class="item_content">
+							<div class="select" title="이용 시작 시간 : 분">
+                                <button type="button" class="btn_select">분</button>
+                            </div>
+						</div>
+					</div>
+					<div class="form_error">필수 입력 사항입니다.</div>
+				</div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">select accordion</div>
+                            <div class="select">
+                                <button type="button" class="btn_select">은행/증권사를 선택해주세요</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select_inline full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" title="국민은행">국민은행</a></li>
+                            <li><a href="#" role="button" title="신한은행">신한은행</a></li>
+                            <li><a href="#" role="button" title="우리은행">우리은행</a></li>
+                            <li><a href="#" role="button" title="하나은행">하나은행</a></li>
+                            <li><a href="#" role="button" title="농협은행">농협은행</a></li>
+                            <li><a href="#" role="button" title="기업은행">기업은행</a></li>
+                            <li><a href="#" role="button" title="기업은행">기업은행</a></li>
+                            <li><a href="#" role="button" title="기업은행">기업은행</a></li>
+                            <li><a href="#" role="button" title="기업은행">기업은행</a></li>
+                        </ul>
+                    </div>
+					<div class="form_error">필수 입력 사항입니다.</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">select accordion : notclose</div>
+                            <div class="select">
+                                <button type="button" class="btn_select">사용중인 통신사를 선택해주세요</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select_inline notclose full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" class="droptype_btn">이동통신 3사를 사용한다면 선택해주세요</a></li>
+                            <li><a href="#" role="button" class="droptype_btn">SKT 알뜰폰 사용한다면 선택해주세요</a></li>
+                            <li><a href="#" role="button" class="droptype_btn">KT 알뜰폰을 사용한다면 선택해주세요</a></li>
+                            <li><a href="#" role="button" class="droptype_btn">LG U+ 알뜰폰을 사용한다면 선택해주세요</a></li>
+                        </ul>
+                    </div>
+					<div class="form_error">필수 입력 사항입니다.</div>
+                </div>
+
+                <div class="form_group">
+					<div class="form_item fix hours_use">
+						<div class="item_content">
+							<div class="label">이용 시작 시간</div>
+							<div class="select" title="이용 시작 시간 : 시간">
+                                <button type="button" class="btn_select">시간</button>
+                            </div>
+						</div>
+						<div class="bar"></div>
+						<div class="item_content">
+							<div class="select" title="이용 시작 시간 : 분">
+                                <button type="button" class="btn_select">분</button>
+                            </div>
+						</div>
+					</div>
+                    <div class="select_inline full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" title="00시">00시</a></li>
+                            <li><a href="#" role="button" title="01시">01시</a></li>
+                            <li><a href="#" role="button" title="02시">02시</a></li>
+                            <li><a href="#" role="button" title="03시">03시</a></li>
+                            <li><a href="#" role="button" title="04시">04시</a></li>
+                            <li><a href="#" role="button" title="05시">05시</a></li>
+                            <li><a href="#" role="button" title="06시">06시</a></li>
+                            <li><a href="#" role="button" title="07시">07시</a></li>
+                            <li><a href="#" role="button" title="08시">08시</a></li>
+                            <li><a href="#" role="button" title="09시">09시</a></li>
+                            <li><a href="#" role="button" title="10시">10시</a></li>
+                            <li><a href="#" role="button" title="11시">11시</a></li>
+                            <li><a href="#" role="button" title="12시">12시</a></li>
+                            <li><a href="#" role="button" title="13시">13시</a></li>
+                            <li><a href="#" role="button" title="14시">14시</a></li>
+                            <li><a href="#" role="button" title="15시">15시</a></li>
+                            <li><a href="#" role="button" title="16시">16시</a></li>
+                            <li><a href="#" role="button" title="17시">17시</a></li>
+                            <li><a href="#" role="button" title="18시">18시</a></li>
+                            <li><a href="#" role="button" title="19시">19시</a></li>
+                            <li><a href="#" role="button" title="20시">20시</a></li>
+                            <li><a href="#" role="button" title="21시">21시</a></li>
+                            <li><a href="#" role="button" title="22시">22시</a></li>
+                            <li><a href="#" role="button" title="23시">23시</a></li>
+                            <li><a href="#" role="button" title="24시">24시</a></li>
+                        </ul>
+                    </div>
+                    <div class="select_inline full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" title="00분">00분</a></li>
+                            <li><a href="#" role="button" title="01분">01분</a></li>
+                            <li><a href="#" role="button" title="02분">02분</a></li>
+                            <li><a href="#" role="button" title="03분">03분</a></li>
+                            <li><a href="#" role="button" title="04분">04분</a></li>
+                            <li><a href="#" role="button" title="05분">05분</a></li>
+                            <li><a href="#" role="button" title="06분">06분</a></li>
+                            <li><a href="#" role="button" title="07분">07분</a></li>
+                            <li><a href="#" role="button" title="08분">08분</a></li>
+                            <li><a href="#" role="button" title="09분">09분</a></li>
+                            <li><a href="#" role="button" title="10분">10분</a></li>
+                            <li><a href="#" role="button" title="11분">11분</a></li>
+                            <li><a href="#" role="button" title="12분">12분</a></li>
+                            <li><a href="#" role="button" title="13분">13분</a></li>
+                            <li><a href="#" role="button" title="14분">14분</a></li>
+                            <li><a href="#" role="button" title="15분">15분</a></li>
+                            <li><a href="#" role="button" title="16분">16분</a></li>
+                            <li><a href="#" role="button" title="17분">17분</a></li>
+                            <li><a href="#" role="button" title="18분">18분</a></li>
+                            <li><a href="#" role="button" title="19분">19분</a></li>
+                            <li><a href="#" role="button" title="20분">20분</a></li>
+                            <li><a href="#" role="button" title="21분">21분</a></li>
+                            <li><a href="#" role="button" title="22분">22분</a></li>
+                            <li><a href="#" role="button" title="23분">23분</a></li>
+                            <li><a href="#" role="button" title="24분">24분</a></li>
+                            <li><a href="#" role="button" title="25분">25분</a></li>
+                            <li><a href="#" role="button" title="26분">26분</a></li>
+                            <li><a href="#" role="button" title="27분">27분</a></li>
+                            <li><a href="#" role="button" title="28분">28분</a></li>
+                            <li><a href="#" role="button" title="29분">29분</a></li>
+                            <li><a href="#" role="button" title="30분">30분</a></li>
+                            <li><a href="#" role="button" title="31분">31분</a></li>
+                            <li><a href="#" role="button" title="32분">32분</a></li>
+                            <li><a href="#" role="button" title="33분">33분</a></li>
+                            <li><a href="#" role="button" title="34분">34분</a></li>
+                            <li><a href="#" role="button" title="35분">35분</a></li>
+                            <li><a href="#" role="button" title="36분">36분</a></li>
+                            <li><a href="#" role="button" title="37분">37분</a></li>
+                            <li><a href="#" role="button" title="38분">38분</a></li>
+                            <li><a href="#" role="button" title="39분">39분</a></li>
+                            <li><a href="#" role="button" title="40분">40분</a></li>
+                            <li><a href="#" role="button" title="41분">41분</a></li>
+                            <li><a href="#" role="button" title="42분">42분</a></li>
+                            <li><a href="#" role="button" title="43분">43분</a></li>
+                            <li><a href="#" role="button" title="44분">44분</a></li>
+                            <li><a href="#" role="button" title="45분">45분</a></li>
+                            <li><a href="#" role="button" title="46분">46분</a></li>
+                            <li><a href="#" role="button" title="47분">47분</a></li>
+                            <li><a href="#" role="button" title="48분">48분</a></li>
+                            <li><a href="#" role="button" title="49분">49분</a></li>
+                            <li><a href="#" role="button" title="50분">50분</a></li>
+                            <li><a href="#" role="button" title="51분">51분</a></li>
+                            <li><a href="#" role="button" title="52분">52분</a></li>
+                            <li><a href="#" role="button" title="53분">53분</a></li>
+                            <li><a href="#" role="button" title="54분">54분</a></li>
+                            <li><a href="#" role="button" title="55분">55분</a></li>
+                            <li><a href="#" role="button" title="56분">56분</a></li>
+                            <li><a href="#" role="button" title="57분">57분</a></li>
+                            <li><a href="#" role="button" title="58분">58분</a></li>
+                            <li><a href="#" role="button" title="59분">59분</a></li>
+                        </ul>
+                    </div>
+					<div class="form_error">필수 입력 사항입니다.</div>
+				</div>
+
+                <div class="form_group">
+					<div class="form_item fix hours_use">
+						<div class="item_content">
+							<div class="label">이용 시작 시간 readonly, disabled</div>
+							<div class="select" title="이용 시작 시간 : 시간">
+                                <button type="button" class="btn_select checked" readonly>04시</button>
+                            </div>
+						</div>
+						<div class="bar"></div>
+						<div class="item_content">
+							<div class="select" title="이용 시작 시간 : 분">
+                                <button type="button" class="btn_select" disabled>분</button>
+                            </div>
+						</div>
+					</div>
+                    <div class="select_inline full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" title="00시">00시</a></li>
+                            <li><a href="#" role="button" title="01시">01시</a></li>
+                            <li><a href="#" role="button" title="02시">02시</a></li>
+                            <li><a href="#" role="button" title="03시">03시</a></li>
+                            <li><a href="#" role="button" title="04시" class="on">04시</a></li>
+                            <li><a href="#" role="button" title="05시">05시</a></li>
+                            <li><a href="#" role="button" title="06시">06시</a></li>
+                            <li><a href="#" role="button" title="07시">07시</a></li>
+                            <li><a href="#" role="button" title="08시">08시</a></li>
+                            <li><a href="#" role="button" title="09시">09시</a></li>
+                            <li><a href="#" role="button" title="10시">10시</a></li>
+                            <li><a href="#" role="button" title="11시">11시</a></li>
+                            <li><a href="#" role="button" title="12시">12시</a></li>
+                            <li><a href="#" role="button" title="13시">13시</a></li>
+                            <li><a href="#" role="button" title="14시">14시</a></li>
+                            <li><a href="#" role="button" title="15시">15시</a></li>
+                            <li><a href="#" role="button" title="16시">16시</a></li>
+                            <li><a href="#" role="button" title="17시">17시</a></li>
+                            <li><a href="#" role="button" title="18시">18시</a></li>
+                            <li><a href="#" role="button" title="19시">19시</a></li>
+                            <li><a href="#" role="button" title="20시">20시</a></li>
+                            <li><a href="#" role="button" title="21시">21시</a></li>
+                            <li><a href="#" role="button" title="22시">22시</a></li>
+                            <li><a href="#" role="button" title="23시">23시</a></li>
+                            <li><a href="#" role="button" title="24시">24시</a></li>
+                        </ul>
+                    </div>
+                    <div class="select_inline full">
+                        <ul class="droptype_btn_wrap">
+                            <li><a href="#" role="button" title="00분">00분</a></li>
+                            <li><a href="#" role="button" title="01분">01분</a></li>
+                            <li><a href="#" role="button" title="02분">02분</a></li>
+                            <li><a href="#" role="button" title="03분">03분</a></li>
+                            <li><a href="#" role="button" title="04분">04분</a></li>
+                            <li><a href="#" role="button" title="05분">05분</a></li>
+                            <li><a href="#" role="button" title="06분">06분</a></li>
+                            <li><a href="#" role="button" title="07분">07분</a></li>
+                            <li><a href="#" role="button" title="08분">08분</a></li>
+                            <li><a href="#" role="button" title="09분">09분</a></li>
+                            <li><a href="#" role="button" title="10분">10분</a></li>
+                            <li><a href="#" role="button" title="11분">11분</a></li>
+                            <li><a href="#" role="button" title="12분">12분</a></li>
+                            <li><a href="#" role="button" title="13분">13분</a></li>
+                            <li><a href="#" role="button" title="14분">14분</a></li>
+                            <li><a href="#" role="button" title="15분">15분</a></li>
+                            <li><a href="#" role="button" title="16분">16분</a></li>
+                            <li><a href="#" role="button" title="17분">17분</a></li>
+                            <li><a href="#" role="button" title="18분">18분</a></li>
+                            <li><a href="#" role="button" title="19분">19분</a></li>
+                            <li><a href="#" role="button" title="20분">20분</a></li>
+                            <li><a href="#" role="button" title="21분">21분</a></li>
+                            <li><a href="#" role="button" title="22분">22분</a></li>
+                            <li><a href="#" role="button" title="23분">23분</a></li>
+                            <li><a href="#" role="button" title="24분">24분</a></li>
+                            <li><a href="#" role="button" title="25분">25분</a></li>
+                            <li><a href="#" role="button" title="26분">26분</a></li>
+                            <li><a href="#" role="button" title="27분">27분</a></li>
+                            <li><a href="#" role="button" title="28분">28분</a></li>
+                            <li><a href="#" role="button" title="29분">29분</a></li>
+                            <li><a href="#" role="button" title="30분">30분</a></li>
+                            <li><a href="#" role="button" title="31분">31분</a></li>
+                            <li><a href="#" role="button" title="32분">32분</a></li>
+                            <li><a href="#" role="button" title="33분">33분</a></li>
+                            <li><a href="#" role="button" title="34분">34분</a></li>
+                            <li><a href="#" role="button" title="35분">35분</a></li>
+                            <li><a href="#" role="button" title="36분">36분</a></li>
+                            <li><a href="#" role="button" title="37분">37분</a></li>
+                            <li><a href="#" role="button" title="38분">38분</a></li>
+                            <li><a href="#" role="button" title="39분">39분</a></li>
+                            <li><a href="#" role="button" title="40분">40분</a></li>
+                            <li><a href="#" role="button" title="41분">41분</a></li>
+                            <li><a href="#" role="button" title="42분">42분</a></li>
+                            <li><a href="#" role="button" title="43분">43분</a></li>
+                            <li><a href="#" role="button" title="44분">44분</a></li>
+                            <li><a href="#" role="button" title="45분">45분</a></li>
+                            <li><a href="#" role="button" title="46분">46분</a></li>
+                            <li><a href="#" role="button" title="47분">47분</a></li>
+                            <li><a href="#" role="button" title="48분">48분</a></li>
+                            <li><a href="#" role="button" title="49분">49분</a></li>
+                            <li><a href="#" role="button" title="50분">50분</a></li>
+                            <li><a href="#" role="button" title="51분">51분</a></li>
+                            <li><a href="#" role="button" title="52분">52분</a></li>
+                            <li><a href="#" role="button" title="53분">53분</a></li>
+                            <li><a href="#" role="button" title="54분">54분</a></li>
+                            <li><a href="#" role="button" title="55분">55분</a></li>
+                            <li><a href="#" role="button" title="56분">56분</a></li>
+                            <li><a href="#" role="button" title="57분">57분</a></li>
+                            <li><a href="#" role="button" title="58분">58분</a></li>
+                            <li><a href="#" role="button" title="59분">59분</a></li>
+                        </ul>
+                    </div>
+					<div class="form_error">필수 입력 사항입니다.</div>
+				</div>
+
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">Select box for popup</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="select">
+                            <select>
+                                <option value="all">직접입력</option>
+                                <option value="option1">naver.com</option>
+                                <option value="option2">hotmail.com</option>
+                                <option value="option3">daum.net</option>
+                                <option value="option4">nate.com</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="select type2">
+                            <select>
+                                <option value="all">직접입력</option>
+                                <option value="option1">naver.com</option>
+                                <option value="option2">hotmail.com</option>
+                                <option value="option3">daum.net</option>
+                                <option value="option4">nate.com</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+		<!-- //select box -->
+
+		<!-- textarea -->
+        <h2 class="title">Textarea</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="textarea">
+                            <textarea placeholder="내용 입력"></textarea>
+                        </div>
+                        <div class="textarea_info">
+                            <div class="lt">
+                                <em class="curr on">3</em>
+                                <span class="limit">200</span>
+                            </div>
+                            <div class="rt">
+                                <button type="button" class="btn_reset">입력 내용 초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+		<!-- //textarea -->
+
+
+        <!-- checkbox -->
+		<h2 class="title">Checkbox</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group">
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox11" name="checkType1">
+                        <label for="checkbox11" class="label">
+                            <span>항목 Basic</span>
+                            <span class="label_txt">추가 설명 있는 경우</span>
+                        </label>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox12" name="checkType1" checked>
+                        <label for="checkbox12" class="label"><span>항목 Checked</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox13" name="checkType1" disabled>
+                        <label for="checkbox13" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox14" name="checkType1" checked disabled>
+                        <label for="checkbox14" class="label"><span>항목 Checked Disabled</span></label>
+                    </span>
+                    <span class="form_check alone">
+                        <input type="checkbox" id="checkbox15" name="checkType1">
+                        <label for="checkbox15" class="label"><span class="hidden">선택</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group row">
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox21" name="checkType2">
+                        <label for="checkbox21" class="label"><span>항목 Basic</span></label>
+                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox22" name="checkType2" checked>
+                        <label for="checkbox22" class="label"><span>항목 Checked</span></label>
+                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox23" name="checkType2" disabled>
+                        <label for="checkbox23" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="checkbox" id="checkbox24" name="checkType2" checked disabled>
+                        <label for="checkbox24" class="label"><span>항목 Checked Disabled</span></label>
+                    </span>
+                    <span class="form_check alone">
+                        <input type="checkbox" id="checkbox25" name="checkType2">
+                        <label for="checkbox25" class="label"><span class="hidden">선택</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group row">
+                    <span class="form_check sub_type">
+                        <input type="checkbox" id="checkbox26" name="checkType2">
+                        <label for="checkbox26" class="label"><span>항목 Basic</span></label>
+                    </span>
+                    <span class="form_check sub_type">
+                        <input type="checkbox" id="checkbox27" name="checkType2" checked>
+                        <label for="checkbox27" class="label"><span>항목 Checked</span></label>
+                    </span>
+                    <span class="form_check sub_type">
+                        <input type="checkbox" id="checkbox28" name="checkType2" disabled>
+                        <label for="checkbox28" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check sub_type">
+                        <input type="checkbox" id="checkbox29" name="checkType2" checked disabled>
+                        <label for="checkbox29" class="label"><span>항목 Checked Disabled</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+        <!-- //checkbox -->
+        <!-- Radio -->
+		<h2 class="title">Radio</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group">
+                    <span class="form_check">
+                        <input type="radio" id="radio11" name="radioType1">
+                        <label for="radio11" class="label"><span>항목 Basic</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio12" name="radioType1" checked>
+                        <label for="radio12" class="label"><span>항목 Checked</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio13" name="radioType1" disabled>
+                        <label for="radio13" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check alone">
+                        <input type="radio" id="radio14" name="radioType1">
+                        <label for="radio14" class="label"><span class="hidden">선택</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group row">
+                    <span class="form_check">
+                        <input type="radio" id="radio21" name="radioType2">
+                        <label for="radio21" class="label"><span>항목 Basic</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio22" name="radioType2" disabled>
+                        <label for="radio22" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="radio23" name="radioType2" checked disabled>
+                        <label for="radio23" class="label"><span>항목 Checked Disabled</span></label>
+                    </span>
+                    <span class="form_check alone">
+                        <input type="radio" id="radio24" name="radioType2">
+                        <label for="radio24" class="label"><span class="hidden">선택</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group row">
+                    <span class="form_check box_type">
+                        <input type="radio" id="radio25" name="radioType2">
+                        <label for="radio25" class="label"><span>항목 Basic</span></label>
+                    </span>
+                    <span class="form_check box_type">
+                        <input type="radio" id="radio26" name="radioType2" disabled>
+                        <label for="radio26" class="label"><span>항목 Disabled</span></label>
+                    </span>
+                    <span class="form_check box_type">
+                        <input type="radio" id="radio27" name="radioType2" checked disabled>
+                        <label for="radio27" class="label"><span>항목 Checked Disabled</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="form_group small_radio">
+                    <span class="form_check">
+                        <input type="radio" id="MWLG08_2_1" name="MWLG08_2" checked>
+                        <label for="MWLG08_2_1" class="label"><span>KB국민은행</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="MWLG08_2_2" name="MWLG08_2">
+                        <label for="MWLG08_2_2" class="label"><span>KB금융그룹</span></label>
+                    </span>
+                    <span class="form_check">
+                        <input type="radio" id="MWLG08_2_3" name="MWLG08_2">
+                        <label for="MWLG08_2_3" class="label"><span>선택없음</span></label>
+                    </span>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+        <!-- //Radio -->
+
+        
+        
+
+		<h2 class="title">Switch Checkbox</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+
+                <span class="switch_item type1">
+                    <input type="checkbox" id="switch1">
+                    <label for="switch1"><span class="blind">비활성화</span></label>
+                </span>
+                <span class="switch_item type1">
+                    <input type="checkbox" id="switch2" checked>
+                    <label for="switch2"><span class="blind">활성화</span></label>
+                </span>
+
+                <span class="switch_item type1">
+                    <input type="checkbox" id="switch3" disabled>
+                    <label for="switch3"><span class="blind">비활성화</span></label>
+                </span>
+
+                <span class="switch_item type1">
+                    <input type="checkbox" id="switch4" checked disabled>
+                    <label for="switch4"><span class="blind">활성화</span></label>
+                </span>
+
+            </div>
+            <div class="sample">
+
+                <span class="switch_item type2">
+                    <span class="txt">네이버</span>
+                    <input type="checkbox" id="switch2_1">
+                    <label for="switch2_1"><span class="blind">비활성화</span></label>
+                </span>
+                <span class="switch_item type2">
+                    <span class="txt">네이버</span>
+                    <input type="checkbox" id="switch2_2" checked>
+                    <label for="switch2_2"><span class="blind">활성화</span></label>
+                </span>
+
+                <span class="switch_item type2">
+                    <span class="txt">카카오톡</span>
+                    <input type="checkbox" id="switch2_3" disabled>
+                    <label for="switch2_3"><span class="blind">비활성화</span></label>
+                </span>
+
+                <span class="switch_item type2">
+                    <span class="txt">카카오톡</span>
+                    <input type="checkbox" id="switch2_4" checked disabled>
+                    <label for="switch2_4"><span class="blind">활성화</span></label>
+                </span>
+            </div>
+            <div class="sample">
+
+                <span class="switch_item type3">
+                    <input type="checkbox" id="switch3_1">
+                    <label for="switch3_1"><span class="blind">비활성화</span></label>
+                </span>
+                <span class="switch_item type3">
+                    <input type="checkbox" id="switch3_2" checked>
+                    <label for="switch3_2"><span class="blind">활성화</span></label>
+                </span>
+
+                <span class="switch_item type3">
+                    <input type="checkbox" id="switch3_3" disabled>
+                    <label for="switch3_3"><span class="blind">비활성화</span></label>
+                </span>
+
+                <span class="switch_item type3">
+                    <input type="checkbox" id="switch3_4" checked disabled>
+                    <label for="switch3_4"><span class="blind">활성화</span></label>
+                </span>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 약관동의 -->
+        <h2 class="title">약관동의</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                <div class="section">
+
+                    <div class="check_group border on">
+                        <div class="check_item basic mid">
+                            <input type="checkbox" id="agree_all" checked>
+                            <label for="agree_all" class="label"><span>약관에 모두 동의합니다.</span></label>
+                        </div>
+                    </div>
+                    <p class="check_alert">모든 필수 약관에 동의해 주세요.</p>
+                    
+                    <div class="check_group border">
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree1">
+                            <label for="agree1" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree2">
+                            <label for="agree2" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="check_group border">
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree3">
+                            <label for="agree3" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                        <div class="check_sub_group">
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_1" name="agree1">
+                                <label for="agree1_1" class="label"><span>고유 식별정보 수집·이용 동의</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_2" name="agree1">
+                                <label for="agree1_2" class="label"><span>민감정보 수집·이용 동의</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                            <div class="check_item sub">
+                                <input type="checkbox" id="agree1_3" name="agree1">
+                                <label for="agree1_3" class="label"><span>개인정보 수집·이용 동의</span></label>
+                                <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                            </div>
+                        </div>
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree4">
+                            <label for="agree4" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                        <div class="term_group">
+                            <div class="term_item">
+                                1. 최근 대출업자, SNS 등을 통해 이동전화 개통시 자금을 제공해주겠다고 권유한 후, 개통된 휴대폰 / 유심을 대출 사기, 보이스피싱 조직에 유통하는 등 악용하는 사례가 다수 적발되고 있습니다.<br>이러한 제3자에게 본인명의의 휴대폰, 유심을 개 최근 대출업자, SNS 등을 통해 이동전화 개통시 자금을 제공해주겠다고 권유한 후, 개통된 휴대폰 / 유심을 대출 사기, 보이스피싱 조직에 유통하는 등 악용하는 사례가 다수 적발되고 있습니다.<br>최근 대출업자, SNS 등을 통해 이동전화 개통시 자금을 제공해주겠다고 권유한 후, 개통된 휴대폰 / 유심을 대출 사기, 보이스피싱 조직에 유통하는 등 악용하는 사례가 다수 적발되고 있습니다.최근 대출업자, SNS 등을 통해 이동전화 개통시 자금을 제공해주겠다고 권유한 후, 개통된 휴대폰 / 유심을 대출 사기, 보이스피싱 조직에 유통하는 등 악용하는 사례가 다수 적발되고 있습니다.<br>최근 대출업자, SNS 등을 통해 이동전화 개통시 자금을 제공해주겠다고 권유한 후, 개통된 휴대폰 / 유심을 대출 사기, 보이스피싱 조직에 유통하는 등 악용하는 사례가 다수 적발되고 있습니다.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section">
+                    <div class="check_group">
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree1">
+                            <label for="agree1" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree2">
+                            <label for="agree2" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="check_group">
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree1">
+                            <label for="agree1" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                        <div class="check_item basic">
+                            <input type="checkbox" id="agree2">
+                            <label for="agree2" class="label"><span>이동통신단말기분실보험 약관 <strong>[필수]</strong></span></label>
+                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- 약관 동의 + 아코디언 -->
+        <h2 class="title">약관 동의 + 아코디언 (.agree_acco)</h2>
+        <div class="box_wrap_ia">
+            <div class="sample">
+                
+                <div class="section agree_acco">
+
+                    <div class="check_group">
+                        <div class="check_item basic mid">
+                            <input type="checkbox" id="agreeAll">
+                            <label for="agreeAll" class="label"><span>약관에 모두 동의합니다. <strong>[선택 포함]</strong></span></label>
+                        </div>
+                    </div>
+                    <p class="check_alert">모든 필수 약관에 동의해 주세요.</p>
+
+                    <ul class="list_acc js_accordion">
+                        <li class="on">
+                            <div class="title btn_type">
+                                <div class="check_group">
+                                    <div class="check_item basic mid">
+                                        <input type="checkbox" id="agree_acco_all">
+                                        <label for="agree_acco_all" class="label"><span>계약 체결∙이행을 위한 상세 동의서 <strong>(필수)</strong></span></label>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_acc" aria-expanded="true"></button>
+                            </div>
+                            <div class="content_panel" role="region">
+
+                                <div class="check_group">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="acco_agree1" name="acco_agree1">
+                                        <label for="acco_agree1" class="label"><span>개인(신용)정보 수집·이용에 관한 사항 <strong>(필수)</strong></span></label>
+                                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree1_1" name="acco_agree1">
+                                            <label for="acco_agree1_1" class="label"><span>고유 식별정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree1_2" name="acco_agree1">
+                                            <label for="acco_agree1_2" class="label"><span>민감정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree1_3" name="acco_agree1">
+                                            <label for="acco_agree1_3" class="label"><span>개인정보 수집·이용 동의</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="check_group">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="acco_agree2" name="acco_agree2">
+                                        <label for="acco_agree2" class="label"><span>개인(신용)정보 수집·이용에 관한 사항 <strong>(필수)</strong></span></label>
+                                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree2_1" name="acco_agree2">
+                                            <label for="acco_agree2_1" class="label"><span>고유 식별정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree2_2" name="acco_agree2">
+                                            <label for="acco_agree2_2" class="label"><span>민감정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree2_3" name="acco_agree2">
+                                            <label for="acco_agree2_3" class="label"><span>개인정보 수집·이용 동의</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="check_group">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="acco_agree3" name="acco_agree3">
+                                        <label for="acco_agree3" class="label"><span>개인(신용)정보 수집·이용에 관한 사항 <strong>(필수)</strong></span></label>
+                                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree3_1" name="acco_agree3">
+                                            <label for="acco_agree3_1" class="label"><span>고유 식별정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree3_2" name="acco_agree3">
+                                            <label for="acco_agree3_2" class="label"><span>민감정보 수집·이용 동의</span></label>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_agree3_3" name="acco_agree3">
+                                            <label for="acco_agree3_3" class="label"><span>개인정보 수집·이용 동의</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title btn_type">
+
+                                <div class="check_group">
+                                    <div class="check_item basic mid">
+                                        <input type="checkbox" id="acco_choice_all">
+                                        <label for="acco_choice_all" class="label"><span>상품 소개를 위한 상세 동의서 <strong>(선택)</strong></span></label>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_acc" aria-expanded="false"></button>
+                            </div>
+                            <div class="content_panel" role="region">
+
+                                <div class="check_group">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="acco_choice1" name="acco_choice1">
+                                        <label for="acco_choice1" class="label"><span>수집·이용에 관한 사항 <strong>(선택)</strong></span></label>
+                                        <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="graph">
+                                            <span class="on">안심</span>
+                                            <span>다소안심</span>
+                                            <span>보통</span>
+                                            <span>신중</span>
+                                            <span>주의</span>
+                                        </div>
+                                        
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_choice1_1" name="acco_choice1">
+                                            <label for="acco_choice1_1" class="label"><span>수집·이용 동의</span></label>
+                                        </div>
+
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_choice1_2" name="acco_choice1">
+                                            <label for="acco_choice1_2" class="label"><span>정보 보유·이용 기간</span></label>
+                                        </div>
+
+                                        <div class="radio_group col">
+                                            <div class="radio_item box_fit">
+                                                <input type="radio" id="year1" name="boxRadio" checked>
+                                                <label for="year1" class="label">1년</label>
+                                            </div>
+                                            <div class="radio_item box_fit">
+                                                <input type="radio" id="year2" name="boxRadio">
+                                                <label for="year2" class="label">2년</label>
+                                            </div>
+                                            <div class="radio_item box_fit">
+                                                <input type="radio" id="year3" name="boxRadio">
+                                                <label for="year3" class="label">3년</label>
+                                            </div>
+                                            <div class="radio_item box_fit">
+                                                <input type="radio" id="year4" name="boxRadio">
+                                                <label for="year4" class="label">4년</label>
+                                            </div>
+                                            <div class="radio_item box_fit">
+                                                <input type="radio" id="year5" name="boxRadio">
+                                                <label for="year5" class="label">5년</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="acco_choice1_3" name="acco_choice1">
+                                            <label for="acco_choice1_3" class="label"><span>광고성 정보 수신 동의</span></label>
+                                        </div>
+                                        <div class="check_group col">
+                                            <div class="check_item boxbull_type">
+                                                <input type="checkbox" id="boxChk1" class="all_chk" name="boxCheck">
+                                                <label for="boxChk1" class="label">전체</label>
+                                            </div>
+                                            <div class="check_item boxbull_type">
+                                                <input type="checkbox" id="boxChk2" class="sub_chk" name="boxCheck" checked>
+                                                <label for="boxChk2" class="label">문자</label>
+                                            </div>
+                                            <div class="check_item boxbull_type">
+                                                <input type="checkbox" id="boxChk3" class="sub_chk" name="boxCheck">
+                                                <label for="boxChk3" class="label">이메일</label>
+                                            </div>
+                                            <div class="check_item boxbull_type">
+                                                <input type="checkbox" id="boxChk4" class="sub_chk" name="boxCheck">
+                                                <label for="boxChk4" class="label">DM</label>
+                                            </div>
+                                            <div class="check_item boxbull_type">
+                                                <input type="checkbox" id="boxChk5" class="sub_chk" name="boxCheck">
+                                                <label for="boxChk5" class="label">전화 (ARS)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="code">
+                <div class="btn_area">
+                    <a href="#none" class="btn_copy">Copy</a>
+                    <a href="#none" class="btn_code">Open</a>
+                </div>
+                <div class="view_area">
+                    <pre>template</pre>
+                </div>
+            </div>
+        </div>
+		<!-- //select box -->
+
+    
+	</div>
+
+    <!-- 메일 선택 팝업 -->
+    <div id="email_html" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" title="직접입력">직접입력</a></li>
+                        <li><a href="#none" role="button" title="naver.com">naver.com</a></li>
+                        <li><a href="#none" role="button" title="daum.net">daum.net</a></li>
+                        <li><a href="#none" role="button" title="nate.com">nate.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">적용</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 메일 선택 팝업 -->
+
+
+<script>
+    $(()=>{
+        
+        // 메일 선택 팝업
+        $(document).on("click", "#btn_email", function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"메일사 선택",
+                content:'#email_html',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+        // 시작일, 종료일
+        let btn_start = $(document).find("#start_date").parents(".item_content").find(".btn_type");
+        let btn_end = $(document).find("#end_date").parents(".item_content").find(".btn_type");
+        btn_start.on("click", function(){
+            _calendar.open( 'start_cal', 'start_date', '');
+        });
+        btn_end.on("click", function(){
+            _calendar.open( 'end_cal', 'end_date', '');
+        });
+        
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">KB Liiv M 요금제</h1> <!-- 2023.01.17 타이틀 추가 -->
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">
+                        KB Liiv M 요금제
+                    </h2>
+                </div>
+
+                <div class="section rateplan_prod_fixed">
+                    <div class="rateplan_prod_fixed_inner"> <!-- 03/07 수정 <div class="rateplan_prod_fixed_inner"> -->
+                        <div class="rateplan_prod_wrap">
+                            <!-- 2023.01.26 태그 # 제거 -->
+                            <!-- 2023.01.20 태그 기획 수정요청 처리 -->
+                            <div class="rateplan_prod oneline">
+                                <button type="button" id="btnUserFilter" class="user_filter">필터</button>
+                                <button type="button">최저가 </button>
+                                <button type="button" class="on">직업할인</button> <!-- 2023.01.31 활성화 추가 class="on" -->
+                                <button type="button">KB적금</button>
+                                <button type="button">데이터실속</button>
+                                <button type="button">이벤트</button>
+                                <button type="button">주니어 </button>
+                                <button type="button">골든라이프 </button>
+                                <button type="button">SKT</button>
+                                <button type="button">워치</button>
+                                <button type="button">태블릿</button>
+                                <button type="button">데이터나눠쓰기</button>
+                                <button type="button">가성비 UP 데이터 무제한</button>
+                            </div>
+                            <!-- //2023.01.20 태그 기획 수정요청 처리 -->
+                            <!-- //2023.01.26 태그 # 제거 -->
+                            <button type="button" class="btn_reteplan_prod"><span class="blind">요금제 더보기</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="rateplan_ct">
+
+                        <div class="rat_top_info">
+                            <p>총 <em>23</em>개</p>
+                            <div class="select_right">
+                                <div class="form_group">
+                                    <div class="form_item fix">
+                                        <div class="item_content">
+                                            <div class="select" title="정렬 순서">
+                                                <button type="button" id="btn_select" class="btn_select">인기순</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <select title="정렬 순서">
+                                    <option>인기순</option>
+                                    <option>추천순</option>
+                                    <option>가격 높은 순</option>
+                                    <option>가격 낮은 순</option>
+                                    <option>데이터 높은 순</option>
+                                    <option>데이터 낮은 순</option>
+                                </select> -->
+                            </div>
+                        </div>
+
+                        <!-- 2023.01.25 카드 리스트 A 태그 추가 -->
+                        <div> <!-- 03/07 수정 class="card_select_wrap" 삭제 -->
+                            <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
+                                <a href="#">
+                                    <div class="item_main">
+                                        <div class="lt">
+                                            <div class="badge_group">
+                                                <span class="badge blue_light">LTE</span>
+                                                <span class="badge pink_light">LG U+</span>
+                                            </div>
+                                            <span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+                                        </div>
+                                        <div class="rt">
+                                            <span class="item_price_sub">기본료 월 29,900원</span>
+                                            <span class="item_price">월<strong>24,800원</strong></span>
+                                            <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info_list">
+                                        <ul class="item_info">
+                                            <li><i class="icon icon_data"></i><span>월11GB+일2GB+3Mbps</span></li>
+                                            <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                            <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
+                                <a href="#">
+                                    <div class="item_main">
+                                        <div class="lt">
+                                            <div class="badge_group">
+                                                <span class="badge blue_light">LTE</span>
+                                                <span class="badge pink_light">LG U+</span>
+                                            </div>
+                                            <span class="item_tit">주니어LTE 1GB (안심차단)(LGU+망)</span>
+                                        </div>
+                                        <div class="rt">
+                                            <span class="item_price_sub">기본료 월 29,900원</span>
+                                            <span class="item_price">월<strong>24,800원</strong></span>
+                                            <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info_list">
+                                        <ul class="item_info">
+                                            <li><i class="icon icon_data"></i><span>월1GB</span></li>
+                                            <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                            <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
+                                <a href="#">
+                                    <div class="item_main">
+                                        <div class="lt">
+                                            <div class="badge_group">
+                                                <span class="badge blue_light">LTE</span>
+                                                <span class="badge pink_light">LG U+</span>
+                                            </div>
+                                            <span class="item_tit">LTE든든무제한 1GB+</span>
+                                        </div>
+                                        <div class="rt">
+                                            <span class="item_price_sub">기본료 월 29,900원</span>
+                                            <span class="item_price">월<strong>24,800원</strong></span>
+                                            <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info_list">
+                                        <ul class="item_info">
+                                            <li><i class="icon icon_data"></i><span>월1GB</span></li>
+                                            <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                            <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
+                                <a href="#">
+                                    <div class="item_main">
+                                        <div class="lt">
+                                            <div class="badge_group">
+                                                <span class="badge blue_light">LTE</span>
+                                                <span class="badge pink_light">LG U+</span>
+                                            </div>
+                                            <span class="item_tit">데이터같이쓰기 240분 (안심차단)(KT망)</span>
+                                        </div>
+                                        <div class="rt">
+                                            <span class="item_price_sub">기본료 월 29,900원</span>
+                                            <span class="item_price">월<strong>24,800원</strong></span>
+                                            <span class="item_price_txt">최대할인 적용 시(VAT포함)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info_list">
+                                        <ul class="item_info">
+                                            <li><i class="icon icon_data"></i><span>월1GB</span></li>
+                                            <li><i class="icon icon_call"></i><span>기본제공</span></li>
+                                            <li><i class="icon icon_msg"></i><span>기본제공</span></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- //2023.01.25 카드 리스트 A 태그 추가 -->
+
+                        <!-- no data -->
+                        <div class="card_nodata">
+                            <p>선택한 조건에 맞는 요금제가 없어요.<br>
+                            다시 선택해 주세요.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="btm_fixed_item rateplan_help">
+                    <a href="#" target="blank" title="클릭하시면 요금제 진단하기 페이지가 새창으로 열립니다." id="aa">
+                        <p>어떤 요금제를 선택해야 할지 어려우신가요?</p>
+                    </a>
+                    <script>
+                        // test
+                        $(document).on('click','#aa',function(){
+                            if(!$(this).parent('.rateplan_help').hasClass('mini')){
+                                console.log('event');
+                            }else{
+                                $(this).parent('.rateplan_help').removeClass('mini');
+                                console.log('removeClass');
+                            }
+                        });
+                    </script>
+                </div>
+                
+                <!-- 삭제예정 -->
+                <!-- <div class="box_banner_wrap">
+                    <div class="box_banner purple icon_type">
+                        <div class="box_banner_in">
+                            <div class="banner_txt_wrap">
+                                <p>
+                                    <strong>어떤 요금제를 선택해야 할지 어려우신가요?</strong>
+                                </p>
+                            </div>
+                            <i class="icon icon_rfloting_off"></i>
+                        </div>
+                        <div class="rfloting_wrap">
+                            <button type="button" class="btn_icon_rfloting"><i class="icon icon_rfloting_on"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<!-- layer : select bottom sheet -->
+<div id="RTLV0101" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li><a href="#none" role="button" title="인기순">인기순</a></li>
+                    <li><a href="#none" role="button" title="추천순">추천순</a></li>
+                    <li><a href="#none" role="button" title="가격 높은 순">가격 높은 순</a></li>
+                    <li><a href="#none" role="button" title="가격 낮은 순">가격 낮은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 높은 순">데이터 높은 순</a></li>
+                    <li><a href="#none" role="button" title="데이터 낮은 순">데이터 낮은 순</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+<!-- layer : select bottom sheet -->
+
+<script>
+
+    // 정렬 선택 팝업
+    $(document).off("click", ".btn_select").on("click", ".btn_select", function(){
+        $.ohyLayer({
+            title:"정렬",
+            content:'#RTLV0101',
+            type:'bottom',
+            dimAct:true,
+        });
+    })
+    
+    // $(window).scroll(function(){
+    //     let cscrollStart = $(document).scrollTop();
+
+    //     if(cscrollStart > 10 && !$('.box_banner.purple.icon_type').hasClass('on')){
+    //         $('.box_banner.purple.icon_type').addClass('on');
+    //         $('.box_banner.purple.icon_type .box_banner_in').animate({
+    //                 opacity:0
+    //             }, 100,'easeOutCubic',function(){
+    //                 $(this).hide();
+    //             });
+    //         $('.box_banner.purple.icon_type').animate({
+    //                 padding:0,
+    //                 borderRadius:'100%',
+    //                 width:'4.8rem',
+    //                 height:'4.8rem'
+    //             }, 500,'easeOutCubic');
+    //         $('.box_banner_wrap').animate({
+    //             right:'2rem',
+    //             bottom:'2rem',
+    //             width:'4.8rem',
+    //             // height:'4.8rem',
+    //             borderRadius:'100%',
+    //             padding:0
+    //         });
+    //         $('.box_banner.purple.icon_type').css('position','relative');
+    //         $('.box_banner.purple.icon_type .rfloting_wrap').fadeIn(1000);
+    //     }
+    // });
+
+    // 필터 fixed
+    /* 03/07 수정 */
+    // const ratFixedTop = $('.rateplan_prod_fixed').offset().top - $('.rateplan_prod_fixed').outerHeight() - $('.tit_sub_wrap').outerHeight();
+
+    $(window).scroll(function(){
+        let cscrollStart = $(document).scrollTop();
+        let ratFixedTop = $('.rateplan_prod_fixed').offset().top - $('.header .inner_sub').outerHeight();
+        
+        if(cscrollStart > ratFixedTop){
+            let csHeight = $('.rateplan_prod_fixed_inner').innerHeight();
+            let csTop = $('.header .inner_sub').outerHeight();
+            $('.rateplan_prod_fixed').css('height', csHeight).addClass('on');
+            $('.rateplan_prod_fixed_inner').css('top', csTop);
+        }else{
+            $('.rateplan_prod_fixed').removeAttr('style').removeClass('on');
+            $('.rateplan_prod_fixed_inner').removeAttr('style');
+        }
+    });
+    /* // 03/07 수정 */
+
+    // 해시태그 버튼 활성화 셈플
+    $(document).on('click','.rateplan_prod button:not(.user_filter)',function(){
+        if(!$(this).hasClass('on')){
+            $(this).siblings().removeClass('on');
+            $(this).addClass('on');
+        }else{
+            $(this).removeClass('on');
+        }
+    });
+    
+    // 요금제 버튼 더보기
+    $(document).on('click','.btn_reteplan_prod',function(){
+        if(!$(this).hasClass('on')){
+            $(this).addClass('on');
+            $('.rateplan_prod').removeClass('oneline').css({
+                height:'auto'
+            });
+        }else{
+            $(this).removeClass('on');
+            $('.rateplan_prod').addClass('oneline').attr('style','')
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+
+    <style>
+        .ia_input_wrap .form_group {margin-top:3.2rem;}
+        .ia_input_wrap .form_group + .form_group {margin-top:1.2rem;}
+
+        .ia_form_input_structure {margin-top:1.2rem;}
+        .ia_form_input_structure div {padding:1rem; background:rgba(0,0,0, 0.1);}
+        .ia_form_input_structure p {font-size:1.2rem; line-height:1.4;}
+    </style>
+</head>
+<body>
+    <div class="wrap ia_input_wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="detail" 필요없음 -->
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+
+                <h1 class="title hidden">form - input</h1>
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">form - input</h2>
+                </div>
+
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">기본 input</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item req fix">
+                            <div class="item_content">
+                                <div class="label">레이블명</div>
+                                <div class="input">
+                                    <input type="text" placeholder="힌트텍스트" id="test">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item req fix">
+                            <div class="item_content">
+                                <div class="label">수정 불가시</div>
+                                <div class="input">
+                                    <input type="text" placeholder="readonly" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item req fix">
+                            <div class="item_content">
+                                <div class="label">수정 불가시</div>
+                                <div class="input">
+                                    <input type="text" placeholder="disabled" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">상황 별 input</h3>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">label fix</div>
+                                <div class="input">
+                                    <input type="text" placeholder="레이블 fix">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item">
+                            <div class="item_content">
+                                <div class="label">label animation</div>
+                                <div class="input">
+                                    <input type="text" placeholder="input focus 시 label animation 발생">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="txt_alert">input focus 시 label animation 발생한다.</p>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item">
+                            <div class="item_content done">
+                                <div class="label">value 값이 입력되어 있는 상태</div>
+                                <div class="input">
+                                    <input type="text" placeholder="이름 입력" value="김리브">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="txt_alert">value를 가지고 있는 input에는 .item_content.done 클래스를 적용한다.</p>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item req fix error">
+                            <div class="item_content error">
+                                <div class="label">에러문구 노출 시</div>
+                                <div class="input">
+                                    <input type="text" placeholder="이름을 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error">에러문구 영역입니다.</div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">label 우측 버튼</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="info"><button type="button" class="btn_text">유심 정보 확인방법</button></div>
+                                <div class="label">유심일련번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="유심일련번호를 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">비밀번호</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">비밀번호 입력</div>
+                                <div class="input">
+                                    <input type="password" placeholder="비밀번호 입력">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">주민등록번호</h3>
+                    </div>
+
+                    <!-- 주민번호 -->
+                    <div class="form_group">
+                        <div class="form_item fix jumin req">
+                            <div class="item_content">
+                                <div class="label">주민등록번호</div>
+                                <div class="input">
+                                    <input type="text" maxlength="6" placeholder="주민등록번호 앞자리" >
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">카드번호</h3>
+                    </div>
+
+                    <!-- 카드번호 -->
+                    <!-- 컨펌전 -->
+                    <div class="form_group ">
+                        <div class="form_item card_type fix">
+                            <div class="item_content">
+                                <div class="label">카드번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 첫번째" class="focus">
+                                </div>
+                            </div>
+                            
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 두번째" class="focus">
+                                </div>
+                            </div>
+
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 세번째" class="focus">
+                                </div>
+                            </div>
+
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="카드번호 네번째" class="focus">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>    
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">이메일</h3>
+                    </div>
+
+                    <div class="form_group email">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">이메일</div>
+                                <div class="input">
+                                    <input type="text" placeholder="이메일">
+                                </div>
+                            </div>
+                            <div class="email_col">@</div>
+                            <div class="item_content">
+                                <div class="select" title="메일사 선택">
+                                    <button type="button" id="btn_email" class="btn_select">전체</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                    <!-- 면허번호 -->
+                    <div class="form_group">
+                        <div class="form_item license fix">
+                            <div class="item_content">
+                                <div class="label">면허번호</div>
+                                <div class="select">
+                                    <button type="button" id="btn_MERG04P06" class="btn_select">지역선택</button>
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_item license fix">
+                            <div class="item_content error">
+                                <div class="label">면허번호</div>
+                                <div class="select">
+                                    <button type="button" id="btn_MERG04P06" class="btn_select">지역선택</button>
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">날짜선택</h3>
+                    </div>
+
+                    <ul class="bull_type lg">
+                        <li>달력 관련 세부사항 : <a href="./cal_popup.html" class="fc_blue">cal_popup.html 으로 이동</a></li>
+                    </ul>
+
+                    <!-- 달력 -->
+                    <div class="form_group col">
+                        <div class="form_item fix date">
+                            <div class="item_content btn_s_date">
+                                <div class="label">시작일</div>
+                                <div class="input">
+                                    <input type="text" placeholder="시작일" id="start_date">
+                                </div>
+                            </div>
+                            <div class="bar"></div>
+                            <div class="item_content btn_e_date">
+                                <div class="label">종료일</div>
+                                <div class="input">
+                                    <input type="text" placeholder="종료일" id="end_date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">아이콘 버튼 형 (class에 따라 자동삽입)</h3>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_search">
+                                <div class="label">검색</div>
+                                <div class="input">
+                                    <input type="text" placeholder="검색어를 입력하세요 .btn_search">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_camera">
+                                <div class="label">유심 모델번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="모델번호를 입력해주세요 .btn_camera">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+    
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">텍스트 버튼 형 (class에 따라 자동삽입)</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_check">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요 .btn_check">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_auth">
+                                <div class="label">아이디</div>
+                                <div class="input">
+                                    <input type="text" placeholder="아이디를 입력해주세요 .btn_auth">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix req">
+                            <div class="item_content btn_auth_confirm">
+                                <div class="label">인증번호 입력</div>
+                                <div class="input">
+                                    <input type="text" placeholder="인증번호를 입력해주세요 .btn_auth_confirm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_acc">
+                                <div class="label"><span class="blind">계좌번호</span></div>
+                                <div class="input">
+                                    <input type="text" placeholder="가상 계좌번호 .btn_acc">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">주소검색</h3>
+                    </div>
+
+                    <div class="form_group address">
+                        <div class="form_item fix">
+                            <div class="item_content btn_address">
+                                <div class="input">
+                                    <input type="text" placeholder="기본주소를 검색해주세요" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" placeholder="상세주소를 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">인증번호</h3>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content btn_auth">
+                                <div class="label">휴대폰번호</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+                    
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content js_timer">
+                                <div class="label">인증번호 입력</div>
+                                <div class="input">
+                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">필수입력</h3>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix req">
+                            <div class="item_content">
+                                <div class="label">필수입력</div>
+                                <div class="input">
+                                    <input type="text" placeholder="필수입력 항목입니다.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                </div>
+                
+                <hr class="hr_divide">
+                <div class="section">
+
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">마크업 구조</h3>
+                    </div>
+
+                    <div class="ia_form_input_structure">
+                        <div>
+                            <p>div.form_group</p>
+                            <div>
+                                <p>div.form_item (.fix .req)</p>
+                                <div>
+                                    <p>div.item_content (.focus .done .error) (.btn_xxx .js_timer)</p>
+                                    <div>
+                                        <p>div.label</p>
+                                        <p>div.input</p>
+                                        <div>
+                                            <p>input</p>
+                                        </div>
+                                        <p>button.btn_type</p>
+                                    </div>
+                                </div>
+                                <p>div.txt_alert</p>
+                                <p>div.form_error</p>
+                            </div>
+                        </div>
+                    </div><!-- .form_input_structure -->
+                    <ul class="star_type">
+                        <li>
+                            <strong class="fc_black">div.form_item.fix</strong><br>
+                            .label 영역이 fix 된다
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.form_item.req</strong><br>
+                            필수입력 사항으로 input에 value 값이 없는 상태에서 blur 이벤트가 발생할 경우 에러메세지가 노출된다.<br>
+                            label우측에 <span class="fc_red">*</span> 표시
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.item_content.focus</strong><br>
+                            input에 focus 이벤트가 일어난 상태
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.item_content.done</strong><br>
+                            input에 value값이 입력되고 blur 이벤트가 일어난 상태
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.item_content.error</strong><br>
+                            input에 입력한 value값이 잘못되고, blur 이벤트가 일어난 상태
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.item_content.btn_xxx</strong><br>
+                            btn_xxx 클래스명에 따라 자동으로 버튼이 삽입된다.
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.item_content.js_timer</strong><br>
+                            인증번호 입력 시 제한시간 timer 영역이 자동으로 삽입된다. (MALG0108 참고)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary">취소</button>
+                        <button type="button" class="btn primary">확인</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- 메일 선택 팝업 -->
+<div id="email_html" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li class="on"><a href="#none" role="button" title="직접입력">직접입력</a></li>
+                    <li><a href="#none" role="button" title="naver.com">naver.com</a></li>
+                    <li><a href="#none" role="button" title="daum.net">daum.net</a></li>
+                    <li><a href="#none" role="button" title="nate.com">nate.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">적용</button>
+        </div>
+    </div>
+</div>
+<!-- // 메일 선택 팝업 -->
+
+<!-- 면허번호 팝업 -->
+<div id="MERG04P06" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section_f">
+            <div class="bottom_select">
+                <ul>
+                    <li class="on"><a href="#none" role="button">경기</a></li>
+                    <li><a href="#none" role="button">서울</a></li>
+                    <li><a href="#none" role="button">경기북부</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn primary" data-action="close">선택</button>
+        </div>
+    </div>
+</div>
+<!-- // 면허번호 팝업 -->
+
+
+<script>
+    $(()=>{
+        
+        // 메일 선택 팝업
+        $(document).on("click", "#btn_email", function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"메일사 선택",
+                content:'#email_html',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+        
+        // 면허번호 지역 선택
+        $(document).on("click", "#btn_MERG04P06", function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"면허번호",
+                content:'#MERG04P06',
+                type:'bottom',
+                closeUse:true,
+                dimAct:true,
+            });
+        })
+        
+
+        // 달력 : 시작일, 종료일
+        let btn_start = $(document).find("#start_date").parents(".item_content").find(".btn_type");
+        let btn_end = $(document).find("#end_date").parents(".item_content").find(".btn_type");
+        btn_start.on("click", function(){
+            _calendar.open( 'start_cal', 'start_date', '');
+        });
+        btn_end.on("click", function(){
+            _calendar.open( 'end_cal', 'end_date', '');
+        });
+    })
+</script>
+</body>
+</html>

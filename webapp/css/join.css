@@ -154,6 +154,7 @@
 .rdo_select_wrap .icon.icon_account {background:url(../img/img/3d_account.png) no-repeat center center; background-size:contain;}
 .rdo_select_wrap .icon.icon_join_postoffice {background:url(../img/join/icon_join_postoffice.png) no-repeat center center; background-size:cover;}
 .rdo_select_wrap .icon.icon_join_posttoday {background:url(../img/join/icon_join_posttoday.png) no-repeat center center; background-size:cover;}
+.rdo_select_wrap .icon.icon_app_push {background:url(../img/img/icon_app_push.png) no-repeat center center; background-size:cover;}
 
 /* 카드선택 */
 .card_wrap {padding:.9rem; box-shadow:0 0 0.8rem rgb(1 1 1 / 10%); border-radius:12px;}

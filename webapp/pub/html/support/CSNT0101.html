@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>고객지원</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-197931517|rpid=-354717007|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail">
+            <!-- header_detail.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">이동통신 이용약관 개정 안내</h1>
+
+                <h2 class="blind">이동통신 이용약관 개정 안내</h2>
+
+                <div class="section mgt0">
+                    <div class="board_wrap">
+                        <div class="board_tit_wrap">
+                            <div class="tit_inner">
+                                <strong class="board_tit">이동통신 이용약관 개정 안내</strong>
+                                <span class="board_date">2022.07.22</span>
+                            </div>
+                        </div>
+                        <div class="board_cont_wrap notice">
+                            <div class="cont_inner">
+안녕하세요 KB Liiv M 고객님!<br>
+KB Liiv M을 이용해주시는 고객님께 항상 감사드립니다.<br>
+KB Liiv M 이동통신 이용약관 개정내용을 안내드리오니, 서비스 이용에 참고하시기 바랍니다.<br>
+<br>
+「이동통신 이용약관」 주요 개정내용 <br>
+<br>
+1. 제공통신망 : SKT 추가<br>
+2. SKT망 신규요금제 및 부가서비스 신설<br>
+   ㅇLTE실속(SKT망) 8종, LTE무제한(SKT망) 3종, 5G무제한(SKT망) 4종<br>
+   <br>
+※ 세부내용은 ‘붙임’의 이동통신 이용약관 전문 및 개정대비표를 참고하시기 바랍니다.<br>
+※ 문의 : KB Liiv M 고객센터 ☎114(무료), ☎1522-9999(유료)<br>
+                            </div>
+                            <div class="file_btn_wrap">
+                                <a href="#" class="btn_download" id="popBtn1"><i class="icon icon_file_down"></i>붙임1. 「이동통신 이용약관」 전문(2022.10.13).pdf</a>
+                                <a href="#" class="btn_download"><i class="icon icon_file_down"></i>붙임1. 「이동통신 이용약관」 전문(2022.10.13).pdf</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <a href="#" class="btn secondary lg">목록</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+<!-- 팝업 -->
+<!-- 파일 다운로드 popBtn1 -->
+<div id="CSNT0101" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            
+            <p class="cont_txt_main">붙임1. 「이동통신 이용약관」 전문(2022.10.13).pdf 을(를) 다운로드 하시겠습니까?</p>
+            
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">취소</button>
+            <button type="button" class="btn primary" data-action="close" id="var_test">확인</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#popBtn1').on('click', function(){
+        $.ohyLayer({
+            title:"파일 다운로드",
+            content:'#CSNT0101',
+            type:'confirm',
+            // closeUse:false,
+            // dimAct:true,
+        });
+    });
+</script>
+</body>
+</html>
