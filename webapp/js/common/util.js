@@ -674,7 +674,7 @@ function removeStrSpace(str){
 //고객센터 클릭
 function connectCallCenter() {
 	let opt = {
-			msg: "Liiv M 고객상담센터 1522-9999(유료) 로 연결하시겠습니까?",
+			msg: "KB Liiv M 고객상담센터 1522-9999(유료) 로 연결하시겠습니까?",
 			cfrmYn: true,
 			okCallback: callbackCallCenter
 	};
@@ -689,7 +689,7 @@ function callbackCallCenter() {
 //114 클릭
 function connectCall114() {
 	let opt = {
-			msg: "Liiv M 고객센터 114(무료, Liiv M 가입자 대상) 로 연결하시겠습니까?",
+			msg: "KB Liiv M 고객센터 114(무료, Liiv M 가입자 대상) 로 연결하시겠습니까?",
 			cfrmYn: true,
 			okCallback: callbackCall114
 	};

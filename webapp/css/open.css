@@ -9,8 +9,8 @@
 .open_meterial ul {display:flex; align-items:center; justify-content:space-between;}
 .open_meterial ul li {flex:1 1 15.4rem; max-width:15.4rem; display:flex; align-items:center;}
 .open_meterial ul li::before {content:''; display:block; width:4.8rem; height:4.8rem; border-radius:4.8rem; background-position:center; background-size:2.8rem auto; background-repeat:no-repeat; background-color:var(--bg_02, #f8f9fb);}
-.open_meterial ul li.phone::before {background-image: url(../img/img/flat_phone4.png)}
-.open_meterial ul li.usim::before {background-image: url(../img/img/flat_usim.png)}
+.open_meterial ul li.phone::before {background-image:url(../img/img/flat_phone4.png);}
+.open_meterial ul li.usim::before {background-image:url(../img/img/flat_usim.png);}
 .open_meterial ul li span {margin-left:1.2rem; font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222); font-weight:700;}
 .open_meterial + .tit_item + .star_type {margin-top:0.4rem;}
 .open_meterial + .tit_item + .star_type + .tit_item {margin-top:1.2rem;}
@@ -18,9 +18,9 @@
 
 /* video_guide */
 .video_guide ul li + li {border-top:1px solid var(--line_04, #f6f6f6);}
-.video_guide ul li a{display:flex; align-items:center; justify-content:space-between; padding:2.4rem 0;}
+.video_guide ul li a {display:flex; align-items:center; justify-content:space-between; padding:2.4rem 0;}
 .video_guide ul li a::after {content:''; display:block; width:2rem; height:2rem; border-radius:2rem; background:url(../img/img/mini_play.png) center no-repeat; background-size:contain;}
-.video_guide ul li a span{font-size:1.4rem; line-height:2.1rem; color:var(--gray_01, #222); font-weight:700; margin-right:auto;}
+.video_guide ul li a span {font-size:1.4rem; line-height:2.1rem; color:var(--gray_01, #222); font-weight:700; margin-right:auto;}
 
 
 /* 셀프개통 서비스 */
@@ -34,7 +34,7 @@
 .list_open .txt_area .txt_sub {font-size:1.2rem; line-height:1.8rem; color:var(--gray_02, #555);}
 .list_open .img_area {margin-top:2rem;}
 .list_open .img_area img {width:21rem;}
-.list_open .img_area > ul {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content: space-between; padding-bottom:3.2rem;}
+.list_open .img_area > ul {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; padding-bottom:3.2rem;}
 .list_open .img_area > ul > li {flex:1 1 50%; max-width:50%;}
 .list_open .img_area > ul > li:nth-child(2n) ~ li {margin-top:2rem;}
 .list_open .img_area > ul > li img {width:10rem;}
@@ -56,11 +56,11 @@
 
 
 /* [ MERG0605 ] 개통 > 셀프개통 > 번호이동 동의 */
-span.star_type {display:block; position:relative; padding-left:1.1rem; font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555); margin-top:0.4reml}
+span.star_type {display:block; position:relative; padding-left:1.1rem; font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555); margin-top:0.4reml;}
 span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; display:block; width:0.7rem; height:0.7rem; background:url(../img/common/icon_star_shape_gray_7.png) center no-repeat; background-size:contain;}
 .contact_list {padding:2rem;}
 .contact_list > .tit_sec_wrap {margin:0;}
-.contact_list > dl {display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between; margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line_03, #eaeced); font-size:1.4rem; line-height:2.2rem; color:var(--gray_02, #555);}
+.contact_list > dl {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line_03, #eaeced); font-size:1.4rem; line-height:2.2rem; color:var(--gray_02, #555);}
 .contact_list > dl > *:nth-child(2n) ~ * {margin-top:1.3rem;}
 .contact_list > dl dt {flex:1 1 60%; max-width:60%;}
 .contact_list > dl dd {flex:1 1 40%; max-width:40%; font-weight:700; color:var(--gray_01, #222); text-align:right;}
@@ -70,21 +70,21 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 
 /* [ MERG10 ] 개통 > 셀프개통 > 셀프개통 오류화면 */
 /* 공통으로 이전 예정 */
-.page_error {height:100%; /*min-height:30rem;*/ display:flex; flex-direction:column; align-items:center; justify-content: center; text-align:center;}
+.page_error {height:100%; /*min-height:30rem; */ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;}
 .page_error::before {content:''; width:6rem; height:6rem; background:url(../img/img/flat_error.png) center no-repeat; background-size:contain;}
 .page_error p {margin-top:2rem;}
 .page_error p strong {display:block; font-size:1.6rem; line-height:2.3rem; color:var(--gray_01, #222);}
-.page_error p span {display: block; font-size:1.4rem; line-height:2.2rem; color:var(--gray_03, #717171); margin-top:.8rem;}
+.page_error p span {display:block; font-size:1.4rem; line-height:2.2rem; color:var(--gray_03, #717171); margin-top:.8rem;}
 
-/* .page_error.maintenance {min-height:50rem} */
+/* .page_error.maintenance {min-height:50rem;} */
 
 .layer_wrap .ly_cnt .page_error p strong {font-size:1.8rem;}
 .layer_wrap .ly_cnt .page_error p span {margin-top:2rem;}
 
 
 /* [ MERG06P01 ] 개통 > 팝업 > [팝업] 셀프개통 오류화면 */
-/* .self_error {} */
-/* .self_error p{font-size:1.4rem; color:#222; line-height:2.2rem;} */
+/* .self_error {;} */
+/* .self_error p {font-size:1.4rem; color:var(--gray_01, #222); line-height:2.2rem;} */
 .self_error > p {font-size:1.2rem; line-height:1.9rem; color:#444;}
 .self_error > .error_info {text-align:center; background:var(--bg_02, #f8f9fb); border-radius:1.2rem; margin-top:1.2rem;}
 .self_error > .error_info > .code { font-size:1.6rem; line-height:2.3rem; font-weight:700; padding:2rem 0 1.2rem;}
@@ -95,7 +95,7 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 
 
 /* [ MERG07 ] 개통 > 신청현황 */
-.apply_detail {display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between; padding:2rem; margin-top:1.2rem;}
+.apply_detail {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:2rem; margin-top:1.2rem;}
 .apply_detail .detail_line {flex:1 1 60%; max-width:60%; display:flex; align-items:center; margin-right:auto;}
 .apply_detail .detail_line > * ~ * {margin-left:0.8rem;}
 .apply_detail .detail_line .info {font-size:1.4rem; line-height:2.2rem; color:var(--gray_02, #555);}
@@ -106,21 +106,21 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 .apply_detail .agent_info span {font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555);}
 
 .join_detail {padding:0.8rem 2rem; margin-top:1.2rem;}
-.join_detail dl {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content: space-between;}
+.join_detail dl {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between;}
 .join_detail dl dt,
 .join_detail dl dd {align-self:stretch; font-size:1.4rem; line-height:2.2rem; border-bottom:1px solid var(--line_03, #eaeced); padding:1.2rem 0;}
 .join_detail dl dt {flex:1 1 10rem; max-width:10rem; color:var(--gray_02, #555);}
 .join_detail dl dd {flex:1 1 calc(100% - 10rem); max-width:calc(100% - 10rem); color:var(--gray_01, #222); text-align:right;}
 .join_detail dl dt:last-of-type,
 .join_detail dl dd:last-of-type {border-bottom:0;}
-.join_detail dl dd strong {display: block;}
-.join_detail dl dd span {display: block;}
-.join_detail dl dd a {display: inline-block; margin-top:0.4rem;}
+.join_detail dl dd strong {display:block;}
+.join_detail dl dd span {display:block;}
+.join_detail dl dd a {display:inline-block; margin-top:0.4rem;}
 
 
 /* [ MERG0701 ] 개통 > 가입신청 취소 */
-.reason_etc {display: none;}
-input[name='reason']:checked + label{font-weight:700;}
+.reason_etc {display:none;}
+input[name='reason']:checked + label {font-weight:700;}
 
 
 /* [ MERG07P02 ] 개통 > 팝업 > [팝업] 계약표준안내 */
@@ -134,7 +134,7 @@ input[name='reason']:checked + label{font-weight:700;}
 /* [ MERG07P08 ] 개통 > 팝업 > [팝업] 신청현황 완료 */
 /* [ MERG07P09 ] 개통 > 팝업 > [팝업] 증빙서류 제출 */
 /* 신청현황 */
-.open_step {display:flex; align-items:center; justify-content: center; margin-top:2.6rem;}
+.open_step {display:flex; align-items:center; justify-content:center; margin-top:2.6rem;}
 .open_step .step_item {position:relative; width:4.8rem; margin-left:4rem;}
 .open_step .step_item:first-child {margin-left:0;}
 .open_step .step_item::before {content:''; display:block; width:4.8rem; height:4.8rem; position:relative; border-radius:4.8rem; background-position:center center; background-repeat:no-repeat; background-size:2rem auto; background-color:var(--bg_02, #f8f9fb); box-sizing:border-box; margin:0 auto; z-index:2;}
@@ -146,27 +146,27 @@ input[name='reason']:checked + label{font-weight:700;}
 .open_step .step_item.complete::before {background-image:url(../img/img/mini_done2.png);}
     /* class */
 .open_step .step_item.on::before {background-color:#536072;}
-.open_step .step_item.ing::before {background-color:#fff; border:2px solid var(--main_01, #ffd338); animation:stepMotion infinite 1.5s;}
+.open_step .step_item.ing::before {background-color:var(--gray_08, #FFFFFF); border:2px solid var(--main_01, #ffd338); animation:stepMotion infinite 1.5s;}
 .open_step .step_item.ing::after {background:var(--main_01, #ffd338);}
 
-.open_step .step_item::after {content:''; position:absolute; left:-4rem; top:2.4rem; display:block; width:4rem; height:0.2rem; background:#eaeced;}
-.open_step .step_item:first-child::after {display: none;}
-.open_step .step_item span {position:relative; left:50%; transform:translateX(-50%); display:block; width:max-content; text-align:center; font-size:1.4rem; line-height:2.2rem; color:var(--gray_04, #999); word-break: keep-all; margin:1.2rem 0 0;}
+.open_step .step_item::after {content:''; position:absolute; left:-4rem; top:2.4rem; display:block; width:4rem; height:0.2rem; background:var(--line_03, #EAECED);}
+.open_step .step_item:first-child::after {display:none;}
+.open_step .step_item span {position:relative; left:50%; transform:translateX(-50%); display:block; width:max-content; text-align:center; font-size:1.4rem; line-height:2.2rem; color:var(--gray_04, #999); word-break:keep-all; margin:1.2rem 0 0;}
 .open_step .step_item.on span {color:var(--gray_01, #222);}
 .open_step .step_item.ing span {color:var(--gray_01, #222); font-weight:700;}
 @keyframes stepMotion {
     0%, 100% {box-shadow:0 0 0.5rem 0 rgba(255, 211, 56, 0.1);}
     50% {box-shadow:0 0 0.1rem 0.5rem rgba(255, 211, 56, 0.5);}
-}
+;}
 
 
 /* [ MERG1001 ] 가입/개통 > 개통 > 개통 처리중입니다. */
 .open_ing {text-align:center;}
 .open_ing p {color:var(--gray_02, #555);}
-.open_ing span {display: block; color:#333; font-size:1.4rem; line-height:2.2rem;}
+.open_ing span {display:block; color:#333; font-size:1.4rem; line-height:2.2rem;}
 .open_ing .open_ttl {font-size:1.8rem; line-height:2.4rem; color:var(--gray_01, #222); font-weight:700;}
 .open_ing .open_ico {margin:2rem 0 1.6rem;}
-.open_ing .open_ico::after {content:''; display:inline-flex; align-items:center; justify-content: center; width:8rem; height:8rem; background:url(../img/common/icon_open_ing.gif) center no-repeat; background-size:8rem auto;}
+.open_ing .open_ico::after {content:''; display:inline-flex; align-items:center; justify-content:center; width:8rem; height:8rem; background:url(../img/common/icon_open_ing.gif) center no-repeat; background-size:8rem auto;}
 
 
 /* [ MESPP0001 ] 가입/개통 > 개통 > [팝업] 계좌등록 */
@@ -174,9 +174,10 @@ input[name='reason']:checked + label{font-weight:700;}
 .select_inline.full,
 .layer_wrap .select_inline {margin:0 calc(var(--sar)*-1 - 2rem) 0 calc(var(--sal)*-1 - 2rem);}
 .select_inline ul {background:var(--bg_02, #f8f9fb); max-height:26.4rem; overflow-y:scroll;}
-.select_inline ul::-webkit-scrollbar {display: none;}
-.select_inline ul li a {display: block; height:4.4rem; line-height:4.4rem; padding:0 var(--sar_2) 0 var(--sal_2); font-size:1.6rem; color:#242424;}
+.select_inline ul::-webkit-scrollbar {display:none;}
+.select_inline ul li a {display:block; height:4.4rem; line-height:4.4rem; padding:0 var(--sar_2) 0 var(--sal_2); font-size:1.6rem; color:#242424;}
 .select_inline ul li.on a {background-color:rgba(0,0,0, 0.05);}
+.select_inline ul li.on a::after {content:'선택 됨'; font-size:0; text-indent:-9999%; overflow:hidden;}
 .select_inline ul.account_select {padding:1.2rem 2rem 0.8rem 1.2rem;}
 .select_inline ul.account_select li {margin-bottom:0.4rem;}
 .select_inline ul.card_select {padding:1.2rem 2rem 0.8rem 1.2rem;}
@@ -187,10 +188,10 @@ input[name='reason']:checked + label{font-weight:700;}
 .select_inline.full .droptype_btn_wrap .droptype_btn {min-height:auto; border-radius:initial; border:initial;}
 
 
-/* 페이지:: 가입/개통 > 가입/개통 팝업 */
+/* 페이지::가입/개통 > 가입/개통 팝업 */
 .ocr_photo {display:flex; align-items:center; justify-content:center; min-height:21rem; padding:2.4rem 3.2rem; border-radius:1.2rem; background:var(--bg_02, #f8f9fb);}
 .ocr_photo img {max-width:25.6rem;}
-/* .ocr_type {} */
+/* .ocr_type {;} */
 .ocr_type .ocr_ttl {font-size:1.2rem; line-height:1.5rem; color:var(--gray_02, #555);}
 .ocr_type .ocr_cont {display:flex; align-items:center; justify-content:center; height:5.2rem; border-radius:0.8rem; background:var(--bg_02, #f8f9fb); font-size:1.6rem; line-height:2.3rem; color:var(--gray_01, #222); font-weight:700; margin-top:0.8rem;}
 
@@ -198,18 +199,18 @@ input[name='reason']:checked + label{font-weight:700;}
 .word_keep {word-break:keep-all;}
 
 /* 가입가능시간 */
-.tit_sec_wrap + .join_time {margin-top:2rem}
+.tit_sec_wrap + .join_time {margin-top:2rem;}
 .join_time.box_item {padding:2rem;}
 .join_time > p {text-align:center; font-size:1.6rem; line-height:2.3rem; font-weight:700; color:var(--gray_01, #222);}
 .join_time > p + dl {border-top:1px solid var(--line_03, #eaeced); margin-top:1.2rem; padding-top:1.2rem;}
-.join_time > dl {display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between;}
+.join_time > dl {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;}
 .join_time > dl > *:nth-child(2n) ~ * {margin-top:1.2rem;}
 .join_time > dl dt,
 .join_time > dl dd {font-size:1.4rem; line-height:2.2rem; color:var(--gray_02, #555);}
-.join_time > dl dt {flex:1 1 40%; max-width:40%; display:flex; align-items: center;}
-.join_time > dl dt::before {content:''; display:inline-block; width:2rem; height:2rem; margin-right:0.8rem; background-position:center; background-repeat: no-repeat; background-size:contain;}
-.join_time > dl dt:nth-of-type(1)::before {background-image:url(../img/img/mini_fire.png)}
-.join_time > dl dt:nth-of-type(2)::before {background-image:url(../img/img/mini_phone4.png)}
+.join_time > dl dt {flex:1 1 40%; max-width:40%; display:flex; align-items:center;}
+.join_time > dl dt::before {content:''; display:inline-block; width:2rem; height:2rem; margin-right:0.8rem; background-position:center; background-repeat:no-repeat; background-size:contain;}
+.join_time > dl dt:nth-of-type(1)::before {background-image:url(../img/img/mini_fire.png);}
+.join_time > dl dt:nth-of-type(2)::before {background-image:url(../img/img/mini_phone4.png);}
 .join_time > dl dd {flex:1 1 60%; max-width:60%; text-align:right;}
 .join_time > dl dd strong {font-weight:700; color:var(--gray_01, #222);}
 .join_time > dl dd span {color:var(--gray_04, #999);}

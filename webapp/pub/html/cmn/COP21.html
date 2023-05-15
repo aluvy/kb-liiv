@@ -1,0 +1,144 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow">
+
+<!-- Naver Search Advisor site-verification -->
+<meta name="naver-site-verification" content="8cf73bea15d42e9b7ee18e44df171b442e78208e" />
+<!-- SNS -->
+<meta property="og:title" content="KB Liiv M(리브모바일)">
+<meta property="og:description" content="금융과 통신의 첫만남">
+<meta property="og:image" content="/img/liivm_og.png">
+<meta property="og:url" content="https://m.liivm.com">    
+<meta name="twitter:title" content="KB Liiv M(리브모바일)">
+<meta name="twitter:description" content="금융과 통신의 첫만남">
+<meta name="twitter:image" content="/img/liivm_og.png">
+<meta name="twitter:card" content="금융과 통신의 첫만남">    
+<!-- 	IOS -->
+<meta property="al:ios:url" content="https://apps.apple.com/kr/app/id1659980349" />
+<meta property="al:ios:app_store_id" content="1659980349" />
+<meta property="al:ios:app_name" content="KB Liiv M" />
+<!-- 	안드로이드 -->
+<meta property="al:android:url" content="https://play.google.com/store/apps/details?id=com.kbstar.liivmobile" />
+<meta property="al:android:app_name" content="KB Liiv M" />
+<meta property="al:android:package" content="com.kbstar.liivmobile" />
+<meta property="al:web:url" content="https://m.liivm.com/support/docs/apps" />
+	
+<meta http-equiv="Cache-Control" content="No-Cache" >
+<meta http-equiv="Pragma" content="No-Cache" >
+<meta http-equiv="Expires" content="-1" >
+<meta name="_csrf" content="9fc2836e-6641-48c2-bc40-e39df6cb44d5"/>
+<meta name="_csrf_header" content="X-XSRF-TOKEN"/>
+<!-- SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
+<meta name="description" content="일반통신사의 서비스를 동일하게 누리면서, 요금은 합리적으로 줄일 수 있는 KB국민은행 Liiv M(리브모바일)을 이용해보세요!">
+<title>KB Liiv M(KB리브모바일) - KB국민은행 알뜰폰 서비스</title>
+<!-- //SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
+<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/lib/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/lib/jQuery.Form.min.js"></script>
+<script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="/js/lib/nppfs-1.13.0.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/front.js"></script>
+<script type="text/javascript" src="/js/common/util.js"></script>
+<script type="text/javascript" src="/js/common/formatter.js"></script>
+<script type="text/javascript" src="/js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
+<script type="text/javascript" src="/js/lib/lottie-player.js"></script>
+<script type="text/javascript">
+	let checkLoginStep = '1';
+	let tg = "dev";
+	// 로그인 단계
+	$(function(){
+
+	
+	
+
+		if(isEmpty(sessionStorage.getItem("UUID"))){
+			getDeviceInfo();
+		}
+
+        //스타뱅킹 테마서비스에서 유입시 확장형플랫폼 js 선언
+        if(!isEmpty(sessionStorage.getItem("inPath")) && location.href.indexOf("/system/main/ssoBridge") === -1){
+            $('head').append('<script type="text/javascript" src="https://oimg1.kbstar.com/js/common/extendPlatform/extend_platform.js">');
+        }
+	});
+</script>
+<script type="text/javascript" src="/js/common/certification.js"></script>
+
+
+
+	<script type="text/javascript" src="https://static-dev.kbdmp.com/ma/kb_dev_v0.01.js"></script>
+	<script type="text/javascript">
+		try{
+			ma.config('client_id','WA-0010');
+			ma.config('isCookie',true);
+			
+			var page_location = window.location.pathname;   //현재 location 정보
+			var page_referrer = document.referrer;          //이전 page location 정보
+			
+			console.log ("현재" + page_location);
+			console.log ("이전" + page_referrer);
+
+			if ( page_location.indexOf('/join/state/usimRegPopup') != -1
+					|| page_location.indexOf('/join/state/usimRegNpPopup') != -1)
+			{
+				ma.config('page_location' ,page_location);
+				ma.config('page_referrer' ,page_referrer);
+			}
+			
+			ma.init();
+		}
+		catch(e){}
+	</script>
+
+
+</head>
+<body>
+    <div class="wrap">
+	    <!-- 변경되는 컨텐츠 작업 시작 -->
+	    
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <div class="section fullH">
+	                <div class="result_wrap no_page">
+	                    <p class="desc">서비스 장애</p>
+	                    <p class="desc">일시적인 오류가 발생하였습니다.</p>
+	                    <p class="desc">서비스 이용에 불편을 드려 죄송합니다.<br/>잠시 후 다시 이용해 주세요.</p>
+	                </div>
+	            </div>
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn secondary" onclick="history.back(-1);">이전 페이지로</button>
+                        <button type="button" class="btn primary" onclick="goToMain()">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+	    <!-- //변경되는 컨텐츠 작업 끝 -->  
+	</div>
+</body>
+</html>

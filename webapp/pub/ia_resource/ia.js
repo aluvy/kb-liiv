@@ -22,7 +22,7 @@ $(document).ready(function(){
 	} else if($('.header').hasClass('event')){	HeaderHTML = _header.event;
 	} else if($('.header').hasClass('layer')){	HeaderHTML = _header.layer;
 	}
-	$(".header").append(HeaderHTML);
+	$(".header").prepend(HeaderHTML);
 
 
 	$('.table_ia').each(function(){

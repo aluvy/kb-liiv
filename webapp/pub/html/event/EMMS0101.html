@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>혜택</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-2084834128|rpid=1697382378|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -58,8 +58,10 @@
                         <table class="center">
                             <caption>등급 별 멤버십 사용횟수 안내</caption>
                             <colgroup>
-                                <col style="width:50%;"> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
-                                <col>
+                                <!-- [04/24] 테이블 비율 변경 :: start -->
+                                <col style="width:31.25%;"> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <col style="width:auto;">
+                                <!-- [04/24] 테이블 비율 변경 :: end -->
                             </colgroup>
                             <thead>
                                 <tr> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
@@ -83,6 +85,115 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- [04/24] 테이블 추가 :: start -->
+                    <div class="table">
+                        <table class="center benefit_table">
+                            <caption>멤버십 혜택 상세내용</caption>
+                            <colgroup>
+                                <col style="width:31.25%;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">사용처<br>(혜택)</th>
+                                    <th scope="col">상세내용</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><strong>구독서비스</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">넷플릭스 6,000원 할인권</p>
+                                            <p class="exp">(유플러스 유독 구독)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong>편의점</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">GS 25 편의점 5,000원 금액권</p>
+                                            <p class="exp">(잔액관리형)</p>
+                                        </div>
+                                        <div class="benefit_item">
+                                            <p class="ttl">CU 편의점 5,000원 금액권</p>
+                                            <p class="exp">(잔액관리형)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong>카페</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">스타벅스 모바일상품권 1매</p>
+                                            <p class="exp">(아메리카노 Tall size)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong>베이커리</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">해피콘 5,000원 금액권</p>
+                                            <p class="exp">(잔액관리형)</p>
+                                            <p class="exp">사용처 : 파리바게뜨, 던킨도너츠,<br>배스킨라빈스, 파스쿠찌 등 SPC 계열</p>
+                                        </div>
+                                        <div class="benefit_item">
+                                            <p class="ttl">뚜레쥬르 5,000원 금액권</p>
+                                            <p class="ttl">(잔액관리 불가형)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong>OTT</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">지니뮤직 음악감상 300회</p>
+                                            <p class="exp">(30일)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong>금리우대</strong></th>
+                                    <td>
+                                        <div class="benefit_item">
+                                            <p class="ttl">KB국민 프리미엄적금 우대쿠폰 제공</p>
+                                            <p class="exp">(영업점에서 적금 가입 시 적용)</p>
+                                        </div>
+                                        
+                                        <div class="benefit_item">
+                                            <p class="ttl">계약기간 쿠폰우대</p>
+                                            <p class="exp">(기준일자 2023.3.15 기준, 세금공제 전)</p>
+                                            <p>
+                                                -12개월 이상 ~ 24개월 미만 연 0.6%p<br>
+                                                -24개월 이상 ~ 36개월 미만 연 0.7%p<br>
+                                                -36개월 이상 ~ 60개월 미만 연 0.9%p<br>
+                                                -60개월 연 1.0%p
+                                            </p>
+                                        </div>
+
+                                        <ul class="star_type mgt4">
+                                            <li>KB국민프리미엄적금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</li>
+                                            <li>일반금융소비자는 은행이 계약체결을 권유하는 경우 및 일반금융소비자가 설명을 요청하는 경우에도 중요한 사항을 이해할 수 있도록 설명 받을 권리가 있습니다.</li>
+                                            <li>적금상품 관련 자세한 사항은 계약을 체결하시기 전에 상품설명서 및 약관을 읽어보시기 바랍니다.</li>
+                                            <li>기타 자세한 내용은 KB국민은행 고객센터(1588-9999)로 문의하시거나 KB국민은행 홈페이지(www.kbstar.com)를 참조하시기 바랍니다.</li>
+                                        </ul>
+
+                                        <div class="law">
+                                            KB국민은행 준법감시인 심의필<br>
+                                            제2023-0938호<br>
+                                            유효기간 2023.03.15 ~ 2023.12.31까지
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- [04/24] 테이블 추가 :: end -->
+
                     <ul class="bull_type">
                         <li>미사용한 멤버십 횟수는 이월되지 않으며, 타인에게 양도 불가합니다.</li>
                         <li>태블릿 LTE(LG U+망), QR체크인 LTE(LG U+망), LTE 워치요금제(LG U+망), 데이터 쉐어링 회선은 멤버십 서비스 이용이 불가합니다.</li>

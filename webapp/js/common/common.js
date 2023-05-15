@@ -3,9 +3,7 @@ $(function(){
 		loading('start', e);
 	});
 	$(document).ajaxStop(function(e) {
-//		setTimeout(()=>{
-			loading('stop', e);
-//		}, 101);
+		loading('stop', e);
 	});
 });
 
@@ -33,59 +31,63 @@ function fn_transCall(url, data, callBack, errorCallback, postAction){
 		contentType = data.contentType;
 	}
 
-//	setTimeout(()=>{
-		$.ajax({
-			type : "post",
-			url : url,
-			data : data,
-			cache: false,
-			dataType:  'json',		
-			async: true,
-			contentType: contentType,
-			beforeSend : function(xhr, set) {
-				let token = $("meta[name='_csrf']").attr("content");
-				let header = $("meta[name='_csrf_header']").attr("content");
-				xhr.setRequestHeader(header, token);
-			},
-			success : function(result, status, xhr) {
-				if(typeof objCallBack == 'function'){
-					objCallBack(tranId, result, status, data);
-				}else{
-					fn_callBack(tranId, result, status, data);
-				}
-			},
-			error: function(xhr, status, error){
-				switch(xhr.status){
-				case 0:
-					console.log('status : '+xhr.status);
-					break;
-				case 400:					
-				case 401:					
-				case 404:
-				case 500:
-				default:				
-					if(typeof objErrorCallback == 'function'){
-						objErrorCallback(tranId, xhr, status, error);
-					}else{
-						setTimeout(function(){ 
-							popalarm({
-								msg : "오류가 발생하였습니다. 다시 시도해 주세요.",
-								cfrmYn : false
-							}); }, 10);
-						console.log(xhr.responseText);
-					}
-				break;
-				}
-			},
-			complete: function(xhr, status){
-				loading('stop');
-				if(typeof objPostAction == 'function'){
-					objPostAction(tranId, xhr, status);
-				}
+	$.ajax({
+		type : "post",
+		url : url,
+		data : data,
+		cache: false,
+		dataType:  'json',		
+		async: false,
+		contentType: contentType,
+		beforeSend : function(xhr, set) {
+			let token = $("meta[name='_csrf']").attr("content");
+			let header = $("meta[name='_csrf_header']").attr("content");
+			xhr.setRequestHeader(header, token);
+		},
+		success : function(result, status, xhr) {
+			if(typeof objCallBack == 'function'){
+				objCallBack(tranId, result, status, data);
+			}else{
+				fn_callBack(tranId, result, status, data);
 			}
-		});
-//	}, 100);
-	
+		},
+		error: function(xhr, status, error){
+			switch(xhr.status){
+			case 0:
+				console.log('status : '+xhr.status);
+				break;
+			case 403:			
+			case 404:
+				setTimeout(function(){ 
+					popalarm({
+						msg : "잘못된 접근입니다. 다시 시도해 주세요.",
+						cfrmYn : false
+					}); }, 10);
+				break;
+			case 400:					
+			case 401:					
+			case 500:
+			default:				
+				if(typeof objErrorCallback == 'function'){
+					objErrorCallback(tranId, xhr, status, error);
+				}else{
+					setTimeout(function(){ 
+						popalarm({
+							msg : "오류가 발생하였습니다. 다시 시도해 주세요.",
+							cfrmYn : false
+						}); }, 10);
+					console.log(xhr.statusText);
+				}
+			break;
+			}
+		},
+		complete: function(xhr, status){
+			loading('stop');
+			if(typeof objPostAction == 'function'){
+				objPostAction(tranId, xhr, status);
+			}
+		}
+	});
 };
 
 /**
@@ -214,12 +216,22 @@ function kbplusLogout() {
 
 // KBPLUS 이벤트
 function kbplusEvent() {
-    console.log('[kbplusEvent] checkLoginStep=' + checkLoginStep);
+    console.log('[kbplusLogout Success]');
     if(getOsInfo().indexOf('app') != -1){
 	    callAppService({
 			action_code : 'A0314',	// genKey
 	    });
-	    location.replace('/');
+
+	    if(location.href.indexOf('ssoBridge') > -1){
+	        ssoLogoutCallback();
+	    }else{
+	        location.replace('/');
+	    }
+
+	}else{
+	    if(location.href.indexOf('ssoBridge') > -1){
+            ssoLogoutCallback();
+	    }
 	}
 }
 
@@ -237,15 +249,17 @@ function goLogin(url){
 	if(getOsInfo().indexOf('app') != -1){
 		getDeviceInfo();
 		// APP 로그인
-		callAppService({
-			action_code : 'A0105',
-			action_param : 
-			{
-				c_login : (isEmpty(sessionStorage.getItem('c_login')) ? "" : sessionStorage.getItem('c_login')),
-				redirectUrl : (isEmpty(url) ? "" : url)
-			}  
-		});
-		sessionStorage.removeItem('c_login');
+		setTimeout(()=>{
+			callAppService({
+				action_code : 'A0105',
+				action_param : 
+				{
+					c_login : (isEmpty(sessionStorage.getItem('c_login')) ? "" : sessionStorage.getItem('c_login')),
+					redirectUrl : (isEmpty(url) ? "" : url)
+				}  
+			});
+			sessionStorage.removeItem('c_login');
+		}, 100);
 	}else{
 		if(isEmpty(url)){
 			location.replace("/system/login/login");
@@ -261,6 +275,9 @@ function goLogin(url){
  */
 function loading(state, e) {
 
+	if(location.href.indexOf('/support/customer/usim-search') != -1){	// 유심 찾기 제외
+		return;
+	}
 	if(location.href.indexOf('/membership/place-search') != -1){		// 멤버십 찾기 제외
 		return;
 	}
@@ -273,6 +290,7 @@ function loading(state, e) {
 	if(location.href.indexOf('/open/open-request-new') != -1
 	    || location.href.indexOf('/open/open-request-transfer') != -1
 	    || location.href.indexOf('/open/desire-number') != -1
+	    || location.href.indexOf('join/open/checkSelfNp') != -1
 	    || location.href.indexOf('/open/transfer-agree') != -1){         // 셀프개통 제외
 		return;
 	}
@@ -324,6 +342,30 @@ function setHeaderType(t){
 		$('#btnHeaderMenu').hide();
 		$('#btnHeaderClose').show();
 	}
+
+    // 스타뱅킹 테마서비스 인앱브라우저 관련 버튼 재정의
+	if(!isEmpty(sessionStorage.getItem('inPath'))){
+	    if(sessionStorage.getItem('inPath') == "kbbank"){
+            //스타뱅킹 웹뷰에서 메인을 통해 화면 이동했다면 헤더 버튼 제어를 하지 않는다.
+            if(document.referrer == "http://" + location.host + "/" || document.referrer == "https://" + location.host + "/"){
+                sessionStorage.setItem('inPath', 'kbbank_main');
+                return;
+            }else{
+                $('.back_area').hide();
+                $('#btnHeaderHome').show();
+                $('#btnHeaderSearch').hide();
+                $('#btnHeaderMenu').hide();
+                $('#btnHeaderClose').hide();
+
+                if(t == 'join'){
+                    $('#btnHeaderHome').hide();
+                    if(location.href.indexOf('join-supplies') === -1 && location.href.indexOf('self-open-guide') === -1){
+                        $('.back_area').show();
+                    }
+                }
+            }
+         }
+    }
 };
 
 /**

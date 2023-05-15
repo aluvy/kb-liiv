@@ -18,15 +18,15 @@
     <meta name="twitter:image" content="대표 이미지">
     <meta name="twitter:card" content="summary">
     <title>KB Liiv M Main</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1859197283|rpid=-451927849|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/common/common.js"></script>
-    <script type="text/javascript" src="/js/common/util.js"></script>
-    <script type="text/javascript" src="/js/front.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../../js/common/util.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -37,7 +37,7 @@
                 <div class="btn_area">
                     <button type="button" class="btn_alarm on"><span class="hidden">알림</span></button> <!-- new alarm 발생시 class="on" 추가 -->
                     <button type="button" class="btn_search"><span class="hidden">통합검색</span></button>
-                    <button type="button" class="btn_open_aside"><span class="hidden">메뉴</span></button>
+                    <a href="#open_aside" class="btn_open_aside"><span class="hidden">메뉴</span></a> <!-- 23/05/12 [앱접근성] a tag 로 변경 -->
                 </div>
             </div>
             <!-- aside area -->
@@ -61,11 +61,11 @@
                         <!-- //login 후 개인 정보 -->
                         <div class="shortcut_area">
                             <!-- 앱 로그인 전 -->
-                            <ul class="shortcut_list">
+                            <!-- <ul class="shortcut_list">
                                 <li><a href="#none" class="link signup">가입하기</a></li>
                                 <li><a href="#none" class="link cost">요금제 찾기</a></li>
                                 <li><a href="#none" class="link settings">설정</a></li>
-                            </ul>
+                            </ul> -->
                             <!-- //앱 로그인 전 -->
                             <!-- 앱 로그인 후/ 개통 전 -->
                             <!-- <ul class="shortcut_list">
@@ -83,11 +83,12 @@
                             <!-- //앱 로그인 후/ 개통 후 -->
         
                             <!-- 모바일웹 로그인 전 -->
-                            <!-- <ul class="shortcut_list">
+                            <ul class="shortcut_list">
                                 <li><a href="#none" class="link signup">가입하기</a></li>
                                 <li><a href="#none" class="link cost">요금제 찾기</a></li>
+                                <li><a href="#none" class="link usim">유심 찾기</a></li> <!-- 23/05/09 항목 추가 -->
                                 <li><a href="#none" class="link customer">고객센터</a></li>
-                            </ul> -->
+                            </ul>
                             <!-- //모바일웹 로그인 전  -->
                             <!-- 모바일웹 로그인 후/ 개통 전 -->
                             <!-- <ul class="shortcut_list">
@@ -109,11 +110,11 @@
                     <!-- nav -->
                     <div class="nav_area">
                         <ul class="nav_list">
-                            <li><a href="#none" class="item on">요금제</a></li>
-                            <li><a href="#none" class="item">부가서비스</a></li>
-                            <li><a href="#none" class="item">이벤트/멤버십</a></li>
-                            <li><a href="#none" class="item">고객지원</a></li>
-                            <li><a href="#none" class="item">마이페이지</a></li>
+                            <li><a href="#none" class="item on">요금제</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item">부가서비스</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item">혜택</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item">마이페이지</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item">고객지원</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
                         </ul>
                     </div>
                     <!-- //nav -->
@@ -124,9 +125,9 @@
                                 <h2 class="title rateplan">요금제</h2>
                                 <ul class="sub_menu_list">
                                     <li><a href="#none" target="_top">KB Liiv M 요금제 <span class="badge update">UPDATE</span></a></li> <!-- 23/03/27 badge 위치 조정 -->
-                                    <li><a href="#none" target="_top">법인 요금제</a></li>
                                     <li><a href="#none" target="_top">요금제 진단하기 <span class="badge new">NEW</span></a></li> <!-- 23/03/27 badge 위치 조정 -->
-                                    <li><a href="#none" target="_top">판매중단 요금제</a></li>
+                                    <li><a href="#none" target="_top">법인 요금제</a></li>
+                                    <li><a href="#none" target="_top">판매종료 요금제</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -138,8 +139,6 @@
                                     <li><a href="#none" target="_top">휴대폰 소액결제</a></li>
                                     <li><a href="#none" target="_top">유심보관서비스</a></li>
                                     <li><a href="#none" target="_top">보이스피싱 예방</a></li>
-                                    <li><a href="#none" target="_top">사칭 전화번호 확인 서비스</a></li>
-                                    <li><a href="#none" target="_top">회원찾기</a></li>
                                     <li><a href="#none" target="_top">피싱보험</a></li>
                                     <li><a href="#none" target="_top">통신비보장보험</a></li>
                                     <li><a href="#none" target="_top">휴대폰 분실파손보험</a></li>
@@ -148,20 +147,11 @@
                             <li>
                                 <h2 class="title biz">혜택</h2>
                                 <ul class="sub_menu_list">
-                                    <li><a href="#none" target="_top">이벤트/제휴</a></li>
-                                    <li><a href="#none" target="_top">추천 리워드 <span class="badge event">EVENT</span></a></li> <!-- 23/03/27 badge 위치 조정 -->
+                                    <li><a href="#none" target="_top">이벤트</a></li>
                                     <li><a href="#none" target="_top">멤버십</a></li>
-                                    <li><a href="#none" target="_top">나눔할인</a></li>
+                                    <li><a href="#none" target="_top">추천 리워드</a></li> <!-- 23/03/27 badge 위치 조정 -->
                                     <li><a href="#none" target="_top">친구결합 할인</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h2 class="title support">고객지원</h2>
-                                <ul class="sub_menu_list">
-                                    <li><a href="#none" target="_top">고객상담</a></li>
-                                    <li><a href="#none" target="_top">공지사항</a></li>
-                                    <li><a href="#none" target="_top">약관 및 정책</a></li>
-                                    <li><a href="#none" target="_top">자주찾는 질문</a></li>
+                                    <li><a href="#none" target="_top">나눔할인 <span class="badge event">EVENT</span></a></li>
                                 </ul>
                             </li>
                             <li>
@@ -172,6 +162,31 @@
                                     <li><a href="#none" target="_top">요금조회 및 납부</a></li>
                                     <li><a href="#none" target="_top">명의변경</a></li>
                                     <li><a href="#none" target="_top">일시정지/해제</a></li>
+                                    <li><a href="#none" target="_top">확정기변/기기등록</a></li>
+                                    <li><a href="#none" target="_top">무선개통(OTA) </a></li>
+                                    <li><a href="#none" target="_top">eSIM 정보등록</a></li>
+                                    <li><a href="#none" target="_top">eSIM 다운로드</a></li>
+                                    <li><a href="#none" target="_top">증빙서류 첨부 및 확인</a></li>
+                                    <li><a href="#none" target="_top">가입사실확인서 발급</a></li>
+                                    <li><a href="#none" target="_top">법정대리인 정보변경</a></li>
+                                    <li><a href="#none" target="_top">법정대리인 정보제공 동의변경</a></li>
+                                    <li><a href="#none" target="_top">정보제공 동의</a></li>
+                                    <li><a href="#none" target="_top">KB Liiv M 해지</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2 class="title support">고객지원</h2>
+                                <ul class="sub_menu_list">
+                                    <li><a href="#none" target="_top">고객상담</a></li>
+                                    <li><a href="#none" target="_top">공지사항</a></li>
+                                    <li><a href="#none" target="_top">약관 및 정책</a></li>
+                                    <li><a href="#none" target="_top">자주찾는 질문</a></li>
+                                    <li><a href="#none" target="_top">KB Liiv M 이용안내 </a></li>
+                                    <li><a href="#none" target="_top">KB Liiv M 앱다운로드 </a></li>
+                                    <li><a href="#none" target="_top">이용자 피해 예방센터</a></li>
+                                    <li><a href="#none" target="_top">사칭 전화번호 확인 서비스 <span class="badge new">NEW</span></a></li>
+                                    <li><a href="#none" target="_top">고객후기</a></li>
+                                    <li><a href="#none" target="_top">지점안내</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -179,7 +194,10 @@
                     </div>
                 </div><!-- .aside_body -->
                 <!-- //전체 메뉴 -->
-                <button type="button" class="btn_close_aside"><span class="hidden">닫기</span></button>
+                <!-- 23/05/08 앱접근성 관련 수정 -->
+                <!-- <button type="button" class="btn_close_aside"><span class="hidden">닫기</span></button> -->
+                <a href="#close_aside" class="btn_close_aside"><span class="hidden">닫기</span></a>
+                <!-- //23/05/08 앱접근성 관련 수정 -->
             </div><!-- .aside_wrap -->
             <!-- //aside area -->
         </div>
@@ -203,11 +221,11 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link case_01">
-                                    <div class="info"><span class="txt">청년희망 LTE(III)</span></div>
+                                <a href="#none" class="link case_evt189">
+                                    <div class="info"><span class="txt">KB스타클럽 이벤트</span></div>
                                     <div class="title">
-                                        <p>청년 데이터 무제한</p>
-                                        <p><strong>최저 월 25,900원</strong></p>
+                                        <p>KB 스타클럽 패밀리</p>
+                                        <p>KB Liiv M <strong>3개월 무료</strong></p>
                                     </div>
                                 </a>
                             </div>
@@ -220,32 +238,12 @@
                                     </div>
                                 </a>
                             </div>
-                            <!-- 23/04/11 해당 배너 삭제 -->
-                            <!-- <div class="swiper-slide">
-                                <a href="#none" class="link case_03">
-                                    <div class="info"><span class="txt">SKT망 요금제 5종</span></div>
-                                    <div class="title">
-                                        <p>통신비 6개월 무료</p>
-                                        <p><strong>최대 약 11만원 혜택!</strong></p>
-                                    </div>
-                                </a>
-                            </div> -->
-                            <!-- //23/04/11 해당 배너 삭제 -->
                             <div class="swiper-slide">
-                                <a href="#none" class="link case_04">
-                                    <div class="info"><span class="txt">Flex LTE(신)</span></div>
+                                <a href="#none" class="link case_01">
+                                    <div class="info"><span class="txt">청년희망 LTE(III)</span></div>
                                     <div class="title">
-                                        <p>데이터 최대 150GB</p>
-                                        <p><strong>최저 월 31,200원</strong></p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="link case_05">
-                                    <div class="info"><span class="txt">추천리워드</span></div>
-                                    <div class="title">
-                                        <p>초대하면<strong> 5만P</strong></p>
-                                        <p>초대받으면<strong> 커피 2잔</strong></p>
+                                        <p>청년 데이터 무제한</p>
+                                        <p><strong>최저 월 25,900원</strong></p>
                                     </div>
                                 </a>
                             </div>
@@ -259,23 +257,12 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link case_07">
-                                    <div class="info"><span class="txt">LTE 무제한 7GB+</span></div> 
+                                <a href="#none" class="link case_04">
+                                    <div class="info"><span class="txt">Flex LTE(신)</span></div>
                                     <div class="title">
-                                        <p>데이터 최대 7GB</p>
-                                        <p><strong>최저 월 19,000원</strong></p>
+                                        <p>데이터 최대 150GB</p>
+                                        <p><strong>최저 월 31,200원</strong></p>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="link case_08">
-                                    <div class="info"><span class="txt">인터넷 / IPTV 결합</span></div> <!-- 23/04/07 문구수정 -->
-                                    <!-- 23/04/06 문구 수정 -->
-                                    <div class="title">
-                                        <p>모바일 할인</p>
-                                        <p><strong>최대 13.2만원</strong></p>
-                                    </div>
-                                    <!-- //23/04/06 문구 수정 -->
                                 </a>
                             </div>
                             <div class="swiper-slide">
@@ -298,10 +285,45 @@
                                     <!-- //23/04/06 문구 수정 -->
                                 </a>
                             </div>
+                            <!-- <div class="swiper-slide">
+                                <a href="#none" class="link case_05">
+                                    <div class="info"><span class="txt">추천리워드</span></div>
+                                    <div class="title">
+                                        <p>초대하면<strong> 5만P</strong></p>
+                                        <p>초대받으면<strong> 커피 2잔</strong></p>
+                                    </div>
+                                </a>
+                            </div> -->
+                            <div class="swiper-slide">
+                                <a href="#none" class="link case_evt191">
+                                    <div class="info"><span class="txt">SKT망 데이터 무료 증정</span></div>
+                                    <div class="title">
+                                        <p>SKT망 무제한 요금제</p>
+                                        <p>최대 월 <strong>150GB 무료!</strong></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#none" class="link case_08">
+                                    <div class="info"><span class="txt">인터넷 / IPTV 결합</span></div> <!-- 23/04/07 문구수정 -->
+                                    <!-- 23/04/06 문구 수정 -->
+                                    <div class="title">
+                                        <p>모바일 할인</p>
+                                        <p><strong>최대 13.2만원</strong></p>
+                                    </div>
+                                    <!-- //23/04/06 문구 수정 -->
+                                </a>
+                            </div>
                         </div>
                         <!-- //23/04/04 전체적으로 변경 -->
                         <div class="swiper_control">
-                            <div class="swiper-pagination text"></div>
+                            <!-- 23/05/12 [앱접근성] navigation 추가 -->
+                            <div class="btn_control">
+                                <div class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></div>
+                                <div class="swiper-pagination text"></div>
+                                <div class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></div>
+                            </div>
+                            <!-- //23/05/12 [앱접근성] navigation 추가 -->
                             <div class="play_control"><button type="button" class="btn stop"><span class="hidden">멈춤</span></button></div>
                         </div>
                     </div>
@@ -359,12 +381,12 @@
 
                 <!-- slide best 상품 -->
                 <div class="section_f">
-                    <div class="filter_wrap">
-                        <button type="button" class="on">LG U+</button>
-                        <button type="button">KT</button>
-                        <button type="button">SKT</button>
+                    <div class="filter_wrap" role="tablist">
+                        <button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1" class="on">LG U+</button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">KT</button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_3">SKT</button>
                     </div>
-                    <div class="swiper-container best">
+                    <div class="swiper-container best" role="tabpanel" id="tab_line_panel_1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a href="#none" class="link">
@@ -504,9 +526,10 @@
                     <div class="swiper-container product">
                         <!-- 23/03/02 이미지 배너로 대체 -->
                         <!-- 23/04/12 제휴 배너 순서 및 경로 변경 -->
+                        <!-- 23/05/04 제휴 배너 배경색상 변경 ; 접근성 조치 -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000177" class="link" title="페이지 이동" target="_top" style="background-color:#D988FF;">
+                                <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000177" class="link" title="페이지 이동" target="_top" style="background-color:#C5359B;">
                                     <img src="../../../img/banner/banner_s_03.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, LG U+ 인터넷 IPTV 결합, IPTV 결합">
                                 </a>
                             </div>
@@ -516,28 +539,28 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=01772" class="link" title="페이지 이동" target="_blank" style="background-color:#968C69;">
+                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=01772" class="link" title="페이지 이동" target="_blank" style="background-color:#7E7657;">
                                     <img src="../../../img/banner/banner_s_02.png" alt="제휴 체크카드, KB국민 Liiv M 체크카드, 통신비 월 최대 6천원 할인!">
                                 </a>
                             </div>
 
                             <div class="swiper-slide">
-                                <a href="https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=1307&amp;cmpid=mshop_wire_191028-banner-event_special%20gift-kbbank_liivm" class="link" title="페이지 이동" target="_blank" style="background-color:#6AD7D0;">
+                                <a href="https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=1307&amp;cmpid=mshop_wire_191028-banner-event_special%20gift-kbbank_liivm" class="link" title="페이지 이동" target="_blank" style="background-color:#13979F;">
                                     <img src="../../../img/banner/banner_s_04.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, KT 인터넷, IPTV 결합">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="http://www.skbevent.kr/_tmp/20191024/" class="link" title="페이지 이동" target="_blank" style="background-color:#FFAB56;">
+                                <a href="http://www.skbevent.kr/_tmp/20191024/" class="link" title="페이지 이동" target="_blank" style="background-color:#A97541;">
                                     <img src="../../../img/banner/banner_s_05.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, SK브로드밴드 인터넷, IPTV 결합">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://mshop.skylife.co.kr/event/everyMonthDiscount.do" class="link" title="페이지 이동" target="_blank" style="background-color:#9C9C9C;">
+                                <a href="https://mshop.skylife.co.kr/event/everyMonthDiscount.do" class="link" title="페이지 이동" target="_blank" style="background-color:#727272;">
                                     <img src="../../../img/banner/banner_s_06.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, KT skylife 인터넷, IPTV 결합">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://www.dlive.kr/mobile/event/JoinAction.do?method=kbliivmobile" class="link" title="페이지 이동" target="_blank" style="background-color:#56BBDB;">
+                                <a href="https://www.dlive.kr/mobile/event/JoinAction.do?method=kbliivmobile" class="link" title="페이지 이동" target="_blank" style="background-color:#1B81A1;">
                                     <img src="../../../img/banner/banner_s_07.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, D'live 인터넷, IPTV 결합">
                                 </a>
                             </div>
@@ -548,22 +571,22 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://obank.kbstar.com/quics?page=C020702&amp;cc=b061761:b061770&amp;%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%83%81%ED%92%88%EC%BD%94%EB%93%9C=DP01000569&amp;%EB%85%B8%EB%93%9C%EC%BD%94%EB%93%9C=00007" class="link" title="페이지 이동" target="_blank" style="background-color:#9E74F8;">
+                                <a href="https://obank.kbstar.com/quics?page=C020702&amp;cc=b061761:b061770&amp;%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%83%81%ED%92%88%EC%BD%94%EB%93%9C=DP01000569&amp;%EB%85%B8%EB%93%9C%EC%BD%94%EB%93%9C=00007" class="link" title="페이지 이동" target="_blank" style="background-color:#784CD4;">
                                     <img src="../../../img/banner/banner_s_09.png" alt="KB Liiv M 외국인 고객님, 환율 및 외화송금 보낼 때, 수수료 우대 받으세요!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D006290" class="link" title="페이지 이동" target="_blank" style="background-color:#7896FF;">
+                                <a href="https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D006290" class="link" title="페이지 이동" target="_blank" style="background-color:#5172E8;">
                                     <img src="../../../img/banner/banner_s_10.png" alt="KB Liiv M 외국인 고객님, 쉽고 빠르게 KB웨스턴유니온 특급송금 해보세요!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://m.kbcard.com/SVC/DVIEW/MSCMCXHIASVC0060" class="link" title="페이지 이동" target="_blank" style="background-color:#698D8F;">
+                                <a href="https://m.kbcard.com/SVC/DVIEW/MSCMCXHIASVC0060" class="link" title="페이지 이동" target="_blank" style="background-color:#578386;">
                                     <img src="../../../img/banner/banner_s_11.png" alt="KB Liiv M 해외로밍 신청 고객님, 카드사용안심 서비스 신청하고 부정사용 예방하세요!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="http://k8s-liivm-liiv-nxt-app-web.apps.dmz-dev-bank.clayon.io/support/docs/info-prvnt" class="link" title="페이지 이동" target="_top" style="background-color:#56AFFF;">
+                                <a href="http://k8s-liivm-liiv-nxt-app-web.apps.dmz-dev-bank.clayon.io/support/docs/info-prvnt" class="link" title="페이지 이동" target="_top" style="background-color:#3E97E7;">
                                     <img src="../../../img/banner/banner_s_12.png" alt="이용자 피해예방센터, 정보취약계층 대상, 이용자 피해 예방 안내">
                                 </a>
                             </div>
@@ -571,7 +594,13 @@
                         <!-- 23/04/12 제휴 배너 순서 및 경로 변경 -->
                         <!-- //23/03/02 이미지 배너로 대체 -->
                         <div class="swiper_control">
-                            <div class="swiper-pagination text"></div>
+                            <!-- 23/05/12 [앱접근성] navigation 추가 -->
+                            <div class="btn_control">
+                                <div class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></div>
+                                <div class="swiper-pagination text"></div>
+                                <div class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></div>
+                            </div>
+                            <!-- //23/05/12 [앱접근성] navigation 추가 -->
                             <div class="play_control"><button type="button" class="btn stop"><span class="hidden">멈춤</span></button></div>
                         </div>
                     </div>
@@ -583,8 +612,8 @@
                 <div class="section">
                     <h2 class="title">KB Liiv M을 더 쉽게 이용해 보세요</h2>
                     <ul class="easy_support">
-                        <li class="self"><a href="#none" class="link"><strong>셀프개통</strong><br> 따라해보세요</a></li>
-                        <li class="faq"><a href="#none" class="link"><strong>자주 찾는 질문</strong>을<br> 확인하세요</a></li>
+                        <li class="self"><a href="#none" role="button" class="link" title="페이지 이동"><strong>셀프개통</strong><br> 따라해보세요</a></li><!--[05/10] [앱접근성] role, title 속성 추가-->
+                        <li class="faq"><a href="#none" role="button" class="link" title="페이지 이동"><strong>자주 찾는 질문</strong>을<br> 확인하세요</a></li><!--[05/10] [앱접근성] role, title 속성 추가-->
                     </ul>
                 </div>
                 <!-- //KB Liiv M 이용 -->
@@ -601,7 +630,7 @@
                     <div class="swiper-container review">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="#none" class="link">
+                                <a href="#none" class="link" role="button" title="페이지 이동"><!--[05/10] [앱접근성] role, title 속성 추가-->
                                     <div class="title">
                                         청년희망 <br>
                                         LTE 11GB+(II)
@@ -612,7 +641,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link">
+                                <a href="#none" class="link" role="button" title="페이지 이동"><!--[05/10] [앱접근성] role, title 속성 추가-->
                                     <!-- 23/03/13 한 줄인 경우 처리 -->
                                     <div class="title">
                                         Liiv M LTE 11GB+
@@ -624,7 +653,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link">
+                                <a href="#none" class="link" role="button" title="페이지 이동"><!--[05/10] [앱접근성] role="button" 속성 추가-->
                                     <div class="title">
                                         청년희망 2 <br>
                                         LTE 11GB+(II)
@@ -635,7 +664,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link">
+                                <a href="#none" class="link" role="button" title="페이지 이동"><!--[05/10] [앱접근성] role, title 속성 추가-->
                                     <!-- 23/03/13 한 줄인 경우 처리 -->
                                     <div class="title">
                                         Liiv M LTE 11GB+
@@ -647,7 +676,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#none" class="link">
+                                <a href="#none" class="link" role="button" title="페이지 이동"><!--[05/10] [앱접근성] role, title 속성 추가-->
                                     <div class="title">
                                         청년희망 2 <br>
                                         LTE 11GB+(II)
@@ -708,27 +737,32 @@
         <!-- footer -->
         <div class="footer">
             <div class="footer_top">
-                <div class="logo"><span class="hidden">LiivM</span></div>
+                <div class="logo"><span class="hidden">KB Liiv M</span></div><!-- 23/05/11 KB 문구 추가 -->
                 <ul class="sns_list">
-                    <li><a href="#none" class="item youtube"><span class="hidden">유투브</span></a></li>
-                    <li><a href="#none" class="item blog"><span class="hidden">블로그</span></a></li>
+                    <!-- 23/05/02 target, title 추가 -->
+                    <li><a href="#none" class="item youtube" target="_blank" title="새창으로 열림"><span class="hidden">유투브</span></a></li>
+                    <li><a href="#none" class="item blog" target="_blank" title="새창으로 열림"><span class="hidden">블로그</span></a></li>
+                    <!-- //23/05/02 target, title 추가 -->
                 </ul>
             </div>
             <div class="footer_middle">
+                <!-- 23/05/02 html markup 변경  -->
                 <p class="cc">KB Liiv M 고객센터</p>
-                <p class="tel_free"><span>114</span>(무료, KB Liiv M 가입자 대상)</p>
-                <p class="tel_pay"><span>1522-9999</span>(유료)</p>
+                <p class="tel_free"><a href="#none">114</a>(무료, KB Liiv M 가입자 대상)</p> 
+                <p class="tel_pay"><a href="#none">1522-9999</a>(유료)</p>
                 <p class="time">평일 09시 ~ 18시(주말/공휴일 휴무)</p><!-- 23/04/20 수정 -->
-                <span class="info_biz on">사업자정보<span class="hidden">접기</span></span>
+                <a href="#none" role="button" class="info_biz on">사업자정보<span class="hidden"></span></a>
+                <!-- //23/05/02 html markup 변경  -->
             </div>
 
             <div class="footer_bottom">
                 <div class="link_area">
                     <a href="#none" title="페이지 이동">이용약관</a>
-                    <a href="#none" title="페이지 이동">개인정보처리방침</a>
+                    <a href="#none" title="페이지 이동"><strong>개인정보처리방침</strong></a> <!-- 23/04/26 strong tag 추가 -->
                     <a href="#coverageMapLayer" title="페이지 이동">서비스 커버리지</a>
                     <a href="https://www.msafer.or.kr" target="_blank" title="페이지 이동">명의도용사이트</a>
                     <a href="#none">이용자피해예방</a>
+                    <a href="#none">KB Liiv M 알뜰폰이란?</a> <!-- 23/04/26 항목 추가 -->
                     <a href="https://spam.kisa.or.kr/spam/main.do" target="_blank" title="페이지 이동">불법스팸대응센터</a>
                     <!-- <a href="#none" title="페이지 이동">사이트맵</a> -->
                 </div>
@@ -815,7 +849,13 @@
     </div>
     <!-- //layer -->
 
-    <button type="button" title="클릭하시면 화면 최상단으로 이동합니다" id="scrollTop"><span>TOP</span></button>
+    <!-- 23/05/03 챗봇, KB Plus 추가 -->
+    <a href="#none" role="button" class="go_kbplus"><span class="blind">KB Plus 바로가기</span></a>
+    <a href="#none" role="button" class="go_chatbot"><span>챗봇</span><span class="blind">바로가기</span></a>
+    <!-- //23/05/03 챗봇, KB Plus 추가 -->
+
+    <!-- 23/05/03 top 버튼 삭제 -->
+    <!-- <button type="button" title="클릭하시면 화면 최상단으로 이동합니다" id="scrollTop"><span>TOP</span></button> -->
     
 <script>
     // [03/06] AsideMenu 호출문 제거
@@ -825,10 +865,10 @@
     //Noitce Auto 레이어
     $(function(){
         $.ohyLayer({
-            titleUse:false,
-            content:'#EMEE01P01',
-            type:'notice', 
-            closeUse:false,
+            // titleUse:false,
+            // content:'#EMEE01P01',
+            // type:'notice', 
+            // closeUse:false,
         });
     });
     $(()=>{
@@ -878,30 +918,30 @@
             content:'#marquee_notice',
             speed: 0.5,
         });
-
-        $(window).on("resize", function(){
-            noticeSwiper.autoplay.stop();
-            noticeSwiper.autoplay.start();
-        });
-        // 흐르는 공지사항 swiper  /* 23/03/21 수정 */
-        var noticeSwiper = new Swiper(".noticeSwiper", {
-            autoplay: {
-                delay: 0,
-                stopOnLastSlide: false,
-                disabledOnInteraction: false,
-                pauseOnMouseEnter: false,
-            },
-            speed: 15000,
-            loop: true,
-            loopAdditionalSlides: 1,
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            // loopedSlides: 7,
-            observer: true,
-            observerParents: true,
-        });
-        noticeSwiper.autoplay.stop();
-        noticeSwiper.autoplay.start();
+        // 23/04/24 사용 안함
+        // $(window).on("resize", function(){
+        //     noticeSwiper.autoplay.stop();
+        //     noticeSwiper.autoplay.start();
+        // });
+        // // 흐르는 공지사항 swiper  /* 23/03/21 수정 */
+        // var noticeSwiper = new Swiper(".noticeSwiper", {
+        //     autoplay: {
+        //         delay: 0,
+        //         stopOnLastSlide: false,
+        //         disabledOnInteraction: false,
+        //         pauseOnMouseEnter: false,
+        //     },
+        //     speed: 15000,
+        //     loop: true,
+        //     loopAdditionalSlides: 1,
+        //     slidesPerView: "auto",
+        //     spaceBetween: 20,
+        //     // loopedSlides: 7,
+        //     observer: true,
+        //     observerParents: true,
+        // });
+        // noticeSwiper.autoplay.stop();
+        // noticeSwiper.autoplay.start();
     });
     
     // slide swiper
@@ -912,7 +952,7 @@
             loop: true,
             loopAdditionalSlides: 1,
             autoplay: {
-                delay: 2000,
+                delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
             pagination: {
@@ -967,8 +1007,12 @@
                 },
             }, /* 23/03/13 추가 */
             autoplay: {
-                delay: 2000,
+                delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
+            },
+            nagigation: {
+                prevEl: 'swiper-button-prev',
+                nextEl: 'swiper-button-next',
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -1018,7 +1062,8 @@
                 el: '.swiper-pagination',
                 clickable: true,
                 renderBullet: function(idx, className) {
-                    var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+                    var txt = (idx + 1) + '/' + this.loopedSlides; /* 23/05/03 무한 루프일때 */
+                    //var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
                     return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
                 }
             },
@@ -1054,8 +1099,12 @@
             loop: true,
             loopAdditionalSlides: 1,
             autoplay: {
-                delay: 2000,
+                delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
+            },
+            nagigation: {
+                prevEl: 'swiper-button-prev',
+                nextEl: 'swiper-button-next',
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -1109,25 +1158,42 @@
             },
             on: {
                 afterInit: function() {
-                    this.$el.each(function() {
-                        var _this = $(this);
-                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
-                        _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
-                    });
+                    // console.log(this.snapIndex, this.activeIndex);
+                    // [05/10] [앱접근성] review swiper 스크립트수정
+                    this.$el.find(".swiper-pagination-bullet").removeAttr("title").attr("tabindex", 2);
+                    this.$el.find(".swiper-pagination-bullet-active").attr("title", "선택됨");
+
+                    this.$el.find(".swiper-slide").attr("aria-hidden", true);
+                    this.$el.find(".swiper-slide-active").attr("aria-hidden", false);
+
+                    // this.$el.each(function() {
+                    //     var _this = $(this);
+                    //     _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                    //     _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    // });
                 },
                 transitionEnd: function() {
-                    this.$el.find('.swiper-slide').each(function() {
-                        var _this = $(this);
-                        if (_this.is('.swiper-slide-active')) {
-                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
-                        }
-                    });
-                    this.$el.find('.swiper-pagination-bullet').each(function() {
-                        var _this = $(this);
-                        if (_this.is('.swiper-pagination-bullet-active')) {
-                            _this.attr('title', '선택됨').siblings().attr('title', '');
-                        };
-                    });
+                    // console.log(this.snapIndex, this.activeIndex);
+                    // [05/10] [앱접근성] review swiper 스크립트수정
+                    const idx = this.snapIndex;
+                    this.$el.find(".swiper-pagenation-bullet").removeAttr("title").removeAttr("tabindex");
+                    this.$el.find(".swiper-pagenation-bullet-active").attr("title", "선택됨");
+
+                    this.$el.find(".swiper-slide").attr("aria-hidden", true);
+                    this.$el.find(".swiper-slide").eq(idx).attr("aria-hidden", false);
+
+                    // this.$el.find('.swiper-slide').each(function() {
+                    //     var _this = $(this);
+                    //     if (_this.is('.swiper-slide-active')) {
+                    //         _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                    //     }
+                    // });
+                    // this.$el.find('.swiper-pagination-bullet').each(function() {
+                    //     var _this = $(this);
+                    //     if (_this.is('.swiper-pagination-bullet-active')) {
+                    //         _this.attr('title', '선택됨').siblings().attr('title', '');
+                    //     };
+                    // });
                 },
             },
         });

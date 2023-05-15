@@ -9,24 +9,24 @@
 .box_sckeypad_wrap.active {width:100%; height:100%; transition:width height 0; }
 .box_sckeypad_wrap:after {content:''; display:block; z-index:1003; position:fixed; left:0; top:-100%; width:100%; height:100%; background-color:rgba(0,0,0,0.6); opacity:0; transition:opacity 0.8s; /* transition:top 0.9s; */}
 .box_sckeypad_wrap.active:after {top:0; transition:top 0s; transition:opacity 0.5s;  opacity:1; }
-.box_sckeypad_wrap .inner_keypad_wrap {position:fixed; z-index:1004; left:0; bottom:-100%; width:100%; height:100%; padding:30px 0px 20px 0px; box-sizing:border-box; background-color:#fff; border-radius:15px 15px 0 0; transition:bottom 0.7s; }
+.box_sckeypad_wrap .inner_keypad_wrap {position:fixed; z-index:1004; left:0; bottom:-100%; width:100%; height:100%; padding:30px 0px 20px 0px; box-sizing:border-box; background-color:var(--gray_08, #fff); border-radius:15px 15px 0 0; transition:bottom 0.7s; }
 .box_sckeypad_wrap.active .inner_keypad_wrap {bottom:0; transition:bottom 0.5s; }
 
 .keypad_wrap .login_sub_wrap {margin-top:2rem; }
-.keypad_wrap .text_title {padding:0; margin:2rem 0 0 0; color:#ff2e00; font-size:12px; line-height:1.2; text-align:center; background:#fff; z-index:9; }
+.keypad_wrap .text_title {padding:0; margin:2rem 0 0 0; color:#ff2e00; font-size:12px; line-height:1.2; text-align:center; background:var(--gray_08, #fff); z-index:9; }
 .keypad_wrap .text_title .form_error {display:inline-flex; opacity:0; }
-.keypad_wrap .text_title .form_error::before {content:'!'; width:1.2rem; height:1.2rem; margin-right:.4rem; border-radius:1.2rem; background:#ff2E00; color:#fff; line-height:1.2rem; font-size:.8rem; font-weight:700; text-align:center; }
+.keypad_wrap .text_title .form_error::before {content:'!'; width:1.2rem; height:1.2rem; margin-right:.4rem; border-radius:1.2rem; background:#ff2E00; color:var(--gray_08, #fff); line-height:1.2rem; font-size:.8rem; font-weight:700; text-align:center; }
 .keypad_wrap .text_title .form_error.on {opacity:1; }
 .box_keyinput {display:inline-block; width:100%; height:auto; margin-top:32px; text-align:center; letter-spacing:-5px; }
 .box_keyinput > input {position:absolute; left:0; top:0; visibility:hidden; }
 .box_keyinput .keybox {position:relative; display:inline-block; width:20px; height:20px; text-align:center; }
 .box_keyinput .keybox ~ .keybox {margin-left:24px; }    
-.box_keyinput .keybox:after {content:''; display:inline-block; width:16px; height:16px; background-color:#d6d6d6; border-radius:20px; }
-.box_keyinput .keybox.on:after {background-color:#ffd338; }
+.box_keyinput .keybox:after {content:''; display:inline-block; width:16px; height:16px; background-color:var(--gray_06, #d6d6d6); border-radius:20px; }
+.box_keyinput .keybox.on:after {background-color:var(--main_01, #ffd338); }
 .box_keyinput .dashbox {position:relative; display:inline-block; width:20px; height:20px; text-align:center; }
 .box_sckeypad {display:flex; flex-direction:column; align-items:center; justify-content:center; position:absolute; width:100%; height:auto; margin-top:50px; margin-bottom:40px; letter-spacing:-6px; bottom:0; text-align:center; }
 .box_sckeypad .btn_text.black {margin-bottom:2rem; letter-spacing:initial;}
-.button_sckeypad {width:33.3%; height:54px; padding:0; margin:0; border:0; background-color:#fff; letter-spacing:0; vertical-align:top; font-size:25px; line-height:54px; color:#000; font-weight:700; }
+.button_sckeypad {width:33.3%; height:54px; padding:0; margin:0; border:0; background-color:var(--gray_08, #fff); letter-spacing:0; vertical-align:top; font-size:25px; line-height:54px; color:#000; font-weight:700; }
 .button_sckeypad:active {color:#145e6f; }
 .button_sckeypad.key_reset, 
 .button_sckeypad.key_delete {position:absolute; bottom:0; }
@@ -34,14 +34,14 @@
 .button_sckeypad.key_delete {right:0; font-size:28px; }
 .button_sckeypad.key_delete {background:url(images/button_icon_delarrow.jpg) center center no-repeat; background-size:22px auto; font-size:0; }
 
-.visual_box .btn_kb_auth {display:flex; flex-direction:column; justify-content:flex-end; align-items:center; width:16.4rem; height:16.4rem; margin:3.2rem auto 0; padding:2rem; border:1px solid #eaeced; border-radius:1.2rem; background:url(../img/img/3d_auth.png) no-repeat top 2rem center / 6.4rem auto; }
-.visual_box .btn_kb_auth span {display:block; color:#555; }
+.visual_box .btn_kb_auth {display:flex; flex-direction:column; justify-content:flex-end; align-items:center; width:16.4rem; height:16.4rem; margin:3.2rem auto 0; padding:2rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem; background:url(../img/img/3d_auth.png) no-repeat top 2rem center / 6.4rem auto; }
+.visual_box .btn_kb_auth span {display:block; color:var(--gray_02, #555); }
 .btn .app {position:relative; padding-left:3.8rem; }
 .btn .app::before {content:''; position:absolute; top:0; bottom:0; left:0; width:3rem; height:3rem; margin:auto; background:url(../img/img/icon_kb.png) no-repeat center center / 3rem auto; }
-.sub_txt.login {margin-top:2rem; color:#555; font-size:1.6rem; text-align:center; line-height:2.4rem; }
+.sub_txt.login {margin-top:2rem; color:var(--gray_02, #555); font-size:1.6rem; text-align:center; line-height:2.4rem; }
 .list_join {display:flex; justify-content:center; margin-top:2rem; }
 .list_join li:not(:first-child) {position:relative; padding-left:1.7rem; }
-.list_join li:not(:first-child):before {content:''; position:absolute; top:0; bottom:0; left:.8rem; width:.1rem; height:1.2rem; margin:auto 0; background-color:#d6d6d6; }
+.list_join li:not(:first-child):before {content:''; position:absolute; top:0; bottom:0; left:.8rem; width:.1rem; height:1.2rem; margin:auto 0; background-color:var(--gray_06, #d6d6d6); }
 .list_join li .link {font-size:1.4rem; }
 .list_join li.on {padding:0; }
 .list_join li.on .link {text-decoration:underline; }
@@ -49,10 +49,10 @@
 
 .list_login_others li {padding:1rem 0;}
 .list_login_others li:first-child {padding-top:0;}
-.list_login_others li:not(:last-child) {border-bottom:1px solid #f6f6f6; }
-.list_login_others li a {display:flex; align-items:center; position:relative; padding:1rem 2rem 1rem 2.8rem; font-size:1.6rem; line-height:2.4rem; color:#222;}
+.list_login_others li:not(:last-child) {border-bottom:1px solid var(--line_04, #f6f6f6); }
+.list_login_others li a {display:flex; align-items:center; position:relative; padding:1rem 2rem 1rem 2.8rem; font-size:1.6rem; line-height:2.4rem; color:var(--gray_01, #222);}
 .list_login_others li a .badge {margin-left:.8rem; /*vertical-align:top;*/ }
-.list_login_others li a.disabled {color:#999; cursor:initial; }
+.list_login_others li a.disabled {color:var(--gray_04, #999); cursor:initial; }
 .list_login_others li a:before {content:''; position:absolute; top:50%; left:0; transform:translateY(-50%); width:2rem; height:2rem; background-repeat:no-repeat; background-position:center center; background-size:2rem 2rem; }
 .list_login_others li a.item_kb:before {background-image:url(../img/img/mini_kb2.png); }
 .list_login_others li a.item_pw:before {background-image:url(../img/img/mini_pw.png); }
@@ -61,8 +61,8 @@
 .list_login_others li a.item_id:before {background-image:url(../img/img/mini_id.png); }
 .list_login_others li a.item_phone:before {background-image:url(../img/img/mini_phone3.png); }
 
-.login_bottom {display:flex; position:fixed; bottom:0; flex-direction:column; align-items:center; width:100%; padding:2rem 0 var(--sab_2); background-color:#fff; }
-.login_bottom .btn_next {font-size:1.4rem; color:#555; text-decoration:underline; }
+.login_bottom {display:flex; position:fixed; bottom:0; flex-direction:column; align-items:center; width:100%; padding:2rem 0 var(--sab_2); background-color:var(--gray_08, #fff); }
+.login_bottom .btn_next {font-size:1.4rem; color:var(--gray_02, #555); text-decoration:underline; }
 .login_bottom .list_sns {display:flex; height:4rem;}
 .login_bottom .list_sns li .link {width:4rem; height:4rem; }
 .login_bottom .list_sns li .link.kakao {background:url(../img/img/sns_kakao.png) no-repeat center center / 4rem auto; }
@@ -93,13 +93,13 @@
 .list_join li:only-child .link {text-decoration:underline; text-underline-offset:0.4rem; }
 
 /* 아이디 찾기 */
-.btn.white {background-color:#fff; border:1px solid var(--line_03, #EAECED); }
+.btn.white {background-color:var(--gray_08, #fff); border:1px solid var(--line_03, #EAECED); }
 .ly_cnt .pop_des {color:var(--gray_02, #555); font-size:1.4rem; line-height:2.2rem; }
 .pop_img_wrap {display:flex; justify-content:center; }
 .ly_cnt .pop_des + .pop_img_wrap {margin-top:2.8rem; }
 
 /* [팝업] 인증방법 - 신용카드 */
-.ly_cnt .txt_alert {color:#555; font-size:1.2rem; line-height:1.7rem;}
+.ly_cnt .txt_alert {color:var(--gray_02, #555); font-size:1.2rem; line-height:1.7rem;}
 .ly_cnt .txt_alert.red {color:#FF2E00;}
 .login_cert_wrap .btn_wrap {margin-top:2rem; }
 .login_cert_wrap .cam_area .txt_alert {margin-top:0.8rem; }
@@ -116,7 +116,7 @@
 .login_cert_wrap .install_area {margin-top:3.2rem; }
 .login_cert_wrap .install_wrap_type2 {display:flex; justify-content:space-between; }
 .login_cert_wrap .install_wrap_type2 .install_inn {display:flex; align-items:center; }
-.login_cert_wrap .install_wrap_type2 .install_inn .info_txt {padding-left:.8rem; color:#222; font-weight:700;}
+.login_cert_wrap .install_wrap_type2 .install_inn .info_txt {padding-left:.8rem; color:var(--gray_01, #222); font-weight:700;}
 .login_cert_wrap ul.num_type > li + li {margin-top:0; }
 
 
@@ -126,25 +126,25 @@
 .login .tab_wrap.pw_tab input[type=password]:focus {background-color:#ddd !important; }
 .login .save_box {display:flex; justify-content:center; margin-top:1.2rem;}
 .login .btn_wrap {margin-top:1.2rem; }
-/* .select_list ul li {position:relative; padding:2rem 0; border-bottom:.1rem solid #f6f6f6; }
+/* .select_list ul li {position:relative; padding:2rem 0; border-bottom:.1rem solid var(--line_04, #f6f6f6); }
 .select_list ul li:first-child {padding-top:0; }
 .select_list ul li:last-child {border:0; }
-.select_list ul li .yel_label {display:inline-block; position:relative; margin-left:.8rem; font-size:1rem; line-height:2rem; text-align:center; width:3.5rem; height:2rem; background-color:#ffd338; border-radius:5rem; vertical-align:middle; }
+.select_list ul li .yel_label {display:inline-block; position:relative; margin-left:.8rem; font-size:1rem; line-height:2rem; text-align:center; width:3.5rem; height:2rem; background-color:var(--main_01, #ffd338); border-radius:5rem; vertical-align:middle; }
 .select_list .img_item {margin-right:.8rem; vertical-align:middle; } */
 
 /* 초기 비밀번호 재설정 */
 /* .login .service_center_wrap {position:fixed; bottom:7.2rem; width:100%; padding:0 2rem; text-align:center; } */
 .login .service_center_wrap {padding:0 var(--sar_2) 2rem var(--sal_2); text-align:center; }
-.login .service_center {padding:2rem; background-color:#f8f9fb; border-radius:1.2rem; }
+.login .service_center {padding:2rem; background-color:var(--bg_02, #f8f9fb); border-radius:1.2rem; }
 .login .service_center .center_tit {position:relative; }
-.login .service_center .center_tit .center_tit_line {margin:1.2rem 0; border-bottom:.1rem solid #eaeced; }
+.login .service_center .center_tit .center_tit_line {margin:1.2rem 0; border-bottom:.1rem solid var(--line_03, #eaeced); }
 .login .service_center .center_tit .img_item {vertical-align:middle; }
 .login .service_center .center_info span {display:block; font-size:1.2rem; line-height:1.7rem; }
 .login .service_center .center_info .em_black {font-weight:bold; }
-.login .service_center .center_info .em_blue {font-size:1.6rem; line-height:2.1rem; color:#1065dc; font-weight:bold; }
+.login .service_center .center_info .em_blue {font-size:1.6rem; line-height:2.1rem; color:var(--main_02, #1065dc); font-weight:bold; }
 
 .sns_fail {display:flex; justify-content:space-between; margin-top:1.2rem;}
 .sns_fail li {width:calc(50% - .6rem);}
-.sns_fail li a {width:100%; padding:2rem; border:1px solid #eaeced; border-radius:1.2rem; text-align:center;}
-.sns_fail li a strong {color:#222; font-size:1.6rem;}
+.sns_fail li a {width:100%; padding:2rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem; text-align:center;}
+.sns_fail li a strong {color:var(--gray_01, #222); font-size:1.6rem;}
 .sns_fail li a .txt {margin-top:1.2rem; font-size:1.2rem; line-height:1.9rem;}

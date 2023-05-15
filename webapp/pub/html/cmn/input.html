@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_724242084|rpid=-1444474263|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -50,7 +50,19 @@
                             <div class="item_content">
                                 <div class="label">레이블명</div>
                                 <div class="input">
-                                    <input type="text" placeholder="힌트텍스트">
+                                    <input type="text" title="title" placeholder="힌트텍스트">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_error"></div>
+                    </div>
+
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label blind">레이블명 blind</div>
+                                <div class="input">
+                                    <input type="text" title="title" placeholder="힌트텍스트(label blind 처리-앱접근성)">
                                 </div>
                             </div>
                         </div>
@@ -62,7 +74,7 @@
                             <div class="item_content">
                                 <div class="label">수정 불가시</div>
                                 <div class="input">
-                                    <input type="text" placeholder="readonly" readonly>
+                                    <input type="text" title="title" placeholder="readonly" readonly>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +86,7 @@
                             <div class="item_content">
                                 <div class="label">수정 불가시</div>
                                 <div class="input">
-                                    <input type="text" placeholder="disabled" disabled>
+                                    <input type="text" title="title" placeholder="disabled" disabled>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +109,7 @@
                             <div class="item_content">
                                 <div class="label">label fix</div>
                                 <div class="input">
-                                    <input type="text" placeholder="레이블 fix">
+                                    <input type="text" title="title" placeholder="레이블 fix">
                                 </div>
                             </div>
                         </div>
@@ -109,7 +121,7 @@
                             <div class="item_content">
                                 <div class="label">label animation</div>
                                 <div class="input">
-                                    <input type="text" placeholder="input focus 시 label animation 발생">
+                                    <input type="text" title="title" placeholder="input focus 시 label animation 발생">
                                 </div>
                             </div>
                         </div>
@@ -122,7 +134,7 @@
                             <div class="item_content done">
                                 <div class="label">value 값이 입력되어 있는 상태</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이름 입력" value="김리브">
+                                    <input type="text" title="이름" placeholder="이름 입력" value="김리브">
                                 </div>
                             </div>
                         </div>
@@ -135,7 +147,7 @@
                             <div class="item_content error">
                                 <div class="label">에러문구 노출 시</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이름을 입력해주세요">
+                                    <input type="text" title="이름" placeholder="이름을 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -157,7 +169,7 @@
                                 <div class="info"><button type="button" class="btn_text">유심 정보 확인방법</button></div>
                                 <div class="label">유심일련번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="유심일련번호를 입력해주세요">
+                                    <input type="text" title="유심일련번호" placeholder="유심일련번호 자리수를 확인 후 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -178,7 +190,7 @@
                             <div class="item_content">
                                 <div class="label">비밀번호 입력</div>
                                 <div class="input">
-                                    <input type="password" placeholder="비밀번호 입력">
+                                    <input type="password" title="비밀번호" placeholder="비밀번호를 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -200,13 +212,13 @@
                             <div class="item_content">
                                 <div class="label">주민등록번호</div>
                                 <div class="input">
-                                    <input type="text" maxlength="6" placeholder="주민등록번호 앞자리" >
+                                    <input type="text" maxlength="6" title="주민등록번호 앞자리">
                                 </div>
                             </div>
                             <div class="bar"></div>
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+                                    <input type="text" maxlength="7" title="주민등록번호 뒷자리">
                                 </div>
                             </div>
                         </div>
@@ -229,29 +241,29 @@
                             <div class="item_content">
                                 <div class="label">카드번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 첫번째" class="focus">
+                                    <input type="text" title="카드번호 첫번째 4자리" class="focus">
                                 </div>
                             </div>
                             
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 두번째" class="focus">
+                                    <input type="text" title="카드번호 두번째 4자리" class="focus">
                                 </div>
                             </div>
 
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 세번째" class="focus">
+                                    <input type="text" title="카드번호 세번째 4자리" class="focus">
                                 </div>
                             </div>
 
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 네번째" class="focus">
+                                    <input type="text" title="카드번호 네번째 4자리" class="focus">
                                 </div>
                             </div>
                         </div>
-                        <div class="form_error"></div>    
+                        <div class="form_error"></div>
                     </div>
 
                 </div>
@@ -269,13 +281,13 @@
                             <div class="item_content">
                                 <div class="label">이메일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이메일">
+                                    <input type="text" title="아이디" placeholder="아이디 입력">
                                 </div>
                             </div>
                             <div class="email_col">@</div>
                             <div class="item_content">
-                                <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select" readonly>직접입력</button>
+                                <div class="select">
+                                    <button type="button" id="btn_email" class="btn_select" title="도메인 선택" readonly>도메인 선택</button>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +295,7 @@
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="이메일을 입력해 주세요">
+                                    <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력">
                                 </div>
                             </div>
                         </div>
@@ -307,13 +319,13 @@
                             <div class="item_content">
                                 <div class="label">면허번호</div>
                                 <div class="select">
-                                    <button type="button" id="btn_MERG04P06" class="btn_select">지역선택</button>
+                                    <button type="button" id="btn_MERG04P06" class="btn_select" title="면허번호 첫번째 자리 선택">지역선택</button>
                                 </div>
                             </div>
                             <div class="bar"></div>
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                    <input type="text" title="면허번호 두번째 자리" placeholder="00-0000000-00" value="00-0000000-00">
                                 </div>
                             </div>
                         </div>
@@ -324,13 +336,13 @@
                             <div class="item_content error">
                                 <div class="label">면허번호</div>
                                 <div class="select">
-                                    <button type="button" id="btn_MERG04P06" class="btn_select">지역선택</button>
+                                    <button type="button" id="btn_MERG04P06" class="btn_select" title="면허번호 첫번째 자리 선택">지역선택</button>
                                 </div>
                             </div>
                             <div class="bar"></div>
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                    <input type="text" title="title" placeholder="00-0000000-00" value="00-0000000-00">
                                 </div>
                             </div>
                         </div>
@@ -361,14 +373,14 @@
                             <div class="item_content btn_s_date">
                                 <div class="label">시작일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="시작일" id="start_date">
+                                    <input type="text" title="시작일" id="start_date">
                                 </div>
                             </div>
                             <div class="bar"></div>
                             <div class="item_content btn_e_date">
                                 <div class="label">종료일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="종료일" id="end_date">
+                                    <input type="text" title="종료일" id="end_date">
                                 </div>
                             </div>
                         </div>
@@ -391,7 +403,7 @@
                             <div class="item_content btn_search">
                                 <div class="label">검색</div>
                                 <div class="input">
-                                    <input type="text" placeholder="검색어를 입력하세요 .btn_search">
+                                    <input type="text" title="검색어" placeholder="검색어를 입력해주세요 .btn_search">
                                 </div>
                             </div>
                         </div>
@@ -402,7 +414,7 @@
                             <div class="item_content btn_camera">
                                 <div class="label">유심 모델번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="모델번호를 입력해주세요 .btn_camera">
+                                    <input type="text" title="유심 모델번호" placeholder="모델번호를 입력해주세요 .btn_camera">
                                 </div>
                             </div>
                         </div>
@@ -423,7 +435,7 @@
                             <div class="item_content btn_check">
                                 <div class="label">휴대폰번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="'-'없이 입력해주세요 .btn_check">
+                                    <input type="text" title="휴대폰번호" placeholder="숫자만 입력해주세요 .btn_check">
                                 </div>
                             </div>
                         </div>
@@ -435,7 +447,7 @@
                             <div class="item_content btn_auth">
                                 <div class="label">아이디</div>
                                 <div class="input">
-                                    <input type="text" placeholder="아이디를 입력해주세요 .btn_auth">
+                                    <input type="text" title="아이디" placeholder="아이디를 입력해주세요 .btn_auth">
                                 </div>
                             </div>
                         </div>
@@ -445,9 +457,9 @@
                     <div class="form_group">
                         <div class="form_item fix req">
                             <div class="item_content btn_auth_confirm">
-                                <div class="label">인증번호 입력</div>
+                                <div class="label">인증번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="인증번호를 입력해주세요 .btn_auth_confirm">
+                                    <input type="text" title="인증번호" placeholder="인증번호 6자리를 입력해주세요 .btn_auth_confirm">
                                 </div>
                             </div>
                         </div>
@@ -459,7 +471,7 @@
                             <div class="item_content btn_acc">
                                 <div class="label"><span class="blind">계좌번호</span></div>
                                 <div class="input">
-                                    <input type="text" placeholder="가상 계좌번호 .btn_acc">
+                                    <input type="text" title="계좌번호" placeholder="계좌번호를 숫자만 입력해주세요 .btn_acc">
                                 </div>
                             </div>
                         </div>
@@ -479,14 +491,14 @@
                         <div class="form_item fix">
                             <div class="item_content btn_address">
                                 <div class="input">
-                                    <input type="text" placeholder="기본주소를 검색해주세요" readonly>
+                                    <input type="text" title="기본주소" placeholder="기본주소를 검색해주세요" readonly>
                                 </div>
                             </div>
                         </div>
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="상세주소를 입력해주세요">
+                                    <input type="text" title="상세주소" placeholder="상세주소를 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -507,7 +519,7 @@
                             <div class="item_content btn_auth">
                                 <div class="label">휴대폰번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                    <input type="text" title="휴대폰번호" placeholder="숫자만 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -519,7 +531,7 @@
                             <div class="item_content js_timer">
                                 <div class="label">인증번호 입력</div>
                                 <div class="input">
-                                    <input type="text" placeholder="'-'없이 입력해주세요">
+                                    <input type="text" title="인증번호" placeholder="인증번호를 입력해주세요">
                                 </div>
                             </div>
                         </div>
@@ -540,7 +552,7 @@
                             <div class="item_content">
                                 <div class="label">필수입력</div>
                                 <div class="input">
-                                    <input type="text" placeholder="필수입력 항목입니다.">
+                                    <input type="text" title="필수입력" placeholder="필수입력 항목입니다.">
                                 </div>
                             </div>
                         </div>
@@ -646,6 +658,15 @@
                                     <ul class="bull_type">
                                         <li>인증번호 입력 시 제한시간 timer 영역이 자동으로 삽입된다. (MALG0108 참고)</li>
                                     </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="fc_black">div.label (.blind)</strong>
+                            <ul class="bull_type">
+                                <li>
+                                    <strong class="fc_black">.blind</strong>
+                                    접근성을 위해 대체텍스트 처리 필요 시 사용
                                 </li>
                             </ul>
                         </li>

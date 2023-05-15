@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>로그인 - 아이디 로그인</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">아이디 로그인</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub center">아이디 로그인</h2>
+                </div>
+
+                <div class="section">
+
+                    <button type="button" id="layer1" class="btn secondary sm">[팝업] 인증방법 - 신용카드 confirm 팝업 클릭</button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MALG0802" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+
+                <div class="tab_wrap line mgt0">
+                    <div class="tab_list" role="tablist">
+                        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1">일반인증(ARS)</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">간편인증(앱카드)</button></div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab_line_panel_1">
+                        <div class="login_cert_wrap">
+                            <h3 class="hidden">카드 촬영하기</h3>
+
+                            <div class="cam_area">
+                                <div class="btn_wrap">
+                                    <button type="button" class="btn primary">카드촬영</button>
+                                </div>
+                                <p class="txt_alert">카드 촬영 시 정보가 자동으로 입력됩니다.</p>
+                            </div>
+
+                            <div class="tit_sec_wrap">
+                                <h3 class="tit_sec">카드종류</h3>
+                            </div>
+
+                            <!-- 카드 종류 23/01/19 변경 -->
+                            <button type="button" id="twoLayer1">테스트</button>
+                            <div class="form_group">
+                                <div class="form_item">
+                                    <div class="item_content">
+                                        <div class="select">
+                                            <select>
+                                                <option>카드종류를 선택해주세요</option>
+                                                <option value="option1">국민카드</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //카드 종류 -->
+
+                            <h3 class="blind">카드 번호입력</h3>
+
+                            <div class="form_area">
+                                <div class="form_group col">
+                                    <div class="form_item card_type">
+                                        <div class="item_content">
+                                            <div class="label">카드번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="카드번호 첫번째" class="focus">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="item_content">
+                                            <div class="input">
+                                                <input type="text" placeholder="카드번호 두번째" class="focus">
+                                            </div>
+                                        </div>
+                
+                                        <div class="item_content">
+                                            <div class="input">
+                                                <input type="text" placeholder="카드번호 세번째" class="focus">
+                                            </div>
+                                        </div>
+                
+                                        <div class="item_content">
+                                            <div class="input">
+                                                <input type="text" placeholder="카드번호 네번째" class="focus">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error"></div>    
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>본인명의 개인 신용카드로 본인확인이 가능합니다. (법인카드, 체크카드, 가족카드, 선불카드 불가)</li>
+                                    <li>비씨카드는 비씨로고가 표시된 카드만 이용 가능합니다.</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blind">휴대폰 번호 입력</h3>
+
+                            <div class="phone_area">
+                                <div class="form_group">
+                                    <div class="form_item">
+                                        <div class="item_content">
+                                            <div class="label">휴대폰번호</div>
+                                            <div class="input">
+                                                <input type="text" placeholder="숫자만 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_error">유효성 check</div>
+                                </div>
+                            </div>
+
+                            <h3 class="blind">카드인증서비스 이용약관 동의</h3>
+
+                            <div class="agree_area">
+                                <div class="check_group border">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="agree3">
+                                        <label for="agree3" class="label"><span>카드인증서비스 이용약관 동의 <strong>[필수]</strong></span></label>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_1" name="agree1">
+                                            <label for="agree1_1" class="label"><span>본인확인 서비스 이용약관</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_2" name="agree1">
+                                            <label for="agree1_2" class="label"><span>카드사 서비스 이용약관</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_3" name="agree1">
+                                            <label for="agree1_3" class="label"><span>개인정보 수집 및 이용동의</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_4" name="agree1">
+                                            <label for="agree1_4" class="label"><span>고유식별정보 처리 동의</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn_wrap">
+                                <button type="button" class="btn primary">ARS인증요청</button>
+                            </div>
+                            <ul class="star_type">
+                                <li>ARS 연결 후 비밀번호 앞 2자리를 입력해주세요.</li>
+                                <li>통화 종료 후 '인증 완료'를 선택해야 본인인증이 완료됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab_panel" role="tabpanel" id="tab_line_panel_2">
+                        <div class="login_cert_wrap">
+                            <div class="tit_sec_wrap">
+                                <h3 class="tit_sec">
+                                    간편인증을 진행할<br>카드사를 선택해주세요.
+                                </h3>
+                            </div>
+
+                            <div class="select_area">
+                                <!-- 카드 종류 23/01/19 변경 -->
+                                <div class="form_group">
+                                    <div class="form_item">
+                                        <div class="item_content">
+                                            <div class="select">
+                                                <select>
+                                                    <option>카드종류를 선택해주세요</option>
+                                                    <option value="option1">국민카드</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //카드 종류 -->
+
+                                <div class="install_wrap">
+                                    <p class="info_txt">앱을 설치하지 않았을 경우,<br> 앱을 설치하거나 일반인증(ARS)를 이용해주세요.</p>
+                                    <button type="button" class="btn third sm" title="새창으로 열림">앱 설치</button><!--[05/11] [앱접근성] title속성 추가-->
+                                </div>
+
+                                <ul class="star_type">
+                                    <li>본인명의 개인 신용카드로 본인확인이 가능합니다. (법인카드, 체크카드, 가족카드, 선불카드 불가)</li>
+                                    <li>비씨카드는 비씨로고가 표시된 카드만 이용 가능합니다.</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blind">카드인증서비스 이용약관 동의</h3>
+
+                            <div class="agree_area">
+                                <div class="check_group border">
+                                    <div class="check_item basic">
+                                        <input type="checkbox" id="agree3">
+                                        <label for="agree3" class="label"><span>카드인증서비스 이용약관 동의 <strong>[필수]</strong></span></label>
+                                    </div>
+                                    <div class="check_sub_group">
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_1" name="agree1">
+                                            <label for="agree1_1" class="label"><span>본인확인 서비스 이용약관</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_2" name="agree1">
+                                            <label for="agree1_2" class="label"><span>카드사 서비스 이용약관</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_3" name="agree1">
+                                            <label for="agree1_3" class="label"><span>개인정보 수집 및 이용동의</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                        <div class="check_item sub">
+                                            <input type="checkbox" id="agree1_4" name="agree1">
+                                            <label for="agree1_4" class="label"><span>고유식별정보 처리 동의</span></label>
+                                            <a href="#" class="btn_more"><span class="blind">약관 보기</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn_wrap">
+                                <button type="button" class="btn primary">앱카드 인증요청</button>
+                            </div>
+                            <p class="txt_alert">앱카드 인증 후 '인증 완료'를 선택해야 본인인증이 완료됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary" data-action="close">인증완료</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+        <!-- layer -->
+        <div id="htmlTest5" class="layerHTML">
+            <div class="ly_cnt">            
+                <div class="section">
+                    #htmlTest5<br>레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용  end
+                </div>
+            </div>
+            <div class="btn_pop_confirm_wrap">
+                <div class="btn_area">
+                    <button type="button" class="btn secondary" data-action="close">취소</button>
+                    <button type="button" class="btn primary">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- //layer -->
+
+
+<script>
+
+    // 팝업
+    $('#layer1').on('click', function(){
+        // $.ohyLayer({
+        //     title:"신용카드 본인인증",
+        //     content:'#MALG0802',
+        //     type:'confirm',
+        //     closeUse:false,                                     
+        // });
+    });
+
+    $('#layer1').on('click', function(){
+        $.ohyLayer({
+            title:"신용카드 본인인증",
+            content:'#MALG0802',
+            type:'bottom',
+            // closeUse:false,                                 
+        });
+    });
+    $(document).on('click', '#twoLayer1', function(){
+            $.ohyLayer({                
+                title:"바텀시트",
+                content:'#htmlTest5',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+    
+</script>
+</body>
+</html>

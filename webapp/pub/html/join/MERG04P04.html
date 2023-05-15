@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 가입/개통 팝업 - [팝업] OCR (신용카드)</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">OCR (신용카드)</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">OCR (신용카드)</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MERG04P04" class="btn primary">OCR (신용카드) 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- layer -->
+<div id="MERG04P04" class="layerHTML">
+    <div class="ly_cnt">
+
+        <div class="tit_sub_wrap">
+            <h2 class="tit_sub">정보확인</h2>
+        </div>
+        <div class="section">
+
+            <div class="ocr_photo">
+                <!-- 23/03/31 img tag 로 대체 -->
+                <img src="/img/img/etc_credit.png" alt="신용카드 이미지">
+                <!-- <span class="img_item etc credit"></span> -->
+                <!-- // 23/03/31 img tag 로 대체 -->
+            </div>
+            <ul class="star_type">
+                <li>실제 정보와 일치하지 않는 경우 직접 입력 가능합니다.<br>촬영 후 입력된 정보를 확인해주시기 바랍니다.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="ocr_type">
+                <span>카드종류</span> <!-- 23/03/31 html 수정 -->
+                <p class="ocr_cont">신용카드</p>
+            </div>
+        </div>
+
+        <div class="section mgt36">
+
+            <div class="form_group">
+                <div class="form_item card_type fix">
+                    <div class="item_content">
+                        <div class="label">카드번호</div>
+                        <div class="input">
+                            <input type="text" title="카드번호 첫번째 4자리" class="focus" value="1234"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                    
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" title="카드번호 두번째 4자리" class="focus" value="5678"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" title="카드번호 세번째 4자리" class="focus" value="****"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" title="카드번호 네번째 4자리" class="focus" value="****"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error"></div>    
+            </div>
+
+            <!-- [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가 -->
+            <div class="form_group">
+                <div class="form_item date fix">
+                    <div class="item_content"> <!-- 23/05/10 카드 유효기간은 년월 btn_date 삭제 --> 
+                        <div class="label">유효기간</div>
+                        <div class="input">
+                            <input type="text" title="유효기간" placeholder="MM/YY" id="btn_cal" value="12/24"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 --> 
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">재촬영</button>
+            <button type="button" class="btn primary" data-action="close">완료</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<script>
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                title:" ",
+                content:'#MERG04P04',
+                type:'fullpopup',
+            });
+        }
+        popupLoad();
+        $("#btn_MERG04P04").on("click", popupLoad);
+
+        // [02/22] 날짜선택 form 마크업 수정 & 스크립트 추가
+        let btn_cal = $(document).find("#btn_cal").parents(".item_content").find(".btn_type");
+        btn_cal.on("click", function(){
+            _calendar.open( 'calendar', 'btn_cal', '');
+        });
+    })
+</script>
+</body>
+</html>

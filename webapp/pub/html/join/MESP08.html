@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">가입/개통</h1>
+
+                <div class="section">
+                    <button type="button" id="layer1" class="btn secondary sm">	[팝업] 마케팅 수신동의 confirm 팝업 클릭</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MESP08" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                마케팅 수신동의를 해주시면 KB Liiv M에서 
+                제공하는 다양한 혜택 및 이벤트, 상품 등에 
+                유용한 정보를 받을 수 있습니다.
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary" data-action="close" id="var_test">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //컨펌 레이어
+    $('#layer1').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:'마케팅 수신동의(선택)',
+            content:'#MESP08',
+            type:'confirm', 
+            closeUse:true,
+            closeAct:true,
+        });
+    });
+</script>
+</body>
+</html>

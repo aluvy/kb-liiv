@@ -1,26 +1,18 @@
 $(document).ready(function(){
 
-    /*
-    *** function 내 수정 ***
-    tabMenu.init()
-    _front.select()
-    _aside.init()
-    _aside.open()
-    _aside.close()
-    */
-    // e : 접근성 추가
-    
-    setTimeout(() => {
-        _layout.init();
-    }, 0);
-    accordionButton.init(); //accordion
-    tabMenu.init(); //tab menu
+    setTimeout(() => { _layout.init() }, 0);
+    accordionButton.init();
+    tabMenu.init();
     _front.init();  //form
+
     // 퍼블화면만 적용 by S020781
     if(location.href.indexOf('/pub/') != -1){
     	new AsideMenu().init(); // aside_menu
     }
+    
+    partnerMarquee();   // 멤버십제휴처 로고 애니메이션
 });
+
 
 // Accordion & toggle
 var accordionButton = {
@@ -59,6 +51,10 @@ var accordionButton = {
             })
         });
     },
+    /**
+     * popup 내 아코디언 이벤트 init: popup open 시 호출 함께 호출 됨
+     * @param {element} popup (_this.$el) => (ex) div.layer_wrap.open.confirm
+     */
     accordion_popup: function(popup){
         // popup in accordion
 
@@ -202,22 +198,34 @@ var tabMenu = {
     // }
 }
 
+
+
 /* layer popup
-*  1.종류 : 총 3타입(alert, confirm, bottom) (fullpopup, calendar 추가됨)
+*  1.종류 : 총 3타입(alert, confirm, bottom) (confirm alert, fullpopup, calendar, notice 추가됨) ==> 총 7타입
 *  2.특징 :
-*         - alert : html 호출없이 옵션의 텍스트 입력만으로 구현
-*         - confirm : 가장 많이 사용하는 일반 타입
-*         - bottom : 하단에 위치하는 타입
-*                    - 일반 바텀시트 : max값 95%만 적용하며 높이는 컨텐츠길이만큼 자동으로 지원. 컨텐츠가 95%이상이면 스크롤 자동 지원
-*  3.옵션 :
-*       title:'타이틀',      //필수입력
-        titleUse : true,    //default "true", 타이틀 사용여부
-        closeUse : false    //default "true", 오른쪽 상단 닫기버튼 사용여부
-        closeAct:false,     //default "true", 레이어 닫기 버튼의 닫기 기능 사용여부를 정의할 때 사용
-        content:'#ID',      //필수입력, 호출할 HTML컨텐츠 ('#ID명'), 알림창일 경우 텍스트 입력 ('알림창입니다.')
-        type:'confirm',     //필수입력, default "confirm", 레이어 타입 지정 (alert, confirm, bottom)        
-        openAuto : true,    //default "false", 레이어를 변수명으로 호출할 때 정의
-        dimAct : false,     // defulat "false", dim클릭 close event
+*           - alert         : 퍼블화면에선 사용하지 않음
+*           - confirm alert : 컨펌 알럿팝업은 레이어팝업과 유사하지만 좌유 여백이 다름. (우측 상단 삭제버튼(X) 없음)
+*           - confirm       : 가장 많이 사용하는 일반 타입 (우측 상단 삭제버튼(X) 없음)
+*           - bottom        : 하단에 위치하는 타입
+*                               - 최대 높이값은 최대(100%-헤더) 이며, 스크롤 자동 지원
+*           - fullpopup     : 높이 100% 팝업
+*           - calendar      : 달력 호출 팝업
+*           - notice        : 공지사항 호출 팝업
+*
+*  3.옵션 : (달력팝업의 옵션은 cal_popup 페이지 참고)
+*       title:'타이틀',         // 필수입력
+*       titleUse : true,        // default "true", 타이틀 사용여부
+*       closeUse : false,       // default "true", 오른쪽 상단 닫기버튼 사용여부
+*       closeAct:false,         // default "true", 레이어 닫기 버튼의 닫기 기능 사용여부를 정의할 때 사용
+*       content:'#ID',          // 필수입력, 호출할 HTML컨텐츠 ('#ID명'), 알림창일 경우 텍스트 입력 ('알림창입니다.')
+*       type:'confirm',         // 필수입력, default "confirm", 레이어 타입 지정 (alert, confirm, bottom)
+*       openAuto : true,        // default "false", 레이어를 변수명으로 호출할 때 정의
+*       dimAct : false,         // defulat "false", dim클릭 close event
+*
+*  4. 참고 URL :
+*       /pub/html/cmn/popup.html
+*       /pub/html/cmn/cal_popup.html
+*       /pub/html/cmn/notice_popup.html
 */
 $(function(){
     "use strict";
@@ -226,7 +234,7 @@ $(function(){
     $.ohyLayer = function(options, option2){
 
         let id = options.content;
-        if($(id).children().length <= 0) return;    // 비어있는 요소 팝업 열지 않기
+        if($(id).children().length <= 0) return;    // 비어있는 요소 예외처리
 
         if(typeof options === 'undefined') element = {};
         if(typeof options === 'string') {
@@ -274,8 +282,6 @@ $(function(){
 
             _this.setContent();
 
-            // _this.$layer.attr("tabindex",0).focus();    // focus 이동
-
             _this.$closeDevBtn.attr("id", (_this.content.replace("#",""))+"_dev");
             if(this.closeAct == true) _this.$closeDevBtn.attr("data-action","close");
 
@@ -302,9 +308,7 @@ $(function(){
             _this.buildHTML();
             
             // 타이틀 있는지 체크
-            if( _this.$con.find(".ly_hd").length > 0 ){
-                _this.$hd.remove();
-            }
+            if( _this.$con.find(".ly_hd").length > 0 ){ _this.$hd.remove() }
 
             (_this.title == '') ? _this.$title.html("알림") : _this.$title.html(_this.title);
             if(_this.closeUse === false) _this.$layer.addClass("noBtn");
@@ -318,27 +322,17 @@ $(function(){
 
                 let targetBtn = _this.$layer.attr("rel");
                 $(document).find(`#${targetBtn}`).addClass("on");   // 누른 target에 class on
-
-                // console.log( ' 전', $('body').find(':focus')  );
-
                 _this.$layer.attr("tabindex",0).focus();            // focus 이동
-                // console.log( ' 후', $('body').find(':focus')  );
             }, 0)
-
 
 
             // aria-hidden
             $(".wrap", window.parent.document).attr("aria-hidden", "true");
-            // var $focusId = $('body').find(':focus').attr("id");
-            // _this.$layer.focus().attr("rel", $focusId);
             _this.$parent.prev(".layer_wrap").attr("aria-hidden", true);
             _this.$el.attr("aria-hidden", false);
 
             if( $(document).find(".layer_wrap.open").length <= 1 ){ // 팝업이 이미 떠있는지 체크
                 var $scrollTop = $(window).scrollTop();
-
-                // let isMain = $(document).find(".header .inner_main").length > 0;    // 메인일때
-                // let isSub = $(document).find(".header .inner_sub").length > 0;      // 서브일때
 
                 let $title = $(document).find(".container .content h1.title");
                 let $header = $(document).find(".header");
@@ -397,12 +391,12 @@ $(function(){
             }
             getHeight();
             
-            if( _this.type == "confirm")getIframeSize(); // pdf 미리보기 iframe 사이즈
+            if( _this.type == "confirm") getIframeSize(); // pdf 미리보기 iframe 사이즈
 
             // resize
             $(window).on("resize",() => {
                 getHeight();
-                if( _this.type == "confirm")getIframeSize();
+                if( _this.type == "confirm") getIframeSize();
             });
             
             $(_this.content).trigger("onload");
@@ -453,7 +447,6 @@ $(function(){
                         _this.$el.prev(".layer_wrap").attr("aria-hidden", false);
                     } else {
                         $("html, body").removeClass("noScroll");    // noScroll
-                        // $("body").removeClass("popup-on");
 
                         $(".wrap").css("top","");
                         $win.scrollTop($scrollTop);
@@ -468,34 +461,13 @@ $(function(){
                     }
                 };
                 _this.$el.remove();
-                // _this.$el.removeAttr("aria-hidden");                
-                // _w.johyLayer.instances.pop(_this);
                 _w.johyLayer.instances.find(function(o, i){
                     if(o == _this){
                         _w.johyLayer.instances.splice(i, 1);
                     }
                 });
             }, 250);
-
-            
-            // droptype_btn 으로 열렸을 때 .droptype_btn에 .on class 제거
-            // console.log($lastFocused, $(`#${$lastFocused}`));
-            // if( $lastFocused != undefined ){
-            //     let isDroptypeBtn = $(`#${$lastFocused}`).hasClass("droptype_btn");
-            //     if(isDroptypeBtn) $(`#${$lastFocused}`).removeClass("on");
-            // } else {
-                // IOS focus 대응 수정
-                // let idx = _front.target.length - 1;
-                // let targetElem = _front.target[idx];
-                // let isDroptypeBtn = $(`#${targetElem}`).hasClass("droptype_btn");
-                // let isBtnSort = $(`#${targetElem}`).hasClass("btn_sort");
-                // let isBtnSelect = $(`#${targetElem}`).hasClass("btn_select");
-                // if( isDroptypeBtn || isBtnSort || isBtnSelect ) $(`#${targetElem}`).removeClass("on");
-                // _front.target.splice(idx, 1);   // 배열 마지막값 삭제
-            // }
-
-            
-        },
+        }
     };
  
     _w.johyLayer.instances = [];
@@ -528,8 +500,6 @@ $(function(){
 
     var _w = window;
     $.marquee = function(options){
-
-        // let id = options.content;
 
         if(typeof options === 'undefined') element = {};
         if(typeof options === 'string') {
@@ -568,7 +538,7 @@ $(function(){
         buildHTML : function(){
             var _this = this;
 
-            _this.$marquee; // requestAnimationFrame();
+            _this.$marquee;     // requestAnimationFrame();
             _this.$left = 0;
 
             _this.$id = _this.content;
@@ -579,7 +549,6 @@ $(function(){
             setTimeout(() => {
                 _this.$item = _this.$area.find(".marquee-item");
                 _this.$itemWidth = Math.floor(_this.$item.width());
-                // _this.$item.css({"width": `${_this.$itemWidth}px` });
                 _this.$item.css({"width": `${_this.$itemWidth * 0.1}rem` });
                 _this.$itemSize = _this.$itemWidth*-1;
                 
@@ -600,14 +569,11 @@ $(function(){
         play: function(){
             var _this = this;
 
-            // console.log(_this);
-
             if( _this.playUse == true ){
                 _this.$marquee = requestAnimationFrame(ani);
             }
 
             function ani(){
-                // _this.$wrap.css({"left" : _this.$left});
                 _this.$wrap.css({"left" : `${_this.$left * 0.1}rem`});
                 _this.$left = _this.$left - _this.speed;
 
@@ -616,18 +582,18 @@ $(function(){
             }
 
             // stop
-            $(`${_this.$id}_stop`).off("click").on("click", function(){
+            $(document).off("click", `${_this.$id}_stop`).on("click", `${_this.$id}_stop`, function(){
                 cancelAnimationFrame(_this.$marquee);
             });
 
-            // stop
-            $(`${_this.$id}_play`).off("click").on("click", function(){
+            // play
+            $(document).off("click", `${_this.$id}_play`).on("click", `${_this.$id}_play`, function(){
                 cancelAnimationFrame(_this.$marquee);
                 _this.$marquee = requestAnimationFrame(ani);
             });
 
             // close
-            $(`${_this.$id}_close`).off("click").on("click", function(){
+            $(document).off("click", `${_this.$id}_close`).on("click",`${_this.$id}_close`, function(){
                 cancelAnimationFrame(_this.$marquee);
                 _this.close();
             });
@@ -655,7 +621,6 @@ $(function(){
 
 
 var _calendar = {
-
     idCal : '',         // calendar id
     idInput : '',       // input id
     format : '-',       // 0000-00-00
@@ -664,8 +629,6 @@ var _calendar = {
     valD : '',          // 일
     minH : '',
     maxH : '',
-    // minDate: { year: 2023, month: 03, day: 06 },
-    // maxDate: { year: 2023, month: 04, day: 02 },
     minDate: { year: 0, month: 0, day: 0 },
     maxDate: { year: 0, month: 0, day: 0 },
     
@@ -680,8 +643,6 @@ var _calendar = {
 
         _calendar.idInput = ( idInput != '' || idInput != undefined ) ? idInput : '';       // input setting
         _calendar.format = (format != undefined) ? format : ".";                            // format setting
-
-        // console.log(object);
 
         // 초기화
         _calendar.minDate = { year: 0000, month: 00, day: 00 };
@@ -895,14 +856,10 @@ var _calendar = {
                     
                     // minDate = 00000000
                     if( _calendar.minDate.year == 0 ){
-                        // console.log("max만 설정");
                         if( year < _calendar.maxDate.year ) disabled = '';
-                        // if( strMonth < _calendar.maxDate.month ) disabled = '';
-                        // if( dayNum <= _calendar.maxDate.day ) disabled = '';
                     }
                     // maxDate = 9999
                     if( _calendar.maxDate.year == 9999 ){
-                        // console.log("min만 설정");
                         if( year > _calendar.minDate.year ) disabled = '';
                         if( year == _calendar.minDate.year && strMonth > _calendar.minDate.month ) disabled = '';
                     }
@@ -992,8 +949,6 @@ var _calendar = {
         var idCal  = _calendar.idCal;        
         $(`#${idCal}_dev`).click();
     },
-
-
 
     /**
      * _calendar.getLastDayOfMonth( year, month ) 해당 년월의 마지막일 계산
@@ -1126,32 +1081,18 @@ $(document).on("click", ".toast_close", function(){
 
 var _layout = {
     init: function(){
-        _layout.main();
         _layout.headerMain();
         _layout.headerSub();
-        _layout.scrollTop();
         _layout.getPad();
     },
-    main: function(){
-        if($(".data_list").length) {
-            $(".data_list").each(function(){
-                $(this).find(".item.data").prepend("<span class='blind'>데이타</span>");
-                $(this).find(".item.call").prepend("<span class='blind'>전화</span>");
-                $(this).find(".item.msg").prepend("<span class='blind'>문자</span>");
-            });
-        }
-    },
-    // isMain: function(){
-    //     return $(document).find(".header .inner_main").length > 0;   // main == true
-    // },
     headerMain: function(){
         const mainScrollTop = function(){
-            // let isMain = $(document).find(".header .inner_main").length > 0;
-            if( _front.isSub() ) return;     // 서브면 실행 X
+            if( _front.isSub() ) return;    // 서브 예외처리
 
+            // 팝업이 떠있는지 체크
             let isPopup = $(document).find(".layer_wrap").length > 0;
-            if(isPopup) return; // 팝업이 떠있는지 체크
-                    
+            if(isPopup) return;
+
             const mainScroll = $(".header");
             const scroll = $(document).scrollTop();
             scroll > 10 ? mainScroll.addClass("on") : mainScroll.removeClass("on");
@@ -1159,16 +1100,13 @@ var _layout = {
         mainScrollTop();
         $(document).on("scroll", mainScrollTop );
     },
-    // isSub: function(){
-    //     return $(document).find(".header .inner_sub").length > 0;   // sub == true
-    // },
     headerSub: function(){
         
         // h1.title width
         const getH1Layout = function(){
 
-            if( _front.isMain() ) return;     // 메인이면 실행 X
-            if( !_front.isSub() ) return;     // 서브 아니면 실행 X (ia error 대응)
+            if( _front.isMain() ) return;     // 메인 예외처리
+            if( !_front.isSub() ) return;     // 서브 아니면 예외처리 (ia error 대응)
             
             let headerinnerW = $(document).find(".header .inner_sub").width();
             let headerInnerPadL = $(document).find(".header .inner_sub").css("padding-left").replace("px", "") * 1;
@@ -1186,8 +1124,8 @@ var _layout = {
         // pageTitle
         const pageTtl = $(".content h1.title");
         const onPageTtl = function(){
-            if( _front.isMain() ) return;               // 메인이면 실행 X
-            if( $(".layer_wrap").length > 0 )return;    // 팝업 떠있으면 실행 X
+            if( _front.isMain() ) return;               // 메인 예외처리
+            if( $(".layer_wrap").length > 0 )return;    // 팝업 떠있을때 예외처리
             const scroll = $(document).scrollTop();
 
             if( scroll > 60 ){
@@ -1198,8 +1136,6 @@ var _layout = {
                     pageTtl.removeClass("hidden");
                 }
             }
-
-            // scroll > 60 ? pageTtl.removeClass("hidden") : pageTtl.addClass("hidden");
         }
 
         setTimeout(() => {
@@ -1209,20 +1145,11 @@ var _layout = {
         
         $(window).on("resize", getH1Layout );
         $(document).on("scroll", onPageTtl );
+    },
 
-        // let header = $(document).find(".header");
-        // ( _front.isSub() ) ? header.addClass("sub") : null;    // 서브일때 .header에 .sub 부여
-    },
-    scrollTop: function(){
-        const scrTop = $("#scrollTop");
-        const onScrollTop = function(){
-            const scroll = $(document).scrollTop();
-            scroll > 150 ? scrTop.addClass("on") : scrTop.removeClass("on");
-        }
-        onScrollTop();
-        $(document).on("scroll", onScrollTop );
-        scrTop.off("click").on("click", ()=>{ $("html, body").stop().animate({scrollTop:0}, 200) })
-    },
+    /**
+     * progress_wrap 있을때 .content 패딩처리
+     */
     getPad: function(){
         
         const proBar = $(".progress_wrap");
@@ -1258,10 +1185,7 @@ var _front = {
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault();});
 
         // ios 대응 button, a 클릭 시 focus 이동
-        $(document).on("click", "button, a", function(){
-            // $(this).focus();
-            this.focus();
-        })
+        $(document).on("click", "button, a", function(){ this.focus() })
 
     },
     OSchk: function(){
@@ -1277,14 +1201,23 @@ var _front = {
         ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
         ( iosApp.test(userAgent) ) ? elem.addClass("ios_app") : null;
         ( aos.test(userAgent) ) ? elem.addClass("aos") : null;
-        ( aosApp.test(userAgent) ) ? elem.addClass("aos_app") : null;
+
+        // aos_app 일때
+        if ( aosApp.test(userAgent) ) {
+            elem.addClass("aos_app");
+            
+            // aosApp safe area top 처리
+            if ( !navigator.userAgent.includes("sh=") ) return;     // sh= 없을때 예외처리
+            let sh = navigator.userAgent.split("sh=");
+            sh = sh[sh.length-1]*1;
+            sh = Math.floor(sh);
+            if( isNaN(sh) ) return;     // NaN 예외처리
+            document.documentElement.style.setProperty('--sat', `${sh}px`);
+        };
         
     },
     isKeyboard: function(e){
-        if( !$("body").hasClass("mobile") ) return;     // 예외처리 추가
-
-        const matches = window.matchMedia("(hover:hone), (pointer:coarse)");
-        if ( !matches.matches ) return;  // 예외처리 추가
+        if( !$("body").hasClass("mobile") ) return;     // 모바일이 아닐 때 예외처리
 
         let target = "input[type=text], input[type=date], input[type=number], input[type=password], input[type=email], input[type=tel], input[type=url], input[type=search], textarea";
 
@@ -1296,13 +1229,16 @@ var _front = {
                 || elem.hasClass("readonly")
                 || elem.hasClass("disabled")
                 || elem.hasClass("nppfs-npv")
-            ) return;  // 예외처리 추가
+            ) return;  // readonly, disabled 예외처리
             
-            $("body").addClass("keyboard-on")
+            $("body").addClass("keyboard-on");
+            // $(window).resize();     // resize 이벤트 추가 (04/26추가, 테스트후 삭제예정)
         });
-        $(document).on("blur", target, function(){ $("body").removeClass("keyboard-on") });
+        $(document).on("blur", target, function(){
+            $("body").removeClass("keyboard-on");
+            // $(window).resize();     // resize 이벤트 추가 (04/26추가, 테스트후 삭제예정)
+        });
     },
-    // target: [],     // IOS 대응 팝업 오픈 시 버튼 id 저장 배열
     isMain: function(){
         return $(document).find(".inner_main").length > 0;
     },
@@ -1326,12 +1262,6 @@ var _front = {
             button = `<button type="button" class="btn_type">${text}</button>`;
             $(document).find(`.form_item .item_content.${item}`).append(button);
         }
-
-        // 발송을 완료하고 바꿔야 하므로 화면에서 제어 -- 주석처리 
-        // 인증번호 발송 클릭
-        // $(document).off("click", ".item_content.btn_auth .btn_type").on("click", ".item_content.btn_auth .btn_type", function(){
-        //     $(this).text("재발송");
-        // })
     },
     formTimer: function(){
         $(document).find(".form_item .item_content.js_timer").each((idx, item)=>{
@@ -1351,8 +1281,6 @@ var _front = {
                     .removeClass("focus")
                     .removeClass("error")
                     .removeClass("focus");
-                
-                // elem.hasClass("datepicker") ? null : elem.parents(".item_content").removeClass("done");
                     
                 elem.parents(".form_group").find(".form_error").html("");
             },
@@ -1367,19 +1295,21 @@ var _front = {
                 
                 this.init(elem);
 
-                const doneChk = elem.val();
-                doneChk.length > 0 ? this.done(elem) : null;
+                if(this.done(elem)){
+                    elem.parents(".item_content").addClass("done");
+                } else {
+                    elem.parents(".item_content").removeClass("done");
+                }
     
                 const reqChk = elem.parents(".form_item").hasClass("req");
                 const reqChild = elem.parents(".form_item").find("input").filter((idx, item)=> $(item).val().length < 1 );
                 ( reqChk && reqChild.length > 0 ) ? this.req(elem) : null;
-    
-                // const errChk = elem.parents(".form_item").find("input").filter((idx, item)=> !errorChk($(item).val()) );
-                // errChk.length > 0 ? this.error(elem) : null;
             },
     
             done : function(elem){
-                elem.parents(".item_content").addClass("done");
+                const doneChk = elem.val();
+                let result = (doneChk.length > 0) ? true : false;
+                return result;
             },
     
             error : function(elem){
@@ -1414,7 +1344,6 @@ var _front = {
                     result = true;
                 }
 
-                // result = elem.is('[readonly], [disabled]') ? true : false;
                 return result;
             }
         }
@@ -1435,10 +1364,12 @@ var _front = {
                 if( !(_parent.hasClass("no_clear") || _form_item.hasClass("card_type") || _input.isDisabled(_this)) ){
                     _parent.append('<button type="button" class="btn_clear"><span class="hidden">입력내용 초기화</span></button>');
                     if( _this.val() == '' ){
-                        _this.css({'padding-right' : ''});
+                        // _this.css({'padding-right' : ''});
+                        _this.css({'width' : ''});
                         _parent.find('.btn_clear').hide();
                     } else {
-                        _this.css({'padding-right' : '2rem'});
+                        // _this.css({'padding-right' : '2rem'});
+                        _this.css({'width' : 'calc(100% - 2rem)'});
                         _parent.find('.btn_clear').show();
                     }
                 }
@@ -1449,7 +1380,8 @@ var _front = {
                 var _input = _parent.find("input");
 
                 // _parent.css({'padding-right': 0});
-                _input.css({'padding-right': 0});
+                // _input.css({'padding-right': 0});
+                _input.css({'width' : ''});
                 _this.hide().siblings('input').val('').focus();
             })
             .off("focus", ".input input").on("focus", ".input input", function(){ _input.focus($(this)) })
@@ -1570,14 +1502,6 @@ var _front = {
 
     },
     cardItem: function(){
-        // 접근성
-        if( $(".item_info").length ) {
-            $(".item_info").each(function(){
-                $(this).find(".icon_data").prepend("<span class='blind'>데이타</span>");
-                $(this).find(".icon_call").prepend("<span class='blind'>전화</span>");
-                $(this).find(".icon_msg").prepend("<span class='blind'>문자</span>");
-            });
-        }
         $(document).off("click", ".card_select_wrap .card_item").on("click", ".card_select_wrap .card_item", function(){
             $(this).addClass('on').siblings('.card_item').removeClass('on');
         })
@@ -1590,11 +1514,20 @@ var _front = {
         })
     },
     step: function(){
+
+        let param = window.location.href;
+        let isRateplan = param.includes('/rateplan/');
+
         if($("ol.progress_wrap").length) {
-            $("ol.progress_wrap").each(function(){
-                $(this).before("<style>ol.progress_wrap .step .blind {display:none} ol.progress_wrap .step.on .blind {display:block}</style>");
-                $(this).find("li.step").prepend("<span class='blind'>현재단계</span>");
-            });
+            if(isRateplan){     // 요금제 진단하기
+                getCheckPlanStep();
+
+            } else {        // 가입
+                $("ol.progress_wrap").each(function(){
+                    $(this).before("<style>ol.progress_wrap .step .blind {display:none} ol.progress_wrap .step.on .blind {display:block}</style>");
+                    $(this).find("li.step").prepend("<span class='blind'>현재단계</span>");
+                });
+            }
         }
     
         if($(".join_comp_dia").length) {
@@ -1611,6 +1544,20 @@ var _front = {
     }
 };
 
+/**
+ * 요금제 진단하기 단계설정
+ */
+const getCheckPlanStep = function(){
+    let stepLength = $(document).find(".progress_wrap .step").length;
+    $(document).find(".progress_wrap .step").each((idx, item)=>{
+        let step = idx+1;
+        let isCnt = $(item).hasClass("on") ? ", 현재단계" : "";
+        $(item).find("span").remove();
+        $(item).append(`<span>${stepLength}단계 중 ${step}단계${isCnt}</span>`);
+        console.log(`${step} / ${stepLength} ${isCnt}`);
+    })
+}
+
 
 // ios keyboard open && touch event
 $(window).on("touchstart", function(e){
@@ -1622,6 +1569,7 @@ $(window).on("touchstart", function(e){
         if( !result ) $(document).find(":focus").blur();
     }
 })
+
 
 /**
  * @param {*} target element 
@@ -1650,49 +1598,7 @@ const isInputTouch = function(target){
 }
 
 
-// slide swiper
-$(function(){
-    var swiper = new Swiper('.slide_wrap_basic', {
-        spaceBetween: 34,
-        loop: true,	// infinite loop - 무한 swiper
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function(idx, className) {
-                var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
-                return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
-            }
-        },
-        on: {
-            afterInit: function() {
-                this.$el.each(function() {
-                    var _this = $(this);
-                    _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
-                    _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
-                });
-            },
-            transitionEnd: function() {
-                this.$el.find('.swiper-slide').each(function() {
-                    var _this = $(this);
-                    if (_this.is('.swiper-slide-active')) {
-                        _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
-                    }
-                });
-                this.$el.find('.swiper-pagination-bullet').each(function() {
-                    var _this = $(this);
-                    if (_this.is('.swiper-pagination-bullet-active')) {
-                        _this.attr('title', '선택됨').siblings().attr('title', '');
-                    };
-                });
-            },
-        },
-    });
 
-});
 
 
 // aside_menu
@@ -1704,21 +1610,32 @@ const _aside = {
     init: function(){        
         if( $(document).find(".aside_wrap").length < 1 ){ return };
 
-        // console.log("_aside.init()");
-        // $(document).find(".aside_wrap").hide(); // 접근성 추가
         $(document).find(".aside_wrap").css('visibility', 'hidden'); // 접근성 추가
         $(document).find(".aside_wrap").attr("aria-hidden", true);
 
+        _aside.set();
         _aside.reset();
+    },
+    set: function(){
 
-        // let body = $(document).find(".aside_body");
-        // let nav = $(document).find(".nav_area");
+        // [05/08] [앱접근성] asidemenu close target a tag 추가
+        let asideCloseFocus = _front.isMain() ? "inner_main" : "inner_sub";
+        setTimeout(() => {
+            // $(document).find(`.header .${asideCloseFocus}`).prepend(`<a name="close_aside"></a>`);
+            $(document).find(`.header .${asideCloseFocus} .title a`).attr("id", "close_aside").attr("tabindex", 1);
+            // $(document).find(`.header .aside_wrap`).prepend(`<a name="open_aside"></a>`);
+            $(document).find(`.header .aside_wrap .aside_head .title`).html(`<a id="open_aside">전체</a>`);
+        }, 0);
 
-        // body.scrollTop(0);
-        // nav.scrollTop(0);
+        $(document).find(".header .nav_list li a").each((idx, item)=>{
+            $(item).attr("href", `#nav_${idx}`).attr("role", "button");
+            // $(document).find(".header .menu_area .menu_list > li").eq(idx).prepend(`<a name="nav_${idx}"></a>`);
+            // console.log( $(document).find(".header .menu_area .menu_list > li").eq(idx) );
+            let tit = $(document).find(".header .menu_area .menu_list > li").eq(idx).find(".title");
+            let menu = tit.text();
+            tit.html(`<a id="nav_${idx}">${menu}</a>`);
+        })
 
-        // // _aside.navTop = Math.ceil(nav.position().top);  // ceil
-        // setTimeout(() => { _aside.getGnbPath() }, 0);   // menuY값 여백오류 대응
     },
     reset: function(){
         if( $(document).find(".aside_wrap").length < 1 ){ return };
@@ -1734,33 +1651,51 @@ const _aside = {
         setTimeout(() => { _aside.getGnbPath() }, 0);   // menuY값 여백오류 대응
     },
     open: function(){
-        // $(document).find(".aside_wrap").show(); // 접근성 추가
         $(document).find(".aside_wrap").css('visibility', 'visible');   // 접근성 추가
         $(document).find(".aside_wrap").attr("aria-hidden", false);
-        // $(document).find(".wrap").attr("aria-hidden", true);
 
-        $(document).find(".inner_main").attr("aria-hidden", false);
-        $(document).find(".inner_sub").attr("aria-hidden", false);
-        $(document).find(".container").attr("aria-hidden", false);
-        $(document).find(".footer").attr("aria-hidden", false);
+        $(document).find(".inner_main").attr("aria-hidden", true);
+        $(document).find(".inner_sub").attr("aria-hidden", true);
+        $(document).find(".container").attr("aria-hidden", true);
+        $(document).find(".footer").attr("aria-hidden", true);
+        
+        $(document).find(".btm_gnb").attr("aria-hidden", true);
+        $(document).find(".kbplus_wrap").attr("aria-hidden", true);
+        $(document).find(".go_kbplus").attr("aria-hidden", true);
+        $(document).find(".go_chatbot").attr("aria-hidden", true);
 
         $(document).find('.header').find('.aside_wrap').addClass('on');
         $('body').addClass('no_scroll');
         
         _aside.reset(); // reset
+
+        // 포커스 이동
+        $(document).find("a#open_aside").attr("tabindex", 1).focus();
+        setTimeout(() => { $(document).find("a#open_aside").removeAttr("tabindex") }, 0);
+
+        console.log('open', $(":focus"));
     },
     close: function(){
         $(document).find('.aside_wrap').removeClass('on');
         $('body').removeClass('no_scroll');
         $(document).find(".aside_wrap").attr("aria-hidden", true);
-        // $(document).find(".wrap").removeAttr("aria-hidden");
 
         $(document).find(".inner_main").removeAttr("aria-hidden");
         $(document).find(".inner_sub").removeAttr("aria-hidden");
         $(document).find(".container").removeAttr("aria-hidden");
         $(document).find(".footer").removeAttr("aria-hidden");
+        
+        $(document).find(".btm_gnb").removeAttr("aria-hidden");
+        $(document).find(".kbplus_wrap").removeAttr("aria-hidden");
+        $(document).find(".go_kbplus").removeAttr("aria-hidden");
+        $(document).find(".go_chatbot").removeAttr("aria-hidden");
 
         setTimeout(() => { $(document).find(".aside_wrap").css('visibility', 'hidden') }, 200); // 접근성 추가
+
+        $(document).find("a#close_aside").attr("tabindex", 1).focus();
+        setTimeout(() => { $(document).find("a#close_aside").removeAttr("tabindex") }, 0);
+
+        console.log('close', $(":focus"));
     },
     sticky: function(){
         let scrollTop = $(".aside_body").scrollTop();
@@ -1775,7 +1710,16 @@ const _aside = {
         let manu = $(document).find(".menu_area");
         _aside.isSticky ? manu.css({"margin-top": `${navH}px`}) : manu.css({"margin-top": 0});
     },
-    navActive: function(){
+    navActive: function(target){
+
+        // 클릭 시에만 focus 이동
+        if( target != undefined ){
+            let targetId = target.attr("href").replace("#", "");
+            $(document).find(`a#${targetId}`).attr("tabindex", 1).focus();
+            $(document).find(`a#${targetId}`).removeAttr("tabindex");
+        }
+
+
         if( _aside.isClick ) return;     // nav_list 클릭인지 체크 (클릭 인 경우 true, 스크롤이벤트 무시)
         $(".nav_list li a").removeClass("on");
 
@@ -1796,25 +1740,12 @@ const _aside = {
     },
     endScrollChk: function(){   // 마지막 메뉴 예외처리
         let ScrollTop = Math.round($(document).find(".aside_body").scrollTop());
-
-        // let scrollH = $(document).find(".aside_body").prop("scrollHeight");
-        // let lastLiH = $(document).find(".aside_body .menu_list > li:last-child").outerHeight(true);
         
         let bodyH = $(document).find(".aside_body").height();
         let bodyScroll = $(document).find(".aside_body").prop("scrollHeight");
 
         let cntScroll = Math.floor(bodyScroll - bodyH);
 
-        // let navH = $(document).find(".aside_body .nav_area").outerHeight(true);
-        // let lastLi2 = _aside.gnbPath[_aside.gnbPath.length - 2].menuY;
-        // let gap = 20;
-
-        // console.log(ScrollTop, cntScroll);
-        // console.log(ScrollTop, scrollH, lastLiH, bodyH, navH, bodyH - navH, scrollH-bodyH, (bodyH - navH) > lastLiH);
-
-        // if( (bodyH - navH) > lastLiH ){
-        //     if( ScrollTop > lastLi2 + gap ){ return true }
-        // }
         if( ScrollTop >= cntScroll )return true;
 
         return false;
@@ -1837,8 +1768,8 @@ const _aside = {
             let getY = (menu.eq(i).find(".title").position().top) - removeTop;
             
             _aside.gnbPath.push({});
-            _aside.gnbPath[i].tabX = Math.floor(getX);  // floor
-            _aside.gnbPath[i].menuY = Math.floor(getY); // floor
+            _aside.gnbPath[i].tabX = Math.floor(getX);
+            _aside.gnbPath[i].menuY = Math.floor(getY);
         }
     }
 };
@@ -1861,25 +1792,14 @@ class AsideMenu{
         _aside.init();
 
 	    $(window).on("resize orientationchange", function(e){
-            // console.log(e);
             setTimeout(() => { _aside.reset() }, 0);
 
             let time = 150;
-
-            if(  mediaQuery280.matches ){
-                mediaQuery280.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
-
-            } else if ( mediaQuery320.matches ){
-                mediaQuery320.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
-
-            } else if ( mediaQuery360.matches ){
-                mediaQuery360.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
-
-            } else if ( mediaQuery.matches ){
-                mediaQuery.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
+            if(  mediaQuery280.matches ){           mediaQuery280.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
+            } else if ( mediaQuery320.matches ){    mediaQuery320.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
+            } else if ( mediaQuery360.matches ){    mediaQuery360.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
+            } else if ( mediaQuery.matches ){       mediaQuery.onchange = function(e){ setTimeout(() => { _aside.reset() }, time); }
             }
-
-            // console.log(mediaQuery.matches, mediaQuery360.matches, mediaQuery320.matches, mediaQuery280.matches);
         });
 	    
 	    $(".aside_body").on("scroll", function(){
@@ -1890,11 +1810,12 @@ class AsideMenu{
 	    // aside menu > nav click event
 	    let Navs = $(document).find(".nav_list li a");        
         Navs.on("click", function(e){
+            const _this = $(this);
             _aside.isClick = true;
-            let idx = $(document).find(".nav_list li a").index($(this));
+            let idx = $(document).find(".nav_list li a").index(_this);
             $(".aside_body").stop().animate({scrollTop : _aside.gnbPath[idx].menuY }, 300, function(){
                 _aside.isClick = false;
-                _aside.navActive();
+                _aside.navActive(_this);
             });
         })
 
@@ -1927,7 +1848,9 @@ class AsideMenu{
                     return;
                 }
         
-                if(_p === "http://"+location.host+"/"
+                if(_p === "http://"+location.host+"/#close_aside"
+                    || _p === "https://"+location.host+"/#close_aside"
+                    || _p === "http://"+location.host+"/"
                     || _p === "https://"+location.host+"/"
                     || _p.indexOf("/system/main/main") != -1
                     || _p.indexOf("/rateplan/plans/products") != -1
@@ -1945,53 +1868,8 @@ class AsideMenu{
 
 	    	_aside.close();
 	    });
-
-	    // btn_alarm 삭제 요청
-	    // $('.btn_alarm').on('click', function(){
-	    //     fnMoveUrl('/alarm/push/alarm', 'N','N','N','Y','');
-	    // });
 	}
 }
-
-
-
-
-// 대표번호  토글 (보류)
-// $(()=>{
-//     let wrap = $(document).find(".drop_acco_wrap");
-//     wrap.hasClass("on") ? accOpen(wrap, "load") : accClose(wrap, "load");
-
-//     wrap.find(".acco_btn").off("click").on("click", function(){
-//         wrap.hasClass("on") ? accClose(wrap) : accOpen(wrap);
-//     })
-
-//     function accOpen(box, event){
-//         const btn = box.find(".acco_btn");
-//         const cont = box.find(".acco_cont");
-//         btn.attr("aria-expanded", "true").find(".blind").text("내용닫기");
-
-//         if( event === "load" ){
-//             cont.show();
-//         } else {
-//             box.addClass("on");
-//             cont.slideDown(200);
-//         }
-//     }
-//     function accClose(box, event){
-//         const btn = box.find(".acco_btn");
-//         const cont = box.find(".acco_cont");
-//         btn.attr("aria-expanded", "false").find(".blind").text("내용보기");
-
-//         if( event === "load" ){
-//             cont.hide();
-//         } else {
-//             box.removeClass("on");
-//             cont.slideUp(200);
-//         }
-//     }
-// })
-
-
 
 
 
@@ -2009,28 +1887,22 @@ let _fullH = {
 
         let children = fullH.children();
         let childrenH = fullH.children().innerHeight();
-        // console.log( childrenH );
 
         let height = winH - headH - btnH - gap;
         
         fullH.css({
-            // "height" : `${height}px`,
             "min-height" : `${childrenH}px`,
             "max-height" : `${height}px`,
-            // "min-height" : `${childrenH}px`,
         });
         children.css({
             "min-height" : `${height}px`,
-            // "max-height" : `${height}px`,
         });
-        // console.log("resize", fullH, winH, headH, btnH, gap, height );
     }
 }
 $(()=>{
     setTimeout(() => { _fullH.init() }, 0);
     $(window).on("resize", _fullH.init );
 })
-
 
 
 
@@ -2058,6 +1930,7 @@ const getBtmFixElem = function(){
     if( btmFixedItem.length < 1 ) return;
 
     btmFixedItem = btmFixedItem.filter((idx, item)=> $(item).css("display")!="none" );  // display:none 인 요소 필터링
+    btmFixedItem = btmFixedItem.filter((idx, item)=> $(item).height() != 0);            // display:none 안에 있는 요소 필터링
 
     let footBtnH = isPageOn
                  ? $(document).find(".on .btn_confirm_wrap .btn_area").outerHeight(true) || 0
@@ -2109,11 +1982,7 @@ $(()=>{
 
 const getIframeSize = function(){
     let layer = $(`.layer_wrap[aria-hidden = "false"]`);
-    // let previewWrap = layer.find(".preview_wrap");
     let iframePage = layer.find("#pdfViewPage");
-
-    // console.log('test', iframePage.length );
-    // let iframePage = previewWrap.find("#pdfViewPage");
     
     if( iframePage.length <= 0 ) return;
 
@@ -2121,10 +1990,39 @@ const getIframeSize = function(){
     let lyCntH = _frontFormatter.Number(lyCnt.css("max-height"));
     let lyCntPd = _frontFormatter.Number(lyCnt.css("padding-top")) + _frontFormatter.Number(lyCnt.css("padding-bottom"));
     let previewH = lyCntH - lyCntPd;
-    
-    // previewWrap.css({"height":`${previewH}px`});
+
     iframePage.css({"height":`${previewH}px`, "width":"100%"});
 }
+
+
+/**
+ * 가까운멤버십 로고 애니메이션 play, stop버튼 관련 함수
+ * @returns null
+ */
+const partnerMarquee = function(){
+    if( $(document).find(".partner_area").length < 1 ) return; // 예외처리
+    
+    const parent = $(document).find(".partner_area");
+    const btn = parent.find(".btn_func");
+
+    // setting
+    $("#marquee_area_stop").removeClass("play").addClass("stop").html(`<span class="blind">멈추기</span>`);
+    $("#marquee_area_play").removeClass("stop").addClass("play").html(`<span class="blind">재생</span>`);
+
+    btn.on("click", function(e){
+        let _this = $(this);
+        setTimeout(() => {
+            if( _this.hasClass("stop") ){
+                _this.addClass("play").removeClass("stop").attr("id", "marquee_area_play");
+                _this.html(`<span class="blind">재생</span>`);
+            } else {
+                _this.addClass("stop").removeClass("play").attr("id", "marquee_area_stop");;
+                _this.html(`<span class="blind">멈추기</span>`);
+            }
+        }, 1);
+    })
+}
+
 
 const _frontFormatter = {
     /**

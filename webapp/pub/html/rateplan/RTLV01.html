@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1207790152|rpid=-1984842707|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/front.js"></script>
-    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script>
     <style>
         
     </style>
@@ -68,8 +68,8 @@
                                 <div class="form_group">
                                     <div class="form_item fix">
                                         <div class="item_content">
-                                            <div class="select" title="정렬 순서">
-                                                <button type="button" id="btn_select" class="btn_select">인기순</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                            <div class="select"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
+                                                <button type="button" id="btn_select" class="btn_select" title="정렬 방법">인기순</button><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선--><!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
                                             </div>
                                         </div>
                                     </div>
@@ -203,20 +203,9 @@
                 </div>
 
                 <div class="btm_fixed_item rateplan_help">
-                    <a href="#" target="blank" title="클릭하시면 요금제 진단하기 페이지가 새창으로 열립니다." id="aa">
+                    <a href="#" target="blank" title="클릭하시면 요금제 진단하기 페이지로 이동합니다."><!-- [05/02] [앱접근성] 요금제 진단하기 링크 title 문구 수정 -->
                         <p>어떤 요금제를 선택해야 할지 어려우신가요?</p>
                     </a>
-                    <script>
-                        // test
-                        $(document).on('click','#aa',function(){
-                            if(!$(this).parent('.rateplan_help').hasClass('mini')){
-                                console.log('event');
-                            }else{
-                                $(this).parent('.rateplan_help').removeClass('mini');
-                                console.log('removeClass');
-                            }
-                        });
-                    </script>
                 </div>
                 
                 <!-- 삭제예정 -->
@@ -247,7 +236,7 @@
         <div class="section_f">
             <div class="bottom_select">
                 <ul>
-                    <li><a href="#none" role="button" title="인기순">인기순</a></li>
+                    <li class="on"><a href="#none" role="button" title="인기순">인기순</a></li><!-- [05/02] 인기순 선택 class on 추가 -->
                     <li><a href="#none" role="button" title="추천순">추천순</a></li>
                     <li><a href="#none" role="button" title="가격 높은 순">가격 높은 순</a></li>
                     <li><a href="#none" role="button" title="가격 낮은 순">가격 낮은 순</a></li>

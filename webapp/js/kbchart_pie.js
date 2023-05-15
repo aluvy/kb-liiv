@@ -297,4 +297,3 @@ String.prototype.numFormat = function(){
   if( isNaN(num) ) return "0"; 
   return num.numFormat();
 };
-

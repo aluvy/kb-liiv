@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>Detail page - KB Liiv M App</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+</head>
+<style>
+    .tit_sub {margin-top: 1.6rem; padding: 0 2rem;}
+    .nor_form_wrap ul li {margin-bottom: 1.2rem;}
+    .nor_form_wrap ul li:last-child {margin-bottom: 0;}
+    .nor_form_box {display: flex; align-items: center; padding: 1.6rem 2.4rem; border: 1px solid #eaeced; border-radius: 1.2rem;}
+    .nor_form_box .nor_tit {padding-left: 3.2rem;}
+    .nor_form_box span {display: block;}
+    .nor_form_box .btn.third {margin-top: .8rem;}
+
+</style>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+
+                <h2 class="tit_sub">가입 시<br>준비해주세요</h2>
+                
+                <section class="section">
+                    <div class="form_group">
+                        <div class="nor_form_wrap">
+                            <ul>
+                                <li>
+                                    <div class="nor_form_box">
+                                        <span class="img_item three business"></span>
+                                        <div class="nor_tit">
+                                            <strong class="fs14">본인 명의 신분증</strong>
+                                            <span class="fs12 fc_gray">주민등록증, 운전면허증</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="nor_form_box">
+                                        <span class="img_item three account"></span>
+                                        <div class="nor_tit">
+                                            <strong class="fs14">KB국민은행 입출금 계좌</strong>
+                                            <button type="button" id="layer3" class="btn third secondary sm">계좌개설</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="nor_form_box">
+                                        <span class="img_item three account"></span>
+                                        <div class="nor_tit">
+                                            <strong class="fs14">KB국민인증서 <em class="fs14">또는</em><br> 본인명의 신용카드</strong>
+                                            <button type="button" id="layer4" class="btn third secondary sm ">온라인 발급</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="bull_type">
+                            <li>본인명의 신분증이 필요해요.</li>
+                            <li>KB국민은행 입출금 계좌가 필요해요.</li>
+                            <li>KB모바일인증서나 본인명의 신용카드가 필요해요.</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <button type="button" class="btn primary">가입 시작~!</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- 계좌개설 layer -->
+    <div id="confirm_html" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">#confirm_html<br>레이어 내용</div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">취소</button>
+                <button type="button" class="btn primary" data-action="close" id="var_test">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- 계좌개설 layer -->
+
+    <!-- 온라인발급 layer -->
+    <div id="htmlTest3" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="tit_sec_wrap">
+                    <p class="fs14 fc_gray">개설을 누르시면 모바일브랜치로 이동합니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close">다음에 할게요</button>
+                <button type="button" class="btn primary">개설하기</button>
+                <!-- <button type="button" class="btn primary" data-action="close">개설하기</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- 온라인발급 layer -->
+
+<script>
+    //바텀시트
+    $('#layer3').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"간편하게 비대면으로<br> 국민은행 계좌를 개설하시겠어요?",
+            content:'#htmlTest2',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+
+    $('#layer4').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"간편하게 비대면으로<br> 국민은행 계좌를 개설하시겠어요?",
+            content:'#htmlTest3',
+            type:'bottom',
+            closeUse:true,                                     
+        });
+    });
+</script>
+</body>
+</html>

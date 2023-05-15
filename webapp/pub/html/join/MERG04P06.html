@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통 - 가입/개통 팝업 - [팝업] OCR (운전면허증)</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header detail"> <!-- 개발에서 class="layer" 필요없음 -->
+            <!-- header_layer.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">OCR (운전면허증)</h1>
+
+                <div class="tit_sub_wrap">
+                    <h2 class="tit_sub">OCR (운전면허증)</h2>
+                </div>
+
+                <div class="section">
+                    <div class="btn_wrap">
+                        <button type="button" id="btn_MERG04P04" class="btn primary">OCR (운전면허증) 팝업</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+
+<!-- layer -->
+<div id="MERG04P04" class="layerHTML">
+    <div class="ly_cnt">
+
+        <div class="tit_sub_wrap">
+            <h2 class="tit_sub">정보확인</h2>
+        </div>
+        <div class="section">
+
+            <div class="ocr_photo">
+                <!-- 23/03/31 img tag 로 대체 -->
+                <img src="/img/img/etc_license.png" alt="운전면허증 이미지">
+                <!-- <span class="img_item etc license"></span> -->
+                <!-- // 23/03/31 img tag 로 대체 -->
+            </div>
+            <ul class="star_type">
+                <li>실제 정보와 일치하지 않는 경우 직접 입력 가능합니다.<br>촬영 후 입력된 정보를 확인해주시기 바랍니다.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="ocr_type">
+                <span>카드종류</span> <!-- 23/03/31 html 수정 -->
+                <p class="ocr_cont">운전면허증</p>
+            </div>
+        </div>
+
+        <div class="section mgt36">
+            <div class="form_group">
+                <div class="form_item fix">
+                    <div class="item_content">
+                        <div class="label">이름 입력</div>
+                        <div class="input">
+                            <input type="text" title="이름" placeholder="이름을 입력해주세요" value="김국민"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+
+            <div class="form_group">
+                <div class="form_item jumin fix">
+                    <div class="item_content">
+                        <div class="label">주민등록번호</div>
+                        <div class="input">
+                            <input type="text" maxlength="6" title="주민등록번호 앞자리" value="123456"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                    <div class="bar"></div>
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" maxlength="7" title="주민등록번호 뒷자리" value="1234567"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+
+            <div class="form_group">
+                <div class="form_item license fix">
+                    <div class="item_content">
+                        <div class="label">면허번호</div>
+                        <div class="select">
+                            <button type="button" id="btn_MERG04P06" class="btn_select" title="면허번호 첫번째 자리 선택">지역선택</button> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 --> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                        </div>
+                        <!-- 23/02/01 선택 방식 bottom popup으로 변경 -->
+                        <!-- <div class="input">
+                            <input type="text" placeholder="면허번호" value="서울12">
+                        </div> -->
+                    </div>
+                    <div class="bar"></div>
+                    <div class="item_content">
+                        <div class="input">
+                            <input type="text" title="면허번호 두번째 자리" placeholder="00-0000000-00" value="00-0000000-00"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+
+            <div class="form_group">
+                <div class="form_item fix">
+                    <div class="item_content">
+                        <div class="label">발급일자</div>
+                        <div class="input">
+                            <input type="text" title="발급일자" placeholder="YYYY-MM-DD" value="2022-12-14"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form_error">유효성 check</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <button type="button" class="btn secondary" data-action="close">재촬영</button>
+            <button type="button" class="btn primary" data-action="close">완료</button>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+    <!-- 면허번호 팝업 -->
+    <div id="MERG04P06" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section_f">
+                <div class="bottom_select">
+                    <ul>
+                        <li class="on"><a href="#none" role="button">경기</a></li>
+                        <li><a href="#none" role="button">서울</a></li>
+                        <li><a href="#none" role="button">경기북부</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">선택</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 면허번호 팝업 -->
+<script>
+    $(()=>{
+        const popupLoad = function(){
+            $.ohyLayer({
+                title:" ",
+                content:'#MERG04P04',
+                type:'fullpopup',
+            });
+        }
+        popupLoad();
+        $("#btn_MERG04P04").on("click", popupLoad);
+    });
+    // 면허번호 지역 선택
+    $(document).on("click", "#btn_MERG04P06", function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"면허번호",
+            content:'#MERG04P06',
+            type:'bottom',
+            closeUse:true,
+            dimAct:true,
+        });
+    })
+
+</script>
+</body>
+</html>

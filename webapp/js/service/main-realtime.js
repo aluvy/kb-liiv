@@ -304,7 +304,6 @@ function sk_showRtUseValue(svcInfo) {
 
 // 차트 패킷 정보 리턴(제공량, 사용량, 초과량)
 function getChartPacketData(alloValue, useValue, addAlloValue, addUseValue) {
-    console.log("getChartPacketData : alloValue = " +  alloValue + ", useValue = " + useValue);
 	
     alloValue = isEmpty(alloValue) ? 0 : alloValue;
 	useValue = isEmpty(useValue) ? 0 : useValue;
@@ -496,9 +495,9 @@ function waveChartData(obj, data) {
         interval = setInterval(function () {
             percent++;
             water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
-            if (percent == 60) {
-                _this.find('.wave_value').css('color', '#fff');
-            }
+            // if (percent == 60) {
+            //     _this.find('.wave_value').css('color', '#fff');
+            //}
             if (percent == cent) {
                 clearInterval(interval);
             }
@@ -560,9 +559,9 @@ function waveChartEtc(obj, data) {
         interval = setInterval(function () {
             percent++;
             water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
-            if (percent == 60) {
-                _this.find('.wave_value').css('color', '#fff');
-            }
+            // if (percent == 60) {
+            //     _this.find('.wave_value').css('color', '#fff');
+            // }
             if (percent == cent) {
                 clearInterval(interval);
             }
@@ -579,9 +578,9 @@ function waveChartEtc(obj, data) {
             interval = setInterval(function () {
                 percent++;
                 water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
-                if (percent == 60) {
-                    _this.find('.wave_value').css('color', '#fff');
-                }
+                // if (percent == 60) {
+                //     _this.find('.wave_value').css('color', '#fff');
+                // }
                 if (percent == cent) {
                     clearInterval(interval);
                 }
@@ -612,7 +611,16 @@ function getServerNow(successCallback) {
 	    	successCallback(data);
 	    },
 	    error: function(e) {
-			popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+			if(e.status !== 0){
+				var opt = {
+						msg : "서버시간 체크 중 오류가 발생하였습니다. 다시 시도해 주세요.",
+						cfrmYn : false,
+						title : "",
+					}
+				popalarm(opt);
+			}else{
+				console.log('getServerNow error occured');
+			}
 	    },
 	});
 }
@@ -680,7 +688,17 @@ function getKtTotUseTime(svcTelNo, mvnoCustId, serviceId, successCallback) {
 			successCallback(data);
 		},
 		error: function(request,status,error){
-			popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+			
+			if(request.status !== 0){
+				var opt = {
+						msg : "실시간 사용량(KT) 조회 중 오류가 발생하였습니다. 다시 시도해 주세요.",
+						cfrmYn : false,
+						title : "",
+					}
+				popalarm(opt);
+			}else{
+				console.log('status : ' + error);
+			}
 		}
 	});
 }
@@ -703,7 +721,17 @@ function getSktTotUseTime(serviceId, successCallback) {
 			successCallback(data);
 		},
 		error: function(request,status,error){
-			popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+			
+			if(request.status !== 0){
+				var opt = {
+						msg : "실시간 사용량(SKT) 조회 중 오류가 발생하였습니다. 다시 시도해 주세요.",
+						cfrmYn : false,
+						title : "",
+					}
+				popalarm(opt);
+			}else{
+				console.log('status : ' + error);
+			}
 		}
 	});
 }
@@ -746,8 +774,17 @@ function uplusAPIM0030(prodNo, aceno, entrNo, billAcntNo, callYyyymm, wrkTypCd, 
 		success: function(data) {
 			successCallback(data);
 		},
-		error: function(request,status,error){
-			popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+		error: function(request,status,error){			
+			if(request.status !== 0){
+				var opt = {
+						msg : "실시간 사용량(LGT) 조회 중 오류가 발생하였습니다. 다시 시도해 주세요.",
+						cfrmYn : false,
+						title : "",
+					}
+				popalarm(opt);
+			}else{
+				console.log('status : ' + error);
+			}
 		}
 	});
 }

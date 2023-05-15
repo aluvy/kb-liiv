@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-2011963015|rpid=-539292196|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -90,7 +90,7 @@
                     <div class="section">
                         <div class="card_select_wrap">
                             <div class="card_item line">
-                                <a href="#">
+                                <a href="#none" role="button"><!-- [04/28] [앱접근성] a태그에 href값 수정 및 role 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -116,7 +116,7 @@
                             </div>
                             
                             <div class="card_item line">
-                                <a href="#">
+                                <a href="#none" role="button"><!-- [04/28] [앱접근성] a태그에 href값 수정 및 role 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -142,7 +142,7 @@
                             </div>
 
                             <div class="card_item line">
-                                <a href="#">
+                                <a href="#none" role="button"><!-- [04/28] [앱접근성] a태그에 href값 수정 및 role 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -179,6 +179,7 @@
                                     <li>월 예상요금은 부가서비스 등의 사용에 따라 추가금액이 합산되어 청구 될 수 있습니다.</li>
                                     <li>월 예상요금은 부가세 포함 금액입니다.</li>
                                     <li>태블릿 LTE 요금제는 태블릿, 패드, 라우터, 워치, 빔, 액션 캠 등 스마트기기에서만 이용 가능합니다.(기기에서 유심카드 사용이 가능해야 함)</li>
+                                    <li>서류 제출이 필요한 요금제(미성년자 가입 포함)는 증빙서류가 확인되어야 최종적으로 가입이 완료되며 가입완료 후 유심이 발송됩니다. 증빙서류 확인 시간은 09시~17시(주말/공휴일 제외) 입니다.</li> <!-- 23/04/21 문구 추가 -->
                                 </ul>
                             </div>
                         </div>
@@ -427,9 +428,9 @@
                         <div class="form_group mgt32">
                             <div class="form_item fix">
                                 <div class="item_content">
-                                    <div class="label">모델번호</div>
+                                    <div class="label">유심 모델번호</div> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
                                     <div class="input">
-                                        <input type="text" placeholder="유심번호를 입력해주세요">
+                                        <input type="text" title="유심 모델번호" placeholder="영문포함 앞 5자리를 입력해주세요"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -439,9 +440,9 @@
                             <div class="form_item fix">
                                 <div class="item_content">
                                     <!-- <div class="info"><a href="#none" class="btn_text">유심 정보 확인방법</a></div> --><!-- 23/02/14 수정 : 버튼 위치 타이틀 영역으로 이동 -->
-                                    <div class="label">유심일련번호</div>
+                                    <div class="label">유심 일련번호</div> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
                                     <div class="input">
-                                        <input type="number" placeholder="유심일련번호 자리수를 확인 후 입력해주세요">
+                                        <input type="number" title="유심 일련번호" placeholder="유심 일련번호 자리수를 확인 후 입력해주세요"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -503,7 +504,7 @@
                                 <div class="item_content btn_search">
                                     <div class="label">모델코드</div>
                                     <div class="input">
-                                        <input type="text" placeholder="모델코드를 검색해주세요">
+                                        <input type="text" title="모델코드" placeholder="모델코드를 검색해주세요"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>

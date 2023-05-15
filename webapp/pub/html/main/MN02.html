@@ -17,7 +17,7 @@
     <meta name="twitter:image" content="대표 이미지">
     <meta name="twitter:card" content="summary">
     <title>KB Liiv M Main</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-971693602|rpid=-1636846634|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!-- <link rel="stylesheet" type="text/css" href="/css/old/common_v3.css"> -->
@@ -209,7 +209,7 @@
                         </div>
                         
                         <!-- KB chart info -->
-                        <div class="info_acc_wrap">
+                        <div class="info_acc_wrap on">
                             <div class="acco_cont" role="region">
                                 <!-- kb chart ui -->
                                 <a href="#" class="mychart_wrap">
@@ -219,7 +219,7 @@
                                                 <div class="wave_value">
                                                     <span class="data-val">0</span><em>GB</em>
                                                 </div>
-                                                <div class="wave_water" style="background:linear-gradient(157.79deg, #8ea7ff 25.16%, #4a6ff2 86.54%);">
+                                                <div class="wave_water wave01"> <!-- 23/05/03  배경색 class 로 처리 -->
                                                     <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
                                                         <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
                                                         <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
@@ -255,7 +255,7 @@
                                                 <div class="wave_value">
                                                     <span class="data-val">0</span><em>분</em>
                                                 </div>
-                                                <div class="wave_water" style="background:linear-gradient(157.79deg, #5bf2b2 25.16%, #10dd86 86.54%);">
+                                                <div class="wave_water wave02"> <!-- 23/05/03  배경색 class 로 처리 -->
                                                     <svg viewBox="0 0 560 20" class="water_wave water_wave_back" style="fill:#5bf2b2;">
                                                         <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
                                                         <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
@@ -291,7 +291,7 @@
                                                 <div class="wave_value">
                                                     <span class="data-val">0</span><em>건</em>
                                                 </div>
-                                                <div class="wave_water" style="background:linear-gradient(157.79deg, #ffd364 25.16%, #ffb700 86.54%);">
+                                                <div class="wave_water wave03"> <!-- 23/05/03  배경색 class 로 처리 -->
                                                     <svg viewBox="0 0 560 20" class="water_wave water_wave_back" style="fill:#ffd364;">
                                                         <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
                                                         <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
@@ -597,18 +597,23 @@
                             <button type="button" class="btn_acc">가까운 멤버십 제휴처 위치를 확인하세요</button>
 
                             <!-- 멤버십 사용처 : marquee style --> <!-- 23/04/21 -->
+                            <!-- [05/04] [앱접근성] autoplay 사용자 제어 기능 추가 :: start -->
                             <div class="partner_area" id="marquee_area">
-                                <ul class="partner_wrap marquee-wrap">
-                                    <li class="partner_item marquee-item">
-                                        <span class="slide_ico slide-starbucks">STARBUCKS</span>
-                                        <span class="slide_ico slide-cu">CU</span>
-                                        <span class="slide_ico slide-tj">TOUS les JOURS</span>
-                                        <span class="slide_ico slide-gs25">GS25</span>
-                                        <span class="slide_ico slide-kb">KB 국민은행</span>
-                                        <span class="slide_ico slide-happycon">Happy Con</span>
-                                    </li>
-                                </ul>
+                                <div class="partner_mask">
+                                    <ul class="partner_wrap marquee-wrap">
+                                        <li class="partner_item marquee-item">
+                                            <span class="slide_ico slide-starbucks">STARBUCKS</span>
+                                            <span class="slide_ico slide-cu">CU</span>
+                                            <span class="slide_ico slide-tj">TOUS les JOURS</span>
+                                            <span class="slide_ico slide-gs25">GS25</span>
+                                            <span class="slide_ico slide-kb">KB 국민은행</span>
+                                            <span class="slide_ico slide-happycon">Happy Con</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button id="marquee_area_stop" type="button" class="btn_func stop"><span class="blind">멈추기</span></button>
                             </div>
+                            <!-- [05/04] [앱접근성] autoplay 사용자 제어 기능 추가 :: end -->
 
                             <!-- 멤버십 사용처 -->
                             <!-- <div class="partner_slide_wrap">
@@ -638,7 +643,7 @@
                             <li><a href="#none" class="link menu_02"><span>부가서비스</span></a></li>
                             <li><a href="#none" class="link menu_03"><span>요금납부관리</span></a></li>
                             <li><a href="#none" class="link menu_04"><span>이벤트</span></a></li>
-                            <li><a href="#none" class="link menu_05"><span>휴대폰 구매</span></a></li>
+                            <li><a href="#none" class="link menu_05" target="_blank" title="새창으로 열림"><span>휴대폰 구매</span></a></li> <!-- 23/05/02 html markup 변경 -->
                             <li><a href="#none" class="link menu_06"><span>고객센터</span></a></li>
                             <li><a href="#none" class="link menu_07"><span>멤버십</span></a></li>
                             <li><a href="#none" class="link menu_08"><span>요금제</span></a></li>
@@ -652,7 +657,13 @@
                 <div class="section">
                     <div class="swiper-container product">
                         <!-- 23/03/13 제휴 배너 추가 -->
+                        <!-- 23/04/24 제휴 배너 순서 및 링크 변경 적용 -->
                         <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000177" class="link" title="페이지 이동" target="_top" style="background-color:#D988FF;">
+                                    <img src="../../../img/banner/banner_s_03.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, LG U+ 인터넷 IPTV 결합, IPTV 결합">
+                                </a>
+                            </div>
                             <div class="swiper-slide">
                                 <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=04241&amp;solicitorcode=7024241000" class="link" title="페이지 이동" target="_blank" style="background-color:#675E51;">
                                     <img src="../../../img/banner/banner_s_01.png" alt="제휴 신용카드, KB국민 Liiv M Ⅱ 신용카드, 통신비 월 최대 만7천원 할인!">
@@ -663,11 +674,7 @@
                                     <img src="../../../img/banner/banner_s_02.png" alt="제휴 체크카드, KB국민 Liiv M 체크카드, 통신비 월 최대 6천원 할인!">
                                 </a>
                             </div>
-                            <div class="swiper-slide">
-                                <a href="https://m.lguplus.com/benefit-event/ongoing/85" class="link" title="페이지 이동" target="_blank" style="background-color:#D988FF;">
-                                    <img src="../../../img/banner/banner_s_03.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, LG U+ 인터넷 IPTV 결합, IPTV 결합">
-                                </a>
-                            </div>
+
                             <div class="swiper-slide">
                                 <a href="https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=1307&amp;cmpid=mshop_wire_191028-banner-event_special%20gift-kbbank_liivm" class="link" title="페이지 이동" target="_blank" style="background-color:#6AD7D0;">
                                     <img src="../../../img/banner/banner_s_04.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, KT 인터넷, IPTV 결합">
@@ -690,7 +697,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <!-- 23/03/13 개발 페이지 링크 필요 -->
-                                <a href="#none" class="link" title="페이지 이동" target="_top" style="background-color:#40559F;">
+                                <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000182" class="link" title="페이지 이동" target="_top" style="background-color:#40559F;">
                                     <img src="../../../img/banner/banner_s_08.png" alt="휴대폰 액정파손보험, 캐롯 폰케어 액정안심보험, 중고폰도 가능!">
                                 </a>
                             </div>
@@ -715,6 +722,7 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- //23/04/24 제휴 배너 순서 및 링크 변경 적용 -->
                         <!-- 23/03/13 제휴 배너 추가 -->
                         <div class="swiper_control">
                             <div class="swiper-pagination text"></div>
@@ -920,9 +928,10 @@
             interval = setInterval(function () {
                 percent++;
                 water.style.transform = 'translate(0' + ',' + (100 - percent) + '%)';
-                if (percent == 60) {
-                    _this.find('.wave_value').css('color', '#fff');
-                }
+                // 23/05/03 color 지정 삭제
+                // if (percent == 60) {
+                //     _this.find('.wave_value').css('color', '#fff');
+                // }
                 if (percent == cent) {
                     clearInterval(interval);
                 }
@@ -1039,7 +1048,7 @@
                 },
             }, /* 23/03/13 추가 */
             autoplay: {
-                delay: 2000,
+                delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
             pagination: {
@@ -1083,43 +1092,43 @@
             speed: 0.5,
         });
 
-        // 흐르는 공지사항 swiper  /* 23/03/21 수정 */
-        var noticeSwiper = new Swiper(".noticeSwiper", {
-            autoplay: {
-                delay: 0,
-                stopOnLastSlide: false,
-                disabledOnInteraction: false,
-                pauseOnMouseEnter: false,
-            },
-            speed: 15000,
-            loop: true,
-            slidesPerView: "auto",
-            observer: true,
-            observerParents: true,
-            allowTouchMove: false
-        });
+        // 흐르는 공지사항 swiper  /* 23/03/21 수정 */ 23/04/24 사용 안함
+        // var noticeSwiper = new Swiper(".noticeSwiper", {
+        //     autoplay: {
+        //         delay: 0,
+        //         stopOnLastSlide: false,
+        //         disabledOnInteraction: false,
+        //         pauseOnMouseEnter: false,
+        //     },
+        //     speed: 15000,
+        //     loop: true,
+        //     slidesPerView: "auto",
+        //     observer: true,
+        //     observerParents: true,
+        //     allowTouchMove: false
+        // });
 
         // 멤버십 파트너 marquee  23/04/21 추가
         $.marquee({
             content:'#marquee_area',
         });
 
-        // 멤버십 파트너 swiper
-        var partnerSlide = new Swiper(".partner_slide", {
-            autoplay: {
-                delay: 0,
-                stopOnLastSlide: false,
-                disabledOnInteraction: false, 
-            },
-            speed: 8000,
-            loop: true,
-            slidesPerView: "auto",
-            // spaceBetween: 20,
-            observer: true,
-            observerParents: true,
-            paginationClickable: true,
-            allowTouchMove: false,  // (23/03/16) swiper 설정추가
-        });
+        // 멤버십 파트너 swiper - 23/04/24 사용 안함
+        // var partnerSlide = new Swiper(".partner_slide", {
+        //     autoplay: {
+        //         delay: 0,
+        //         stopOnLastSlide: false,
+        //         disabledOnInteraction: false, 
+        //     },
+        //     speed: 8000,
+        //     loop: true,
+        //     slidesPerView: "auto",
+        //     // spaceBetween: 20,
+        //     observer: true,
+        //     observerParents: true,
+        //     paginationClickable: true,
+        //     allowTouchMove: false,  // (23/03/16) swiper 설정추가
+        // });
 
         // product banner
         var bnrSwiper = new Swiper('.product', {
@@ -1128,7 +1137,7 @@
             loop: true,
             loopAdditionalSlides: 1,
             autoplay: {
-                delay: 2000,
+                delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
             pagination: {

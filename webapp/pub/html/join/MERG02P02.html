@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">가입/개통</h1>
+
+                <div class="section">
+                    <button type="button" id="btn_MERG02P02" class="btn secondary sm">[팝업] 유심일련번호확인안내 bottom 팝업 클릭</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MERG02P02" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+
+                <div class="tab_wrap line">
+                    <div class="tab_list" role="tablist">
+                        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1">LG U+</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">KT</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_3">SKT</button></div>
+                    </div>
+                    <div class="tab_panel on mgt0" role="tabpanel" id="tab_line_panel_1">
+                        <h3 class="hidden">LG U+</h3>
+                        <div class="section">
+                            <div><img src="/img/mypage/img_usim_uplus.png" alt="LG U+ 유심 일련번호 확인방법"></div>
+                            <ul class="star_type">
+                                <li>LGU+ 망 : 유심 우측 하단 일련번호 8자리</li>
+                                <li>KT망 : 유심 우측 하단 일련번호 끝자리(영문)를 제외한 숫자19자리</li>
+                                <li>SKT망 : 유심 우측 하단 일련번호 끝 14자리(영문포함)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab_panel mgt0" role="tabpanel" id="tab_line_panel_2">
+                        <h3 class="hidden">KT</h3>
+                        <div class="section">
+                            <div><img src="/img/mypage/img_usim_kt.png" alt="kt 유심 일련번호 확인방법"></div>
+                            <ul class="star_type">
+                                <li>LGU+ 망 : 유심 우측 하단 일련번호 8자리</li>
+                                <li>KT망 : 유심 우측 하단 일련번호 끝자리(영문)를 제외한 숫자19자리</li>
+                                <li>SKT망 : 유심 우측 하단 일련번호 끝 14자리(영문포함)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab_panel mgt0" role="tabpanel" id="tab_line_panel_3">
+                        <h3 class="hidden">SKT</h3>
+                        <div class="section">
+                            <div><img src="/img/mypage/img_usim_skt.png" alt="kt 유심 일련번호 확인방법"></div>
+                            <ul class="star_type">
+                                <li>LGU+ 망 : 유심 우측 하단 일련번호 8자리</li>
+                                <li>KT망 : 유심 우측 하단 일련번호 끝자리(영문)를 제외한 숫자19자리</li>
+                                <li>SKT망 : 유심 우측 하단 일련번호 끝 14자리(영문포함)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+        </div>
+        
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#btn_MERG02P02').on('click', function(){
+        $.ohyLayer({
+            title:"유심 일련번호 확인방법",
+            content:'#MERG02P02',
+            type:'bottom',
+        });
+    });
+</script>
+</body>
+</html>

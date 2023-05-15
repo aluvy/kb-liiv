@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>인증방법</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1910573114|rpid=-1047212027|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -69,7 +69,7 @@
 
                             <!-- 카드 종류 -->
                             <div class="droptype_btn_wrap">
-                                <a href="#" id="layer2" role="button" class="droptype_btn">
+                                <a href="#" id="layer2" role="button" class="droptype_btn" title="카드종류"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                     카드종류를 선택해주세요
                                     <!-- 국민카드를 선택한 경우 -->
                                     <!-- <span class="card_select"><span class="item KB">국민카드</span></span> -->
@@ -87,25 +87,25 @@
                                         <div class="item_content">
                                             <div class="label">카드번호</div>
                                             <div class="input">
-                                                <input type="text" placeholder="" class="focus">
+                                                <input type="text" class="focus" title="카드번호 첫번째 4자리"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             </div>
                                         </div>
                                         
                                         <div class="item_content">
                                             <div class="input">
-                                                <input type="text" placeholder="" class="focus">
+                                                <input type="text" class="focus" title="카드번호 두번째 4자리"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             </div>
                                         </div>
                 
                                         <div class="item_content">
                                             <div class="input">
-                                                <input type="text" placeholder="" class="focus">
+                                                <input type="text" class="focus" title="카드번호 세번째 4자리"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             </div>
                                         </div>
                 
                                         <div class="item_content">
                                             <div class="input">
-                                                <input type="text" placeholder="" class="focus">
+                                                <input type="text" class="focus" title="카드번호 네번째 4자리"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             </div>
                                         </div>
                                     </div>
@@ -124,9 +124,9 @@
                                 <div class="form_group">
                                     <div class="form_item fix">
                                         <div class="item_content">
-                                            <div class="label">본의명의 휴대폰 번호</div>
+                                            <div class="label">본인명의 휴대폰번호</div><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             <div class="input">
-                                                <input type="text" placeholder="'-없이 입력해주세요'">
+                                                <input type="text" title="본인명의 휴대폰번호" placeholder="숫자만 입력해주세요"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@
 
                                 <!-- 카드 종류  -->
                                 <div class="droptype_btn_wrap selected">
-                                    <a href="#" id="layer3" role="button" class="droptype_btn">
+                                    <a href="#" id="layer3" role="button" class="droptype_btn" title="카드종류"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                         카드종류를 선택해주세요
                                         <!-- 국민카드를 선택한 경우 -->
                                         <!-- <span class="card_select"><span class="item KB">국민카드</span></span> -->
@@ -201,7 +201,7 @@
 
                                 <div class="install_wrap">
                                     <p class="info_txt">앱을 설치하지 않았을 경우,<br> 앱을 설치하거나 일반인증(ARS)를 이용해주세요.</p>
-                                    <button type="button" class="btn third sm">앱 설치</button>
+                                    <button type="button" class="btn third sm" title="새창으로 열림">앱 설치</button><!--[05/11] [앱접근성] title속성 추가-->
                                 </div>
 
                                 <ul class="star_type">

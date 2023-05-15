@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">가입/개통</h1>
+
+                <div class="section">
+                    <button type="button" id="layer1" class="btn secondary sm">[팝업] 가입상담 bottom 팝업 클릭</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MESP04" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">이름</div>
+                            <div class="input">
+                                <input type="text" title="이름" placeholder="이름을 입력해주세요"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <div class="form_group">
+                    <div class="form_item fix">
+                        <div class="item_content">
+                            <div class="label">휴대폰번호</div>
+                            <div class="input">
+                                <input type="text" title="휴대폰번호" placeholder="숫자만 입력해주세요"> <!-- 23/05/10 [앱접근성/폼요소] 폼 접근성 개선 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_error">유효성 check</div>
+                </div>
+
+                <!-- 23/03/06 추가 -->
+                <div class="droptype_btn_wrap mgt12">
+                    <a href="#" role="button" class="droptype_btn right_type">
+                        <span>개인정보제공동의<span class="red">(필수)</span></span>
+                    </a>
+                </div>
+                <!-- // 23/03/06 추가 -->
+                <div class="check_group mgt12">
+                    <!-- 23/03/06 삭제 -->
+                    <!-- <h4 class="tit_item mgt0">개인정보제공동의(필수)</h4>
+                    <div class="term_group line">
+                        <div class="term_item">약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다. 약관내용이 들어갑니다.</div>
+                    </div> -->
+                    <!-- //23/03/06 삭제 -->
+                    <div class="check_item basic mid">
+                        <input type="checkbox" id="choice1" name="choice1">
+                        <label for="choice1" class="label"><span>가입 전화 상담을 위한 정보제공에 동의합니다.</span></label>
+                    </div>
+                </div>
+                
+                <ul class="bull_type mgt24">
+                    <li>KB Liiv M 상담원이 직접 전화해 가입 신청을 도와드리고 있습니다.</li>
+                    <li>전화상담 신청 후 최대한 빠르게 답변을 드리고자 최선을 다하고 있으며, 사정에 따라 상담이 지연될 수 있으니 양해 부탁 드립니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">상담신청</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //바텀시트
+    $('#layer1').on('click', function(){
+        $.ohyLayer({
+            titleUse:true,
+            title:"가입상담 신청하세요",
+            content:'#MESP04',
+            type:'bottom',
+            closeUse:true,
+        });
+    });
+</script>
+</body>
+</html>

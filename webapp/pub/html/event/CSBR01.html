@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>고객지원</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub">
+            <!-- header_sub.html -->
+        </div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title">가까운 유심 찾기</h1>
+
+                <div class="usim_map-head">
+                    <div class="usim_map-search">
+                        <div class="form_group">
+                            <div class="form_item">
+                                <div class="item_content btn_search">
+                                    <div class="label blind">검색</div><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
+                                    <div class="input">
+                                        <input type="search" title="검색어" placeholder="지점명/시 또는 동,읍,면을 검색해주세요"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form_error"></div> -->
+                        </div>
+
+                        <!-- <div class="input">
+                            <input type="search" placeholder="지점명/시 또는 동,읍,면을 검색하세요" />
+                        </div> -->
+                        <!-- <button type="button">검색</button> -->
+
+                    </div>
+                    <button type="button" class="btn_map_reset">이 지역에서 재검색</button>
+                </div>
+
+                <div class="usim_map-bottom">
+                    <div class="map_control">
+                        <button type="button" class="btn_location"><span class="blind">현위치 안내</span></button>
+                        
+                        <button type="button" class="btn_list">목록보기</button>
+                        <div class="btn_zoom">
+                            <button type="button" class="btn_zoomin"><span class="blind">확대</span></button>
+                            <button type="button" class="btn_zoomout"><span class="blind">축소</span></button>
+                        </div>
+                    </div>
+
+                    <div class="usim_map-content">
+                        <div class="content_head-fix">
+                            <button type="button" class="btn_open"><span class="blind">리스트 열기</span></button>
+                        </div>
+
+                        <div class="content_body">
+                            
+                            <!-- 검색하지 않았을때만 노출 -->
+                            <div class="banner_box usim_kb">
+                                <div class="txt_area">KB국민은행 지점에서 <b>KB Liiv M<br>유심을 찾아 바로 개통하세요!</b></div>
+                            </div>
+                            <!-- // 검색하지 않았을때만 노출 -->
+                                
+                            <!-- 검색 했을때만 노출 -->
+                            <div class="data_sort">
+                                <span class="total">검색결과(<strong>100</strong>)</span>
+                            </div>
+                            <!-- // 검색 했을때만 노출 -->
+
+                            <div class="usim_list">
+                                <h3 class="blind">가까운 유심 목록</h3>
+                                <ul>
+                                    <li class="store_item">
+                                        <a href="#" role="button">
+                                            <p class="tit">여의도종합금융센터 <span>74m</span></p>
+                                            <p class="time">09:00 ~ 16:00</p>
+                                            <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            <div class="usim_status">
+                                                <span class="usim_status_lg">
+                                                    <span class="badge lte">LTE</span>
+                                                    <span class="status">999+개</span>
+                                                </span>
+                                                <span class="usim_status_kt">
+                                                    <span class="badge kt">kt</span>
+                                                    <span class="status">999+개</span>
+                                                </span>
+                                                <span class="usim_status_skt">
+                                                    <span class="badge skt">SKT</span>
+                                                    <span class="status">623개</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="store_item">
+                                        <a href="#" role="button">
+                                            <p class="tit">전경련회관점 <span>74m</span></p>
+                                            <p class="time">09:00 ~ 16:00</p>
+                                            <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            <div class="usim_status">
+                                                <span class="usim_status_lg">
+                                                    <span class="badge lte">LTE</span>
+                                                    <span class="status">555개</span>
+                                                </span>
+                                                <span class="usim_status_kt">
+                                                    <span class="badge kt">kt</span>
+                                                    <span class="status">125개</span>
+                                                </span>
+                                                <span class="usim_status_skt">
+                                                    <span class="badge skt">SKT</span>
+                                                    <span class="status">623개</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="store_item">
+                                        <a href="#" role="button">
+                                            <p class="tit">여의도영업부점 <span>74m</span></p>
+                                            <p class="time">09:00 ~ 16:00</p>
+                                            <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            <div class="usim_status">
+                                                <span class="usim_status_lg">
+                                                    <span class="badge lte">LTE</span>
+                                                    <span class="status">155개</span>
+                                                </span>
+                                                <span class="usim_status_kt">
+                                                    <span class="badge kt">kt</span>
+                                                    <span class="status nodata">0개</span>
+                                                </span>
+                                                <span class="usim_status_skt">
+                                                    <span class="badge skt">SKT</span>
+                                                    <span class="status">882</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="store_item">
+                                        <a href="#" role="button">
+                                            <p class="tit">전경련회관점 <span>74m</span></p>
+                                            <p class="time">09:00 ~ 16:00</p>
+                                            <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            <div class="usim_status">
+                                                <span class="usim_status_lg">
+                                                    <span class="badge lte">LTE</span>
+                                                    <span class="status">555개</span>
+                                                </span>
+                                                <span class="usim_status_kt">
+                                                    <span class="badge kt">kt</span>
+                                                    <span class="status">125개</span>
+                                                </span>
+                                                <span class="usim_status_skt">
+                                                    <span class="badge skt">SKT</span>
+                                                    <span class="status">623개</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="store_item">
+                                        <a href="#" role="button">
+                                            <p class="tit">전경련회관점 <span>74m</span></p>
+                                            <p class="time">09:00 ~ 16:00</p>
+                                            <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                            <div class="usim_status">
+                                                <span class="usim_status_lg">
+                                                    <span class="badge lte">LTE</span>
+                                                    <span class="status">555개</span>
+                                                </span>
+                                                <span class="usim_status_kt">
+                                                    <span class="badge kt">kt</span>
+                                                    <span class="status">125개</span>
+                                                </span>
+                                                <span class="usim_status_skt">
+                                                    <span class="badge skt">SKT</span>
+                                                    <span class="status">623개</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                                <!-- no data -->
+                                <!-- <div class="card_nodata autoheight">
+                                    <p>검색결과가 없습니다.</p>
+                                </div> -->
+                                <!-- // no data -->
+
+                            </div><!-- .usim_list -->
+
+                            <button type="button" class="btn_viewmap">지도보기</button>
+                        </div><!-- .content_body -->
+
+                    </div><!-- .usim_map-content -->
+
+                    <div class="usim_map-store">
+                        
+                        <div class="store_item">
+                            <div class="store_item-info">
+                                <p class="tit">전경련회관점 <span>74m</span></p>
+                                <p class="time">09:00 ~ 16:00</p>
+                                <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                <div class="usim_status">
+                                    <span class="usim_status_lg">
+                                        <span class="badge lte">LTE</span>
+                                        <span class="status">555개</span>
+                                    </span>
+                                    <span class="usim_status_kt">
+                                        <span class="badge kt">kt</span>
+                                        <span class="status">125개</span>
+                                    </span>
+                                    <span class="usim_status_skt">
+                                        <span class="badge skt">SKT</span>
+                                        <span class="status">623개</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="store_item-call">
+                                <a href="#">문의하기</a>
+                            </div>
+                        </div><!-- .store_item -->
+                        
+                        <div class="store_item">
+                            <div class="store_item-info">
+                                <p class="tit">전경련회관점 <span>74m</span></p>
+                                <p class="time">09:00 ~ 16:00</p>
+                                <p class="address">서울시 영등포구 여의대로 56 (여의도동)</p>
+                                <div class="usim_status">
+                                    <span class="usim_status_lg">
+                                        <span class="badge lte">LTE</span>
+                                        <span class="status">555개</span>
+                                    </span>
+                                    <span class="usim_status_kt">
+                                        <span class="badge kt">kt</span>
+                                        <span class="status">125개</span>
+                                    </span>
+                                    <span class="usim_status_skt">
+                                        <span class="badge skt">SKT</span>
+                                        <span class="status">623개</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- .store_item -->
+
+                    </div><!-- .mbs_map-store -->
+                </div><!-- .mbs_map-bottom -->
+
+                <div class="usim_map">
+                    <!-- 지도 -->
+
+                    <!-- maker : 그룹 -->
+                    <div style="position:absolute; z-index:0; white-space:norwap; margin:-18px 0 0 -16px; left:130px; top:300px;">
+                        <div style="cursor:pointer; width:3.2rem; height:3.6rem; box-sizing:border-box; background:url(/img/event/maker_black.svg) center center / 100% no-repeat; text-align:center; color:#fff; font-size:1.2rem; line-height:3.2rem;">+11</div>
+                    </div>
+                    <!-- // maker : 그룹 -->
+
+                    <!-- maker : maker 그룹 클릭 시 -->
+                    <div class="maker_group_list">
+                        <ul>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-kb"></span>
+                                    <span>여의도점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-kb"></span>
+                                    <span>여의도 KBS점</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="partner_ico partner-kb"></span>
+                                    <span>여의도점</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // maker : maker 그룹 클릭 시 -->
+
+                    <!-- maker : 선택 됨 -->
+                    <div style="position:absolute; margin:-50px 0 0 -22px; z-index:0; left:200px; top:280px;">
+                        <img src="/img/maker/kb_on.png" draggabl="false" alt role="presentation" title="KB 여의도역점" style="min-width:0; min-height:0; max-height:99999px; max-height:none; border:0; display:block; position:absolute; user-select:none; -webkit-user-drag:none; clip:rect(0, 44px, 50px, 0); top:0; left:0; width:44px; height:50px;">
+                    </div>
+                    <!-- // maker : 선택 됨 -->
+
+                    <!-- maker -->
+                    <div style="position:absolute; margin:-36px 0 0 -16px; z-index:0; left:160px; top:220px;">
+                        <img src="/img/maker/kb.png" draggabl="false" alt role="presentation" title="KB 여의도역점" style="min-width:0; min-height:0; max-height:99999px; max-height:none; border:0; display:block; position:absolute; user-select:none; -webkit-user-drag:none; clip:rect(0, 32px, 36px, 0); top:0; left:0; width:32px; height:36px;">
+                    </div>
+                    <!-- //maker -->
+
+                </div><!-- .usim_map -->
+
+            </div><!-- //.content -->
+        </div><!-- //.container -->
+    </div>
+    
+
+
+<script src="/js/support_usim_place.js"></script>
+<script>
+
+    // 이 지역에서 재검색 버튼
+    // setResetBtn(0);  // 0:감추기, 1:보이기
+
+    // 검색모드 셋팅
+    // setSearchMode(0);    // 0:검색모드X, 1:검색모드
+    // 최초 돋보기 버튼을 1회 누르면 검색모드로 전환된다.
+    $(document).on("click", ".usim_map-search .btn_type", function(){
+        setBottomLayout(mapBottomFix.type=1);
+        setSearchMode(1);
+    });
+
+
+
+    // 퍼블 테스트용 start
+    var fnDataReset = function(type){}
+    var fnDataMore = function(){}
+
+    $(document).on("click", ".btn_viewmap", function(){
+        mapBottomFix.type = 0;
+        setBottomLayout(mapBottomFix.type);
+    });
+
+    $(document).on("click", ".usim_list li a", function(){
+        viewStoreDetail();
+    })
+
+    $(document).on("click", ".btn_map_reset", function(){
+        mapBottomFix.type = 0;
+        setBottomLayout(mapBottomFix.type);
+    })
+    // 퍼블 테스트용 end
+
+</script>
+</body>
+</html>

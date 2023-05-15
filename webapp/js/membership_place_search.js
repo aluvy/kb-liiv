@@ -5,7 +5,8 @@ let mapBottomFix = { type: 0 }; // 0:close , 1:open, 2: viewStoreDetail
 $(()=>{
     h1Hidden();
     setTimeout(() => { h1Hidden() }, 100);
-    $("html, body").addClass("noScroll");   // noScroll
+    // $("html, body").addClass("noScroll");   // noScroll
+    $("html, body").addClass("no_scroll");  // [05/11] 클래스변경
 
     setBottomLayout(mapBottomFix.type);
     _touch.init();

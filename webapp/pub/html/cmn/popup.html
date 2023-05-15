@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1578923526|rpid=-1369041310|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682057880604|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -435,13 +435,13 @@ $(document).on('click', '#btn_MERG06P01', function(){
                         <div class="item_content">
                             <div class="label">이메일</div>
                             <div class="input">
-                                <input type="text" placeholder="이메일">
+                                <input type="text" title="아이디" placeholder="아이디 입력"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                             </div>
                         </div>
                         <div class="email_col">@</div>
                         <div class="item_content">
-                            <div class="select" title="메일사 선택">
-                                <button type="button" id="btn_email" class="btn_select" readonly>직접입력</button>
+                            <div class="select">
+                                <button type="button" id="btn_email" class="btn_select" title="도메인 선택" readonly>도메인 선택</button>
                             </div>
                         </div>
                     </div>
@@ -449,7 +449,7 @@ $(document).on('click', '#btn_MERG06P01', function(){
                     <div class="form_item fix">
                         <div class="item_content">
                             <div class="input">
-                                <input type="text" placeholder="이메일을 입력해 주세요">
+                                <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력">
                             </div>
                         </div>
                     </div>
@@ -459,7 +459,7 @@ $(document).on('click', '#btn_MERG06P01', function(){
                 </div>
 
                 <div class="droptype_btn_wrap">
-                    <a href="#" role="button" id="Select_Line" class="droptype_btn">
+                    <a href="#" role="button" id="Select_Line" class="droptype_btn" title="가입회선 선택">
                         <span class="badge kt">KT</span>
                         <span class="info">010-12**-56**</span>
                     </a>
@@ -492,25 +492,25 @@ $(document).on('click', '#btn_MERG06P01', function(){
                             <div class="item_content">
                                 <div class="label">카드번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 첫번째" class="focus">
+                                    <input type="text" title="카드번호 첫번째 4자리" class="focus">
                                 </div>
                             </div>
                             
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 두번째" class="focus">
+                                    <input type="text" title="카드번호 두번째 4자리" class="focus">
                                 </div>
                             </div>
     
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 세번째" class="focus">
+                                    <input type="text" title="카드번호 세번째 4자리" class="focus">
                                 </div>
                             </div>
     
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="카드번호 네번째" class="focus">
+                                    <input type="text" title="카드번호 네번째 4자리" class="focus">
                                 </div>
                             </div>
                         </div>
@@ -531,7 +531,7 @@ $(document).on('click', '#btn_MERG06P01', function(){
                             <div class="item_content">
                                 <div class="label">휴대폰번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="'-없이 입력해주세요'">
+                                    <input type="text" title="휴대폰번호" placeholder="숫자만 입력해주세요">
                                 </div>
                             </div>
                         </div>

@@ -17,6 +17,7 @@
        - cmsKBDigitalYn hidden input 값
  */
 let gKbsignCi = '';
+let isPage = true;
 
 /**
  *  KB국민인증서 인증요청
@@ -155,7 +156,7 @@ function fn_callBackApiKbsign(tranId, result, status, inputData){
 
 		if(result.dataHeader.resultCode == '0000' && result.dataHeader.successCode == '0') {
 			let serialNo = result.dataBody.serialNo;
-			console.log("serialNo="+serialNo);
+			//console.log("serialNo="+serialNo);
 			sessionStorage.setItem("serialNo", serialNo);
 
             /***************************************
@@ -279,7 +280,7 @@ function fn_callBackApiKbsign(tranId, result, status, inputData){
 		if(result.dataHeader.resultCode == '0000' && result.dataHeader.successCode == '0') {
 			
 			let serialNo = result.dataBody.serialNo;
-			console.log("serialNo="+serialNo);
+			//console.log("serialNo="+serialNo);
 			sessionStorage.setItem("serialNo", serialNo);
 
             /***************************************
@@ -462,13 +463,21 @@ function fn_includeKbsignStartApp(url){
 			},1000);
 		}
 	} else if(typeOS.indexOf('ios') !== -1){
-		if(new Date - openAt < 2000){
-			setTimeout( function(){
-				location.href = "https://itunes.apple.com/kr/app/id373742138";
-			},1000);
-		}
 		location.href = url;
+		if(isPage){
+			if(new Date - openAt < 2000){
+				setTimeout( function(){
+					location.href = "https://itunes.apple.com/kr/app/id373742138";
+				},1000);
+			}
+		}
 	}
 };
 
+window.onblur = function(){
+	isPage = false;
+};
 
+window.onfocus = function(){
+	isPage = true;
+};

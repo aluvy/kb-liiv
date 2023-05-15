@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
+    <title>가입/개통</title>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+<style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header sub"></div>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <div class="content">
+                <h1 class="title hidden">가입/개통</h1>
+
+                <div class="section">
+                    <button type="button" id="btn_MERG02P01" class="btn secondary sm">[팝업] 개통가능시간 안내 confirm 팝업 클릭</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <!-- layer -->
+    <div id="MERG02P01" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div class="join_time box_item no_shadow">
+                    <p>KB Liiv M 가입 가능시간</p>
+                    <dl>
+                        <dt>신규가입</dt>
+                        <dd>
+                            <strong>08:00 ~ 20:00</strong> <span>(365일)</span>
+                        </dd>
+                        <dt>번호이동</dt>
+                        <dd>
+                            <strong>10:00 ~ 20:00</strong><br>
+                            <span>(일요일, 공휴일 제외)</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+<script>
+    //컨펌 레이어
+    $('#btn_MERG02P01').on('click', function(){
+        $.ohyLayer({
+            title:'개통 가능 시간에 <br>다시 시도해 주세요',
+            content:'#MERG02P01',
+            type:'bottom', 
+            closeUse:false,
+        });
+    });
+</script>
+</body>
+</html>
