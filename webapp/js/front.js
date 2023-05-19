@@ -1923,6 +1923,9 @@ $(()=>{
 $(()=>{
     // 요금제 > 하단 진단하기 페이지 링크 스크롤이벤트
     const ratePlanHelp = $(document).find(".rateplan_help");
+    ratePlanHelp.find("a").attr("aria-labelledby", "rateplan_help_txt");                // 초점 관련 스크립트 추가
+    ratePlanHelp.find("p").attr("id", "rateplan_help_txt").attr("aria-hidden", true);   // 초점 관련 스크립트 추가
+
     if( ratePlanHelp.length > 0 ){
         $(document).on("scroll", ()=>{
             const scrollTop = $(window).scrollTop();

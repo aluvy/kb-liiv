@@ -2177,7 +2177,7 @@ select option:checked {background-color:#e5faff; color:#111;}
 .rateplan_help > a::after {content:''; position:absolute; right:0.4rem; bottom:0.8rem; display: inline-block; width:7.274rem; height:6.2rem; background:url(../img/img/char_pos_qlg.png) center no-repeat; background-size:contain; transition:all .3s;}
 .rateplan_help.mini {width:4.8rem;}
 .rateplan_help.mini > a {padding:0; width:4.8rem; height:4.8rem; border-radius:4.8rem;}
-.rateplan_help.mini p {width:1px; height:1px; overflow: hidden; /*font-size:0;*/ font-size:1px; clip:rect(0 0 0 0); text-indent:-9999px; animation:fadeIn 1 .3s;}
+.rateplan_help.mini p {width:1px; height:1px; overflow: hidden; /*font-size:0;*/ font-size:1px; clip:rect(0 0 0 0); animation:fadeIn 1 .3s;}
 .rateplan_help.mini > a::after {right:-1.4rem; bottom:0.5rem; width:5.68rem; height:4.83rem;}
 @keyframes fadeIn {
     0% {opacity:0;}
