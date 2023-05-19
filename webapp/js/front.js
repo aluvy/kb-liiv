@@ -116,10 +116,14 @@ var accordionButton = {
         $(".filter_list").each((idx, item)=>{
             $(item).hasClass("on") ? $(item).find(".btn_acc").attr("aria-expanded", 'true') : $(item).find(".btn_acc").attr("aria-expanded", 'false');
         })
+        $(".filter_list li > a").each((idx, item)=>{
+            $(item).attr("role", "radio");  // [05/15] role 추가
+            $(item).hasClass("on") ? $(item).attr("aria-checked", true) : $(item).attr("aria-checked", false);  // [05/15] aria-checked 추가
+        })
         $(document).on("click", ".filter_list li a", function(e){
             e.preventDefault();
-            $(this).parents(".filter_list").find("li a").removeClass("on");
-            $(this).addClass("on");
+            $(this).parents(".filter_list").find("li a").removeClass("on").attr("aria-checked", false);         // [05/15] aria-checked 추가
+            $(this).addClass("on").attr("aria-checked", true);                                                  // [05/15] aria-checked 추가
         })
         $(document).on("click", ".filter_list .btn_acc", function(e){
             if( $(this).parents(".filter_list").hasClass("on") ){
@@ -554,6 +558,7 @@ $(function(){
                 
                 for(let i=0; i<_this.clone; i++){
                     let clone = _this.$item.clone();
+                    clone.attr("aria-hidden", true);
                     _this.$wrap.append(clone);
                 }
                 
@@ -1111,7 +1116,7 @@ var _layout = {
             let headerinnerW = $(document).find(".header .inner_sub").width();
             let headerInnerPadL = $(document).find(".header .inner_sub").css("padding-left").replace("px", "") * 1;
             let headerBackAreaW = $(document).find(".header .back_area").width();
-            headerBackAreaW = headerBackAreaW > 10 ? headerBackAreaW + 5 : headerBackAreaW;
+            headerBackAreaW = headerBackAreaW > 10 ? headerBackAreaW /* + 5 */ : headerBackAreaW; // 5px 삭제요청
             let headerBtnAreaW = $(document).find(".header .btn_area").outerWidth(true);
             let maxW = headerinnerW - headerBackAreaW - headerBtnAreaW - 10;
             let left = headerInnerPadL + headerBackAreaW;
@@ -1500,6 +1505,9 @@ var _front = {
                     .filter((idx3, item3)=> $(item3).attr("id") != undefined );             // id 없는것 제외
         btnSelect.attr("aria-haspopup", true);
 
+        // 요금제메인 필터 팝업
+        $("#btnUserFilter").attr("aria-haspopup", true);
+
     },
     cardItem: function(){
         $(document).off("click", ".card_select_wrap .card_item").on("click", ".card_select_wrap .card_item", function(){
@@ -1621,19 +1629,24 @@ const _aside = {
         // [05/08] [앱접근성] asidemenu close target a tag 추가
         let asideCloseFocus = _front.isMain() ? "inner_main" : "inner_sub";
         setTimeout(() => {
-            // $(document).find(`.header .${asideCloseFocus}`).prepend(`<a name="close_aside"></a>`);
-            $(document).find(`.header .${asideCloseFocus} .title a`).attr("id", "close_aside").attr("tabindex", 1);
-            // $(document).find(`.header .aside_wrap`).prepend(`<a name="open_aside"></a>`);
-            $(document).find(`.header .aside_wrap .aside_head .title`).html(`<a id="open_aside">전체</a>`);
+            // main과 sub close_aside 분리
+            if( _front.isMain() ){
+                $(document).find(`.header h1.title a`).attr("id", "close_aside").attr("tabindex", 1);     // [05/15] name속성 id로 교체
+            } else {
+                $(document).find(".container .content h1.title").each((idx, item)=>{
+                    const title = $(item).text();
+                    $(item).html(`<a id="close_aside">${title}</a>`)
+                    $(item).attr("tabindex", 1);     // [05/15] name속성 id로 교체
+                })
+            }
+            $(document).find(`.header .aside_wrap .aside_head .title`).html(`<a id="open_aside">전체</a>`);             // [05/15] name속성 id로 교체
         }, 0);
 
         $(document).find(".header .nav_list li a").each((idx, item)=>{
-            $(item).attr("href", `#nav_${idx}`).attr("role", "button");
-            // $(document).find(".header .menu_area .menu_list > li").eq(idx).prepend(`<a name="nav_${idx}"></a>`);
-            // console.log( $(document).find(".header .menu_area .menu_list > li").eq(idx) );
+            $(item).attr("href", `#nav_${idx}`).attr("role", "button");     // [05/15] role 속성 추가
             let tit = $(document).find(".header .menu_area .menu_list > li").eq(idx).find(".title");
             let menu = tit.text();
-            tit.html(`<a id="nav_${idx}">${menu}</a>`);
+            tit.html(`<a id="nav_${idx}">${menu}</a>`);     // [05/15] name속성 id로 교체
         })
 
     },
@@ -1670,8 +1683,8 @@ const _aside = {
         _aside.reset(); // reset
 
         // 포커스 이동
-        $(document).find("a#open_aside").attr("tabindex", 1).focus();
-        setTimeout(() => { $(document).find("a#open_aside").removeAttr("tabindex") }, 0);
+        $(document).find("a#open_aside").attr("tabindex", 1).focus();                       // [05/15] name속성 id로 교체
+        setTimeout(() => { $(document).find("a#open_aside").removeAttr("tabindex") }, 0);   // [05/15] name속성 id로 교체
 
         console.log('open', $(":focus"));
     },
@@ -1692,8 +1705,8 @@ const _aside = {
 
         setTimeout(() => { $(document).find(".aside_wrap").css('visibility', 'hidden') }, 200); // 접근성 추가
 
-        $(document).find("a#close_aside").attr("tabindex", 1).focus();
-        setTimeout(() => { $(document).find("a#close_aside").removeAttr("tabindex") }, 0);
+        $(document).find("a#close_aside").attr("tabindex", 1).focus();                          // [05/15] name속성 id로 교체
+        setTimeout(() => { $(document).find("a#close_aside").removeAttr("tabindex") }, 0);      // [05/15] name속성 id로 교체
 
         console.log('close', $(":focus"));
     },
@@ -1715,8 +1728,8 @@ const _aside = {
         // 클릭 시에만 focus 이동
         if( target != undefined ){
             let targetId = target.attr("href").replace("#", "");
-            $(document).find(`a#${targetId}`).attr("tabindex", 1).focus();
-            $(document).find(`a#${targetId}`).removeAttr("tabindex");
+            $(document).find(`a#${targetId}`).attr("tabindex", 1).focus();      // [05/15] name속성 id로 교체
+            $(document).find(`a#${targetId}`).removeAttr("tabindex");           // [05/15] name속성 id로 교체
         }
 
 
@@ -1848,8 +1861,8 @@ class AsideMenu{
                     return;
                 }
         
-                if(_p === "http://"+location.host+"/#close_aside"
-                    || _p === "https://"+location.host+"/#close_aside"
+                if(_p === "http://"+location.host+"/#open_aside"
+                    || _p === "https://"+location.host+"/#open_aside"
                     || _p === "http://"+location.host+"/"
                     || _p === "https://"+location.host+"/"
                     || _p.indexOf("/system/main/main") != -1
@@ -1965,18 +1978,38 @@ const setContentPad = function(size, footBtnH){
 $(()=>{
     // 이용 전 확인해주세요 아코디언
     $('.info_acc_wrap').each(function(){
+
         const _this = $(this);
-        _this.hasClass('on') ? null : _this.find('.acco_cont').hide();
+
+        if( _this.hasClass('on') ){
+            _this.find("a.acco_btn").attr("aria-expanded", true);
+            _this.find('.acco_cont').show();
+        } else {
+            _this.find("a.acco_btn").attr("aria-expanded", false);
+            _this.find('.acco_cont').hide();
+        }
+
         _this.find('.acco_btn').on('click', function(e){
             e.preventDefault();
+
             let accoCont = $(this).siblings('.acco_cont');
-            _this.hasClass('on') ? _this.removeClass('on') : _this.addClass('on');
-            _this.hasClass('on') ? accoCont.slideDown(200) : accoCont.slideUp(200);
+
+            if( _this.hasClass('on') ){
+                _this.removeClass('on');
+                $(this).attr("aria-expanded", false);
+                accoCont.slideUp(200);
+            } else {
+                _this.addClass('on');
+                $(this).attr("aria-expanded", true);
+                accoCont.slideDown(200);
+            }
+            
             // 개발팀 요청 main 함수
             if(_this[0].id === "main_info_acc_wrap_id"){
                 mainRealTimeFuncCall();
             } 
         });
+
     });
 })
 

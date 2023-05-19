@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-934161145|rpid=1476571148|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -22,52 +22,48 @@
         <!-- container -->
         <div class="container">
             <div class="content">
-                <h1 class="title hidden">사칭 전화번호 확인서비스</h1>
+                <h1 class="title hidden">은행 사칭 전화번호 확인 서비스</h1><!-- [05/17] 디자인 변경 반영 --><!-- [05/03] 기획/디자인 수정 반영 :: 타이틀 수정 --><!-- [04/25] 띄어쓰기 수정 -->
                 <div class="tit_sub_wrap center"><!-- [04/19] 타이틀 가운데정렬 .center 클래스 추가 -->
-                    <h2 class="tit_sub">사칭 전화번호 확인서비스</h2>
+                    <h2 class="tit_sub">은행 사칭 전화번호<br>확인 서비스</h2><!-- [05/17] 디자인 변경 반영 --><!-- [05/03] 기획/디자인 수정 반영 :: 타이틀 수정 --><!-- [04/25] 띄어쓰기 수정 -->
                 </div>
-                <div class="section">
 
+
+                <div class="section">
                     <div class="visual_group">
-
                         <div class="visual_box"><span class="img_item visual spam"></span></div>
-
-                        <p class="txt_main"><span>사칭 전화번호 확인</span>서비스란?</p>
-                        <p class="txt_sub14 mgt12">
-                            그동안 고객님들께서 KB국민은행으로 제보해 주신<br>
-                            사칭 번호를 데이터화하여 제공해드리는 서비스입니다.
-                        </p>
-                        <ul class="star_type blue left">
-                            <li>사칭 번호로 조회되지 않더라도 사칭 또는 피싱 으로 의심이 가신다면 즉시 문자를 삭제하고, KB국민은행 고객센터(1588-9999) 로 신고해주시기 바랍니다.</li>
-                        </ul>
-                        
+                        <p class="txt_main"><span>의심되는 은행명과 전화번호를 입력</span>해주세요!</p><!-- [05/17] 디자인 변경 반영 --><!-- [05/03] 기획/디자인 수정 반영 :: 문구수정 --><!-- [04/25] 띄어쓰기 수정 -->
                     </div>
                 </div>
 
-                <hr class="hr_divide">
-                <div class="section">
 
-                    <div class="tit_sec_wrap">
-                        <h3 class="tit_sec">의심되는 번호를 입력해주세요</h3>
+                <div class="section">
+                    <div class="form_group">
+                        <div class="form_item fix">
+                            <div class="item_content">
+                                <div class="label">은행명</div>
+                                <div class="select">
+                                    <button type="button" class="btn_select checked" title="은행명" readonly>국민은행</button><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form_group">
+                    <div class="form_group mgt20">
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="label">전화번호</div>
                                 <div class="input">
-                                    <input type="text" maxlength="11" placeholder="'-' 없이 입력해주세요">
+                                    <input type="text" maxlength="11" title="전화번호" placeholder="숫자만 입력해주세요"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                                 </div>
                             </div>
                         </div>
 
                         <!-- 상황에 따라 아래 2개 중 1개만 노출되게 해주세요. -->
                         <div class="txt_tip">tip) 전화번호를 복사해서 붙여 넣어보세요</div>
-                        <div class="form_error">휴대폰번호를 정확히 입력해주세요</div>
-
+                        <!-- <div class="form_error">은행번호를 정확히 입력해주세요</div> -->
                     </div>
 
-                    <div class="btn_wrap mgt0">
+                    <div class="btn_wrap mgt20">
                         <button type="button" class="btn secondary" disabled>조회하기</button><!-- [04/18] 수정 disabled추가 -->
                         <!--
                             [04/18] 수정 disabled추가
@@ -78,76 +74,144 @@
                     </div>
                 </div>
 
+
+                <!-- [05/03] 기획/디자인 수정 반영 :: 검색결과 영역 :: start -->
                 <!-- 검색 후 노출 영역 -->
                 <div class="section">
                     <div class="spam_chk_result">
 
-                        <!-- 검색결과 없을 때 -->
-                        <div class="spam_chk_status_nodata">
-                            사칭 번호로 신고된 번호가 아닙니다.
-                        </div>
-                        <!-- // 검색결과 없을 때 -->
-
-                        <!-- 검색 결과 있을 때 -->
-                        <div class="data_sort">
-                            <span class="total">총 <strong>3</strong>건</span>
-                        </div>
-                        <div class="spam_chk_status">
-                            KB은행 사칭 신고이력이 있는 번호입니다.
+                        <!-- 검색결과 :: KB -->
+                        <div class="spam_chk_status_kb">
+                            검색하신 번호는 <span>국민은행</span>에서 전화 혹은 문자<br>
+                            발송 시 사용하는 발신번호가 맞습니다.
                         </div>
                         <div class="table">
                             <table class="center">
-                                <caption>테이블 캡션</caption>
+                                <caption>번호 조회 결과</caption>
                                 <colgroup>
-                                    <col style="width:48px">
-                                    <col style="width:84px">
-                                    <col style="width:84px">
-                                    <col style="width:104px">
+                                    <col style="width:50%"><!-- [05/17] 디자인 변경 반영 -->
+                                    <col style="width:50%"><!-- [05/17] 디자인 변경 반영 -->
                                 </colgroup>
                                 <thead>
-                                    <th scope="col">순번</th>
-                                    <th scope="col">접수번호</th>
-                                    <th scope="col">접수일자</th>
-                                    <th scope="col">사칭전화번호</th>
+                                    <th scope="col">은행명</th>
+                                    <th scope="col">전화번호</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="gray_02">1</td>
-                                        <td>23-000002</td>
-                                        <td>2023/03/22</td>
-                                        <td>010-1234-5678</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="gray_02">2</td>
-                                        <td>23-000002</td>
-                                        <td>2023/03/22</td>
-                                        <td>010-1234-5678</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="gray_02">3</td>
-                                        <td>23-000002</td>
-                                        <td>2023/03/22</td>
-                                        <td>010-1234-5678</td>
+                                        <td class="gray_02">국민은행</td>
+                                        <td class="gray_02">1588-9999</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <!-- //검색 결과 있을 때 -->
+                        <ul class="star_type">
+                            <li>
+                                신종사기수법 등 예상치 못한 피해 예방을 위해 문자 또는 전화로 수신한 내용이 의심스러우실 경우 해당은행에 진위 여부 확인을 하시기 바랍니다.
+                            </li>
+                            <li>
+                                은행 콜센터<br>
+                                <a href="#" class="btn_text" title="새창으로 열림">http://portal.kfb.or.kr/consumer/callcenter.php</a>
+                            </li>
+                            <li>
+                                또한 피해 예방을 위해 휴대폰에 전화 가로채기 앱 등 악성 앱 설치 여부 등을 다시 한 번 확인하시기 바랍니다.
+                            </li>
+                        </ul>
+                        <!-- // 검색결과 :: KB -->
+
+                        <!-- 검색결과 :: not KB -->
+                        <div class="spam_chk_status_not_kb">
+                            <strong>
+                                입력하신 번호(01012345678)는<br>
+                                국민은행에서 사용하는 발신번호가 아닙니다.
+                            </strong>
+                            문자 또는 전화로 수신한 내용의 진위 여부는<br>
+                            해당 은행에 문의하시기 바랍니다.
+                        </div>
+                        <ul class="star_type">
+                            <li>
+                                은행 콜센터<br>
+                                <a href="#" class="btn_text" title="새창으로 열림">http://portal.kfb.or.kr/consumer/callcenter.php</a>
+                            </li>
+                            <li>
+                                또한 피해 예방을 위해 휴대폰에 전화 가로채기 앱 등 악성 앱 설치 여부 등을 다시 한 번 확인하시기 바랍니다.
+                            </li>
+                        </ul>
+                        <!-- // 검색결과 :: not KB -->
 
                     </div><!-- .spam_chk_result -->
                 </div>
                 <!-- // 검색 후 노출 영역 -->
+                <!-- [05/03] 기획/디자인 수정 반영 :: 검색결과 영역 :: end -->
 
+
+                
+
+                <!-- [05/17] 디자인 변경 반영 :: start -->
                 <hr class="hr_divide">
+                <div class="section">
+                    <div class="tit_sec_wrap">
+                        <h3 class="tit_sec">은행 사칭 전화번호 확인 서비스란?</h3>
+
+                        <p class="summary_b mgt12">
+                            <a href="#" target="blank" title="새창으로 열림" class="btn_text kfb">은행연합회</a>에서 제공하는 '은행전화번호 진위확인 서비스'를 통해 은행에서 고객을 대상으로 전화 및 문자를 발송할 때 사용하는 전화번호를 조회할 수 있는 서비스입니다.
+                        </p>
+                    </div>
+
+                    <div class="btn_wrap mgt24">
+                        <a href="#" target="blank" class="btn kfb" title="새창으로 열림"><img src="/img/service/bn_kfb.png" alt="은행연합회 바로가기"></a>
+                    </div>
+                </div>
+                <!-- [05/17] 디자인 변경 반영 :: end -->
+
+
+
+                <!-- [05/03] 기획/디자인 수정 반영 :: 고객센터 주석처리 -->
+                <!-- <hr class="hr_divide">
                 <div class="section">
 
                     <div class="tit_sec_wrap">
-                        <h3 class="tit_sec">KB 고객센터로 제보하기</h3>
+                        <h3 class="tit_sec">KB국민은행 고객센터로 제보하기</h3>
                     </div>
 
                     <div class="spam_chk_cs" role="button" onclick="">1588-9999</div>
                     
+                </div> -->
+                <!-- // [05/03] 기획/디자인 수정 반영 :: 고객센터 주석처리 -->
+
+
+
+
+                <!-- [05/03] 기획/디자인 수정 반영 :: 유의사항 추가 -->
+                <hr class="hr_divide">
+                <div class="section mgt0">
+                    <ul class="list_acc type2 js_accordion">
+						<li>
+							<a href="#none" role="button" class="title" aria-expanded="true">유의사항</a>
+							<div class="content_panel" role="region">
+								<h4 class="tit_item">확인 방법</h4>
+								<ul class="star_type">
+									<li>
+										해당 은행명과 수신한 전화 혹은 문자의 발신번호를 아래 조회창에 입력 후 조회하기 버튼을 누르면 됩니다.
+									</li>
+									<li>
+										고객을 대상으로 전화 및 문자를 발송할 때 사용하는 전화번호를 조회할 수 있는 서비스입니다.
+                                        <ul class="dash_type">
+                                            <li>
+                                                해당은행의 진정한 전화, 문자로 조회되더라도 정보 및 수신한 전화·문자에 대한 상세 내역은 해당은행에 확인하셔야 됩니다. (은행연합회에서는 상세한 내역 확인 불가합니다.)
+                                            </li>
+                                            <li>
+                                                은행을 사칭한 보이스피싱 등 사기를 예방하기 위하여 악성앱 설치 여부 확인 등 추가적인 확인 및 예방 절차를 취하시기 바랍니다.
+                                            </li>
+                                        </ul>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
                 </div>
+                <!-- // [05/03] 기획/디자인 수정 반영 :: 유의사항 추가 -->
+
+
                 
                 
             </div>

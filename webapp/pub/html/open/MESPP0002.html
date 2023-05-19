@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>가입/개통 - 개통 - 예비팝업 - [팝업] 카드등록</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_160463747|rpid=-1269635455|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -55,9 +55,9 @@
             <div class="form_group">
                 <div class="form_item fix">
                     <div class="item_content">
-                        <div class="label">카드사</div>
+                        <div class="label">카드종류</div><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         <div class="select">
-                            <button type="button" class="btn_select">카드사를 선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                            <button type="button" class="btn_select" title="카드종류">카드종류를 선택해주세요</button><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선--><!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
                         </div>
                     </div>
                 </div>
@@ -79,25 +79,25 @@
                     <div class="item_content fix">
                         <div class="label">카드번호</div>
                         <div class="input">
-                            <input type="text" placeholder="카드번호 첫번째" class="focus" value="1234">
+                            <input type="text" title="카드번호 첫번째 4자리" class="focus" value="1234"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         </div>
                     </div>
                     
                     <div class="item_content">
                         <div class="input">
-                            <input type="text" placeholder="카드번호 두번째" class="focus">
+                            <input type="text" title="카드번호 두번째 4자리" class="focus"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         </div>
                     </div>
 
                     <div class="item_content">
                         <div class="input">
-                            <input type="text" placeholder="카드번호 세번째" class="focus">
+                            <input type="text" title="카드번호 세번째 4자리" class="focus"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         </div>
                     </div>
 
                     <div class="item_content">
                         <div class="input">
-                            <input type="text" placeholder="카드번호 네번째" class="focus">
+                            <input type="text" title="카드번호 네번째 4자리" class="focus"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                     <div class="item_content">
                         <div class="label">유효기간</div>
                         <div class="input">
-                            <input type="text" placeholder="유효기간" value="1027">
+                            <input type="text" title="유효기간" placeholder="MM/YY" value="1027"><!--[05/09] [앱접근성/폼요소] 폼 접근성 개선-->
                         </div>
                     </div>
                 </div>

@@ -73,7 +73,7 @@ const _header = {
 			<div class="btn_area">
 				<button type="button" class="btn_home"><span class="hidden">홈으로</span></button>
 				<button type="button" class="btn_search"><span class="hidden">통합검색</span></button>
-				<button type="button" class="btn_open_aside"><span class="hidden">메뉴</span></button>
+				<a href="#open_aside" class="btn_open_aside"><span class="hidden">메뉴</span></a>
 			</div>
 		</div>
 	`,

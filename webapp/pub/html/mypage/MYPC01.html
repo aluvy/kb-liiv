@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1393114535|rpid=572883538|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -40,23 +40,34 @@
                     </div>
 
                     <div class="form_group">
-                        <div class="rdo_select_wrap">
+                        <!-- 23/05/02 수정 : 인풋 타입 수정 및 마크업 구조 수정 -->
+                        <div class="rdo_select_wrap triple"><!-- 23/04/28 수정 : 클래스 추가 .triple -->
                             <span class="form_check img_type">
-                                <input type="radio" id="radio1" name="radioType1">
+                                <input type="checkbox" id="radio1" name="radioType1">
                                 <label for="radio1" class="label">
-                                    <i class="icon img_item three sms"></i>
-                                    <span>문자</span>
+                                    <span class="img_area"><i class="icon img_item three sms"></i></span>
+                                    <span class="text_area"><span>문자</span></span>
                                 </label>
                                 
                             </span>
                             <span class="form_check img_type">
-                                <input type="radio" id="radio2" name="radioType1" checked>
+                                <input type="checkbox" id="radio2" name="radioType1">
                                 <label for="radio2" class="label">
-                                    <i class="icon img_item three email"></i>
-                                    <span>이메일</span>
+                                    <span class="img_area"><i class="icon img_item three email"></i></span>
+                                    <span class="text_area"><span>이메일</span></span>
                                 </label>
                             </span>
+                            <!-- 23/04/28 수정 : 라디오 항목 추가 -->
+                            <span class="form_check img_type">
+                                <input type="checkbox" id="radio3" name="radioType1">
+                                <label for="radio3" class="label">
+                                    <span class="img_area"><i class="icon icon_app_push"></i></span>
+                                    <span class="text_area"><span>앱 알림</span></span> <!-- 23/05/10 문구수정 -->
+                                </label>
+                            </span>
+                            <!--// 23/04/28 수정 : 라디오 항목 추가 -->
                         </div>
+                        <!--// 23/05/02 수정 : 인풋 타입 수정 및 마크업 구조 수정 -->
                     </div>
 
                     <!-- 23/02/16 수정 : 메일폼 구조 수정 -->
@@ -65,13 +76,13 @@
                             <div class="item_content">
                                 <div class="label">이메일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이메일">
+                                    <input type="text" title="아이디" placeholder="아이디 입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             <div class="email_col">@</div>
                             <div class="item_content">
-                                <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select">직접입력</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <div class="select">
+                                    <button type="button" id="btn_email" class="btn_select" title="도메인 선택">도메인 선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --> <!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -79,7 +90,7 @@
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="이메일을 입력해 주세요">
+                                    <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -90,6 +101,7 @@
 
                     <ul class="star_type">
                         <li>청구서 수령방법의 변경은 청구서 발송일 (매월 18~20일) 전 변경 시 변경된 정보로 당월부터 발송되며, 청구서 발송일 이후 변경 시 익월부터 변경된 방법으로 발송됩니다.</li>
+                        <li>KB Liiv M 앱을 설치한 고객님만 앱 알림으로 청구서 수령이 가능합니다.</li> <!-- 23/05/10 문구추가, 문구수정 -->
                     </ul>
 
                     <div class="form_group row mgt20">

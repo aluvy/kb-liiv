@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>법정대리인 정보 변경</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_1645105895|rpid=-1378360644|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -77,7 +77,7 @@
                             <div class="item_content">
                                 <div class="label">이름</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이름 입력">
+                                    <input type="text" title="이름" placeholder="이름을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -89,13 +89,13 @@
                             <div class="item_content">
                                 <div class="label">주민등록번호</div>
                                 <div class="input">
-                                    <input type="number" maxlength="6" placeholder="주민등록번호 앞자리">
+                                    <input type="number" maxlength="6" title="주민등록번호 앞자리"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             <div class="bar"></div>
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="number" maxlength="1" placeholder="주민등록번호 뒷자리 첫번째">
+                                    <input type="number" maxlength="1" title="주민등록번호 뒷자리 중 첫번째 번호"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -105,10 +105,10 @@
                     <div class="form_group">
                         <div class="form_item fix">
                             <div class="item_content">
-                                <div class="label">관계</div>
+                                <div class="label">관계선택</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="select">
                                     <!-- 23.02.15 id값 변경 btn_MYDE02_A -->
-                                    <button type="button" id="btn_MYDE02_A" class="btn_select">관계를 선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                    <button type="button" id="btn_MYDE02_A" class="btn_select" title="관계선택">선택해주세요</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정--> <!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                             <div class="item_content">
                                 <div class="label">휴대폰번호</div>
                                 <div class="input">
-                                    <input type="number" placeholder="‘-’없이 입력해주세요">
+                                    <input type="number" title="휴대폰번호" placeholder="숫자만 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -176,9 +176,9 @@
                                 <div class="form_item fix">
                                     <div class="item_content">
                                         <div class="label">발급일자</div>
-                                        <div class="input" style="padding-right: 0px;">
-                                            <input type="text" placeholder="발급일자">
-                                        <button type="button" class="btn_clear" style="display: none;"><span class="hidden">입력내용 초기화</span></button></div>
+                                        <div class="input">
+                                            <input type="text" title="발급일자" placeholder="YYYY-MM-DD"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form_error"></div>
@@ -192,7 +192,7 @@
                                     <div class="item_content">
                                         <div class="label">면허번호</div>
                                         <div class="select">
-                                            <button type="button" id="btn_MYDE01" class="btn_select">지역선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                            <button type="button" id="btn_MYDE01" class="btn_select" title="면허번호 첫번째 자리 선택">지역선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --> <!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                         </div>
                                         <!-- <div class="input">
                                             <input type="text" placeholder="면허번호" value="서울12">
@@ -201,7 +201,7 @@
                                     <div class="bar"></div>
                                     <div class="item_content">
                                         <div class="input">
-                                            <input type="text" placeholder="00-0000000-00" value="00-0000000-00">
+                                            <input type="text" title="면허번호 두번째 자리" placeholder="00-0000000-00"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                         </div>
                                     </div>
                                 </div>
@@ -213,9 +213,9 @@
                                 <div class="form_item fix">
                                     <div class="item_content">
                                         <div class="label">발급일자</div>
-                                        <div class="input" style="padding-right: 0px;">
-                                            <input type="text" placeholder="발급일자">
-                                        <button type="button" class="btn_clear" style="display: none;"><span class="hidden">입력내용 초기화</span></button></div>
+                                        <div class="input">
+                                            <input type="text" title="발급일자" placeholder="YYYY-MM-DD"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form_error"></div>

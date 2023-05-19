@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>납부방법 변경</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-607060515|rpid=-1101195680|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -88,16 +88,17 @@
                         <div class="form_group mgt20">
                             <div class="form_item fix">
                                 <div class="item_content">
-                                    <div class="label">결제계좌</div>
+                                    <div class="label">결제계좌</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     <div class="input">
-                                        <input type="text" placeholder="결제계좌" value="국민은행" disabled>
+                                        <input type="text" title="은행명" value="국민은행" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
                             <div class="form_item fix">
                                 <div class="item_content">
+                                    <div class="label blind">계좌번호</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     <div class="input">
-                                        <input type="text" placeholder="계좌번호(본인명의)'-'없이 입력" value="123456-78-875351" disabled>
+                                        <input type="text" title="계좌번호" value="123456-78-875351" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -115,6 +116,7 @@
                         <ul class="star_type mgt20"> <!-- 02/13 -->
                             <li>계좌 납부 시, 자동 납부 진행됩니다.</li>
                             <li>당행계좌(KB국민은행)로 자동이체 신청 시 자동납부 신청결과가 익일(은행 영업일 기준) 이내 반영되고, 타행계좌(KB국민은행 외 타은행 또는 증권계좌)로 신청 시 2영업일 (은행영업일 기준) 이내 반영되므로 정상적으로 자동납부 등록되었는지 추후에 반드시 확인하시기 바랍니다.</li>
+                            <li>SKT망의 경우 5일 이후 자동납부 변경시 익월 정기분부터 반영됩니다.</li> <!-- 23/04/26 문구 추가 -->
                             <li>타인명의의 계좌나 카드로 납부방법의 변경을 원하시는 경우 KB Liiv M 고객센터에서 명의자 확인 후 변경 가능합니다.</li>
                         </ul>
     
@@ -155,7 +157,7 @@
                                 <div class="item_content">
                                     <div class="label">ARS 인증받을 전화번호</div>
                                     <div class="input">
-                                        <input type="text" placeholder="01012341234" disabled> <!-- 23/03/21 disabled 추가, placeholder수정 -->
+                                        <input type="text" title="ARS 인증받을 전화번호" value="01012341234" disabled> <!-- 23/03/21 disabled 추가, placeholder수정 --><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -195,25 +197,25 @@
                                 <div class="item_content">
                                     <div class="label">카드번호</div>
                                     <div class="input">
-                                        <input type="text" placeholder="" class="focus">
+                                        <input type="text" class="focus">
                                     </div>
                                 </div>
                                 
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" class="focus">
+                                        <input type="text" class="focus">
                                     </div>
                                 </div>
         
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" class="focus">
+                                        <input type="text" class="focus">
                                     </div>
                                 </div>
         
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" class="focus">
+                                        <input type="text" class="focus">
                                     </div>
                                 </div>
                             </div>
@@ -235,9 +237,9 @@
                         <div class="form_group mgt20">
                             <div class="form_item fix">
                                 <div class="item_content">
-                                    <div class="label">결제카드</div>
+                                    <div class="label">결제카드</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     <div class="input">
-                                        <input type="text" placeholder="" value="국민카드" disabled>
+                                        <input type="text" title="카드종류" value="국민카드" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -249,25 +251,25 @@
                                 <div class="item_content">
                                     <div class="label">카드번호</div>
                                     <div class="input">
-                                        <input type="text" placeholder="" value="1234" disabled>
+                                        <input type="text" title="카드번호 첫번째 4자리" value="1234" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                                 
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" value="5678" disabled>
+                                        <input type="text" title="카드번호 두번째 4자리" value="5678" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
         
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" value="9877" disabled>
+                                        <input type="text" title="카드번호 세번째 4자리" value="9877" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
         
                                 <div class="item_content">
                                     <div class="input">
-                                        <input type="text" placeholder="" value="2119" disabled>
+                                        <input type="text" title="카드번호 네번째 4자리" value="2119" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -279,7 +281,7 @@
                                 <div class="item_content">
                                     <div class="label">유효기간</div>
                                     <div class="input">
-                                        <input type="text" placeholder="" value="10/27" disabled>
+                                        <input type="text" title="유효기간" placeholder="MM/YY" value="10/27" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                     </div>
                                 </div>
                             </div>
@@ -296,6 +298,8 @@
                         <!-- 2023.02.01 추가 -->
                         <ul class="star_type mgt20">
                             <li>카드 납부 시, 자동 납부 진행됩니다.</li>
+                            <li>카드로 자동이체 신청시 자동납부 결과가 익일(은행 영업일 기준)에 반영되므로 정상적으로 자동납부 되었는지 추후에 반드시 확인하시길 바랍니다.</li> <!-- 23/04/26 문구 추가 -->
+                            <li>SKT망의 경우 5일 이후 자동납부 변경시 익월 정기분부터 반영됩니다.</li> <!-- 23/04/26 문구 추가 -->
                             <li>자동납부 카드 등록은 카드 실물 수령 후 정상 등록이 가능합니다.</li>
                             <li>자동 납부 카드 변경은 개통완료 후 「마이페이지 > 고객정보 조회 > 납부방법 변경」에서 처리 가능합니다.</li>
                             <li>타인명의의 계좌나 카드로 납부방법의 변경을 원하시는 경우 KB Liiv M 고객센터에서 명의자 확인 후 변경 가능합니다.</li>

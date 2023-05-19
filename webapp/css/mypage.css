@@ -283,7 +283,8 @@
 /* [ MYIF010202 ] 마이페이지 > 요금제 변경 > [팝업] 요금제 검색 */
 .change_item_none {margin-top:1.2rem;}
 .change_item_none .search_item {display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:11.8rem; padding:1rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem; text-align:center; font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222);}
-.change_item_none .search_item span {display:inline-block; padding:0.6rem 1.2rem; margin-top:1.2rem; background:var(--bg_01, #edf0f6); border-radius:0.6rem; font-size:1.2rem; line-height:1.6rem; color:var(--gray_03, #717171);}
+.change_item_none .search_item > span,
+.change_item_none .search_item > a {display:inline-block; padding:0.6rem 1.2rem; margin-top:1.2rem; background:var(--bg_01, #edf0f6); border-radius:0.6rem; font-size:1.2rem; line-height:1.6rem; color:var(--gray_03, #717171);}
 
 /* 예약변경 정보 */
 .change_reserv {margin-top:2rem; display:none;}

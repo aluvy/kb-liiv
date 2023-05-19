@@ -12,6 +12,7 @@
 .extra_main .extra_box li + li {margin-top:1.2rem;}
 .extra_main .tit_extra {font-size:1.6rem; color:var(--gray_01, #222); font-weight:bold; line-height:2.3rem;}
 .extra_main .txt_extra {margin-top:0.8rem; font-size:1.4rem; color:var(--gray_02, #555); line-height:1.9rem;}
+.extra_main .txt_extra > span {color:var(--gray_01, #222) !important;} /* 운영 style */
 .extra_main .cost_extra {margin-top:0.8rem; text-align:right; font-size:1.6rem; color:var(--main_02, #0966E9); font-weight:bold; line-height:2.4rem;}
 .extra_main .tab_panel .section {padding-top:0;}
 
@@ -279,9 +280,13 @@
 
 
 /* [ADFD01] 부가서비스 > 사칭 전화번호 확인서비스 */
-.txt_sub14 .btn_text.kfb {text-underline-offset:1px;}
-.spam_bn_kfb {margin-top:2.4rem; text-align:center;}
-.spam_bn_kfb img {width:20.8rem;}
+.btn_text.kfb {position:relative; text-underline-offset:1px;}
+
+.btn.kfb {height:auto; padding:1.5rem 0; border: 1px solid #ffd338; background: #ffd338; color: #222; line-height:1;}
+.btn.kfb img{width:12.8rem;}
+
+/* .spam_bn_kfb {margin-top:2.4rem; text-align:center;}
+.spam_bn_kfb img {width:20.8rem;} */
 
 .spam_chk_result {border-top:1px solid var(--line_04, #F6F6F6);}
 

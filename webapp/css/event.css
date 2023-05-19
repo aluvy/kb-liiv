@@ -606,9 +606,11 @@ ul.txt_desc > li > .sup_tit {margin-right:0.4rem; color:#0060E5; font-size:1rem;
 .mbs_map_partner_list ul li {flex:0 0 5.2rem; max-width:5.2rem; text-align:center;}
 .mbs_map_partner_list ul li + li {margin-left:1.3rem;}
 .mbs_map_partner_list ul li a {display: block;}
+.mbs_map_partner_list ul li.on a::after {position:absolute; content:'선택됨'; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden;}
 .mbs_map_partner_list ul li span {vertical-align:top;}
 .mbs_map_partner_list ul li p {font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555); margin-top:0.8rem;}
 .mbs_map_partner_list ul li.on .partner_ico {border:2px solid var(--main_01, #FFD338); background-color:var(--gray_08, #fff);}
+.mbs_map_partner_list ul li.on::after {position:absolute; content:'선택됨'; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden;}
     /* 제휴처 리스트 */
 .partner_list {margin-top:0.8rem;}
 .partner_list ul li {padding:2.4rem 0;}

@@ -18,22 +18,22 @@
     <meta name="twitter:image" content="대표 이미지">
     <meta name="twitter:card" content="summary">
     <title>KB Liiv M Main</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/common/common.js"></script>
-    <script type="text/javascript" src="../../../js/common/util.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
+    <script type="text/javascript" src="/js/common/util.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
 </head>
 <body>
     <div class="wrap">
         <!-- header -->
         <div class="header">
             <div class="inner_main"> <!-- 23/03/17 class="scroll" 삭제 -->
-                <h1 class="title"><a href="#" class="liivm" target="_top" title="메인 페이지로 이동"><span class="hidden">KB Liiv M</span></a></h1>
+                <h1 class="title"><a href="#" class="liivm" target="_top" title="메인 페이지로 이동"><span class="hidden">KB Liiv M</span></a></h1><!-- 23/05/15 [앱접근성] KB 문구 추가 -->
                 <div class="btn_area">
                     <button type="button" class="btn_alarm on"><span class="hidden">알림</span></button> <!-- new alarm 발생시 class="on" 추가 -->
                     <button type="button" class="btn_search"><span class="hidden">통합검색</span></button>
@@ -110,11 +110,11 @@
                     <!-- nav -->
                     <div class="nav_area">
                         <ul class="nav_list">
-                            <li><a href="#none" class="item on">요금제</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
-                            <li><a href="#none" class="item">부가서비스</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
-                            <li><a href="#none" class="item">혜택</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
-                            <li><a href="#none" class="item">마이페이지</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
-                            <li><a href="#none" class="item">고객지원</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item on" role="button">요금제</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item" role="button">부가서비스</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item" role="button">혜택</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item" role="button">마이페이지</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
+                            <li><a href="#none" class="item" role="button">고객지원</a></li><!-- [04/28] [앱접근성] a태그에 role 속성 추가 -->
                         </ul>
                     </div>
                     <!-- //nav -->
@@ -303,7 +303,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="swiper-slide">
+                             <div class="swiper-slide">
                                 <a href="#none" class="link case_08">
                                     <div class="info"><span class="txt">인터넷 / IPTV 결합</span></div> <!-- 23/04/07 문구수정 -->
                                     <!-- 23/04/06 문구 수정 -->
@@ -314,14 +314,25 @@
                                     <!-- //23/04/06 문구 수정 -->
                                 </a>
                             </div>
+                            <!-- 23/05/18 event 추가 -->
+                            <div class="swiper-slide">
+                                <a href="#none" class="link case_evt193">
+                                    <div class="info"><span class="txt">KT 인터넷(+IPTV) 결합</span></div>
+                                    <div class="title">
+                                        <p>모바일 할인</p>
+                                        <p><strong>최대 13.2만원</strong></p>
+                                    </div>
+                                </a>
+                            </div>
+                             <!-- //23/05/18 event 추가 -->
                         </div>
                         <!-- //23/04/04 전체적으로 변경 -->
                         <div class="swiper_control">
                             <!-- 23/05/12 [앱접근성] navigation 추가 -->
                             <div class="btn_control">
-                                <div class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></div>
+                                <button type="button" class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></button>
                                 <div class="swiper-pagination text"></div>
-                                <div class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></div>
+                                <button type="button" class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></button>
                             </div>
                             <!-- //23/05/12 [앱접근성] navigation 추가 -->
                             <div class="play_control"><button type="button" class="btn stop"><span class="hidden">멈춤</span></button></div>
@@ -340,7 +351,7 @@
                             </ul>
                         </div>
                     </div>
-                    <button id="marquee_notice_close" type="button" class="btn_close_marquee"><span class="blind">공지사항 닫기</span></button>
+                    <button id="marquee_notice_close" type="button" class="btn_close_marquee"><span class="blind">이벤트 닫기</span></button>
                 </div>
                 <!-- //흐르는 공지사항 : marquee style -->
 
@@ -382,11 +393,11 @@
                 <!-- slide best 상품 -->
                 <div class="section_f">
                     <div class="filter_wrap" role="tablist">
-                        <button type="button" role="tab" aria-selected="true" aria-controls="tab_line_panel_1" class="on">LG U+</button>
-                        <button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_2">KT</button>
-                        <button type="button" role="tab" aria-selected="false" aria-controls="tab_line_panel_3">SKT</button>
+                        <button type="button" role="tab" aria-selected="true" aria-controls="bestProductLG" class="on">LG U+</button><!--[05/15] [앱접근성] 탭 속성추가 -->
+                        <button type="button" role="tab" aria-selected="false" aria-controls="bestProductKT">KT</button><!--[05/15] [앱접근성] 탭 속성추가 -->
+                        <button type="button" role="tab" aria-selected="false" aria-controls="bestProductSK">SKT</button><!--[05/15] [앱접근성] 탭 속성추가 -->
                     </div>
-                    <div class="swiper-container best" role="tabpanel" id="tab_line_panel_1">
+                    <div class="swiper-container best" role="tabpanel" >
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a href="#none" class="link">
@@ -534,22 +545,24 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=04241&amp;solicitorcode=7024241000" class="link" title="페이지 이동" target="_blank" style="background-color:#675E51;">
+                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=04241&amp;solicitorcode=7024241000" class="link" title="새 창으로 열림" target="_blank" style="background-color:#675E51;">
                                     <img src="../../../img/banner/banner_s_01.png" alt="제휴 신용카드, KB국민 Liiv M Ⅱ 신용카드, 통신비 월 최대 만7천원 할인!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=01772" class="link" title="페이지 이동" target="_blank" style="background-color:#7E7657;">
+                                <a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&amp;allianceCode=01772" class="link" title="새 창으로 열림" target="_blank" style="background-color:#7E7657;">
                                     <img src="../../../img/banner/banner_s_02.png" alt="제휴 체크카드, KB국민 Liiv M 체크카드, 통신비 월 최대 6천원 할인!">
                                 </a>
                             </div>
-
+                            <!-- 23/05/18 링크 수정 -->
                             <div class="swiper-slide">
-                                <a href="https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=1307&amp;cmpid=mshop_wire_191028-banner-event_special%20gift-kbbank_liivm" class="link" title="페이지 이동" target="_blank" style="background-color:#13979F;">
+                                <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000193" class="link" title="페이지 이동" target="_blank" style="background-color:#13979F;">
                                     <img src="../../../img/banner/banner_s_04.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, KT 인터넷, IPTV 결합">
                                 </a>
                             </div>
-                            <div class="swiper-slide">
+                            <!-- //23/05/18 링크 수정 -->
+                            <!-- 23/05/17 삭제 요청 -->
+                            <!-- <div class="swiper-slide">
                                 <a href="http://www.skbevent.kr/_tmp/20191024/" class="link" title="페이지 이동" target="_blank" style="background-color:#A97541;">
                                     <img src="../../../img/banner/banner_s_05.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, SK브로드밴드 인터넷, IPTV 결합">
                                 </a>
@@ -563,7 +576,7 @@
                                 <a href="https://www.dlive.kr/mobile/event/JoinAction.do?method=kbliivmobile" class="link" title="페이지 이동" target="_blank" style="background-color:#1B81A1;">
                                     <img src="../../../img/banner/banner_s_07.png" alt="KB Liiv M 고객만 누릴 수 있는 제휴결합, D'live 인터넷, IPTV 결합">
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="swiper-slide">
                                 <!-- 23/03/13 개발 페이지 링크 필요 -->
                                 <a href="/biz/event/ongoing-detailed?eventStat=01&eventId=EVT0000182" class="link" title="페이지 이동" target="_top" style="background-color:#40559F;">
@@ -571,17 +584,17 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://obank.kbstar.com/quics?page=C020702&amp;cc=b061761:b061770&amp;%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%83%81%ED%92%88%EC%BD%94%EB%93%9C=DP01000569&amp;%EB%85%B8%EB%93%9C%EC%BD%94%EB%93%9C=00007" class="link" title="페이지 이동" target="_blank" style="background-color:#784CD4;">
+                                <a href="https://obank.kbstar.com/quics?page=C020702&amp;cc=b061761:b061770&amp;%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%83%81%ED%92%88%EC%BD%94%EB%93%9C=DP01000569&amp;%EB%85%B8%EB%93%9C%EC%BD%94%EB%93%9C=00007" class="link" title="새 창으로 열림" target="_blank" style="background-color:#784CD4;">
                                     <img src="../../../img/banner/banner_s_09.png" alt="KB Liiv M 외국인 고객님, 환율 및 외화송금 보낼 때, 수수료 우대 받으세요!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D006290" class="link" title="페이지 이동" target="_blank" style="background-color:#5172E8;">
+                                <a href="https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D006290" class="link" title="새 창으로 열림" target="_blank" style="background-color:#5172E8;">
                                     <img src="../../../img/banner/banner_s_10.png" alt="KB Liiv M 외국인 고객님, 쉽고 빠르게 KB웨스턴유니온 특급송금 해보세요!">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="https://m.kbcard.com/SVC/DVIEW/MSCMCXHIASVC0060" class="link" title="페이지 이동" target="_blank" style="background-color:#578386;">
+                                <a href="https://m.kbcard.com/SVC/DVIEW/MSCMCXHIASVC0060" class="link" title="새 창으로 열림" target="_blank" style="background-color:#578386;">
                                     <img src="../../../img/banner/banner_s_11.png" alt="KB Liiv M 해외로밍 신청 고객님, 카드사용안심 서비스 신청하고 부정사용 예방하세요!">
                                 </a>
                             </div>
@@ -596,9 +609,9 @@
                         <div class="swiper_control">
                             <!-- 23/05/12 [앱접근성] navigation 추가 -->
                             <div class="btn_control">
-                                <div class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></div>
+                                <button type="button" class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></button>
                                 <div class="swiper-pagination text"></div>
-                                <div class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></div>
+                                <button type="button" class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></button>
                             </div>
                             <!-- //23/05/12 [앱접근성] navigation 추가 -->
                             <div class="play_control"><button type="button" class="btn stop"><span class="hidden">멈춤</span></button></div>
@@ -737,7 +750,7 @@
         <!-- footer -->
         <div class="footer">
             <div class="footer_top">
-                <div class="logo"><span class="hidden">KB Liiv M</span></div><!-- 23/05/11 KB 문구 추가 -->
+                <div class="logo"><span class="hidden">KB Liiv M</span></div><!-- 23/05/11 [앱접근성] KB 문구 추가 -->
                 <ul class="sns_list">
                     <!-- 23/05/02 target, title 추가 -->
                     <li><a href="#none" class="item youtube" target="_blank" title="새창으로 열림"><span class="hidden">유투브</span></a></li>
@@ -759,7 +772,7 @@
                 <div class="link_area">
                     <a href="#none" title="페이지 이동">이용약관</a>
                     <a href="#none" title="페이지 이동"><strong>개인정보처리방침</strong></a> <!-- 23/04/26 strong tag 추가 -->
-                    <a href="#coverageMapLayer" title="페이지 이동">서비스 커버리지</a>
+                    <a href="#coverageMapLayer" role="button" aria-haspopup="true">서비스 커버리지</a><!--[05/15] [앱접근성] 서비스 커버리지 팝업 속성 추가 -->
                     <a href="https://www.msafer.or.kr" target="_blank" title="페이지 이동">명의도용사이트</a>
                     <a href="#none">이용자피해예방</a>
                     <a href="#none">KB Liiv M 알뜰폰이란?</a> <!-- 23/04/26 항목 추가 -->
@@ -830,7 +843,13 @@
                     </div>
                 </div>
                 <div class="swiper_control">
-                    <div class="swiper-pagination text"></div>
+                    <!-- 23/05/12 [앱접근성] navigation 추가 -->
+                    <div class="btn_control">
+                        <button type="button" class="swiper-button-prev"><i class="icon icon_prev"></i><span class="blind">이전 슬라이드</span></button>
+                        <div class="swiper-pagination text"></div>
+                        <button type="button" class="swiper-button-next"><i class="icon icon_next"></i><span class="blind">다음 슬라이드</span></button>
+                    </div>
+                    <!-- //23/05/12 [앱접근성] navigation 추가 -->
                     <div class="play_control"><button type="button" class="btn stop"><span class="hidden">멈춤</span></button></div>
                 </div>
             </div>
@@ -873,14 +892,14 @@
     });
     $(()=>{
         // 통신사별 button event 
+        setTimeout(() => {
+            $(".filter_wrap").attr("role", "tablist");
+        }, 0);
         $('.filter_wrap button').on('click', function(){
-            if($(this).hasClass('on')){
-                $(this).siblings().removeClass('on');
-                $(this).addClass('on');
-            } else {
-                $(this).addClass('on');
-                $(this).siblings().removeClass('on');
-            }
+            // [05/15] [앱접근성] 선택됨 관련 스크립트 수정
+            if( $(this).hasClass('on') ) return;
+            $(this).siblings().removeClass('on').attr("aria-selected", false);
+            $(this).addClass('on').attr("aria-selected", true);
         });
 
         // footer_bottom show/hide
@@ -955,6 +974,10 @@
                 delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+            },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'fraction',
@@ -1010,9 +1033,9 @@
                 delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
-            nagigation: {
-                prevEl: 'swiper-button-prev',
-                nextEl: 'swiper-button-next',
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -1102,10 +1125,14 @@
                 delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
             },
-            nagigation: {
-                prevEl: 'swiper-button-prev',
-                nextEl: 'swiper-button-next',
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
             },
+            // navigation: {
+            //     prevEl: 'swiper-button-prev',
+            //     nextEl: 'swiper-button-next',
+            // },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'fraction',

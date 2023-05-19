@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>마이페이지</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-1185669224|rpid=452121666|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -87,9 +87,9 @@
                     <div class="form_group">
                         <div class="form_item fix req">
                             <div class="item_content">
-                                <!-- <div class="label">fix label 영역</div> -->
+                                <div class="label blind">발급목적 및 제출처</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="input">
-                                    <input type="text" placeholder="상세목적을 입력해주세요 (20자 이내)">
+                                    <input type="text" title="기타증빙용 상세목적" placeholder="상세목적을 입력해주세요 (20자 이내)"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -102,28 +102,27 @@
                             <div class="item_content">
                                 <div class="label">이메일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이메일">
+                                    <input type="text" title="아이디" placeholder="아이디 입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             <div class="email_col">@</div>
                             <div class="item_content">
-                                <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select">전체</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <div class="select">
+                                    <button type="button" id="btn_email" class="btn_select" title="도메인 선택">도메인 선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
 
                         <!-- 23/02/17 수정 : 이메일 폼 구조 수정(직접입력 form_item을 상위 form_group 안으로 이동) -->
-                        <!-- 직접입력시 -->
+                        <!-- 직접입력을 선택한 경우만 show -->
                         <div class="form_item fix">
-                            <div class="item_content pdt0">
-                                <div class="input" title="이메일 직접입력">
-                                    <input type="text" placeholder="이메일을 입력해주세요">
+                            <div class="item_content">
+                                <div class="input">
+                                    <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
-                        <div class="form_error">유효성 check</div><!-- 23/03/23 수정 : 유효성 체크문구 추가 -->
-                        <!--// 직접입력시 -->
+                        <!-- //직접입력을 선택한 경우만 show -->
                         <!--// 23/02/17 수정 : 이메일 폼 구조 수정(직접입력 form_item을 상위 form_group 안으로 이동) -->
                     </div>
                     <!-- // 23/01/25 기획검수 수정요청 : 이메일입력 수정 -->
@@ -232,9 +231,9 @@
                 <div class="form_group mgt32">
                     <div class="form_item fix">
                         <div class="item_content">
-                            <div class="label">모바일웹 비밀번호</div>
+                            <div class="label">비밀번호</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             <div class="input">
-                                <input type="text" placeholder="모바일웹 비밀번호 입력">
+                                <input type="text" title="비밀번호" placeholder="비밀번호 입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-480335518|rpid=1386092974|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -165,9 +165,9 @@
                 <div class="form_group">
                     <div class="form_item fix">
                         <div class="item_content btn_price">
-                            <div class="label">부분 납부금액</div>
+                            <div class="label">부분 납부 금액</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             <div class="input">
-                                <input type="text" placeholder="납부할 금액을 입력해주세요">
+                                <input type="text" title="부분 납부 금액" placeholder="납부할 금액을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                             <span class="inp_won">원</span>
                         </div>
@@ -221,9 +221,9 @@
                 <div class="form_group mgt32">
                     <div class="form_item fix">
                         <div class="item_content">
-                            <div class="label">결제카드</div>
+                            <div class="label">결제카드</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             <div class="input">
-                                <input type="text" placeholder="" value="국민카드" disabled>
+                                <input type="text" title="카드종류" value="국민카드" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                     </div>
@@ -235,25 +235,25 @@
                         <div class="item_content">
                             <div class="label">카드번호</div>
                             <div class="input">
-                                <input type="text" placeholder="" value="1234" disabled>
+                                <input type="text" title="카드번호 첫번째 4자리" value="1234" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                         
                         <div class="item_content">
                             <div class="input">
-                                <input type="text" placeholder="" value="5678" disabled>
+                                <input type="text" title="카드번호 두번째 4자리" value="5678" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
 
                         <div class="item_content">
                             <div class="input">
-                                <input type="text" placeholder="" value="9877" disabled>
+                                <input type="text" title="카드번호 세번째 4자리" value="9877" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
 
                         <div class="item_content">
                             <div class="input">
-                                <input type="text" placeholder="" value="2119" disabled>
+                                <input type="text" title="카드번호 네번째 4자리" value="2119" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                         <div class="item_content">
                             <div class="label">유효기간</div>
                             <div class="input">
-                                <input type="text" placeholder="" value="10/27" disabled>
+                                <input type="text" value="10/27" disabled>
                             </div>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                         <div class="item_content">
                             <div class="label">할부개월</div>
                             <div class="select">
-                                <button type="button" class="btn_select checked" id="installMonth">일시불</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <button type="button" class="btn_select checked" id="installMonth" title="할부개월 선택">일시불</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --> <!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                     </div>
@@ -297,19 +297,20 @@
                 <div class="form_group mgt32"> <!-- 02/13 수정 -->
                     <div class="form_item fix">
                         <div class="item_content">
-                            <div class="label">결제계좌</div>
+                            <div class="label">결제계좌</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             <!-- <div class="select">
                                 <button type="button" id="btn_acountSelect" class="btn_select">계좌 발급 받으실 은행을 선택해주세요</button>
                             </div> -->
                             <div class="input">
-                                <input type="text" placeholder="" value="국민은행" disabled>
+                                <input type="text" title="은행명" value="국민은행" disabled>
                             </div>
                         </div>
                     </div>
                     <div class="form_item fix">
                         <div class="item_content">
+                            <div class="label blind">계좌번호</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             <div class="input">
-                                <input type="text" placeholder="가상 계좌번호" value="123456-00-123456" disabled>
+                                <input type="text" title="계좌번호" value="123456-00-123456" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                             </div>
                         </div>
                     </div>

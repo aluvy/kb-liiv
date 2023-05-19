@@ -16,6 +16,10 @@ $(function(){
  * @param postAction
  */
 function fn_transCall(url, data, callBack, errorCallback, postAction){
+	
+	if(!bTran){
+		return;
+	}
 
 	let tranId 				= url.split('/').reverse()[0];
 	let objCallBack 		= callBack;
@@ -82,7 +86,6 @@ function fn_transCall(url, data, callBack, errorCallback, postAction){
 			}
 		},
 		complete: function(xhr, status){
-			loading('stop');
 			if(typeof objPostAction == 'function'){
 				objPostAction(tranId, xhr, status);
 			}
@@ -218,13 +221,12 @@ function kbplusLogout() {
 function kbplusEvent() {
     console.log('[kbplusLogout Success]');
     if(getOsInfo().indexOf('app') != -1){
-	    callAppService({
-			action_code : 'A0314',	// genKey
-	    });
-
 	    if(location.href.indexOf('ssoBridge') > -1){
 	        ssoLogoutCallback();
 	    }else{
+	        callAppService({
+            			action_code : 'A0314',	// genKey
+            });
 	        location.replace('/');
 	    }
 
@@ -310,8 +312,10 @@ function loading(state, e) {
 		$('body').addClass('no_scroll');
 		$('.loading_wrap').append('<div class="dimmed"></div><div class="lottie"><lottie-player src="/img/common/loading.json" background="transparent" speed="1" loop autoplay></lottie-player></div>');
 	} else if (state == 'stop' && $('.loading_wrap > div').hasClass('dimmed')) {
-		$('body').removeClass('no_scroll');
-		$('.loading_wrap').empty();
+		setTimeout(()=>{
+			$('body').removeClass('no_scroll');
+			$('.loading_wrap').empty();
+		}, 500);
 	}
 };
 

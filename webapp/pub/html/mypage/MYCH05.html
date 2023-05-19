@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_-30729265|rpid=-1157402111|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -44,7 +44,7 @@
                             <div class="item_content">
                                 <div class="label">사업자등록번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="‘-’ 없이 입력해주세요">
+                                    <input type="text" title="사업자등록번호" placeholder="숫자만 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="item_content">
                                 <div class="label">상호명</div>
                                 <div class="input">
-                                    <input type="text" placeholder="상호명을 입력해주세요">
+                                    <input type="text" title="상호명" placeholder="상호명을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="item_content">
                                 <div class="label">대표자명</div>
                                 <div class="input">
-                                    <input type="text" placeholder="대표자명을 입력해주세요">
+                                    <input type="text" title="대표자명" placeholder="대표자명을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                             <div class="item_content">
                                 <div class="label">상호명</div>
                                 <div class="input">
-                                    <input type="text" placeholder="상호명을 입력해주세요">
+                                    <input type="text" title="상호명" placeholder="상호명을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                             <div class="item_content">
                                 <div class="label">업태</div>
                                 <div class="input">
-                                    <input type="text" placeholder="업태를 입력해주세요"><!-- 2023.01.25 기획검수 문구수정 -->
+                                    <input type="text" title="업태" placeholder="업태를 입력해주세요"><!-- 2023.01.25 기획검수 문구수정 --><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -111,30 +111,27 @@
                             <div class="item_content">
                                 <div class="label">업종</div>
                                 <div class="input">
-                                    <input type="text" placeholder="업종을 입력해주세요">
+                                    <input type="text" title="업종" placeholder="업종을 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
                         <div class="form_error">유효성 check</div>
                     </div>
 
-                    <div class="form_group">
+                    <div class="form_group address">
                         <div class="form_item fix">
-                            <div class="item_content btn_search">
-                                <div class="label">사업장 주소</div>
+                            <div class="item_content btn_address">
+                                <div class="label">사업장 기본주소</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="input">
-                                    <input type="text" placeholder="기본 주소를 검색하세요">
+                                    <input type="text" title="기본주소" placeholder="기본주소를 검색해주세요" readonly><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
-                        <div class="form_error">유효성 check</div>
-                    </div>
-
-                    <div class="form_group">
                         <div class="form_item fix">
-                            <div class="item_content pdt0">
-                                <div class="input" title="상세 주소">
-                                    <input type="text" placeholder="상세 주소를 검색하세요">
+                            <div class="item_content">
+                                <div class="label blind">사업장 상세주소</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
+                                <div class="input">
+                                    <input type="text" title="상세주소" placeholder="상세주소를 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -146,7 +143,7 @@
                             <div class="item_content">
                                 <div class="label">담당자</div>
                                 <div class="input">
-                                    <input type="text" placeholder="담당자를 입력해주세요"><!-- 2023.01.25 기획검수 문구수정 -->
+                                    <input type="text" title="담당자" placeholder="담당자를 입력해주세요"><!-- 2023.01.25 기획검수 문구수정 --><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -158,7 +155,7 @@
                             <div class="item_content">
                                 <div class="label">담당자 직장 연락처</div>
                                 <div class="input">
-                                    <input type="text" placeholder="‘-’없이 입력해주세요">
+                                    <input type="text" title="담당자 직장 연락처" placeholder="숫자만 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -170,7 +167,7 @@
                             <div class="item_content">
                                 <div class="label">담당자 휴대폰번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="‘-’없이 입력해주세요">
+                                    <input type="text" title="담당자 휴대폰번호" placeholder="숫자만 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -213,13 +210,13 @@
                             <div class="item_content">
                                 <div class="label">이메일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이메일">
+                                    <input type="text" title="아이디" placeholder="아이디 입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             <div class="email_col">@</div>
                             <div class="item_content">
-                                <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select">직접입력</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <div class="select">
+                                    <button type="button" id="btn_email" class="btn_select" title="도메인 선택">도메인 선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -227,7 +224,7 @@
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="이메일을 입력해주세요">
+                                    <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -260,7 +257,7 @@
                             <div class="item_content btn_check">
                                 <div class="label">아이디</div>
                                 <div class="input">
-                                    <input type="text" placeholder="아이디를 입력해주세요">
+                                    <input type="text" title="아이디" placeholder="아이디를 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -272,7 +269,7 @@
                             <div class="item_content">
                                 <div class="label">비밀번호</div>
                                 <div class="input">
-                                    <input type="password" placeholder="최소 8자의 영문, 숫자, 특수문자 조합">
+                                    <input type="password" title="비밀번호" placeholder="최소 8자 영문, 숫자, 특수문자 조합"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -284,7 +281,7 @@
                             <div class="item_content">
                                 <div class="label">비밀번호 확인</div>
                                 <div class="input">
-                                    <input type="password" placeholder="비밀번호를 다시 입력해주세요">
+                                    <input type="password" title="비밀번호 확인" placeholder="최소 8자 영문, 숫자, 특수문자 조합"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -296,7 +293,7 @@
                             <div class="item_content">
                                 <div class="label">휴대폰번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="‘-’없이 입력해주세요">
+                                    <input type="text" title="휴대폰번호" placeholder="숫자만 입력해주세요"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -342,13 +339,13 @@
                             <div class="item_content">
                                 <div class="label">이메일</div>
                                 <div class="input">
-                                    <input type="text" placeholder="이메일">
+                                    <input type="text" title="아이디" placeholder="아이디 입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             <div class="email_col">@</div>
                             <div class="item_content">
-                                <div class="select" title="메일사 선택">
-                                    <button type="button" id="btn_email" class="btn_select">직접입력</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 -->
+                                <div class="select">
+                                    <button type="button" id="btn_email" class="btn_select" title="도메인 선택">도메인 선택</button> <!-- 02/27 KB Liiv M_App_웹표준검수_1.0 수정 --> <!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -356,7 +353,7 @@
                         <div class="form_item fix">
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="이메일을 입력해주세요">
+                                    <input type="text" title="도메인 직접입력" placeholder="도메인 직접입력"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -434,20 +431,17 @@
                     <div class="form_group mgt20">
                         <div class="form_item fix">
                             <div class="item_content">
-                                <div class="label">결제계좌</div>
+                                <div class="label">결제계좌</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="input">
-                                    <input type="text" placeholder="결제계좌" value="국민은행" disabled>
+                                    <input type="text" title="은행명" value="국민은행" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="form_group mgt0">
                         <div class="form_item fix">
-                            <div class="item_content pdt0">
-                                <div class="label"><span class="blind">계좌번호</span></div>
+                            <div class="item_content">
+                                <div class="label blind">계좌번호</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="input">
-                                    <input type="text" placeholder="계좌번호(본인명의)'-'없이 입력" value="123456-78-875351" disabled>
+                                    <input type="text" title="계좌번호" value="123456-78-875351" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -465,9 +459,9 @@
                     <div class="form_group mgt20">
                         <div class="form_item fix">
                             <div class="item_content">
-                                <div class="label">결제카드</div>
+                                <div class="label">결제카드</div><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 <div class="input">
-                                    <input type="text" placeholder="" value="국민카드" disabled>
+                                    <input type="text" title="카드종류" value="국민카드" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -479,25 +473,25 @@
                             <div class="item_content">
                                 <div class="label">카드번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="" value="1234" disabled>
+                                    <input type="text" title="카드번호 첫번째 4자리" value="1234" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                             
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="" value="5678" disabled>
+                                    <input type="text" title="카드번호 두번째 4자리" value="5678" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
     
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="" value="9877" disabled>
+                                    <input type="text" title="카드번호 세번째 4자리" value="9877" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
     
                             <div class="item_content">
                                 <div class="input">
-                                    <input type="text" placeholder="" value="2119" disabled>
+                                    <input type="text" title="카드번호 네번째 4자리" value="2119" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -509,7 +503,7 @@
                             <div class="item_content">
                                 <div class="label">유효기간</div>
                                 <div class="input">
-                                    <input type="text" placeholder="" value="10/27" disabled>
+                                    <input type="text" title="유효기간" placeholder="MM/YY" value="10/27" disabled><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>
@@ -565,7 +559,7 @@
                             <div class="item_content">
                                 <div class="label">ARS 인증받을 전화번호</div>
                                 <div class="input">
-                                    <input type="text" placeholder="‘-’없이 입력해주세요">
+                                    <input type="text" title="ARS 인증받을 전화번호"><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                             </div>
                         </div>

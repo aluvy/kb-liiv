@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
-    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
     <style>
         
     </style>
@@ -35,6 +35,7 @@
                 <div class="section rateplan_prod_fixed">
                     <div class="rateplan_prod_fixed_inner"> <!-- 03/07 수정 <div class="rateplan_prod_fixed_inner"> -->
                         <div class="rateplan_prod_wrap">
+                            <button type="button" class="btn_reteplan_prod"><span class="blind">필터 펼쳐 보기</span></button><!-- [05/15] [앱접근성] 버튼 위치 이동, 텍스트 변경 -->
                             <!-- 2023.01.26 태그 # 제거 -->
                             <!-- 2023.01.20 태그 기획 수정요청 처리 -->
                             <div class="rateplan_prod oneline">
@@ -54,7 +55,6 @@
                             </div>
                             <!-- //2023.01.20 태그 기획 수정요청 처리 -->
                             <!-- //2023.01.26 태그 # 제거 -->
-                            <button type="button" class="btn_reteplan_prod"><span class="blind">요금제 더보기</span></button>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <!-- 2023.01.25 카드 리스트 A 태그 추가 -->
                         <div> <!-- 03/07 수정 class="card_select_wrap" 삭제 -->
                             <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
-                                <a href="#">
+                                <a href="#none" role="button" title="페이지 이동"><!-- [05/11] a태그에 href값 수정 및 role, title 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -114,7 +114,7 @@
                             </div>
 
                             <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
-                                <a href="#">
+                                <a href="#none" role="button" title="페이지 이동"><!-- [05/11] a태그에 href값 수정 및 role, title 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
-                                <a href="#">
+                                <a href="#none" role="button" title="페이지 이동"><!-- [05/11] a태그에 href값 수정 및 role, title 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -166,7 +166,7 @@
                             </div>
 
                             <div class="card_item"> <!-- 23/03/15 class="line" 삭제 -->
-                                <a href="#">
+                                <a href="#none" role="button" title="페이지 이동"><!-- [05/11] a태그에 href값 수정 및 role, title 속성 추가 -->
                                     <div class="item_main">
                                         <div class="lt">
                                             <div class="badge_group">
@@ -203,7 +203,7 @@
                 </div>
 
                 <div class="btm_fixed_item rateplan_help">
-                    <a href="#" target="blank" title="클릭하시면 요금제 진단하기 페이지로 이동합니다."><!-- [05/02] [앱접근성] 요금제 진단하기 링크 title 문구 수정 -->
+                    <a href="#" title="클릭하시면 요금제 진단하기 페이지로 이동합니다."><!-- [05/02] [앱접근성] 요금제 진단하기 링크 title 문구 수정, target삭제 -->
                         <p>어떤 요금제를 선택해야 할지 어려우신가요?</p>
                     </a>
                 </div>
@@ -315,28 +315,41 @@
     });
     /* // 03/07 수정 */
 
+    /* [05/15] [앱접근성] 스크립트 수정 */
     // 해시태그 버튼 활성화 셈플
+    $(".rateplan_prod button:not(.user_filter)").each((idx, item)=>{
+        $(item).hasClass("on") ? $(item).attr("aria-pressed", true) : $(item).attr("aria-pressed", false);
+    })
     $(document).on('click','.rateplan_prod button:not(.user_filter)',function(){
         if(!$(this).hasClass('on')){
-            $(this).siblings().removeClass('on');
-            $(this).addClass('on');
+            $(this).siblings().removeClass('on').attr("aria-pressed", 'false');
+            $(this).addClass('on').attr("aria-pressed", 'true');
         }else{
             $(this).removeClass('on');
+            $(this).attr("aria-pressed", 'false');
         }
     });
     
     // 요금제 버튼 더보기
-    $(document).on('click','.btn_reteplan_prod',function(){
-        if(!$(this).hasClass('on')){
-            $(this).addClass('on');
-            $('.rateplan_prod').removeClass('oneline').css({
-                height:'auto'
-            });
-        }else{
-            $(this).removeClass('on');
-            $('.rateplan_prod').addClass('oneline').attr('style','')
+    $(()=>{
+        if( $(document).find(".btn_reteplan_prod").hasClass("on") ){
+            $(document).find(".rateplan_prod").removeClass("oneline").css({"height":"auto"});
+            $(document).find(".btn_reteplan_prod").attr("aria-expanded", true);
+        } else {
+            $(document).find(".rateplan_prod").addClass("oneline").css({"height":""});
+            $(document).find(".btn_reteplan_prod").attr("aria-expanded", false);
         }
-    });
+        $(document).on('click','.btn_reteplan_prod',function(){
+            if(!$(this).hasClass('on')){
+                $(this).addClass('on').attr("aria-expanded", true);
+                $('.rateplan_prod').removeClass('oneline').css({"height":"auto"});
+            }else{
+                $(this).removeClass('on').attr("aria-expanded", false);;
+                $('.rateplan_prod').addClass('oneline').attr('style','')
+            }
+        });
+    })
+    /* // [05/15] [앱접근성] 스크립트 수정 */
 </script>
 </body>
 </html>

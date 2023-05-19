@@ -19,9 +19,13 @@ $(()=>{
     })
 
     // partner category toggle
+    $(document).find(".mbs_map_partner_list li").each((idx, item)=>{
+        $(item).find("a").attr("role", "tab");
+        $(item).hasClass("on") ? $(item).find("a").attr("aria-selected", true) : $(item).find("a").attr("aria-selected", false);
+    })
     $(document).off("click", ".mbs_map_partner_list li a").on("click", ".mbs_map_partner_list li a", function(e){
-        $(this).parents(".mbs_map_partner_list").find("li").removeClass("on");
-        $(this).parents("li").addClass("on");
+        $(this).parents(".mbs_map_partner_list").find("li").removeClass("on").find("a").attr("aria-checked", false);
+        $(this).parents("li").addClass("on").find("a").attr("aria-checked", true);
 
         setBottomLayout(mapBottomFix.type=1);
         $(document).find(".mbs_map-bottom .content_body").scrollTop(0);

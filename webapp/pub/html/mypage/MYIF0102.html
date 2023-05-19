@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>마이페이지</title>
-    <script type="text/javascript" src="/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js" data-dtconfig="rid=RID_43090245|rpid=1373565059|domain=liivm.com|reportUrl=/rb_8b5a5eb1-d5db-4a1a-a77d-7d2e82e4daff|app=35bafef188aad98d|rcdec=1209600000|featureHash=ICA27NVdfjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|srmcrv=10|cuc=5asqbnlw|mel=100000|expw=1|dpvc=1|ssv=4|lastModification=1682040079305|dtVersion=10251220909040818|srmcrl=1|tp=500,50,0,1|uxdcw=1500|agentUri=/ruxitagentjs_ICA27NVdfjqrux_10251220909040818.js"></script><link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
@@ -82,10 +82,12 @@
                     </div>
                     <!-- 변경할 요금제 선택 전 화면 -->
                     <div class="change_item_none">
-                        <a href="#" role="button" class="search_item">
+                        <!-- 23/05/16 [앱접근성] 마크업 변경 -->
+                        <div class="search_item">
                             변경할 요금제를 선택해주세요
-                            <span>요금제 검색하기</span>
-                        </a>
+                            <a href="#none" role="button">요금제 검색하기</a>
+                        </div>
+                        <!-- //23/05/16 [앱접근성] 마크업 변경 -->
                     </div>
                     <!-- // 변경할 요금제 선택 전 화면 -->
 
@@ -148,7 +150,7 @@
                             <div class="item_content">
                                 <div class="label">예약변경 정보</div>
                                 <div class="input">
-                                    <input type="text" placeholder="예약변경 정보" value="2023.03.01" readonly>
+                                    <input type="text" title="예약 변경일" value="2023.03.01" readonly><!-- [05/09] [앱접근성/폼요소] 폼 접근성 개선 -->
                                 </div>
                                 <button type="button" class="btn_type">예약취소</button>
                             </div>
