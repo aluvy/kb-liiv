@@ -1,0 +1,417 @@
+@charset "utf-8";
+/* 다크 예외처리 */
+:root.dark_mode .dk_mode_reset {
+    --fc_01: #000;
+    --fc_02: #26282c;
+    --fc_03: #484b51;
+    --fc_04: #696e76;
+    --fc_05: #8c949e;
+    --fc_06: #aab0b8;
+    --fc_07: #c6cbd0;
+    --fc_08: #dde1e4;
+    --fc_09: #ebeef0;
+    --fc_10: #f7f7f8;
+    --fc_11: #fff;
+    --bg_01: #fff;     /* Contents BG */
+    --bg_02: #f7f7f8;  /* Contents Notice */
+    --bdc_01: #ebeef0; /* Line Default */
+    --bdc_02: #696e76; /* Line Design Type */
+    --bdc_03: #c6cbd0; /* Data List Header */
+    --bdc_04: #484b51; /* Accordion Open Header */
+}
+
+.dark_mode #wrap.dk_mode_reset,
+.dark_mode #content.dk_mode_reset {min-height:100%; height:auto; color:var(--fc_02, #26282c); background-color:#fff;}
+.dark_mode .dk_mode_reset {color:var(--fc_02, #26282c); background-color:#fff;}
+
+.dark_mode .dk_mode_reset .hr_divide,
+.dark_mode .dk_mode_reset .hr_divide2,
+.dark_mode .dk_mode_reset .hr_divide3 {background: var(--bg_02, #f7f7f8);}
+.dark_mode .dk_mode_reset .list_hr > li {border-top-color:#f1f3f5;}
+.dark_mode .dk_mode_reset .acc_pannel.top,
+.dark_mode .dk_mode_reset .pdt_info_top {border-bottom-color:#f1f3f5;}
+.dark_mode .dk_mode_reset .tab_wrap::after {background:linear-gradient(270deg, var(--bg_01, #fff) 15%, rgba(255,255,255,0) 100%);}
+.dark_mode .dk_mode_reset .step_wrap {background:rgba(247,247,248,0);}
+.dark_mode .dk_mode_reset .step_wrap.on {background:rgba(247,247,248,1);}
+.dark_mode .dk_mode_reset .tab_wrap [role='tab']::after {background:#2d2f34;}
+.dark_mode .dk_mode_reset .inform_top_wrap {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .tooltip_wrap {background:#26282c; color:#dde1e4;}
+.dark_mode .dk_mode_reset .tooltip_wrap .depth li, 
+.dark_mode .dk_mode_reset .tooltip_wrap p.depth.info {color:#dde1e4;}
+.dark_mode .dk_mode_reset .table table {border-top-color:#8c949e;}
+.dark_mode .dk_mode_reset .table table th,
+.dark_mode .dk_mode_reset .table table td.tb_state_same {background-color:transparent;}
+.dark_mode .dk_mode_reset .table table th, 
+.dark_mode .dk_mode_reset .table table td {border-color:#ebeef0;}
+.dark_mode .dk_mode_reset .table table tfoot th {background-color:transparent;}
+.dark_mode .dk_mode_reset .table .line_l,
+.dark_mode .dk_mode_reset .table .line_r {border-color:#ebeef0 !important;}
+.dark_mode .dk_mode_reset .btn.secondary,
+.dark_mode .dk_mode_reset .btn.point {background:#ebeef0; color:#26282c;}
+.dark_mode .dk_mode_reset .btn:disabled {background:#f7f7f8; color:#aab0b8;}
+.dark_mode .dk_mode_reset .btn.outline:disabled {background:transparent; color:#aab0b8;}
+.dark_mode .dk_mode_reset .select_btn.readonly,
+.dark_mode .dk_mode_reset .select_btn:disabled,
+.dark_mode .dk_mode_reset .textarea.textarea_readonly, 
+.dark_mode .dk_mode_reset .textarea.textarea_disabled, 
+.dark_mode .dk_mode_reset textarea[readonly], 
+.dark_mode .dk_mode_reset textarea[disabled] {background:#f7f7f8; border-color:#dde1e4;}
+.dark_mode .dk_mode_reset .selection input[type=radio] + .label:before {border-color:#aab0b8;}
+.dark_mode .dk_mode_reset .selection input[type=radio]:checked + .label:before {border-color:#ffcc00;}
+.dark_mode .dk_mode_reset .selection input[type=radio]:disabled + .label:before,
+.dark_mode .dk_mode_reset .selection input[type=radio][readonly] + .label:before {border-color:#dde1e4;}
+.dark_mode .dk_mode_reset .selection input[type=radio]:checked:disabled + .label:after,
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:checked:disabled + .label:before {background:#ffcc00;}
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:disabled + .label:before,
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:disabled + .label:after,
+.dark_mode .dk_mode_reset .selection input[type=checkbox][readonly] + .label:before,
+.dark_mode .dk_mode_reset .selection input[type=checkbox][readonly] + .label:after {border-color:#dde1e4;}
+
+
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:checked + .label:after {border-color:#26282c;}
+.dark_mode .dk_mode_reset .selection.chk input[type=checkbox]:checked + .label:after {border-color:#fcb500;}
+.dark_mode .dk_mode_reset .selection.chk input[type=checkbox]:checked:disabled + .label:before,
+.dark_mode .dk_mode_reset .selection.chk input[type=checkbox]:checked:disabled + .label:after {border-color:#fee199; background:transparent;}
+.dark_mode .dk_mode_reset .selection.chk input[type=checkbox]:disabled + .label:before {border-color:#fee199;}
+.dark_mode .dk_mode_reset .input input:disabled,
+.dark_mode .dk_mode_reset .input input[readonly],
+.dark_mode .dk_mode_reset .input input[readonly]:focus
+.dark_mode .dk_mode_reset .input input.finished[readonly],
+.dark_mode .dk_mode_reset .input input.finished[readonly]:focus,
+.dark_mode .dk_mode_reset .select select:disabled[readonly]:focus {border-color:#dde1e4; background-color:#f7f7f8; color:#26282c;}
+.dark_mode .dk_mode_reset .input input[readonly].bg_white,
+.dark_mode .dk_mode_reset .input input.bg_white {border-bottom-color:#dde1e4; background-color:#f7f7f8 !important;}
+.dark_mode .dk_mode_reset .rdoChk_box_hor_gap input[type=radio]:disabled + .label {background-color:#f7f7f8;}
+.dark_mode .dk_mode_reset .switch label:before {background:#dde1e4;}
+.dark_mode .dk_mode_reset .switch input:checked + label:before {background:#ffe475}
+.dark_mode .dk_mode_reset .switch input:disabled + label:before {background-color:#ebeef0;}
+.dark_mode .dk_mode_reset .switch input:disabled + label:after {background-color:#f7f7f8;}
+.dark_mode .dk_mode_reset .switch input[checked]:disabled + label:before {background-color:#ffedaf;}
+.dark_mode .dk_mode_reset .switch input[checked]:disabled + label:after {background-color:#fffbeb;}
+.dark_mode .dk_mode_reset .account_all .acc_acco_list .js_toggle .btn_toggle {background-color:#ebeef0;}
+.dark_mode .dk_mode_reset .list_acco > li.on {border-top-color:#484b51; border-bottom-color:#484b51;}
+.dark_mode .dk_mode_reset .form_group .btn.point.sm.round {background:#696e76; color:#fff;}
+
+.dark_mode .dk_mode_reset .input input:disabled + .btn.point.sm.round,
+.dark_mode .dk_mode_reset .input input:disabled:focus +.btn.point.sm.round {background: var(--fc_08, #dde1e4);color: var(--fc_06, #aab0b8);}
+.dark_mode .dk_mode_reset .acc_pannel .btn_area > span > a {background-color:#eff1f3;}
+.dark_mode .dk_mode_reset .tab_wrap .tab_list::after, 
+.dark_mode .dk_mode_reset .tab_wrap .tab_list .scroll_wrap:after {border-bottom-color:#dde1e4;}
+.dark_mode .dk_mode_reset .layer_wrap .col_dim {background:rgba(0,0,0,0.3);}
+.dark_mode .dk_mode_reset .ly_acc_list .acc_search_wrap .form_row > input {background-color:transparent;}
+.dark_mode .dk_mode_reset .layer_wrap .inform_top_wrap {background:transparent;}
+
+
+.dark_mode .dk_mode_reset .acc_pannel .btn_area > span > a.primary {background-color:#ffd338;}
+.dark_mode .dk_mode_reset .agree_total {border-bottom-color:#484b51;} 
+.dark_mode .dk_mode_reset .agree_list,
+.dark_mode .dk_mode_reset .agree_wrap.multi .agree_list:last-of-type,
+.dark_mode .dk_mode_reset .agree_list,
+.dark_mode .dk_mode_reset .agree_choice_wrap .depth,
+.dark_mode .dk_mode_reset .agree_wrap .agree_inr {border-bottom-color:#dde1e4;}
+.dark_mode .dk_mode_reset .sch_period {border-color:#8c949e;}
+.dark_mode .dk_mode_reset .inform_btm_wrap .toggle_panel {border-color:#dde1e4;}
+.dark_mode .dk_mode_reset .switch.right label:after,
+.dark_mode .dk_mode_reset .switch label:after {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .switch input:checked + label:after,
+.dark_mode .dk_mode_reset .switch.rate label:after {background:#ffbc00;}
+.dark_mode .dk_mode_reset .switch.rate label {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .verifi_wrap {border-color:#8c949e;}
+.dark_mode .dk_mode_reset .selection input[type=radio]:disabled + .label em, 
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:disabled + .label em, 
+.dark_mode .dk_mode_reset .selection input[type=radio]:disabled + .label, 
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:disabled + .label, 
+.dark_mode .dk_mode_reset .selection input[type=checkbox]:disabled + .label .acc_check .acc_num .number {color:#c6cbd0;}
+.dark_mode .dk_mode_reset .list_comp li.disabled,
+.dark_mode .dk_mode_reset .list_comp li.disabled *,
+.dark_mode .dk_mode_reset .acc_pannel.check.disabled,
+.dark_mode .dk_mode_reset .acc_pannel.check.disabled * {color:#c6cbd0 !important;}
+.dark_mode .dk_mode_reset .list_comp li.disabled a,
+.dark_mode .dk_mode_reset .list_comp li.disabled button,
+.dark_mode .dk_mode_reset .acc_pannel.check.disabled a,
+.dark_mode .dk_mode_reset .acc_pannel.check.disabled button {color:#c6cbd0 !important;}
+.dark_mode .dk_mode_reset li.disabled .input.outline input,
+.dark_mode .dk_mode_reset li.disabled .input.outline input:focus {-webkit-text-fill-color:#26282c; color:#26282c; border-color:#dde1e4;}
+.dark_mode .dk_mode_reset ::-webkit-input-placeholder {color:#c6cbd0; -webkit-text-fill-color:#c6cbd0;} /* [전담반] 플레이스홀더 */
+.dark_mode .dk_mode_reset ::placeholder {color:#c6cbd0; -webkit-text-fill-color:#c6cbd0;} /* [전담반] 플레이스홀더 */
+.dark_mode .dk_mode_reset .select.placeholder select {color:#c6cbd0;} /* [전담반] 플레이스홀더 */
+.dark_mode .dk_mode_reset .ele_ul_hor.volume {border-bottom-color:#ebeef0;}
+.dark_mode .dk_mode_reset .hgroup + .setting_push_list {border-top-color: #696e76;} 
+.dark_mode .dk_mode_reset .sort_wrap {border-top-color:#dde1e4; background-color:#f7f7f8}
+.dark_mode .dk_mode_reset .sort_data:before {background:#8c949e}
+.dark_mode .dk_mode_reset .form_group .count_time .tit {color:#707070;}
+.dark_mode .dk_mode_reset .box_wrap.type1 {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .calendar_wrap.type1 .cal_amount {border-top:1px solid #dde1e4; background:#f7f7f8;}
+.dark_mode .dk_mode_reset .form_date_term {border-color:#dde1e4;}
+.dark_mode .dk_mode_reset .acc_pannel .list_comp > li {border-top-color:#ebeef0;}
+.dark_mode .dk_mode_reset .select_btn:after {border-bottom-color:#8c949e;}
+.dark_mode .dk_mode_reset .board_edit table {border-top-color:#8c949e;}
+.dark_mode .dk_mode_reset .board_edit table th {background-color:#f7f7f8;}
+.dark_mode .dk_mode_reset .board_edit table tr th, 
+.dark_mode .dk_mode_reset .board_edit table tr td {border-color:#ebeef0;}
+.dark_mode .dk_mode_reset .board_edit .strong_box {background:#f7fdff; border-color:#cbe3ec}
+.dark_mode .dk_mode_reset .form_hangul {color:#707070;}
+.dark_mode .dk_mode_reset .pdt_info_top .plan_detail {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .pdt_info_top .mat_tip {background:#f7f7f8;}
+.dark_mode .dk_mode_reset .acc_menu {border-top-color:#dde1e4;}
+.dark_mode .dk_mode_reset .acc_list_wrap.type_list .acc_pannel > .toggle_sm_wrap .toggle_panel {border-color:#dde1e4;}
+.dark_mode .dk_mode_reset .acc_pannel {border-color:#dde1e4;} /* 확인완료 joo */
+.dark_mode .dk_mode_reset .badge.line {border-color:#c6cbd0}/* BFE050000 */
+/*.dark_mode .dk_mode_reset .notice_guide {background-color:#34363a;}*/ /* D005051 *//* 220630 삭제(jyw)*/
+.dark_mode .dk_mode_reset .cal_amount {background-color:#f7f7f8;}/* D005157 */
+.dark_mode .dk_mode_reset .acc_pannel.top .acc_wrap .acc_num {color:#26282c;}
+.dark_mode .dk_mode_reset .account_all .acc_sub_menu {border-top-color:#dde1e4;}
+.dark_mode .dk_mode_reset .input input[readonly].bg_white:focus,
+.dark_mode .dk_mode_reset .input input.bg_white:focus {border-bottom-color:#b0986a}/* kiok 외환 D003091 focused readonly일 경우 라인컬러 재정의 */
+.dark_mode .dk_mode_reset .cal_month .btn_ico:disabled {background:#fff;}
+.dark_mode .dk_mode_reset .box_result {background-color:#f7f7f8;}/* 6.24 cjw /pdt_join/BFE078180.html */
+.dark_mode .dk_mode_reset .invest_pdt.investor_type {background-color:#F3F9FA;}/* 220630 jyw 비예금 프로세스 투자성향 */
+.dark_mode .dk_mode_reset .btn_tooltip_x,
+
+.dark_mode .dk_mode_reset .new_list_drag.type_drag .li.first .move_area::before,
+.dark_mode .dk_mode_reset .new_list_drag.type_drag .li.last .move_area::after,
+.dark_mode .dk_mode_reset .new_list_drag.type_drag .move_area .btn_up:before,
+.dark_mode .dk_mode_reset .new_list_drag.type_drag .move_area .btn_down:before,
+.dark_mode .dk_mode_reset .js_drag_set .edit_txt:before,
+.dark_mode .dk_mode_reset .play-control:after,
+.dark_mode .dk_mode_reset .swiper-autoplay-controls > button::after,
+.dark_mode .dk_mode_reset .sel_drag_sort .selection.drag_move input[type=radio] + .label:before,
+.dark_mode .dk_mode_reset .sel_drag_sort .selection.button_move input[type=radio] + .label:before,
+.dark_mode .dk_mode_reset .sel_drag_sort .selection.drag_move input[type=radio]:checked + .label:before,
+.dark_mode .dk_mode_reset .sel_drag_sort .selection.button_move input[type=radio]:checked + .label:before,
+.dark_mode .dk_mode_reset .list_top_wrap.end_btn .ico_40_addr_book,
+.dark_mode .dk_mode_reset .depth.info > li:before, 
+.dark_mode .dk_mode_reset p.depth.info:before,
+.dark_mode .dk_mode_reset p.tip_info:before, 
+.dark_mode .dk_mode_reset .form_group .tip::before, 
+.dark_mode .dk_mode_reset .form_group .tip_info::before,
+.dark_mode .dk_mode_reset .form_group.error .tip::before,
+.dark_mode .dk_mode_reset .input.date .btn_cal:before,
+.dark_mode .dk_mode_reset .depth.info > li:before, 
+.dark_mode .dk_mode_reset p.depth.info:before,
+.dark_mode .dk_mode_reset .btn_list_btm.more .btn:before,
+.dark_mode .dk_mode_reset .btn_txt.ico_reset:after,
+.dark_mode .dk_mode_reset .input.sul .btn_find:before {filter:none}
+
+/* spr_ico_20x.png */
+.dark_mode .dk_mode_reset .inform_btm_wrap .tit:before {background-position:0 -22rem;}/* 알려드립니다 */
+.dark_mode .dk_mode_reset .btn_txt.ico_help:after {background-position:-18rem -6rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_pay:after {background-position:-12rem -10rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_doc:after {background-position:-14rem -12rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_kakao2:after {background-position:0 0;}
+.dark_mode .dk_mode_reset .btn_txt.ico_facebook2:after {background-position:-3.2rem 0;}
+.dark_mode .dk_mode_reset .btn_txt.ico_cal:after {background-position:-10rem -12rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_reset:after {background-position:-14rem -2rem;} 
+.dark_mode .dk_mode_reset .btn_txt.ico_pencil:after {background-position:-6rem -0;}
+.dark_mode .dk_mode_reset .btn_txt.ico_add:after {background-position: -4rem 0;}
+.dark_mode .dk_mode_reset .btn_txt.ico_away:after {background-position: -10rem -6rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_copy:after {background-position:-16rem 0;}
+.dark_mode .dk_mode_reset .btn_txt.ico_del:before {background-position:-20rem -4rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_delete:before{background-position: -20rem -4rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_del2:before {background-position:-20rem -10rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_item_del:before{background-position: -10rem -8rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_addrbook:after{background-position: -22rem -8rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_transfer:after {background-position:-12rem -8rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_quick:after {background-position: 0rem -16rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_tsend:after {background-position: -2rem -16rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_set:after {background-position: -2rem -10rem;} 
+.dark_mode .dk_mode_reset .btn_ico.ico_sns:before {background-position:-20rem -6rem;}
+.dark_mode .dk_mode_reset .ico_info {background-position:-22rem -4rem;}
+.dark_mode .dk_mode_reset .list_item_box .btn_add button:before { background-position:-6rem -16rem;}
+.dark_mode .dk_mode_reset .board_list > li > a .tit.new:after {background-position:-22rem -14rem;}
+.dark_mode .dk_mode_reset p.depth.info.ico:before {background-position:-12rem -2rem;}
+.dark_mode .dk_mode_reset .form_group .count_time:before {background-position: -22rem -2rem;}
+.dark_mode .dk_mode_reset .form_group.success .tip::before {background-position: -12rem 0;}
+.dark_mode .dk_mode_reset .form_group.error .tip::before {background-position: -10rem 0;}
+.dark_mode .dk_mode_reset .form_group .tip::before {background-position:-12rem -2rem;}
+.dark_mode .dk_mode_reset p.tip_info:before {background-position:-12rem -2rem;}
+.dark_mode .dk_mode_reset .invest_alert:before {background-position:-16rem -10rem;}
+.dark_mode .dk_mode_reset .input.date .btn_cal:before {background-position:-10rem -12rem;}
+.dark_mode .dk_mode_reset .int_pencil .btn_pencil:before {background-position:-22rem -6rem;}
+.dark_mode .dk_mode_reset .toggle_panel .btn_regist li > a:last-child:before {background-position:-12rem -8rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico.first:before {background-position: -4rem -2rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico.prev:before {background-position: -6rem -2rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico.next:before {background-position: -8rem -2rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico.end:before {background-position: -10rem -2rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico[disabled].first:before {background-position: -4rem -4rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico[disabled].prev:before {background-position: -6rem -4rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico[disabled].next:before {background-position: -8rem -4rem;}
+.dark_mode .dk_mode_reset .cal_month .btn_ico[disabled].end:before {background-position: -10rem -4rem;}
+.dark_mode .dk_mode_reset .btn_tooltip {background-position:-14rem 0;}
+.dark_mode .dk_mode_reset .btn_like:before {background-position:-14rem -8rem;}
+.dark_mode .dk_mode_reset .btn_like.active:before {background-position:-14rem -10rem;}
+.dark_mode .dk_mode_reset .ico_20_arrow_g {background-position:0 0;}
+.dark_mode .dk_mode_reset .ico_20_arrow_blue {background-position:-8rem -6rem;}
+.dark_mode .dk_mode_reset .ico_20_arrow_red {background-position:-8rem -8rem;}
+.dark_mode .dk_mode_reset .ico_20_arrow {background-position:-2rem 0;}
+.dark_mode .dk_mode_reset .ico_20_plus {background-position:-4rem 0;}
+.dark_mode .dk_mode_reset .ico_20_pencil:after {background-position:-6rem 0;}
+.dark_mode .dk_mode_reset .ico_20_x {background-position:-8rem 0;}
+.dark_mode .dk_mode_reset .ico_20_exclam_r {background-position:-10rem 0;}
+.dark_mode .dk_mode_reset .ico_20_check_b {background-position:-12rem 0;}
+.dark_mode .dk_mode_reset .ico_20_question {background-position:-14rem 0;}
+.dark_mode .dk_mode_reset .ico_20_copy {background-position:-16rem 0;}
+.dark_mode .dk_mode_reset .ico_20_magnifier {background-position:-18rem 0;}
+.dark_mode .dk_mode_reset .ico_20_magnifier_g {background-position:-18rem -2rem;}
+.dark_mode .dk_mode_reset .ico_20_graph {background-position:-20rem 0;}
+.dark_mode .dk_mode_reset .ico_20_headset {background-position:-22rem 0;}
+.dark_mode .dk_mode_reset .ico_20_arrowup_g {background-position:0 -2rem}
+.dark_mode .dk_mode_reset .ico_20_arrowup {background-position:-2rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_arrowdown_g {background-position:0 -4rem}
+.dark_mode .dk_mode_reset .ico_20_arrowdown {background-position:-2rem -4rem}
+.dark_mode .dk_mode_reset .ico_20_first {background-position:0 -8rem}
+.dark_mode .dk_mode_reset .ico_20_prev {background-position:-2rem -8rem}
+.dark_mode .dk_mode_reset .ico_20_next {background-position:-4rem -8rem}
+.dark_mode .dk_mode_reset .ico_20_last {background-position:-6rem -8rem}
+.dark_mode .dk_mode_reset .ico_20_first:hover, 
+.dark_mode .dk_mode_reset .ico_20_first:focus, 
+.dark_mode .dk_mode_reset .ico_20_first.on {background-position:0 -31rem}
+.dark_mode .dk_mode_reset .ico_20_prev:hover, 
+.dark_mode .dk_mode_reset .ico_20_prev:focus, 
+.dark_mode .dk_mode_reset .ico_20_prev.on {background-position:-2rem -6rem}
+.dark_mode .dk_mode_reset .ico_20_next:hover, 
+.dark_mode .dk_mode_reset .ico_20_next:focus, 
+.dark_mode .dk_mode_reset .ico_20_next.on {background-position:-4rem -6rem}
+.dark_mode .dk_mode_reset .ico_20_last:hover, 
+.dark_mode .dk_mode_reset .ico_20_last:focus, 
+.dark_mode .dk_mode_reset .ico_20_last.on {background-position:-6rem -6rem}
+.dark_mode .dk_mode_reset .ico_20_calfirst {background-position:-4rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_calfirst_g {background-position:-4rem -4rem}
+.dark_mode .dk_mode_reset .ico_20_calprev {background-position:-6rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_calprev_g {background-position:-6rem -4rem}
+.dark_mode .dk_mode_reset .ico_20_calnext {background-position:-8rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_calnext_g {background-position:-8rem -4rem}
+.dark_mode .dk_mode_reset .ico_20_calend {background-position:-10rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_calend_g {background-position:-10rem -4rem}
+.dark_mode .dk_mode_reset .ico_20_exclam_g {background-position:-12rem -2rem}
+.dark_mode .dk_mode_reset .ico_20_pdf {background-position:0rem -10rem}
+.dark_mode .dk_mode_reset .ico_20_calendar {background-position:-20rem -2rem;}
+.dark_mode .dk_mode_reset .ico_20_arr:after {background-position: -2rem 0;}
+.dark_mode .dk_mode_reset .ico_20_arrdown:after {background-position: -2rem -4rem;}
+.dark_mode .dk_mode_reset .ico_20_reset {background-position:-14rem -2rem;}
+.dark_mode .dk_mode_reset .ico_20_setting {background-position:-2rem -10rem;}
+.dark_mode .dk_mode_reset .ico_20_circle_del {background-position:-18rem -4rem;}
+.dark_mode .dk_mode_reset .ico_20_risk {background-position:-22rem -10rem;}
+.dark_mode .dk_mode_reset .ico_20_like {background-position:-14rem -8rem;}
+.dark_mode .dk_mode_reset .ico_20_like.on {background-position:-14rem -10rem;}
+.dark_mode .dk_mode_reset .ico_20_notice {background-position:-20rem -14rem;}
+.dark_mode .dk_mode_reset .ico_20_filter {background-position:-4rem -10rem;}
+.dark_mode .dk_mode_reset .acc_pannel .btn_x:after {background-position:-10rem -10rem;}
+.dark_mode .dk_mode_reset .acc_pannel .btn_ico .ico_cart:before {background-position:-2rem -14rem}
+.dark_mode .dk_mode_reset .acc_menu .btn_add:before {background-position:-8rem -43rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_type.list:before {background-position:-4rem -12rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_type.list.off:before {background-position:-4rem -14rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_type.card:before {background-position:-6rem -12rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_type.cal:before {background-position:-10rem -12rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_type.cal.off:before {background-position:-10rem -14rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_turn:before {background-position:-8rem -12rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_agency:before {background-position:-6rem -14rem;}
+.dark_mode .dk_mode_reset .acc_menu .btn_product:before {background-position:-8rem -14rem;}
+.dark_mode .dk_mode_reset .acc_acco_list > .toggle_panel > .btn_tip:before {background-position:-14rem 0;}
+.dark_mode .dk_mode_reset .money_list li .tit:before {background-position:-12rem -12rem;}
+.dark_mode .dk_mode_reset .acc_pannel.top .btn_admin:before {background-position:-2rem -10rem;}
+.dark_mode .dk_mode_reset .list_drag .li .btn_move_del:before {background-position:-18rem -4rem;}
+.dark_mode .dk_mode_reset .list_drag .li .btn_pencil:before {background-position:-22rem -6rem;}
+.dark_mode .dk_mode_reset .ly_acc_list .btn_ico_search:before {background-position:-18rem 0;}
+.dark_mode .dk_mode_reset .ly_accnum_list .btn_ico.sch:after {background-position:-18rem -2rem; }
+.dark_mode .dk_mode_reset #content.tuto .first_tutorial_wrap .fix_button .btn_tutorial_right::before {background-position:-10rem -16rem;}
+.dark_mode .dk_mode_reset .notice_guide .notice_set .notice_msg .notice_tit .tit:before {background-position:-37rem -14rem;}
+.dark_mode .dk_mode_reset .btn_ico.ico_set:before {background-position:-2rem -10rem;}
+
+/* spr_ico_24x.png */
+.dark_mode .dk_mode_reset .ico_24_arrowback {background-position:0 0;}
+.dark_mode .dk_mode_reset .ico_24_menu {background-position:-2.4rem 0;} 
+.dark_mode .dk_mode_reset .ico_24_x {background-position:-4.8rem 0;}
+.dark_mode .dk_mode_reset .ico_24_x_g {background-position:-7.2rem 0;}
+.dark_mode .dk_mode_reset .ico_24_arrowbacktail {background-position:-9.6rem 0;}
+.dark_mode .dk_mode_reset .ico_24_magnifier_g {background-position:-12rem 0;}
+.dark_mode .dk_mode_reset .ico_24_magnifire_b {background-position:-14.4rem 0;}
+.dark_mode .dk_mode_reset .ico_24_magnifire_lg {background-position:-4.8rem -7.2rem;}
+.dark_mode .dk_mode_reset .ico_24_move {background-position:-2.4rem -29.8rem;}
+.dark_mode .dk_mode_reset .ico_24_starsmall_y {background-position:-7.2rem -29.8rem;} 
+.dark_mode .dk_mode_reset .ico_24_x_w {background-position:-9.6rem -29.8rem;}
+.dark_mode .dk_mode_reset .ico_24_arrowdown {background-position:-12rem -29.8rem;}
+.dark_mode .dk_mode_reset .ico_24.graph {background-position:0 -32.2rem;}
+.dark_mode .dk_mode_reset .ico_24_graph_y {background-position:-2.4rem -32.2rem;}
+.dark_mode .dk_mode_reset .ico_24_notice {background-position: 0 -9.6rem;}
+.dark_mode .dk_mode_reset .ico_24_calendar {background-position:0 -32.2rem;} /* 알려드립니다. */
+.dark_mode .dk_mode_reset .ico_24_ordering {background-position:-14.4rem -29.8rem;}
+.dark_mode .dk_mode_reset .ico_24_delete {background-position:-16.8rem -29.8rem;}
+.dark_mode .dk_mode_reset .ico_24_question {background-position:-4.8rem -12rem;}
+.dark_mode .dk_mode_reset .btn_txt.ico_sms:after {background-position:-9.6rem -12rem;}
+.dark_mode .dk_mode_reset .board_list .ico_pdf::before, 
+.dark_mode .dk_mode_reset .board_view .file_attach .btn_attach::before,
+.dark_mode .dk_mode_reset .board_view .file_attach .btn_attach.ico_pdf::before {background-position:-12rem -34.6rem;} 
+.dark_mode .dk_mode_reset .board_list .ico_wrd::before {background-position:-14.4rem -34.6rem;}
+.dark_mode .dk_mode_reset .search_wrap .btn_sch:after {background-position: -12rem 0;}
+.dark_mode .dk_mode_reset .input.time .btn_time:before {background-position:-19.2rem 0;}
+.dark_mode .dk_mode_reset .paging a::after {background-position: -7.2rem -2.4rem;}
+.dark_mode .dk_mode_reset .paging .prev.on::after, 
+.dark_mode .dk_mode_reset .paging .next.on::after {background-position: -12rem -2.4rem;}
+.dark_mode .dk_mode_reset .paging .first.on::after {background-position: -14.4rem -2.4rem;} /* cjw 7.1 */
+.dark_mode .dk_mode_reset .paging .end.on::after {background-position:-14.4rem -2.4rem;}
+.dark_mode .dk_mode_reset .btn_save:before, 
+.dark_mode .dk_mode_reset .agree_total .btn_save:before {background-position:-7.2rem -7.2rem}
+.dark_mode .dk_mode_reset .btn_voice:before {background-position:-7.2rem -12rem;}
+.dark_mode .dk_mode_reset a.checked:focus::after {background-position:-9.6rem -2.4rem;}
+.dark_mode .dk_mode_reset .acc_list.tel li:after, .dark_mode .dk_mode_reset .tel_icon:after {background-position: -2.4rem -12rem;}
+.dark_mode .dk_mode_reset .new_list_drag .li .btn_move:before {background-position: -14.4rem -4.8rem;}
+
+.dark_mode .dk_mode_reset .result.finish .result_ani {background-position:0 -11.4rem;} /* 확정 */
+.dark_mode .dk_mode_reset .paging .prev::after {background-position:-9.6rem -2.4rem;} /* kiok D002557, D002553, D002550 */
+.dark_mode .dk_mode_reset .paging .next::after {background-position:-9.2rem -2.4rem;} /* 0701 joo */
+.dark_mode .dk_mode_reset .table table th {background-color:var(--bg_02, #f7f7f8)}
+.dark_mode .dk_mode_reset .btn.secondary {background-color:#ebeef0; color:#26282c}
+.dark_mode .dk_mode_reset .error .tip::before, 
+.dark_mode .dk_mode_reset .error.tip::before{background-position:-10rem 0;}
+.dark_mode .dk_mode_reset .table table th.th_white {background-color:var(--bg_01, #fff);}
+.dark_mode .dk_mode_reset .layer_wrap .col_dim {background:rgba(0,0,0,0.3);}
+.dark_mode .dk_mode_reset .layer_wrap.bottom .ly_in {background:var(--bg_01, #fff);}
+.dark_mode .dk_mode_reset .btn:disabled {background:#dde1e4; color:#aab0b8;}
+.dark_mode #wrap.nchbt_2021.dk_mode_reset {height:100%; } /* 챗봇 */
+.dark_mode #wrap.nchbt_2021.nchbt_search .swiper-container a .btn {color:#26282c;} /* 통합검색 */
+/*************************************** 다크테마 reset e ***************************************/
+
+/* 자산 - 부자되는이야기 스타일 임시 추가 */
+.lab_card_news_scroll{word-break: keep-all;}
+.lab_card_news_scroll img {width:100%;max-width:37.5rem;}
+.lab_card_news_scroll .top_area {height:36.5rem;}
+.lab_card_news_scroll .top_area .h_group {margin:0 auto;padding:24.5rem 2.6rem 0 2.6rem;}
+.lab_card_news_scroll .top_area .h_group .txt {font-size:1.3rem;color:#fff;}
+.lab_card_news_scroll .top_area .h_group .tit {margin-top:.2rem;font-size:2.8rem;color:#fff;}
+.lab_card_news_scroll .cont_area {margin:0 auto;padding:0 2.6rem;}
+.lab_card_news_scroll .cont_area .tit {position:relative;margin-top:4rem;font-size:2.2rem;line-height:3.2rem;}
+.lab_card_news_scroll .cont_area .tit_s {margin-top:2.5rem;font-size:1.6rem;}
+.lab_card_news_scroll .cont_area .txt {margin-top:1.5rem;font-size:1.6rem;line-height:2.7rem;color:var(--fc_04, #696e76);}
+.lab_card_news_scroll .cont_area .txt .highlight_bg {background-color:rgba(255, 204, 0, .5);}
+.lab_card_news_scroll .cont_area .txt_s {margin-top:2rem;font-size:1.2rem;text-align:center;color:var(--fc_06, #aab0b8);}
+.lab_card_news_scroll .cont_area .img {margin-top:2.5rem;text-align:center;}
+.lab_card_news_scroll .cont_area .img .desc {display:block;margin-top:.7rem;font-size:1.2rem;color:var(--fc_05, #8c949e);}
+.lab_card_news_scroll .cont_area .btn_area {margin-top:2.5rem;}
+.lab_card_news_scroll .cont_area .btn_area .btn {display:block;position:relative;width:100%;height:6.5rem;padding:0 3rem;border-radius:1rem;background-color:var(--fc_09, #ebeef0);font-size:1.3rem;text-align:left;color:var(--fc_03, #484b51);}
+.lab_card_news_scroll .cont_area .btn_area .btn strong {display:block;font-size:2rem;}
+.lab_card_news_scroll .cont_area .btn_area .btn:after {content:'';display:block;position:absolute;right:3rem;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);width:1.2rem;height:2.3rem;background:url(https://oimg1.kbstar.com/img/mnbank/card_news/2022_cardnews_5_ico.png) no-repeat 0 -10rem /15rem 15rem;}
+.lab_card_news_scroll .cont_area .list_group {margin:4.5rem -2.6rem 0 -2.6rem;padding:2rem 2.6rem;background-color:var(--bg_02, #f7f7f8);}
+.lab_card_news_scroll .cont_area .list_group .tit {margin-top:0;}
+.lab_card_news_scroll .cont_area .list_group .list_ico {margin-top:1.5rem;}
+.lab_card_news_scroll .cont_area .list_group .list_ico li {position:relative;margin-top:1.2rem;padding-left:1.6rem;line-height:2.7rem;color:var(--fc_04, #696e76);}
+.lab_card_news_scroll .cont_area .list_group .list_ico li:first-child {margin-top:0;}
+.lab_card_news_scroll .cont_area .list_group + .txt {margin-top:2.5rem;}
+.lab_card_news_scroll.story_220801 .top_area {background:url(https://oimg1.kbstar.com/img/mnbank/card_news/bg_story_220801.png) no-repeat;background-size:cover;}
+.lab_card_news_scroll.story_220801 .cont_area .txt .highlight_bg {background-color:rgba(255, 229, 127, .5);}
+.lab_card_news_scroll.story_220801 .cont_area .txt.stress {background-color:rgba(255, 229, 127, .5);padding:.2rem 1.5rem;font-weight:700;color:var(--fc_02, #26282c);}
+.lab_card_news_scroll.story_220801 .cont_area .txt span[class*=ico] {display:inline-block;width:1.75rem;height:.95rem;background:url(https://oimg1.kbstar.com/img/mnbank/card_news/spr_story_220801.png) no-repeat -7.5rem 0 /15rem 2.6rem;font-size:0;text-indent:-1rem;vertical-align:-.2rem;padding:0 .5rem;}
+.lab_card_news_scroll.story_220801 .cont_area .list_group .depth.bul li {color:var(--fc_04, #696e76);font-size:1.4rem;}
+.lab_card_news_scroll.story_220801 .cont_area .list_group .depth.bul > li:before {background:var(--fc_04, #696e76);}
+.lab_card_news_scroll.story_220801 .cont_area .txt.bg {position:relative;margin-top:3.5rem;padding:2rem 0;border-radius:1.2rem;background-color:#f9f9fa;font-size:1.6rem;line-height:2.4rem;text-align:center;color:#000;}
+.lab_card_news_scroll.story_220801 .cont_area .txt.bg2 {position:relative;margin-top:3.5rem;padding:2rem 0;border-radius:1.2rem;background-color:#f9f9fa;font-size:1.6rem;line-height:2.9rem;text-align:center;color:#000;}
+.lab_card_news_scroll.story_220801 .cont_area .txt.bg2 span.top{color:var(--fc_04, #696e76);}
+.lab_card_news_scroll.story_220801 .cont_area .txt.bg2 span.top{color:var(--fc_04, #696e76);}
+.lab_card_news_scroll.story_220801 .cont_area .tit[class*=ico]:after {content:'';display:inline-block;position:relative;top:.4rem;width:2.5rem;height:2.5rem;margin-left:.7rem;background:url(https://oimg1.kbstar.com/img/mnbank/card_news/spr_story_220801.png) no-repeat 0 0 /15rem 2.6rem;}
+.lab_card_news_scroll.story_220801 .cont_area .tit.ico1:after {height:2.55rem;background-position:0 0;}
+.lab_card_news_scroll.story_220801 .cont_area .tit.ico2:after {background-position:-2.5rem 0;}
+.lab_card_news_scroll.story_220801 .cont_area .tit.ico3:after {background-position:-5rem 0;}
+.lab_card_news_scroll.story_220801 .cont_area .tit.ico4:after {width:1.75rem;height:.95rem;background-position:-7.5rem 0;}
+.lab_card_news_scroll.story_220801 .cont_area .tit.ico5:after {height:2.55rem;background-position:-10rem 0;}
+.lab_card_news_scroll.story_220801 .cont_area .list_group .list_ico li:before{content:'';display:block;position:absolute;left:0;top:.7rem;width:1.3rem;height:1.3rem;background:url(https://oimg1.kbstar.com/img/mnbank/card_news/spr_story_220801.png) no-repeat -12.5rem 0 /15rem 2.6rem;}
+.lab_card_news_scroll.story_220801 .cont_area .mydeal_list .deal {display:inline-block;min-height:4rem;height:auto;margin-right:.45rem;margin-bottom:1rem;padding:.9rem 2rem 0;border-radius:2rem;background:#f3eefe;color:#322a4f;font-size:1.5rem;}

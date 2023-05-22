@@ -1,0 +1,337 @@
+@charset "utf-8";
+
+/* forex button */
+.ico_btn_wrap {display:table; table-layout: fixed; width:100%;}
+.ico_btn_wrap > span {display: table-cell; width:49%;}
+.ico_btn_wrap > span + span {width:51%; padding-left:.8rem;}
+.ico_btn_wrap .btn {width:100%;}
+.ico_btn_wrap .btn {position: relative; font-size:1.4rem; letter-spacing: -0.02em; height:6rem; padding:.9rem 3.2rem .9rem 5.7rem; text-align: left; border-color:var(--fc_08, #dde1e4); border-radius: .8rem;}
+.ico_btn_wrap.bg .btn {height:auto; min-height:6rem; padding:1.8rem 4rem 1.8rem 5.7rem; text-align: left; background:#f4edde; border:none; line-height:2rem; color:#26282c;}
+.ico_btn_wrap .btn::before {display: inline-block; content:''; clear:both; position: absolute; left:1.2rem; top:1rem; width:4rem; height:4rem; vertical-align:top; background:url(/mnbank/app/img/forex/forex_spr_ico.png) no-repeat; background-size:32rem auto; background-position: 0rem 0rem;}
+.ico_btn_wrap .btn::after {display:block; content:''; clear:both; position:absolute; right:1.6rem; top:50%; width:.9rem; height:.9rem; margin-top:-.2rem; border:solid #8c949e; border-width: 0 1px 1px 0; transform: rotate(-45deg) translateY(-50%); -webkit-transform: rotate(-45deg) translateY(-50%);}
+.ico_btn_wrap .btn.ico_forex_chart::before{background-position: -8rem -4rem;}
+.ico_btn_wrap .btn.ico_forex_calc::before{background-position: 0rem 0rem;}
+.ico_btn_wrap .btn.ico_forex_info::before{background-position: -12rem -4rem;}
+.ico_btn_wrap.bg .btn.ico_forex_info::before {background-position:-16rem -4rem;}
+.ico_btn_wrap .btn.ico_forex_info2::before{background-position:-20rem -4rem;}/* 해외송금 쿠폰사용내역 아이콘 추가 (220823) */
+
+.tabs .tabcon {margin-top:0;}
+.toggle_panel .tabs.type2 .tabcon {padding:0; margin:2rem 0 0;}
+
+.list_comp.check + .h2 {margin-top:3.2rem;}
+
+.chart_wrap {text-align:center;}
+
+.list.exchange_info {border-top:1px solid var(--fc_03, #484b51);}
+.list.exchange_info > li {padding:0;}
+.list.exchange_info > li:first-child {border-top-color:var(--fc_11, #fff);}
+.list.exchange_info > li.on:first-child {border-color:var(--fc_03, #484b51);}
+.list.exchange_info > li > .tit {display:block; position:relative; line-height: 1.4 !important; padding:2rem 0 2rem 4.3rem !important;}
+.list.exchange_info > li > .tit:after {top:50%; margin-top:-.6rem; border-color:var(--fc_03, #484b51);}
+.list.exchange_info > li > .tit.on:after {top:50%; margin-top:0rem;}
+.list.exchange_info > li > .tit .im {display:inline-block; position:absolute; left:.2rem; top:50%; z-index:1; width:4rem; height:4rem; margin-top:-2rem; border-radius: 10rem; background-image: url(/mnbank/app/img/common/country_flag_40.png); background-size: 25rem auto;}
+.list.exchange_info > li > .tit .name {font-size: 1.8rem; color:var(--fc_02, #26282c);}
+.list.exchange_info > li > .tit .rate {margin-top:.8rem; color:var(--fc_03, #484b51);}
+.list.exchange_info > li > .tit .rate .r_tit {margin-right:.5rem; font-size:1.6rem; color:var(--fc_04, #696e76);}
+.list.exchange_info > li > .tit .rate .number {font-size:1.7rem; color:#287eff;}
+.list.exchange_info .toggle_panel .info_btn_area {margin-top:1.8rem; text-align:right;}
+.list.exchange_info .list_btm_wrap {margin-top:2.5rem; text-align:right;}
+.list.exchange_info ul .tit:after,
+.list.exchange_info2 ul .tit:after {display:none;}
+.list.exchange_info2 > li {padding:0; border:0;}
+.list.exchange_info2 .tit {display:block; position:relative; padding: 1.6rem 0; border-top:1px solid var(--fc_03, #484b51); border-bottom:1px solid var(--fc_03, #484b51);}
+.list.exchange_info2 .tit:after {display:inline-block; position: absolute; right:.6rem; top:50%; content:''; width:1.2rem; height:1.2rem; margin-top:-.8rem; border:solid var(--fc_05, #8c949e); border-width: 0 2px 2px 0; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
+.list.exchange_info2 .tit.on {border-bottom:1px solid var(--bdc_01, #ebeef0); font-weight: 700;}
+.list.exchange_info2 .tit.on:after {margin-top: -.2rem; transform: rotate(225deg); -webkit-transform: rotate(225deg);}
+.list.exchange_info2 .toggle_panel {padding:3.2rem 0 4.8rem; border-bottom:1px solid var(--fc_03, #484b51);} 
+.list.exchange_info2 .chart_wrap + .h2{display:block; padding-top:4.8rem; margin-top:4.8rem; border-top:1px solid var(--fc_03, #484b51);}
+.list.exchange_info2 .table.scroll_y {max-height:35rem; overflow:hidden; overflow-y: auto; -webkit-overflow-scrolling: touch;}
+
+.tabs [role='tabpanel'] .list[class*=exchange_info] .info_list > li > div {padding-top:.8rem; padding-bottom:.8rem; line-height: 1.4;}
+.tabs [role='tabpanel'] .list[class*=exchange_info] .info_list .txt {font-size:1.7rem; font-family:'Roboto';}
+.tabs [role='tabpanel'] .list.exchange_info2 > li > .tit {font-size:1.8rem; line-height: 1.4; font-weight: 400;}
+.tabs [role='tabpanel'] .list.exchange_info2 > li > .tit.on + .toggle_panel {border-color:var(--fc_03, #484b51);}
+.tab_wrap .tab_panel .forex_news_iframe iframe{min-height:calc(100vh - 9.2rem);}
+
+/* 조회기간 */
+.cate_forex .sch_period {display:table; width:100%;}
+.cate_forex .sch_period .tit {display:table-cell; font-size:1.6rem; font-weight:700; vertical-align:top; text-align:left;}
+.cate_forex .sch_period .txt {display:table-cell; font-size:1.6rem; color:var(--fc_04, #696e76); vertical-align:top; text-align:right;}
+
+/* 환율조회 */
+.exchange_currency_sch_wrap .js_toggle {display:block; position:relative; padding:1.6rem 0; border-bottom:1px solid var(--bdc_01, #ebeef0); font-size:1.8rem;}
+.exchange_currency_sch_wrap .js_toggle:after {display:inline-block; position: absolute; right:.6rem; top:50%; content:''; width:1.2rem; height:1.2rem; margin-top:-.45rem; border:solid var(--fc_05, #8c949e); border-width: 0 2px 2px 0; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
+.exchange_currency_sch_wrap .js_toggle.on {border-color:var(--bdc_04, #484b51); font-weight:700;}
+.exchange_currency_sch_wrap .js_toggle.on:after {margin-top: -.2rem; transform: rotate(225deg); -webkit-transform: rotate(225deg)}
+.exchange_currency_sch_wrap .toggle_panel {padding-top:3.2rem;}
+
+.forex_toggle_wrap .js_toggle {display:block; position:relative; padding:1.6rem 0; border-bottom:1px solid var(--bdc_01, #ebeef0); font-size:1.8rem;}
+.forex_toggle_wrap .js_toggle:after {display:inline-block; position: absolute; right:.6rem; top:50%; content:''; width:1.2rem; height:1.2rem; margin-top:-.45rem; border:solid var(--fc_05, #8c949e); border-width: 0 2px 2px 0; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
+.forex_toggle_wrap .js_toggle.on {border-color:var(--fc_03, #484b51); font-weight:700; }
+.forex_toggle_wrap .js_toggle.on:after {margin-top: -.2rem; transform: rotate(225deg); -webkit-transform: rotate(225deg)}
+.forex_toggle_wrap .toggle_panel {padding:3.2rem 0 4.8rem;}
+.forex_toggle_wrap .js_toggle.on + .toggle_panel {border-bottom:1px solid var(--fc_05, #8c949e);}
+
+.exchange_info .country_flag_im.sm {position:absolute; left:0; top:2.2rem; }
+
+.exchange_info_box {margin-bottom:2rem;}
+.exchange_info_box .tit { position:relative; margin-bottom:2rem; text-align: center;}
+.exchange_info_box .tit .row {height:100%;}
+.exchange_info_box .tit .col {vertical-align: middle;}
+.exchange_info_box .name {font-size:2rem; font-weight:700; margin-top:1.5rem;}
+.exchange_info_box .name .number {margin:0 .5rem;}
+.exchange_info_box .txt li {font-size:1.4rem; color:var(--fc_05, #8c949e);}
+.exchange_info_box .txt li + li {margin-top:.3rem;}
+.exchange_info_box .txt li .date_tit {margin-right:.5rem; font-weight:400;}
+.exchange_info_box .txt li .number {font-size:1.5rem; font-weight:400;}
+
+.defa_list.forex_news {border-top:1px solid var(--fc_08, #dde1e4);}
+.defa_list.forex_news .in {padding:2.2rem .2rem;}
+.defa_list.forex_news .tit {font-size:1.6rem; color:var(--fc_02, #26282c);}
+.defa_list.forex_news .tit [class^=ico_] {margin-right:.5rem; }
+.defa_list.forex_news .info {margin-top:.9rem; font-size:1.5rem; color:var(--fc_05, #8c949e); line-height:1.1;}
+.defa_list.forex_news .info span {display: inline-block;}
+.defa_list.forex_news .info span + span:before {display:inline-block; content:''; width:.1rem; height:1.2rem; margin:0 1rem; background:var(--fc_09, #ebeef0); vertical-align: middle;}
+.defa_list.forex_news .info .number {margin-left:.5rem;}
+.link_list.forex_news .in {padding-right:2.5rem;}
+
+/* 환율계산기 */
+.exchange_calc_box {margin-bottom:3.2rem;}
+.exchange_calc_box .calc_wrap {border:1px solid var(--fc_09, #ebeef0); border-radius:.5rem; overflow:hidden; background:var(--bg_01, #fff);}
+.exchange_calc_box .calc_wrap .txt {margin-top:.5rem; font-size:1.4rem; color:var(--fc_04, #696e76); line-height:1.1;}
+.exchange_calc_box .calc_wrap .col {padding-top:1.5rem; padding-bottom:1.5rem; vertical-align: top;}
+.exchange_calc_box .calc_wrap .col_l {padding-left:1rem; padding-right: 1rem;}
+.exchange_calc_box .calc_wrap .col_r {padding-right:1rem;}
+.exchange_calc_box .calc_wrap .select_btn {height:3rem; padding-left: 4rem; border:0; background:transparent; font-size: 1.6rem;}
+.exchange_calc_box .calc_wrap.row_up .col_l {border-right:1px solid var(--fc_09, #ebeef0); background:var(--bg_02, #f7f7f8);}
+.exchange_calc_box .calc_wrap.row_btm .col_l {width:27%;}
+.exchange_calc_box .calc_wrap input {width:100%; height:3rem; font-size: 1.6rem; font-weight:700; text-align:right; background-color:transparent; color:var(--fc_02, #26282c);}
+.exchange_calc_box .calc_wrap input::placeholder {text-align: right;}
+.exchange_calc_box .calc_wrap .col_flag_wrap {position: relative; padding-left:4rem; line-height: 3rem;}
+.exchange_calc_box .calc_wrap .col_flag_wrap .country_flag_im {position:absolute; left:0; top:50%; margin-top: -1rem;}
+.exchange_calc_box .calc_wrap .col_flag_wrap .country_name {font-size: 1.6rem; font-weight: 700; color:var(--fc_02, #26282c);}
+
+.exchange_calc_box .calc_sum_mark {margin:1.8rem 0;}
+.exchange_calc_box .calc_sum_mark:before,
+.exchange_calc_box .calc_sum_mark:after {display:block; content:''; width:2.4rem; height:.2rem; margin:0 auto; border-radius: 3px; background-color:var(--fc_05, #8c949e);}
+.exchange_calc_box .calc_sum_mark:after {margin-top:.5rem;}
+
+.exchange_calc_box .calc_info {margin-top:1.2rem; text-align:right; font-size:1.4rem; color:var(--fc_04, #696e76);}
+
+.table table td.tb_state_up .state_arr,
+.table table td.tb_state_down .state_arr{font-size:1.5rem; font-weight:700;}
+
+.table table td.tb_state_up {background-color:#ffeeee;}
+.table table td.tb_state_down {background-color:#e9f2ff;}
+.table table td.tb_state_same {background-color:var(--bg_02, #f7f7f8);}
+
+.currency_fee_set .col_r {color:var(--fc_07, #c6cbd0);}
+.currency_fee_set .col_r.on {color:var(--fc_02, #26282c);}
+.currency_fee_set .num_tit {vertical-align: middle;}
+.currency_fee_set .number {display:inline-block; min-width:6rem; font-size:2.3rem; font-weight:700;}
+.currency_fee_set .num_unit {display:inline-block; font-size:2.2rem; font-weight:700;}
+
+/* 환전신청 목록 */
+.exchange_appl_msg {margin-bottom: 2.8rem; color:var(--fc_03, #484b51);}
+.exchange_appl_msg2 {font-size:1.8rem;}
+.exchange_appl_msg2 span,
+.exchange_appl_msg2 strong {vertical-align: middle;}
+.exchange_appl_msg2 .number {font-size:2.4rem; color:#287eff; }
+.exchange_appl_list > li{padding:2rem 0; border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.exchange_appl_list > li .in {position:relative; padding:.5rem 0.2rem 0 5.6rem;}
+.exchange_appl_list > li .im {position:absolute; left:0; top:0; width:4rem; height:4rem; background: url(/mnbank/app/img/forex/forex_spr_ico.png) no-repeat; background-size: 32rem auto;}
+.exchange_appl_list > li .im.i1-1 {background-position: 0rem 0rem;} /* 환전신청 목록(BFE090150) 아이콘 */
+.exchange_appl_list > li .im.i1-2 {background-position: -4rem 0rem;}
+.exchange_appl_list > li .im.i1-3 {background-position: -8rem 0rem;}
+.exchange_appl_list > li .im.i1-4 {background-position: -12rem 0rem;}
+.exchange_appl_list > li .im.i2-1 {background-position: -16rem 0rem;} /* 외화출금 목록(BFE090201) 아이콘*/
+.exchange_appl_list > li .im.i2-2 {background-position: -20rem 0rem;}
+.exchange_appl_list > li .im.i2-3 {background-position: -24rem 0rem;}
+.exchange_appl_list > li .im.i3-1 {background-position: -0rem -4rem;} /* 바로송금_안내(BFE091061) 아이콘 */
+.exchange_appl_list > li .im.i3-2 {background-position: -4rem -4rem;}
+.exchange_appl_list > li .tit {font-size:1.8rem; font-weight: 700;}
+.exchange_appl_list > li .txt {font-size:1.6rem; margin-top:.9rem;}
+.exchange_appl_list > li .btn_list_btm {margin-top:2rem;}
+.exchange_appl_list > li .btn_list_btm .btn {height: 3.6rem; padding: 0 1.8rem; font-size:1.5rem; line-height: 3.2rem;}
+
+.section_f .exchange_appl_msg {padding:0 2.4rem;}
+.exchange_appl_msg2.exchange {height:12.7rem; padding-bottom:2.4rem; border-bottom:1px solid var(--bdc_01, #ebeef0); background:url(/mnbank/app/img/forex/forex_img08.png) no-repeat right 1.2rem bottom 2.4rem; background-size:11.8rem auto; box-sizing:content-box;}
+
+/* 환율챠트 */
+.exchange_chart_curr_state {display:table; width:100%; margin-top:2.8rem; padding:1.7rem 2rem; background:var(--bg_02, #f7f7f8);}
+.exchange_chart_curr_state > div {display:table-cell; font-size:0; vertical-align: middle;}
+.exchange_chart_curr_state span {vertical-align: middle;}
+.exchange_chart_curr_state .key {font-size:1.6rem; color:var(--fc_03, #484b51);}
+.exchange_chart_curr_state .value {text-align:right;}
+.exchange_chart_curr_state .curr {font-size:2.4rem; font-weight:700;}
+.exchange_chart_curr_state .state_arr {margin-left:1.2rem; font-size:1.7rem;}
+
+/* 외화지갑 */
+.forex_wallet .tit {font-size: 1.8rem; font-weight:700;}
+.forex_wallet .progressbar {margin-top:2.4rem; border-radius: .3rem; overflow: hidden;}
+.forex_wallet .progressbar .pbar {height:1rem; background-color:#ffd338;}
+.forex_wallet .list_data {padding-bottom:0; border:0;}
+.forex_wallet .btn_list_btm {margin-top:2.4rem;}
+
+/* 바로송금 */
+.select_country_list > li {padding:0; border-bottom: 1px solid var(--bdc_01, #ebeef0); line-height:3.2rem;}
+.select_country_list li > a {display:block; position:relative; padding:2rem 0 2rem 4rem; min-height:7.2rem}
+.select_country_list li > a.link {padding:2rem 3.5rem 2rem 4rem; }
+.select_country_list li > a.link:after {display: block; position: absolute; right: .9rem; top: 50%; width: .9rem; height: .9rem; content: ''; margin-top:-.1rem; border: solid var(--fc_05, #8c949e); border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg) translateY(-50%); -webkit-transform: rotate(-45deg) translateY(-50%);}
+.select_country_list > li:first-child {padding:0; border-top:1px solid var(--bdc_01, #ebeef0);}
+.select_country_list > li:first-child a.link {padding-top:2rem;}
+.select_country_list > li:first-child .link:after {margin-top:-.1rem;}
+.select_country_list .im {display:block; position: absolute; left:0; top:50%; width:3.2rem; height:3.2rem; margin-top:-1.7rem; border-radius: 10rem; background-color:var(--fc_09, #ebeef0);}
+
+.forex_top_msg {padding-top:1.6rem;}
+.forex_top_msg .tit {font-size:2rem;}
+.forex_top_msg .tit + .txt {margin-top:2rem; font-size:1.6rem;}
+
+.forex_flag_unit {position:relative; padding-left:4.5rem;}
+.forex_flag_unit .im{position:absolute; left:0; top:5px;}
+.forex_flag_unit .form_group .dot_unit.form_row .row_tit {width:17%;}
+
+.list_btm_wrap.forex_seal {margin-top:2.4rem;}
+.list_btm_wrap.forex_seal .col {font-size: 1.7rem; color:var(--fc_02, #26282c); line-height: 3.3rem; background:url(/mnbank/app/img/common/img_kbseal.png) no-repeat center right; background-size:auto 3.3rem;}
+
+.forex_pick_box {padding:1.5rem; margin-top:3.2rem; border-radius: 3px; background-color:#f6f6f7; font-size:1.4rem; text-align:left; color:#26282c;}
+.forex_pick_box .number {font-size:1.5rem;}
+.forex_pick_box.time {padding:1.5rem; margin-top:3.2rem; background-color:#eff2ff; font-size:1.9rem; color:#2975ea; font-weight:700; text-align:center;}
+.forex_pick_box.time .number {font-size:2rem; vertical-align: text-bottom;}
+
+.ly_exchange_country_info {position: relative; width:100%; padding-left:4.3rem; margin-bottom:1.3rem;}
+.ly_exchange_country_info .country_flag_im2 {position: absolute; left: 0; top: 50%; margin-top:-1.8rem;}
+.ly_exchange_country_info .name {font-size: 1.7rem; color:var(--fc_02, #26282c);}
+.ly_exchange_country_info .rate {font-size: 1.5rem; color:var(--fc_03, #484b51);}
+.ly_exchange_country_info .rate .r_tit {margin-right: .5rem; color:var(--fc_04, #696e76);}
+.ly_exchange_country_info .rate .number {font-size: 1.7rem; color: #287eff;}
+
+/* forex banner */
+.forex_ban {display:table; width:100%; border-radius: 3px; overflow:hidden;}
+.forex_ban .in {display:table-cell; vertical-align: middle;}
+.forex_ban .tit {font-weight:700;}
+.forex_ban .txt {font-size:1.4rem; color:var(--fc_03, #484b51);}
+
+.ban_money_send {height:12rem; margin-top:3.2rem; border:1px solid var(--fc_08, #dde1e4); background-image: url(/mnbank/app/img/forex/ban_money_send.png); background-repeat: no-repeat; background-position: bottom right; background-size: 14.5rem auto; font-size:1.8rem; font-weight:700;}
+.ban_money_send .in {padding:1.7rem 2.8rem; }
+.ban_exchange_appl {background-color:#e8edff; background-image: url(/mnbank/app/img/forex/ban_exchange_appl.png); background-repeat: no-repeat; background-position: center right; background-size: 11rem auto; }
+.ban_exchange_appl .in {padding:1.7rem 2.8rem; }
+.ban_exchange_appl .tit {font-size:2rem;}
+.ban_exchange_appl .txt {margin-top:1rem;}
+
+.ban_exchange_calcu {position:relative; height:9.7rem; border:1px solid var(--fc_08, #dde1e4);}
+.ban_exchange_calcu .in {padding:2rem; padding-left:7.6rem;}
+.ban_exchange_calcu .im {position:absolute; left:2rem; top:2rem; width:4rem; height:4rem; background:url(/mnbank/app/img/forex/forex_spr_ico.png) no-repeat; background-size:32rem auto; background-position: 0rem 0rem;}
+.ban_exchange_calcu .tit {font-size:1.8rem; font-weight:700;}
+.ban_exchange_calcu .txt {margin-top:.5rem;}
+
+/* slogan */
+.forex_slogan_pickguide .img {height:18rem; margin-top:0; background: url(/mnbank/app/img/forex/forex_img01.png) no-repeat bottom center; background-size: auto 18rem; border-radius:.2rem;} /* [전담반] 다크테마 */
+.forex_slogan_useguide .img {height:18rem; background-image: url(/mnbank/app/img/forex/forex_img02.png); background-repeat: no-repeat; background-position: center bottom; background-size: auto 18rem; margin-top:0; border-radius:.2rem;}
+.forex_slogan_useguide.type2 .img {background-image: url(/mnbank/app/img/forex/forex_img03.png);}
+.forex_slogan_useguide.type3 .img {background-image: url(/mnbank/app/img/forex/forex_img04.png);}
+.forex_slogan_useguide.type4 .img {background-image: url(/mnbank/app/img/forex/forex_img05.png);}
+.forex_slogan_useguide.type5 .img {background-image: url(/mnbank/app/img/forex/forex_img06.png);}
+.forex_slogan_useguide.type6 .img {background-image: url(/mnbank/app/img/forex/forex_img07.png);}
+.forex_slogan_useguide.type7 .img {background-image: url(/mnbank/app/img/forex/forex_img09.png);}
+.forex_slogan_useguide.type8 .img {background-image: url(/mnbank/app/img/forex/forex_img10.png);}
+/* 220315 이미지 추가 */
+.forex_slogan_useguide.type9 .img {background-image: url(/mnbank/app/img/forex/forex_img11.png);} 
+.forex_list [class^=item] {position:relative;font-size:1.4rem;text-align:center;}
+.forex_list [class^=item]:before {content:'';display:block;width:4rem;height:4rem;margin:0 auto 1rem;background:url(/mnbank/app/img/forex/ico_forex_useguide.png) no-repeat;background-size:12rem auto}
+.forex_list .item1:before {background-position:0 0;}
+.forex_list .item2:before {background-position:-4rem 0;}
+.forex_list .item3:before {background-position:-8rem 0;}
+
+/* exchange flag */
+.exchange_flag_list {border-top:1px solid var(--fc_03, #484b51);}
+.exchange_flag_list .in {padding: 2.6rem 0;}
+.exchange_flag_list .tit {display: block; position: relative; padding-left: 4.5rem; margin-bottom:1rem;}
+.exchange_flag_list .tit .country_flag_im {position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+.exchange_flag_list .tit .name {font-size:1.8rem;}
+.exchange_flag_list .list_data {padding:0; border:0;}
+.exchange_flag_list .list_data > li {padding-top:.5rem;}
+.exchange_flag_list .list_data.left > li > div {min-width:auto;}
+.exchange_flag_list > li {border-bottom: 1px solid var(--bdc_01, #ebeef0);}
+.exchange_flag_list > li:first-child .link {padding-top:2.6rem;}
+.exchange_flag_list > li:first-child .link:after {margin-top:0;}
+.exchange_flag_list .list_data.left > li > .key {width:6rem;}
+
+/* 외환만 적용 */
+.list_result li .key,
+.list_data > li .key {min-width:12rem;}
+.list_result li .value {word-break: break-word;}
+
+/* [전담반 Biz-056] 송금국가 선택 시 검색기능 제공 */
+.layer_wrap.bottom .ly_cnt.ly_fixed {padding-top:7.6rem;}
+.search_wrap.search_full {position:absolute;top:-1px;left:2rem;right:2rem;margin:0 -2.4rem 2rem 0;z-index:2;background:var(--fc_11, #fff)}
+.select_country_list.list_top_bd_none > li:first-child {border-top:none;}
+
+/* 고도화 2차 > 외화 환전완료 */
+.cate_forex .banner_swiper_f .swiper-container {margin-top: 4.8rem; padding: 0 2.4rem; text-align: center;}
+.cate_forex .banner_swiper_f .swiper-wrapper {margin-bottom: 1.4rem; align-items: stretch;}
+.cate_forex .banner_swiper_f .swiper-slide {height: auto;}
+.cate_forex .banner_swiper_f .swiper-slide a.img {display: block;}
+.cate_forex .banner_swiper_f .banner_area {display: block; height: 100%; padding: 2rem; border-radius: .8rem; background-color: #e0f5fa; text-align: left;}
+.cate_forex .banner_swiper_f .banner_area .tit {display: block; margin-top: 1.6rem; font-weight: 700; font-size: 1.8rem; color: #26282c;}
+.cate_forex .banner_swiper_f .banner_area .txt {display: block; margin-top: .4rem; font-size: 1.4rem; color: #696e76;}
+.cate_forex .swiper-container .swiper-pagination {display:inline-block; width:auto; height:3rem; line-height:3rem; vertical-align:middle; font-size: 0;}
+.cate_forex .swiper-container .swiper-pagination button {vertical-align: middle;}
+.cate_forex .swiper-container .swiper-pagination-lock, .cate_forex .swiper-container .swiper-pagination-lock + .play-control {display: none;}
+.cate_forex .swiper-container .play-control {display:inline-block; position:relative; width:2rem; height:3rem; font-size:0; line-height:0; vertical-align:middle;}
+.cate_forex .swiper-container .play-control:after {content:''; position:absolute; left:50%; top:50%; width:0.9rem; height:1.2rem; background:url('/mnbank/app/img/common/spr_autoplay.png') 0 0 no-repeat; background-size:5rem 2.5rem; margin-top:-.6rem; transform: none;}
+.cate_forex .swiper-container .play-control.stop:after {background-position: 0 100%;}
+.cate_forex .swiper-container .play-control.play:after {background-position: 0 0;}
+
+/* 220718 환전신청 화면 환율알림 추가 */
+.notice_setting {display: block; position: relative; width: 100%; font-size: 1.6rem; padding: 2.5rem 3.5rem 2.2rem 5.6rem; border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.notice_setting:before {content:''; display:block; position:absolute; left:0; top:2rem; width:4rem; height:4rem; background:url(/mnbank/app/img/forex/ico_forex_noti.png) no-repeat 50% .2rem; background-size:2.5rem auto;}
+.notice_setting:after {content:''; display:block; position:absolute; right:.9rem; top:50%; width:.9rem; height:.9rem; margin-top:-.2rem; border:solid var(--fc_05, #8c949e); border-width:0 1px 1px 0; transform:rotate(-45deg) translateY(-50%); -webkit-transform:rotate(-45deg) translateY(-50%);}
+.notice_setting>strong {display:block; margin-bottom:0.7rem; font-size:1.8rem;}
+
+/* list hr type2 (230322) */
+.cate_forex .list_hr.type2 > li {padding-left:0;padding-right:0;}
+.cate_forex .list_hr.type2 > li:first-child {margin-top:0;}
+.cate_forex .search_map_list.type2 .map_info {padding:0;}
+
+/*************************************** 다크테마 s ***************************************/
+.dark_mode .list_btm_wrap.forex_seal .col {filter:brightness(2.4) hue-rotate(35deg);}
+
+/* spr_ico_24x.png */
+.dark_mode .btn_wrap.line span > .btn.ico_exch_chart::before,
+.dark_mode .btn_wrap.line span > .btn.ico_exch_commi::before {filter:brightness(3.5);}
+.dark_mode .forex_list [class^=item]:before {filter:invert(1) brightness(2);} /* 퍼블소스 없음 */
+/*************************************** 다크테마 e ***************************************/
+
+
+/* 230509 추가 */
+.rdoChk_box.outline .selection input[type=radio] + .label .number.fc_posi.fs20 em {font-size: 2rem;}
+.rdoChk_box.outline .selection input[type=radio] + .label .number.fc_nega.fs20 em {font-size: 2rem;}
+
+/* 230511 환율픽 D001987  */
+.cate_forex.pick_wrap{padding-top:0 !important;}
+.section.pick_section{padding: 3.4rem 0;background-color: #eef4f9;margin: 0;position: relative;}
+.pick_section h1{font-size: 2rem;padding:0 2.8rem;margin-bottom: 4.6rem;color: #26282c;position: relative;}
+.pick_section h1::after{content: '';position: absolute;top: 0;right: 2.8rem; width: 11.2rem;height: 8.3rem;background-image:url(/mnbank/app/img/forex/img_forex_pick.png);background-size: 100%;}
+.pick_section .acc_list_wrap .acc_pannel{background-color: #ffffff;border: 1px solid #dde1e4;}
+.pick_section .btn_cnt_wrap{padding: 0 2.4rem;margin-top: 1.8rem;}
+.pick_section .btn_cnt_wrap .btn.outline{color:#26282c;border: 1px solid #8c949e;}
+.pick_wrap .acc_list_wrap{margin:0 2.4rem}
+.pick_wrap .pick_select .pick_badge{margin-bottom: 1.6rem;margin-top:.2rem}
+.pick_wrap .pick_select::after{content: '';display: block;clear: both;}
+.pick_wrap .pick_select .pick_btn button{position: relative;padding-right: 2.4rem;}
+.pick_wrap .pick_select .pick_btn button::after {content:'';display:block;position: absolute;top: .4rem;right: 0;width:2rem; height:2rem; background-image:url(/mnbank/app/img/common/spr_ico_20x.png); background-size:25rem auto;background-position: -2rem -4rem;}
+.pick_wrap .pick_select .pick_btn .country_flag_im3 {float: left;}
+.pick_wrap .pick_select .pick_btn .country_name {line-height: 3rem;margin-left: 1rem;font-size: 1.6rem;color:#000000;font-weight: 700;}
+.pick_wrap .pick_date{margin: 0.8rem 0 2.4rem;font-size: 1.4rem;text-align: center;color:#696276;}
+.pick_buy_sell {display: flex;margin: 2rem -2rem  .4rem -2rem;padding-bottom: 1.1rem;}
+.pick_buy_sell dt{margin-bottom: .6rem;}
+.pick_buy_sell dt, .pick_buy_sell dd{text-align: center;font-weight: 700;color:#26282c}
+.pick_buy_sell .now_buy{width: 50%;position: relative;}
+.pick_buy_sell dd{font-size: 2.2rem;font-family:'Roboto'}
+.pick_buy_sell .now_buy::after{content: '';width: .1rem;height: 5.5rem;position: absolute;top:0;right: -.1rem;background-color: #ebeef0;}
+.pick_buy_sell .now_sell{width: 50%;}
+.fc_buy{color:#ff5858;}
+.fc_sell{color:#287eff;}
+.pick_wrap .list_index > li:first-child > .link{padding-top: 2rem;}
+.pick_wrap .list_index > li:first-child > .link:after{margin-top: inherit;}

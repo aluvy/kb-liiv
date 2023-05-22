@@ -285,6 +285,7 @@ $(function(){
             _this.$closeDevBtn = _this.$el.find('.btn.close');
 
             _this.setContent();
+            _this.$layer.attr("tabindex", 0).focus();   // [05/22] 추가
 
             _this.$closeDevBtn.attr("id", (_this.content.replace("#",""))+"_dev");
             if(this.closeAct == true) _this.$closeDevBtn.attr("data-action","close");
@@ -308,6 +309,8 @@ $(function(){
         },
         open : function(){
             var _this = this;
+            var $lastFocused = $("body").find(":focus");    // [05/22] 추가
+            var $focusId = $lastFocused.attr("id");         // [05/22] 추가
 
             _this.buildHTML();
             
@@ -316,6 +319,9 @@ $(function(){
 
             (_this.title == '') ? _this.$title.html("알림") : _this.$title.html(_this.title);
             if(_this.closeUse === false) _this.$layer.addClass("noBtn");
+
+            // _this.$layer.focus().attr('rel', $focusId);
+            // _this.$parents.prev('.layer_wrap').attr('aria-hidden', true);
 
             // ios focus 대응 setTimeout
             setTimeout(()=>{
@@ -326,6 +332,10 @@ $(function(){
 
                 let targetBtn = _this.$layer.attr("rel");
                 $(document).find(`#${targetBtn}`).addClass("on");   // 누른 target에 class on
+
+                _this.$layer.focus().attr('rel', $focusId);                     // [05/22] 추가
+                _this.$parent.prev('.layer_wrap').attr('aria-hidden', true);    // [05/22] 추가
+
                 _this.$layer.attr("tabindex",0).focus();            // focus 이동
             }, 0)
 
@@ -441,10 +451,13 @@ $(function(){
             let targetBtn = _this.$layer.attr("rel");
             $(document).find(`#${targetBtn}`).removeClass("on");   // 누른 target에 remove class on
 
-            $("#"+$lastFocused).focus().closest(".layer_wrap").removeAttr("aria-hidden");
-            _this.$parent.prev(".layer_wrap").removeAttr("aria-hidden");
+            // $("#"+$lastFocused).focus().closest(".layer_wrap").removeAttr("aria-hidden");
+            // _this.$parent.prev(".layer_wrap").removeAttr("aria-hidden");
 
             setTimeout(()=>{
+                    
+                $("#"+$lastFocused).focus().closest(".layer_wrap").removeAttr("aria-hidden");   // [05/22] 이동
+                 _this.$parent.prev(".layer_wrap").removeAttr("aria-hidden");                   // [05/22] 이동
                 
                 if (_this.type !== "alert" ) {
                     if( _this.$el.prev(".layer_wrap").length > 0  ){
@@ -1237,11 +1250,11 @@ var _front = {
             ) return;  // readonly, disabled 예외처리
             
             $("body").addClass("keyboard-on");
-            // $(window).resize();     // resize 이벤트 추가 (04/26추가, 테스트후 삭제예정)
+            $(window).resize();     // resize 이벤트 추가
         });
         $(document).on("blur", target, function(){
             $("body").removeClass("keyboard-on");
-            // $(window).resize();     // resize 이벤트 추가 (04/26추가, 테스트후 삭제예정)
+            $(window).resize();     // resize 이벤트 추가
         });
     },
     isMain: function(){
@@ -1923,9 +1936,8 @@ $(()=>{
 $(()=>{
     // 요금제 > 하단 진단하기 페이지 링크 스크롤이벤트
     const ratePlanHelp = $(document).find(".rateplan_help");
-    ratePlanHelp.find("a").attr("aria-labelledby", "rateplan_help_txt");                // 초점 관련 스크립트 추가
-    ratePlanHelp.find("p").attr("id", "rateplan_help_txt").attr("aria-hidden", true);   // 초점 관련 스크립트 추가
-
+    ratePlanHelp.find("a").attr("aria-labelledby", "rateplan_help_txt");                // [05/19] 초점 관련 스크립트 추가
+    ratePlanHelp.find("p").attr("id", "rateplan_help_txt").attr("aria-hidden", true);   // [05/19] 초점 관련 스크립트 추가
     if( ratePlanHelp.length > 0 ){
         $(document).on("scroll", ()=>{
             const scrollTop = $(window).scrollTop();

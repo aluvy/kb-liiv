@@ -18,15 +18,15 @@
     <meta name="twitter:image" content="대표 이미지">
     <meta name="twitter:card" content="summary">
     <title>KB Liiv M Main</title>
-    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/common/common.js"></script>
-    <script type="text/javascript" src="/js/common/util.js"></script>
-    <script type="text/javascript" src="/js/front.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../../js/common/util.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -381,7 +381,7 @@
                     <!-- //로그인 후, 개통 전 조회항목 -->
                     <!-- 나의 요금제 찾기 -->
                     <div class="mydata_box">
-                        <a href="#none" class="link">
+                        <a href="#" onclick="javascript:showDetailAddOn('Y', '01', 'PD00000019', 'LRZ0001132', 'N', 'undefined', 'undefined')" class="item" role="button">
                             <p class="title">내게 맞는 요금제 찾기</p>
                             <p>요금제 뭐 쓰지?</p>
                             <p>고민할 필요가 없어요!</p>
@@ -1225,6 +1225,68 @@
             },
         });
     });
+
+
+
+
+    // 부가서비스 상세
+    function showDetailAddOn(menuYn, prodSoId, prodCd, mnoProdCd, svcYn, menuId, loginRequired) {
+        // location.href = 'http://naver.com';
+
+        loginRequired = "Y"
+        menuId = "Y"
+
+        if(menuYn == "Y") { // 메뉴 부가서비스
+            if(loginRequired == "Y") { // 로그인 필요
+                // 로그인 확인
+                // if(isEmpty('')) {
+                //     popalarm({msg: "로그인 후 사용해 주세요.", cfrmYn: false, okCallback : goLogin, okParam: '/service/additional/mvno-services'});
+                //     return;
+                // }
+                // // 개통 확인
+                // if('' == '10') { // 개통 전
+                //     popalarm({msg: "개통 후 사용해 주세요.", cfrmYn: false, okCallback : goApplyPage});
+                //     return;
+                // }
+                // // 통신망 확인
+                // if($("#soId").val() != prodSoId) {
+                //     popalarm({msg: "동일 통신망 회선을 선택하셔야 합니다.", cfrmYn: false});
+                //     return;
+                // }
+                // // skt 개통 당일 신청 및 해지 불가
+                // if(tab == "3" && 'N' == "Y"){
+                //     popalarm({msg: "개통일 당일의 경우 부가서비스 신청내역 확인이 불가하므로, 익일 신청/변경해 주시기 바랍니다.", cfrmYn: false});
+                //     return;
+                // }
+                location.href = 'http://daum.com';
+            }
+            if(!isEmpty(menuId)) {
+                location.href = 'http://google.com';
+                // 로밍서비스
+                // if(menuId == 'MENU200145'){
+                //     location.href = '/service/additional/roaming';
+                // }
+                // // 소액결제서비스
+                // else if(menuId =='MENU200066'){
+                //     location.href = '/service/group/micro-payment';
+                // }
+                // else{
+                //     fnMoveMenuId(menuId);
+                // }
+            }
+            location.href = 'http://kakao.com';
+        }
+        // 일반 부가서비스
+        else {
+            // $("#prodSoId").val(prodSoId);
+            // $("#prodCd").val(prodCd);
+            // $("#mnoProdCd").val(mnoProdCd);
+            // $("#svcYn").val(svcYn);
+            // goSubmitForm('/service/additional/mvno-services-detailed');
+                location.href = 'http://naver.com';
+        }
+    }
+
 </script>
 </body>
 </html>

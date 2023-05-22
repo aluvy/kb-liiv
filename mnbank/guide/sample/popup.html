@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport2" http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/forex.css">
+	<!-- // -->
+</head>
+<body>
+    <div id="wrap">
+        <div style="padding: 80px 20px 20px;">
+            <button type="button" id="alert_btn" class="btn secondary sm">alert형 팝업 클릭</button><br><br>
+            <button type="button" id="confirm_btn" class="btn secondary sm">confirm 팝업 클릭</button><br><br>
+            <button type="button" id="layer3" class="btn secondary sm">bottom 팝업 클릭</button>
+            <button type="button" id="layer3a" class="btn secondary sm">bottom(제목없음) 팝업 클릭</button>
+            <button type="button" id="layer5" class="btn secondary sm">bottom(탭형태) 팝업 클릭</button> <br><br>              
+            <button type="button" id="layer_var" class="btn secondary sm">변수 팝업</button>      
+        </div>
+    </div>
+    
+
+    <!-- layer -->
+    <div id="confirm_html" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">레이어 내용</div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg" data-action="close" id="var_test">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest2" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어 내용 end            
+                <div><button type="button" class="btn secondary" id="twoLayer1">클릭 - 바텀시트 오픈</button> <button type="button" class="btn secondary" id="twoLayer2">클릭 - 컨펌 오픈</button></div>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg" data-action="close" id="var_test">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest3" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <div><button type="button" class="btn secondary" id="twoLayer">바텀시트 오픈</button> <button type="button" class="btn secondary" id="twoLayer3">풀팝업 오픈</button></div>
+                레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용 end
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest5" class="layerHTML">
+        <div class="ly_cnt">            
+            <div class="section">
+                레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용 end
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest4" class="layerHTML">
+        <div class="tab_wrap">
+            <div class="tab_list" role="tablist">
+                <div class="scroll_wrap">
+                    <div><button role="tab" aria-selected="true" aria-controls="tabpanel4_1">탭메뉴 1</button></div>
+                    <div><button role="tab" aria-selected="false" aria-controls="tabpanel4_2">탭메뉴 2</button></div>
+                    <div><button role="tab" aria-selected="false" aria-controls="tabpanel4_3">탭메뉴 3</button></div>
+                </div>
+            </div>
+            <div class="ly_cnt">
+                <div role="tabpanel" class="tab_panel" id="tabpanel4_1">
+                    <div class="section">
+                         <!-- sub-tab -->
+                         <div class="tab_wrap box tab_list_sub">
+                            <div class="tab_list" role="tablist">
+                                <div><button type="button" role="tab" aria-selected="true" aria-controls="subtabpanel2_1">서브탭 2-1</button></div>
+                                <div><button type="button" role="tab" aria-selected="false" aria-controls="subtabpanel2_2">서브탭 2-2</button></div>
+                            </div>
+                            
+                            <div class="tab_panel" role="tabpanel" id="subtabpanel2_1">                                
+                                <div class="section">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역2-1
+                                </div>
+                            </div>
+                            <div class="tab_panel" role="tabpanel" id="subtabpanel2_2">                                
+                                <div class="section">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역2-2
+                                </div>
+                            </div>                            
+                        </div>
+                        <!-- // sub-tab -->
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab_panel" id="tabpanel4_2">
+                    <div class="section">2 레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용dd</div>
+                </div>
+                <div role="tabpanel" class="tab_panel" id="tabpanel4_3">
+                    <div class="section">3 레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용 레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용 레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용 레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내용<br>레이어 내end</div>
+                </div>
+            </div>           
+        </div>
+        
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest_var" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                변수 레이어 내용<br>레이어 내용레이어 내용
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->
+
+    <!-- layer -->
+    <div id="htmlTest_var_confirm" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                변수 레이어 컨펌 내용<br>레이어 내용레이어 내용<br><br>
+
+                
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                <span><button type="button" class="btn primary lg" data-action="close" id="htmlTest_var_confirm_close">확인</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- //layer -->   
+
+
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    <script>
+    $(function(){
+        //변수 레이어 시작
+        var _html = $.ohyLayer({
+                    openAuto : true,
+                    title:'컨펌 레이어',          
+                    content:'#htmlTest_var',
+                    type:'bottom',
+                    closeUse:true,
+                    closeAct:false,             
+                });
+        //변수 레이어 열기
+        $("#layer_var").on("click", function(){
+            _html.open();
+        });
+
+        //변수 레이어 닫기
+        $(document).on("click", "#htmlTest_var_confirm_close", function(){
+            _html.close();
+        });
+        
+
+        $(document).on('click', "#htmlTest_var_dev", function(){
+            $.ohyLayer({
+                title:'컨펌 레이어',          
+                content:'#htmlTest_var_confirm',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+        //변수 레이어 끝
+
+
+        //얼랏 레이어
+        $('#alert_btn').on('click', function(){
+            $.ohyLayer({                                 
+                title:'알림',
+                content:'알림 텍스트입니다.',
+                type:'alert', 
+                closeUse:true,
+            });
+        });
+
+        //컨펌 레이어
+        $('#confirm_btn').on('click', function(){
+            $.ohyLayer({                 
+                title:'컨펌 레이어',
+                content:'#confirm_html',
+                type:'confirm', 
+                closeUse:true,                 
+            });
+        });
+
+        //바텀시트
+        $('#layer3').on('click', function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"바텀시트",
+                content:'#htmlTest2',
+                type:'bottom',
+                closeUse:true,                                     
+            });
+        });
+
+        //바텀시트 - 타이틀 비노출되는 경우
+        $('#layer3a').on('click', function(){
+            $.ohyLayer({
+                titleUse:false,
+                title:"바텀시트",
+                content:'#htmlTest2',
+                type:'bottom',
+                closeUse:true,          
+            });
+        });
+
+        //바텀시트 - 탭이 들어가는 경우
+        $('#layer5').on('click', function(){
+            $.ohyLayer({
+                title:"바텀시트-탭형태1",                
+                content:'#htmlTest4',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+        $(document).on('click', '#twoLayer', function(){
+            $.ohyLayer({                
+                title:"바텀시트",
+                content:'#htmlTest5',
+                type:'bottom',
+                closeUse:true,
+            });            
+        });
+
+        $(document).on('click', '#twoLayer1', function(){
+            $.ohyLayer({                
+                title:"바텀시트",
+                content:'#htmlTest5',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+        $(document).on('click', '#twoLayer2', function(){
+            $.ohyLayer({
+                title:'컨펌 레이어',          
+                content:'#htmlTest5',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+
+
+    });
+    </script>
+</body>
+</html>

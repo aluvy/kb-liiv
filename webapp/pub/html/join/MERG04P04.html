@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>가입/개통 - 가입/개통 팝업 - [팝업] OCR (신용카드)</title>
-    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/front.js"></script>
-    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script> <!-- 퍼블작업을 위한 js -->
 </head>
 <body>
     <div class="wrap">
@@ -143,6 +143,44 @@
             _calendar.open( 'calendar', 'btn_cal', '');
         });
     })
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
 </script>
 </body>
 </html>
