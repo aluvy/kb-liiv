@@ -97,7 +97,7 @@ function paymentAuth(gubun){
 	data.actNo = actNo;
 	data.bankCd = bankCd;
 	data.resvArea ="";
-	console.log(JSON.stringify(data));
+	//console.log(JSON.stringify(data));
 
 	base.data = data;
 	
@@ -109,7 +109,7 @@ function paymentAuth(gubun){
 		cache: false,
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			if(data.resultCode == '00000'){
 				if(gubun == "cert"){
 					var auth = $("input[name=c-certification]:checked").val();
@@ -117,7 +117,7 @@ function paymentAuth(gubun){
 						gAuthMthd = "301";
 						openKCBCertPopup();
 					}else{// ARS
-						console.log("ARS인증");
+						//console.log("ARS인증");
 						var arsParam = new Object();
 						arsParam.kbPin = fnSign($("#custId").val()); //encoding
 						arsParam.telNo = fnSign($('#arsCertCellPhoneNo').val()); //encoding
@@ -190,7 +190,7 @@ function sendSKSU00101(){
 			field.id_isue_dt = $("#issfDt").val(); //발급일자
 			
 			field.cust_nm = removeStrSpace($("#fNm").val()); //이름
-			field.ctz_num = $("#fNo").val().replace(/-/g,'');//주민번호
+			field.ctz_num = fnUnSign($("#regNoH").val());
 			
 		}else if($("#custTp").val() == "MIN"){
 		// 미성년자인경우 법정대리인정보
@@ -239,7 +239,7 @@ function sendSKSU00101(){
 		data.field = field;
 		data.header = header;
 		base.data = data;
-		console.log(JSON.stringify(base));
+		//console.log(JSON.stringify(base));
 		
 		$.ajax({
 			type: 'POST',
@@ -249,12 +249,12 @@ function sendSKSU00101(){
 			cache: false,
 			dataType: "json",
 			success: function(response) {
-				console.log(JSON.stringify(response));
+				//console.log(JSON.stringify(response));
 				try{
 					if(response !== null && response.data !== null){
 						var res = response.data.BODY;
 						if(res.message.rps_code == "000000"){
-							console.log("주민등록일련번호="+res.field.ctz_ser_num); 
+							//console.log("주민등록일련번호="+res.field.ctz_ser_num);
 							$("#ctzSerNum").val(res.field.ctz_ser_num);//임시
 							
 							showOpenBar();
@@ -274,7 +274,7 @@ function sendSKSU00101(){
 					}
 				}
 				catch(e){
-					console.log(e);
+					//console.log(e);
                     let opt = {
                         msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                         cfrmYn : false
@@ -308,7 +308,7 @@ function checkSKSU00190(){
 	field.np_yn = $("#npYn").val(); //번호이동여부
 	if($("#custTp").val() == "IFX"){
 		field.cust_nm = removeStrSpace($("#fNm").val());
-		field.ctz_num = $("#fNo").val().replace(/-/g,'');
+		field.ctz_num = fnUnSign($("#regNoH").val());
 	}else if($("#custTp").val() == "MIN"){
 		field.cust_nm = removeStrSpace($("#legalRprsnNm").val());
 		field.ctz_num = fnUnSign($("#legalRprsnRegNoH").val());
@@ -324,7 +324,7 @@ function checkSKSU00190(){
 	
 	base.serviceId = "SKSU00190";
 	base.data = data;
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -335,19 +335,19 @@ function checkSKSU00190(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			try{
 				
 				if(response !== null && response.data !== null){
 					var res = response.data.BODY;
 					if(res.message.rps_code == "000000"){
 
-						console.log("실명확인정상여부="+res.field.rnm_check_norm_yn);
-						console.log("진위확인정상여부="+res.field.tru_check_norm_yn);
-						console.log("신용조회정상여부="+res.field.crdt_brws_norm_yn);
-						console.log("타사미납정상여부="+res.field.oco_col_norm_yn);
-						console.log("(다회선)정상여부="+fnCheckNull(res.field.mline_norm_yn));
-						console.log("(다회선)결과코드="+fnCheckNull(res.field.mline_rslt_cd));
+						//console.log("실명확인정상여부="+res.field.rnm_check_norm_yn);
+						//console.log("진위확인정상여부="+res.field.tru_check_norm_yn);
+						//console.log("신용조회정상여부="+res.field.crdt_brws_norm_yn);
+						//console.log("타사미납정상여부="+res.field.oco_col_norm_yn);
+						//console.log("(다회선)정상여부="+fnCheckNull(res.field.mline_norm_yn));
+						//console.log("(다회선)결과코드="+fnCheckNull(res.field.mline_rslt_cd));
 						
 						var rnmCheckNormYn = res.field.rnm_check_norm_yn;
 						var truCheckNormYn = res.field.tru_check_norm_yn;
@@ -405,7 +405,7 @@ function checkSKSU00190(){
 				}
 			}catch(e){
 				hideOpenBar();
-				console.log(e);
+				//console.log(e);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                     cfrmYn : false
@@ -473,7 +473,7 @@ function sendSB804(){
 	
 	base.serviceId = "SB804";
 	base.data = data;
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -484,7 +484,7 @@ function sendSB804(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			if(response !== null && response.data !== null){
 				if(response.resultCode !== 'N0000'){
                     let opt = {
@@ -501,7 +501,7 @@ function sendSB804(){
 				}catch(e){
 					
 				}
-				console.log(' resultCode=' + resultCode);
+				//console.log(' resultCode=' + resultCode);
 
 				if(resultCode == 'YES'){
 					//미성년자 번호이동인 경우 번호이동사전검증 X <- 법정대리인 신분증 사전체크로 미성년자번호이동사전검증이 불가함
@@ -563,7 +563,7 @@ function sendSKSU00201(){
 	data.header = header;
 	base.data = data;
 	
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 	
 	$.ajax({
 		type: 'POST',
@@ -573,7 +573,7 @@ function sendSKSU00201(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			try{
 				if(response !== null && response.data !== null){
 					var res = response.data.BODY;
@@ -592,7 +592,7 @@ function sendSKSU00201(){
 				}
 			}
 			catch(e){
-				console.log(e);
+				//console.log(e);
 //				popalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", "info", false);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
@@ -641,7 +641,7 @@ function sendSKNP01600(){
 	data.header = header;
 	base.data = data;
 	
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 	
 	$.ajax({
 		type: 'POST',
@@ -651,12 +651,12 @@ function sendSKNP01600(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			try{
 				if(response !== null && response.data !== null){
 					var res = response.data.BODY;
 					if(res.message.rps_code == "000000"){
-						console.log("NP관리번호="+res.field.np_mgmt_num);
+						//console.log("NP관리번호="+res.field.np_mgmt_num);
 						saveApplTp();
 						applMYn = true; //사전동의 검증여부 (한번 호출)
 						
@@ -698,7 +698,7 @@ function sendSKNP01600(){
 					}
 				}
 			}catch(e){
-				console.log(e);
+				//console.log(e);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                     cfrmYn : false,
@@ -757,7 +757,7 @@ function sendSktCM804(){
 	ReqDataInVO.chkExpyCntYn = "";
 	ReqDataInVO.chkReJoinCntYn = "";
 	ReqDataInVO.chkNoReFundYn = "";
-	ReqDataInVO.custrnmNo = $("#fNo").val().replace(/-/g,'');
+	ReqDataInVO.custrnmNo = fnUnSign($("#regNoH").val());
 	ReqDataInVO.indvCustRnmKdCd = "I";
 	ReqDataInVO.custNo = "";
 	ReqDataInVO.custRealActRsn = "CNM";
@@ -787,7 +787,7 @@ function sendSktCM804(){
 	data.CheckSmrtCustomerInfo = CheckSmrtCustomerInfo;
 	base.data = data;
 	
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		url: '/appIf/v1/uplus/esb/CM804', 
@@ -798,7 +798,7 @@ function sendSktCM804(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(response);
+			//console.log(response);
 			if(response.resultCode == 'N0000'){
 				var errCnt = 0;
 				var welfStatus = "";//복지할인
@@ -806,31 +806,31 @@ function sendSktCM804(){
 				try {
 					var DsCustRnmRsltOutVO = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCustRnmRsltOutVO;
 					errCnt += (isEmpty(DsCustRnmRsltOutVO)) ? 0 : Number(DsCustRnmRsltOutVO.errCnt);
-					console.log("CM804 고객실명 Error count = "+DsCustRnmRsltOutVO.errCnt);
+					//console.log("CM804 고객실명 Error count = "+DsCustRnmRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsCBScoreRsltOutVO = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCBScoreRsltOutVO;
 					errCnt += (isEmpty(DsCBScoreRsltOutVO)) ? 0 : Number(DsCBScoreRsltOutVO.errCnt);
-					console.log("CM804 신용정보조회 Error count = "+DsCBScoreRsltOutVO.errCnt);
+					//console.log("CM804 신용정보조회 Error count = "+DsCBScoreRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsLverifyOutVO     = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsLverifyOutVO;
 					errCnt += (isEmpty(DsLverifyOutVO))     ? 0 : Number(DsLverifyOutVO.errCnt);
-					console.log("CM804 자사체납 Error count = "+DsLverifyOutVO.errCnt);
+					//console.log("CM804 자사체납 Error count = "+DsLverifyOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsSbgnRsltOutVO    = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsSbgnRsltOutVO;
-					console.log("CM804 가입회선 Error count = "+DsSbgnRsltOutVO.errCnt);
+					//console.log("CM804 가입회선 Error count = "+DsSbgnRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsBlRsltOutVO      = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsBlRsltOutVO;
 					errCnt += (isEmpty(DsBlRsltOutVO))      ? 0 : Number(DsBlRsltOutVO.errCnt);
-					console.log("CM804 블랙리스트 Error count = "+DsBlRsltOutVO.errCnt);
+					//console.log("CM804 블랙리스트 Error count = "+DsBlRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsCorpCloseRsltOutVO      = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCorpCloseRsltOutVO;
 					errCnt += (isEmpty(DsCorpCloseRsltOutVO))      ? 0 : Number(DsCorpCloseRsltOutVO.errCnt);
-					console.log("CM804 휴폐업사업자 Error count = "+DsCorpCloseRsltOutVO.errCnt);
+					//console.log("CM804 휴폐업사업자 Error count = "+DsCorpCloseRsltOutVO.errCnt);
 				} catch(e) {}
 				
 				try {
@@ -838,8 +838,8 @@ function sendSktCM804(){
 					welfStatus = (isEmpty(DsWelfRsltOutVO)) ? "" : DsWelfRsltOutVO.welfStatus;
 				} catch(e) {}
 				
-				console.log("CM804 response="+ JSON.stringify(response));			
-				console.log("CM804 errCnt="+ errCnt);
+				//console.log("CM804 response="+ JSON.stringify(response));
+				//console.log("CM804 errCnt="+ errCnt);
 				
 				if(errCnt > 0) {
                     let opt = {
@@ -901,7 +901,7 @@ function sendSktCM806(){
 	var UserInfoInVO = new Object();
 	var DsCustInfoInVO = new Object();
 	var ymdhms = getYYYYMMDDHHMMSS();
-	var regNo = $("#fNo").val().replace(/-/g,'');
+	var regNo = fnUnSign($("#regNoH").val());
 	var inqDvCd = "FORGN";
 	var drvLcnsNo = "";
 	base.serviceId = "CM806";

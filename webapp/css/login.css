@@ -1,9 +1,9 @@
 @charset "utf-8"; 
 
-/* login 임시 */
+/* login ìž„ì‹œ */
 .login_wrap {margin-top:7.6rem; }
 
-/* 보안 keypad */
+/* ë³´ì•ˆ keypad */
 /* .lysckeypadbox {position:fixed; top:inherit; left:0; right:0; bottom:0; height:auto; } */
 .box_sckeypad_wrap {position:fixed; z-index:1; left:0; top:0; width:0%; height:0%; transition:width height 0s; }
 .box_sckeypad_wrap.active {width:100%; height:100%; transition:width height 0; }
@@ -75,7 +75,7 @@
 .ly_login {padding:var(--sab_1) !important;}
 
 /* Mobile APP */
-/* 아이디 찾기 결과 */
+/* ì•„ì´ë”” ì°¾ê¸° ê²°ê³¼ */
 .login_comp_wrap {height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center;}
 .login_comp_wrap > .icon_area {display:flex; justify-content:center; }
 .login_comp_wrap > .icon_area .loading {display:flex; width:8rem; height:8rem; background:url(../img/common/loading.gif) no-repeat center center / cover;}
@@ -84,21 +84,21 @@
 .login_comp_wrap .comp_desc {margin-top:1.2rem; color:var(--gray-01, #222); font-size:1.4rem; line-height:2.2rem; text-align:center; word-break:keep-all;}
 .id_find_wrap {padding:1.85rem 2rem; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB); color:var(--gray-01, #222); font-size:1.6rem; font-weight:bold; line-height:2.3rem; text-align:center; }
 
-/* 아이디 로그인 */
+/* ì•„ì´ë”” ë¡œê·¸ì¸ */
 .login_sub_wrap {margin-top:2rem; }
 .login_sub_wrap .sub_form_group {display:flex; justify-content:center; }
 .login_sub_wrap .sub_form_group + .list_join {margin-top:1.6rem; }
 
-/* 휴대폰번호 로그인 */
+/* íœ´ëŒ€í°ë²ˆí˜¸ ë¡œê·¸ì¸ */
 .list_join li:only-child .link {text-decoration:underline; text-underline-offset:0.4rem; }
 
-/* 아이디 찾기 */
+/* ì•„ì´ë”” ì°¾ê¸° */
 .btn.white {background-color:var(--gray_08, #fff); border:1px solid var(--line_03, #EAECED); }
 .ly_cnt .pop_des {color:var(--gray_02, #555); font-size:1.4rem; line-height:2.2rem; }
 .pop_img_wrap {display:flex; justify-content:center; }
 .ly_cnt .pop_des + .pop_img_wrap {margin-top:2.8rem; }
 
-/* [팝업] 인증방법 - 신용카드 */
+/* [íŒì—…] ì¸ì¦ë°©ë²• - ì‹ ìš©ì¹´ë“œ */
 .ly_cnt .txt_alert {color:var(--gray_02, #555); font-size:1.2rem; line-height:1.7rem;}
 .ly_cnt .txt_alert.red {color:#FF2E00;}
 .login_cert_wrap .btn_wrap {margin-top:2rem; }
@@ -121,7 +121,7 @@
 
 
 /* Mobile Web */
-/* 로그인 */
+/* ë¡œê·¸ì¸ */
 .login .tab_wrap.pw_tab {margin-top:2rem !important; }
 .login .tab_wrap.pw_tab input[type=password]:focus {background-color:#ddd !important; }
 .login .save_box {display:flex; justify-content:center; margin-top:1.2rem;}
@@ -132,7 +132,7 @@
 .select_list ul li .yel_label {display:inline-block; position:relative; margin-left:.8rem; font-size:1rem; line-height:2rem; text-align:center; width:3.5rem; height:2rem; background-color:var(--main_01, #ffd338); border-radius:5rem; vertical-align:middle; }
 .select_list .img_item {margin-right:.8rem; vertical-align:middle; } */
 
-/* 초기 비밀번호 재설정 */
+/* ì´ˆê¸° ë¹„ë°€ë²ˆí˜¸ ìž¬ì„¤ì • */
 /* .login .service_center_wrap {position:fixed; bottom:7.2rem; width:100%; padding:0 2rem; text-align:center; } */
 .login .service_center_wrap {padding:0 var(--sar_2) 2rem var(--sal_2); text-align:center; }
 .login .service_center {padding:2rem; background-color:var(--bg_02, #f8f9fb); border-radius:1.2rem; }

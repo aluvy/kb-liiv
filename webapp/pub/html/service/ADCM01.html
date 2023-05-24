@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"> <!-- 03/07 viewport-fit=cover 추가 -->
     <title>Detail page - KB Liiv M App</title>
-    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/front.js"></script>
-    <script type="text/javascript" src="/pub/ia_resource/ia.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+    <link rel="icon" href="../../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../../js/front.js"></script>
+    <script type="text/javascript" src="../../../pub/ia_resource/ia.js"></script>
     <style>
         
     </style>
@@ -41,12 +41,22 @@
                             <div><button type="button" role="tab" aria-selected="false" aria-controls="tab_panel_3">SKT</button></div>
                         </div>
                         <div class="extra_tag_wrap">
-                            <ul class="nav_list">
+                            <!-- [05/19] 필터 마크업 변경 : start -->
+                            <!-- <ul class="nav_list">
                                 <li><a href="#none" data-link="menu1" class="item on">전체</a></li>
                                 <li><a href="#none" data-link="menu2" class="item">무료</a></li>
                                 <li><a href="#none" data-link="menu3" class="item">유료</a></li>
                                 <li><a href="#none" data-link="menu4" class="item">로밍</a></li>
-                            </ul>
+                            </ul> -->
+                            <div class="filter_list scroll-x">
+                                <ul>
+                                    <li><a href="#none" role="button" class="item on">전체</a></li>
+                                    <li><a href="#none" role="button" class="item">무료</a></li>
+                                    <li><a href="#none" role="button" class="item">유료</a></li>
+                                    <li><a href="#none" role="button" class="item">로밍</a></li>
+                                </ul>
+                            </div>
+                            <!-- [05/19] 필터 마크업 변경 : end -->
                         </div>
                         <div class="extra_sch_wrap">
                             <div class="form_group">

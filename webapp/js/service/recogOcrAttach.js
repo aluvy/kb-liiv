@@ -29,21 +29,293 @@ let tIdcardType = "";
 
 //촬영 버튼 클릭
 function uploadOcrImgClick(ocrFormInfo, idcardType) {
-
-	//IOS의 경우 카메라 촬영 동의 체크
+	//OS 따라 Ocr 호출
 	if(getOsInfo() === 'ios_app'){
-		tOcrFormInfo = ocrFormInfo;
-		tIdcardType = idcardType;
-		callIosCameraAuth();
+		//버전체크
+		if(validVersionCheck()){			
+			tOcrFormInfo = ocrFormInfo;
+			tIdcardType = idcardType;
+			callIosCameraAuth();
+		}else{
+			uploadOcrImgClickReal(ocrFormInfo, idcardType);
+		}
+	}else if (getOsInfo() === 'android_app'){
+		//버전체크
+		if(validVersionCheck()){			
+			tOcrFormInfo = ocrFormInfo;
+			tIdcardType = idcardType;
+			callNativeOcrCamera(ocrFormInfo);
+		}else{
+			uploadOcrImgClickReal(ocrFormInfo, idcardType);
+		}
 	}else{
 		uploadOcrImgClickReal(ocrFormInfo, idcardType);
 	}
 }
 
+//네이티브 버전 체크
+function validVersionCheck(){
+	
+	//현재 모바일 버전
+	var cVersion = sessionStorage.getItem("appVersion");
+	var cArray = cVersion.split('.');
 
+	var cFirst = cArray[0];
+	var cSecond = cArray[1];
+	var cThird = cArray[2];
+
+	//Native Ocr 사용 가능 버전
+	if(getOsInfo() === 'android_app'){
+		var mVersion = '1.0.93';		
+		var mArray = mVersion.split('.');
+
+		var mFirst = mArray[0];
+		var mSecond = mArray[1];
+		var mThird = mArray[2];
+
+		if(cFirst > mFirst){
+			return true;
+		}else if(cFirst == mFirst){
+			if(cSecond > mSecond){
+				return true;
+			}else if(cSecond == mSecond){
+				if(cThird >= mThird){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}else if( getOsInfo() === 'ios_app'){
+		var mVersion = '1.0.4';
+		var mArray = mVersion.split('.');
+
+		var mFirst = mArray[0];
+		var mSecond = mArray[1];
+		var mThird = mArray[2];
+
+		if(cFirst > mFirst){
+			return true;
+		}else if(cFirst == mFirst){
+			if(cSecond > mSecond){
+				return true;
+			}else if(cSecond == mSecond){
+				if(cThird >= mThird){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+}
+
+//IOS 촬영동의 CallBack 함수
 function callbackIosCameraAuth(dValue) {
+
+	//촬영동의 승락한 경우
 	if(dValue == "Y"){
-		uploadOcrImgClickReal(tOcrFormInfo, tIdcardType);
+		
+		initAttachFileByNative();
+		
+		//NativeOcr 촬영 호출
+		if(tOcrFormInfo === 'IDCARD'){
+			//주민등록증, 운전면허증
+			callAppService({
+				action_code : 'A0307',
+				callBack : 'callbackNativeOcrIdcard' 
+			});	
+
+		}else if(tOcrFormInfo === 'CREDIT' || tOcrFormInfo === 'USIM'){
+			//신용카드, 유심
+			callAppService({
+				action_code : 'A0308',
+				callBack : 'callbackNativeOcrCreditUsim',
+				action_param : {type : tOcrFormInfo} 
+			});	
+		}
+	}
+}
+
+//네이티브 Ocr 촬영 호출
+function callNativeOcrCamera(ocrFormInfo){
+	
+	initAttachFileByNative();
+	
+	//NativeOcr 촬영 호출
+	if(ocrFormInfo === 'IDCARD'){
+		//주민등록증, 운전면허증
+		callAppService({
+			action_code : 'A0307',
+			callBack : 'callbackNativeOcrIdcard'
+		});	
+
+	}else if(ocrFormInfo === 'CREDIT' || ocrFormInfo === 'USIM'){
+		//신용카드, 유심
+		callAppService({
+			action_code : 'A0308',
+			callBack : 'callbackNativeOcrCreditUsim',
+			action_param : {type : tOcrFormInfo}
+		});	
+	}
+}
+
+//네이티브 Ocr 콜백 함수 (주민등록증, 운전면허증)
+function callbackNativeOcrIdcard(data) {
+	
+	modalLayer.show({
+		id:'OCRIdcardLayer',
+		type:'fullpopup',
+		closeUse:true ,
+		titleUse : true ,
+		title : '&nbsp'
+	});	
+
+	var parseData = JSON.parse(data);
+
+	var encImg = parseData.maskingImage; //data.cropImage; //base64이미지
+	
+	//인식후 이미지 출력
+	var dec_src = "";
+	
+	if( encImg.indexOf("base64") != -1){
+		dec_src = encImg;
+	}else{
+		dec_src = "data:image/;base64," + encImg;
+	}
+	
+	if (tIdcardType == 'jumin') {
+		if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == "신분증"){ 
+			$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("주민등록증");
+			$('#divOcrDrvLic').css('display','none');
+		}
+	} else if (tIdcardType == 'driver') {
+		if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == "신분증"){ 
+			$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("운전면허증");
+			$('#divOcrDrvLic').css('display','');
+		}
+	}		
+
+	$('#ocrAfImageIdCard').attr('src', dec_src);
+	$('#ocrAfImageIdCard').css('display','');						
+	
+	//주민번호
+	$("#ocrIdNum6").val((parseData.idNum).substr(0,6) );
+	$("#ocrIdNum7").val((parseData.idNum).substr(6,7) );
+
+	//이름	
+	$("#ocrIdName").val(parseData.idName);
+	
+	//날짜(발급일자) 
+	$("#ocrCertDate").val(parseData.certDate);
+
+	//면허번호
+	if (tIdcardType == 'driver') {
+		
+		var ocrDrvLicRgn = (parseData.drvLicNum).substr(0, ((parseData.drvLicNum).length - 10) ); //면허지역 인식값 (문자일수도 숫자일수도)
+		var ocrDrvLicNo  = (parseData.drvLicNum).substr(-10); //면허지역 뒤 10자리 숫자 인식값
+
+		if(!!Number(ocrDrvLicRgn)){
+			$("#btn_selectArea").text(fnRegionName(ocrDrvLicRgn));
+			$("#ocrDrvLicRgn").val(ocrDrvLicRgn);
+		}else{
+			$("#btn_selectArea").text(ocrDrvLicRgn);
+			$("#ocrDrvLicRgn").val(fnRegionCode(ocrDrvLicRgn));
+		}
+
+		$("#ocrDrvLicNo").val(ocrDrvLicNo);
+
+		$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("운전면허증");
+		$('#divOcrDrvLic').css('display','');
+	}	
+	
+	if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == "신분증"){ 
+		$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("주민등록증");
+		$('#divOcrDrvLic').css('display','none');
+	}
+
+}
+
+//네이티브 Ocr 콜백 함수 (신용카드, USIM)
+function callbackNativeOcrCreditUsim(data) {
+
+	var parseData = JSON.parse(data);
+	
+	var encImg = parseData.maskingImage; //data.cropImage; //base64이미지
+	
+	//인식후 이미지 출력
+	var dec_src = "";
+	
+	if( encImg.indexOf("base64") != -1){
+		dec_src = encImg;
+	}else{
+		dec_src = "data:image/;base64," + encImg;
+	}
+
+	if(tOcrFormInfo === 'CREDIT'){
+		$('#ocrAfImageCard').attr('src', dec_src);
+		$('#ocrAfImageCard').css('display','');	
+		
+		modalLayer.show({
+			id:'OCRCcardLayer',
+			type:'fullpopup',
+			closeUse: true,
+			titleUse : true ,
+			title : '&nbsp'                             
+		});
+		
+		//유효기간
+		var cardExpDateText = parseData.cardExpDate.replace( /[^0-9]/g, '' );
+		if(cardExpDateText.length > 4){
+			cardExpDateText = cardExpDateText.substring(0, 4);
+		}
+		$("#ocrCardExpDate").val(cardExpDateText);	
+		$('#ocrCardExpDate').trigger('keyup');							
+		
+		//카드번호			
+		var cardNum = parseData.cardNum.replaceAll("-","") ;
+
+		$("#ocrCardNumber1").val(cardNum.substr(0,4)); 
+		$("#ocrCardNumber2").val(cardNum.substr(4,4)); 
+		$("#ocrCardNumber3").val(cardNum.substr(8,4)); 
+		$("#ocrCardNumber4").val(cardNum.substr(12,4));
+
+	}else if(tOcrFormInfo === 'USIM'){
+
+		$('#ocrAfImageUsim').attr('src', dec_src);
+		$('#ocrAfImageUsim').css('display','');	
+
+		modalLayer.show({
+			id:'OCRUsimLayer',
+			type:'fullpopup',
+			closeUse: true ,
+			titleUse : true ,
+			title : '&nbsp'                                  
+		});			
+			
+		var modelNo  = ""; //모델번호 
+		var serialNo = ""; //일련번호
+		
+		//soId에 따라 처리.. //kje.
+		if($('#soId').val() == "01"){ //LGU
+			modelNo = (parseData.barcode).substr(0, 5); //앞에서 5자리
+			serialNo = (parseData.barcode).substr(-8); //뒤에서 8자리	
+		}else if($('#soId').val() == "02"){ //KT				
+			serialNo = (parseData.barcode).substr(0, ((parseData.barcode).length - 1) ); //끝 한자리(F) 빼고 19자리			
+		}else if($('#soId').val() == "03"){ //SKT								
+			serialNo = (parseData.barcode).substr(-14); //뒤에서 14자리
+		}
+									
+		$("#ocrUsimModel").val(modelNo.toUpperCase()); 
+		$("#ocrUsimSerial").val(serialNo.toUpperCase());
 	}
 }
 
@@ -58,20 +330,35 @@ function uploadOcrImgClickReal(ocrFormInfo, idcardType) {
 //재촬영 버튼 클릭
 function retryOcrImgClick() {	
 	var ocrFormInfo = $("#ocrFormInfo").val();
-	
-	// if     (ocrFormInfo == 'IDCARD'){ modalLayer.hide('OCRIdcardLayer'); }
-	// else if(ocrFormInfo == 'CREDIT'){ modalLayer.hide('OCRCcardLayer');  }
-	// else if(ocrFormInfo == 'USIM')  { modalLayer.hide('OCRUsimLayer');   }		
-
 	var idcardType = "";
+
 	if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == "주민등록증"){		
 		idcardType = 'jumin';
 	}else if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == "운전면허증"){	
-		idcardType = 'driver';
+		idcardType = 'driver';		
 	}
-	initAttachFile(ocrFormInfo, idcardType);				
-	
-	$('#ocrFile1').click();
+
+	//OS에 따라 촬영 카메라를 호출한다.
+	if(getOsInfo() === 'ios_app'){
+		//버전체크
+		if(validVersionCheck()){
+			callIosCameraAuth();
+		}else{
+			initAttachFile(ocrFormInfo, idcardType);
+			$('#ocrFile1').click();
+		}
+	}else if (getOsInfo() === 'android_app'){
+		//버전체크
+		if(validVersionCheck()){
+			callNativeOcrCamera(tOcrFormInfo);
+		}else{
+			initAttachFile(ocrFormInfo, idcardType);
+			$('#ocrFile1').click();
+		}
+	}else{
+		initAttachFile(ocrFormInfo, idcardType);
+		$('#ocrFile1').click();
+	}
 }
 
 //완료 버튼 클릭
@@ -84,7 +371,12 @@ function popOCRConfirmClick() {
 	// else if(ocrFormInfo == 'CREDIT'){ modalLayer.hide('OCRCcardLayer');  }
 	// else if(ocrFormInfo == 'USIM')  { modalLayer.hide('OCRUsimLayer');   }	
 	
-	initAttachFile(ocrFormInfo);
+	if(getOsInfo().indexOf("app") != -1) {
+		initAttachFileByNative();		
+	}else{
+		initAttachFile(ocrFormInfo);
+	}
+	
 	$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("");
 
 	//지역번호 값 초기화
@@ -171,6 +463,79 @@ function initAttachFile(ocrFormInfo, idcardType) {
 		$("#ocrCardExpDate").val("");		
 		
 	}else if(ocrFormInfo == 'USIM'){
+	//OCRUsimLayer>layer_body 	
+		//soId에 따라 처리.. //kje.
+		if($('#soId').val() == "01"){ //LGU
+			$('#OCRUsimLayer').find("#ocrAfFormInfo").text("유심 (LG U+)");
+			$("#ocrUsimModelDiv").css("display",'');
+		}else if($('#soId').val() == "02"){ //KT
+			$('#OCRUsimLayer').find("#ocrAfFormInfo").text("유심 (KT)");
+			$("#ocrUsimModelDiv").css("display","none");
+		}else if($('#soId').val() == "03"){ //SKT
+			$('#OCRUsimLayer').find("#ocrAfFormInfo").text("유심 (SKT)");
+			$("#ocrUsimModelDiv").css("display","none");
+		}else{ //undefined
+			$('#OCRUsimLayer').find("#ocrAfFormInfo").text("유심");
+			$("#ocrUsimModelDiv").css("display",''); //default
+		}			
+		
+		$('#ocrAfImageUsim').css('display','none');
+		$('#ocrAfImageUsim').attr('src', '');
+		
+		$("#ocrUsimModel").val("");
+		$("#ocrUsimSerial").val("");
+	}
+}
+
+// 첨부파일 관련 초기화
+function initAttachFileByNative() {	
+	
+	$('#ocrFormInfo').val(tOcrFormInfo);
+	
+	if(tOcrFormInfo == 'IDCARD'){
+	//OCRIdcardLayer>layer_body		
+		if(tIdcardType == 'jumin'){
+			$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("주민등록증");
+			$('#divOcrDrvLic').css('display','none');
+		}else if(tIdcardType == 'driver'){
+			$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("운전면허증");
+			$('#divOcrDrvLic').css('display','');
+		}else{ //undefined
+			if($('#OCRIdcardLayer').find("#ocrAfFormInfo").text() == ""){
+				$('#OCRIdcardLayer').find("#ocrAfFormInfo").text("신분증"); //kje.
+				$('#divOcrDrvLic').css('display','none'); //default
+			}
+		}
+		
+		$('#ocrAfImageIdCard').css('display','none');
+		$('#ocrAfImageIdCard').attr('src', '');
+
+		
+		$("#ocrIdName").val("");
+		$("#ocrIdNum6").val("");
+		$("#ocrIdNum7").val("");	
+		
+		$("#ocrCertDate").val("");
+		
+		$('#ocrDrvLicRgn option:selected').removeAttr('selected');		
+		$("#ocrDrvLicNo").val("");
+		
+	}else if(tOcrFormInfo == 'CREDIT'){
+		//OCRCcardLayer>layer_body 
+		$('#OCRCcardLayer').find("#ocrAfFormInfo").text("신용카드");
+		
+		$('#ocrAfImageCard').css('display','none');
+		$('#ocrAfImageCard').attr('src', '');
+		
+		//$("#ocrCardNumber").val("");
+		$("#ocrCardNumber1").val("");
+		$("#ocrCardNumber2").val("");
+		$("#ocrCardNumber3").val("");
+		$("#ocrCardNumber4").val("");
+
+		$("#ocrCardExpDate").val("");		
+		
+	}else if(tOcrFormInfo == 'USIM'){
 	//OCRUsimLayer>layer_body 	
 		//soId에 따라 처리.. //kje.
 		if($('#soId').val() == "01"){ //LGU
@@ -304,7 +669,6 @@ function ocrFileRecog(ocrFormInfo) {
 		success: function(data) {				
 			var resultCode = data.resultCode;
 			var resultMessage = data.message;					
-			console.log("resultCode="+resultCode);
 			
 			if(resultCode == '200') { 
 				var encImg = data.maskingImage; //data.cropImage; //base64이미지

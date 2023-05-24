@@ -29,16 +29,14 @@ APPL_TP = "C" && APPL_STAT = "03" :: 법정대리인 변경 신청중
 
 function initPage(){
 
-//        테스트
 //        $("#legalRprsnIssueDt").val("20131115");
-//        $("#legalRprsnNm").val("문무나");
-//        $("#legalRprsnRegNoRf").val("951223");
-//        $("#legalRprsnRegNoRb").val("2067511");
+//        $("#legalRprsnNm").val("황지우");
+//        $("#legalRprsnRegNoRf").val("831203");
+//        $("#legalRprsnRegNoRb").val("2017112");
 //        $("#legalRprsnTelNo").val("01082394385");
-//        $("#hLegalRprsnRegNo").val("9512232067511");
-//        $("#hiddenLegalRprsnRegNo").val("9512232067511");
+//        $("#hLegalRprsnRegNo").val("8312032017112");
+//        $("#hiddenLegalRprsnRegNo").val("8312032017112");
 //        $("#legalRprsnIssueDt").val("20220707");
-
 
 
         legalRprsnInit();
@@ -48,22 +46,11 @@ function initPage(){
         //신용카드 본인인증 버튼처리
         if(gAuthMthdForKCBCard == "Y"){
             gKCBAble = true;
-            /* KB국민/신용카드 radio퍼블버전
-            $('#btnCardAuth').css('display', '');
-            */
-        }
-        else{
-            /* KB국민/신용카드 radio퍼블버전
-            $('#btnCardAuth').css('display', 'none');
-            */
         }
 
         //KB국민인증서 버튼처리
         if(gAuthMthdForKBSign == "Y"){
             gKbsignAble = true;
-            /* KB국민/신용카드 radio퍼블버전
-            $('#btnKbsignAuth').css('display', '');
-            */
         }
 
         // 관계 레이어
@@ -79,13 +66,6 @@ function initPage(){
 
         $("#btnNextPage").click(function(){
             if($("#btnNextPage").prop('disabled')){return false;}
-
-
-            // 인증 패스
-           // moveNextPage(); return;
-
-            /* KB국민/신용카드 radio퍼블버전
-            if($('#btnCardAuthCmp').css('display') == 'none' && $('#btnKbsignAuthCmp').css('display') == 'none'){ */
             if($("#authMthd").val() == ''){
                 callPop("본인 인증을 진행해 주세요.");
                 return;
@@ -128,7 +108,7 @@ function initPage(){
             }
         });
 
-        // 2023.03.23 추가
+        // 2023.03.23 보안키패드 추가
         npPfsStartup(document.frm, false, false, false, true, "npkencrypt", "on");
 
         // 가상키패트 마우스다운이벤트
@@ -142,7 +122,6 @@ function initPage(){
                 maxLengthCheck(element); cuNumPlus();
             }
         });
-
 
 
         divDriveOnOff();
@@ -216,7 +195,6 @@ function phoneCertAction() {
     $("#certMsg").text("");
 
     gAuthMthd = "100";
-    console.log('휴대폰 본인인증 시작');
     getStartWithLegKBPin(); //->checkLegalRprsInfo(->진위)->인증
 }
 
@@ -334,7 +312,6 @@ function openAuthPopup() {
             type:'fullpopup',
             closeUse:false,
         });
-//        initLegalRepresentativePopup(); // TOBE 미사용
 
         // 신용카드 인증 팝업 취소버튼 클릭
         $("#btnLRPAuthCancel").click(function(){
@@ -356,17 +333,7 @@ function openAuthPopup() {
 //(휴대폰)인증 팝업 오픈
 function openCertPopup() {
 	$("#kcbValue").val(" "); //KCB 인증 확인 값
-	/*if(gAuthMthd=="200"){
-		initKCBCertPopupNormal();// 초기화
-		$("#includeNm").val($("#custNm").val());
-		modalLayer.show('includeLayerCardCertNormal');
-	}
-	else if(gAuthMthd=="300"){
-		initKbsignCertPopupNormal();// 초기화
-		modalLayer.show('kbMobileCertLayer');
-	}
-	else*/ if(gAuthMthd=="100"){
-//	 	window.open("/change/device/step2/phonePopup2","auth_popup");
+        if(gAuthMthd=="100"){
 	    window.open("/system/main/phoneCertRequest","auth_popup");
 
 	}
@@ -383,21 +350,10 @@ function getStartWithLegKBPin() {
     		openCertPopup();
     	}
 
-//		var regNo = $("#hLegalRprsnRegNo").val().replace(/-/g,'');
-//		var base = new Object();
-//		var data = new Object();
-//		base.serviceId = "ITB001";
-//		data.cuniqnoDstic = "1";
-//		data.cuniqno = regNo;
-//		base.data = data;
-//		fn_transCall("/appIf/v1/kb/eai/ITB001", fnSign(JSON.stringify(base)), fn_callBack);
-
-
         // 2013.03.23 주민등록증 뒷번호 키패드 적용 후 변경됨.
         let url = '/appIf/v1/kb/ITB001';
         let param = npPfsCtrl.toJson(document.frm);
         param.soId = $("#soId").val();
-        //param.cuniqno = cuniqno;
         param.cuniqnoDstic = "1";
 
 		fn_transCall("/appIf/v1/kb/ITB001", param, fn_callBack);
@@ -410,6 +366,8 @@ function fn_callBack(tranId, data, status, inputData) {
             var tmpData = data;
             data = JSON.parse(fnUnSign(data.enc));
             $("#legalRprsnRegNoRbEnc").val(tmpData.regNo);
+            $("#hLegalRprsnRegNo").val(tmpData.regNo);
+            $("#hiddenLegalRprsnRegNo").val(tmpData.regNo);
             $("#driverNoEnc").val(tmpData.driverNo);
                 if(data !== null && data.data !== null){
                     if(data.resultCode !== '00000'){
@@ -433,13 +391,10 @@ function fn_callBack(tranId, data, status, inputData) {
                         $('#cnifNo').val(cnifNo);
                         $('#cnifNoEnc').val(cnifNoEnc);
 
-
-
                         checkLegalRprsInfo();
 
                     }
                     catch(e){
-                        console.log(e);
                         callPop("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.");
                         $(".btn_cert_type").prop("checked",false);
                         return;
@@ -502,14 +457,8 @@ function callbackFromNormalOnBody_rollback(msg) {
 
 //인증결과 확인 - 휴대폰인증 (법정대리인 커스텀 처리)
 function insertAuthInfo2(){
-	console.log("STEP휴대폰 본인확인 결과  -KCB 결과");
 	var result = $('#result').val();
 	var errorMsg = $("#errorMsg").val();
-
-	//본인확인 비교값 세팅
-	/*var CM559CustInfo = JSON.parse($("#CM559CustInfo").val());
-	$("#custNm").val(fnUnSign(CM559CustInfo.custNm));//$("#custNm").val(CM559CustInfo.custNm);
-	$("#regNoRf").val(CM559CustInfo.custrnmBday.substring(0,6));*/
 
 	if (result == 'B000') {
 		var aRslt = $('#kcbName').val();
@@ -538,8 +487,6 @@ function insertAuthInfo2(){
 			callPop(errorMsg);
 		}
 		callbackFromNormalOnBody_rollback("");
-		/*$("#kcbValue").val("");
-		$("#btnNextPage").addClass('disabled');*/
 	}
 }
 
@@ -564,32 +511,23 @@ function setDriverNo(obj) {
 function chkNmLen() {
 	var len = $('#legalRprsnNm').val().length;
 
-//	$('#errMsg_legalRprsnNm').css('opacity','0');
-//	$('#errMsg_legalRprsnNm2').css('opacity','0');
-
 	if(len == 0 ) {
 	    $('#errMsg_legalRprsnNm').text("이름을 정확히 입력해주세요.");
-//		$('#errMsg_legalRprsnNm').show();
 		$('#errMsg_legalRprsnNm').css('opacity','100');
 		$(".btn_cert_type").prop("checked",false);
 		return false;
 	} else if(len < 2) {
 	    $('#errMsg_legalRprsnNm2').text("2글자 이상 입력해주세요.");
-//	    $('#errMsg_legalRprsnNm2').show();
 		$('#errMsg_legalRprsnNm2').css('opacity','100');
 		$(".btn_cert_type").prop("checked",false);
 		return false;
 	} else {
-//	    $('#errMsg_legalRprsnNm').hide();
-//	    $('#errMsg_legalRprsnNm2').hide();
 		$('#errMsg_legalRprsnNm').css('opacity','0');
 		$('#errMsg_legalRprsnNm2').css('opacity','0');
 		$(".btn_cert_type").prop("checked",false);
 		return true;
 	}
 }
-
-
 
 
 function divDriveOnOff(){
@@ -599,8 +537,6 @@ function divDriveOnOff(){
 
 		//주민등록증 발급일자 오류 초기화
 		$("#errMsg_legalRprsnIssueDt").css('opacity','0');
-//		$('#errMsg_legalRprsnIssueDt').hide();
-//		$("#legalRprsnIssueDt").removeClass("error");
 		$('#legalRprsnIssueDt').val('');
 
 		$("#cameraId").show();
@@ -610,15 +546,10 @@ function divDriveOnOff(){
 		$('#divId').css('display','none');
 
 		$("#errMsg_legalRprsnDriverNo").css('opacity','0');
-//		$('#errMsg_legalRprsnDriverNo').hide();
-//		$('#legalRprsnRel').text('');
-//		$('#legalRprsnRel').attr("data","");
 		$('#legalRprsnDriverNo').val('');
 
 		//운전면허증 발급일자 오류 초기화
 		$("#errMsg_legalRprsnIssueDt2").css('opacity','0');
-//		$('#errMsg_legalRprsnIssueDt2').hide();
-//		$("#legalRprsnIssueDt2").removeClass("error");
 		$('#legalRprsnIssueDt2').val('');
 		$("#cameraDr").show();
         $("#cameraId").hide();
@@ -639,8 +570,6 @@ function juminLegFormat() {
 		var str = $('#hLegalRprsnRegNo').val().replace(/-/g,'');
 		var chkyn = checkJumin(str);
 
-//        $('#errMsg_legalRprsnRegNo').hide();
-//        $('#errMsg_legalRprsnRegNo_fa').hide();
 		$('#errMsg_legalRprsnRegNo').css('opacity','0');
 		$('#errMsg_legalRprsnRegNo_fa').css('opacity','0');
 
@@ -682,7 +611,6 @@ function checkMsgTelNo() {
 		$('#errMsg_legalRprsnTelNo').text("휴대폰번호를 정확히 입력해주세요.");
 	} else {
 		$('#errMsg_legalRprsnTelNo').css('opacity','0');
-//		$('#errMsg_legalRprsnTelNo').hide();
 	}
 }
 
@@ -701,7 +629,6 @@ function chkDriver(param) {
 	var len = str.length;
 	var st = $("input:radio[name=rdoSelfIdf]:checked").val();//주민등록증,운전면허증 선택
 	$("#errMsg_legalRprsnDriverNo").css('opacity','0');
-//	$("#errMsg_legalRprsnDriverNo").hide();
 	if (st == '2') {
 		if(len == 0) {
 			$("#errMsg_legalRprsnDriverNo").css('opacity','100');
@@ -714,12 +641,10 @@ function chkDriver(param) {
 
 			if(len < 10 && param == '1') {
 				$("#errMsg_legalRprsnDriverNo").css('opacity','100');
-//				$("#errMsg_legalRprsnDriverNo").show();
 				$("#errMsg_legalRprsnDriverNo").text("운전면허증 정보를 정확히 입력해주세요.");
 				return false;
 			} else {
 				$("#errMsg_legalRprsnDriverNo").css('opacity','0');
-//				$("#errMsg_legalRprsnDriverNo").hide();
 				return true;
 			}
 		}
@@ -727,7 +652,6 @@ function chkDriver(param) {
 		return true;
 	}
 }
-
 
 function chkIssDt(param) {
 	var issDt = '';
@@ -759,11 +683,9 @@ function chkIssDt(param) {
 	} else {
 		if(radioVal == '1'){
 			$("#errMsg_legalRprsnIssueDt").css('opacity','0');
-//			$("#errMsg_legalRprsnIssueDt").hide();
 			$("#errMsg_legalRprsnIssueDt").focus();
 		}else if(radioVal == '2'){
 			$("#errMsg_legalRprsnIssueDt2").css('opacity','0');
-//			$("#errMsg_legalRprsnIssueDt2").hide();
 			$("#errMsg_legalRprsnIssueDt2").focus();
 		}
 		return true;
@@ -815,7 +737,6 @@ function isIdcardValidDate(param) {
     }
 }
 
-
 //OCR촬영 인식정보로 셋팅하기
 function setFromOCRRecogInfo(ocrFormInfo) { //각 업무화면에서 구현할것.
 	f_setFromOCRRecogInfo(ocrFormInfo);
@@ -855,7 +776,6 @@ function f_setFromOCRRecogInfo(ocrFormInfo) {
 			    }
 			}
 
-//			$('#legalRprsnDriverRgn').text( $("#ocrDrvLicRgn").val() );
             $("#legalRprsnDriverNo").val($("#ocrDrvLicNo").val().replace( /[^0-9]/g, '' ));
 
 			//운전면허증 발급일자
@@ -923,7 +843,6 @@ function setArea(){
 //  팝업
 function callPop(msg, okCallbackFn, cancelBtn, cancelCallbackFn) {
 
-    console.log("callPop");
     let option = {
                   msg           : msg
                  ,title         : ""

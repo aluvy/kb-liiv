@@ -1,0 +1,3213 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow">
+
+<!-- Naver Search Advisor site-verification -->
+<meta name="naver-site-verification" content="8cf73bea15d42e9b7ee18e44df171b442e78208e" />
+<!-- SNS -->
+<meta property="og:title" content="KB Liiv M(리브모바일)">
+<meta property="og:description" content="금융과 통신의 첫만남">
+<meta property="og:image" content="/img/liivm_og.png">
+<meta property="og:url" content="https://m.liivm.com">    
+<meta name="twitter:title" content="KB Liiv M(리브모바일)">
+<meta name="twitter:description" content="금융과 통신의 첫만남">
+<meta name="twitter:image" content="/img/liivm_og.png">
+<meta name="twitter:card" content="금융과 통신의 첫만남">    
+<!-- 	IOS -->
+<meta property="al:ios:url" content="https://apps.apple.com/kr/app/id1659980349" />
+<meta property="al:ios:app_store_id" content="1659980349" />
+<meta property="al:ios:app_name" content="KB Liiv M" />
+<!-- 	안드로이드 -->
+<meta property="al:android:url" content="https://play.google.com/store/apps/details?id=com.kbstar.liivmobile" />
+<meta property="al:android:app_name" content="KB Liiv M" />
+<meta property="al:android:package" content="com.kbstar.liivmobile" />
+<meta property="al:web:url" content="https://m.liivm.com/support/docs/apps" />
+	
+<meta http-equiv="Cache-Control" content="No-Cache" >
+<meta http-equiv="Pragma" content="No-Cache" >
+<meta http-equiv="Expires" content="-1" >
+<meta name="_csrf" content="568c33f8-6905-46c5-846c-eaf7e40596af"/>
+<meta name="_csrf_header" content="X-XSRF-TOKEN"/>
+<!-- SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
+<meta name="description" content="일반통신사의 서비스를 동일하게 누리면서, 요금은 합리적으로 줄일 수 있는 KB국민은행 Liiv M(리브모바일)을 이용해보세요!">
+<title>KB Liiv M(KB리브모바일) - KB국민은행 알뜰폰 서비스</title>
+<!-- //SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
+<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/lib/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/lib/jQuery.Form.min.js"></script>
+<script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="/js/lib/nppfs-1.13.0.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/front.js"></script>
+<script type="text/javascript" src="/js/common/util.js"></script>
+<script type="text/javascript" src="/js/common/formatter.js"></script>
+<script type="text/javascript" src="/js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
+<script type="text/javascript" src="/js/lib/lottie-player.js"></script>
+<script type="text/javascript">
+	let checkLoginStep = '1';
+	let tg = "dev";
+	let bTran = true;
+	// 로그인 단계
+	$(function(){
+
+	
+	
+
+		if(isEmpty(sessionStorage.getItem("UUID"))){
+			getDeviceInfo();
+		}
+
+        //스타뱅킹 테마서비스에서 유입시 확장형플랫폼 js 선언
+        if(!isEmpty(sessionStorage.getItem("inPath")) && location.href.indexOf("/system/main/ssoBridge") === -1){
+            $('head').append('<script type="text/javascript" src="https://oimg1.kbstar.com/js/common/extendPlatform/extend_platform.js">');
+        }
+	});
+</script>
+<script type="text/javascript" src="/js/common/certification.js"></script>
+
+
+
+	<script type="text/javascript" src="https://static-dev.kbdmp.com/ma/kb_dev_v0.01.js"></script>
+	<script type="text/javascript">
+		try{
+			ma.config('client_id','WA-0010');
+			ma.config('isCookie',true);
+			
+			var page_location = window.location.pathname;   //현재 location 정보
+			var page_referrer = document.referrer;          //이전 page location 정보
+			
+			console.log ("현재" + page_location);
+			console.log ("이전" + page_referrer);
+
+			if ( page_location.indexOf('/join/state/usimRegPopup') != -1
+					|| page_location.indexOf('/join/state/usimRegNpPopup') != -1)
+			{
+				ma.config('page_location' ,page_location);
+				ma.config('page_referrer' ,page_referrer);
+			}
+			
+			ma.init();
+		}
+		catch(e){}
+	</script>
+
+
+
+
+
+
+	
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://m.liivm.com/",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://m.liivm.com/support/docs/faq?myInput={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+
+<script type="text/javascript">
+	//SEO - title, meta tag 설정 
+	
+	
+	
+	
+	
+	
+	
+	//SEO 설정 끝
+</script>
+<script type="text/javascript">	
+ 	window.addEventListener("load", function(){
+	 	fn_gnbOnOff();
+	});
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN4PT7F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<form name="frmMenuHandle">
+		<input type="hidden" name="_csrf" value="568c33f8-6905-46c5-846c-eaf7e40596af" />
+	</form>
+	<div class="loading_wrap"></div>
+    <div class="wrap">
+        <div class="header">
+			<!-- header -->
+        	
+	        <div class="inner_sub">
+			    <div class="back_area" style="display:none">
+			        <button type="button" id="btnHeaderPrev" class="btn_back" onclick="goPrevPage();"><span class="hidden">이전</span></button>
+			    </div>
+			    <div class="btn_area">
+			        <button type="button" id="btnHeaderHome" class="btn_home" style="display:none" onclick="goToMain();"><span class="hidden">홈으로</span></button>
+			        <button type="button" id="btnHeaderSearch" class="btn_search" style="display:none" onclick="movePage('/search/result')"><span class="hidden">통합검색</span></button>
+			        
+					<a href="#open_aside" id="btnHeaderMenu" class="btn_open_aside" style="display:none"><span class="hidden">메뉴</span></a> 
+			        <button type="button" id="btnHeaderClose" class="btn_close icon_24" style="display:none" onclick="goPrevPage();"><span class="hidden">닫기</span></button>
+			    </div>
+			</div>
+       		<!-- //header -->
+            <!-- aside area -->
+        	
+
+
+
+
+
+<!-- 로그인 전 -->
+
+
+
+
+
+
+
+
+	
+	
+
+<script type="text/javascript">
+$(function(){
+	getMenuList();
+
+	// 중복로그인
+	if("1" !== "1"){
+    	fn_transCall( '/system/login/duplicateLoginCheckAction', {}, fn_asideCallback);
+    }
+});
+
+/**
+ * 전체메뉴
+ */
+function getMenuList(){
+	
+	let url		=  '/system/main/getSideMenu';
+    let data	=  {
+	    	checkLoginStep : "1"
+    };
+    
+	$.ajax({
+		type : "post",
+		url : url,
+		data : data,
+		cache: false,
+		dataType:  'json',		
+		async: true,
+		beforeSend : function(xhr, set) {
+			let token = $("meta[name='_csrf']").attr("content");
+			let header = $("meta[name='_csrf_header']").attr("content");
+			xhr.setRequestHeader(header, token);
+		},
+		success : function(data, status, xhr) {
+
+			console.log("getMenuList ACCEPT !!!!!!!!!!!!!!!!!!! = " + new Date());
+
+			// TOP MENU
+			let topMenu = JSON.parse(data.topMenuList);
+			topMenu.forEach((item) => {
+				let uri = item.URI;
+
+				if(getOsInfo().indexOf('app') === -1 && uri.indexOf('A0203') !== -1){
+					return false;
+				}else if(getOsInfo().indexOf('app') !== -1 && uri.indexOf('cs-guide') !== -1){
+					return false;
+				}
+				if(item.URI.indexOf("/") !== -1){
+					uri = "fnMoveUrl('"+item.URI+"', '"+item.SSN_YN+"','"+item.OPEN_YN+"','"+item.ADLT_YN+"','"+item.SHAR_ACC_YN+"','"+item.EXCPT_CONT+"');";
+				}
+				$('.shortcut_list').append('<li><a href="#none" class="link '+item.IC_CLS+'" onclick="'+uri+'">'+item.LV1_NM+'</a></li>');
+			});
+
+			let depth1 = '';
+			let menuList = $('.menu_list');
+			let idx = 1;
+
+			let middleMenu = JSON.parse(data.middleMenuList);
+
+			for(let item of middleMenu){
+				// DEPTH1 MENU
+				if(item.DEPTH === 2 && item.LV1_ID !== depth1){
+					if(depth1 === ''){
+						$('#navList').append('<li><a href="#none" data-link="menu'+idx+'" class="item on"  role="button">'+item.LV1_NM +'</a></li>');
+					}else{
+						idx = idx + 1;
+						$('#navList').append('<li><a href="#none" data-link="menu'+idx+'" class="item"  role="button">'+item.LV1_NM + '</a></li>');
+					}
+					menuList.append('<li data-link="menu'+idx+'"><h2 class="title '+item.IC_CLS+'">'+item.LV1_NM+'</h2><ul id="'+item.LV1_ID+'" class="sub_menu_list"></ul></li>');
+					depth1 = item.LV1_ID;
+				}
+
+				// DEPTH2 MENU
+				if(item.DEPTH === 1){
+					let uri = item.URI;
+					
+					// 앱 다운로드 메뉴는 웹에서만 표시
+					if(getOsInfo().indexOf("app") !== -1 && uri === "/support/docs/apps"){
+						continue;
+					}
+					if(item.URI.indexOf("/") === 0){
+						uri = "fnMoveUrl('"+item.URI+"', '"+item.SSN_YN+"','"+item.OPEN_YN+"','"+item.ADLT_YN+"','"+item.SHAR_ACC_YN+"','"+item.EXCPT_CONT+"');";
+					}
+
+					//배지추가
+					let badge = '';
+
+					if(item.TAG.indexOf("update") > -1){
+						//리브모바일 요금제
+						badge = '<span class="badge update">UPDATE</span>';
+
+					}else if(item.TAG.indexOf("new") > -1){
+						//요금제 진단하기
+						badge = '<span class="badge new">NEW</span>';
+
+					}else if(item.TAG.indexOf("event") > -1){
+						//추천리워드
+						badge = '<span class="badge event">EVENT</span>';				
+					}
+					
+
+					$('#'+depth1).append('<li><a href="#none" target="_top" onclick="'+uri+'">'+item.LV1_NM  + badge + '</a></li>');
+
+					
+				}
+			}
+			
+			// 메뉴 이벤트 바인딩
+			const menu = new AsideMenu();
+			menu.init();
+			
+			// 휴대폰구매링크 구현여부 확인
+		},
+		error: function(xhr, status, error){
+			console.log(xhr.status);
+		},
+		complete: function(xhr, status){
+			loading('stop');
+		}
+	});
+}
+
+//대표번호 변경
+function changeUserSvcInfo_onside(dataObject) {
+    
+	let url		=  '/system/main/updateUserMainSvc';
+	let data = $(dataObject).attr("data-map");
+	
+	data = data.replace(/'/gi,"\"");
+	data = jQuery.parseJSON(data);
+	$("#phoneNumber").val(data.svcTelNo);
+	
+	fn_transCall(url, data, fn_asideCallback);
+
+};
+
+// 비밀번호인증 초기화
+function pwdCertLayer_init(){
+
+	console.log('pwdCertLayer_init');
+	$("#btnCheckOneMorePass").attr("disabled", true);
+	$('.ly_cnt').last().css("max-height", "");
+	$('.ly_cnt').last().css({'height': '460px'});
+	
+	if(npPfsCtrl.isStartup === false){ 
+		npPfsStartup(document.frmPwd, false, false, false, true, "npkencrypt", "on");
+	}
+ 	setTimeout(function(){
+	 	npPfsCtrl.RescanField();
+		npVCtrl.showKeypad("oneMorePass", "frmPwd");
+		$('.nppfs-keypad').css('z-index', '9999');
+	}, 300);
+
+	// 비밀번호 인증 팝업 확인버튼 클릭
+	$('#btnCheckOneMorePass').click(function(){
+		checkOneMorePass(npPfsCtrl.toJson(document.frmPwd));
+		npVCtrl.destroyKeypad("oneMorePass");
+		modalLayer.hide();
+	});
+	
+	$('#oneMorePass').focus(function(){
+		//npVCtrl.hideKeypad("oneMorePass",  "frmPwd");
+		$('.ly_cnt').last().css({'height': '460px'});
+		npVCtrl.showKeypad("oneMorePass",  "frmPwd");
+	});
+	
+	$('#pwdCertLayer_dev').off("click");
+	$('#pwdCertLayer_dev').click(function(){
+		npVCtrl.destroyKeypad("oneMorePass");
+		modalLayer.hide();
+	});
+};
+
+
+/**
+ * 비밀번호입력
+ */
+function doenter(){
+	npVCtrl.hideKeypad("oneMorePass");
+	$("#btnCheckOneMorePass").attr("disabled", false);
+	$('.ly_cnt').last().css({'height': '173px'});
+}
+
+//비밀번호 인증
+//번호변경, 소액결제, 납부방법변경, 가입사실확인서, 일시정지/해제
+function checkOneMorePass(param) {
+	let url = "/system/login/checkOneMorePass";
+	//let param = npPfsCtrl.toJson(document.frmPwd);
+	//param.oneMorePass = $('#oneMorePass').val();
+
+	fn_transCall(url, param, fn_asideCallback);
+}
+
+
+//계약정보 바탕으로 CM559 정보 생성
+function makeIFCM559(prodNo) {
+	let url = "/join/state/makeCM559";
+	let data = { prodNo : fnSign(prodNo.replace(/-/g, "")) };
+	fn_transCall(url, data, fn_asideCallback);
+};
+
+function setProdNoState(){
+	if (""!=$("#CM559CustInfo").val()) {
+		var CM559CustInfo = JSON.parse($("#CM559CustInfo").val());
+		if(CM559CustInfo.entrSttsCd == "A") {
+			$("#opening_num .num_using").html("이용중");
+		} else if(CM559CustInfo.entrSttsCd == "S") {
+			$("#opening_num .num_using").html("일시정지");
+		} else {
+			$("#opening_num .num_using").hide();
+		}
+	}
+};
+
+
+//메뉴ID기반 이동
+function fnMoveMenuId(menuId){
+    let url		=  '/system/main/getMenuInfo';
+    let data	=  {
+	    	menuId : menuId
+    };
+	fn_transCall(url, data, fn_asideCallback);
+};
+
+//NEW 화면이동로직
+function fnMoveUrl(toUrl, ssnYn, openYn, adltYn, sharAccYn, excptCont ) {
+	$("#urlToGoAfterConfirm").val("");
+	var isLogin = false;
+	var isOpen = checkLoginStep;
+	var isAdult = -1;
+	var vSharStat = "";
+
+	if(ssnYn == "Y"){ //로그인 필요 메뉴
+	    /* (230522) 지라 B0XFD-2597, 법정대리인 정보변경 잠시 중단 */
+	    if(toUrl == "/info/legal/rprs-auth") {
+			popalarm({
+				msg : "법정대리인 정보 변경은 KB Liiv M 고객센터(1522-9999)로 문의하여주시기 바랍니다.",
+				cfrmYn : false
+			});
+			return;
+	    }
+		if(!isLogin) {
+			$("#urlToGoAfterConfirm").val(toUrl);
+			popalarm({
+				msg : "로그인이 필요한 메뉴입니다.<br/>로그인 하시겠습니까?",
+				cfrmYn : true,
+				okCallback : callbackGoLoginOnSide
+			});
+			return;
+		}
+	}else if(ssnYn == "E"){ //로그인 예외 문구 메뉴
+		if(!isLogin) {
+			$("#urlToGoAfterConfirm").val(toUrl);
+			let opt = {
+					msg : decodeURIComponent(excptCont),
+					cfrmYn : true,
+					okCallback : goToAuthOkPage
+			};
+			popalarm(opt);
+			return;
+		}
+	}
+
+	if(openYn == "Y"){ //유심개통 필요 메뉴
+		if(isOpen < 3){
+			popalarm({
+				msg : "개통 후 사용해주세요.",
+				cfrmYn : false,
+				okCallback : callbackGoApplOnSide
+			});
+			return;
+		}
+	}else if(openYn == "E"){ //유심개통 예외 문구 메뉴
+		if(isOpen < 3){
+			$("#urlToGoAfterConfirm").val(toUrl);
+			popalarm({
+				msg : decodeURIComponent(excptCont),
+				cfrmYn : true,
+				okCallback : goToAuthOkPage
+			});
+			return;
+		}
+	}
+
+	if(adltYn == "Y") { //성인 필요 메뉴
+		if(isAdult <= 19 && isAdult >= 4) {  // 미성년자
+ 			modalLayer.show({
+	            titleUse:true,
+	            title: "법정대리인 확인",
+	            id:'div_checkLegalRepresentative_onside',
+	            type:'bottom',
+	            closeUse:false         
+			});
+			if(toUrl.indexOf("?") > -1) $("#urlToGoAfterConfirm").val(toUrl+"&sscid=");
+			else $("#urlToGoAfterConfirm").val(toUrl+"?sscid=");
+			$("#minorCertPathCd").val("40");
+			return;
+		}
+	}else if(adltYn == "A") { //미성년자 불가 메뉴
+		if(isAdult <= 19) {
+			offLimit(); //미성년자 소액결제 불가처리
+			return;
+		}
+	}else if(adltYn == "B") { //성인 불가 메뉴
+		if(isAdult > 19) {  // 성인
+			popalarm({
+				msg : decodeURIComponent(excptCont),
+				cfrmYn : false
+			});
+			return;
+		}
+	}else if(adltYn == "E") { //성인필요 예외 문구 메뉴
+		if(isAdult > 19) {  // 성인
+			popalarm({
+				msg : decodeURIComponent(excptCont),
+				cfrmYn : false
+			});
+			return;
+		}
+	}
+
+	if(sharAccYn == "N"){ //데이터쉐어링 접근 불가능 메뉴
+		if(vSharStat == "SHARE"){
+			popalarm({
+				msg : "데이터 쉐어링/워치 회선은 접근이 불가능합니다.<br/>다른 회선을 대표 회선으로 설정 후 서비스를 이용해주세요.",
+				cfrmYn : false
+			});
+			return;
+		}
+	}else if(adltYn == "E") { //데이터쉐어링 접근 예외 문구 메뉴
+		if(vSharStat == "SHARE"){
+			popalarm({
+				msg : decodeURIComponent(excptCont),
+				cfrmYn : false
+			});
+			return;
+		}
+	}
+
+	//나의등급, 쿠폰박스 우측메뉴 선택시
+	var url = toUrl;
+	var urlArray = url.split("/");
+	var menuNm = urlArray[urlArray.length-1];
+
+	if(menuNm == "myGrd" || menuNm  == "couponBox"){
+		$("#side_url").val(toUrl);
+		mbrshMenuCheck();
+		return;
+	}
+
+	$("#urlToGoAfterConfirm").val(toUrl);
+	goToAuthOkPage();
+};
+
+
+//비밀번호인증 OK 화면 이동
+function goToAuthOkPage() {
+	movePage($("#urlToGoAfterConfirm").val());
+};
+
+//새창열기
+function openNewWindowOnSide(urlType, url) {
+	$("#goToUrlOnSide").val(url);
+	if(urlType == '01') {
+		popalarm({
+			msg : "KB국민은행 모바일웹 페이지로 이동합니다. 이동하시겠습니까?",
+			cfrmYn : true,
+			okCallback : callBackOpenNewWindowOnSide
+		});
+	} else if(urlType == '02') {
+		popalarm({
+			msg : "KB국민은행 고객의견접수 메뉴로 이동합니다. 이동하시겠습니까?",
+			cfrmYn : true,
+			okCallback : callBackOpenNewWindowOnSide
+		});
+	} else if(urlType == '03') {
+		popalarm({
+			msg : "리브똑똑 \"똑똑이방\"\에서 챗봇상담이 가능합니다.\n이동하시겠습니까?",
+			cfrmYn : true,
+			okCallback : callBackOpenNewWindowOnSide
+		});
+	} else if(urlType == '99') {
+		callBackOpenNewWindowOnSide();
+	}
+}
+function callBackOpenNewWindowOnSide() {
+	var ele = document.createElement("a");
+	ele.target = "_blank";
+	ele.href = $("#goToUrlOnSide").val();
+	ele.click();
+}
+
+//페이지 이동
+function callbackGoLoginOnSide() {
+	let url = $("#urlToGoAfterConfirm").val();
+	goLogin(url);
+}
+
+//페이지 이동
+function callbackGoApplOnSide() {
+	loading('start');
+	//$("form[name=frmMenuHandle]").attr("action", "/mypage/applinfo/applinfo/getApplInfos");	
+	$("form[name=frmMenuHandle]").attr("action", "/join/state/register-states");
+	$("form[name=frmMenuHandle]").attr("method", "post");
+	$("form[name=frmMenuHandle]").submit();
+}
+
+//페이지 이동
+function movePage(toUrl) {
+	let safeUrl = urlFilter(toUrl);
+	location.href = decodeURIComponent(safeUrl);
+}
+
+// 법정대리인 본인인증 팝업 오픈 - 우측메뉴 용
+function openLegalRepresentativePopupOnSide(gubun) {
+	if(isEmpty($("#includeLRPOpenMode").val())) {
+		$("#includeLRPOpenMode").val("side");	
+	}
+	modalLayer.hide();
+	if(isEmpty($("#minorCertPathCd").val())) {
+		$("#minorCertPathCd").val("40");
+	}
+
+	var data = $("#userMajorSvc").attr("data-map");
+	data = data.replace(/'/gi,"\"");
+	data = $.parseJSON(data);
+
+	$("#minorCertCustId").val(data.legalRprsnCustId);
+	$("#minorCertCtrtId").val(data.ctrtId);
+	
+	if(gubun == "KCB"){
+		modalLayer.show({
+	        titleUse:true,
+	        title: "법정대리인 본인인증",
+	        id:'includeLayerCardCert',
+	        type:'fullpopup',
+	        closeUse:false,                                     
+	    });
+		// initLegalRepresentativePopup(); -- TOBE미사용	
+	}
+	else if (gubun == "KBSign"){
+		getLegalRprsnKBCustInfo('');	
+	}
+	
+	return;
+}
+
+//법정대리인 본인인증 성공 시 콜백 - 우측메뉴 용
+function callbackFromLRPOnSide() {
+	// 페이지 이동
+	movePage($("#urlToGoAfterConfirm").val());	
+	return;
+}
+
+
+// 법정대리인 본인인증 팝업 오픈 - 명의변경 양도
+function openLegalRepresentativePopupOnGive() {
+	$("#includeLRPOpenMode").val("body");
+	//modalLayer.hide("div_checkLegalRepresentative");
+	modalLayer.show({
+        titleUse:true,
+        title: "법정대리인 본인인증",
+        id:'includeLayerCardCert',
+        type:'fullpopup',
+        closeUse:false,                                     
+    });
+	
+	//initLegalRepresentativePopup();	-- TOBE미사용
+	return;
+}
+
+//법정대리인 본인인증 팝업 오픈 - 아이디 비밀번호찾기
+function openLegalRepresentativePopupNoSession(custId) {
+	$("#includeLRPOpenMode").val("body");
+	modalLayer.show({
+        titleUse:true,
+        title: "법정대리인 본인인증",
+        id:'includeLayerCardCert',
+        type:'fullpopup',
+        closeUse:false,                                     
+    });
+	$("#includeLRPCustId").val(custId);
+	//initLegalRepresentativePopup();	-- TOBE미사용
+	return;
+}
+
+/* 미성년자 소액결제 서비스 제한 */
+function offLimit() {
+	popalarm({
+		msg : "미성년자는 해당 서비스를 이용할 수 없습니다.",
+		cfrmYn : false
+	});
+	return;
+}
+
+/* 고객센터 가능 메뉴  */
+function posLimit() {
+	popalarm({
+		msg : "KB Liiv M 고객센터(1522-9999)로<br/>문의하시기 바랍니다.",
+		cfrmYn : false
+	});
+	return;
+}
+
+function mbrshMenuCheck(){
+	
+	var custNm = $(".u_name strong").text(); 	
+	var data = $("#userMajorSvc").attr("data-map");
+	data = data.replace(/'/gi,"\"");
+	data = $.parseJSON(data);
+	
+	$("#side_soId").val(data.soId);
+	$('#side_custNm').text(custNm);
+	$("#side_custId").val(data.custId);
+	$("#side_ctrtId").val(data.ctrtId);
+	$("#side_svcTelNo").val(data.svcTelNo);
+	
+	let url = "/biz/membership/getMbrshApply";
+	let info = {
+			soId : $("#side_soId").val(),
+			custId : fnSign($("#side_custId").val()),
+			ctrtId : fnSign($("#side_ctrtId").val()),
+			mbrshTp : 10		
+	};
+	
+	fn_transCall(url, info, fn_asideCallback);
+}
+
+function getMbrshMng_side(){
+	
+	if($("#side_mbrshStdrGrd").val() == ""){
+		popalarm({
+			msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+			cfrmYn : false,
+			okCallback: goToMain
+		});
+		return;
+	}
+
+	let url = "/biz/membership/getMbrshMng";
+	let info = {
+			soId : $("#side_soId").val(),
+			stdrGrd : $("#side_mbrshStdrGrd").val()		
+	}
+
+	fn_transCall(url, info, fn_asideCallback);
+}
+
+function beforeJoinMbrsh_side() {
+	var CM559CustInfo = JSON.parse($("#CM559CustInfo").val());
+	if(CM559CustInfo.entrSttsCd == "S") {
+		popalarm({
+			msg : "일시정지 중에는 멤버십 혜택을 이용하실 수 없습니다. 일시정지를 해제하시겠습니까?",
+			cfrmYn : true,
+			okCallback: goStopPage_side
+		});
+		return;
+	}
+
+	popalarm({
+		msg : "멤버십에 가입하시겠습니까?",
+		cfrmYn : true,
+		okCallback: getMbrshMng_side
+	});
+}
+
+function joinMembership_side(){
+	console.log("멤버십 가입 시작--------");
+
+	let data = {};
+	let url = "/biz/membership/joinMembership";
+	let info = {
+			soId : $("#side_soId").val(),
+			custId : $("#side_custId").val(),
+			ctrtId : $("#side_ctrtId").val(),
+			mbrshTp : 10,
+			mbrshId : $("#side_mbrshId").val(),
+			svcTelNo : $("#side_svcTelNo").val()		
+	};
+	console.log($("#side_url").val()+"가입후 이동");
+
+	fn_transCall(url, info, fn_asideCallback);
+}
+
+//현재 가입 회선수 체크
+function getCustStdrGrd_side(){
+	
+	let base = {};
+	let data = {};
+	let url = '/appIf/v1/kb/eai/ITB001';
+	
+	base.serviceId    = "ITB001";
+	data.cuniqnoDstic = "3";	/*고객고유번호구분 1:주민등록번호 2:사업자번호 3:KB-PIN*/
+	data.cuniqno      = $("#side_custId").val();
+	base.data = data;
+
+	fn_transCall(url, fnSign(JSON.stringify(base)), fn_asideCallback);
+}
+
+//해제화면으로 이동
+function goStopPage_side() {
+	fnMoveUrl('/info/stop/stop-release','Y','Y','N','N',''); //location.href = '/change/stoprelease/stoprelease/changeStopRelease';
+}
+
+//FAQ로 이동
+function fnFowardFAQ(){
+	var vKeyword = $("#keywordSearch").val();
+	location.href="/support/docs/faq?searchCl=&myInput="+encodeURIComponent(vKeyword);
+}
+
+function dupLogin(){
+	if(getOsInfo().indexOf("app") != -1){
+		callAppService({
+			action_code : 'A0314',	// genKey
+			action_param : {loginReq : "Y"} 
+		});
+	}else{
+		goLogin();
+	}
+}
+
+/**
+ *  aside Callback
+ */
+function fn_asideCallback(tranId, data, status, inputData){
+	switch(tranId){
+	case 'duplicateLoginCheckAction':	// 중복로그인체크
+		if(data.result === "DELETE"){
+			popalarm( {
+				msg : "다른 기기에서 로그인하여 로그아웃됩니다.<br/>확인시 로그인 페이지로 넘어갑니다.",
+				cfrmYn : false,
+				okCallback : dupLogin
+			});
+			bTran = false;
+    	}else if(data.result !== "DELETE" && checkLoginStep === "3"){
+			makeIFCM559($("#phoneNumber").val());
+		}
+		break;
+	case 'makeCM559':	// CM559
+		if(data.resultCode == "00000" || data.resultCode == "N0000") {
+			data.data = JSON.parse(fnUnSign(data.data));
+			let body = data.data.RetrieveCustInfoSvcAddvBDResponse.ResponseRecord.ResponseBody;
+
+			$("#CM559CustInfo").val(JSON.stringify(body.DsCustInfoOutVO));
+			delete body.DsCustInfoOutVO;
+			$("#CM559Result").val(JSON.stringify(body));
+
+			setTimeout(function(){ setProdNoState(); }, 10);
+		}else if(data.resultCode == "400"){
+			setTimeout(function(){ 
+				popalarm({
+					msg : "고객정보를 찾지 못했습니다.<br/>다시 로그인 해주세요.",
+					cfrmYn : false,
+					okCallback : logout
+				});
+			}, 10);
+		}else{
+			popalarm({
+				msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+				cfrmYn : false
+			});
+		}
+
+		makeCM559Init();
+		break;
+	case 'updateUserMainSvc':	// 대표번호변경
+	
+		if(data.svcInfoVO.ctrtStat == '10') {
+			location.replace("/");//callbackGoApplOnSide(); // on *side.jsp 신청현황으로 이동
+		} else if(data.svcInfoVO.ctrtStat == '20') {
+			if(data.svcInfoVO.dsharStat == '15' && data.svcInfoVO.dsharRelCd == 'C'){
+				location.replace("/join/data/data-sharing?soId="+data.soId+"&prodCd="+data.prodCd);
+			}else{
+				//location.replace("/");
+				//movePage('/info/mypage/svc-info');
+				movePage('/info/mypage/join-info')
+			}
+		} else {
+			location.replace("/");//redrawSideLayer();
+		}
+		break;
+	case 'getMenuInfo':
+    	var vObjm = data.menuInfo;
+
+    	if(isEmpty(vObjm.MENU_ID) || inputData.menuId != vObjm.MENU_ID){
+			let opt = {
+					msg : "잘못된 메뉴로 접근하였습니다. 다시 시도해 주세요",
+					cfrmYn : false
+			};
+			popalarm(opt);
+		}else{
+   			if ((vObjm.URI).indexOf("/") == 0){
+   				fnMoveUrl(vObjm.URI, vObjm.SSN_YN, vObjm.OPEN_YN, vObjm.ADLT_YN, vObjm.sharAccYn, vObjm.excptCont);
+   			}else{
+   				eval(vObjm.URI);
+   			}
+    	}
+		break;
+	case 'checkOneMorePass':
+    	if(data.result == true){
+			onOkActionPerPage();
+		}else{
+			$("#oneMorePass").val("");
+			popalarm({
+				msg : "비밀번호를 정확히 입력해주세요.",
+				cfrmYn : false
+			});
+		}
+		break;
+	case 'getMbrshApply':
+		if( data.result == "Y"){//가입    			
+			$("#urlToGoAfterConfirm").val($("#side_url").val());
+			goToAuthOkPage();
+	    }else{   
+		   getCustStdrGrd_side(); //미가입시 등급세팅ITB001
+	    }  
+		break;
+	case 'getMbrshMng':
+		if(data.mbrshMngVo.mbrshId != null){
+			$("#side_mbrshId").val(data.mbrshMngVo.mbrshId);
+			$("#side_mbrshTp").val(data.mbrshMngVo.mbrshTp);
+			$("#side_mbrshStdrGrd").val(data.mbrshMngVo.stdrGrd);
+			
+			//멤버십 가입
+			joinMembership_side();
+		}else{
+			popalarm({
+				msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+				cfrmYn : false,
+				okCallback: goMain_side
+			});
+		}
+		break;
+	case 'joinMembership':
+		var resultCd= data.result.resultCode;
+		var resultMsg= data.result.resultMessage;
+		var resultDetail = data.result.resultDetail;
+		 	 	
+		if(resultCd == "0000"){
+			$("#urlToGoAfterConfirm").val($("#side_url").val());
+			popalarm({
+				msg : "멤버십 가입을 완료하였습니다.",
+				cfrmYn : false,
+				okCallback: goToAuthOkPage
+			});
+		} else if(resultCd == "0001"){
+			popalarm({
+				msg : "이미 멤버십에 가입중입니다.",
+				cfrmYn : false
+			});
+		} else if(resultCd == "0002"){
+			popalarm({
+				msg : "사용 중인 요금제는 멤버십 혜택을 이용하실 수 없습니다.",
+				cfrmYn : false
+			});
+		} else {
+			popalarm({
+				msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+				cfrmYn : false
+			});
+		}
+		break;
+	case 'ITB001':
+		data = JSON.parse(fnUnSign(data.enc));
+		if(data.resultCode == "00000" || data.resultCode == "N0000") {		
+			$("#side_mbrshStdrGrd").val(data.data.starClubCustCd);
+			beforeJoinMbrsh_side();
+		}else{
+			popalarm({
+				msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+				cfrmYn : false,
+				okCallback: goToMain
+			});
+		}
+		break;
+	}
+};
+
+
+//셀프개통 클릭 시 시간 체크
+function selfOpenActionOnSide() {
+	$.ajax({
+	    url:  '/system/main/getServerNow',
+	    type: 'POST',
+	    success: function(data) {
+	    	var today = data.curdttm;
+	    	var hour = today.substr(8,2);
+	    	var hourmin = today.substr(8,4);
+
+			var data = $("#userMajorSvc").attr("data-map");
+			data = data.replace(/'/gi,"\"");
+			data =$.parseJSON(data);
+			var isPossible = true;
+			if (data.applTp == "M" ) {
+				isPossible = hour < '20' && hour >= '10' ;// 번호이동	
+			} else if(data.applTp == "N" || data.applTp == "T" ) {
+				isPossible = hour < '20' && hour >= '08' ;// 신규가입, 명의변경
+			}
+
+            // 04 배송중, 05 배송완료 아닐 경우 신청현황 이동
+			if(!(data.applStat == "04" || data.applStat == "05")){
+                callbackGoApplOnSide();
+                return false;
+			}
+
+			if(!isPossible){	
+				modalLayer.show({
+		            titleUse:true,
+		            title: "개통 가능 시간에 다시 시도해 주세요",
+		            id:'openTimeLayerOnSide',
+		            type:'confirm',
+		            closeUse:false         
+				});
+	 		} else {
+	 			if (data.applTp == 'M' ) {
+                    $.ohyLayer({
+                        title : '번호이동 안내',
+                        titleUse : false,
+                        closeUse : false,
+                        content: '#openTransferLayerOnside',
+                        type: 'confirm'
+                    });
+	 			}else if (data.applTp == 'T' ) {
+	 				popalarm({
+ 						msg : "명의변경이신 경우 신청현황 하단의 명의변경 버튼으로 신청해주시기 바랍니다.",
+ 						cfrmYn : false,
+ 						okCallback: callbackGoApplOnSide
+	 				});
+	 			}else{
+	 				popalarm({
+ 						msg : "셀프 개통을 진행하시겠습니까?",
+ 						cfrmYn : true,
+ 						okCallback: goSelfOpen
+	 				});
+	 			}
+	 		}
+	    },
+	});
+}
+
+//셀프개통 화면으로 이동
+function goSelfOpen(){
+	goMenu('/join/open/checkSelfNp', true);
+}
+
+//화면이동
+function goMenu(toUrl, needSessionYn, isOpenSvc, age) {
+
+	$("#urlToGoAfterConfirm").val("");
+
+	// 세션필요 메뉴 체크
+	if(!isEmpty(needSessionYn) && needSessionYn) {
+
+		// login 체크
+		var isLogin = false;
+		if(!isLogin) {
+			$("#urlToGoAfterConfirm").val(toUrl);
+			popalarm({
+				msg : "로그인이 필요한 메뉴입니다.<br/>로그인 하시겠습니까?",
+				cfrmYn : true,
+				okCallback : callbackGoLoginOnSide
+			});
+			return;	
+		}
+		
+		if(isOpenSvc != undefined && !isOpenSvc) { // 개통전
+			popalarm({
+				msg : "개통 후 사용해주세요.",
+				cfrmYn : true,
+				okCallback : callbackGoApplOnSide
+			});
+			return;	
+		}
+		
+		if(age <= 19) {  // 미성년자
+			modalLayer.show("div_checkLegalRepresentative_onside");
+			$("#urlToGoAfterConfirm").val(toUrl);
+			$("#minorCertPathCd").val("40");
+			return;	
+		}
+		
+		//나의등급, 쿠폰박스 우측메뉴 선택시
+		var url = toUrl;
+		var urlArray = url.split("/");	
+		var menuNm = urlArray[urlArray.length-1];
+		
+		if(menuNm == "myGrd" || menuNm  == "couponBox"){
+			$("#side_url").val(toUrl);
+			mbrshMenuCheck();
+			return;
+		}
+		
+		$("#urlToGoAfterConfirm").val(toUrl);
+		goToAuthOkPage();
+		
+	} else {
+		movePage(toUrl);
+	}
+}
+
+</script>
+<input type="hidden" id="urlToGoAfterConfirm" value=""/>
+<input type="hidden" id="goToUrlOnSide"><!-- 지점안내/고객의견 이동 -->
+<input type="hidden" id="CM559Result" value="">
+<input type="hidden" id="CM559CustInfo" value="">
+
+<input type="hidden" id="side_url" value=""><!-- 멤버십가입 -->
+<input type="hidden" id="side_soId" value="">
+<input type="hidden" id="side_custId" value="">
+<input type="hidden" id="side_ctrtId" value="">
+<input type="hidden" id="side_svcTelNo" value="">
+<input type="hidden" id="side_mbrshTp" value="">
+<input type="hidden" id="side_mbrshId" value="">
+<input type="hidden" id="side_mbrshStdrGrd" value="">
+
+<input type="hidden" id="minorCertPathCd"    name="minorCertPathCd"    value="">
+<input type="hidden" id="minorCertCustId"    name="minorCertCustId"    value="">
+<input type="hidden" id="minorCertCtrtId"    name="minorCertCtrtId"    value="">
+
+<input type="hidden" id="grpCd"  value="">
+<input type="hidden" id="ssoSerialNo"  value="">
+
+            <!-- aside area -->
+            <div class="aside_wrap">
+                <div class="aside_head">
+                    <h2 class="title">전체</h2>
+                </div>
+                <div class="aside_body">
+            		<div class="aside_top">
+    				
+                    <div class="login_area"><a href="#none" class="link" onclick="goLogin()">로그인해주세요</a></div>
+                    
+                    
+	                    <div class="shortcut_area">
+	                        <ul class="shortcut_list">
+	                        </ul>
+	                    </div>
+	                    <hr class="hr_divide_f">
+	                </div>
+	                <!-- nav -->
+	                <div class="nav_area">
+	                    <ul id="navList" class="nav_list">
+	                    </ul>
+	                </div>
+	                <!-- //nav -->
+	                <!-- 전체 메뉴 -->
+	                <div class="menu_area">
+	                    <ul class="menu_list">
+	                    </ul>
+	                </div>
+                </div>
+                <!-- //전체 메뉴 -->
+                <a href="#close_aside" class="btn_close_aside"><span class="hidden">닫기</span></a>
+            </div>
+            
+
+
+    <!-- 번호이동 개통안내 팝업-->
+    <div id="openTransferLayerOnside" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <span style='color:#FF3D00;'><strong>번호이동시</strong></span>, 이전 통신사 해지에 따라 통신망이 끊어집니다.
+                <br/>꼭 <span style='color:#FF3D00;'><strong>WIFI 환경</strong></span>에서 진행해 주세요.
+                <br/>WIFI 사용이 어려운 경우, KB Liiv M 고객센터(1522-9999)를 통해 개통할 수 있습니다.
+                <br/>셀프 개통을 진행하시겠습니까?
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn secondary" data-action="close" >취소</button>
+                <button type="button" class="btn primary" data-action="close" onClick="goSelfOpen();">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- // 번호이동 개통안내 팝업-->
+
+    <!-- 개통가능시간안내 팝업 시작-->
+    <div id="openTimeLayerOnSide" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                
+                <div class="join_time box_item no_shadow">
+                    <p>KB Liiv M 가입 가능시간</p>
+                    <dl>
+                        <dt>신규가입</dt>
+                        <dd>
+                            <strong>08:00 ~ 20:00</strong> <span>(365일)</span>
+                        </dd>
+                        <dt>번호이동</dt>
+                        <dd>
+                            <strong>10:00 ~ 20:00</strong><br>
+                            <span>(일요일, 공휴일 제외)</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+                      
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- 개통가능시간안내 팝업 끝-->
+
+	<!-- 등급 업그레이드 TIP -->
+	<div id="membership_tipLayer" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p>KB금융그룹 내 계열사(KB국민은행, KB증권, KB손해보험, KB 국민카드, KB생명보험)와 거래하신 모든 상품 및 각종 거래실적을 종합하여 KB스타클럽 등급을 선정하므로 모든 금융 거래를 KB금융그룹으로 집중하시면 더욱 유리합니다.</p>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+				<div style="display:none">
+					<a href="/html/subTerms/KB스타클럽안내.pdf" id='downloadKbStarClubGuide' download="" ></a>
+				</div>
+                <button type="button" class="btn primary" onclick="document.getElementById('downloadKbStarClubGuide').click();">KB스타클럽 안내</button>
+            </div>
+        </div>
+	</div>
+	<!-- //등급 업그레이드 TIP -->
+
+	<!-- KB스타클럽 우대서비스 -->
+	<div id="membership_serviceLayer" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section">
+                <p>KB스타클럽 회원에게 KB금융그룹 中 7개 계열사에서 제공하는 금융혜택인 기본 우대 서비스, 비금융 혜택을 드리는 특별 우대 서비스 등을 제공하고 있습니다.</p>
+            </div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+				<div style="display:none">
+					<a href="/html/subTerms/KB스타클럽안내.pdf" id='downloadKbStarClubGuide' download="" ></a>
+				</div>
+                <button type="button" class="btn primary" onclick="document.getElementById('downloadKbStarClubGuide').click();">KB스타클럽 안내</button>
+            </div>
+        </div>
+	</div>
+	<!-- //KB스타클럽 우대서비스 -->
+
+
+
+
+
+
+ 
+
+
+
+            <!-- //aside area -->
+        </div>
+       
+	<!-- contents -->
+	
+
+
+
+
+
+
+<!-- SCRIPT ======================================================================================================== -->
+<script type="text/javascript">
+
+// =====================================================================================
+// 변수
+// =====================================================================================
+
+/** 네이티브 관련 함수 **/
+var nativeUUID     = "";
+var callGubn       = "init";
+var authAllowStat  = false;
+var gpsStat        = false;
+
+/** 지도 관련 변수 **/
+var mapContainer;
+var mapOptions;
+var map;
+var clusterer;
+var clusterMinLevel    = 5;
+var markers            = [];
+var overlayMarkers     = [];
+var currPositionMarker;
+var selectedMarker;
+var customOverlay;
+var currLat            = 37.5215695;  // 여의도역 위도
+var currLng            = 126.9243115; // 여의도역 경도
+var currPositionLat;                  // 현위치 저장용 위도
+var currPositionLng;                  // 현위치 저장용 경도
+
+/** 목록 데이터 관련 변수 **/
+var displayPlacesInfo        = [];
+var sortDisplayPlaceInfo     = [];
+var wordDisplayPlacesInfo    = [];
+var sortWordDisplayPlaceInfo = [];
+var moreDisplayPlaceInfo     = [];
+var currListCnt              = 0;
+var moreCnt                  = 0;
+var showCnt                  = 10;
+var searchGubn               = "map";
+
+// =====================================================================================
+// 스크립트
+// =====================================================================================
+
+/** road **/
+$(document).ready(function() {
+
+	// 헤더 타입 지정 (필수)
+	setHeaderType('sub');
+
+    // 최초 실행 로직 호출
+    initProc();
+});
+
+/** 최초 실행 **/
+function initProc() {
+
+    // 로딩바 START
+    loadingStart();
+
+    // 앱에서 화면 진입 시, 네이티브 호출
+    if (getOsInfo().indexOf('app') > -1) {
+
+        callAppService({
+             action_code : 'A0301'
+            ,callBack    : 'nativeCheckCallback'
+        });
+
+    } else {
+        loadPositionServicePopup();
+    }
+}
+
+/** 내주변유심찾기 최초 실행 **/
+function initUsimSearch() {
+    loadingStart();
+    createMap();
+    createClusterer();
+    createCurrentPositionMarker();
+    searchPlace();
+    setResetBtn(0);
+}
+
+// -------------------------------------------------------------------------------------
+// 위치기반 서비스 이용 동의 & GPS
+// -------------------------------------------------------------------------------------
+
+/** 네이티브 UUID 체크 콜백 **/
+function nativeCheckCallback(callbackData) {
+    var parseData = JSON.parse(callbackData);
+
+    if (!isEmpty(parseData) && !isEmpty(parseData.UUID)) {
+        nativeUUID = parseData.UUID;
+    }
+
+    loadPositionServicePopup();
+}
+
+/** 위치기반 서비스 이용 동의 팝업 호출 **/
+function loadPositionServicePopup() {
+
+    // 로딩바 STOP
+    loadingStop();
+
+    // 팝업 호출
+    $.ohyLayer({
+        title   : "&nbsp",
+        content : '#MYST0102',
+        type    : 'fullpopup',
+    });
+
+    // 팝업 위치기반 서비스 이용 동의 체크박스 이벤트 설정
+    $("#switch1").on("change", function() {
+        if ($("#switch1").is(":checked")) {
+            $("#hiddenSityYn").val("Y");
+        } else {
+            $("#hiddenSityYn").val("N");
+        }
+    });
+
+    // 팝업 닫기 버튼 이벤트 설정
+    $(".btn.btn_ico.close").on("click", function() {
+        closePositionServicePopup();
+    });
+}
+
+/** 위치기반 서비스 이용 동의 팝업 닫기 **/
+function closePositionServicePopup() {
+    loadingStart();
+    setPositionServiceAgree();
+}
+
+/** 위치기반 서비스 이용 동의 여부 설정 **/
+function setPositionServiceAgree() {
+    var param = {};
+
+    if (getOsInfo().indexOf('app') > -1) {
+        param.uuid = nativeUUID;
+    } else {
+        param.uuid = "";
+    }
+
+    param.sityYn = $("#hiddenSityYn").val();
+
+    fn_transCall("/support/customer/setPositionServiceAgree"
+                ,param
+                ,fn_usimSearchCallback
+                ,fn_usimSearchErrCallback);
+}
+
+/** 위치기반서비스 이용약관 상세보기 화면 으로 이동 **/
+function moveLocServiceTermsPage() {
+    window.location = "/support/board/locServiceTerms";
+}
+
+/** 네이티브 GPS 상태 체크 **/
+function nativeGpsCheck() {
+    callAppService({
+            action_code  : 'A0303'
+           ,action_param : { value : '100' }
+           ,callBack     : 'nativeGpsCheckCallback'
+    });
+}
+
+/** 네이티브 GPS 상태 체크 콜백 **/
+function nativeGpsCheckCallback(callbackData) {
+    var gpsPosition;
+
+    if (callbackData != "")  {
+        gpsPosition = (callbackData.toString()).split(",");
+
+        if (gpsPosition[0] != null && gpsPosition[1] != null) {
+            gpsStat = true;
+        } else {
+            gpsStat = false;
+        }
+
+    } else {
+        gpsStat = false;
+    }
+
+    // 최초 진입 시
+    if (callGubn == "init" || callGubn == "setGps") {
+
+        if (gpsStat)  {
+
+            // 현위지 안내 아이콘 ON 상태로 변경
+            currentPositionBtn(1);
+
+            // 현위치 정보 설정
+            currLat         = gpsPosition[0];
+            currLng         = gpsPosition[1];
+            currPositionLat = gpsPosition[0];
+            currPositionLng = gpsPosition[1];
+
+            initUsimSearch();
+
+        } else {
+
+            // 현위치 마커 제거
+            if (currPositionMarker != undefined) {
+                currPositionMarker.setMap(null);
+                currPositionMarker = undefined;
+            }
+
+            // 현위지 안내 아이콘 OFF 상태로 변경
+            currentPositionBtn(0);
+
+            // 맵이 생성되지 않은 경우
+            if (map == undefined) {
+
+                if (getOsInfo().indexOf('android') > -1) {
+                    popalarm({
+                         msg            : "KB Liiv M에서 위치정보를 기반으로 현재위치 및 컨텐츠 정보를 제공받기위해 권한 허용을 해야합니다."
+                        ,cfrmYn         : true
+                        ,okBtnText      : "설정으로 이동"
+                        ,cancelCallback : initUsimSearch
+                        ,okCallback     : setGps
+                    });
+
+                    return;
+
+                } else if (getOsInfo().indexOf('ios') > -1) {
+                    popalarm({
+                         msg            : '위치서비스를 사용할 수 없습니다. 기기의 "설정 > 리브모바일앱 > 위치" 에서 위치서비스를 켜주세요.'
+                        ,cfrmYn         : true
+                        ,okBtnText      : "설정으로 이동"
+                        ,cancelCallback : initUsimSearch
+                        ,okCallback     : setGps
+                    });
+
+                    return;
+                }
+
+            // 맵이 생성된 상태일 경우
+            } else {
+
+                if (getOsInfo().indexOf('android') > -1) {
+                    popalarm({
+                         msg        : "KB Liiv M에서 위치정보를 기반으로 현재위치 및 컨텐츠 정보를 제공받기위해 권한 허용을 해야합니다."
+                        ,cfrmYn     : true
+                        ,okBtnText  : "설정으로 이동"
+                        ,okCallback : setGps
+                    });
+
+                    return;
+
+                } else if (getOsInfo().indexOf('ios') > -1) {
+                    popalarm({
+                         msg        : '위치서비스를 사용할 수 없습니다. 기기의 "설정 > 리브모바일앱 > 위치" 에서 위치서비스를 켜주세요.'
+                        ,cfrmYn     : true
+                        ,okBtnText  : "설정으로 이동"
+                        ,okCallback : setGps
+                    });
+
+                    return;
+                }
+            }
+        }
+
+    // 현위치 안내 클릭, 권한 설정 시
+    } else if (callGubn == "info") {
+
+        if (gpsStat) {
+
+            // 현위지 안내 아이콘 ON 상태로 변경
+            currentPositionBtn(1);
+
+            // 현위치 정보 설정
+            currLat         = gpsPosition[0];
+            currLng         = gpsPosition[1];
+            currPositionLat = gpsPosition[0];
+            currPositionLng = gpsPosition[1];
+
+            // 이지역에서 재검색 버튼 숨기기
+            setResetBtn(0);
+
+            // 클러스터 커스텀 오버레이 닫기
+            closeCustomOverlay();
+
+            if (currPositionMarker != undefined) {
+                currPositionMarker.setMap(null);
+                currPositionMarker = undefined;
+            }
+
+            if (selectedMarker != undefined) {
+                selectedMarker.setMap(null);
+                selectedMarker = undefined;
+            }
+
+            // 제휴처 리스트, 상세 닫기
+            if (mapBottomFix.type != 0) {
+                setBottomLayout(mapBottomFix.type=0);
+            }
+
+            // 장소 검색 결과 초기화
+            displayPlacesInfo        = [];
+            sortDisplayPlaceInfo     = [];
+            wordDisplayPlacesInfo    = [];
+            sortWordDisplayPlaceInfo = [];
+            moreDisplayPlaceInfo     = [];
+
+            // 검색어 초기화
+            $("#searchWord").val("");
+            $("#searchWord").removeAttr("style");
+            $(".btn_clear").hide();
+
+            // 재조회
+            searchPlace();
+
+            // 현위치 마커 표기
+            map.setCenter(new kakao.maps.LatLng(Number(currPositionLat), Number(currPositionLng)));
+
+            currPositionMarker = new kakao.maps.Marker({
+                position : new kakao.maps.LatLng(Number(currPositionLat), Number(currPositionLng))
+            });
+
+            currPositionMarker.setMap(map);
+
+        } else {
+
+            // 현위치 마커 제거
+            if (currPositionMarker != undefined) {
+                currPositionMarker.setMap(null);
+                currPositionMarker = undefined;
+            }
+
+            // 현위지 안내 아이콘 OFF 상태로 변경
+            currentPositionBtn(0);
+
+            if (getOsInfo().indexOf('android') > -1) {
+                popalarm({
+                     msg            : "KB Liiv M에서 위치정보를 기반으로 현재위치 및 컨텐츠 정보를 제공받기위해 권한 허용을 해야합니다."
+                    ,cfrmYn         : true
+                    ,okBtnText      : "설정으로 이동"
+                    ,cancelCallback : loadingStop
+                    ,okCallback     : setGps
+                });
+
+                return;
+
+            } else if (getOsInfo().indexOf('ios') > -1) {
+                popalarm({
+                     msg            : '위치서비스를 사용할 수 없습니다. 기기의 "설정 > 리브모바일앱 > 위치" 에서 위치서비스를 켜주세요.'
+                    ,cfrmYn         : true
+                    ,okBtnText      : "설정으로 이동"
+                    ,cancelCallback : loadingStop
+                    ,okCallback     : setGps
+                });
+
+                return;
+            }
+        }
+
+        // 로딩바 STOP
+        loadingStop();
+    }
+
+    // 앱위치정보사용이력 저장
+    if (gpsStat) {
+        saveTcmapSityUseHist();
+    }
+}
+
+/** 브라우저 GPS 체크 **/
+function browserGpsCheck() {
+
+    // 최초 진입 시
+    if (callGubn == "init") {
+
+        // GEOLOCATION API 위치 정보 사용 가능
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+
+                    // GPS 상태 값 설정
+                    gpsStat = true;
+
+                    // 현위지 안내 아이콘 ON 상태로 변경
+                    currentPositionBtn(1);
+
+                    // 현위치 정보 설정
+                    currLat         = position.coords.latitude;
+                    currLng         = position.coords.longitude;
+                    currPositionLat = position.coords.latitude;
+                    currPositionLng = position.coords.longitude;
+
+                    initUsimSearch();
+                }
+               ,function(error) {
+
+                    // 브라우저 위치 정보 사용 차단 상태
+                    if (error.code == 1) {
+
+                        // GPS 상태 값 설정
+                        gpsStat = false;
+
+                        // 현위치 마커 제거
+                        if (currPositionMarker != undefined) {
+                            currPositionMarker.setMap(null);
+                            currPositionMarker = undefined;
+                        }
+
+                        // 현위지 안내 아이콘 OFF 상태로 변경
+                        currentPositionBtn(0);
+
+                        // 로딩바 STOP
+                        loadingStop();
+
+                        // 맵이 생성되지 않은 경우
+                        if (map == undefined) {
+                            popalarm({
+                                         msg            : "브라우저 설정에서 위치정보 사용을 허용 후 다시 시도해주세요."
+                                        ,cfrmYn         : false
+                                        ,okBtnText      : "확인"
+                                        ,okCallback     : initUsimSearch
+                                    });
+
+                            return;
+
+                        } else {
+                            popalarm({
+                                         msg            : "브라우저 설정에서 위치정보 사용을 허용 후 다시 시도해주세요."
+                                        ,cfrmYn         : false
+                                        ,okBtnText      : "확인"
+                                        ,okCallback     : ""
+                                    });
+
+                            return;
+                        }
+                    }
+                }
+            );
+
+        // GEOLOCATION API 위치 정보 사용 불가
+        } else {
+
+            // GPS 상태 값 설정
+            gpsStat = false;
+
+            // 현위치 마커 제거
+            if (currPositionMarker != undefined) {
+                currPositionMarker.setMap(null);
+                currPositionMarker = undefined;
+            }
+
+            // 현위지 안내 아이콘 OFF 상태로 변경
+            currentPositionBtn(0);
+
+            initUsimSearch();
+        }
+
+    // 현위치 안내
+    } else if (callGubn == "info") {
+
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+
+                    // GPS 상태 값 설정
+                    gpsStat = true;
+
+                    // 현위지 안내 아이콘 ON 상태로 변경
+                    currentPositionBtn(1);
+
+                    // 현위치 정보 설정
+                    currLat         = position.coords.latitude;
+                    currLng         = position.coords.longitude;
+                    currPositionLat = position.coords.latitude;
+                    currPositionLng = position.coords.longitude;
+
+                    // 이지역에서 재검색 버튼 숨기기
+                    setResetBtn(0);
+
+                    // 클러스터 커스텀 오버레이 닫기
+                    closeCustomOverlay();
+
+                    if (currPositionMarker != undefined) {
+                        currPositionMarker.setMap(null);
+                        currPositionMarker = undefined;
+                    }
+
+                    if (selectedMarker != undefined) {
+                        selectedMarker.setMap(null);
+                        selectedMarker = undefined;
+                    }
+
+                    // 제휴처 리스트, 상세 닫기
+                    if (mapBottomFix.type != 0) {
+                        setBottomLayout(mapBottomFix.type=0);
+                    }
+
+                    // 장소 검색 결과 초기화
+                    displayPlacesInfo        = [];
+                    sortDisplayPlaceInfo     = [];
+                    wordDisplayPlacesInfo    = [];
+                    sortWordDisplayPlaceInfo = [];
+                    moreDisplayPlaceInfo     = [];
+
+                    // 검색어 초기화
+                    $("#searchWord").val("");
+                    $("#searchWord").removeAttr("style");
+                    $(".btn_clear").hide();
+
+                    // 재조회
+                    searchPlace();
+
+                    // 현위치 마커 표기
+                    map.setCenter(new kakao.maps.LatLng(Number(currPositionLat), Number(currPositionLng)));
+
+                    currPositionMarker = new kakao.maps.Marker({
+                        position : new kakao.maps.LatLng(Number(currPositionLat), Number(currPositionLng))
+                    });
+
+                    currPositionMarker.setMap(map);
+                }
+               ,function(error) {
+
+                   // GPS 상태 값 설정
+                   gpsStat = false;
+
+                    // 현위치 마커 제거
+                    if (currPositionMarker != undefined) {
+                        currPositionMarker.setMap(null);
+                        currPositionMarker = undefined;
+                    }
+
+                    // 현위지 안내 아이콘 OFF 상태로 변경
+                    currentPositionBtn(0);
+
+                    // 로딩바 STOP
+                    loadingStop();
+
+                    popalarm({
+                                 msg            : "브라우저 설정에서 위치정보 사용을 허용 후 다시 시도해주세요."
+                                ,cfrmYn         : false
+                                ,okBtnText      : "확인"
+                                ,okCallback     : ""
+                            });
+
+                    return;
+                }
+            );
+
+        } else {
+
+           // GPS 상태 값 설정
+           gpsStat = false;
+
+            // 현위치 마커 제거
+            if (currPositionMarker != undefined) {
+                currPositionMarker.setMap(null);
+                currPositionMarker = undefined;
+            }
+
+            // 현위지 안내 아이콘 OFF 상태로 변경
+            currentPositionBtn(0);
+
+            // 로딩바 STOP
+            loadingStop();
+        }
+    }
+
+    // 앱위치정보사용이력 저장
+    if (gpsStat) {
+        saveTcmapSityUseHist();
+    }
+}
+
+/** 위치정보사용이력 저장 **/
+function saveTcmapSityUseHist(mbrshCustInfo) {
+
+    fn_transCall("/biz/membership/saveTcmapSityUseHist"
+                ,{
+                     custId  : ""
+                    ,mchtlOs : getOsInfo().indexOf('app') > -1 ? getOsInfo().split("_")[0] : 'web'
+                    ,svcOfer : '내주변유심찾기'
+                    ,svcOffr : '없음'
+                 }
+                ,fn_usimSearchCallback
+                ,fn_usimSearchErrCallback);
+}
+
+/** GPS 설정 **/
+function setGps() {
+    callAppService({
+         action_code : 'A0309'
+        ,callBack    : 'setGpsCallback'
+    });
+}
+
+/** GPS 설정 콜백 **/
+function setGpsCallback() {
+
+    if (getOsInfo().indexOf('app') > -1) {
+
+        // 네이티브 정보 저장 완료 후 호출되도록 셋타임 처리
+        setTimeout(function() {
+            loadingStart();
+            callGubn = "setGps";
+            nativeGpsCheck();
+        }, 500);
+    }
+}
+
+// -------------------------------------------------------------------------------------
+// 백키
+// -------------------------------------------------------------------------------------
+
+/** 안드로이드 백키 입력 시, 콜백 **/
+function usimSearchBack() {
+    if ($(".layer_wrap.open.fullpopup").length > 0) {
+        $(".btn.btn_ico.close").trigger("click");
+    } else {
+        var referrer = document.referrer;
+        var host     = document.location.origin;
+        var hrefUrl  = referrer.replace(host, "");
+
+        if (hrefUrl == "/join/steps/join-supplies") {
+            location.href = hrefUrl;
+        } else {
+            goToMain();
+        }
+    }
+}
+
+// -------------------------------------------------------------------------------------
+// 카카오 지도
+// -------------------------------------------------------------------------------------
+
+/** 지도 생성 **/
+function createMap() {
+    mapContainer = document.getElementById("map");
+    mapOptions   = {
+                    center : new kakao.maps.LatLng(currLat, currLng)
+                   ,level  : 3
+                   };
+
+    map = new kakao.maps.Map(mapContainer, mapOptions);
+
+    // 지도 이벤트 생성
+    createMapEvent();
+}
+
+/** 지도 이벤트 생성 **/
+function createMapEvent() {
+
+    /* 지도 이동 완료 시, 호출 */
+    kakao.maps.event.addListener(map, 'dragend', function() {
+
+        // 이 지역에서 재검색 노출
+        setResetBtn(1);
+    });
+
+    /* 지도 확대/축소 시, 호출 */
+    kakao.maps.event.addListener(map, 'zoom_changed', function() {
+
+        // 클러스터 커스텀 오버레이 닫기
+        closeCustomOverlay();
+    });
+
+    /* 지도 클릭 시, 호출 */
+    kakao.maps.event.addListener(map, 'click', function() {
+
+        // 클러스터 커스텀 오버레이 닫기
+        closeCustomOverlay();
+    });
+}
+
+/** 클러스터 생성 **/
+function createClusterer() {
+    clusterer = new kakao.maps.MarkerClusterer({
+        map              : map
+       ,averageCenter    : true
+       ,minLevel         : clusterMinLevel
+       ,texts            : getClusterMarkerText
+       ,styles           : [{
+                                width          : '3.2rem'
+                               ,height         : '3.6rem'
+                               ,boxSizing      : 'border-box'
+                               ,background     : 'url(../../img/event/maker_black.svg) center no-repeat'
+                               ,backgroundSize : '100% auto'
+                               ,textAlign      : 'center'
+                               ,color          : '#fff'
+                               ,fontSize       : '1.2rem'
+                               ,lineHeight     : '3.2rem'
+                               ,fontWeigh      : '700'
+                           }]
+       ,disableClickZoom : true
+    });
+
+    // 클러스터 이벤트 생성
+    createClustererEvent();
+}
+
+/**  클러스터 이벤트 생성 **/
+function createClustererEvent () {
+
+    // 클러스터링이 완료 시, 호출
+    kakao.maps.event.addListener(clusterer, 'clustered', function(cluster) {
+        if (selectedMarker != undefined) {
+            if (map.getLevel() >= clusterMinLevel) {
+                selectedMarker.setZIndex(1);
+                selectedMarker.setMap(map);
+            }
+        }
+    });
+
+    // 클러스터 클릭 이벤트
+    kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
+        var clusterDisplayPlaceInfo = [];
+        var clusterMarkers = cluster.getMarkers();
+
+        // 클러스터 마커 여러개 생성될 수 있으므로
+        // 기존 열려있는 클러스터 먼저 닫기 처리
+        closeCustomOverlay();
+
+        // 클러스터 커스텀 오버레이 목록 데이터 추출
+        for (var i = 0; i < clusterMarkers.length; i++) {
+
+            if (searchGubn == "map") {
+                for (var j = 0; j < sortDisplayPlaceInfo.length; j++) {
+                    if (clusterMarkers[i].getTitle() == sortDisplayPlaceInfo[j].brnnarr) {
+                        clusterDisplayPlaceInfo.push(sortDisplayPlaceInfo[j]);
+                    }
+                }
+
+            } else if (searchGubn == "word") {
+                for (var j = 0; j < sortWordDisplayPlaceInfo.length; j++) {
+                    if (clusterMarkers[i].getTitle() == sortWordDisplayPlaceInfo[j].brnnarr) {
+                        clusterDisplayPlaceInfo.push(sortWordDisplayPlaceInfo[j]);
+                    }
+                }
+            }
+        }
+
+        // 커스텀 오버레이 생성
+        if (clusterDisplayPlaceInfo.length > 0) {
+            var content = "";
+
+            content = content + '    <ul>';
+
+            for (var i = 0; i < clusterDisplayPlaceInfo.length; i++) {
+                content = content + '        <li onclick="javascript:selectCustomOverlayPlace(\'' + clusterDisplayPlaceInfo[i].brnnarr + '\');">';
+                content = content + '            <a href="#" role="button">';
+                content = content + '                <span class="partner_ico partner-kb"></span>';
+                content = content + '                <span>' + clusterDisplayPlaceInfo[i].brnnarr + '</span>';
+                content = content + '            </a>';
+                content = content + '        </li>';
+            }
+
+            content = content + '    </ul>';
+
+            var contentElement = document.createElement('div');
+
+            contentElement.className = 'maker_group_list';
+            contentElement.innerHTML = content;
+
+            contentElement.addEventListener('touchstart', function() {
+                kakao.maps.event.preventMap();
+            });
+
+            customOverlay = new kakao.maps.CustomOverlay({
+                 content    : contentElement
+                ,map        : map
+                ,position   : markers[0].getPosition()
+                ,clickable  : true
+                //,xAnchor    : 0.1
+                //,yAnchor    : 0.1
+            });
+
+            customOverlay.setZIndex(2);
+            customOverlay.setMap(map);
+        }
+    });
+}
+
+/** 클러스터 마커 텍스트 설정 **/
+function getClusterMarkerText(count) {
+    return '+' + count;
+}
+
+/** 클러스터 커스텀 오퍼레이 선택 **/
+function selectCustomOverlayPlace(selectOverlayPlaceName) {
+
+    // 클러스터 커스텀 오퍼레이 닫기
+    closeCustomOverlay();
+
+    // 기존 마커 제거
+    if (selectedMarker != undefined) {
+        var removeMarkerFlag = true;
+
+        if ((clusterer._clusters).length) {
+            for (var i = 0; i < (clusterer._clusters).length; i++) {
+                if ((clusterer._clusters[i]._markers).length == 1) {
+                    if (selectedMarker.getTitle() == clusterer._clusters[i]._markers[0].Gb) {
+                        removeMarkerFlag = false;
+                    }
+                }
+            }
+
+            if (removeMarkerFlag) {
+                selectedMarker.setMap(null);
+                selectedMarker = undefined;
+            }
+        }
+    }
+
+    // 마커 설정
+    for (var i = 0; i < markers.length; i++) {
+        var imgSrc      = "/img/maker/kb.png";
+        var imgSize     = new kakao.maps.Size(32, 36);
+        var imgOptions  = {
+                           spriteSize  : new kakao.maps.Size(32, 36)
+                          ,spriteOrign : new kakao.maps.Point(0, (i * 46) + 10)
+                          ,offset      : new kakao.maps.Point(16, 36)
+        };
+
+        var onImgSrc      = "/img/maker/kb_on.png";
+        var onImgSize     = new kakao.maps.Size(44, 50);
+        var onImgOptions  = {
+                             spriteSize  : new kakao.maps.Size(44, 50)
+                            ,spriteOrign : new kakao.maps.Point(0, (i * 46) + 10)
+                            ,offset      : new kakao.maps.Point(22, 50)
+        };
+
+        if (markers[i].getTitle() == selectOverlayPlaceName) {
+            markers[i].setImage(new kakao.maps.MarkerImage(onImgSrc, onImgSize, onImgOptions));
+            markers[i].setZIndex(1);
+            selectedMarker = markers[i];
+            selectedMarker.setMap(map);
+        } else {
+            markers[i].setImage(new kakao.maps.MarkerImage(imgSrc, imgSize, imgOptions));
+            markers[i].setZIndex(0);
+        }
+    }
+
+    // 제휴처 상세 설정
+    var listInfo = [];
+
+    if (searchGubn == "map") {
+        listInfo = sortDisplayPlaceInfo;
+    } else if (searchGubn == "word") {
+        listInfo = sortWordDisplayPlaceInfo;
+    }
+
+    for (var i = 0; i < listInfo.length; i++) {
+        if (listInfo[i].brnnarr == selectedMarker.getTitle()) {
+            markerDisplayPlacesDetail(listInfo[i]);
+        }
+    }
+}
+
+/** 클러스터 커스텀 오퍼레이 닫기 **/
+function closeCustomOverlay() {
+    if (customOverlay != undefined) {
+        customOverlay.setMap(null);
+    }
+}
+
+/** 장소 검색 **/
+function searchPlace(searchKeyword) {
+    var searchPlaceObj     = new kakao.maps.services.Places();
+    var searchPlaceKeyword = "";
+    var searchPlaceOption  = { location : new kakao.maps.LatLng(currLat, currLng) };
+
+    if (searchKeyword == undefined) {
+        searchGubn         = "map";
+        searchPlaceKeyword = "KB국민은행";
+
+        searchPlaceObj.keywordSearch(searchPlaceKeyword, searchPlaceCB, searchPlaceOption);
+
+    } else {
+        searchGubn         = "word";
+        searchPlaceKeyword = searchKeyword + " KB국민은행";
+
+        searchPlaceObj.keywordSearch(searchPlaceKeyword, wordSearchPlaceCB, searchPlaceOption);
+    }
+}
+
+/** 장소 검색 콜백 **/
+function searchPlaceCB(data, status, pagination) {
+
+    if (status == kakao.maps.services.Status.OK) {
+        displayPlacesInfo.push(data);
+    } else if (status == kakao.maps.services.Status.ZERO_RESULT) {
+        displayPlacesInfo.push([]);
+    } else if (status == kakao.maps.services.Status.ERROR) {
+        displayPlacesInfo.push([]);
+    }
+
+    var tempArr = new Array();
+
+    for (var i = 0; i < displayPlacesInfo.length; i++) {
+        if (displayPlacesInfo[i].length > 0) {
+            for (var j = 0; j < displayPlacesInfo[i].length; j++) {
+                tempArr.push(displayPlacesInfo[i][j]);
+            }
+        }
+    }
+
+    var filterDisplayPlaceInfo = setPlaceSearchResultFilter(tempArr);
+
+    if (filterDisplayPlaceInfo.length > 0) {
+        searchPlaceUsimStockInfo(filterDisplayPlaceInfo);
+    } else {
+        sortDisplayPlaceInfo = [];
+        displayPlacesList(sortDisplayPlaceInfo);
+        displayPlaces(sortDisplayPlaceInfo);
+    }
+}
+
+/** 장소 검색 콜백 (지점명 or 주소 검색 시) **/
+function wordSearchPlaceCB(data, status, pagination) {
+
+    if (status == kakao.maps.services.Status.OK) {
+        wordDisplayPlacesInfo.push(data);
+    } else if (status == kakao.maps.services.Status.ZERO_RESULT) {
+        wordDisplayPlacesInfo.push([]);
+    } else if (status == kakao.maps.services.Status.ERROR) {
+        wordDisplayPlacesInfo.push([]);
+    }
+
+    var wordTempArr = new Array();
+
+    for (var i = 0; i < wordDisplayPlacesInfo.length; i++) {
+        if (wordDisplayPlacesInfo[i].length > 0) {
+            for (var j = 0; j < wordDisplayPlacesInfo[i].length; j++) {
+                wordTempArr.push(wordDisplayPlacesInfo[i][j]);
+            }
+        }
+    }
+
+    var filterWordDisplayPlaceInfo = setPlaceSearchResultFilter(wordTempArr);
+
+    if (filterWordDisplayPlaceInfo.length > 0) {
+        searchPlaceUsimStockInfo(filterWordDisplayPlaceInfo);
+    } else {
+        sortWordDisplayPlaceInfo = [];
+        displayPlacesList(sortWordDisplayPlaceInfo);
+        displayPlaces(sortWordDisplayPlaceInfo);
+    }
+}
+
+/** 장소 검색 결과 필터 처리 **/
+function setPlaceSearchResultFilter(placeSearchResult) {
+    var categoryFilterResult = placeSearchResult.filter(data => (data.category_group_code).indexOf("BK9") > -1);
+    var atmFilterResult      = categoryFilterResult.filter(data => (data.place_name).indexOf("ATM") == -1);
+    var filterResult         = atmFilterResult;
+
+    // 중복 결과 데이터 제거
+    var duplicateRemoveData = filterResult.filter((item1, i) => {
+        return (
+            filterResult.findIndex((item2, j) => {
+                return item1.place_name === item2.place_name
+            }) == i
+        );
+    });
+
+    return duplicateRemoveData;
+}
+
+/** 장소 검색 결과 데이터 거리순 정렬 처리 **/
+function setPlaceSearchResultSort(placeSearchResult) {
+    var allDisplayPlaceInfo = placeSearchResult.sort(function(a, b) {
+        return a.distance - b.distance;
+    });
+
+    return allDisplayPlaceInfo;
+}
+
+/** 장소 표시 **/
+function displayPlaces(places) {
+
+    if (places.length > 0) {
+        var bounds = new kakao.maps.LatLngBounds();
+
+        // 지도에 표시되고 있는 마커 제거
+        removeMarker();
+        clusterer.clear();
+
+        for (var i = 0; i < places.length; i++) {
+            var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
+            var placeName     = places[i].brnnarr;
+            var placeMarker   = addMarker(placePosition, i, placeName);
+
+            bounds.extend(placePosition);
+        }
+
+        clusterer.addMarkers(markers);
+
+        // 클릭 마커 제거
+        if (selectedMarker != undefined) {
+            selectedMarker.setMap(null);
+            selectedMarker = undefined;
+        }
+
+        map.setBounds(bounds);
+
+    } else {
+
+        // 지도에 표시되고 있는 마커 제거
+        removeMarker();
+        clusterer.clear();
+
+        // 클릭 마커 제거
+        if (selectedMarker != undefined) {
+            selectedMarker.setMap(null);
+            selectedMarker = undefined;
+        }
+    }
+
+    // 로딩바 STOP
+    loadingStop();
+}
+
+/** 마커 제거 **/
+function removeMarker() {
+
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+
+    markers = [];
+}
+
+/** 마커 추가 **/
+function addMarker(position, idx, title) {
+    var imgSrc      = "/img/maker/kb.png";
+    var imgSize     = new kakao.maps.Size(32, 36);
+    var imgOptions  = {
+                       spriteSize  : new kakao.maps.Size(32, 36)
+                      ,spriteOrign : new kakao.maps.Point(0, (idx * 46) + 10)
+                      ,offset      : new kakao.maps.Point(16, 36)
+    };
+
+    var onImgSrc      = "/img/maker/kb_on.png";
+    var onImgSize     = new kakao.maps.Size(44, 50);
+    var onImgOptions  = {
+                         spriteSize  : new kakao.maps.Size(44, 50)
+                        ,spriteOrign : new kakao.maps.Point(0, (idx * 46) + 10)
+                        ,offset      : new kakao.maps.Point(22, 50)
+    };
+
+    var markerImg   = new kakao.maps.MarkerImage(imgSrc, imgSize, imgOptions);
+    var markerOnImg = new kakao.maps.MarkerImage(onImgSrc, onImgSize, onImgOptions);
+
+    var marker    = new kakao.maps.Marker({
+        position : position
+       ,image    : markerImg
+       ,title    : title
+    });
+
+    marker.setZIndex(0);
+    marker.setMap(map);
+
+    // 마커 클릭 이벤트 설정
+    kakao.maps.event.addListener(marker, 'click', function() {
+
+        // 기존 마커 제거
+        if (selectedMarker != undefined) {
+            var removeMarkerFlag = true;
+
+            if ((clusterer._clusters).length) {
+                for (var i = 0; i < (clusterer._clusters).length; i++) {
+                    if ((clusterer._clusters[i]._markers).length == 1) {
+                        if (selectedMarker.getTitle() == clusterer._clusters[i]._markers[0].Gb) {
+                            removeMarkerFlag = false;
+                        }
+                    }
+                }
+
+                if (removeMarkerFlag) {
+                    selectedMarker.setMap(null);
+                    selectedMarker = undefined;
+                }
+            }
+        }
+
+        // 마커 이미지 재설정
+        if (!selectedMarker || selectedMarker !== marker) {
+            for (var i = 0; i < markers.length; i++) {
+                if (markers[i] == marker) {
+                    marker.setImage(markerOnImg);
+                    marker.setZIndex(1);
+                } else {
+                    markers[i].setImage(new kakao.maps.MarkerImage("/img/maker/kb.png", imgSize, imgOptions));
+                    markers[i].setZIndex(0);
+                }
+            }
+        }
+
+        // 클릭 마커 설정
+        selectedMarker = marker;
+
+        // 제휴처 상세 호출
+        var listInfo = [];
+
+        if (searchGubn == "map") {
+            listInfo = sortDisplayPlaceInfo;
+        } else if (searchGubn == "word") {
+            listInfo = sortWordDisplayPlaceInfo;
+        }
+
+        for (var i = 0; i < listInfo.length; i++) {
+            if (listInfo[i].brnnarr == selectedMarker.getTitle()) {
+                markerDisplayPlacesDetail(listInfo[i]);
+            }
+        }
+
+    });
+
+    markers.push(marker);
+
+    return marker;
+}
+
+/** 현재 위치 마커 설정 **/
+function createCurrentPositionMarker() {
+
+    if (gpsStat) {
+
+        if (currPositionMarker != undefined) {
+            currPositionMarker.setMap(null);
+            currPositionMarker = undefined;
+        }
+
+        currPositionMarker = new kakao.maps.Marker({
+            position : new kakao.maps.LatLng(currLat, currLng)
+        });
+
+        currPositionMarker.setMap(map);
+        currentPositionBtn(1);
+
+    } else {
+        if (currPositionMarker != undefined) {
+            currPositionMarker.setMap(null);
+            currPositionMarker = undefined;
+        }
+
+        currentPositionBtn(0);
+    }
+}
+
+/** 이지역에서 재검색 **/
+function reSearchPlace() {
+
+    // 이지역에서 재검색 버튼 숨기기
+    setResetBtn(0);
+
+    // 클러스터 커스텀 오버레이 닫기
+    closeCustomOverlay();
+
+    if (currPositionMarker != undefined) {
+        currPositionMarker.setMap(null);
+        currPositionMarker = undefined;
+    }
+
+    if (selectedMarker != undefined) {
+        selectedMarker.setMap(null);
+        selectedMarker = undefined;
+    }
+
+    // 제휴처 리스트, 상세 닫기
+    if (mapBottomFix.type != 0) {
+        setBottomLayout(mapBottomFix.type=0);
+    }
+
+    // 현재 위치 설정
+    currLat = map.getCenter().getLat();
+    currLng = map.getCenter().getLng();
+
+    // 장소 검색 결과 초기화
+    displayPlacesInfo        = [];
+    sortDisplayPlaceInfo     = [];
+    wordDisplayPlacesInfo    = [];
+    sortWordDisplayPlaceInfo = [];
+    moreDisplayPlaceInfo     = [];
+
+    // 검색어 초기화
+    $("#searchWord").val("");
+    $("#searchWord").removeAttr("style");
+    $(".btn_clear").hide();
+
+    // 재조회
+    searchPlace();
+}
+
+/** 현위치 안내 **/
+function currentPositionInfo() {
+    callGubn = "info";
+
+    // 로딩바 START
+    loadingStart();
+
+    if (getOsInfo().indexOf('app') > -1) {
+        nativeGpsCheck();
+    } else {
+        browserGpsCheck();
+    }
+}
+
+/** 확대/축소 **/
+function zoomInOut(zoomGubn) {
+
+    if (zoomGubn == "IN") {
+         map.setLevel(map.getLevel() - 1);
+    } else if (zoomGubn == "OUT") {
+         map.setLevel(map.getLevel() + 1);
+    }
+
+    setResetBtn(1);
+}
+
+// -------------------------------------------------------------------------------------
+// 유심 재고
+// -------------------------------------------------------------------------------------
+
+/** 장소 검색 결과 매칭 유심 재고 정보 조회  **/
+function searchPlaceUsimStockInfo(placeSearchData) {
+    fn_transCall("/support/customer/searchPlaceUsimStockInfo"
+                ,{ placeSearchData : JSON.stringify(placeSearchData) }
+                ,fn_usimSearchCallback
+                ,fn_usimSearchErrCallback);
+}
+
+// -------------------------------------------------------------------------------------
+// 목록
+// -------------------------------------------------------------------------------------
+
+/** 목록 설정 **/
+function displayPlacesList(places) {
+    var displayPlacesListHtml = "";
+
+    $("div.usim_list > ul").html("");
+    $("div.content_body > div.data_sort > span.total").html("");
+
+    if (places.length > 0) {
+
+        for (var i = 0; i < places.length; i++) {
+
+            if (i < showCnt) {
+                displayPlacesListHtml = displayPlacesListHtml + '<li class="store_item" onclick="javascript:selectDisplayPlacesList(' + i + ');">';
+                displayPlacesListHtml = displayPlacesListHtml + '    <a href="#" role="button">';
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="tit">' + places[i].brnnarr + ' <span>' +  places[i].distance + 'm</span></p>';
+
+                if (places[i].brnOperTtmDstic == "00") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">09:00 ~ 16:00</p>';
+                } else if (places[i].brnOperTtmDstic == "01") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">09:00 ~ 18:00</p>';
+                } else if (places[i].brnOperTtmDstic == "02") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">10:00 ~ 17:00</p>';
+                } else if (places[i].brnOperTtmDstic == "03") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">11:00 ~ 18:00</p>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="address">' + places[i].brnAddr + '</p>';
+                displayPlacesListHtml = displayPlacesListHtml + '        <div class="usim_status">';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_lg">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge lg_u">LG U+</span>';
+
+                if (Number(places[i].lgUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].lgUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_kt">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge kt">KT</span>';
+
+                if (Number(places[i].ktUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].ktUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_skt">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge skt">SKT</span>';
+
+                if (Number(places[i].skUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].skUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '        </div>';
+                displayPlacesListHtml = displayPlacesListHtml + '    </a>';
+                displayPlacesListHtml = displayPlacesListHtml + '    <input type="hidden" name="brnnarr"  value="' + places[i].brnnarr + '">';
+                displayPlacesListHtml = displayPlacesListHtml + '    <input type="hidden" name="brnTelno" value="' + places[i].brnTelno + '">';
+                displayPlacesListHtml = displayPlacesListHtml + '</li>';
+
+            } else {
+                moreDisplayPlaceInfo.push(places[i]);
+            }
+        }
+
+        $("div.content_body > div.data_sort > span.total").html("검색결과(<strong>" + places.length + "</strong>)");
+        $("div.usim_list > ul").append(displayPlacesListHtml);
+        $("div.card_nodata.autoheight").hide();
+
+    } else {
+        $("div.content_body > div.data_sort > span.total").html("검색결과(<strong>0</strong>)");
+        $("div.card_nodata.autoheight").show();
+    }
+
+    if (searchGubn == "map") {
+        setSearchMode(0);
+    } else if (searchGubn == "word") {
+        setBottomLayout(mapBottomFix.type=1);
+        setSearchMode(1);
+    }
+
+    // 로딩바 STOP
+    loadingStop();
+}
+
+/** 목록 설정 (더보기) **/
+function moreDisplayPlacesList(places) {
+    var displayPlacesListHtml = "";
+
+    // 더보기 데이터 초기화
+    moreDisplayPlaceInfo = [];
+
+    if (places.length > 0) {
+
+        for (var i = 0; i < places.length; i++) {
+
+            if (i < moreCnt) {
+                displayPlacesListHtml = displayPlacesListHtml + '<li class="store_item" onclick="javascript:selectDisplayPlacesList(' + i + ');">';
+                displayPlacesListHtml = displayPlacesListHtml + '    <a href="#" role="button">';
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="tit">' + places[i].brnnarr + ' <span>' +  places[i].distance + 'm</span></p>';
+
+                if (places[i].brnOperTtmDstic == "00") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">09:00 ~ 16:00</p>';
+                } else if (places[i].brnOperTtmDstic == "01") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">09:00 ~ 18:00</p>';
+                } else if (places[i].brnOperTtmDstic == "02") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">10:00 ~ 17:00</p>';
+                } else if (places[i].brnOperTtmDstic == "03") {
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="time">11:00 ~ 18:00</p>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '        <p class="address">' + places[i].brnAddr + '</p>';
+                displayPlacesListHtml = displayPlacesListHtml + '        <div class="usim_status">';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_lg">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge lg_u">LG U+</span>';
+
+                if (Number(places[i].lgUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].lgUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_kt">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge kt">KT</span>';
+
+                if (Number(places[i].ktUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].ktUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '            <span class="usim_status_skt">';
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="badge skt">SKT</span>';
+
+                if (Number(places[i].skUsimQanty) > 999) {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">999+</span>';
+                } else {
+                displayPlacesListHtml = displayPlacesListHtml + '                <span class="status">' + places[i].skUsimQanty + '</span>';
+                }
+
+                displayPlacesListHtml = displayPlacesListHtml + '            </span>';
+                displayPlacesListHtml = displayPlacesListHtml + '        </div>';
+                displayPlacesListHtml = displayPlacesListHtml + '    </a>';
+                displayPlacesListHtml = displayPlacesListHtml + '    <input type="hidden" name="brnnarr"  value="' + places[i].brnnarr + '">';
+                displayPlacesListHtml = displayPlacesListHtml + '    <input type="hidden" name="brnTelno" value="' + places[i].brnTelno + '">';
+                displayPlacesListHtml = displayPlacesListHtml + '</li>';
+
+            } else {
+                moreDisplayPlaceInfo.push(places[i]);
+            }
+        }
+
+        $("div.usim_list > ul").append(displayPlacesListHtml);
+        $("div.card_nodata.autoheight").hide();
+    }
+
+    // 로딩바 STOP
+    loadingStop();
+}
+
+/** 목록 선택 **/
+function selectDisplayPlacesList(listIndex) {
+
+    // 기존 마커 삭제
+    if (selectedMarker != undefined) {
+        selectedMarker.setMap(null);
+        selectedMarker = undefined;
+    }
+
+    // 마커 설정
+    for (var i = 0; i < markers.length; i++) {
+        var imgSrc      = "/img/maker/kb.png";
+        var imgSize     = new kakao.maps.Size(32, 36);
+        var imgOptions  = {
+                           spriteSize  : new kakao.maps.Size(32, 36)
+                          ,spriteOrign : new kakao.maps.Point(0, (i * 46) + 10)
+                          ,offset      : new kakao.maps.Point(16, 36)
+        };
+
+        var onImgSrc      = "/img/maker/kb_on.png";
+        var onImgSize     = new kakao.maps.Size(44, 50);
+        var onImgOptions  = {
+                             spriteSize  : new kakao.maps.Size(44, 50)
+                            ,spriteOrign : new kakao.maps.Point(0, (i * 46) + 10)
+                            ,offset      : new kakao.maps.Point(22, 50)
+        };
+
+        if (markers[i].getTitle() == $("div.usim_list > ul > li").eq(listIndex).find("input[name='brnnarr']").val()) {
+            markers[i].setImage(new kakao.maps.MarkerImage(onImgSrc, onImgSize, onImgOptions));
+            markers[i].setZIndex(1);
+            selectedMarker = markers[i];
+            selectedMarker.setMap(map);
+        } else {
+            markers[i].setImage(new kakao.maps.MarkerImage(imgSrc, imgSize, imgOptions));
+            markers[i].setZIndex(0);
+        }
+    }
+
+    // 제휴처 상세 호출
+    displayPlacesDetail(listIndex);
+}
+
+/** 제휴처 상세 호출 **/
+function displayPlacesDetail(listIndex) {
+
+    // 제휴처 상세 활성화
+    $("div.usim_map-store").show();
+
+    // 제휴처 상세 HTML 생성
+    var displayPlacesDetailHtml = '';
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '<div class="store_item">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    <div class="store_item-info">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="tit">' + $("div.usim_list > ul > li").eq(listIndex).find("a > p.tit").html() + '</p>';
+
+    var strTime = $("div.usim_list > ul > li").eq(listIndex).find("a > p.time").text();
+
+    if (strTime == "00") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">09:00 ~ 16:00</p>';
+    } else if (strTime == "01") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">09:00 ~ 18:00</p>';
+    } else if (strTime == "02") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">10:00 ~ 17:00</p>';
+    } else if (strTime == "03") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">11:00 ~ 18:00</p>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="address">' + $("div.usim_list > ul > li").eq(listIndex).find("a > p.address").text() + '</p>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <div class="usim_status">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_lg">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge lg_u">LG U+</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + $("div.usim_list > ul > li").eq(listIndex).find("a > div.usim_status > span.usim_status_lg > span.status").text() + '</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_kt">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge kt">KT</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + $("div.usim_list > ul > li").eq(listIndex).find("a > div.usim_status > span.usim_status_kt > span.status").text() + '</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_skt">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge skt">SKT</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + $("div.usim_list > ul > li").eq(listIndex).find("a > div.usim_status > span.usim_status_skt > span.status").text() + '</span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        </div>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    </div>';
+
+    if ($("div.usim_list > ul > li").eq(listIndex).find("input[name='brnTelno']").val() != "") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    <div class="store_item-call">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <a href="#" onclick="javascript:callTelno(\'' + $("div.usim_list > ul > li").eq(listIndex).find("input[name='brnTelno']").val() + '\');">문의하기</a>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    </div>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '</div>';
+
+    $("div.usim_map-store").html("");
+    $("div.usim_map-store").append(displayPlacesDetailHtml);
+
+    // 제휴처 상세 호출
+    viewStoreDetail();
+
+    // 목록 보기 버튼 활성화
+    $("div.usim_map-bottom > div.map_control > button.btn_list").attr("style", "");
+}
+
+/** 제휴처 상세 호출 (마커 클릭 시) **/
+function markerDisplayPlacesDetail(place) {
+
+    // 제휴처 상세 활성화
+    $("div.usim_map-store").show();
+
+    // 제휴처 상세 HTML 생성
+    var displayPlacesDetailHtml = '';
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '<div class="store_item">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    <div class="store_item-info">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="tit">' + place.brnnarr + ' <span>' +  place.distance + 'm</span></p>';
+
+    if (place.brnOperTtmDstic == "00") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">09:00 ~ 16:00</p>';
+    } else if (place.brnOperTtmDstic == "01") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">09:00 ~ 18:00</p>';
+    } else if (place.brnOperTtmDstic == "02") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">10:00 ~ 17:00</p>';
+    } else if (place.brnOperTtmDstic == "03") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="time">11:00 ~ 18:00</p>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <p class="address">' + place.brnAddr + '</p>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <div class="usim_status">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_lg">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge lg_u">LG U+</span>';
+
+    if (Number(place.lgUsimQanty) > 999) {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">999+</span>';
+    } else {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + place.lgUsimQanty + '</span>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_kt">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge kt">KT</span>';
+
+    if (Number(place.ktUsimQanty) > 999) {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">999+</span>';
+    } else {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + place.ktUsimQanty + '</span>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            <span class="usim_status_skt">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="badge skt">SKT</span>';
+
+    if (Number(place.skUsimQanty) > 999) {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">999+</span>';
+    } else {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '                <span class="status">' + place.skUsimQanty + '</span>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '            </span>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        </div>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    </div>';
+
+    if (place.brnTelno != "") {
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    <div class="store_item-call">';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '        <a href="#" onclick="javascript:callTelno(\'' + place.brnTelno + '\');">문의하기</a>';
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '    </div>';
+    }
+
+    displayPlacesDetailHtml = displayPlacesDetailHtml + '</div>';
+
+    $("div.usim_map-store").html("");
+    $("div.usim_map-store").append(displayPlacesDetailHtml);
+
+    // 제휴처 상세 호출
+    viewStoreDetail();
+
+    // 목록 보기 버튼 활성화
+    $("div.usim_map-bottom > div.map_control > button.btn_list").attr("style", "");
+}
+
+/** 고객센터 연결 콜백 **/
+function callTelno(brnTelno) {
+
+    popalarm({
+                 msg        : brnTelno + "로 연결하시겠습니까?"
+                ,cfrmYn     : true
+                ,okBtnText  : "확인"
+                ,okCallback : function() { location.href = "tel:" + brnTelno; }
+    });
+}
+
+// ------------------------------------------------------------------------------------
+// 기타
+// ------------------------------------------------------------------------------------
+
+/** 로딩바 START **/
+function loadingStart() {
+    if (!$('.loading_wrap > div').hasClass('dimmed')) {
+        $('body').addClass('no_scroll');
+        $('.loading_wrap').append('<div class="dimmed"></div><div class="lottie"><lottie-player src="/img/common/loading.json" background="transparent" speed="1" loop autoplay></lottie-player></div>');
+    }
+}
+
+/** 로딩바 STOP **/
+function loadingStop() {
+    if ($('.loading_wrap > div').hasClass('dimmed')) {
+        $('body').removeClass('no_scroll');
+        $('.loading_wrap').empty();
+    }
+}
+
+// ------------------------------------------------------------------------------------
+// 트랜젝션
+// ------------------------------------------------------------------------------------
+/** 트랜젝션 공통 성공 콜백 **/
+function fn_usimSearchCallback(tranId, data, status, inputData) {
+
+    if (status == "success") {
+
+        switch(tranId) {
+            case 'searchPlaceUsimStockInfo' :
+
+                if (!isEmpty(data.result)) {
+                    var resultData = JSON.parse(data.resultUsimStockList);
+
+                    if (searchGubn == "map") {
+                        sortDisplayPlaceInfo = setPlaceSearchResultSort(resultData);
+                        displayPlacesList(sortDisplayPlaceInfo);
+                        displayPlaces(sortDisplayPlaceInfo);
+                    } else if (searchGubn == "word") {
+                        sortWordDisplayPlaceInfo = setPlaceSearchResultSort(resultData);
+                        displayPlacesList(sortWordDisplayPlaceInfo);
+                        displayPlaces(sortWordDisplayPlaceInfo);
+                    }
+
+                } else {
+                    popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+                    break;
+                }
+
+                break;
+
+            case 'setPositionServiceAgree' :
+
+                if (!isEmpty(data.result)) {
+
+                    if (data.result == "success") {
+
+                        if ($("#hiddenSityYn").val() == "Y") {
+
+                            setTimeout(function() {
+                                if (getOsInfo().indexOf('app') > -1) {
+                                    nativeGpsCheck();
+                                } else {
+                                    browserGpsCheck();
+                                }
+                            }, 200);
+
+                        } else {
+
+                            // 로딩바 STOP
+                            loadingStop();
+
+                            // 메인 화면으로 이동
+                            goToMain();
+                        }
+
+                    } else {
+
+                        // 로딩바 STOP
+                        loadingStop();
+
+                        // 오류 메시지
+                        popalarm({
+                                   msg        : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요."
+                                  ,cfrmYn     : false
+                                  ,okCallback : loadPositionServicePopup
+                        });
+                    }
+
+                } else {
+
+                    // 로딩바 STOP
+                    loadingStop();
+
+                    // 오류 메시지
+                    popalarm({
+                               msg        : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요."
+                              ,cfrmYn     : false
+                              ,okCallback : loadPositionServicePopup
+                    });
+                }
+
+                break;
+
+            case 'saveTcmapSityUseHist' :
+                break;
+        }
+    }
+}
+
+/** 트랜젝션 공통 실패 콜백 **/
+function fn_usimSearchErrCallback(tranId, xhr, status, error) {
+
+    switch(tranId) {
+        case 'searchPlaceUsimStockInfo' :
+            popalarm({msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false});
+            break;
+
+        case 'setPositionServiceAgree' :
+
+            // 로딩바 STOP
+            loadingStop();
+
+            // 오류 메시지
+            popalarm({
+                       msg        : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요."
+                      ,cfrmYn     : false
+                      ,okCallback : loadPositionServicePopup
+            });
+
+            break;
+
+        case 'saveTcmapSityUseHist' :
+            break;
+    }
+}
+</script>
+<!-- // SCRIPT ===================================================================================================== -->
+
+
+<!-- PUB CONTENT =================================================================================================== -->
+<div class="container">
+    <input type="hidden" id="hiddenSityYn" name="hiddenSityYn" />
+    <div class="content">
+        <h1 class="title">내 주변 유심 찾기</h1>
+        <!-- 검색 영역 -->
+        <div class="usim_map-head">
+            <div class="usim_map-search">
+                <div class="form_group">
+                    <div class="form_item">
+                        <div class="item_content btn_search">
+                            <div class="label blind">검색</div>
+                            <div class="input">
+                                <input type="search" title="검색어" placeholder="지점명/시 또는 동,읍,면을 검색해주세요" id="searchWord">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn_map_reset">이 지역에서 재검색</button>
+        </div>
+        <!-- // 검색 영역 -->
+        <!-- 검색 결과 영역 -->
+        <div class="usim_map-bottom">
+            <div class="map_control">
+                <button type="button" class="btn_location" onclick="javascript:currentPositionInfo();"><span class="blind">현위치 안내</span></button>
+                <button type="button" class="btn_list">목록보기</button>
+                <div class="btn_zoom">
+                    <button type="button" class="btn_zoomin"  aria-label="확대" onclick="javascript:zoomInOut('IN');"></button>
+                    <button type="button" class="btn_zoomout" aria-label="축소" onclick="javascript:zoomInOut('OUT');"></button>
+                </div>
+            </div>
+            <!-- 유심 검색 목록 -->
+            <div class="usim_map-content">
+                <div class="content_head-fix">
+                    <button type="button" class="btn_open" aria-label="리스트 열기"></button>
+                </div>
+                <div class="content_body">
+                    <div class="banner_box usim_kb">
+                        <div class="txt_area">KB국민은행 지점에서 <b>KB Liiv M<br>유심을 찾아 바로 개통하세요!</b></div>
+                    </div>
+                    <div class="data_sort">
+                        <span class="total"></span>
+                    </div>
+                    <div class="usim_list">
+                        <h3 class="blind">가까운 유심 목록</h3>
+                        <ul>
+                        </ul>
+                        <div class="card_nodata autoheight" style="display:none">
+                            <p>검색결과가 없습니다.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_viewmap">지도보기</button>
+                </div>
+            </div>
+            <!-- // 유심 검색 목록 -->
+            <!-- 유심 목록 상세 -->
+            <div class="usim_map-store">
+            </div>
+            <!-- // 유심 목록 상세 -->
+        </div>
+        <!-- // 검색 결과 영역 -->
+        <div id="map" class="usim_map">
+        </div>
+    </div><!-- //.content -->
+</div><!-- //.container -->
+<!-- // PUB CONTENT ================================================================================================ -->
+
+
+<!-- LAYER POP  ==================================================================================================== -->
+<div id="MYST0102" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="tit_sub_wrap">
+            <h2 class="tit_sub">위치기반 서비스 이용 동의</h2>
+            <div class="summary">
+                위치 서비스를 이용하시면 현재 위치 기준으로<br> 매장과 멤버십 혜택을 안내해 드립니다.
+            </div>
+        </div>
+        <hr class="hr_divide" aria-hidden="true">
+        <div class="section">
+            <div class="board_list_wrap">
+                <ul class="board_list type2">
+                    <li class="list_item type2">
+                        <div class="list_left">
+                            <strong class="list_tit">위치기반 서비스 이용 동의</strong>
+                            <span><a href="#none" class="btn_text" onclick="javascript:moveLocServiceTermsPage();">위치기반서비스 이용약관 상세보기</a></span>
+                        </div>
+                        <span class="switch_item type1">
+                            <input type="checkbox" id="switch1">
+                            <label for="switch1"><span class="blind">비활성화</span></label>
+                        </span>
+                    </li>
+                </ul>
+                <div class="btm_txt">
+                    <ul class="star_type">
+                        <li>위치기반 서비스 이용에 동의하지 않는 경우 KB Liiv M에서 제공하는 내 위치 기반의 서비스를 제공 받을실 수 없어요.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // LAYER POP  ================================================================================================= -->
+
+
+<!-- PUB SCRIPT ==================================================================================================== -->
+<script type="text/javascript" src="/js/support_usim_place.js"></script>
+<script type="text/javascript">
+
+    /** 검색 버튼 클릭 **/
+    $(document).on("click", ".usim_map-search .btn_type", function() {
+
+        // 로딩바 호출
+        loadingStart();
+
+        // 이 지역에서 재검색 버튼 숨기기
+        setResetBtn(0);
+
+        // 커스텀오버레이 닫기
+        closeCustomOverlay();
+
+        // 검색 결과 초기화
+        searchGubn               = "word";
+        wordDisplayPlacesInfo    = [];
+        sortWordDisplayPlaceInfo = [];
+        moreDisplayPlaceInfo     = [];
+
+        // 조회
+        if (!isEmpty($("#searchWord").val())) {
+            searchPlace($("#searchWord").val());
+        } else {
+            displayPlacesList(sortWordDisplayPlaceInfo);
+            displayPlaces(sortWordDisplayPlaceInfo);
+        }
+    });
+
+    /** 엔터키 입력 **/
+    $('.usim_map-search input').keypress(function(event) {
+        if (event.keyCode == 13) {
+            $('.usim_map-search .btn_type').trigger("click");
+        }
+    });
+
+    /** 이지역에서 재검색 버튼 클릭 **/
+    $(document).on("click", ".btn_map_reset", function() {
+        reSearchPlace();
+        setBottomLayout(mapBottomFix.type=0);
+        setSearchMode(0);
+    });
+
+    /** 상세보기 **/
+    $(document).on("click", ".btn_viewmap", function() {
+        setBottomLayout(mapBottomFix.type=0);
+    });
+
+    /** 목록보기 **/
+    $(document).on("click", ".map_control .btn_list", function() {
+        closeCustomOverlay();
+    });
+
+    /** 목록 초기화 **/
+    var fnDataReset = function(type) {
+        if (type == 0) {
+
+            // 재검색
+            moreDisplayPlaceInfo = [];
+
+            if (searchGubn == "map") {
+                displayPlacesList(sortDisplayPlaceInfo);
+            } else if (searchGubn == "word") {
+                displayPlacesList(sortWordDisplayPlaceInfo);
+            }
+        }
+    }
+
+    /** 목록 더보기 **/
+    var fnDataMore  = function() {
+
+        // 목록 닫힌 경우, 스크롤 움직여도 더보기 처리 되지 않도록 처리
+        if (mapBottomFix.type == 0) {
+            return;
+        }
+
+        currListCnt = $("div.usim_list > ul > li").length;
+
+        if (moreDisplayPlaceInfo.length < showCnt) {
+            moreCnt = moreDisplayPlaceInfo.length;
+        } else {
+            moreCnt = showCnt;
+        }
+
+        if (moreCnt == 0) {
+            return;
+        }
+
+        setTimeout(function() {
+            loadingStart();
+            moreDisplayPlacesList(moreDisplayPlaceInfo);
+        }, 2000);
+    }
+</script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75609f0d0dd71c930b6f9863965f7f35&libraries=services,clusterer"></script>
+<!-- // PUB SCRIPT ================================================================================================= -->
+
+	<!-- //contents -->
+
+	<!-- footer -->
+	
+	<!-- //footer -->
+    </div>
+    
+    <div id="confirmPopup" class="layerHTML">
+        <div class="ly_cnt">
+            <div class="section"></div>
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <button type="button" id="btnPopCancel" class="btn secondary" data-action="close">취소</button>
+                <button type="button" id="btnPopOk" class="btn primary" data-action="close">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

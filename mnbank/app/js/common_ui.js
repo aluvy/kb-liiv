@@ -1435,7 +1435,6 @@ $(function(){
             var $scrollTop = parseInt($("#wrap").css("top"))*-1;
             var $body = $("body");
             var $win = $(window);
-            console.log("close", "$lastFocused", $lastFocused)
 
             if(_this.type === 'bottom' || _this.type === 'bottom_acc'){
                 _this.$layer.css({bottom:"0%"}).stop().animate({bottom:"-100%"}, 400, function(){
@@ -1463,7 +1462,6 @@ $(function(){
                 $(_this.content).html($html).find('.ly_cnt').removeClass("scroll_y").removeAttr("style");
             }
 
-            console.log('close', '$lastFocused', $lastFocused);
             $("#"+$lastFocused).focus().closest(".layer_wrap").removeAttr("aria-hidden");
             _this.$parent.prev(".layer_wrap").removeAttr("aria-hidden");  
             

@@ -378,31 +378,31 @@
 .img_item.bank.america{background-image: url(../img/img/bank_america.png);}
 
 .img_item[class*="c_"] {width:4rem; height:4rem;}
-.img_item.c_004 {background-image: url(../img/img/bank_kb.png);} /* 국민은행 */
-.img_item.c_003 {background-image: url(../img/img/bank_ibk.png);} /* 기업은행 */
-.img_item.c_011 {background-image: url(../img/img/bank_nh.png);} /* NH농협은행 */
-.img_item.c_012 {background-image: url(../img/img/bank_nh2.png);} /* 농협회원조합 */
-.img_item.c_088 {background-image: url(../img/img/bank_shinhan.png);}/* 신한은행 */
-.img_item.c_002 {background-image: url(../img/img/bank_kdb.png);} /* 산업은행 */
-.img_item.c_020 {background-image: url(../img/img/bank_woori.png);} /* 우리은행 */
-.img_item.c_027 {background-image: url(../img/img/bank_citi.png);} /* 한국씨티은행 */
-.img_item.c_081 {background-image: url(../img/img/bank_hana.png);} /* 하나은행 */
-.img_item.c_023 {background-image: url(../img/img/bank_sc.png);} /* SC제일은행 */
-.img_item.c_039 {background-image: url(../img/img/bank_bnk.png);} /* 경남은행 ********** */
-.img_item.c_034 {background-image: url(../img/img/bank_gwangju.png);} /* 광주은행 */
-.img_item.c_031 {background-image: url(../img/img/bank_daegu.png);} /* 대구은행 */
-.img_item.c_060 {background-image: url(../img/img/bank_america.png);} /* 뱅크오프아메리카 */
-.img_item.c_032 {background-image: url(../img/img/bank_bnk.png);} /* 부산은행 ********** */
-.img_item.c_064 {background-image: url(../img/img/bank_forest.png);} /* 산림조합중앙회 */
-.img_item.c_050 {background-image: url(../img/img/bank_sb.png);} /* 저축은행 */
-.img_item.c_045 {background-image: url(../img/img/bank_saemaeul.png);} /* 새마을금고중앙회 */
-.img_item.c_007 {background-image: url(../img/img/bank_sh.png);} /* 수협은행 */
-.img_item.c_048 {background-image: url(../img/img/bank_shinhyup.png);} /* 신협중앙회 */
-.img_item.c_071 {background-image: url(../img/img/bank_post.png);} /* 우체국 */
-.img_item.c_037 {background-image: url(../img/img/bank_gwangju.png);} /* 전북은행 */
-.img_item.c_035 {background-image: url(../img/img/bank_shinhan.png);} /* 제주은행 */
-.img_item.c_090 {background-image: url(../img/img/bank_kakao.png);} /* 카카오뱅크 */
-.img_item.c_089 {background-image: url(../img/img/bank_kbank.png);} /* 케이뱅크 */
+.img_item.c_004 {background-image: url(../img/img/bank_kb.png);} /* êµ­ë¯¼ì€í–‰ */
+.img_item.c_003 {background-image: url(../img/img/bank_ibk.png);} /* ê¸°ì—…ì€í–‰ */
+.img_item.c_011 {background-image: url(../img/img/bank_nh.png);} /* NHë†í˜‘ì€í–‰ */
+.img_item.c_012 {background-image: url(../img/img/bank_nh2.png);} /* ë†í˜‘íšŒì›ì¡°í•© */
+.img_item.c_088 {background-image: url(../img/img/bank_shinhan.png);}/* ì‹ í•œì€í–‰ */
+.img_item.c_002 {background-image: url(../img/img/bank_kdb.png);} /* ì‚°ì—…ì€í–‰ */
+.img_item.c_020 {background-image: url(../img/img/bank_woori.png);} /* ìš°ë¦¬ì€í–‰ */
+.img_item.c_027 {background-image: url(../img/img/bank_citi.png);} /* í•œêµ­ì”¨í‹°ì€í–‰ */
+.img_item.c_081 {background-image: url(../img/img/bank_hana.png);} /* í•˜ë‚˜ì€í–‰ */
+.img_item.c_023 {background-image: url(../img/img/bank_sc.png);} /* SCì œì¼ì€í–‰ */
+.img_item.c_039 {background-image: url(../img/img/bank_bnk.png);} /* ê²½ë‚¨ì€í–‰ ********** */
+.img_item.c_034 {background-image: url(../img/img/bank_gwangju.png);} /* ê´‘ì£¼ì€í–‰ */
+.img_item.c_031 {background-image: url(../img/img/bank_daegu.png);} /* ëŒ€êµ¬ì€í–‰ */
+.img_item.c_060 {background-image: url(../img/img/bank_america.png);} /* ë±…í¬ì˜¤í”„ì•„ë©”ë¦¬ì¹´ */
+.img_item.c_032 {background-image: url(../img/img/bank_bnk.png);} /* ë¶€ì‚°ì€í–‰ ********** */
+.img_item.c_064 {background-image: url(../img/img/bank_forest.png);} /* ì‚°ë¦¼ì¡°í•©ì¤‘ì•™íšŒ */
+.img_item.c_050 {background-image: url(../img/img/bank_sb.png);} /* ì €ì¶•ì€í–‰ */
+.img_item.c_045 {background-image: url(../img/img/bank_saemaeul.png);} /* ìƒˆë§ˆì„ê¸ˆê³ ì¤‘ì•™íšŒ */
+.img_item.c_007 {background-image: url(../img/img/bank_sh.png);} /* ìˆ˜í˜‘ì€í–‰ */
+.img_item.c_048 {background-image: url(../img/img/bank_shinhyup.png);} /* ì‹ í˜‘ì¤‘ì•™íšŒ */
+.img_item.c_071 {background-image: url(../img/img/bank_post.png);} /* ìš°ì²´êµ­ */
+.img_item.c_037 {background-image: url(../img/img/bank_gwangju.png);} /* ì „ë¶ì€í–‰ */
+.img_item.c_035 {background-image: url(../img/img/bank_shinhan.png);} /* ì œì£¼ì€í–‰ */
+.img_item.c_090 {background-image: url(../img/img/bank_kakao.png);} /* ì¹´ì¹´ì˜¤ë±…í¬ */
+.img_item.c_089 {background-image: url(../img/img/bank_kbank.png);} /* ì¼€ì´ë±…í¬ */
 
 /* **** img_item > stock **** */
 #stock .content li {flex:0 0 14rem; height:14rem;}
@@ -431,28 +431,28 @@
 .img_item.stock.meritz{background-image: url(../img/img/stock_meritz.png);}
 .img_item.stock.bookook{background-image: url(../img/img/stock_bookook.png);}
 
-.img_item.c_218 {background-image: url(../img/img/stock_kb.png);} /* KB증권 */
-.img_item.c_261 {background-image: url(../img/img/stock_kyobo.png);} /* 교보증권 */
-.img_item.c_267 {background-image: url(../img/img/stock_daesin.png);} /* 대신증권 */
-.img_item.c_279 {background-image: url(../img/img/stock_db.png);} /* DB금융투자 */
-.img_item.c_287 {background-image: url(../img/img/stock_meritz.png);} /* 메리츠종합금융증권 */
-.img_item.c_238 {background-image: url(../img/img/stock_mirae.png);} /* 미래에셋대우 */
-.img_item.c_290 {background-image: url(../img/img/stock_bookook.png);} /* 부국증권 */
-.img_item.c_240 {background-image: url(../img/img/stock_ss.png);} /* 삼성증권 */
-.img_item.c_291 {background-image: url(../img/img/stock_shinyoung.png);} /* 신영증권 */
-.img_item.c_278 {background-image: url(../img/img/stock_shinhan.png);} /* 신한금융투자 */
-.img_item.c_266 {background-image: url(../img/img/stock_sk.png);} /* 에스케이증권 */
-.img_item.c_263 {background-image: url(../img/img/stock_hyundai.png);} /* 현대차증권 */
-.img_item.c_209 {background-image: url(../img/img/stock_yuanta.png);} /* 유안타증권 */
-.img_item.c_280 {background-image: url(../img/img/stock_eugenefn.png);} /* 유진투자증권 */
-.img_item.c_265 {background-image: url(../img/img/stock_ebest.png);} /* 이베스트투자증권 */
-.img_item.c_292 {background-image: url(../img/img/stock_cape.png);} /* 케이프투자증권 */
-.img_item.c_264 {background-image: url(../img/img/stock_kiwoom.png);} /* 키움증권 */
-.img_item.c_270 {background-image: url(../img/img/stock_hana.png);} /* 하나금융투자 */
-.img_item.c_262 {background-image: url(../img/img/stock_hi.png);} /* 하이투자증권 */
-.img_item.c_243 {background-image: url(../img/img/stock_korea.png);} /* 한국투자증권 */
-.img_item.c_269 {background-image: url(../img/img/stock_hanwha.png);} /* 한화투자증권 */
-.img_item.c_247 {background-image: url(../img/img/stock_nh.png);} /* NH투자증권 */
+.img_item.c_218 {background-image: url(../img/img/stock_kb.png);} /* KBì¦ê¶Œ */
+.img_item.c_261 {background-image: url(../img/img/stock_kyobo.png);} /* êµë³´ì¦ê¶Œ */
+.img_item.c_267 {background-image: url(../img/img/stock_daesin.png);} /* ëŒ€ì‹ ì¦ê¶Œ */
+.img_item.c_279 {background-image: url(../img/img/stock_db.png);} /* DBê¸ˆìœµíˆ¬ìž */
+.img_item.c_287 {background-image: url(../img/img/stock_meritz.png);} /* ë©”ë¦¬ì¸ ì¢…í•©ê¸ˆìœµì¦ê¶Œ */
+.img_item.c_238 {background-image: url(../img/img/stock_mirae.png);} /* ë¯¸ëž˜ì—ì…‹ëŒ€ìš° */
+.img_item.c_290 {background-image: url(../img/img/stock_bookook.png);} /* ë¶€êµ­ì¦ê¶Œ */
+.img_item.c_240 {background-image: url(../img/img/stock_ss.png);} /* ì‚¼ì„±ì¦ê¶Œ */
+.img_item.c_291 {background-image: url(../img/img/stock_shinyoung.png);} /* ì‹ ì˜ì¦ê¶Œ */
+.img_item.c_278 {background-image: url(../img/img/stock_shinhan.png);} /* ì‹ í•œê¸ˆìœµíˆ¬ìž */
+.img_item.c_266 {background-image: url(../img/img/stock_sk.png);} /* ì—ìŠ¤ì¼€ì´ì¦ê¶Œ */
+.img_item.c_263 {background-image: url(../img/img/stock_hyundai.png);} /* í˜„ëŒ€ì°¨ì¦ê¶Œ */
+.img_item.c_209 {background-image: url(../img/img/stock_yuanta.png);} /* ìœ ì•ˆíƒ€ì¦ê¶Œ */
+.img_item.c_280 {background-image: url(../img/img/stock_eugenefn.png);} /* ìœ ì§„íˆ¬ìžì¦ê¶Œ */
+.img_item.c_265 {background-image: url(../img/img/stock_ebest.png);} /* ì´ë² ìŠ¤íŠ¸íˆ¬ìžì¦ê¶Œ */
+.img_item.c_292 {background-image: url(../img/img/stock_cape.png);} /* ì¼€ì´í”„íˆ¬ìžì¦ê¶Œ */
+.img_item.c_264 {background-image: url(../img/img/stock_kiwoom.png);} /* í‚¤ì›€ì¦ê¶Œ */
+.img_item.c_270 {background-image: url(../img/img/stock_hana.png);} /* í•˜ë‚˜ê¸ˆìœµíˆ¬ìž */
+.img_item.c_262 {background-image: url(../img/img/stock_hi.png);} /* í•˜ì´íˆ¬ìžì¦ê¶Œ */
+.img_item.c_243 {background-image: url(../img/img/stock_korea.png);} /* í•œêµ­íˆ¬ìžì¦ê¶Œ */
+.img_item.c_269 {background-image: url(../img/img/stock_hanwha.png);} /* í•œí™”íˆ¬ìžì¦ê¶Œ */
+.img_item.c_247 {background-image: url(../img/img/stock_nh.png);} /* NHíˆ¬ìžì¦ê¶Œ */
 
 /* **** img_item > card **** */
 #card .content li {flex:0 0 14rem; height:14rem;}
@@ -471,15 +471,15 @@
 .img_item.card.nh{background-image: url(../img/img/card_nh.png);}
 .img_item.card.samsung{background-image: url(../img/img/card_samsung.png);}
 
-.img_item.c_kb{background-image: url(../img/img/card_kb.png);} /* 국민카드 */
-.img_item.c_sh{background-image: url(../img/img/card_shinhan.png);} /* 신한카드 */
-.img_item.c_ss{background-image: url(../img/img/card_samsung.png);} /* 삼성카드 */
-.img_item.c_hd{background-image: url(../img/img/card_hyundai.png);} /* 현대카드 */
-.img_item.c_lt{background-image: url(../img/img/card_lotte.png);} /* 롯데카드 */
-.img_item.c_bc{background-image: url(../img/img/card_bc.png);} /* BC카드 */
-.img_item.c_ha{background-image: url(../img/img/card_hana.png);} /* 하나카드 */
-.img_item.c_nh{background-image: url(../img/img/card_nh.png);} /* NH카드 */
-.img_item.c_ct{background-image: url(../img/img/card_citi.png);} /* 씨티카드 */
+.img_item.c_kb{background-image: url(../img/img/card_kb.png);} /* êµ­ë¯¼ì¹´ë“œ */
+.img_item.c_sh{background-image: url(../img/img/card_shinhan.png);} /* ì‹ í•œì¹´ë“œ */
+.img_item.c_ss{background-image: url(../img/img/card_samsung.png);} /* ì‚¼ì„±ì¹´ë“œ */
+.img_item.c_hd{background-image: url(../img/img/card_hyundai.png);} /* í˜„ëŒ€ì¹´ë“œ */
+.img_item.c_lt{background-image: url(../img/img/card_lotte.png);} /* ë¡¯ë°ì¹´ë“œ */
+.img_item.c_bc{background-image: url(../img/img/card_bc.png);} /* BCì¹´ë“œ */
+.img_item.c_ha{background-image: url(../img/img/card_hana.png);} /* í•˜ë‚˜ì¹´ë“œ */
+.img_item.c_nh{background-image: url(../img/img/card_nh.png);} /* NHì¹´ë“œ */
+.img_item.c_ct{background-image: url(../img/img/card_citi.png);} /* ì”¨í‹°ì¹´ë“œ */
 
 /* **** img_item > sns **** */
 #sns .content li {flex:0 0 14rem; height:14rem;}
@@ -532,7 +532,7 @@
 
 .img_item.ect.certification {width: 28rem; height: 39.4rem; background-image: url(../img/img/etc_certification.png);}
 
-/* 셀프개통 서비스 .img_item.data.open01{width:18rem; height:21.8rem; background-image: url(../img/img/data_open01.png);}
+/* ì…€í”„ê°œí†µ ì„œë¹„ìŠ¤ .img_item.data.open01{width:18rem; height:21.8rem; background-image: url(../img/img/data_open01.png);}
 .img_item.data.open02_1{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_1.png);}
 .img_item.data.open02_2{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_2.png);}
 .img_item.data.open02_3{width:8.957rem; height:11rem; background-image: url(../img/img/data_open02_3.png);}

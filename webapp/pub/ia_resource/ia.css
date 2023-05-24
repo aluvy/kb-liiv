@@ -7,8 +7,8 @@ html,body {margin:0; padding:0; width:100%; height:100%; /*max-width:100%;*/ min
 
 body {-webkit-text-size-adjust:none; word-break:break-all; line-height:1.437; background:#fff; color:#26282c; letter-spacing:-0.02em;}
 body,button,dd,dl,dt,fieldset,form,input,legend,li,ol,p,select,table,td,textarea,th,ul,h1,h2,h3,h4,h5,h6,pre {margin:0; padding:0; -webkit-box-sizing:border-box; box-sizing:border-box; font-family:inherit; outline:none;}
-body,button,input,select,table,textarea {font-size:1.6rem; font-weight:400; font-family:"ë§‘ì€ ê³ ë”•", "Malgun Gothic", "Frutiger LT Std", "Arial", "sans-serif";}
-/* body,button,input,select,table,textarea {font-size:1.6rem; font-weight:400; font-family:'Roboto','NotoSans','Droid Sans','AppleGothicNeoSD','Apple SD ì‚°ëŒê³ ë”• Neo','Sans-serif','ë‹ìŒ','dotum';} */
+body,button,input,select,table,textarea {font-size:1.6rem; font-weight:400; font-family:"맑은 고딕", "Malgun Gothic", "Frutiger LT Std", "Arial", "sans-serif";}
+/* body,button,input,select,table,textarea {font-size:1.6rem; font-weight:400; font-family:'Roboto','NotoSans','Droid Sans','AppleGothicNeoSD','Apple SD 산돌고딕 Neo','Sans-serif','돋음','dotum';} */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
 table {table-layout:fixed; width:100%; border-spacing:0;}
 caption,
@@ -31,7 +31,7 @@ ul>li {margin:0; list-style-type:none;}
 /* .modify{padding:2px 4px; background-color:red; color:#ffffff;} */
 .dark{padding:2px 4px; background-color:black; color:#ffffff;}
 
-.left {text-align:left !important;} /* í…ìŠ¤íŠ¸ ì •ë ¬ */
+.left {text-align:left !important;} /* 텍스트 정렬 */
 .right {text-align:right !important;}
 .center {text-align:center !important;}
 .top {vertical-align:top !important;}
@@ -80,12 +80,12 @@ ul>li {margin:0; list-style-type:none;}
 .table_ia table td:last-child {vertical-align:top; border-right:0;}
 .table_ia table td:last-child {padding-left:3rem;}
 .table_ia table td:nth-last-child(2):before {display:inline-block; min-width:5.4rem; padding:.2rem .4rem; border-radius:.3rem; color:#fff; font-size:1.2rem; font-weight:700; text-align:center;}
-.table_ia table tr.ing td:nth-last-child(2):before {content:'ì§„í–‰ì¤‘'; background-color:orange;}
-.table_ia table tr.waiting td:nth-last-child(2):before {content:'ëŒ€ê¸°'; background-color:#1065dc;}
-.table_ia table tr.end td:nth-last-child(2):before {content:'ì™„ë£Œ'; background-color:#60574b;}
+.table_ia table tr.ing td:nth-last-child(2):before {content:'진행중'; background-color:orange;}
+.table_ia table tr.waiting td:nth-last-child(2):before {content:'대기'; background-color:#1065dc;}
+.table_ia table tr.end td:nth-last-child(2):before {content:'완료'; background-color:#60574b;}
 .table_ia table tr.hidden td:nth-last-child(2):before {display:none;}
-.table_ia table tr.modify td:nth-last-child(2):before {content:'ìˆ˜ì •ì™„ë£Œ'; background-color:red;}
-.table_ia table tr.modify.ing td:nth-last-child(2):before {content:'ìˆ˜ì •ì¤‘'; border:3px solid red; background-color:white; color:red;}
+.table_ia table tr.modify td:nth-last-child(2):before {content:'수정완료'; background-color:red;}
+.table_ia table tr.modify.ing td:nth-last-child(2):before {content:'수정중'; border:3px solid red; background-color:white; color:red;}
 .table_ia table tr.hidden td {background-color:#e4e4e4; color:#ccc !important;}
 .table_ia table tr.hidden.ing td:last-child:before,
 .table_ia table tr.hidden.ing td .comment > a{opacity:.3;}

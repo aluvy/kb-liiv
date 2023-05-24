@@ -46,8 +46,6 @@ function callIFCM559SM322SM530(prodNo) {
 	base.data      = data;
 	base.cm559     = "Y";
 
-	console.info("(INPUT) callIFCM559SM322SM530 [" + serviceId + "] : \n" +  JSON.stringify(base));
-
 	$.ajax({
             type         : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -57,8 +55,6 @@ function callIFCM559SM322SM530(prodNo) {
             ,dataType    : "json"
             ,success     : function(res) {
 
-                console.info("(RESULT) callIFCM559SM322SM530 [" + serviceId + "] : \n" + JSON.stringify(res));
-
                 data = JSON.parse(fnUnSign(res.enc));
 
                 // 음성 로밍 차단 신청하기 버튼 표시
@@ -67,8 +63,10 @@ function callIFCM559SM322SM530(prodNo) {
                 // 로밍 서비스 상품 목록 활성화
                 $("div.tit_sec_wrap.extra_cost").parent().show();
                 $("div.content.extra_detail").find("hr.hr_divide").each(function(index) {
-                    if (index < 7) {
+                    if (index > 0 && index < 7) {
                         $(this).show();
+                    } else {
+                        $(this).hide();
                     }
                 });
 
@@ -105,10 +103,12 @@ function callIFCM559SM322SM530(prodNo) {
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status ,error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
+            ,complete : function(xhr, status) {
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -165,8 +165,6 @@ function callIFSM322(svcInfo) {
 	base.serviceId = serviceId;
 	base.data      = data;
 
-	console.info("(INPUT) callIFSM322 [" + serviceId + "] : \n" + JSON.stringify(data));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -176,7 +174,29 @@ function callIFSM322(svcInfo) {
             ,contentType : 'application/json; charset=utf-8'
             ,success     : function(data) {
 
-            	console.info("(RESULT) callIFSM322 [" + serviceId + "] : \n" + JSON.stringify(data));
+                // 로밍서비스 해제
+                $("#roamingServiceOnOffChk").prop("checked", true);
+                $("#roamingServiceOnOffChk").parent().find("span").text("해제");
+                $("#roamingServiceOnOffChk").parent().find("label > span").text("활성화");
+
+                $('#roamingOffDiv').hide();
+                $('#roamingOffHr').hide();
+
+                $("div.content.extra_detail").find("hr.hr_divide").each(function(index) {
+                    if (index > 0 && index < 10) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                $("div.content.extra_detail").find("div.section").each(function(index) {
+                    if (index > 0 && index < 10) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
 
                 // 일반형, 기간형 로밍 서비스 목록 버튼 영역 활성화/비활성화
                 $("div [id$=_appl]").show();
@@ -201,80 +221,116 @@ function callIFSM322(svcInfo) {
                     var body           = data.data.RetrieveSvcEquResponse.ResponseRecord.ResponseBody;
                     var ppSvcInfoOutVO = body.PpSvcInfoOutVO;
 
-                    for (var i = 0; i < ppSvcInfoOutVO.length; i++) {
+                    var isRoamingOff = false;
 
-                        // 하루데이터로밍 일반형
-                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0001876') {
+                    for(var i = 0; i < ppSvcInfoOutVO.length; i++) {
 
-                            // 버튼 영역 처리 (신청/변경,해지)
-                            $("#div_btn_LRZ0001876_appl").hide();
-                            $("#div_btn_LRZ0001876_cncl").show();
+                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0002225') {
+                            $("#roamingServiceOnOffChk").prop("checked", false);
+                            $("#roamingServiceOnOffChk").parent().find("span").text("차단");
+                            $("#roamingServiceOnOffChk").parent().find("label > span").text("비활성화");
 
-                            // 모든 신청 버튼 disable
-                            $("div [id$=_appl] > button.primary").prop("disabled", true);
+                            $('#roamingOffDiv').show();
+                            $('#roamingOffHr').show();
+
+                            $("div.content.extra_detail").find("hr.hr_divide").each(function(index) {
+                                if (index > 0 && index < 7) {
+                                    $(this).hide();
+                                } else {
+                                    $(this).show();
+                                }
+                            });
+
+                            $("div.content.extra_detail").find("div.section").each(function(index) {
+                                if (index > 0 && index < 7) {
+                                   $(this).hide();
+                                } else {
+                                   $(this).show();
+                                }
+                            });
+
+                            isRoamingOff = true;
+                            break;
                         }
+                    }
 
-                        // 제로 프리미엄 일반형
-                        // 제로 프리미엄 일반형 (20211227상품코드변경 asis LRZ0003848 tobe LRZ0003095)
-                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0003095') {
-                            $("#div_btn_LRZ0003095_appl").hide();
-                            $("#div_btn_LRZ0003095_cncl").show();
-                            $("div [id$=_appl] > button.primary").prop("disabled", true);
-                        }
+                    if (!isRoamingOff) {
 
-                        // 하루데이터로밍 기간형
-                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0002680') {
-                            $("#div_btn_LRZ0002680_appl").hide();
-                            $("#div_btn_LRZ0002680_cncl").show();
-                            $("div [id$=_appl] > button.primary").prop("disabled", true);
+                        for (var i = 0; i < ppSvcInfoOutVO.length; i++) {
 
-                            $("#div_LRZ0002680_use").attr("data-value", ppSvcInfoOutVO[i].entrSvcSeqno);
-                            $("#div_LRZ0002680_use").show();
-                            $("#p_LRZ0002680_kor").show();
-                            $("#p_LRZ0002680_loc").show();
+                            // 하루데이터로밍 일반형
+                            if (ppSvcInfoOutVO[i].svcCd == 'LRZ0001876') {
 
-                            svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
+                                // 버튼 영역 처리 (신청/변경,해지)
+                                $("#div_btn_LRZ0001876_appl").hide();
+                                $("#div_btn_LRZ0001876_cncl").show();
 
-                            callIFSM530(svcInfo);
-                        }
+                                // 모든 신청 버튼 disable
+                                $("div [id$=_appl] > button.primary").prop("disabled", true);
+                            }
 
-                        // 제로 프리미엄 기간형
-                        // 제로 프리미엄 기간형 (20211227상품코드변경 asis LRZ0003085 tobe LRZ0003094)
-                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0003094') {
-                            $("#div_btn_LRZ0003094_appl").hide();
-                            $("#div_btn_LRZ0003094_cncl").show();
-                            $("div [id$=_appl] > button.primary").prop("disabled", true);
+                            // 제로 프리미엄 일반형
+                            // 제로 프리미엄 일반형 (20211227상품코드변경 asis LRZ0003848 tobe LRZ0003095)
+                            if (ppSvcInfoOutVO[i].svcCd == 'LRZ0003095') {
+                                $("#div_btn_LRZ0003095_appl").hide();
+                                $("#div_btn_LRZ0003095_cncl").show();
+                                $("div [id$=_appl] > button.primary").prop("disabled", true);
+                            }
 
-                            $("#div_LRZ0003094_use").attr("data-value",ppSvcInfoOutVO[i].entrSvcSeqno);
-                            $("#div_LRZ0003094_use").show();
-                            $("#p_LRZ0003094_kor").show();
-                            $("#p_LRZ0003094_loc").show();
+                            // 하루데이터로밍 기간형
+                            if (ppSvcInfoOutVO[i].svcCd == 'LRZ0002680') {
+                                $("#div_btn_LRZ0002680_appl").hide();
+                                $("#div_btn_LRZ0002680_cncl").show();
+                                $("div [id$=_appl] > button.primary").prop("disabled", true);
 
-                            svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
+                                $("#div_LRZ0002680_use").attr("data-value", ppSvcInfoOutVO[i].entrSvcSeqno);
+                                $("#div_LRZ0002680_use").show();
+                                $("#p_LRZ0002680_kor").show();
+                                $("#p_LRZ0002680_loc").show();
 
-                            callIFSM530(svcInfo);
-                        }
+                                svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
 
-                        // 제로라이트
-                        if (ppSvcInfoOutVO[i].svcCd == 'LRZ0002091' ||
-                            ppSvcInfoOutVO[i].svcCd == 'LRZ0002092' ||
-                            ppSvcInfoOutVO[i].svcCd == 'LRZ0002093' ||
-                            ppSvcInfoOutVO[i].svcCd == 'LRZ0002094') {
-                            $("#div_btn_zerolite_appl").hide();
-                            $("#div_btn_zerolite_cncl").show();
-                            $("div [id$=_appl] > button.btn_default").prop("disabled", true);
+                                callIFSM530(svcInfo);
+                            }
 
-                            $("#div_zerolite_use").attr("data-value", ppSvcInfoOutVO[i].entrSvcSeqno);
-                            $("#div_zerolite_use").attr("data-prod" , ppSvcInfoOutVO[i].svcCd);
-                            $("#div_zerolite_use").show();
-                            $("#p_zerolite_kor").show();
-                            $("#p_zerolite_loc").show();
+                            // 제로 프리미엄 기간형
+                            // 제로 프리미엄 기간형 (20211227상품코드변경 asis LRZ0003085 tobe LRZ0003094)
+                            if (ppSvcInfoOutVO[i].svcCd == 'LRZ0003094') {
+                                $("#div_btn_LRZ0003094_appl").hide();
+                                $("#div_btn_LRZ0003094_cncl").show();
+                                $("div [id$=_appl] > button.primary").prop("disabled", true);
 
-                            $("#" + ppSvcInfoOutVO[i].svcCd).click(); // 체크처리
+                                $("#div_LRZ0003094_use").attr("data-value",ppSvcInfoOutVO[i].entrSvcSeqno);
+                                $("#div_LRZ0003094_use").show();
+                                $("#p_LRZ0003094_kor").show();
+                                $("#p_LRZ0003094_loc").show();
 
-                            svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
+                                svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
 
-                            callIFSM530(svcInfo);
+                                callIFSM530(svcInfo);
+                            }
+
+                            // 제로라이트
+                            if (ppSvcInfoOutVO[i].svcCd == 'LRZ0002091' ||
+                                ppSvcInfoOutVO[i].svcCd == 'LRZ0002092' ||
+                                ppSvcInfoOutVO[i].svcCd == 'LRZ0002093' ||
+                                ppSvcInfoOutVO[i].svcCd == 'LRZ0002094') {
+                                $("#div_btn_zerolite_appl").hide();
+                                $("#div_btn_zerolite_cncl").show();
+                                $("div [id$=_appl] > button.btn_default").prop("disabled", true);
+
+                                $("#div_zerolite_use").attr("data-value", ppSvcInfoOutVO[i].entrSvcSeqno);
+                                $("#div_zerolite_use").attr("data-prod" , ppSvcInfoOutVO[i].svcCd);
+                                $("#div_zerolite_use").show();
+                                $("#p_zerolite_kor").show();
+                                $("#p_zerolite_loc").show();
+
+                                $("#" + ppSvcInfoOutVO[i].svcCd).click(); // 체크처리
+
+                                svcInfo.entrSvcSeqno = ppSvcInfoOutVO[i].entrSvcSeqno;
+
+                                callIFSM530(svcInfo);
+                            }
                         }
                     }
 
@@ -282,10 +338,12 @@ function callIFSM322(svcInfo) {
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
+            ,complete : function(xhr, status) {
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -350,8 +408,6 @@ function callIFSM530(svcInfo) {
 	base.serviceId = serviceId;
 	base.data      = data;
 
-	console.info("(RESULT) callIFSM530 [" + serviceId + "] : \n" + JSON.stringify(data));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -360,8 +416,6 @@ function callIFSM530(svcInfo) {
             ,cache       : false
             ,dataType    : "json"
             ,success     : function(data) {
-
-                console.info("(RESULT) callIFSM530 [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     var body              = data.data.RetrieveRmngPeriodResponse.ResponseRecord.ResponseBody;
@@ -389,10 +443,12 @@ function callIFSM530(svcInfo) {
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
+            ,complete : function(xhr, status) {
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -439,8 +495,6 @@ function callIFCM559SM483(svcInfo) {
 
 	paramSvcInfo = svcInfo;
 
-	console.info("(INPUT) callIFCM559SM483 [" + serviceId + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -450,8 +504,6 @@ function callIFCM559SM483(svcInfo) {
             ,dataType    : "json"
             ,success     : function(res) {
                 data = JSON.parse(fnUnSign(res.enc));
-
-                console.info("(RESULT) callIFCM559SM483 [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     var body        = data.data.RetrieveCustInfoSvcAddvBDResponse.ResponseRecord.ResponseBody;
@@ -472,20 +524,26 @@ function callIFCM559SM483(svcInfo) {
                     callIFSM483(svcInfo);
 
                 } else {
+                    hideOpenBar();
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    hideOpenBar();
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
             ,complete: function(xhr, status) {
-                if(getOsInfo().indexOf("app") !== -1) {
+                /*
+                if (getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
                     });
                 } else {
                     loading('stop');
                 }
+                */
             }
 	});
 }
@@ -749,8 +807,6 @@ function callIFSM483(svcInfo) {
 	base.serviceId = serviceId;
 	base.data      = data;
 
-	console.info("(INPUT) callIFSM483 [" + serviceId + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -759,8 +815,6 @@ function callIFSM483(svcInfo) {
             ,dataType    : "json"
             ,contentType : 'application/json; charset=utf-8'
             ,success     : function(data) {
-
-                console.info("(RESULT) callIFSM483 [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     hideOpenBar();
@@ -771,15 +825,15 @@ function callIFSM483(svcInfo) {
 
                         if (svcInfo.actionType =='I') {
 
-                            //if (svcInfo.svcCd == 'LRZ0002225') {
-                            //    roamingPopalarm("데이터로밍이 차단되었습니다."
-                            //                   ,false
-                            //                   ,""
-                            //                   ,""
-                            //                   ,"확인"
-                            //                   ,""
-                            //                   ,initRoamingPage);
-                            //} else {
+                            if (svcInfo.svcCd == 'LRZ0002225') {
+                                roamingPopalarm("데이터로밍이 차단되었습니다."
+                                               ,false
+                                               ,""
+                                               ,""
+                                               ,"확인"
+                                               ,""
+                                               ,initRoamingPage);
+                            } else {
                                 var title   = "로밍서비스 신청이 완료되었습니다.";
                                 var message = "KB국민카드 이용고객님께 안내드립니다.<br>" +
                                               "신용/체크카드 사용범위(해외 오프라인 가맹점 사용기간/국가설정)를 직접 선택하여 부정사용(위변조 및 도난분실 등)을 예방할 수 있는 「카드사용 안심서비스」가 있으니 필요 시 신청하시기 바랍니다.";
@@ -791,21 +845,21 @@ function callIFSM483(svcInfo) {
                                                ,"확인"
                                                ,fn_openCardUsageSafeService
                                                ,initRoamingPage);
-                            //}
+                            }
                         }
 
                         if (svcInfo.actionType =='U') {
 
-                            //if (svcInfo.svcCd =='LRZ0002225') {
-                            //    roamingPopalarm("로밍서비스 차단해제 되었습니다. 원하는 로밍 서비스를 신청해주세요."
-                            //                   ,false
-                            //                   ,""
-                            //                   ,""
-                            //                   ,"확인"
-                            //                   ,""
-                            //                   ,initRoamingPage);
+                            if (svcInfo.svcCd =='LRZ0002225') {
+                                roamingPopalarm("로밍서비스 차단해제 되었습니다. 원하는 로밍 서비스를 신청해주세요."
+                                               ,false
+                                               ,""
+                                               ,""
+                                               ,"확인"
+                                               ,""
+                                               ,initRoamingPage);
 
-                            //} else {
+                            } else {
                                 roamingPopalarm("로밍 서비스 해지가 완료되었습니다."
                                                ,false
                                                ,""
@@ -813,7 +867,7 @@ function callIFSM483(svcInfo) {
                                                ,"확인"
                                                ,""
                                                ,initRoamingPage);
-                            //}
+                            }
                         }
                     }
 
@@ -827,11 +881,14 @@ function callIFSM483(svcInfo) {
                     }
                 }
             }
-            ,error : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    hideOpenBar();
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
-                if(getOsInfo().indexOf("app") !== -1) {
+            ,complete : function(xhr, status) {
+                if (getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
                     });
@@ -873,8 +930,6 @@ function callIFCM559SM529(svcInfo) {
 	base.data      = data;
 	base.cm559     = "Y";
 
-	console.info("(INPUT) callIFCM559SM529 [" + serviceId + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
             type         : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -884,8 +939,6 @@ function callIFCM559SM529(svcInfo) {
             ,dataType    : "json"
             ,success     : function(res) {
                 data = JSON.parse(fnUnSign(res.enc));
-
-                console.info("(RESULT) callIFCM559SM529 [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     var body = data.data.RetrieveCustInfoSvcAddvBDResponse.ResponseRecord.ResponseBody;
@@ -911,13 +964,18 @@ function callIFCM559SM529(svcInfo) {
                     sendSM005(body, svcInfo);
 
                 } else {
+                     hideOpenBar();
                      roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error: function(request, status, error) {
-                 roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    hideOpenBar();
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
+            ,complete : function(xhr, status) {
+                /*
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -925,6 +983,7 @@ function callIFCM559SM529(svcInfo) {
                 } else {
                     loading('stop');
                 }
+                */
             }
 	});
 }
@@ -1079,8 +1138,6 @@ function sendSM005(cm559Data, svcInfo) {
 	data.CheckSvcChg          = CheckSvcChg;
 	base.data                 = data;
 
-	console.info("(INPUT) sendSM005 [" + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/SM005'
@@ -1089,8 +1146,6 @@ function sendSM005(cm559Data, svcInfo) {
             ,cache       : false
             ,dataType    : "json"
             ,success     : function(response) {
-
-                console.info("(RESULT) sendSM005 [" + "] : \n" + JSON.stringify(response));
 
                 var resultCode    		= "";
                 var resultCode1   		= "";
@@ -1116,7 +1171,7 @@ function sendSM005(cm559Data, svcInfo) {
                             var noApplMsg = "로밍 신청이 불가능합니다.<br>" +
                                             "자세한 가입제한 사유는 고객센터(1522-9999)로 문의주세요.<br>" +
                                             "* [하루 데이터로밍(기간형)] 또는 [제로 프리미엄(기간형)] 서비스는 해지 1일 이후에 재가입 신청이 가능합니다.";
-                            roamingPopalarm(noApplMsg, false);
+                            roamingPopalarm(noApplMsg, false, "", "", "확인", "", "");
                             return false;
                         }
                     }
@@ -1125,17 +1180,20 @@ function sendSM005(cm559Data, svcInfo) {
 
                 } else if(resultCode !== 'N0000') {
                     hideOpenBar();
-                    roamingPopalarm({msg:resultMessage, cfrmYn:false});
+                    roamingPopalarm(resultMessage, false, "", "", "확인", "", "");
                 } else {
                     hideOpenBar();
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error: function(request, status, error) {
-                hideOpenBar();
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    hideOpenBar();
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
             ,complete: function(xhr, status) {
+                /*
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -1143,6 +1201,7 @@ function sendSM005(cm559Data, svcInfo) {
                 } else {
                     loading('stop');
                 }
+                */
             }
 	});//end ajax
 }
@@ -1337,8 +1396,6 @@ function callIFSM529(svcInfo) {
 	base.serviceId = serviceId;
 	base.data      = data;
 
-    console.info("(INPUT) callIFSM529 [" + serviceId + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -1347,8 +1404,6 @@ function callIFSM529(svcInfo) {
             ,cache       : false
             ,dataType    : "json"
             ,success     : function(data) {
-
-                console.info("(RESULT) callIFSM529 [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     var body = data.data.SaveSvcMdlCaseARoamingResponse.ResponseRecord.ResponseBody;
@@ -1386,11 +1441,13 @@ function callIFSM529(svcInfo) {
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
             ,complete: function(xhr, status) {
-                if(getOsInfo().indexOf("app") !== -1) {
+                if (getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
                     });
@@ -1453,8 +1510,6 @@ function callIFSM530ForUpdate(svcInfo) {
 	base.serviceId = serviceId;
 	base.data      = data;
 
-	console.info("(INPUT) callIFSM530ForUpdate [" + serviceId + "] : \n" + JSON.stringify(base));
-
 	$.ajax({
              type        : 'POST'
             ,url         : '/appIf/v1/uplus/esb/' + serviceId
@@ -1463,8 +1518,6 @@ function callIFSM530ForUpdate(svcInfo) {
             ,cache       : false
             ,dataType    : "json"
             ,success     : function(data) {
-
-                console.info("(RESULT) callIFSM530ForUpdate [" + serviceId + "] : \n" + JSON.stringify(data));
 
                 if (data.resultCode == "00000" || data.resultCode == "N0000") {
                     var body = data.data.RetrieveRmngPeriodResponse.ResponseRecord.ResponseBody;
@@ -1485,8 +1538,10 @@ function callIFSM530ForUpdate(svcInfo) {
                     roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
                 }
             }
-            ,error       : function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
             ,complete: function(xhr, status) {
                 if(getOsInfo().indexOf("app") !== -1) {
@@ -1545,10 +1600,12 @@ function callIFAPIM0001(svcInfo) {
 
                 $("#list_searched_nation").show();
             }
-            ,error: function(request, status, error) {
-                roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+            ,error : function(xhr) {
+                if (xhr.status !== 0) {
+                    roamingPopalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", false, "", "", "확인", "", "");
+                }
             }
-            ,complete: function(xhr, status) {
+            ,complete : function(xhr, status) {
                 if(getOsInfo().indexOf("app") !== -1) {
                     callAppService({
                         action_code : 'A0313'
@@ -1693,11 +1750,18 @@ var roamingPopalarmLayer = function (obj) {
 
 /** 로밍서비스 신청 완료 카드사용안심서비스 새창 열기 **/
 function fn_openCardUsageSafeService() {
+    hideOpenBar();
     window.open("https://m.kbcard.com/SVC/DVIEW/MSCMCXHIASVC0060");
     initRoamingPage();
 }
 
 /** 딤처리 제외 **/
 function hideOpenBar() {
-    $('.dimmed').hide();
+    if (getOsInfo().indexOf("app") !== -1) {
+        callAppService({
+            action_code : 'A0313'
+        });
+    } else {
+        loading('stop');
+    }
 }

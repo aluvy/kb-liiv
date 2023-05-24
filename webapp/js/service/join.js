@@ -56,7 +56,7 @@ function goPrevPageForJoin() {
 
         //고객센터 상담단계에 따른 배너 노출
         if($("#counselApplStat").val() != undefined && !isEmpty($("#applSeqNo").val())) {
-            $("#areaCounselBanner").css("display","block");
+            $(".btm_fixed_item").css("display","block");
         }
     } else {
         //step 처리 없는 화면인 경우 각 화면의 이전페이지 이동 함수 호출
@@ -126,7 +126,7 @@ function exitJoin(){
 }
 
 function setProgressBar(pageId) {
-    stepLength = 34;
+    stepLength = 28;
     for(var i=1 ; i<=stepLength ; i++) {
         if(isEmpty($("#custId").val()) && i < 14) {
             if($(".page.display").hasClass("step"+i)) {

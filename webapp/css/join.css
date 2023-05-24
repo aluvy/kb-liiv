@@ -9,23 +9,23 @@
 .join_select li.item_auth {background-image:url(../img/img/3d_auth.png);}
 .join_select li.item_spot {background-image:url(../img/img/3d_usim_spot.png);}
 
-/* 레이아웃 */
+/* ë ˆì´ì•„ì›ƒ */
 .join_txt {color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem;}
 
-/* 이미지타입 라디오 선택 영역 */
+/* ì´ë¯¸ì§€íƒ€ìž… ë¼ë””ì˜¤ ì„ íƒ ì˜ì—­ */
 .info_link_wrap {margin-top:3.2rem;text-align:center;}
 .info_link_wrap.flex {display:flex; justify-content:center; align-items:center; margin:1.9rem;}
 .info_link_wrap .info_txt {color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem;}
 .info_link_wrap .btn_text {margin-top:0.8rem;}
 
-/* 선택 카드 결과 영역 */
+/* ì„ íƒ ì¹´ë“œ ê²°ê³¼ ì˜ì—­ */
 .card_result_wrap {padding:1.6rem 0 1.5rem; border-radius:1.6rem 1.6rem 0 0; background-color:var(--gray_08, #fff); text-align:center; letter-spacing:-0.02rem; box-shadow:0 0 1.6rem rgba(0,0,0,0.15);}
 .card_result_wrap .flag {display:inline-block; padding:0 2rem; border-radius:2rem; background-color:var(--bg_03, #F0F7FF); color:var(--gray_01, #222); font-size:1.2rem; font-weight:bold; line-height:2.6rem;}
 .card_result_wrap .charge {display:flex; justify-content:center; align-items:flex-end; margin-top:1.3rem; color:var(--gray_01, #222); font-size:1.6rem; line-height:2.2rem;}
 .card_result_wrap .charge strong {display:block; margin:0 0.4rem; color:var(--main_04, #2480FF); font-size:2.2rem; font-weight:bold; line-height:2.4rem;}
 .card_result_wrap .info {display:block; margin-top:0.8rem; color:var(--gray_04, #999); font-size:1.2rem; line-height:1.5rem;}
 
-/* 이용 전 확인 아코디언 */
+/* ì´ìš© ì „ í™•ì¸ ì•„ì½”ë””ì–¸ */
 .section.top_l::before {content:''; display:block; position:absolute; left:0; right:0; top:-3.2rem; height:1px; border-top:1px solid var(--line_04, #F6F6F6);}
 .info_acc_wrap {padding-bottom:1.2rem;}
 .info_acc_wrap.btm_l {border-bottom:1px solid var(--line_04, #F6F6F6);}
@@ -38,7 +38,7 @@
 .info_acc_wrap .acco_cont {padding-bottom:2rem;}
 .info_acc_wrap .acco_cont .bull_type {margin-top:0;}
 
-/* 툴팁 */
+/* íˆ´íŒ */
 .tooltip_area .tooltip_wrap {position:relative; padding:0;}
 .tooltip_area .tooltip_wrap.lt::after {content:''; display:block; position:absolute; top:1.8rem; right:3rem; transform:rotate(-45deg); border-top:2.4rem solid var(--gray_08, #fff); border-left:2.4rem solid transparent; border-right:2.4rem solid transparent; border-bottom:2.4rem solid transparent;}
 .tooltip_area .tooltip_wrap.rt::after {content:''; display:block; position:absolute; top:1.8rem; right:3rem; transform:rotate(-45deg); border-top:2.4rem solid var(--gray_08, #fff); border-left:2.4rem solid transparent; border-right:2.4rem solid transparent; border-bottom:2.4rem solid transparent;}
@@ -64,7 +64,7 @@
 .tooltip_wrap .tooltip_box .blue {color:var(--main_02, #0966e9);}
 .tooltip_wrap .tooltip_box .star_type {margin-top:0;}
 
-/* 상단 스텝 프로그레스 */
+/* ìƒë‹¨ ìŠ¤í… í”„ë¡œê·¸ë ˆìŠ¤ */
 .progress_wrap {display:flex; position:fixed; left:0; right:0; top:calc(var(--sat) + 6rem); width:100%; height:.4rem; padding:0; background-color:#F5F7FA; z-index:100;}
 .progress_wrap .step {flex:1; height:.4rem; background-color:var(--main_01, #ffd338);}
 .progress_wrap .step.on {position:relative;}
@@ -73,7 +73,7 @@
 .progress_wrap .step span {position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; clip:rect(0 0 0 0); clip-path:inset(50%); overflow:hidden; white-space:nowrap;}
 
 
-/* 이전 소스 */
+/* ì´ì „ ì†ŒìŠ¤ */
 /* .progress_wrap {display:flex; position:fixed; left:0; right:0; top:6rem; justify-content:center; align-items:center; width:calc(100% + 4rem); margin-left:-2rem; padding:1.2rem 0; background-color:#F5F7FA; z-index:100;}
 .progress_wrap .step {display:block; width:.6rem; height:.6rem; margin:0 1.25rem; border-radius:1.2rem; border:2px solid #536072; background-color:#536072;}
 .progress_wrap .step.on {border-color:var(--main_01, #ffd338); background-color:var(--main_01, #ffd338);}
@@ -82,7 +82,7 @@
 .progress_wrap .step + .step::before {content:''; position:absolute; top:calc(50% - 1px); left:-2.7rem; display:block; width:2.5rem; height:2px; background-color:#536072;}
 .progress_wrap .step.on ~ .step::before {background-color:var(--gray_06, #D6D6D6);} */
 
-/* 입력 결과 영역 */
+/* ìž…ë ¥ ê²°ê³¼ ì˜ì—­ */
 .select_result_wrap {padding:2rem; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB)}
 .select_result_wrap .result_list > li + li {margin-top:1.2rem;}
 .select_result_wrap .result_list > li {display:flex; justify-content:space-between;}
@@ -124,7 +124,7 @@
 .form_group.email select {border-bottom:1px solid var(--line_02, #D6D6D6);} */
 .form_group.email .email_col {display:flex; justify-content:center; align-items:center; width:2.4rem; margin-top:1.6rem; color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem; text-align:center;}
 
-/* 이미지 라디오 아이콘 */
+/* ì´ë¯¸ì§€ ë¼ë””ì˜¤ ì•„ì´ì½˜ */
 .rdo_select_wrap .icon.icon_join_num {background:url(../img/join/icon_join_num.png) no-repeat center center; background-size:contain;}
 .rdo_select_wrap .icon.icon_join_new {background:url(../img/join/icon_join_new.png) no-repeat center center; background-size:contain;}
 .rdo_select_wrap .icon.icon_join_usim {background:url(../img/join/icon_join_usim.png) no-repeat center center; background-size:contain;}
@@ -157,7 +157,7 @@
 .rdo_select_wrap .icon.icon_join_posttoday {background:url(../img/join/icon_join_posttoday.png) no-repeat center center; background-size:cover;}
 .rdo_select_wrap .icon.icon_app_push {background:url(../img/img/icon_app_push.png) no-repeat center center; background-size:cover;}
 
-/* 카드선택 */
+/* ì¹´ë“œì„ íƒ */
 .card_wrap {padding:.9rem; box-shadow:0 0 0.8rem rgb(1 1 1 / 10%); border-radius:12px;}
 .card_wrap ul {display:table; width:100%;}
 .card_wrap li {display:table-cell; text-align:center; vertical-align:bottom;}
@@ -173,7 +173,7 @@
 .card_wrap li .card_box.type7 {background:url(../img/join/icon_card7.png) no-repeat center 1rem; background-size:3.6rem auto;}
 .card_wrap li .card_box.type8 {background:url(../img/join/icon_card8.png) no-repeat center 1rem; background-size:3.6rem auto;}
 
-/* 가입확인 */
+/* ê°€ìž…í™•ì¸ */
 .join_conf_wrap {position:relative; padding-top:1px;}
 .join_conf_wrap::before {content:""; position:absolute; right:0; top:-9.6rem; width:7.925rem; height:7.485rem; background:url(../img/join/ico_conf_top.png) no-repeat 0 0; background-size:cover;}
 .join_conf_box {padding:2rem; background-color:#f5f7fa; border-radius:1.2rem;}
@@ -200,7 +200,7 @@
 .join_conf_ct .join_conf_row+.join_conf_row {position:relative; margin-top:3rem; padding-top:3rem;}
 .join_conf_ct .join_conf_row+.join_conf_row::before {content:""; position:absolute; left:0; top:0; width:100%; height:1px; background-color:var(--gray_06, #d6d6d6);}
 
-/* 가입완료 */
+/* ê°€ìž…ì™„ë£Œ */
 .join_comp_wrap .join_comp_tit {position:relative; margin-top:3rem; padding-top:8rem; font-size:2.4rem; font-weight:bold; text-align:center;}
 .join_comp_wrap .join_comp_tit::before {content:""; position:absolute; left:50%; top:0; transform:translateX(-50%); width:6rem; height:6rem; background:url(../img/join/ico_comp_top.png) no-repeat 0 0; background-size:cover;}
 .join_comp_ct {position:relative; margin-top:3rem;}
@@ -260,7 +260,7 @@
 
 .pop_txt {font-size:1.4rem; color:var(--gray_01, #222); line-height:2.2rem;}
 
-/* 가입개통 팝업 */
+/* ê°€ìž…ê°œí†µ íŒì—… */
 .ly_cnt .pop_summary {color:#444; font-size:1.2rem; line-height:1.9rem;}
 .pop_bg_wrap.right {position:absolute; bottom:5.2rem; right:2rem;}
 .pop_bg_wrap > .img_item {display:block;}
@@ -277,14 +277,14 @@
 .box_item .info_txt_wrap a {font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: var(--main_02, #0966e9); text-decoration: underline;}
 .box_item .info_txt_wrap span {display: block; margin-top: .8rem; font-size: 1.4rem;}
 
-/* 아이디 중복 확인 */
+/* ì•„ì´ë”” ì¤‘ë³µ í™•ì¸ */
 .id_result_wrap {padding:0.8rem 0; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB);}
 .id_result_wrap .id_tit {padding:1.2rem 2rem; color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem; text-align:center;}
 .id_result_wrap .id_result {padding:1.2rem 0; border-top:1px solid var(--line_03, #EAECED); color:var(--gray_01, #222); font-size:1.6rem; font-weight:bold; line-height:2.3rem; text-align:center;}
-/* 코드 검색결과 */
+/* ì½”ë“œ ê²€ìƒ‰ê²°ê³¼ */
 .code_result_wrap {margin-top:1.2rem; padding:1.5rem 0; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB);}
 .code_result_wrap .code {color:var(--gray_01, #222); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:center;}
-/* 계좌정보 영역 */
+/* ê³„ì¢Œì •ë³´ ì˜ì—­ */
 .account_wrap {display:flex; justify-content:space-between; align-items:center; padding:1.4rem 2rem; border-radius:1.2rem; border:1px solid var(--line_03, #EAECED);}
 .account_wrap .account_info {display:flex; align-items:center;}
 .account_wrap .icon_area {display:flex;}
@@ -292,37 +292,37 @@
 .account_wrap .btn_area {justify-self:flex-end;}
 
 
-/* [MERG02_6] 가입/개통 > 가입준비 : 단말모델코드 검색결과 리스트 */
+/* [MERG02_6] ê°€ìž…/ê°œí†µ > ê°€ìž…ì¤€ë¹„ : ë‹¨ë§ëª¨ë¸ì½”ë“œ ê²€ìƒ‰ê²°ê³¼ ë¦¬ìŠ¤íŠ¸ */
 .no_model {position:relative; display:flex; justify-content:center; align-items:center; height:14rem; margin-top:3.2rem; background-color:var(--bg_02, #F8F9FB);}
 .no_model > p {color:var(--gray_04, #999); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:center;}
-/* .no_model::after {content:'검색결과 리스트'; display:block; position:absolute; left:0; right:0; top:calc(50% - 1.1rem); color:var(--gray_04, #999); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:center;} */
+/* .no_model::after {content:'ê²€ìƒ‰ê²°ê³¼ ë¦¬ìŠ¤íŠ¸'; display:block; position:absolute; left:0; right:0; top:calc(50% - 1.1rem); color:var(--gray_04, #999); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:center;} */
 .result_model_code {margin-top:3.2rem;}
 .result_model_code .result {height:27.6rem; overflow-y:scroll;}
 
 
-/* [ MERG01 ] 가입/개통 > 가입준비 > [팝업] 미성년자/개인사업자 팝업  */
+/* [ MERG01 ] ê°€ìž…/ê°œí†µ > ê°€ìž…ì¤€ë¹„ > [íŒì—…] ë¯¸ì„±ë…„ìž/ê°œì¸ì‚¬ì—…ìž íŒì—…  */
 .join_material strong {display:block; font-size:1.8rem; line-height:2.4rem; color:#000; margin-top:3.2rem;}
 .join_material strong:first-child {margin-top:0;}
 .join_material p{font-size:1.6rem; line-height:2.4rem; color:var(--gray_01, #222); margin-top:2rem;}
 
-/* [ MERG09 ] 데이터쉐어링 */
+/* [ MERG09 ] ë°ì´í„°ì‰ì–´ë§ */
 .phone_line_arrow {display:flex; justify-content:center; margin:2rem 0;}
 .no_data_wrap + .phone_line_arrow {margin-top:3rem;}
 .phone_line_arrow + .tit_sec_wrap {margin-top:2rem;}
 
 
-/* [MERG04P15] [팝업] OCR (유심정보) */
+/* [MERG04P15] [íŒì—…] OCR (ìœ ì‹¬ì •ë³´) */
 .ocr_img {display:flex; align-items:center; justify-content:center; height:21rem; border-radius:1.2rem; background:var(--bg_02, #f8f9fb);}
 .ocr_img > span.img {display:inline-block; width:28.6rem; height:13.6rem; background:url(../img/img/etc_ocr.png) center no-repeat; background-size:cover;}
 .ocr_type {margin-top:3.2rem;}
 .ocr_type span {display:block; font-size:1.2rem; line-height:1.6rem; color:var(--gray_02, #555);}
 .ocr_type p {margin-top:0.8rem; text-align:center; font-size:1.6rem; line-height:2.3rem; color:var(--gray_01, #222); font-weight:700; padding:1.4rem 0; background:var(--bg_02, #f8f9fb); border-radius:0.8rem;}
 
-/* 추천 친구, 직원 검색 */
+/* ì¶”ì²œ ì¹œêµ¬, ì§ì› ê²€ìƒ‰ */
 .txt_list_top{display:flex; justify-content:space-between; align-items:center; padding-bottom:1.2rem; font-size:1.4rem; color:var(--gray_01, #222);border-bottom:1px solid var(--line_04, #f6f6f6);}
 /* .txt_list_top+.form_group input:checked+label{font-weight:bold;} */
 
-/* [MERG04] 신청정보 */
+/* [MERG04] ì‹ ì²­ì •ë³´ */
 .ing_pee_box.detail {padding:0 0 1.2rem 0; border-bottom:1px solid var(--line_03, #eaeced); border-radius:0; background-color:var(--gray_08, #fff);}
 .ing_pee_box.detail ul.tit_ing_pee + ul {margin-top:1.2rem; padding-top:1.2rem;}
 .ing_pee_box.detail .tit_ing_pee li {color:var(--gray_02, #555);}

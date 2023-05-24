@@ -1,4 +1,4 @@
-/* 공통 */
+/* ê³µí†µ */
 /* .tit_des {display:block; margin-bottom:0.8rem; color:var(--gray_02, #555); font-size:1.4rem; line-height:2.2rem;} */
 
 /* content */
@@ -57,7 +57,7 @@
 .row_list .list_item .item_txt {color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem;}
 .row_list .list_item .item_txt > em {display:inline-block; margin-left:0.2rem; color:var(--gray_04, #999);}
 
-/* 공지사항(게시판형태) 리스트 */
+/* ê³µì§€ì‚¬í•­(ê²Œì‹œíŒí˜•íƒœ) ë¦¬ìŠ¤íŠ¸ */
 .board_list_wrap {margin-top:0.8rem;}
 .board_list .list_item + .list_item {border-top:1px solid var(--line_04, #F6F6F6);}
 .board_list.btm_line .list_item:last-child {border-bottom:1px solid var(--line_04, #F6F6F6);}
@@ -79,7 +79,7 @@
 .board_list_wrap .btm_txt {border-top:1px solid var(--line_04, #F6F6F6);}
 .board_list_wrap .btm_txt .star_type {margin-top:2rem;}
 
-/* 공지사항(게시판형태) 상세 */
+/* ê³µì§€ì‚¬í•­(ê²Œì‹œíŒí˜•íƒœ) ìƒì„¸ */
 .board_wrap .board_tit_wrap .tit_inner {padding:1.6rem 0 2.4rem;}
 .board_wrap .board_tit_wrap .board_tit {display:block; color:var(--gray_01, #222); font-size:2rem; font-weight:bold; line-height:3rem;}
 .board_wrap .board_tit_wrap .board_date {display:block; margin-top:0.8rem; color:var(--gray_03, #717171); font-size:1.2rem; line-height:1.9rem;}
@@ -91,7 +91,7 @@
 .board_wrap .file_btn_wrap .btn_download .icon {display:block; position:absolute; top:0.1rem; left:0; width:2rem; height:2rem;}
 .board_wrap .file_btn_wrap .btn_download .icon.icon_file_down {background-image:url(../img/common/spr_icon_20.png); background-repeat:no-repeat; background-size:40rem auto; background-position:-13rem -7rem;}
 
-/* 자주 찾는 질문 */
+/* ìžì£¼ ì°¾ëŠ” ì§ˆë¬¸ */
 .qna_acco_wrap {margin-top:1.2rem;}
 .qna_acco_wrap .list_acc > li > .title {position:relative; padding-left:2rem;}
 .qna_acco_wrap .title i.question {position:absolute; top:calc(50% - 1.05rem); left:0; color:var(--main_02, #0966E9); font-size:1.4rem; font-style:normal; line-height:2.1rem;}
@@ -99,13 +99,13 @@
 .qna_acco_wrap .qna_acco_cont i.answer {position:absolute; top:0; left:0; color:var(--gray_01, #222); font-size:1.4rem; font-weight:bold; font-style:normal; line-height:1.9rem;}
 .qna_acco_wrap .qna_acco_cont .file_btn_wrap {margin-top:1.2rem;}
 
-/* Liiv M 이용안내 */
+/* Liiv M ì´ìš©ì•ˆë‚´ */
 .icon_info_wrap {display:flex; align-items:center; width:100%; padding:1.3rem 2rem; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB);}
 .icon_info_wrap .icon {display:block; width:2.4rem; height:2.4rem; margin-right:1.2rem;}
 .icon_info_wrap .icon.icon_video {background:url(../img/support/icon_video.png) no-repeat center / contain;}
 .icon_info_wrap .info_txt {display:block; color:var(--gray_03, #717171); font-size:1.2rem; line-height:1.9rem;}
 
-/* 고객후기 */
+/* ê³ ê°í›„ê¸° */
 .review_percent_wrap {padding:0 2.3rem 0 1.3rem; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB);}
 .review_percent_wrap .percent_list {display:flex; justify-content:space-between; max-width:32rem; margin:0 auto; padding:2.2rem 0;}
 .percent_list .list_item {position:relative; flex:1; max-width:8.4rem; padding-left:4.8rem;}
@@ -158,7 +158,7 @@
 .review_list .grade_list .icon.icon_star {margin-left:0.8rem; background:url(../img/support/icon_star_13.png) no-repeat center -0.1rem / contain;}
 .review_list .grade_list .grade_num {margin-left:0.4rem; color:var(--gray_01, #222); font-size:1.2rem; font-weight:bold; line-height:2rem; letter-spacing:0;}
 
-/* 요금제 카드 */
+/* ìš”ê¸ˆì œ ì¹´ë“œ */
 /* .card_item {position:relative; padding:1.9rem 1.9rem 1.5rem; border-radius:1.2rem; border:1px solid var(--line_03, #EAECED);} */
 .grade_input_wrap {margin-top:1.2rem;}
 .grade_input_wrap .grade_list > li {display:flex; justify-content:space-between; padding:1.6rem 0;}
@@ -174,7 +174,7 @@
 
 
 
-/* 오픈소스 라이선스 */
+/* ì˜¤í”ˆì†ŒìŠ¤ ë¼ì´ì„ ìŠ¤ */
 .license_wrap .license_txt_wrap,
 .license_wrap .license_num_wrap {margin-top:3.2rem;}
 .license_wrap .license_link_wrap p,
@@ -196,19 +196,19 @@
 
 
 
-/* ***** 통합검색 ***** */
+/* ***** í†µí•©ê²€ìƒ‰ ***** */
 
 .search_tit {display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;}
 .search_tit h3 {font-weight:400; font-size:1.4rem; color:var(--gray_04, #999);}
 .search_tit .del {font-size:1.2rem; line-height:2rem; color:var(--main_02, #0966E9);}
 .search_tit .dat {font-size:1.2rem; line-height:2rem; color:var(--gray_04, #999);}
 
-/* 키워드 */
+/* í‚¤ì›Œë“œ */
 .search_keyword li:not(:first-of-type) {margin-top:2rem;}
 .search_keyword li button {position:relative; display:block; width:100%; padding-left:3.6rem; font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222); text-align:left;}
 .search_keyword li button::before {content:''; position:absolute; top:0.1rem; left:0; width:2rem; height:2rem; background:url(/img/img/icon_search.png) no-repeat center / 100% auto; opacity:0.3;}
 
-/* 최근검색어 */
+/* ìµœê·¼ê²€ìƒ‰ì–´ */
 .search_recent ul {padding:0 2rem; margin:0 -2rem; font-size:0; overflow:hidden; overflow-x:auto; white-space:nowrap;}
 .search_recent ul::-webkit-scrollbar {display:none;}
 .search_recent ul::-webkit-scrollbar-thumb {display:none;}
@@ -217,7 +217,7 @@
 .search_recent li button.del {position:absolute; top:0; right:0; width:2.8rem; height:3.2rem;}
 .search_recent li button.del::before {content:''; position:absolute; top:1rem; right:1.6rem; width:1.2rem; height:1.2rem; background:url(/img/img/icon_close12.png) no-repeat center / 100% auto; opacity:0.3;}
 
-/* 인기검색어 */
+/* ì¸ê¸°ê²€ìƒ‰ì–´ */
 .search_popular .search_tit .dat {display:none;}
 .search_popular ol {column-count:2;}
 .search_popular li {counter-increment:popular_number 1;}
@@ -225,7 +225,7 @@
 .search_popular li button {position:relative; display:block; width:100%; padding-left:2.4rem; font-weight:700; font-size:1.4rem; line-height:2.2rem; text-align:left; color:var(--gray_01, #222);}
 .search_popular li button::before {content:counter(popular_number); position:absolute; left:0; color:var(--main_02, #0966E9);}
 
-/* 검색 결과 */
+/* ê²€ìƒ‰ ê²°ê³¼ */
 .search_rTitle {padding:3.2rem var(--sar_2) 0 var(--sal_2); font-size:2rem; line-height:3.8rem;}
 
 .search_result_wrap .tab_wrap.line {padding:0 2rem;}
@@ -260,7 +260,7 @@
 .searchScroll.on.tab_wrap.line .tab_list {position:fixed; left:0; right:0; padding:3.2rem 2rem 0; margin-top:-6.4rem; background-color:var(--gray_08, #FFFFFF); z-index:5;}
 /* .searchScroll.on.search_rTitle {position:fixed; left:0; right:0; margin-top:-3.2rem; border-bottom:1px solid var(--line_02, #D6D6D6); background-color:var(--gray_08, #FFFFFF); z-index:5;} */
 
-/* [CSAD01]	KB Liiv M 앱다운로드 */
+/* [CSAD01]	KB Liiv M ì•±ë‹¤ìš´ë¡œë“œ */
 .content_slide_wrap {height:100%; overflow:hidden;}
 .app_down_slide {position:relative; width:100%; height:100%;}
 .app_down_slide .slide_content {position:relative; height:100%; padding:0 2rem; background-color:#F0F3F7;}
@@ -395,7 +395,7 @@
 
 
 
-/*************************************************** [CSBR01] 가까운 유심 찾기 ::start ***************************************************/
+/*************************************************** [CSBR01] ê°€ê¹Œìš´ ìœ ì‹¬ ì°¾ê¸° ::start ***************************************************/
 .usim_map {position:fixed; left:0; top:0; width:100%; height:100%; background:url(/img/event/map_bg.png) center center; background-size:0.8rem auto;}
 .usim_map-head {position:fixed; left:0; top:calc(var(--sat) + 8rem); width:100%; padding:0 var(--sar_2) 0 var(--sal_2); text-align:center; z-index:10;}
 .usim_map-bottom {position:absolute; left:0; bottom:0; width:100%; height:calc(100% - var(--sat) - 6rem - 8.6rem); z-index:9; transform:translateY(calc(100% - var(--sab) - 17rem)); transition:transform .3s; z-index:20;}
@@ -413,12 +413,12 @@
 .usim_map-bottom.view .usim_map-store {display:block;}
 .usim_map-bottom.view .btn_list {display:flex;}
 
-/* 검색모드 */
+/* ê²€ìƒ‰ëª¨ë“œ */
 .content.search .usim_map-bottom .banner_box.usim_kb {display:none;}
 .content.search .usim_map-bottom .data_sort {display:block;}
 
 
-/* 검색 */
+/* ê²€ìƒ‰ */
 .usim_map-search {display:flex; align-items:center; height:4.6rem; border-radius:4rem; background:var(--gray_08, #FFFFFF); box-shadow:0 0.3rem 0.8rem rgba(40,40,40, 0.1); padding:0 2rem; margin-bottom:2rem;}
 .usim_map-search .form_group {width:100%;}
 .usim_map-search .form_group .item_content {border-color:var(--gray_08, #FFFFFF);}
@@ -428,11 +428,11 @@
 .usim_map-search .item_content.btn_search > .btn_type {margin-bottom:1rem;}
 .usim_map-search .input .btn_clear {bottom:1rem;}
 
-/* 버튼공통 */
+/* ë²„íŠ¼ê³µí†µ */
 .usim_map-bottom .btn_viewmap,
 .usim_map-bottom .btn_list {display:none;}
 
-/* 버튼공통 - 000 */
+/* ë²„íŠ¼ê³µí†µ - 000 */
 .usim_map-head .btn_map_reset,
 .usim_map-bottom .btn_list,
 .usim_map-bottom .btn_viewmap {background:var(--gray_01, #222); border-radius:2rem; padding:0.8rem 1.8rem; font-size:1.4rem; line-height:2.2rem; color:var(--gray_08, #FFFFFF);}
@@ -440,50 +440,51 @@
 .usim_map-bottom .btn_list::before,
 .usim_map-bottom .btn_viewmap::before {content:''; display:block; width:2rem; height:2rem; background-position:center; background-size:contain; background-repeat:no-repeat; margin-right:0.4rem;}
 
-/* 버튼 - 이 지역에서 재검색 */
+/* ë²„íŠ¼ - ì´ ì§€ì—­ì—ì„œ ìž¬ê²€ìƒ‰ */
 .usim_map-head .btn_map_reset {/*display:inline-flex; */ display:none; align-items:center;}
 .usim_map-head .btn_map_reset::before {background-image:url(../img/img/map_reset.png);}
 
-/* 버튼 - 목록보기 */
+/* ë²„íŠ¼ - ëª©ë¡ë³´ê¸° */
 .usim_map-bottom .btn_list {position:absolute; left:50%; bottom:2rem; transform:translateX(-50%); /*display:flex; */ align-items:center; display:none;}
 .usim_map-bottom .btn_list::before {background-image:url(../img/img/map_menu.png);}
 
-/* 버튼 - 지도보기 */
+/* ë²„íŠ¼ - ì§€ë„ë³´ê¸° */
 .usim_map-bottom .btn_viewmap {position:fixed; left:50%; bottom:calc(var(--sab) + 3.2rem); transform:translateX(-50%); display:flex; align-items:center; z-index:999;}
 .usim_map-bottom .btn_viewmap::before {background-image:url(../img/img/map_ico.png);}
 
-/* 버튼 - 현위치 안내 */
+/* ë²„íŠ¼ - í˜„ìœ„ì¹˜ ì•ˆë‚´ */
 .usim_map-bottom .btn_location {position:absolute; left:var(--sal_2); bottom:2rem; width:4rem; height:4rem; background:url(../img/img/map_current.png) 50% 50% no-repeat var(--gray_08, #FFFFFF); background-size:2.4rem auto; box-shadow:var(--shadow_01); border-radius:2rem; overflow:hidden;}
 .usim_map-bottom .btn_location:active::after {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0, 0.25);}
 .usim_map-bottom .btn_location.on {background-image:url(../img/img/map_current_on.png);}
 
-/* 버튼 - zoom */
+/* ë²„íŠ¼ - zoom */
 .usim_map-bottom .btn_zoom {position:absolute; right:var(--sar_2); bottom:2rem; border-radius:0.8rem; background:var(--gray_08, #FFFFFF); box-shadow:var(--shadow_01);}
 .usim_map-bottom .btn_zoom > button {display:block; width:4rem; height:4rem; background-position:center; background-repeat:no-repeat; background-size:2.2rem auto;}
 .usim_map-bottom .btn_zoomin {background-image:url(../img/img/map_sizeup.png);}
 .usim_map-bottom .btn_zoomout {background-image:url(../img/img/map_sizedown.png); border-top:1px solid var(--gray_07, #EFEFEF);}
 
 .usim_map-content {position:relative; height:100%; padding-top:3.6rem; border-radius:1.2rem 1.2rem 0 0; box-shadow:var(--shadow_04); background:var(--gray_08, #FFFFFF); overflow:hidden;}
-.usim_map-content .btn_open {position:absolute; left:0; top:0; width:100%; height:3.6rem;}
-.usim_map-content .btn_open::before {content:''; position:absolute; left:50%; top:1.2rem; transform:translateX(-50%); display:block; width:4rem; height:0.4rem; border-radius:0.4rem; background:var(--line_02, #D6D6D6);}
+.usim_map-content .btn_open {position:absolute; left:0; top:0; display:flex; align-items:top; padding-top:1.2rem; justify-content:center; width:100%; height:3.6rem; text-align:center;}
+/* .usim_map-content .btn_open::before {content:''; position:absolute; left:50%; top:1.2rem; transform:translateX(-50%); display:block; width:4rem; height:0.4rem; border-radius:0.4rem; background:var(--line_02, #D6D6D6);} */
+.usim_map-content .btn_open::before {content:''; display:block; width:4rem; height:0.4rem; border-radius:0.4rem; background:var(--line_02, #d6d6d6); }
 
 .usim_map-content .content_body {height:100%; overflow-y:hidden; box-sizing:border-box; padding:0 var(--sar_2) calc(var(--sab_2) + 5rem) var(--sal_2);}
 .usim_map-content .content_body::-webkit-scrollbar {display:none;}
 .usim_map-bottom.on .content_body {overflow-y:scroll;}
 
-/* 배너 */
+/* ë°°ë„ˆ */
 .usim_map-bottom .banner_box.usim_kb {margin-bottom:0.8rem;}
 
 /* card_nodata */
 .usim_map-bottom .card_nodata.autoheight {padding:10rem 0;}
 
-/* 유심 리스트 */
+/* ìœ ì‹¬ ë¦¬ìŠ¤íŠ¸ */
 /* .usim_map-bottom .usim_list {;} */
 .usim_map-bottom .usim_list > ul > li {padding:2.4rem 0;}
 .usim_map-bottom .usim_list > ul > li + li {border-top:1px solid var(--line_04, #F6F6F6);}
 .usim_map-bottom .usim_list > ul > li a {display:block;}
 
-/* 검색결과 */
+/* ê²€ìƒ‰ê²°ê³¼ */
 .usim_map-bottom .data_sort {padding-bottom:1.2rem; border-bottom:1px solid var(--line_04, #F6F6F6); display:none;}
 .usim_map-bottom .data_sort .total {font-size:1.4rem; line-height:2rem; font-weight:700;}
 
@@ -508,4 +509,4 @@
 .usim_map-bottom .store_item .usim_status .usim_status_skt {margin-left:0.8rem;}
 .usim_map-bottom .store_item .usim_status .status {font-weight:700; font-size:1.2rem; line-height:2rem; color:var(--gray_01, #222); margin-left:0.4rem;}
 .usim_map-bottom .store_item .usim_status .status.nodata {color:var(--gray_04, #999);}
-/*************************************************** [CSBR01] 가까운 유심 찾기 ::end ***************************************************/
+/*************************************************** [CSBR01] ê°€ê¹Œìš´ ìœ ì‹¬ ì°¾ê¸° ::end ***************************************************/

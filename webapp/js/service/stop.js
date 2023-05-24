@@ -53,7 +53,6 @@ function changeUserSvcInfo(svcInfo) {
 // 공통 팝업
 function callPop(msg, okCallbackFn, cancelCallbackFn) {
 
-    console.log("callPop");
     let option = {
                   msg           : msg
                  ,title         : ""
@@ -165,10 +164,8 @@ function sendLMCT000019(){
 // 일시정지 리스트 그리기
 function sendLMCT000019_callBack(tranId, data, status, inputData){
 
-    console.log("sendLMCT000019_callBack : " + JSON.stringify(data))
     var svcData =  JSON.parse($("#userMajorSvc").attr("data-map").replace(/'/gi, "\""));
 
-     console.log("sendLMCT000019_callBack tranId : " + tranId);
      switch(tranId){
         case 'LMCT000019' :
 
@@ -257,12 +254,11 @@ function sendLMCT000019_callBack(tranId, data, status, inputData){
 
 }
 
-/***********************************파일 업로드 rprs-auth.jsp용 *********************************************/
+/***********************************파일 업로드 stop-release.jsp용 *********************************************/
 
 //파일 신청시 채번
 function getApplSeqNo(){
 
-    console.log("getApplSeqNo");
 
 	fn_transCall("/info/stop/getApplSeqNo", {}, getApplSeqNo_callBack);
 }
@@ -283,7 +279,6 @@ function getApplSeqNo_callBack(tranId, data, status, inputData){
 //증빙서류저장 및 일반신청예약변경
 function insertFileInfo(){
 
-	console.log("insertFileInfo");
 	var data =  JSON.parse($("#userMajorSvc").attr("data-map").replace(/'/gi, "\""));
 
 	//var custNm = $('div.additiontop_wrap > div > ul > li.phone_user> span').text();
@@ -421,9 +416,6 @@ function imgUpload(e, a){
 		return;
 	}
 
-//	$('#imgCheckTime').text(dateToYYYMMDD2());	//첨부파일 등록 일시
-//	$('#pause01').addClass('up');
-
 	for (var i = 0 ; i < 5; i ++) {
 		if ($('#imgDiv'+i).is(':empty') ){
 			emptyThumbnail = i;
@@ -451,7 +443,6 @@ function imgUpload(e, a){
 
 
 function imgDelete(number){
-    console.log("imgDelete");
     var fileCnt = document.getElementById('fileList').childElementCount;
 	var check = "";
 	var Arry = new Array();
@@ -481,7 +472,6 @@ function imgDelete(number){
 //이미지 상세 보기
 function imageDetail(number){
 
-	console.log("imageDetail");
 	var src = $('#pic'+number).attr("src");
 
 	$('#previewImage').attr('src',src);
@@ -496,27 +486,22 @@ function imageDetail(number){
 
 function fileError(data){
 
-	console.log("fileError");
 	$('#fileError').val(data);
 }
 
 function errorMsg(obj){
-	console.log("errorMsg");
 	if( obj.id == 'selNum'){
 		if($('#selNum').val() != "" && chkmtelNo($('#selNum').val())== false){
 			var strErr = "휴대폰번호를 정확히 입력해 주세요.";
 			$('#divIdErr1').text(strErr);
 			$('#divIdErr1').show();
 			$("#divIdErr1").css('opacity','100');
-//			$("#selNum").addClass('error');
 			$("#selNum").focus();
 		} else {
-//			$('#divIdErr1').hide();
 			$("#divIdErr1").css('opacity','0');
-//			$("#selNum").removeClass('error');
 		}
 	}
 }
 
-/**************************** 파일 업로드 rprs-auth.jsp용 end************************************************/
+/**************************** 파일 업로드 stop-release.jsp용 end************************************************/
 

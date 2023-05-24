@@ -150,7 +150,6 @@ function sendPC0(joinInfo){
 
 		}else {
 			inDto.agntIdfyNoVal = fnUnSign($("#driverNoH").val()).substr(2); //$('#legalRprsnDriverNo').val().replace(/-/g,''); //법정대리인 고객식별번호 : 운전면허번호
-            console.log("면허번호 : " + inDto.agntIdfyNoVal);
 			inDto.agntRsdcrtIssuDate = $("#legalRprsnIssueDt").val(); //법정대리인 식별번호 발급일자
 			inDto.nativeRlnamAthnEvdnPprCd = "COURT"; //내국인실명인증증빙서류코드(법정대리인)
 			inDto.rsdcrtIssuDate = ""; //주민등록증발급일자
@@ -238,7 +237,7 @@ function sendPC0(joinInfo){
 	data.osstPrePrc = osstPrePrc;
 	base.data = data;
 	
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 	
 	$.ajax({
 		type: 'POST',
@@ -248,13 +247,13 @@ function sendPC0(joinInfo){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			try{
 				if(response !== null && response.data !== null){
 					var res = response.data.osstPrePrcResponse.return;
 					if(res.commHeader.responseType == "N"){
 						if(res.rsltCd == "S") { //S: 접수정상, F:접수에러
-							console.log("OSST 오더 번호="+res.osstOrdNo);
+							//console.log("OSST 오더 번호="+res.osstOrdNo);
 							$("#osstOrdNo").val(res.osstOrdNo);
 							checkST0(res.osstOrdNo);
 						} else {
@@ -302,7 +301,7 @@ function sendPC0(joinInfo){
 				}
 			}
 			catch(e){
-				console.log(e);
+				//console.log(e);
 				applStatRollback($("#soId").val(), $("#applSeqNo").val(), $("#custId").val());
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
@@ -342,7 +341,7 @@ function checkST0(osstOrdNo){
 	
 	base.serviceId = "OSSTST10";
 	base.data = data;
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -353,7 +352,7 @@ function checkST0(osstOrdNo){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			try{
 				showOpenBar();
 				gStatCount++;
@@ -366,14 +365,14 @@ function checkST0(osstOrdNo){
 						var vRsltCd = res.rsltCd;
 						var vRsltMsg = res.rsltMsg;
 						var vSvcCntrNo = res.svcCntrNo;
-						console.log("try"+gStatCount+" osstStat="+vPrgrStatCd);
+						//console.log("try"+gStatCount+" osstStat="+vPrgrStatCd);
 						if(vPrgrStatCd == "PC2"){
 							hideOpenBar();
 							//PC0: 사전체크접수, PC1:사전체크 중, PC2: 사전체크완료
 							//OP0: 개통 접수, OP1: 개통 진행 중, OP2: 개통작업 완료
 							//CP0: 지능망직권해지접수, CP1: 지능망직권해지 진행 중, CP2: 지능망직권해지 완료
 							if(vRsltCd == "0000"){
-								console.log("[PC0]사전체크 완료");
+								//console.log("[PC0]사전체크 완료");
 								//$("#osstOrdNo").val(osstOrdNo);
 								//$("#osstStat").val(vPrgrStatCd);
 								//$("#custNo").val(vCustId);
@@ -449,7 +448,7 @@ function checkST0(osstOrdNo){
 			}
 			catch(e){
 				hideOpenBar();
-				console.log(e);
+				//console.log(e);
 				applStatRollback($("#soId").val(), $("#applSeqNo").val(), $("#custId").val());
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
@@ -568,7 +567,7 @@ function paymentAuth(gubun){
 	data.actNo = actNo;
 	data.bankCd = bankCd;
 	data.resvArea ="";
-	console.log(JSON.stringify(data));
+	//console.log(JSON.stringify(data));
 
 	base.data = data;
 	
@@ -580,7 +579,7 @@ function paymentAuth(gubun){
 		cache: false,
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			if(data.resultCode == '00000'){
 				if(gubun == "cert"){
 					var auth = $("input[name=c-certification]:checked").val();
@@ -588,7 +587,7 @@ function paymentAuth(gubun){
 						gAuthMthd = "301";
 						openKCBCertPopup();
 					}else{// ARS
-						console.log("ARS인증");
+						//console.log("ARS인증");
 						var arsParam = new Object();
 						arsParam.kbPin = fnSign($("#custId").val()); //encoding
 						arsParam.telNo = fnSign($('#arsCertCellPhoneNo').val()); //encoding
@@ -681,7 +680,7 @@ function sendSB804(){
 	
 	base.serviceId = "SB804";
 	base.data = data;
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -692,7 +691,7 @@ function sendSB804(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			if(response !== null && response.data !== null){
 				if(response.resultCode !== 'N0000'){
 //					popalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", "info", false,"",goBack);
@@ -710,7 +709,7 @@ function sendSB804(){
 				}catch(e){
 					
 				}
-				console.log(' resultCode=' + resultCode);
+				//console.log(' resultCode=' + resultCode);
 
 				if(resultCode == 'YES'){
 					sendNP1();
@@ -788,7 +787,7 @@ function sendNP1(){
 	data.osstNpBfacAgree = osstNpBfacAgree;
 	base.data = data;
 	
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -799,7 +798,7 @@ function sendNP1(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 
 			try{
 				if(response !== null && response.data !== null){
@@ -845,7 +844,7 @@ function sendNP1(){
 				}
 			}
 			catch(e){
-				console.log(e);
+				//console.log(e);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                     cfrmYn : false

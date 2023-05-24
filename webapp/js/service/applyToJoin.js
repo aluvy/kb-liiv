@@ -40,7 +40,7 @@ function joinRequestDataChk(pageId){
         } else {
             if($("#custTp").val() == "IFX") {
                 let opt = {
-                    msg : "외국인 가입은 국내 체류 기간 30일이상 되어야 가입 가능합니다.<br/>(D-2/E-9 체류코드의 경우, 180일이상 체류 필요)<br/>*주한미국인은 가입불가능합니다.",
+                    msg : "체류기간 만료 30일 이내</span> 외국인은 가입이 불가합니다.<br/>(D-2/E-9 체류 코드의 경우 국내 잔여 체류기간 180일 이상 시 가입 가능)<br/>*주한미군은 가입이 불가합니다.",
                     cfrmYn : false,
                     okCallback : goPageForJoin
                 };
@@ -143,10 +143,17 @@ function joinRequestDataChk(pageId){
     } else if(pageId == "page_loginInfo3") {
         // 주소지 SKIP
     } else if(pageId == "page_payAlarm") {
-        if(isEmpty($('input[name="c-billwray"]:checked').val())) {
+        var ckeckCnt = 0;
+
+		$("#" + pageId).find("input[type=checkbox]").each(function(){
+			if($(this).is(":checked")){
+				ckeckCnt++;
+			}
+		});
+
+        if(ckeckCnt == 0) {
             altMsg = "청구서 수신방법을 선택해 주세요.";
         }
-        // 모델번호, 일련번호, IMEI, EID 추가로 확인
     } else if(pageId == "page_payWay") {
         if(isEmpty($('input[name="c-paywray"]:checked').val())) {
             altMsg = "요금 납부방법을 선택해 주세요.";
@@ -254,42 +261,15 @@ function setProgressBarDiv() {
         $(".progress_wrap > .step16").css("display", "none");
         $(".progress_wrap > .step17").css("display", "none");
     }
-    // 계좌등록
-    /*if($("#page_account").hasClass("display")){
-        $(".progress_wrap > .step24").css("display", "block");
-    } else {
-        $(".progress_wrap > .step24").css("display", "none");
-    }
-    // 카드등록
-    if($("#page_card").hasClass("display")){
-        $(".progress_wrap > .step25").css("display", "block");
-    } else {
-        $(".progress_wrap > .step25").css("display", "none");
-    }
-    // 출금이체동의 - 본인 인증 전까지는 영역 확보
-    if($("#joinDataSharingYn").val() != "Y") {
-        if($("#btnCardAuthCmp").css("display") == "none" && $("#btnKbsignAuthCmp").css("display") == "none"){
-            $(".progress_wrap > .step26").css("display", "block");
-            $(".progress_wrap > .step27").css("display", "block");
-        } else {
-            if($("#page_widthdrawAgree1").hasClass("display")){
-                $(".progress_wrap > .step26").css("display", "block");
-                $(".progress_wrap > .step27").css("display", "block");
-            } else {
-                $(".progress_wrap > .step26").css("display", "none");
-                $(".progress_wrap > .step27").css("display", "none");
-            }
-        }
-    }*/
     // 유심배송지
     if($("#dlvrMthd").val() == "1" || $("#dlvrMthd").val() == "3") {
-        $(".progress_wrap > .step31").css("display", "block");
-        $(".progress_wrap > .step32").css("display", "block");
-        $(".progress_wrap > .step33").css("display", "block");
+        $(".progress_wrap > .step25").css("display", "block");
+        $(".progress_wrap > .step26").css("display", "block");
+        $(".progress_wrap > .step27").css("display", "block");
     } else {
-        $(".progress_wrap > .step31").css("display", "none");
-        $(".progress_wrap > .step32").css("display", "none");
-        $(".progress_wrap > .step33").css("display", "none");
+        $(".progress_wrap > .step25").css("display", "none");
+        $(".progress_wrap > .step26").css("display", "none");
+        $(".progress_wrap > .step27").css("display", "none");
     }
 }
 
@@ -305,6 +285,7 @@ function checkTime() {
 	    	today = data.curdttm;
 	    	hour = today.substr(8,2);
 	    	gToday = today.substr(0,8);
+hour="17";
 
 	    	if(hour >= '20' || hour < '08') {
                 modalLayer.show({
@@ -336,7 +317,7 @@ function checkTime() {
 	    	}
 	    },
 	    error: function(e) {
-			console.log(e.responseText.trim());
+			//console.log(e.responseText.trim());
 			return '';
 	    }
 	});
@@ -367,7 +348,7 @@ function checkExceptTime_join() {
 	    	}
 	    },
 	    error: function(e) {
-			console.log(e.responseText.trim());
+			//console.log(e.responseText.trim());
 			return '';
 	    }
 	});
@@ -586,7 +567,7 @@ function checkInputLegalRprsnOption2() {
         popalarm(opt);
         setAddErrClass("legalRprsnRel", "관계를 정확히 입력해 주세요.");
         return false;
-    } else if(vLegalRprsnTelNo == ''|| vLegalRprsnTelNo.length < 10) {
+    } else if(vLegalRprsnTelNo == ''|| vLegalRprsnTelNo.length < 10 || !chkmtelNo(vLegalRprsnTelNo)) {
         let opt = {
             msg : "법정대리인의 휴대폰번호를 정확히 입력해 주세요.",
             cfrmYn : false
@@ -852,6 +833,7 @@ function checkInput() {
 function getNowAge(successCallback){
 
 	if(gAge != 0) {
+	    //console.log("successCallback : " + gAge);
         successCallback(gAge);
     } else {
         $.ajax({
@@ -866,6 +848,7 @@ function getNowAge(successCallback){
             success: function(result) {
                 var age = result.age;
                 gAge = age;
+	            //console.log("ajax : " + gAge);
                 successCallback(age);
             },
             error: function(e) {
@@ -1140,11 +1123,11 @@ function fn_certCallBack(tranId, data){
                     }
                 }
                 catch(e){
-                    console.log(e);
+                    //console.log(e);
                 }
             }
             catch(e){
-                console.log(e);
+                //console.log(e);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                     cfrmYn : false
@@ -1254,7 +1237,7 @@ function checkNoPayInfo(){
 		success: function(responseData) {
 			try{
 				var unpayYn = responseData.data.unpayYn;
-				console.log("getNoPayInfo unpayYn -->"+responseData.data.unpayYn);
+				//console.log("getNoPayInfo unpayYn -->"+responseData.data.unpayYn);
 				if(unpayYn == "Y" && Number(fnCheckNull(responseData.data.unpayAmt) >= 200)){
 					var alertStr = "";
 					var unpayAmt = makeComma(fnCheckNull(responseData.data.unpayAmt))+"원";
@@ -1281,7 +1264,7 @@ function checkNoPayInfo(){
 				}
 			}
 			catch(e){
-				console.log(e);
+				//console.log(e);
 			}
 
 			/*
@@ -1309,7 +1292,7 @@ function checkNoPayInfo(){
 }
 //본인확인 :: 서비스 신청 정보 조회
 function getSvcAppInfo(){
-	console.log("1-7.서비스 신청 정보 조회");
+	//console.log("1-7.서비스 신청 정보 조회");
 	var appInfo  = "soId="+$("#soId").val() + "&custId=" + $('#custId').val();
 	$.ajax({
 		url  : '/join/steps/step2/getSvcAppInfo',
@@ -1502,7 +1485,7 @@ function saveCustInfo(){
 		custInfo += "&repNm="+$("#txRprsNm").val()+"&busiCndt="+$("#txBusiCndt").val()+"&busiTp="+$("#txBusiTp").val();
 
 	}else if($("#custTp").val() == "IFX"){
-		custInfo += '&regNo=' + fnSign($('#fNo').val());
+		custInfo += '&regNo=' + $('#regNoH').val(); //fnSign($('#fNo').val());
 		custInfo += '&custNm=' + $('#fNm').val();
 		custInfo += '&foreignerStyCd=' +$("#foreignerStyCd").val();
 		custInfo += '&foreignerStrtDt=' +$("#foreignerStrtDt").val().replace( /[.:|\`~_\- ]/gi, '' );
@@ -1553,7 +1536,6 @@ function getCustSvcApplInfo(){
             var applInfo = data.applInfo;
             if(applInfo != ""){
                 $("#custSvcApplInfo").val(JSON.stringify(applInfo));
-
                 modalLayer.show("tempSaveLayer"); //작성중인 가입신청정보가 있습니다. 이어서 작성하시겠습니까?
             } else {
                 // 서비스신청정보 저장
@@ -1585,10 +1567,10 @@ function saveSvcApplInfo_1(){
 	//	else appInfo += "&agrCnsYn=N";
 
 	if($("#custTp").val() == "IFX"){
-		appInfo += '&corpRegNo=' + fnSign($('#fNo').val().replace(/-/g,'')) ;
+		appInfo += '&corpRegNo=' + $('#regNoH').val(); //fnSign($('#fNo').val().replace(/-/g,'')) ;
 		appInfo += '&idcardTp='   + $("input[name=c-id-foreigner]:checked").val();
 		appInfo += '&issueDt='   + $('#issfDt').val() ;
-		appInfo += '&birthGender=' + $('#fNo').val().replace(/-/g,'').substr(0,7) ;
+		appInfo += '&birthGender=' + fnUnSign($('#regNoH').val()).substr(0,7) ;
 		appInfo += '&creditCheckSucYn=&fileAddYn=&legalRprsnYn=&legalRprsnNm=&legalRprsnRegNo=&legalRprsnDriverNo=&legalRprsnIpinNo=&legalRprsnRel=&legalRprsnIssueDt=&legalRprsnPstNo=&legalRprsnBassAddr=&legalRprsnDtlAddr=&legalRprsnEml=&legalRprsnTelNo=';
 	}
 	else if($("#custTp").val() == "II" || $("#custTp").val() == "UNC" || $("#custTp").val() == "GEF"){
@@ -1655,7 +1637,7 @@ function saveSvcApplInfo_1(){
         },
 	    success: function(responseData){
 	    	var data = JSON.parse(responseData);
-	    	console.log("1단계저장완료"+ JSON.stringify(responseData));
+	    	//console.log("1단계저장완료"+ JSON.stringify(responseData));
 		    $("#applSeqNo").val(data.applSeqNo);
 		    $("#mvnoOrdNo").val(data.mvnoOrdNo);
 	    	$("#ajax").remove();
@@ -1687,7 +1669,7 @@ function saveSvcApplInfo_1(){
 
 		    	//고객센터 상담단계 세팅 및 배너 노출
 		    	$("#counselApplStat").val('1');
-		    	$("#areaCounselBanner").css("display","block");
+		    	$(".btm_fixed_item").css("display","block");
 
 	            goPageForJoin(); // 본인인증 후 다음스텝 이동
 
@@ -1794,7 +1776,7 @@ function setCustSvcApplInfo(){
 		//저장된 주소 불러올때 우편번호가 잘못된 경우 리셋처리
 		if(applInfo.zipCd == "12345" || applInfo.zipCd == "" || applInfo.zipCd == null){
 
-            //고객요청으로 무조건 ITB001의 주소정보를 기본주소로 세팅
+            //무조건 ITB001의 주소정보를 기본주소로 세팅
             if(gHusZip != null && gHusZip != "" && gHusAddr != null && gHusAddr != "") {
                 $("#postcode").val(vali(gHusZip));
                 $("#bassAddr").val(vali(gHusAddr));
@@ -1835,9 +1817,20 @@ function setCustSvcApplInfo(){
 		// 공통 : 청구서 유형
 		if(applInfo.billMdmSmsYn == "Y"){
 			$("#c-bill-sms").prop("checked",true);
-		}else if(applInfo.billMdmEmlYn == "Y"){
-			$("#c-bill-email").prop("checked",true);
+		} else {
+			$("#c-bill-sms").prop("checked",false);
 		}
+		if(applInfo.billMdmEmlYn == "Y"){
+			$("#c-bill-email").prop("checked",true);
+		} else {
+            $("#c-bill-email").prop("checked",false);
+        }
+		if(applInfo.billMdmPushYn == "Y"){
+			$("#c-bill-push").prop("checked",true);
+		} else {
+            $("#c-bill-push").prop("checked",false);
+        }
+
 		if(vali(applInfo.busiEmad) != ""){
 			var email = applInfo.busiEmad.split("@");
 			if(email.length >= 2){
@@ -1856,7 +1849,7 @@ function setCustSvcApplInfo(){
 		$("#kbDeptCd").val(vali(applInfo.kbDeptCd));//04.08 추가컬럼 (부서코드,부서명)
 		$("#kbDeptNm").val(vali(applInfo.kbDeptNm));
 
-		if($("#kbBranchCd").val() != ""){ // to-be 확인
+		if($("#kbBranchCd").val() != ""){
 			var html = "";
 			html = '<p id="kbEmpInfo">'+$("#kbBranchNm").val()+' '+$("#kbEmpNm").val()+' (직원번호 '+$("#kbEmpNo").val()+')</p>';
 			$("#recommStafResultDiv").html(html);
@@ -1885,7 +1878,6 @@ function checkForeignerCode(scd){
 		success : function(data) {
 			if(data.commonDataSelectOne.commonCd != null && data.commonDataSelectOne.commonCd != ""){
 				if(data.commonDataSelectOne.refCode2 == "PPS"){
-					//popalarm("가입 불가능한 체류코드입니다.", "info", false,"확인","foreignerStyCd");
                     let opt = {
                         msg : "가입 불가능한 체류코드입니다.",
                         cfrmYn : false
@@ -1933,7 +1925,6 @@ function checkForeignerCode(scd){
 				}
 			}
 			else{
-				//popalarm("체류코드를 정확히 입력해주세요.", "info", false,"확인","foreignerStyCd");
                 let opt = {
                     msg : "체류코드를 정확히 입력해주세요.",
                     cfrmYn : false
@@ -2650,7 +2641,7 @@ function getPymAcntInfo(){
 
 	if(watchCombYn != "Y"){ //결합이 아닌경우 retrun;
 		//납부방법 변경 가능
-		$("#c-bill-sms, #c-bill-email, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled",false);
+		$("#c-bill-sms, #c-bill-email, #c-bill-push, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled",false);
 		$("#emlD, #emlD2").prop("disabled", false);
 		$("#accRegLayerBtn, #cardRegLayerBtn").css("display","block");
 		$("#select_kbmobile, #select_ars, #agreeCheck4").prop("disabled",false);
@@ -2790,11 +2781,27 @@ function setParentPymAcntInfo(pymAcntInfo) {
 	//청구서 받는 방법
 	var billMdmSmsYn = pymAcntInfo.billMdmSmsYn;
 	var billMdmEmlYn = pymAcntInfo.billMdmEmlYn;
+	var billMdmPushYn = pymAcntInfo.billMdmPushYn;
 	var eml = pymAcntInfo.eml;
-	if(billMdmSmsYn == "Y"){
+	/*if(billMdmSmsYn == "Y"){
 		$("#c-bill-sms").prop("checked",true);
 	}else{
 		$("#c-bill-email").prop("checked",true);
+	}*/
+	if(billMdmSmsYn == "Y"){
+		$("#c-bill-sms").prop("checked",true);
+	} else {
+		$("#c-bill-sms").prop("checked",false);
+	}
+	if(billMdmEmlYn == "Y"){
+		$("#c-bill-email").prop("checked",true);
+	} else {
+		$("#c-bill-email").prop("checked",false);
+	}
+	if(billMdmPushYn == "Y"){
+		$("#c-bill-push").prop("checked",true);
+	} else {
+		$("#c-bill-push").prop("checked",false);
 	}
 
 	if(vali(eml) != ""){
@@ -2806,7 +2813,7 @@ function setParentPymAcntInfo(pymAcntInfo) {
 	}
 
 	//납부방법 변경 못함
-	$("#c-bill-sms, #c-bill-email, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled", true);
+	$("#c-bill-sms, #c-bill-email, #c-bill-push, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled", true);
 	$("#eml").prop("disabled", true);
 	$("#accRegLayerBtn, #cardRegLayerBtn").css("display","none");
 	$("#acntDiv").removeAttr("onclick");
@@ -3000,7 +3007,7 @@ function saveAdoptAgencyInfo(type){
 				getDsharPymAcntInfo(); //모회선납부정보 가져오기
 			}
 
-    		console.log("2단계저장완료 -------------------------------------------------");
+    		//console.log("2단계저장완료 -------------------------------------------------");
 			//accordionSetting(2);
 
 			//고객센터 상담단계
@@ -3207,10 +3214,10 @@ function chkPayMethod(){
 		acntNo = $('#acntNo').val() ;
 	}
     var cardNum   = $('#cardNum').val();
-    var billMth   = $('input[name="c-billwray"]:checked').val();//청구
+    var billMth   = $('input[name="c-billwray"]:checked').val();//청구 확인필요필요
     var email     = getEmail();
 
-    if(billMth == ''){
+    if(billMth == undefined || billMth == 'undefined' || billMth == ''){
         let opt = {
             msg : "청구서 받는 방법을 정확히 확인해 주세요.",
             cfrmYn : false
@@ -3335,12 +3342,9 @@ function savePymAcntInfo(){
     }
 
 	//청구유형
-	var billMth = $('input[name="c-billwray"]:checked').val();//청구
-    if(billMth == 'sms'){//문자
-        appInfo += '&billMdmEmlYn=N&billMdmSmsYn=Y';
-    } else if(billMth == 'email'){
-    	appInfo += "&billMdmEmlYn=Y&billMdmSmsYn=N";
-    }
+    appInfo += $("#c-bill-sms").prop("checked") ? "&billMdmSmsYn=Y" : "&billMdmSmsYn=N";
+    appInfo += $("#c-bill-email").prop("checked") ? "&billMdmEmlYn=Y" : "&billMdmEmlYn=N";
+    appInfo += $("#c-bill-push").prop("checked") ? "&billMdmPushYn=Y" : "&billMdmPushYn=N";
 
     appInfo += "&eml=" + encodeURIComponent(email);
 
@@ -3370,7 +3374,7 @@ function savePymAcntInfo(){
                     exeSaveStep();
                 }
                 catch(e){
-                    console.log(e);
+                    //console.log(e);
                     let opt = {
                         msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                         cfrmYn : false
@@ -3390,7 +3394,7 @@ function savePymAcntInfo(){
 		});
 	}
 	catch(e){
-		console.log(e);
+		//console.log(e);
         let opt = {
             msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
             cfrmYn : false
@@ -3433,7 +3437,7 @@ function insertUserInfo(){
         },
         success: function(responseData){
 
-            console.log("insertUserInfo responseData="+responseData);
+            //console.log("insertUserInfo responseData="+responseData);
             if(responseData > 0 ){
                 saveSvcApplInfo_2();
             }
@@ -3467,7 +3471,7 @@ function insertUserInfo(){
 
 function saveSvcApplInfo_2(){
 	var payMth = $('input[name="c-paywray"]:checked').val();//납부
-	var billMth = $('input[name="c-billwray"]:checked').val();//청구
+	//var billMth = $('input[name="c-billwray"]:checked').val();//청구
 	var email     = getEmail();
 	var chrgPln = $("#chrgPln").val();
 	var pymAcntId = $("#pymAcntId").val();
@@ -3554,10 +3558,11 @@ function saveSvcApplInfo_2(){
 	if($("#kbEmpInfo").text() == null || $("#kbEmpInfo").text() == ''){
 		appInfo += "&kbBranchCd=&kbBranchNm=&kbDeptCd=&kbDeptNm=&kbEmpNo=&kbEmpNm=";
 	}else{
-		var empinfo = $("input:radio[name='rdoEmpInfo']:checked").val();
+		/*var empinfo = $("#kbEmpInfoData").val();
 		if(empinfo == undefined || empinfo == null || empinfo == ''){
 			empinfo = $("#kbBranchCd").val() + '|' + $("#kbBranchNm").val() + '|' + $("#kbEmpNo").val() + '|' + $("#kbEmpNm").val() + '|' + $("#kbDeptCd").val() + '|' + $("#kbDeptNm").val();
-		}
+		}*/
+		var empinfo = $("#kbBranchCd").val() + '|' + $("#kbBranchNm").val() + '|' + $("#kbEmpNo").val() + '|' + $("#kbEmpNm").val() + '|' + $("#kbDeptCd").val() + '|' + $("#kbDeptNm").val();
 
 		var emparr   = empinfo.split("|");
 		var branchcd = (emparr[0] == undefined || emparr[0] == 'on') ? $("#kbBranchCd").val() : emparr[0];
@@ -3594,7 +3599,7 @@ function saveSvcApplInfo_2(){
 	}
 
 	appInfo += "&regrId=APP001" + "&chgrId=APP001";
-	console.log("2단계 신청정보저장 applInfo :" + appInfo);
+	//console.log("2단계 신청정보저장 applInfo :" + appInfo);
 
 
 	$.ajax({
@@ -3608,7 +3613,7 @@ function saveSvcApplInfo_2(){
         },
         success: function(responseData){
             var data = responseData;
-            console.log("saveSvcApplInfo data.result="+data.result);
+            //console.log("saveSvcApplInfo data.result="+data.result);
             if(data.result > 0 ){
                 saveCustInfo_2();//고객정보저장
             }
@@ -3665,7 +3670,7 @@ function saveCustInfo_2(){
             xhr.setRequestHeader(header, token);
         },
         success: function(data){
-            console.log("3단계 저장완료-------------------------------------");
+            //console.log("3단계 저장완료-------------------------------------");
             //accordionSetting('3');	//신청단계 세팅
 
             //고객센터 상담단계
@@ -3923,6 +3928,7 @@ function setCardNumber(){
         $("#cardCompNm6H").val(cardNm);
         $("#cardDiv").empty();
         $("#cardDiv").append(inCardInfo);
+        $('input[id="select_pay_card"]').click();
 	}
 
 	$("#cardNm").text(cardNm);
@@ -3970,72 +3976,43 @@ function cardNoChk_4(obj) {
 
 	if(comp_cd == ''){
 		if( $("#cardNo6_1").val() != '' && card_no.length < 4) {
-//			$("#errMsg_cardNo").show();
-//			$("#cardNo6_1").addClass("error");
 			errYn = true;
 		}else if( $("#cardNo6_2").val() != '' && card_no.length < 8) {
-//			$("#errMsg_cardNo").show();
-//			$("#cardNo6_2").addClass("error");
 			errYn = true;
 		}else if( $("#cardNo6_3").val() != '' && card_no.length < 12){
-//			$("#errMsg_cardNo").show();
-//			$("#cardNo6_3").addClass("error");
 			errYn = true;
 		}else if( $("#cardNo6_4").val() != '' && card_no.length < 14){
-//			$("#errMsg_cardNo").show();
-//			$("#cardNo6_4").addClass("error");
 			errYn = true;
 		}else{
-//			$("#errMsg_cardNo").hide();
-//			$("#cardNo6_1").removeClass("error");$("#cardNo6_2").removeClass("error");
-//			$("#cardNo6_3").removeClass("error");$("#cardNo6_4").removeClass("error");
 		    errYn = false;
 		}
 	}else if(comp_cd == '07'){//현대 다이너스
 		if( card_no.length != 14 && card_no.length != 16){
 			if( $("#cardNo6_1").val() != '' && card_no.length < 4) {
-//				$("#errMsg_cardNo").show();  $("#cardNo6_1").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_2").val() != '' && card_no.length < 8) {
-//				$("#errMsg_cardNo").show();  $("#cardNo6_2").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_3").val() != '' && card_no.length < 12){
-//				$("#errMsg_cardNo").show();  $("#cardNo6_3").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_4").val() != ''){
-//				$("#errMsg_cardNo").show();  $("#cardNo6_4").addClass("error");
 			    errYn = true;
 			}
 		}else{
 		    errYn = false;
-//			$("#errMsg_cardNo").hide();
-//			$("#cardNo6_1").removeClass("error");
-//			$("#cardNo6_2").removeClass("error");
-//			$("#cardNo6_3").removeClass("error");
-//			$("#cardNo6_4").removeClass("error");
 		}
 	}else if(comp_cd != '07'){
 		if( card_no.length != 15 && card_no.length != 16 ){
 			if( $("#cardNo6_1").val() != '' && card_no.length < 4) {
-//				$("#errMsg_cardNo").show();  $("#cardNo6_1").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_2").val() != '' && card_no.length < 8) {
-//				$("#errMsg_cardNo").show();  $("#cardNo6_2").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_3").val() != '' && card_no.length < 12){
-//				$("#errMsg_cardNo").show();  $("#cardNo6_3").addClass("error");
 			    errYn = true;
 			}else if( $("#cardNo6_4").val() != ''){
-//				$("#errMsg_cardNo").show();  $("#cardNo6_4").addClass("error");
 			    errYn = true;
 			}
 		}else{
 		    errYn = false;
-//			$("#errMsg_cardNo").hide();
-//			$("#cardNo6_1").removeClass("error");
-//			$("#cardNo6_2").removeClass("error");
-//			$("#cardNo6_3").removeClass("error");
-//			$("#cardNo6_4").removeClass("error");
 		}
 	}
 
@@ -4641,7 +4618,7 @@ function chkItem(step){
 
 function confirmData(){
 
-	$("#areaCounselBanner").css("display","none");
+	//$(".btm_fixed_item.fixed_join_help").css("display","none");
 	$("#confirmBtn").text("하단으로 스크롤");
 
 	//가입내용
@@ -4722,12 +4699,12 @@ function confirmData(){
 	}
 	$("#cEmail").text(email);
 
-	var billMth = $('input[name="c-billwray"]:checked').val();//청구서유형
-	if(billMth == 'sms'){
-		$("#cBillMdm").text("문자");
-    } else if(billMth == 'email'){
-    	$("#cBillMdm").text("이메일");
-    }
+    var billMth = "";
+    billMth = $("#c-bill-sms").prop("checked") ? "문자" : "";
+    billMth = $("#c-bill-email").prop("checked") ? (isEmpty(billMth) ? "이메일" : billMth + ",이메일") : billMth;
+    billMth = $("#c-bill-push").prop("checked") ? (isEmpty(billMth) ? "앱알림" : billMth + ",앱알림") : billMth;
+
+    $("#cBillMdm").text(billMth);
 
 	//배송정보
 	var dlvrMthd 	= $("#dlvrMthd").val();//유심수령방법
@@ -4765,9 +4742,6 @@ function confirmData(){
 
 	//$("#agreechk").prop("checked",false);
 	//$("#confirmBtn").prop("disabled",true);
-
-	$("#applyToJoinDiv").css("display","none")
-	$("#confirmDiv").css("display","block");
 
     goPageForJoin(); // 다음 step 이동
 }
@@ -4809,7 +4783,7 @@ function fnLMPM000009(chrgPln){
 		    	}
 		    },
 		    error: function(e) {
-				console.log(e.responseText.trim());
+				//console.log(e.responseText.trim());
 				return '';
 		    },
 		    complete: function() {
@@ -4818,7 +4792,7 @@ function fnLMPM000009(chrgPln){
 		});
 	}
 	catch(e){
-		console.log(e);
+		//console.log(e);
 	}
 }
 //요금제그룹정보 조회
@@ -4837,13 +4811,13 @@ function fnLMPM000007(prodSoId, prodGrpCd){
 		dataType: "json",
 	    success: function(data) {
 	    	try{
-		    	console.log("--------fnLMPM000007-------");
+		    	//console.log("--------fnLMPM000007-------");
 				if(data.prodGrpInfo != null){
 					gProdGrpInfo[0] = data.prodGrpInfo;
 				}
 	    	}
 	    	catch(e){
-	    		console.log(e);
+	    		//console.log(e);
                 let opt = {
                     msg : "일시적으로 오류가 발생하였습니다.",
                     cfrmYn : false
@@ -4854,7 +4828,7 @@ function fnLMPM000007(prodSoId, prodGrpCd){
 
 	    },
 	    error: function(e) {
-			console.log(e.responseText.trim());
+			//console.log(e.responseText.trim());
 			return '';
 	    },
 	    complete: function() {
@@ -4906,10 +4880,19 @@ function callBackProdSearch(prodInfo, searchInfo) {
         popalarm(opt);
         return;
 	}else{
-	    if(prodInfo.prodCd == "PD00000613") {
-	        $("#esimYn").val("N"); // 워치 요금제의 경우 esimYn을 강제로 N으로 변경
-	    } else {
-	        $("#esimYn").val(pEsimYn); // 그 외에는 이전 화면 단계의 값으로 진행
+	    if($("#svcTp").val() != "04" && prodInfo.prodCd == "PD00000613") {
+            let opt = {
+                msg : "[LTE 워치] 요금제로 요금제 변경이 불가합니다.<br>워치 요금제로 변경을 원하는 경우 가입 첫단계부터 진행해주시기 바랍니다.",
+                cfrmYn : false
+            };
+            popalarm(opt);
+            return;
+	        /* 요청으로 인해 skip한 유심배송지 정보입력 step, 워치정보 입력 step 등의 검증 필요하여 최초부터 워치요금제로 진행하도록 유도
+            $("#esimYn").val("N"); // 워치 요금제의 경우 esimYn을 강제로 N으로 변경
+            $("#page_watch, #page_mobileAdd").addClass("display");
+        } else {
+            $("#esimYn").val(pEsimYn); // 그 외에는 이전 화면 단계의 값으로 진행
+            $("#page_watch, #page_mobileAdd").removeClass("display");*/
 	    }
 		setProdInfoData(prodInfo);
 		ratePlan = prodInfo.prodCd;
@@ -4998,7 +4981,7 @@ function setProdInfoData(data){
 			changeRatePlanView();//특화요금제 화면
 
 		}catch(e){
-			console.log(e);
+			//console.log(e);
 		}
 	}else{//선택요금제가 존재하지 않는 요금제인 경우
 		setProdInfoData(defaultProdInfo);
@@ -5292,15 +5275,13 @@ function changeRatePlanView(){
 		if($("#custId").val() != ""){
 			if($("#custTp").val() != "MIN") setAcntNo(); //계좌리셋
 			//이메일 & 납부방법 리셋
-			$("#c-bill-sms, #c-bill-email, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled", false);
+			$("#c-bill-sms, #c-bill-email, #c-bill-push, #select_pay_acc, #select_pay_card, #cardNum, #acntNo").prop("disabled", false);
 			$("#eml").val("");
 			//$("#emlD").val("i");
 			$("#eml").prop("disabled",true);
 			$("#emlD2").css("display","block");
 			$("#emlD, #emlD2").prop("disabled", false);
-			//$("#accRegLayerBtn, #cardRegLayerBtn").css("display","block");
-			//$("#accRegLayerBtn").css("display","block");
-			$("#select_pay_acc, #c-bill-sms").click();
+			$("#select_pay_acc").click();
 
 			/************************************************************************************************************
 			 * 특화요금제화면세팅 시작																					*/
@@ -5601,7 +5582,7 @@ function getSvcInfoListW(){
 		   		  	}
 	   	   		}else{
 	   	   			/*회선이 없음*/
-	   	   			console.log("(모회선 없음)");
+	   	   			//console.log("(모회선 없음)");
 		   	   	}
 		   	}else{
                 let opt = {
@@ -5649,7 +5630,7 @@ function setSelectsvcTelNoList() {
 }
 //단계 확인
 function infoDeny(step){
-	console.log("진행중인 단계확인"+step);
+	//console.log("진행중인 단계확인"+step);
 
 	if($("#custId").val() == "") {
         let opt = {
@@ -5716,7 +5697,7 @@ function setKbUsrInfo(){
 // 추천친구검색
 function selectKbUsrId(){
 	var param  = 'usrId=' + $("#friendUsrId").val().trim()+'&custId=' + $("#custId").val();
-	console.log("selectKbUsrId param = " + param);
+	//console.log("selectKbUsrId param = " + param);
 
 	$.ajax({
         url:'/join/steps/step7/selectKbUsrId',
@@ -5728,7 +5709,7 @@ function selectKbUsrId(){
             xhr.setRequestHeader(header, token);
         },
         success: function(data){
-            console.log(JSON.stringify(data));
+            //console.log(JSON.stringify(data));
             if(data.friendUsrId != ""){
                 modalLayer.hide();
 
@@ -5792,7 +5773,7 @@ function selectKbEmp(){
 	var param  = 'empNm=' + $("#empNm").val()+'&branchCd=KB0';// + $("input:radio[name='rdoBranch']:checked").val();
 	param += "&soId="+$("#soId").val();
 
-	console.log(" selectKbEmp param = " + param);
+	//console.log(" selectKbEmp param = " + param);
 	$.ajax({
         url:'/join/steps/step7/selectKbEmp',
         type:'POST',
@@ -5806,7 +5787,7 @@ function selectKbEmp(){
         success: function(responseData){
             var data = responseData;
             var html = "";
-            console.log("selectKbEmp data.result="+JSON.stringify(data.result));
+            //console.log("selectKbEmp data.result="+JSON.stringify(data.result));
 
             if(data.result !== 'null' && data.result !== null && data.result !== ''){
                 var emplist = data.result;
@@ -5864,7 +5845,7 @@ function selectKbEmpAO(empid){
 	// 테스트 직원번호 0007196
 	var param  = 'empNm=' + empid +'&soId='+$("#soId").val();
 
-	console.log(" selectKbEmp param = " + param);
+	//console.log(" selectKbEmp param = " + param);
 	$.ajax({
         url:'/join/steps/step7/selectKbEmp',
         type:'POST',
@@ -5877,7 +5858,7 @@ function selectKbEmpAO(empid){
         },
         success: function(responseData){
             var data = responseData;
-            console.log("selectKbEmp data.result="+JSON.stringify(data.result));
+            //console.log("selectKbEmp data.result="+JSON.stringify(data.result));
 
             if(data.result !== 'null' && data.result !== null && data.result !== '' && data.result.length != 0){
                 var emplist = data.result;
@@ -5919,7 +5900,11 @@ function selectKbEmpAO(empid){
             }
         },
         error : function(request, err){
-            popalarm("시스템 오류: 일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", "info", false);
+            let opt = {
+                msg : "시스템 오류: 일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+                cfrmYn : false
+            };
+            popalarm(opt);
         }
 	});
 }
@@ -6288,7 +6273,7 @@ function getServerNow(joinInfo) {
 	    url:  '/system/main/getServerNow',
 	    type: 'POST',
 	    success: function(data) {
-	    	console.log(data.curdttm);
+	    	//console.log(data.curdttm);
 	    	today = data.curdttm;
 	    	hour = today.substr(8,2);
 	    	gToday = today.substr(0,8);
@@ -6315,6 +6300,31 @@ function getServerNow(joinInfo) {
 			applStatRollback(joinInfo.soId, joinInfo.applSeqNo, joinInfo.custId);
 	    },
 	});
+}
+
+//서버 시간 조회
+function getServerNowTime() {
+	var today = '';
+
+	$.ajax({
+		url:  '/system/main/getServerNow',
+		type: 'POST',
+		async:false,
+		success: function(data) {
+			//console.log(data.curdttm);
+			today = data.curdttm;
+			gToday = today.substr(0,8);
+		},
+		error: function(e) {
+            let opt = {
+                msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
+                cfrmYn : false
+            };
+            popalarm(opt);
+		},
+	});
+
+	return today;
 }
 
 // 이벤트 시간 체크
@@ -6385,7 +6395,7 @@ function checkExceptTime_welcomeEvt() {
 			}
 	    },
 	    error: function(e) {
-			console.log(e.responseText.trim());
+			//console.log(e.responseText.trim());
 			return false;
 	    }
 	});
@@ -6526,19 +6536,19 @@ function eaiJoinIF(joinInfo, now) {
 		}
 	}
 
-	console.log("joinInfo::::"+JSON.stringify(joinInfo));
+	//console.log("joinInfo::::"+JSON.stringify(joinInfo));
 
 	//변경전(ITB001에서 가져온값)
-	console.log("변경전_smsCnsntYn::::"+smsCnsntYn);
-	console.log("변경전_emalCnsntYn::::"+emalCnsntYn);
-	console.log("변경전_telCnsntYn::::"+telCnsntYn);
-	console.log("변경전_pstmalCnsntYn::::"+pstmalCnsntYn);
+	//console.log("변경전_smsCnsntYn::::"+smsCnsntYn);
+	//console.log("변경전_emalCnsntYn::::"+emalCnsntYn);
+	//console.log("변경전_telCnsntYn::::"+telCnsntYn);
+	//console.log("변경전_pstmalCnsntYn::::"+pstmalCnsntYn);
 
 	//변경후
-	console.log("변경후_smsYn::::"+afSmsCnsntYn);
-	console.log("변경후_emailYn::::"+afEmalCnsntYn);
-	console.log("변경후_telYn::::"+afTelCnsntYn);
-	console.log("변경후_mailYn::::"+afPstmalCnsntYn);
+	//console.log("변경후_smsYn::::"+afSmsCnsntYn);
+	//console.log("변경후_emailYn::::"+afEmalCnsntYn);
+	//console.log("변경후_telYn::::"+afTelCnsntYn);
+	//console.log("변경후_mailYn::::"+afPstmalCnsntYn);
 
 	//기존 동의값(문자,이메일,전화,우편물) 동의가 전부 N이였는데 동의값(문자,이메일,전화,우편물)이 하나라도 동의일 경우
 	if ( (smsCnsntYn != "1" && emalCnsntYn != "1" && telCnsntYn != "1" && pstmalCnsntYn != "1")  &&
@@ -6632,14 +6642,14 @@ function eaiJoinIF(joinInfo, now) {
 	data.usimRceptPost = joinInfo.dlvrPstNo;
 	data.usimRceptBascAddr = joinInfo.dlvrBassAddr;
 	data.usimRceptDtailAddr = joinInfo.dlvrDtlAddr;
-	data.askRecvDstic = getAaskRecvDstic(joinInfo.billMdmGiroYn, joinInfo.billMdmEmlYn, joinInfo.billMdmSmsYn);
+	data.askRecvDstic = getAaskRecvDstic(joinInfo.billMdmGiroYn, joinInfo.billMdmEmlYn, joinInfo.billMdmSmsYn, joinInfo.billMdmPushYn);
 	data.askWayDstic = getAskWayDstic(joinInfo.pymMthd);
 	data.askBankCd = (joinInfo.pymMthd == "CM" ? joinInfo.cardCorpCd : "");
 	data.askCardCd = (joinInfo.pymMthd == "CC" ? joinInfo.cardCorpCd : "");
 	data.askAcno = (joinInfo.pymMthd == "CM" ? joinInfo.cardNo : "");
 	data.askCardNo = (joinInfo.pymMthd == "CC" ? joinInfo.cardNo : "");
 	data.stutPrxyFmlyDstic = joinInfo.legalRprsnRel;
-	data.stutPrxyUniqNo = "";
+	data.stutPrxyUniqNo = joinInfo.legalRprsnRegNo; //20230517 법정대리인 정보 추가
 	data.stutPrxyNm = joinInfo.legalRprsnNm;
 	data.stutPrxyPost = joinInfo.legalRprsnPstNo;
 	data.stutPrxyBascAddr = joinInfo.legalRprsnBassAddr;
@@ -6846,11 +6856,11 @@ function sendInfoOffer(joinInfo){
                 xhr.setRequestHeader(header, token);
             },
 		    success: function(data) {
-		    	console.log("--------fnSendInfoOffer-------");
-		    	console.log(data);
+		    	//console.log("--------fnSendInfoOffer-------");
+		    	//console.log(data);
 		    },
 		    error: function(e) {
-		    	console.log(e.responseText.trim());
+		    	//console.log(e.responseText.trim());
 		    },
 		    complete: function() {
 		    	lastSaveAppInfo(joinInfo);
@@ -6858,7 +6868,7 @@ function sendInfoOffer(joinInfo){
 		});
 	}
 	catch(e){
-		console.log(e);
+		//console.log(e);
 		lastSaveAppInfo(joinInfo);
 	}
 }
@@ -6911,8 +6921,6 @@ function lastSaveAppInfo(joinInfo){
 }
 
 function goApplytoCompleted(){
-//	$("#frm").attr("action", "/join/steps/applyToCompleted");
-//	$("#frm").submit();
 	$("#frm").attr("method","post").attr("action", "/join/steps/join-request-complete").submit();
 }
 
@@ -6952,7 +6960,7 @@ function fileYnApplInfo(){//증빙서류가 필요한 요금제인 경우 :: 직
 }
 //신용체크성공여부값 저장 고정값 N
 function saveNoCardCheck(){
-	console.log("step2_10  - 신용체크성공여부값 저장 고정값('N') 수정 ");
+	//console.log("step2_10  - 신용체크성공여부값 저장 고정값('N') 수정 ");
 	var appInfo = 'soId='+ $("#soId").val() + '&applSeqNo=' + $('#applSeqNo').val() + '&custId=' + $('#custId').val()+ '&creditCheckSucYn=N';
 
 	$.ajax({
@@ -6966,7 +6974,7 @@ function saveNoCardCheck(){
             xhr.setRequestHeader(header, token);
         },
 		success: function(data){
-			console.log("saveAppInfo data.result="+data);
+			//console.log("saveAppInfo data.result="+data);
 			if(data > 0){
 				saveFileAddYnCheck();
 			}else{
@@ -7004,7 +7012,7 @@ function saveFileAddYnCheck(){
             xhr.setRequestHeader(header, token);
         },
 		success: function(data){
-			console.log("saveAppInfo data.result="+data);
+			//console.log("saveAppInfo data.result="+data);
 			if(data.result > 0){
 				goApplytoCompleted();
 			}else{
@@ -7045,16 +7053,6 @@ function applStatRollback(soId, applSeqNo, custId) {
             xhr.setRequestHeader(header, token);
         }
 	});
-}
-//휴대폰번호 세팅 (법정대리인정보 입력)
-function checkMsgTelNo() {
-	if( isEmpty($("#legalRprsnTelNo").val()) || $("#legalRprsnTelNo").val().length<10 || !chkmtelNo($("#legalRprsnTelNo").val()) ) {
-		$("#errMsg_legalRprsnTelNo").show();
-		$("#legalRprsnTelNo").addClass("error");
-	} else {
-		$("#errMsg_legalRprsnTelNo").hide();
-		$("#legalRprsnTelNo").removeClass("error");
-	}
 }
 
 //첨부파일 업로드 클릭(ios app 권한체크)
@@ -7172,8 +7170,6 @@ function imgDelete(number) {
 	}
 
 	$('#fileError').val(Arry);
-//	$('#imgDiv'+number).parent().empty();
-//	$('#imgDiv'+number).parent().find("a").remove();
 	$('#imgDiv'+number).parent().remove();
 	$('.file_item_scroll').append("<div class='file_item'></div>");
 	$('#imgRemove'+number).click();
@@ -7253,7 +7249,7 @@ function insertFileInfo() {
 					saveAppInfo();
 
 				} else {
-					console.log("파일 업로드 실패");
+					//console.log("파일 업로드 실패");
                     let opt = {
                         msg : "이미지 형식의 파일이 아닙니다. 파일을 다시 첨부해주세요.",
                         cfrmYn : false
@@ -7403,21 +7399,17 @@ function juminLegFormat_b(obj) {
 
 
 	if(len == 0) {
-	    $("#legalRprsnRegNoRb").addClass('error');
+	    $("#legalRprsnRegNoRb").addClass("error");
 
 	} else {
-		$("#legalRprsnRegNoRb").removeClass('error');
-//		$("#divLegalJumin").removeClass('error');
-//		$("#errMsg_legalRprsnRegNo").hide();
-//		$("#errMsg_legalRprsnRegNo_fa").hide();
+		$("#legalRprsnRegNoRb").removeClass("error");
+
 		str = str.replace(/-/g,'');
 		var chkyn = checkJumin(str);
 		if(!chkyn) {
-			$("#legalRprsnRegNoRb").addClass('error');
-			//$("#errMsg_legalRprsnRegNo").show();
+			$("#legalRprsnRegNoRb").addClass("error");
 		} else if(chkLegFrgAdt(str)) {
-			$("#legalRprsnRegNoRb").addClass('error');
-			//$("#errMsg_legalRprsnRegNo_fa").show();
+			$("#legalRprsnRegNoRb").addClass("error");
 		}
 	}
 }
@@ -7432,27 +7424,7 @@ function chkLegFrgAdt(juminno){
 		return false;
 	}
 }
-// 주민번호세팅 (2. 법정대리인정보입력)
-function setJuminLegNo(obj) {
-	var regNo = onlyNum($("#legalRprsnRegNoH").val());
-	$(obj).val(regNo);
-}
-// 운전면허번호세팅 (2. 법정대리인정보입력)
-function setDriverNo(obj) {
-	var driverNo = onlyNum($("#legalRprsnDriverNo").val());
-	$(obj).val(driverNo);
-}
 
-//휴대폰번호 세팅 (2. 법정대리인정보 입력)
-function checkMsgTelNo() {
-	if( isEmpty($("#legalRprsnTelNo").val()) || $("#legalRprsnTelNo").val().length<10 || !chkmtelNo($("#legalRprsnTelNo").val()) ) {
-		$("#errMsg_legalRprsnTelNo").show();
-		$("#legalRprsnTelNo").addClass("error");
-	} else {
-		$("#errMsg_legalRprsnTelNo").hide();
-		$("#legalRprsnTelNo").removeClass("error");
-	}
-}
 //KB PIN 조회 국민계좌보유여부 (2. 법정대리인정보입력)
 function getLegKBCustInfo() {
 	if ($("#custId").val() == '') {
@@ -7605,7 +7577,7 @@ function fn_legCertCallBack(tranId, data){
             $('#arsltArry').val("");
             $('#cnifNo').val("");
             $('#cnifNoEnc').val("");
-            console.log("kbpin 없는 경우");
+            //console.log("kbpin 없는 경우");
         }
 
         //신분증진위여부
@@ -7922,20 +7894,16 @@ function juminFormat_b(obj) {
 	var len = str.length;
 
 	if(len == 0){
-		$("#regNoRb").addClass('error');
-		//$("#errMsg_regNo").show();
+		$("#regNoRb").addClass("error");
 	} else {
-		$("#regNoRb").removeClass('error');
-		//$("#errMsg_regNo").hide();
-		//$("#errMsg_regNo_fa").hide();
+		$("#regNoRb").removeClass("error");
+
 		str = str.replace(/-/g,'');
 		var chkyn = checkJumin(str);
 		if(!chkyn){
-			$("#regNoRb").addClass('error');
-			//$("#errMsg_regNo").show();
+			$("#regNoRb").addClass("error");
 		} else if(($("#custTp").val() != "MIN" && $("#custTp").val() != "IFX") && chkFrgAdt(str)){
-			$("#regNoRb").addClass('error');
-			//$("#errMsg_regNo_fa").show();
+			$("#regNoRb").addClass("error");
 		}
 	}
 
@@ -8205,7 +8173,7 @@ function getCtrtProdCnt(prodCd,successCallback){
             xhr.setRequestHeader(header, token);
         },
 		success: function(result) {
-			console.log("getCtrtProdCnt====>  "+result);
+			//console.log("getCtrtProdCnt====>  "+result);
 			successCallback(result);
 		},
 		error: function(Request,status,error){
@@ -8240,9 +8208,9 @@ function sendItb006(){
 		//async: false,
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			var result =  data.data.joinTagetCustYn	// 나라사랑LTE요금제 가입 대상고객여부 1:가입대상 0:가입불가
-			console.log(data.data.joinTagetCustYn	);
+			//console.log(data.data.joinTagetCustYn	);
 			if(data.resultCode == "00000" || data.resultCode == "N0000") { // 성공
 				if(result == "1"){
 					$("#narasarangYn").val('Y');
@@ -8267,7 +8235,6 @@ function sendItb006(){
 			}
 		},
 		error: function(Request,status,error){
-//			popalarm("일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", "info", false,'',prodSearch);
             let opt = {
                 msg : "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.",
                 cfrmYn : false,
@@ -8279,7 +8246,7 @@ function sendItb006(){
 }
 //무궁화, 공무원, 선생님 대상 확인
 function sendItb006New(tgpCode){
-	if($("#filePopupChk").val() == "Y" && $("#confirmDiv").css("display") == "none"){// 팝업노출 한번만, 최종가입의 경우만 제외
+	if($("#filePopupChk").val() == "Y" && $("#page_apply").hasClass("on")){// 팝업노출 한번만, 최종가입의 경우만 제외
 		saveRatePlan();
 		return;
 	}
@@ -8293,7 +8260,7 @@ function sendItb006New(tgpCode){
 	data.cuniqno = $('#custId').val();	// kb-pin $('#custId').val()
 	base.data = data;
 
-	console.log(JSON.stringify(base));
+	//console.log(JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -8302,7 +8269,7 @@ function sendItb006New(tgpCode){
 		contentType: 'application/json; charset=utf-8',
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			try{
 				if(data.resultCode == "00000" || data.resultCode == "N0000") {//성공
 
@@ -8363,7 +8330,7 @@ function sendItb006New(tgpCode){
 				$("#filePopupChk").val('Y');
 			}
 			catch(e){
-				console.log(e);
+				//console.log(e);
 				$("#fileAddYn").val("N");
 				$("#evdnCont").html("증빙서류 : 재직증명서, 공무원증, 교직원증 중 택 1");
                 $("#evdnCont2").html("KB무궁화대출, KB공무원대출, KB선생님든든대출 보유고객은 서류제출 생략가능");
@@ -8437,7 +8404,7 @@ function drawAgreeCheck() {
 		dataType: "json",
 		success: function(res) {
 			data = JSON.parse(fnUnSign(res.enc));
-			console.log(data);
+			//console.log(data);
 
 			if(data !== null && data.data !== null){
 				if(data.resultCode !== '00000'){
@@ -8491,8 +8458,8 @@ function drawAgreeCheck() {
 
 					//2021.12.01 5번(신양식,마이테이터 포함) 동의값 추가
 					//마케팅 동의 (공백,0,9,1,2 팝업노출) (3,4,5,6 팝업미노출)
-					console.log("선택동의 팝업노출여부(은행마케팅동의 값) : "+maktngPcDsticd);
-					console.log("선택동의 팝업노출여부(LiivM마케팅동의 값) : "+commMktDst);
+					//console.log("선택동의 팝업노출여부(은행마케팅동의 값) : "+maktngPcDsticd);
+					//console.log("선택동의 팝업노출여부(LiivM마케팅동의 값) : "+commMktDst);
 					if((maktngPcDsticd == "3" || maktngPcDsticd == "4" || maktngPcDsticd == "5" ||  maktngPcDsticd == "6") && commMktDst == "1"){
 
                         if($("#applTp").val() == "N" || $("#applTp").val() == "T"){
@@ -8659,7 +8626,7 @@ function drawAgreeCheck() {
 					setChkall();
 
 				}catch(e){
-					console.log(e);
+					//console.log(e);
                     let opt = { msg: "일시적으로 오류가 발생하였습니다. 다시 시도해 주세요.", cfrmYn : false }
                     popalarm(opt);
 					return;
@@ -8678,6 +8645,57 @@ function drawAgreeCheck() {
 		}
 	});//end ajax
 }
+
+function eventTargetCheck(){
+    if($("#eventTargetYn").val() == "1" &&
+       $("#chrgPln").val() !== 'PD00000127' &&
+       $("#chrgPln").val() !== 'PD00000128' &&
+       $("#chrgPln").val() !== 'PD00000129' &&
+       $("#chrgPln").val() !== 'PD00000130' &&
+       $("#chrgPln").val() !== 'PD00000131' &&
+       $("#chrgPln").val() !== 'PD00000132' &&
+       $("#chrgPln").val() !== 'PD00000133' &&
+       $("#chrgPln").val() !== 'PD00000134' &&
+       $("#chrgPln").val() !== 'PD00000135' &&
+       $("#chrgPln").val() !== 'PD00000136' &&
+       $("#chrgPln").val() !== 'PD00000272' &&
+       $("#chrgPln").val() !== 'PD00000334' &&
+       $("#chrgPln").val() !== 'PD00000558' &&
+       $("#chrgPln").val() !== 'PD00000613' &&
+       $("#chrgPln").val() !== 'PD00000631' &&
+       $("#chrgPln").val() !== 'PD00000720' &&
+       $("#applTp").val() !== "T"               ) {
+        let opt2={
+            msg: "고객님께서는 기간 내 정상 개통 시 KB스타클럽 패밀리 KB Liiv M 3개월 무료(5.1 ~ 5.31) 이벤트 혜택 대상자입니다. <br/>이벤트 페이지에서 상세내용 확인하시어, 개통월 포함 기본료 3개월 무료혜택을 놓치지 마세요! <br/>※ 5월 개통 시에 한함",
+            cfrmYn : true,
+            okCallback : lastJoinPopup
+         }
+         popalarm(opt2);
+    } else {
+        lastJoinPopup();
+    }
+}
+
+function lastJoinPopup(){
+    if($("#applTp").val() == "N" || $("#applTp").val() == "T"){
+        let opt = {
+            msg: "확인을 누르시면 KB Liiv M 가입이 진행됩니다.",
+            cfrmYn : true,
+            okCallback : saveApplTp
+        }
+        popalarm(opt);
+
+    }else if($("#applTp").val() == "M"){
+        //통신사별 분기 _스마트개통 MNP 운영시간여부체크
+        let opt = {
+            msg: "확인을 누르시면 KB Liiv M 가입이 진행됩니다.",
+            cfrmYn : true,
+            okCallback : sendSB804
+        }
+        popalarm(opt);
+    }
+}
+
 //선택동의
 function setChkall() {
 	var total = 0;
@@ -8766,7 +8784,7 @@ function setFromOCRRecogInfo(ocrFormInfo) { //각 업무화면에서 구현할�
 			$('#regNoRb').val( $("#ocrIdNum7").val() );
 
 			if($('input:radio[name="rdoSelfIdf"][value="1"]').prop("checked")) {
-			    console.log($("#ocrCertDate").val());
+			    //console.log($("#ocrCertDate").val());
 				$('#JIssDt').val( $("#ocrCertDate").val().replace( /[^0-9]/g, '' ) );//주민등록증 발급일자
 				$('#select-id-jumin').click();
 
@@ -8872,17 +8890,29 @@ function maxLengthCheck_join(object){
 }
 
 //청구서유형코드(ESB)
-function getChargeDvCd(billMdmGiroYn, billMdmEmlYn, billMdmSmsYn) {
-	if(billMdmGiroYn == "Y") {
-		return "N";
-	} else if(billMdmEmlYn == "Y" && billMdmSmsYn == "Y") {
-		return "A";
-	} else if(billMdmEmlYn == "Y") {
-		return "Y";
-	} else if(billMdmSmsYn == "Y") {
-		return "C";
-	}
-	return "C";
+function getChargeDvCd(billMdmGiroYn, billMdmEmlYn, billMdmSmsYn, billMdmPushYn) {
+    /*
+    - 변경후
+    1:휴대폰,   2:이메일,  3:휴대폰&이메일 , 4:푸시, 5 : 휴대폰&푸시 , 6 : 이메일& 푸시 , 7 : 휴대폰&이메일&푸시
+    1-휴대폰 /2:이메일/3:휴대폰,4:휴대폰,5:휴대폰,6:이메일,7:휴대폰으로 처리
+    */
+    var chargeDvCd = "C";
+
+    if(billMdmGiroYn == "Y") {
+        chargeDvCd = "N";
+    } else {
+        if(billMdmSmsYn == "Y") {
+            chargeDvCd = "C";
+        } else {
+            if(billMdmEmlYn == "Y") {
+                chargeDvCd = "Y";
+            } else {
+                chargeDvCd = "C";
+            }
+        }
+    }
+
+    return chargeDvCd;
 }
 // 가입구분(ESB)
 function getEntrType(applTp) {
@@ -8901,11 +8931,32 @@ function getCommJoinPtDstic(applTp) {
 	return "1";
 }
 // 청구서수신구분(EAI)
-function getAaskRecvDstic(billMdmGiroYn, billMdmEmlYn, billMdmSmsYn) {
-	if(billMdmEmlYn == "Y") {
-		return "2";
+function getAaskRecvDstic(billMdmGiroYn, billMdmEmlYn, billMdmSmsYn, billMdmPushYn) {
+    /*
+    - 변경전
+    1:휴대폰,   2:이메일,  3:휴대폰&이메일
+    - 변경후
+    1:휴대폰,   2:이메일,  3:휴대폰&이메일 , 4:푸시, 5 : 휴대폰&푸시 , 6 : 이메일& 푸시 , 7 : 휴대폰&이메일&푸시
+    */
+    var recvDstic = "1";
+
+    if (billMdmSmsYn == "Y" && billMdmEmlYn != "Y" && billMdmPushYn != "Y") {
+		recvDstic = "1";
+	} else if (billMdmSmsYn != "Y" && billMdmEmlYn == "Y" && billMdmPushYn != "Y") {
+		recvDstic = "2";
+	} else if (billMdmSmsYn == "Y" && billMdmEmlYn == "Y" && billMdmPushYn != "Y") {
+		recvDstic = "3";
+	} else if (billMdmSmsYn != "Y" && billMdmEmlYn != "Y" && billMdmPushYn == "Y") {
+		recvDstic = "4";
+	} else if (billMdmSmsYn == "Y" && billMdmEmlYn != "Y" && billMdmPushYn == "Y") {
+		recvDstic = "5";
+	} else if (billMdmSmsYn != "Y" && billMdmEmlYn == "Y" && billMdmPushYn == "Y") {
+		recvDstic = "6";
+	} else if (billMdmSmsYn == "Y" && billMdmEmlYn == "Y" && billMdmPushYn == "Y") {
+		recvDstic = "7";
 	}
-	return "1";
+
+	return recvDstic;
 }
 // 청구방법구분(EAI)
 function getAskWayDstic(pymMthd) {
@@ -9014,11 +9065,11 @@ function getDsRsvSvcInfoInArray(entrRsvProdCd, prodCd, mnoProdCd, nextOperatorId
 				}
 			}
 			catch(e1){
-				console.log(e1);
+				//console.log(e1);
 			}
 		},
         error: function(e){
-        	console.log(e)
+        	//console.log(e)
         }
 	});
 
@@ -9046,7 +9097,7 @@ function getEntrRsvSvcCd(prodCd) {
 			relMnoProdCd = data.relMnoProdCd;
 		},
         error: function(e){
-        	console.log(e)
+        	//console.log(e)
         }
 	});
 
@@ -9115,17 +9166,23 @@ function getDocsAthorTYb(prodCd,fileAddYn) {
 }
 
 function showOpenBar(){
-	console.log("showOpenBar");
+	//console.log("showOpenBar");
 	$('body').append('<div class="dimmed" style="background-color: rgba(0,0,0,0.6);"></div>');
 }
 
 function showOpenBarForKakao(){
-	console.log("showOpenBarForKakao");
+	//console.log("showOpenBarForKakao");
 	$('body').append('<div class="dimmed" style="background-color: rgba(0,0,0,0.6);z-index:8999"></div>');
+
+	// iframe 앱접근성 대응
+    setTimeout(()=>{
+        let ifr = document.querySelector('iframe');
+        ifr.contentWindow.document.querySelector('iframe').focus();
+    }, 800);
 }
 
 function hideOpenBar(){
-	console.log("hideOpenBar");
+	//console.log("hideOpenBar");
 	$('.dimmed').hide();
 }
 
@@ -9210,7 +9267,7 @@ function maskUsrId(usrId){
 function allChkAgree() {
     if(($("#maktngPcDsticd").val() == "3" || $("#maktngPcDsticd").val() == "4" || $("#maktngPcDsticd").val() == "5" || $("#maktngPcDsticd").val() == "6") == false && $("#commMktDst").val() != "1") {
         if($("#O").prop("checked")) {
-            agreeConPDF("/html/usimJoinTerms/개인(신용)정보 수집이용제공 동의서(상품서비스 안내 등, 리브모바일활용 및 계열사제공용 포함).pdf","O");
+            agreeConPDF("/html/usimJoinTerms/개인(신용)정보 수집·이용·제공 동의서(상품서비스 안내 등, KB 리브모바일 활용 및 계열사정보제공용 포함).pdf","O");
             $(".section.info_agree input[type=checkbox]").prop("checked",true);//해당화면에 전체 checkbox들을 체크해준다.
             $("#O").parent().parent().addClass("on");
         } else {
@@ -9219,7 +9276,7 @@ function allChkAgree() {
         }
     } else if(($("#maktngPcDsticd").val() == "3" || $("#maktngPcDsticd").val() == "4" || $("#maktngPcDsticd").val() == "5" || $("#maktngPcDsticd").val() == "6") == false) {
         if($("#O").prop("checked")) {
-            agreeConPDF("/html/usimJoinTerms/개인(신용)정보 수집이용제공 동의서(상품서비스 안내 등, 계열사제공용 포함).pdf","O");
+            agreeConPDF("/html/usimJoinTerms/(선택) 개인(신용)정보 수집·이용·제공 동의서(KB 리브모바일 활용 상품서비스 안내 등) (계열사 정보제공용 포함).pdf","O");
             $("#O, #chk_grp_5 input[type=checkbox], #chk_grp_6 input[type=checkbox]").prop("checked",true);
             $("#O").parent().parent().addClass("on");
         } else {

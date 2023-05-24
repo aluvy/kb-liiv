@@ -1,7 +1,7 @@
 /* 유심가입 통신사 LG U 관련 */
 // 본인확인 :: 개인 신분증 검증 결과값 리턴
 function IdentityAuth(){
-	console.log("1-9.개인 신분증 검증 결과값 리턴");
+	//console.log("1-9.개인 신분증 검증 결과값 리턴");
 	var base = new Object();
 	var data = new Object();
 	var RetrieveSmrtCustKaitTrthAutnYn = new Object();
@@ -413,7 +413,7 @@ function paymentAuth(gubun){
 		cache: false,
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			if(data.resultCode == 'N0000'){
 				// KB본인인증 전자서명
 				if(gubun == "cert"){
@@ -422,7 +422,7 @@ function paymentAuth(gubun){
 						gAuthMthd = "301";
 						openKCBCertPopup();
 					}else{// ARS
-						console.log("ARS인증");
+						//console.log("ARS인증");
 						var arsParam = new Object();
 						arsParam.kbPin = fnSign($("#custId").val()); //encoding
 						arsParam.telNo = fnSign($('#arsCertCellPhoneNo').val()); //encoding
@@ -627,7 +627,7 @@ function rePaymentAuth(gubun){
 		cache: false,
 		dataType: "json",
 		success: function(data) {
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			if(data.resultCode == 'N0000'){
 				// KB본인인증 전자서명
 				if(gubun == "cert"){
@@ -636,7 +636,7 @@ function rePaymentAuth(gubun){
 						gAuthMthd = "301";
 						openKCBCertPopup();
 					}else{// ARS
-						console.log("ARS인증");
+						//console.log("ARS인증");
 						var arsParam = new Object();
 						arsParam.kbPin = fnSign($("#custId").val()); //encoding
 						arsParam.telNo = fnSign($('#arsCertCellPhoneNo').val()); //encoding
@@ -678,7 +678,7 @@ function rePaymentAuth(gubun){
 //본인확인 :: 고객의 개통 가능 여부 사전 체크 CM804
 function checkOpenYn_1(){
 	var custTp = $("#custTp").val();
-    console.log("1-8 custTp="+$("#custTp").val()+" 고객의 개통 가능 여부 사전 체크 CM804");
+    //console.log("1-8 custTp="+$("#custTp").val()+" 고객의 개통 가능 여부 사전 체크 CM804");
 	var json_obj = new Object();
 
 	var base = new Object();
@@ -778,7 +778,7 @@ function checkOpenYn_1(){
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log(response);
+			//console.log(response);
 			if(response.resultCode == 'N0000'){
 				var errCnt = 0;
 				var welfStatus = "";//복지할인
@@ -786,32 +786,32 @@ function checkOpenYn_1(){
 				try {
 					var DsCustRnmRsltOutVO = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCustRnmRsltOutVO;
 					errCnt += (isEmpty(DsCustRnmRsltOutVO)) ? 0 : Number(DsCustRnmRsltOutVO.errCnt);
-					console.log("CM804 고객실명 Error count = "+DsCustRnmRsltOutVO.errCnt);
+					//console.log("CM804 고객실명 Error count = "+DsCustRnmRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsCBScoreRsltOutVO = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCBScoreRsltOutVO;
 					errCnt += (isEmpty(DsCBScoreRsltOutVO)) ? 0 : Number(DsCBScoreRsltOutVO.errCnt);
-					console.log("CM804 신용정보조회 Error count = "+DsCBScoreRsltOutVO.errCnt);
+					//console.log("CM804 신용정보조회 Error count = "+DsCBScoreRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsLverifyOutVO     = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsLverifyOutVO;
 					errCnt += (isEmpty(DsLverifyOutVO))     ? 0 : Number(DsLverifyOutVO.errCnt);
-					console.log("CM804 자사체납 Error count = "+DsLverifyOutVO.errCnt);
+					//console.log("CM804 자사체납 Error count = "+DsLverifyOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsSbgnRsltOutVO    = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsSbgnRsltOutVO;
 					//errCnt += (isEmpty(DsSbgnRsltOutVO))    ? 0 : Number(DsSbgnRsltOutVO.errCnt);
-					console.log("CM804 가입회선 Error count = "+DsSbgnRsltOutVO.errCnt);
+					//console.log("CM804 가입회선 Error count = "+DsSbgnRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsBlRsltOutVO      = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsBlRsltOutVO;
 					errCnt += (isEmpty(DsBlRsltOutVO))      ? 0 : Number(DsBlRsltOutVO.errCnt);
-					console.log("CM804 블랙리스트 Error count = "+DsBlRsltOutVO.errCnt);
+					//console.log("CM804 블랙리스트 Error count = "+DsBlRsltOutVO.errCnt);
 				} catch(e) {}
 				try {
 					var DsCorpCloseRsltOutVO      = response.data.CheckSmrtCustomerInfoResponse.ResponseRecord.ResponseBody.DsCorpCloseRsltOutVO;
 					errCnt += (isEmpty(DsCorpCloseRsltOutVO))      ? 0 : Number(DsCorpCloseRsltOutVO.errCnt);
-					console.log("CM804 휴폐업사업자 Error count = "+DsCorpCloseRsltOutVO.errCnt);
+					//console.log("CM804 휴폐업사업자 Error count = "+DsCorpCloseRsltOutVO.errCnt);
 				} catch(e) {}
 
 				try {
@@ -819,8 +819,8 @@ function checkOpenYn_1(){
 					welfStatus = (isEmpty(DsWelfRsltOutVO)) ? "" : DsWelfRsltOutVO.welfStatus;
 				} catch(e) {}
 
-				console.log("CM804 response="+ JSON.stringify(response));
-				console.log("CM804 errCnt="+ errCnt);
+				//console.log("CM804 response="+ JSON.stringify(response));
+				//console.log("CM804 errCnt="+ errCnt);
 
 				if(errCnt > 0) {
                     let opt = {
@@ -915,7 +915,7 @@ function sendSB804() {
 	base.serviceId = "SB804";
 	base.data = data;
 	
-	console.log("sendSB804=base="+JSON.stringify(base));
+	//console.log("sendSB804=base="+JSON.stringify(base));
 
 	$.ajax({
 		type: 'POST',
@@ -926,7 +926,7 @@ function sendSB804() {
 		cache: false,
 		dataType: "json",
 		success: function(response) {
-			console.log("sendSB804=response="+JSON.stringify(response));
+			//console.log("sendSB804=response="+JSON.stringify(response));
 
 			if(response !== null && response.data !== null){			
 				if(response.resultCode !== 'N0000'){
@@ -945,7 +945,7 @@ function sendSB804() {
 				}catch(e){
 					
 				}				
-				console.log('sendSB804=resultCode=' + resultCode);
+				//console.log('sendSB804=resultCode=' + resultCode);
 				
 				if(resultCode == 'YES'){
 					if($("#serverTarget").val() == "prod"){
@@ -1060,7 +1060,7 @@ function sendSB808(){
 	data.CreateSmrtMnpPriorConBD = CreateSmrtMnpPriorConBD;
 	base.data = data;
 
-	console.log("=SB808 base="+JSON.stringify(base));
+	//console.log("=SB808 base="+JSON.stringify(base));
 	$.ajax({
 		type: 'POST',
 		url: '/appIf/v1/uplus/esb/SB808', 
@@ -1071,7 +1071,7 @@ function sendSB808(){
 		dataType: "json",
 		success: function(response) {
 
-			console.log("=SB808 response="+response);
+			//console.log("=SB808 response="+response);
 
 			var resultCode  = "";
 			var resultCode1 = "";
@@ -1089,7 +1089,7 @@ function sendSB808(){
 				resultMessage = response.resultMessage;
 			}
 			
-			console.log('SB808 resultCode='+resultCode+' resultCode1='+resultCode1+' resultCode2='+resultCode2 + ' resultDesc=' + resultDesc);
+			//console.log('SB808 resultCode='+resultCode+' resultCode1='+resultCode1+' resultCode2='+resultCode2 + ' resultDesc=' + resultDesc);
 
 			if(resultCode == 'N0000' && (resultCode2 == 'BS0000' || resultCode2 == 'BF1036' || resultCode2 == 'BF1037' || resultCode2 == 'BF1039') ) {
 				saveApplTp();
@@ -1201,7 +1201,7 @@ function esbJoinIF(joinInfo) {
 	DsRsvInfoInVO.pymcardYymm = getPymcardYymm(joinInfo.cardEffcprd); // 년4자리 월2자리로 변경
 	DsRsvInfoInVO.chargeCustNm = joinInfo.custNm;
 	DsRsvInfoInVO.chargeType = "H";
-	DsRsvInfoInVO.chargeDvCd = getChargeDvCd(joinInfo.billMdmGiroYn, joinInfo.billMdmEmlYn, joinInfo.billMdmSmsYn);
+	DsRsvInfoInVO.chargeDvCd = getChargeDvCd(joinInfo.billMdmGiroYn, joinInfo.billMdmEmlYn, joinInfo.billMdmSmsYn, joinInfo.billMdmPushYn);
 	DsRsvInfoInVO.chargeEmail = getChargeEmail(joinInfo.reqEmail);
 	DsRsvInfoInVO.chargePost = joinInfo.dlvrPstNo;
 	DsRsvInfoInVO.chargeAddr1 = joinInfo.dlvrBassAddr;

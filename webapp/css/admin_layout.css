@@ -5,7 +5,7 @@
 figure {margin:0;}
 
 
-/* ***** 이용안내, 요금제 ***** */
+/* ***** ì´ìš©ì•ˆë‚´, ìš”ê¸ˆì œ ***** */
 table.table_charge {margin-top: 2rem; text-align: center;}
 table.table_charge th {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:var(--bg_02, #F8F9FB); color:var(--gray_01, #222); font-size:1.4rem; font-weight:700; line-height:2.1rem; text-align:center!important;}
 table.table_charge td {padding:1.6rem 1rem; border-bottom:1px solid var(--line_02, #D6D6D6); border-left:1px solid var(--line_02, #D6D6D6); border-right:1px solid var(--line_02, #D6D6D6); background-color:#fff; color:var(--gray_01, #222); font-size:1.2rem; font-weight:normal; line-height:1.9rem;}
@@ -41,8 +41,8 @@ table.table td:first-child {border-left:none;}
 table.table thead th:last-of-type,
 table.table td:last-child {border-right:none;}
 
-/* ***** 요금제 ***** */
-/* 상단 txt_help */
+/* ***** ìš”ê¸ˆì œ ***** */
+/* ìƒë‹¨ txt_help */
 .txt_help p {position: relative; margin-top: .8rem; padding-left: 0.6rem; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem; text-align:justify;}
 .txt_help p:first-child {margin-top: 0;}
 .txt_help p:not(.bullet):before {content: ''; position: absolute; left: 0; top: 0.8rem; display: block; width: 0.2rem; height: 0.2rem; border-radius: 50%; background-color: var(--gray_02, #555);}
@@ -99,7 +99,7 @@ table.table td:last-child {border-right:none;}
 .chargeinfo_wrap .chargeinfo_gr .type_service .info_sec .txt_help > ul > li::before, 
 .chargeinfo_wrap .info.type_table .txt_help.type_bullet .bullet::before,
 .chargeinfo_wrap .chargeinfo_gr .stitle_bar .txt_help.type_bullet .bullet::before  {content: ''; position: absolute; left: 0; top: 0.6rem; display: block; width: 0.7rem; height: 0.7rem; background-image: url(../img/common/icon_star_shape_gray_7.svg); background-repeat: no-repeat; background-position: center; background-size: contain;}
-.chargeinfo_wrap .promotion_type1 .pro_gr .txt_help.type_sub .bullet {margin-top: 0px !important;} /* 예외Case */
+.chargeinfo_wrap .promotion_type1 .pro_gr .txt_help.type_sub .bullet {margin-top: 0px !important;} /* ì˜ˆì™¸Case */
 
 /* stitle_bar */
 .chargeinfo_wrap .chargeinfo_gr .stitle_bar {display: table; position: sticky; left: 0; width: 100%;}
@@ -158,12 +158,12 @@ table.table td:last-child {border-right:none;}
 
 .chargeinfo_wrap .lte_info.type_service .info_sec > p {margin-top: .8rem; font-size: 1.4rem; line-height: 2.2rem; color: #222 !important;}
 
-/* 주니어LTE, 시니어LTE */
+/* ì£¼ë‹ˆì–´LTE, ì‹œë‹ˆì–´LTE */
 .chargeinfo_wrap .lte_info.type_service .info_sec {margin-bottom: 1.6rem;}
 .chargeinfo_wrap .lte_info.type_service .info_sec .txt_help {margin-top: 0;}
 .chargeinfo_wrap .lte_info.type_service .info_sec table {margin-top: .8rem;}
 
-/* 반려행복LTE 이용안내 */
+/* ë°˜ë ¤í–‰ë³µLTE ì´ìš©ì•ˆë‚´ */
 .chargeinfo_wrap .pet_guide_step {margin-top: 2rem;}
 .chargeinfo_wrap .pet_guide_step ul {display:table; width:100%;}
 .chargeinfo_wrap .pet_guide_step ul li {display:table-cell; width:33%; height:2rem; text-align:center; vertical-align:top;}
@@ -184,14 +184,14 @@ table.table td:last-child {border-right:none;}
 .chargeinfo_wrap .box.type_pet_noti .txt_help {margin-top: 1.2rem;}
 .chargeinfo_wrap .box.type_pet_noti .txt_help sup {color: #0966e9;}
 
-/* 테이블 이미지(반려행복LTE) */
+/* í…Œì´ë¸” ì´ë¯¸ì§€(ë°˜ë ¤í–‰ë³µLTE) */
 .chargeinfo_wrap .table_charge .th_img {padding:0;}
 .chargeinfo_wrap .table_charge .td_img {padding:.5rem 0.25rem 1.5rem !important; border-top-width:0;}
 .chargeinfo_wrap .table_charge .th_img img, .table_charge .td_img img {width:100%;}
 .chargeinfo_wrap .table_charge .th_img figure {margin-bottom:1.5rem;}
 .chargeinfo_wrap .table_charge .th_img figure figcaption, .table_charge .td_img figure figcaption {font-size: 1.4rem; line-height: 2.2rem; font-weight: 700;}
 
-/* LTE워치 */
+/* LTEì›Œì¹˜ */
 .chargeinfo_wrap .info.type_table .txt_help p {margin-top: 0; padding-left: 0; font-size: 1.4rem; line-height: 2.2rem; font-weight: 400; color: #222; text-indent: 0;}
 .chargeinfo_wrap .txt_help.type_num_em p:before {display: none;}
 .chargeinfo_wrap .box.type_matter {margin-top:1.2rem !important; padding:2rem; background-color:#f7f9fa; border-radius:1rem;}
@@ -208,13 +208,13 @@ table.table td:last-child {border-right:none;}
 .chargeinfo_wrap .txt_help.type_bullet .bullet .t_color02 {color: #555 !important;}
 .chargeinfo_wrap .info.type_notable .txt_help.type_bullet .bullet .t_color02 strong {color: #555 !important; font-weight: 400;} 
 
-/* 골든라이프 X 배너 */
+/* ê³¨ë“ ë¼ì´í”„ X ë°°ë„ˆ */
 .chargeinfo_wrap .link_banner.golden {position:relative; margin-top: 3rem; width: 100%; height:0; padding:61.25% 0 0; background:transparent url(../img/charge_html/banner_golden.png) no-repeat; background-size:100% auto; box-shadow: none; border-radius: 0; overflow:hidden;}
 .chargeinfo_wrap .link_banner.golden > *:not(a) {position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap; }
 .chargeinfo_wrap .link_banner.golden a {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0;}
 
 
-/* *** 요금제 이용안내 *** */
+/* *** ìš”ê¸ˆì œ ì´ìš©ì•ˆë‚´ *** */
 .user_info_conet {font-size:1.2rem; line-height:1.9rem; color:#555;}
 .user_info_conet h3,
 .user_info_conet h4 {font-size:1.4rem; font-weight:700; line-height:2.1rem; color:#222; margin-top:2rem;}
@@ -291,7 +291,7 @@ table.table td:last-child {border-right:none;}
 
 
 
-/* 부가서비스 에디터 */
+/* ë¶€ê°€ì„œë¹„ìŠ¤ ì—ë””í„° */
 .extra_detail .extra_service_info .tit_extra {margin-bottom: .4rem;}
 .extra_detail .extra_service_info .add_hyphen_bl>li {position: relative;font-size: 1.4rem;padding-left: 1.2rem;margin-bottom: 1.2rem;}
 .extra_detail .extra_service_info .add_hyphen_bl>li:after {content: '-';position: absolute; left: 0; top: 0;}
@@ -359,7 +359,7 @@ table.table td:last-child {border-right:none;}
 .event_detail_card ul.event_detail_card_list > li strong.btn_text_go::after {width: 1.4rem;height: 1.4rem;top: 0.1rem;}
 .event_detail_card ul.event_detail_card_list > li span {display: block;font-size: 1.2rem;line-height: 1.5rem;color: #555555;}
 
-/* event type section (SKT 4종 이벤트) */
+/* event type section (SKT 4ì¢… ì´ë²¤íŠ¸) */
 .evt .evt_cont .evt_type {background-color: #f8f9fb; padding: 1.2rem 1.5rem; position: relative; margin-bottom: 1.5rem;}
 .evt .evt_cont .evt_type:after {content: '';width: 0.2rem;height: 100%;background-color: #4c34E2;position: absolute;top: 0;left: 0;}
 .evt .evt_cont .evt_type > em {font-size: 1.3rem; font-weight: 700; line-height: 2.0rem;}
@@ -373,9 +373,9 @@ table.table td:last-child {border-right:none;}
 .evt .evt_promotion .pro_box .pro_tit {font-size: 1.6rem;font-weight: 600;margin-bottom: 0.6rem;letter-spacing:-0.1rem;}
 .evt .evt_promotion .pro_box .pro_tit .sm {font-size: 1.4rem; font-weight:400;}
 .evt .evt_promotion .pro_box .pro_tit span {font-size: 1.8rem; display: inline-block; position: relative;letter-spacing:-0.1rem;}
-.evt .evt_promotion .pro_box .pro_tit span.type_kt:after {content: 'KT망';position: absolute;top: 0.05rem;right: -4.8rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
-.evt .evt_promotion .pro_box .pro_tit span.type_lg:after {content: 'LG U+망';position: absolute;top: 0.05rem;right: -6.6rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
-.evt .evt_promotion .pro_box .pro_tit span.type_skt:after {content: 'SKT망';position: absolute;top: 0.05rem;right: -5.2rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
+.evt .evt_promotion .pro_box .pro_tit span.type_kt:after {content: 'KTë§';position: absolute;top: 0.05rem;right: -4.8rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
+.evt .evt_promotion .pro_box .pro_tit span.type_lg:after {content: 'LG U+ë§';position: absolute;top: 0.05rem;right: -6.6rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
+.evt .evt_promotion .pro_box .pro_tit span.type_skt:after {content: 'SKTë§';position: absolute;top: 0.05rem;right: -5.2rem;color: #888888;font-size: 1.4rem;font-weight: 400;display: block;}
 .evt .evt_promotion .pro_box .pro_tit span:before {content: '';position: absolute;right: -0.9rem;top: 0.4rem;width: 0.1rem;height: 1.3rem;background-color: #d5d5d5;}
 .evt .evt_promotion .pro_box .pro_price {margin-top: 1.4rem; border-top: 0.1rem solid #f3f3f3; padding-top: 1.4rem; text-align: right;}
 .evt .evt_promotion .pro_box .pro_price .price_sub {font-size: 1.4rem;/* margin-bottom: 0.6rem; */color: #888;}
@@ -416,7 +416,7 @@ table.table td:last-child {border-right:none;}
 
 
 
-/* **************** 고객지원(약관상세) **************** */
+/* **************** ê³ ê°ì§€ì›(ì•½ê´€ìƒì„¸) **************** */
 .terms {margin-top:3.2rem; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem;}
 .terms .terms_main_tit {display:block; margin-top:3.2rem; color:var(--gray_01, #222); font-size:2rem; font-weight:bold; line-height:3rem;}
 .terms .terms_sub_tit {display:block; margin-top:2rem; color:var(--gray_01, #222); font-size:1.6rem; font-weight:bold; line-height:2.3rem;}
@@ -475,7 +475,7 @@ table.table td:last-child {border-right:none;}
 .terms_table table td:last-child {border-right:none;}
 
 
-/* **************** 고객지원(이용안내 상세) **************** */
+/* **************** ê³ ê°ì§€ì›(ì´ìš©ì•ˆë‚´ ìƒì„¸) **************** */
 .liivm_info {margin:3.2rem 0 0; font-size:1.4rem; color:#555; text-align:justify;}
 .liivm_info h2 {display:inline-block; margin-top:3.2rem; margin-bottom:1.2rem; color:#222; font-size:1.6rem; line-height:2.3rem;}
 .liivm_info h2:first-child {margin-top:0;}
@@ -550,8 +550,8 @@ table.table td:last-child {border-right:none;}
 #part3 div.txt_help ul li {position:relative; padding-left:1.1rem; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem; text-align:justify; text-indent:0;}
 #part3 div.txt_help ul li::after {content:''; position:absolute; left:0; top:0.6rem; display:block; width:0.7rem; height:0.7rem; background-image:url(../img/common/icon_star_shape_gray_7.svg); background-repeat:no-repeat; background-position:center; background-size:contain;}
 #part3 div.txt_help ul li:first-of-type {margin-top:0;}
-#part3 div.txt_help ul:nth-of-type(1) li::before {content:'아이폰 : ';}
-#part3 div.txt_help ul:nth-of-type(2) li::before {content:'갤럭시 : ';}
+#part3 div.txt_help ul:nth-of-type(1) li::before {content:'ì•„ì´í° : ';}
+#part3 div.txt_help ul:nth-of-type(2) li::before {content:'ê°¤ëŸ­ì‹œ : ';}
 
 
 /* **************** admin_form_sample **************** */

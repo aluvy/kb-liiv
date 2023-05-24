@@ -1,10 +1,10 @@
 @charset "utf-8"; 
 
-/* **************** 페이지::가입개통 > 개통 **************** */
+/* **************** íŽ˜ì´ì§€::ê°€ìž…ê°œí†µ > ê°œí†µ **************** */
 
 .txt_reject {color:var(--main_03, #ff3d00);}
 
-/* [ MERG06 ] 개통 > 셀프개통 안내 */
+/* [ MERG06 ] ê°œí†µ > ì…€í”„ê°œí†µ ì•ˆë‚´ */
 .open_meterial {margin-top:2rem;}
 .open_meterial ul {display:flex; align-items:center; justify-content:space-between;}
 .open_meterial ul li {flex:1 1 15.4rem; max-width:15.4rem; display:flex; align-items:center;}
@@ -23,7 +23,7 @@
 .video_guide ul li a span {font-size:1.4rem; line-height:2.1rem; color:var(--gray_01, #222); font-weight:700; margin-right:auto;}
 
 
-/* 셀프개통 서비스 */
+/* ì…€í”„ê°œí†µ ì„œë¹„ìŠ¤ */
 .list_open {counter-reset:number 0;}
 .list_open > li {padding:2.4rem 2rem 0; border-radius:1.6rem; background:var(--bg_02, #f8f9fb); text-align:center; overflow:hidden;}
 .list_open > li + li {margin-top:1.2rem;}
@@ -55,7 +55,7 @@
 
 
 
-/* [ MERG0605 ] 개통 > 셀프개통 > 번호이동 동의 */
+/* [ MERG0605 ] ê°œí†µ > ì…€í”„ê°œí†µ > ë²ˆí˜¸ì´ë™ ë™ì˜ */
 span.star_type {display:block; position:relative; padding-left:1.1rem; font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555); margin-top:0.4reml;}
 span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; display:block; width:0.7rem; height:0.7rem; background:url(../img/common/icon_star_shape_gray_7.png) center no-repeat; background-size:contain;}
 .contact_list {padding:2rem;}
@@ -68,8 +68,8 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 .check_ars .form_check input + .label .label_txt {margin-top:0.4rem; font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555);}
 
 
-/* [ MERG10 ] 개통 > 셀프개통 > 셀프개통 오류화면 */
-/* 공통으로 이전 예정 */
+/* [ MERG10 ] ê°œí†µ > ì…€í”„ê°œí†µ > ì…€í”„ê°œí†µ ì˜¤ë¥˜í™”ë©´ */
+/* ê³µí†µìœ¼ë¡œ ì´ì „ ì˜ˆì • */
 .page_error {height:100%; /*min-height:30rem; */ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;}
 .page_error::before {content:''; width:6rem; height:6rem; background:url(../img/img/flat_error.png) center no-repeat; background-size:contain;}
 .page_error p {margin-top:2rem;}
@@ -82,7 +82,7 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 .layer_wrap .ly_cnt .page_error p span {margin-top:2rem;}
 
 
-/* [ MERG06P01 ] 개통 > 팝업 > [팝업] 셀프개통 오류화면 */
+/* [ MERG06P01 ] ê°œí†µ > íŒì—… > [íŒì—…] ì…€í”„ê°œí†µ ì˜¤ë¥˜í™”ë©´ */
 /* .self_error {;} */
 /* .self_error p {font-size:1.4rem; color:var(--gray_01, #222); line-height:2.2rem;} */
 .self_error > p {font-size:1.2rem; line-height:1.9rem; color:#444;}
@@ -94,7 +94,7 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 .self_error > .error_info > .cs span::before {content:''; display:inline-block; width:2rem; height:2rem; margin-right:0.8rem; background:url(../img/img/flat_call.png) center no-repeat; background-size:contain;}
 
 
-/* [ MERG07 ] 개통 > 신청현황 */
+/* [ MERG07 ] ê°œí†µ > ì‹ ì²­í˜„í™© */
 .apply_detail {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:2rem; margin-top:1.2rem;}
 .apply_detail .detail_line {flex:1 1 60%; max-width:60%; display:flex; align-items:center; margin-right:auto;}
 .apply_detail .detail_line > * ~ * {margin-left:0.8rem;}
@@ -118,22 +118,22 @@ span.star_type::before {content:''; position:absolute; left:0; top:0.6rem; displ
 .join_detail dl dd a {display:inline-block; margin-top:0.4rem;}
 
 
-/* [ MERG0701 ] 개통 > 가입신청 취소 */
+/* [ MERG0701 ] ê°œí†µ > ê°€ìž…ì‹ ì²­ ì·¨ì†Œ */
 .reason_etc {display:none;}
 input[name='reason']:checked + label {font-weight:700;}
 
 
-/* [ MERG07P02 ] 개통 > 팝업 > [팝업] 계약표준안내 */
+/* [ MERG07P02 ] ê°œí†µ > íŒì—… > [íŒì—…] ê³„ì•½í‘œì¤€ì•ˆë‚´ */
 .rate_plan {padding:2rem; text-align:center;}
 .rate_plan > span {display:block; font-size:1.2rem; line-height:1.9rem; color:var(--gray_02, #555);}
 .rate_plan > span:last-child {color:var(--gray_04, #999);}
 .rate_plan strong {display:block; font-size:1.6rem; line-height:2.3rem; color:var(--gray_01, #222); margin:0.4rem 0;}
 
 
-/* [ MERG07P07 ] 개통 > 팝업 > [팝업] 신청현황 */
-/* [ MERG07P08 ] 개통 > 팝업 > [팝업] 신청현황 완료 */
-/* [ MERG07P09 ] 개통 > 팝업 > [팝업] 증빙서류 제출 */
-/* 신청현황 */
+/* [ MERG07P07 ] ê°œí†µ > íŒì—… > [íŒì—…] ì‹ ì²­í˜„í™© */
+/* [ MERG07P08 ] ê°œí†µ > íŒì—… > [íŒì—…] ì‹ ì²­í˜„í™© ì™„ë£Œ */
+/* [ MERG07P09 ] ê°œí†µ > íŒì—… > [íŒì—…] ì¦ë¹™ì„œë¥˜ ì œì¶œ */
+/* ì‹ ì²­í˜„í™© */
 .open_step {display:flex; align-items:center; justify-content:center; margin-top:2.6rem;}
 .open_step .step_item {position:relative; width:4.8rem; margin-left:4rem;}
 .open_step .step_item:first-child {margin-left:0;}
@@ -160,7 +160,7 @@ input[name='reason']:checked + label {font-weight:700;}
 ;}
 
 
-/* [ MERG1001 ] 가입/개통 > 개통 > 개통 처리중입니다. */
+/* [ MERG1001 ] ê°€ìž…/ê°œí†µ > ê°œí†µ > ê°œí†µ ì²˜ë¦¬ì¤‘ìž…ë‹ˆë‹¤. */
 .open_ing {text-align:center;}
 .open_ing p {color:var(--gray_02, #555);}
 .open_ing span {display:block; color:#333; font-size:1.4rem; line-height:2.2rem;}
@@ -169,7 +169,7 @@ input[name='reason']:checked + label {font-weight:700;}
 .open_ing .open_ico::after {content:''; display:inline-flex; align-items:center; justify-content:center; width:8rem; height:8rem; background:url(../img/common/icon_open_ing.gif) center no-repeat; background-size:8rem auto;}
 
 
-/* [ MESPP0001 ] 가입/개통 > 개통 > [팝업] 계좌등록 */
+/* [ MESPP0001 ] ê°€ìž…/ê°œí†µ > ê°œí†µ > [íŒì—…] ê³„ì¢Œë“±ë¡ */
 .select_inline {display:none;}
 .select_inline.full,
 .layer_wrap .select_inline {margin:0 calc(var(--sar)*-1 - 2rem) 0 calc(var(--sal)*-1 - 2rem);}
@@ -177,7 +177,7 @@ input[name='reason']:checked + label {font-weight:700;}
 .select_inline ul::-webkit-scrollbar {display:none;}
 .select_inline ul li a {display:block; height:4.4rem; line-height:4.4rem; padding:0 var(--sar_2) 0 var(--sal_2); font-size:1.6rem; color:#242424;}
 .select_inline ul li.on a {background-color:rgba(0,0,0, 0.05);}
-.select_inline ul li.on a::after {content:'선택 됨'; font-size:0; text-indent:-9999%; overflow:hidden;}
+.select_inline ul li.on a::after {content:'ì„ íƒ ë¨'; font-size:0; text-indent:-9999%; overflow:hidden;}
 .select_inline ul.account_select {padding:1.2rem 2rem 0.8rem 1.2rem;}
 .select_inline ul.account_select li {margin-bottom:0.4rem;}
 .select_inline ul.card_select {padding:1.2rem 2rem 0.8rem 1.2rem;}
@@ -188,17 +188,17 @@ input[name='reason']:checked + label {font-weight:700;}
 .select_inline.full .droptype_btn_wrap .droptype_btn {min-height:auto; border-radius:initial; border:initial;}
 
 
-/* 페이지::가입/개통 > 가입/개통 팝업 */
+/* íŽ˜ì´ì§€::ê°€ìž…/ê°œí†µ > ê°€ìž…/ê°œí†µ íŒì—… */
 .ocr_photo {display:flex; align-items:center; justify-content:center; min-height:21rem; padding:2.4rem 3.2rem; border-radius:1.2rem; background:var(--bg_02, #f8f9fb);}
 .ocr_photo img {max-width:25.6rem;}
 /* .ocr_type {;} */
 .ocr_type .ocr_ttl {font-size:1.2rem; line-height:1.5rem; color:var(--gray_02, #555);}
 .ocr_type .ocr_cont {display:flex; align-items:center; justify-content:center; height:5.2rem; border-radius:0.8rem; background:var(--bg_02, #f8f9fb); font-size:1.6rem; line-height:2.3rem; color:var(--gray_01, #222); font-weight:700; margin-top:0.8rem;}
 
-/* MERG07P09 내려쓰기 이슈 */
+/* MERG07P09 ë‚´ë ¤ì“°ê¸° ì´ìŠˆ */
 .word_keep {word-break:keep-all;}
 
-/* 가입가능시간 */
+/* ê°€ìž…ê°€ëŠ¥ì‹œê°„ */
 .tit_sec_wrap + .join_time {margin-top:2rem;}
 .join_time.box_item {padding:2rem;}
 .join_time > p {text-align:center; font-size:1.6rem; line-height:2.3rem; font-weight:700; color:var(--gray_01, #222);}

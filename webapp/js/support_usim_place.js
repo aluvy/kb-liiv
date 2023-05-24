@@ -80,7 +80,8 @@ const setBottomLayout = function(type){
 
     const bottom = $(document).find(".usim_map-bottom");
     const content = $(document).find(".content");
-    const btn = $(document).find(".usim_map-bottom .btn_open .blind");
+    // const btn = $(document).find(".usim_map-bottom .btn_open .blind");
+    const btn = $(document).find(".usim_map-bottom .btn_open"); // [05/24] 초점 관련 수정
 
     // transition
     if( bottom.hasClass("view") )       bottom.css({"transition": "none"});
@@ -88,7 +89,8 @@ const setBottomLayout = function(type){
 
     ( type == 1 ) ? bottom.addClass("on") : bottom.removeClass("on");
     ( type == 1 ) ? content.addClass("dim") : content.removeClass("dim");
-    ( type == 1 ) ? btn.text("리스트 닫기") : btn.text("리스트 열기");
+    // ( type == 1 ) ? btn.text("리스트 닫기") : btn.text("리스트 열기");
+    ( type == 1 ) ? btn.attr("aria-label", "리스트 닫기") : btn.attr("aria-label", "리스트 열기");  // [05/24] 초점 관련 수정
 
     ( type == 2 ) ? bottom.addClass("view") : bottom.removeClass("view");
     ( type == 2 ) ? $(".usim_map-search").hide() : $(".usim_map-search").show();
@@ -178,6 +180,7 @@ var _touch = {
                 setBottomLayout(mapBottomFix.type=1);
             } else if ( _touch.endY - _touch.startY > 50 && scrollTop <= 0 ){
                 setBottomLayout(mapBottomFix.type=0);
+                $(".usim_map-search input").blur();
             }
         })
     },
