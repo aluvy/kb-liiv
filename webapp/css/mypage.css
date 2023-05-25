@@ -1,8 +1,8 @@
 @charset "utf-8"; 
 
-/* ***** ë§ˆì´íŽ˜ì´ì§€ ***** */
+/* ***** 마이페이지 ***** */
 
-/* ëª…ì˜ë³€ê²½ */
+/* 명의변경 */
 .inmg {margin-left:2rem; margin-right:2rem;}
 .section.bot_line {padding-bottom:2rem; border-bottom:1px solid var(--line_03, #eaeced);}
 
@@ -51,7 +51,7 @@
 .myp_total_log li+li {margin-top:1.2rem;}
 .mypage .form_group + .txt_alert + .btn_wrap {margin-top:1.2rem;}
 
-/* ì‹¤ì‹œê°„ ì‚¬ìš©í˜„í™© */
+/* 실시간 사용현황 */
 .live_state_top .live_state_info .live_state_period {font-size:1.2rem; color:var(--gray_04, #999); line-height:1.7rem;}
 .live_state_top .live_state_info .tit_live_state {margin-top:1.2rem; font-size:2rem; color:var(--gray_01, #222); font-weight:bold; line-height:3rem;}
 .live_state_top .live_state_info .tit_live_state em {font-weight:bold; color:var(--main_02, #0966e9);}
@@ -102,7 +102,7 @@
 .current_pee span i {margin-right:.4rem; vertical-align:top;}
 .current_pee span:last-child {font-size:1.8rem; color:var(--main_02, #0966e9);}
 
-/* ìš”ê¸ˆì¡°íšŒ ë° ë‚©ë¶€ */
+/* 요금조회 및 납부 */
 /* .pay_info_box {min-height:9.5328rem;} */
 .pay_info_box > a {display:block;}
 .pay_info_box .tit_pay_info {font-size:1.6rem; color:var(--gray_01, #222); font-weight:bold; line-height:2.3rem;}
@@ -120,7 +120,7 @@
 .how_pay_wrap .how_pay_in li .tit_howpay_r {font-size:1.4rem; color:var(--gray_01, #222);}
 .how_pay_wrap .how_pay_in li .tit_howpay_r button {margin-left:1.2rem; padding:.65rem 1.2rem; background-color:var(--bg_01, #edf0f6); border-radius:.6rem; color:var(--gray_03, #717171); font-size:1.2rem;}
 
-/* ì²­êµ¬ì„œ ì¡°íšŒ */
+/* 청구서 조회 */
 .invoice_look .form_group .form_item .item_content {padding-top:0; border-bottom:none;}
 .invoice_look .form_group .form_item .item_content button {padding:0 2rem; height:5.2rem; line-height:5.2rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem; font-size:1.4rem; color:var(--gray_01, #222); font-weight:bold;}
 .invoice_look .select .btn_select:after {right:2rem;}
@@ -139,7 +139,7 @@
 .graph_area {margin-top:2rem;}
 .graph_area.bg {height:23.3rem; padding:3.2rem; margin-top:1.2rem; border-radius:1.2rem; background-color:var(--bg_02, #f8f9fb);}
 
-/* ìš”ê¸ˆë‚©ë¶€ */
+/* 요금납부 */
 .form_group .form_item .item_content.btn_price > .input {margin-right:0.4rem;}
 .item_content.btn_price .input input {text-align:right;}
 .item_content.btn_price .inp_won {font-size:1.8rem; color:var(--gray_01, #222); line-height:4rem;}
@@ -148,15 +148,15 @@
 .current_pee.type2 .num_current_pee {font-size:2.4rem; color:var(--main_02, #0966e9);}
 .item_content.btn_acc {padding-top:0 !important;}
 
-/* ì´ìš©ì‹œê°„ í¼ */
+/* 이용시간 폼 */
 .form_item.hours_use .bar {width:4%;}
 .form_item.hours_use select {border-bottom:none;}
 
-/* íœ´ëŒ€í°ë²ˆí˜¸ ì¸ì¦ìš”ì²­ ë²„íŠ¼ ìžˆì„ê²½ìš° ì¶”ê°€ */
+/* 휴대폰번호 인증요청 버튼 있을경우 추가 */
 .item_content.btn_type .input {padding-right:1rem;}
 .item_content.btn_type button {white-space:nowrap; position:relative; top:0.6rem;}
 
-/* ìœ ì‹¬ë³´ê´€ ì„œë¹„ìŠ¤ */
+/* 유심보관 서비스 */
 .list_usim li {display:flex; flex-direction:column; align-items:center; height:34rem; padding:2.4rem 2rem; border-radius:1.6rem; background:var(--bg_02, #f8f9fb) url() no-repeat center bottom; background-size:18rem auto;}
 .list_usim li:not(:first-child) {margin-top:1.2rem;}
 .list_usim li.step_01 {background-image:url(../img/service/img_usim_01.png);}
@@ -166,12 +166,12 @@
 .list_usim li .txt {margin-top:1.2rem; color:#000; text-align:center; line-height:2.4rem;}
 .list_usim li .txt strong {display:block;}
 
-/* ìƒì„¸ë³´ê¸°  */
+/* 상세보기  */
 .info_acco_wrap.extra_service .acco_tit {font-size:1.2rem; color:var(--gray_02, #555);}
 .info_acco_wrap.extra_service .acco_cont {padding-bottom:2rem;}
 .arr_down_c_basic {background:url(../img/common/spr_icon_12.png) no-repeat -11rem center / 20rem auto !important;}
 
-/* ë‚˜ì˜ ê°€ìž…ì •ë³´ */
+/* 나의 가입정보 */
 .my_info_area {display:flex; justify-content:space-between; align-items:center;}
 .my_info_area .tit_welcome {color:var(--gray_01, #222); font-size:1.6rem; font-weight:bold; line-height:2.3rem;}
 .my_info_area .tit_welcome .user_name {color:var(--main_02, #0966e9);}
@@ -199,7 +199,7 @@
 .my_link_area .link_wrap .link_box + .link_box {margin-left:1rem;}
 .my_link_area .link_box .txt_area {color:var(--gray_01, #222); font-size:1.4rem; line-height:2.2rem;}
 .my_link_area .link_box .icon_area {display:flex; justify-content:flex-end; margin-top:2rem;}
-/* ì¦ë¹™ì„œë¥˜ ì²¨ë¶€ ë° í™•ì¸ */
+/* 증빙서류 첨부 및 확인 */
 .droptype_btn_wrap + .myfile_box_wrap {margin-top:2rem;}
 .myfile_box_wrap {padding:2rem; border-radius:1.2rem; background-color:var(--bg_02, #F8F9FB);}
 .myfile_box_wrap + .myfile_box_wrap {margin-top:2rem;}
@@ -214,18 +214,18 @@
 .myfile_box_wrap .myfile_list .list_txt {color:var(--gray_01, #222); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:right;}
 .myfile_box_wrap .btn_wrap {margin-top:2rem;}
 .btn_myfile_edit {border:1px solid var(--line_03, #EAECED); background-color:var(--gray_08, #fff);}
-/* ì•„ì´í…œíƒ€ì´í‹€ ì˜ì—­ */
+/* 아이템타이틀 영역 */
 .tit_item_wrap {position:relative;}
 .tit_item_wrap .link_wrap,
 .tit_sec_wrap .link_wrap {position:absolute; top:0; right:0;}
 .tit_item_wrap .link_wrap .btn_text + .btn_text,
 .tit_sec_wrap .link_wrap .btn_text + .btn_text {margin-left:0.8rem;}
-/* íŒì—… í•­ëª© íƒ€ì´í‹€ */
+/* 팝업 항목 타이틀 */
 .ly_cnt .pop_item_tit {display:block; color:var(--gray_01, #222); font-size:1.3rem; font-weight:bold; line-height:2rem;}
 .ly_cnt .pop_item_tit ~ .pop_item_tit {margin-top:2rem;}
 .ly_cnt .pop_txt_sm {color:var(--gray_01, #222); font-size:1.3rem; line-height:2rem;}
 
-/* íŒì—… ì¦ë¹™ì„œë¥˜ ì•ˆë‚´ */
+/* 팝업 증빙서류 안내 */
 /* .pop_doc_info {;} */
 .pop_doc_info + .pop_doc_info {margin-top:2rem;}
 .pop_doc_info .pop_item_ttl {font-size:1.3rem; line-height:2rem; color:var(--gray_01, #222); font-weight:700;}
@@ -233,13 +233,13 @@
 .pop_doc_info .star_type,
 .pop_doc_info .bull_type {margin-top:0.8rem;}
 
-/* ì™„ë£ŒíŽ˜ì´ì§€ */
+/* 완료페이지 */
 .my_comp_info {padding:1.8rem 2rem;}
 .my_comp_info > li {display:flex; justify-content:space-between; padding:0.6rem 0;}
 .my_comp_info .info_tit {display:block; flex:0 0 40%; color:var(--gray_02, #555); font-size:1.4rem; line-height:2.2rem;}
 .my_comp_info .info_txt {display:block; flex:0 0 60%; color:var(--gray_01, #222); font-size:1.4rem; font-weight:bold; line-height:2.2rem; text-align:right;}
 
-/* ë¼ë””ì˜¤ ë°•ìŠ¤íƒ€ìž… flex */
+/* 라디오 박스타입 flex */
 .radio_group.flex {display:flex; flex-wrap:wrap;}
 .radio_group.flex .radio_item {width:calc(50% - 0.6rem);}
 .radio_group.flex .radio_item + .radio_item {margin-top:0;}
@@ -248,11 +248,11 @@
 .radio_group.flex .radio_item.box_type.center > label {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; height:100%;}
 .radio_group.flex .radio_item.box_type.center > label span:not(.badge):not(.line_group) {width:100%; font-size:1.4rem; line-height:2.2rem;}
 
-/* ë“œë¡­íƒ€ìž…ë²„íŠ¼ ì•„ëž˜ ì•ˆë‚´ë¬¸êµ¬ ì˜ì—­ */
+/* 드롭타입버튼 아래 안내문구 영역 */
 .droptype_btn_wrap + .phone_pay_wrap,
 .droptype_btn_wrap + .banner_item {margin-top:2rem;}
 
-/* [MYNT01] ê³µí†µ>ì•Œë¦¼í•¨ íŽ˜ì´ì§€ */
+/* [MYNT01] 공통>알림함 페이지 */
 .tab_wrap.fixed .tab_list {position:fixed; left:0; right:0; top:6rem; padding:0 2rem!important;}
 .tab_wrap.noti_type {padding:0 2rem; background-color:var(--gray_08, #fff);}
 .tab_wrap.noti_type .tab_list {z-index:5; background-color:var(--gray_08, #fff);}
@@ -278,18 +278,18 @@
 .noti_list .list_cont_wrap .list_tit {display:-webkit-box; color:var(--gray_01, #222); font-size:1.4rem; font-weight:bold; line-height:2.1rem; word-break:keep-all; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;}
 .noti_list .list_cont_wrap .list_txt {display:-webkit-box; margin-top:0.4rem; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem; word-break:keep-all; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;}
 
-/* [ MYIF0102 ] ë§ˆì´íŽ˜ì´ì§€ > ìš”ê¸ˆì œ ë³€ê²½ > ìš”ê¸ˆì œ ë³€ê²½ */
-/* [ MYIF010201 ] ë§ˆì´íŽ˜ì´ì§€ > ìš”ê¸ˆì œ ë³€ê²½ > [íŒì—…] ê°€ìž…íšŒì„  ì„ íƒ */
-/* [ MYIF010202 ] ë§ˆì´íŽ˜ì´ì§€ > ìš”ê¸ˆì œ ë³€ê²½ > [íŒì—…] ìš”ê¸ˆì œ ê²€ìƒ‰ */
+/* [ MYIF0102 ] 마이페이지 > 요금제 변경 > 요금제 변경 */
+/* [ MYIF010201 ] 마이페이지 > 요금제 변경 > [팝업] 가입회선 선택 */
+/* [ MYIF010202 ] 마이페이지 > 요금제 변경 > [팝업] 요금제 검색 */
 .change_item_none {margin-top:1.2rem;}
 .change_item_none .search_item {display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:11.8rem; padding:1rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem; text-align:center; font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222);}
 .change_item_none .search_item > span,
 .change_item_none .search_item > a {display:inline-block; padding:0.6rem 1.2rem; margin-top:1.2rem; background:var(--bg_01, #edf0f6); border-radius:0.6rem; font-size:1.2rem; line-height:1.6rem; color:var(--gray_03, #717171);}
 
-/* ì˜ˆì•½ë³€ê²½ ì •ë³´ */
+/* 예약변경 정보 */
 .change_reserv {margin-top:2rem; display:none;}
 
-/* ìš”ê¸ˆ ì„¸ë¶€ë‚´ì—­ */
+/* 요금 세부내역 */
 .rateplan_detail {border-radius:1.2rem; background:var(--bg_02, #f8f9fb); padding:2rem; margin-top:1.2rem;}
 .rateplan_detail dl {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; /*padding:1.6rem 0; */;}
 .rateplan_detail dl > *:nth-child(2n) ~ * {margin-top:1.6rem;}
@@ -310,7 +310,7 @@
 .rateplan_detail .rate_detail dd {color:var(--gray_04, #999);}
 .rateplan_detail .rate_total {border-top:1px dashed var(--line_02, #d6d6d6); margin-top:1.6rem; padding-top:1.6rem;}
 
-/* ìš”ê¸ˆì œ ê²€ìƒ‰ - í•„í„° ì˜ì—­ */
+/* 요금제 검색 - 필터 영역 */
 .form_group + .rateplan_search_filter_wrap {margin-top:3.2rem;}
 .rateplan_search_filter_wrap {position:relative; padding-left:5.8rem;}
 .rateplan_search_filter_wrap + .rateplan_search_filter_wrap {margin-top:2.4rem;}
@@ -320,7 +320,7 @@
 .rateplan_search_filter_wrap .filter_list + .form_group {margin-top:1.2rem;}
 
 
-/* ë§ˆì´íŽ˜ì´ì§€ > ìš”ê¸ˆì œ ë³€ê²½ > ì´ìš©ì•ˆë‚´ */
+/* 마이페이지 > 요금제 변경 > 이용안내 */
 .using_guide .tit_sec_wrap:nth-of-type(1) {margin-top:0;}
 .using_guide .tit_item {position:relative; color:var(--gray_02); padding-left:1.2rem; margin-top:1.2rem;}
 .using_guide .tit_item::before {content:''; position:absolute; left:0; top:0; display:block; width:0.7rem; height:2.1rem; background:url(../img/img/bullet_star.png) center no-repeat; background-size:0.7rem auto;}
@@ -333,7 +333,7 @@
 
 
 
-/* ë§ˆì´íŽ˜ì´ì§€ > íšŒì„  ì •ë³´ */
+/* 마이페이지 > 회선 정보 */
 .btn_right.btn_blue {font-size:1.3rem; line-height:2rem; color:var(--main_02, #0966e9); border-bottom:1px solid var(--main_02, #0966e9);}
 /* MYIF0101 */
 .btn_wrap_more .btn_more.blue_more {min-height:1.5rem; padding-right:1.4rem; color:var(--main_02, #1065dc); font-weight:700;}
@@ -341,11 +341,11 @@
 .radio_item.box_type2 .line_group {justify-content:space-between;}
 .radio_item.box_type2 > input:checked + label .img_item.flat.star {margin-left:auto; background-image:url(../img/img/flat_star_on.png);}
 .radio_item.box_type2 > input + label .img_item.flat.star {margin:0 0 0 auto;}
-/* ì •ì§€ ì´ë ¥ì´ ì—†ì„ë•Œ */
+/* 정지 이력이 없을때 */
 .nor_box {display:flex; align-items:center; flex-direction:column; padding:3.9rem 0; background-color:var(--bg_02, #f8f9fb); border-radius:1.2rem;}
 .nor_box .nor_txt {margin-top:1.4rem; font-size:1.4rem; line-height:2.2rem; color:var(--gray_02, #555);}
 
-/* ë§ˆì´íŽ˜ì´ì§€ > ë¶€ê°€ì„œë¹„ìŠ¤ */
+/* 마이페이지 > 부가서비스 */
 .list_acc.list_acc_type2 > li {position:relative;}
 .list_acc.list_acc_type2 > li:after {content:""; display:inline-block; position:absolute; bottom:0; left:0; width:100%; height:.1rem; border-bottom:1px solid var(--line_03, #eaeced);}
 .list_acc.list_acc_type2 > li:last-child:after {border-bottom:0;}
@@ -367,17 +367,17 @@
 .list_acc.list_acc_type2 ul li .list_acc_right.txt_red {color:var(--main_03, #ff3d00);}
 .list_acc.list_acc_type2 ul li .list_acc_right.txt_gray {color:var(--gray_04, #999);}
 
-/* ë§ˆì´íŽ˜ì´ì§€ > ê³ ê° ì •ë³´ */
+/* 마이페이지 > 고객 정보 */
 .myp_info_result .myp_info_th .img_item.icon {display:inline-block;}
 .term_group.type2 {border:.1rem solid var(--line_03, #eaeced); background:none; border-radius:1rem; margin-top:1.2rem;}
 .term_group.type2 p {font-size:1.2rem; line-height:1.9rem; font-weight:400; color:var(--gray_02, #555);}
 .term_group.type2 .term_item {position:relative; height:20rem;}
 .term_group.type2 .term_item .tit_sec {margin-top:2rem; font-size:1.2rem; line-height:1.9rem; font-weight:700; color:var(--gray_01, #222);}
 
-/* ê°œì¸ì •ë³´ ì´ìš©ë‚´ì—­ */
+/* 개인정보 이용내역 */
 .box_item.type2 {padding:2rem;}
 .box_item.type2 > p {font-size:1.2rem; line-height:1.9rem; font-weight:700;}
-/* ê°œì¸ì •ë³´ ì œê³µë‚´ì—­ ë¦¬ìŠ¤íŠ¸ */
+/* 개인정보 제공내역 리스트 */
 .company_list_wrap .company_list > li {margin-top:2rem; border-top:1px solid var(--line_02, #d6d6d6);}
 .company_list_wrap .company_list > li > strong {display:block; margin-top:1.2rem; font-size:1.4rem; line-height:2.2rem; color:#000;}
 .company_list_wrap .company_list > li > ul {margin-top:1rem;}
@@ -393,7 +393,7 @@ ul.num_type.type2 > li + li {margin-top:1.2rem;}
 .info_item > strong {font-size:1.4rem; line-height:2.2rem; font-weight:700; color:#000;}
 .info_item .info_updated {display:block; font-size:1.1rem; line-height:1.5rem; font-weight:400; color:var(--gray_02, #555); text-align:right;}
 
-/* ë²•ì •ëŒ€ë¦¬ì¸ ì •ë³´ì œê³µ ë™ì˜ */
+/* 법정대리인 정보제공 동의 */
 .add_txt {font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222);}
 .board_list_wrap.board_list_type2 {padding:2rem; margin-bottom:2rem; border:1px solid var(--line_03, #eaeced); border-radius:1.2rem;}
 .board_list_wrap.board_list_type2 .board_list .list_item > a {padding:0;}
@@ -401,13 +401,13 @@ ul.num_type.type2 > li + li {margin-top:1.2rem;}
 .board_list_wrap.board_list_type2 .board_list .list_item .list_tit em {font-weight:normal; color:var(--main_03, #ff3d00);}
 .box_wrap_ia.form_check_type2 {margin:1.2rem 0; padding:2rem; background-color:var(--bg_02, #f8f9fb); border-radius:1.2rem;}
 
-/* ë§ˆì´íŽ˜ì´ì§€ > Liiv M í•´ì§€ */
+/* 마이페이지 > Liiv M 해지 */
 .myfile_box_wrap.myfile_box_type2 {margin-top:1.2rem;}
 .myfile_box_wrap.myfile_box_type2 .myfile_list > li {align-items:center;} 
 .myfile_box_wrap.myfile_box_type2 .myfile_tit_box .list_sub_tit {font-size:1.2rem; line-height:1.9rem; color:var(--gray_04, #999);}
 .myfile_box_wrap.myfile_box_type2 .list_txt em {display:block; font-weight:bold; color:var(--main_03, #ff3d00);}
 
-/* ë§ˆì´íŽ˜ì´ì§€ > ì •ë³´ì œê³µë™ì˜ */
+/* 마이페이지 > 정보제공동의 */
 .agree_type {margin: 3.2rem 2rem 0;}
 .info_agree > .agree_acco { border:1px solid var(--line_03, #eaeced); border-radius:1.2rem;}
 .info_agree > .agree_acco .check_group {border-width:1px 0 0; border-radius:0;}
@@ -423,16 +423,16 @@ ul.num_type.type2 > li + li {margin-top:1.2rem;}
 .check_sub_group.chk_box_bg span,
 .check_sub_group.chk_box_bg2 span {font-size: 1.2rem; line-height: 1.9rem; color:var(--gray_02, #555);}
 
-/* [MYIF010211] ìš”ê¸ˆì œ ë³€ê²½ > íŠ¹í™”ìš”ê¸ˆì œ ì„œë¹„ìŠ¤ í™•ì¸ íŒì—… */
+/* [MYIF010211] 요금제 변경 > 특화요금제 서비스 확인 팝업 */
 .rate_box {padding:2rem;}
 .rate_box .rate_tit {display:block; color:var(--gray_02, #555); font-size:1.2rem; line-height:1.9rem; text-align:center;}
 .rate_box .rate_name {display:block; margin-top:0.4rem; color:var(--gray_01, #222); font-size:1.6rem; font-weight:bold; line-height:2.3rem; text-align:center;}
 
-/* [MYCH0103] ëª…ì˜ë³€ê²½ ì§„í–‰ ëŒ€ê¸°ì¤‘ íŒì—… */
+/* [MYCH0103] 명의변경 진행 대기중 팝업 */
 .ly_cnt .wait {margin-top:1.2rem; color:var(--gray_02, #555); font-size:1.4rem; line-height:2.2rem;}
 .ly_cnt .wait .star_type li {display:inline-block; text-align:center;}
 
-/* [MYSM0102] ì´ë¯¸ì§€ì˜ì—­ */
+/* [MYSM0102] 이미지영역 */
 .box_img_wrap {position:relative; padding:2rem 2rem 0; border-radius:1.2rem; background-color:var(--bg_02, #f8f9fb); overflow:hidden;}
 .box_img_wrap.sm {padding:0; background-color:transparent;}
 .box_img_wrap.sm::after {display:none;}
@@ -451,7 +451,7 @@ ul.num_type.type2 > li + li {margin-top:1.2rem;}
 .img_item.esim_QR.kt {display:block; width:16.4rem; height:16.4rem; margin:0 auto; background:url(../img/mypage/MYES02_kt.png) no-repeat center / contain;}
 .img_item.esim_QR.skt {display:block; width:16.4rem; height:16.4rem; margin:0 auto; background:url(../img/mypage/MYES02_skt.png) no-repeat center / contain;}
 
-/* [MYES01] eSIM ì •ë³´ë“±ë¡ ì•ˆë‚´ */
+/* [MYES01] eSIM 정보등록 안내 */
 .icon_list_wrap {display:flex; justify-content:center; align-items:center;}
 .icon_list_wrap .icon_area {display:flex; justify-content:center; align-items:center; width:6rem; height:6rem; border-radius:50%; background-color:var(--bg_02, #f8f9fb);}
 .icon_list_wrap .icon_area + .icon_area {margin-left:3.2rem;}

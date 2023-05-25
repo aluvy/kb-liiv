@@ -18,15 +18,15 @@
     <meta name="twitter:image" content="대표 이미지">
     <meta name="twitter:card" content="summary">
     <title>KB Liiv M Main</title>
-    <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
-    <link rel="icon" href="../../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
-	<script type="text/javascript" src="../../../js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../../js/common/common.js"></script>
-    <script type="text/javascript" src="../../../js/common/util.js"></script>
-    <script type="text/javascript" src="../../../js/front.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
+    <script type="text/javascript" src="/js/common/util.js"></script>
+    <script type="text/javascript" src="/js/front.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -37,7 +37,8 @@
                 <div class="btn_area">
                     <button type="button" class="btn_alarm on"><span class="hidden">알림</span></button> <!-- new alarm 발생시 class="on" 추가 -->
                     <button type="button" class="btn_search"><span class="hidden">통합검색</span></button>
-                    <button type="button" class="btn_open_aside"></button> <!-- 23/05/12 [앱접근성] a tag 로 변경 -->
+                    <button type="button" class="btn_open_aside"></button>
+                    <!-- <a href="#open_aside" class="btn_open_aside"><span class="hidden">메뉴</span></a> --> <!-- 23/05/12 [앱접근성] a tag 로 변경 -->
                 </div>
             </div>
             <!-- aside area -->
@@ -197,8 +198,8 @@
                 </div><!-- .aside_body -->
                 <!-- //전체 메뉴 -->
                 <!-- 23/05/08 앱접근성 관련 수정 -->
-                <!-- <button type="button" class="btn_close_aside"><span class="hidden">닫기</span></button> -->
                 <button type="button" class="btn_close_aside"></button>
+                <!-- <a href="#close_aside" class="btn_close_aside"><span class="hidden">닫기</span></a> -->
                 <!-- //23/05/08 앱접근성 관련 수정 -->
             </div><!-- .aside_wrap -->
             <!-- //aside area -->
@@ -984,6 +985,7 @@
             spaceBetween: 0,
             loop: true,
             loopAdditionalSlides: 1,
+            //watchOverflow: true,
             autoplay: {
                 delay: 3000, // 23/04/26 3초로 수정
                 disableOnInteraction: false,
