@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>휴대폰 본인인증</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_regist">
+        <h1 class="hidden">휴대폰 본인인증</h1>
+
+        <div class="section">
+            <div class="agree_wrap">
+                <div class="agree_total">
+                    <span class="selection">
+                        <input type="checkbox" id="chkAll_1" name="chkAll_1" class="chk_all">
+                        <label for="chkAll_1" class="label"><em>약관 전체동의</em></label>
+                    </span>
+                    <button type="button" class="btn btn_link" title="약관 전체동의"><span class="hidden">바로가기</span></button>
+                </div>
+                <ul class="agree_list">
+                    <li>
+                        <span class="selection chk">
+                            <input type="checkbox" id="chk1_1" name="chk1">
+                            <label for="chk1_1" class="label"><em>휴대폰본인확인서비스 이용약관</em></label>
+                        </span>
+                        <button type="button" class="btn btn_link" title="휴대폰본인확인서비스 이용약관"><span class="hidden">바로가기</span></button>
+                    </li>
+                    <li>
+                        <span class="selection chk">
+                            <input type="checkbox" id="chk1_2" name="chk1">
+                            <label for="chk1_2" class="label"><em>통신사 이용약관 동의</em></label>
+                        </span>
+                        <button type="button" class="btn btn_link" title="통신사 이용약관 동의"><span class="hidden">바로가기</span></button>
+                    </li>
+                    <li>
+                        <span class="selection chk">
+                            <input type="checkbox" id="chk1_3" name="chk1">
+                            <label for="chk1_3" class="label"><em>고유실별정보 처리 동의</em></label>
+                        </span>
+                        <button type="button" class="btn btn_link" title="고유실별정보 처리 동의"><span class="hidden">바로가기</span></button>
+                    </li>
+                    <li>
+                        <span class="selection chk">
+                            <input type="checkbox" id="chk1_4" name="chk1">
+                            <label for="chk1_4" class="label"><em>개인정보의 수집 및 이용동의</em></label>
+                        </span>
+                        <button type="button" class="btn btn_link" title="개인정보의 수집 및 이용동의"><span class="hidden">바로가기</span></button>
+                    </li>
+                </ul>
+            </div><!--// .agree_wrap -->
+        </div>
+        
+        <!-- 210518 수정 -->
+        <div class="section">
+            <div class="form_group js_trans"> 
+                <div class="form_tit">이름</div>    
+                <div class="form_row">
+                    <div class="input"><input type="text" title="이름" value="김국민" readonly></div>
+                </div>
+            </div>
+<!-- 210607 수정 -->
+            <!-- 주민등록번호 case 2 -->
+            <div class="form_group">
+                <div class="form_tit">주민등록번호</div>
+                <div class="form_row col jumin">
+                    <div class="input" role="button">
+                        <input type="tel" maxlength="6" title="주민등록번호 앞자리">          
+                    </div>
+                    <span class="space">-</span>
+                    <div class="input masking" role="button">
+                        <input type="tel" maxlength="1" title="주민등록번호 뒷자리 중 첫번째 번호">   
+                        <i class="dot" aria-hidden="true"></i>  
+                    </div>
+                </div>
+            </div>
+            <!-- //주민등록번호 case 2 -->
+<!-- //210607 수정 -->            
+
+            <div class="form_group tel">
+                <div class="form_tit">휴대폰</div>
+                <div class="form_row">
+                    <div class="select">
+                        <button type="button" class="select_btn" title="통신사 선택">통신사</button> <!-- 개발 : 버튼에 값이 들어갈 경우 클래스 "active" 추가 -->
+                    </div>
+                </div>
+                <div class="form_row col">
+                    <div class="select">
+                        <button type="button" class="select_btn active" title="휴대폰번호 앞자리 선택">010</button>
+                    </div>
+                    <div class="input" role="button">
+                        <input type="tel" value="" title="휴대폰번호">
+                    </div>
+                </div>
+            
+                <!-- ios일때 노출 -->
+                <div class="form_cert_ios">
+                    <div class="cert_txt">입력하신 정보로 통신사의 휴대폰 명의를 확인합니다. [휴대폰 명의확인]을 눌러 인증을 위한 문자메시지를 전송해주세요.</div>
+                    <div class="form_btm_full_wrap">
+                        <button type="button" class="btn outline md">휴대폰 명의확인</button>
+                    </div>
+                </div>
+                <!-- //ios일때 노출 -->
+            
+                <div class="form_cert_proc">
+                    <div class="cert_txt">입력하신 휴대폰번호로 SMS 인증번호를 전송합니다. [인증번호요청]을 눌러 SMS 인증번호를 입력해주세요.</div>
+                    <div class="form_btm_full_wrap">
+                        <button type="button" class="btn outline md">인증번호 요청</button>
+                    </div>
+                    <div class="form_btm_full_wrap"> <!-- 인증번호 요청 후 재요청 버튼으로 변경  -->
+                        <button type="button" class="btn outline md">인증번호 재요청</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_group js_trans">
+                <div class="form_tit">인증번호</div>
+                <div class="form_row">
+                    <div class="input" role="button">
+                        <input type="tel" title="인증번호">
+                    </div>      
+                </div>
+                <div class="form_btm_wrap row">
+                    <div class="col col_l">
+                        <p role="text" class="count_time"><span class="tit">잔여시간</span><span class="number">2:59</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <button type="button" class="btn outline xs">인증시간연장</button>
+                    </div>
+                </div>
+                <div class="btn_wrap certify_btm">
+                    <a href="#none" id="btn_certify_number" class="btn_txt ico_arr">인증번호가 오지않나요?</a> <!-- 210525 수정 -->
+                </div>
+            </div>
+        </div>
+        <!-- //210518 수정 -->
+
+        <div class="btn_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn primary lg">본인확인</button></span>  
+            </div>    
+        </div>
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- 210525 수정 -->
+<!-- layer -->
+<div id="popup_certify_number" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <ul class="depth bul">
+                <li>1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다.</li>
+                <li>스팸등록을 해제후 다시 시도해주세요.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <span><button type="button" class="btn primary lg" data-action="close">확인</button></span>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<!-- //210525 수정 -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script>
+    /* 업무 SCRIPT */
+    $(function(){
+/* 210525 수정 start */
+        $('#btn_certify_number').on('click', function(){
+            $.ohyLayer({
+                title:'알림',
+                titleUse : false,
+                content:'#popup_certify_number',
+                type:'confirm',
+                closeUse:false,
+            });
+        });
+/* 210525 수정 end */        
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    <style>
+        .h1 {font-size:1.8rem; font-weight:400;}
+        .txt1 {margin-top:1.7rem; font-size:2.4rem; color:#26282c; line-height: 3.2rem; font-weight:700;}
+        .h2, .h3, .h4, .h5, caption {margin:0; padding:0;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">텍스트</div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>            
+            <div data-class="h2">기본</div>
+            <div data-class="box">
+                기본 : 사이즈 16px / color #26282c
+            </div>
+            <script type="text/html">
+<p class="p">.p 본문 텍스트</p>
+<p class="p_sub">.p_sub 서브 텍스트</p>
+<p class="caption">.caption 캡션/헬퍼 텍스트</p>
+<p class="underline">.underline 언더라인 텍스트</p>
+            </script>
+
+            <div data-class="h2">형태</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div>문자는 KB금융체를 사용한다.</div>
+                    <div>숫자는 Roboto를 사용한다.</div>
+                </div>
+            </div>
+            <script type="text/html">
+<p>기본 KB금융체 폰트 </p>
+<p>숫자 Roboto .number <span class="number">숫자 Roboto .number</span></p>
+<p>금액 Roboto .number <span class="number">금액 Roboto .number</span><span class="num_unit">원</span></p>
+            </script>
+
+            
+            <div data-class="h2">두께</div>
+            <div data-class="box">
+                normal - 400 / bold - 700
+            </div>
+            <script type="text/html">
+<p class="normal">font-weight: 400</p>
+<p class="bold">font-weight: 700</p>
+            </script>
+
+            <div data-class="h2">크기</div>
+            <div data-class="box">우선 모두 선언, 필요/불필요에 따라 가감 예정(폰트 사이즈는 10~26까지 다 있음)</div>
+            <script type="text/html">
+<p class="fs13">font-size: 1.3rem</p>
+<p class="fs14">font-size: 1.4rem</p>
+<p class="fs16">font-size: 1.6rem</p>
+<p class="fs18">font-size: 1.8rem</p>
+<p class="fs20">font-size: 2rem</p>
+<p class="fs22">font-size: 2.2rem</p>
+<p class="fs24">font-size: 2.4rem</p>
+<p class="fs26">font-size: 2.6rem</p>
+            </script>
+
+            <div data-class="h2">색상</div>
+            <div data-class="box">DSGv.01 에 따라 우선 모두 정의했으나 추후 가감</div>
+            <script type="text/html">
+<p class="fc_point">.fc_point</p>
+<p class="fc_nega">.fc_nega : #f23f3f</p>
+<p class="fc_posi">.fc_posi : ##287ef</p>
+<p class="fc_gray">.fc_gray : #696e76</p>
+<p class="fc_gray2">.fc_gray2 : #484b51</p>
+<p class="fc_gray3">.fc_gray3 : #26282c</p>
+<p class="fc_gray4">.fc_gray4 : #8c949e</p>
+<p class="fc_black">.fc_black : #000</p>
+<p class="fc_white" style="background:black">.fc_white</p>
+            </script>
+
+            <div data-class="h3">투자성향(전담반 비예금프로세스 요건 진행됨에 따라 색상 변경)</div>
+            <script type="text/html">
+<span class="remark risk1">안정형</span>
+<span class="remark risk2">안정추구형</span>
+<span class="remark risk3">위험중립형</span>
+<span class="remark risk4">적극투자형</span>
+<span class="remark risk5">공격투자형</span>
+            </script>
+
+            <div data-class="h3">위험등급</div>
+            <script type="text/html">
+<span class="remark lower">매우낮은위험</span>
+<span class="remark low">낮은위험</span>
+<span class="remark middle">보통위험</span>
+<span class="remark high">다소높은위험</span>
+<span class="remark higher">높은위험</span>
+<span class="remark highest">매우높은위험</span>
+            </script>
+
+            <div data-class="h3">심의필</div>
+            <script type="text/html">
+<p class="txt_law">KB국민은행 준법감시인 심의필 제2021-0708-2호 (2021.4.5)</p>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Depth List</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div>li 1개는 리스트 형식이 아닌 일반 텍스트로 적용</div>
+                    <div>한 줄은 p태그 사용<br>
+                        2줄이상 ul li 태그 사용
+                    </div>
+                    <div>
+                        inform_top_wrap 내부에
+                        <div data-class="list dash">
+                            <div>당구장은 전부 *별로</div>
+                            <div>기획서에 bul 1개 짜리는 p.depth로 진행</div>
+                            <div>블릿없이는 ul.depth로 사용.</div>
+                        </div>
+                    </div>
+                    <div>
+                        일반텍스트는 p에 .p클래스 사용.
+                    </div>
+                    <div>
+                        기획서 상에 - 스텝 아래  박스 없는 text 는 p.step_txt 사용
+                    </div>
+                </div>
+            </div>
+            <div data-class="h2">기본(블릿없음)</div>
+            <script type="text/html">
+<ul class="depth">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. </li>
+</ul>
+            </script>
+            <div data-class="h2">bullet</div>
+            <script type="text/html">
+<ul class="depth bul">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. </li>
+</ul>
+            </script>
+            
+            <div data-class="h2">dash</div>
+            <script type="text/html">
+<ul class="depth dash">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+</ul>
+            </script>
+            
+            <div data-class="h2">number</div>
+            <div data-class="h3">Size별</div>
+            <div data-class="h4">기본 : 16px 폰트사이즈</div>
+            <script type="text/html">
+<ol class="depth num">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+</ol>
+            </script>
+            
+            <div data-class="h4">.lg : 18px 폰트사이즈</div>
+            <script type="text/html">
+<ul class="depth num lg">
+    <li>수신상품 신규거래</li>
+    <li>수신상품 신규 이후 1개월 이내 대출거래(본인명의 또는 중소기업 대표자인 경우 해당 기업)</li>
+</ul>
+            </script>
+            
+            <div data-class="h4">.sm : 14px 폰트사이즈</div>
+            <script type="text/html">
+<ul class="depth num sm">
+    <li>수신상품 신규거래</li>
+    <li>수신상품 신규 이후 1개월 이내 대출거래(본인명의 또는 중소기업 대표자인 경우 해당 기업)</li>
+</ul>
+            </script>
+            
+            <div data-class="h3">Round</div>
+            <script type="text/html">
+<ol class="depth num round">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+</ol>
+            </script>
+
+            <div data-class="h3">Step Number</div>
+            <script type="text/html">
+<ol class="depth step">
+    <li>
+        <p class="tit">KB스타뱅킹 인증센터 &gt; 공동인증서  &gt; 인증서발급/재발급 선택</p>
+        <p class="p">PC에서 KB국민은행 홈페이지에 접속하여 [인증센터 > 스마트폰 인증서 복사]를 선택</p>
+        <p class="p_sub">지점에서 받은  회용 본인인증번호를 등록하거나 본인확인을 위해 KB국민은행에 등록된 스마트폰번호로 추가 인증을 진행합니다.</p>
+        <p class="tip_info">한줄 형태로 지원되는 가이드 텍스트입니다.</p>
+    </li>
+    <li>
+        <p class="tit">KB스타뱅킹 인증센터 &gt; 공동인증서  &gt; 인증서발급/재발급 선택</p>
+        <p class="p_sub">지점에서 받은  회용 본인인증번호를 등록하거나 본인확인을 위해 KB국민은행에 등록된 스마트폰번호로 추가 인증을 진행합니다.</p>
+    </li>
+    <li>
+        <p class="tit">인증서 발급 완료 인증서 발급 완료 인증서 발급 완료</p>
+        <ul class="depth bul sm">
+            <li>리스트1 : 리스트는 가이드 없음. 가이드 나오면 간격 및 폰트 재정의</li>
+            <li>리스트2</li>
+        </ul>
+    </li>
+    <li>
+        <p class="p">PC에서 KB국민은행 홈페이지에 접속하여 [인증센터 > 스마트폰 인증서 복사]를 선택</p>
+    </li>
+    <li>
+        <p class="p">PC에서 KB국민은행 홈페이지에 접속하여 [인증센터 > 스마트폰 인증서 복사]를 선택</p>
+        <p class="p_sub">지점에서 받은  회용 본인인증번호를 등록하거나 본인확인을 위해 KB국민은행에 등록된 스마트폰번호로 추가 인증을 진행합니다.</p>
+    </li>
+</ol>
+            </script>
+
+            <div data-class="h2">info</div>
+            <div data-class="p">한 줄</div>
+            <script type="text/html">
+<p class="depth info">한줄 형태로 지원되는 가이드 텍스트입니다.</p>
+            </script>
+            <div data-class="p">여러줄</div>
+            <script type="text/html">
+<ul class="depth info">
+    <li>실버바 가격은 국제 은가격 및 원달러 환율의 변동에 따라 실시간으로 변동될 수 있으며, 조회가격과 실제 거래가격이 다를 수 있습니다.</li>
+    <li>실버바 거래는 최종 거래 후 취소할 수 없습니다.</li>
+</ul>
+            </script>
+
+            <div data-class="h2">아이콘</div>
+            <div data-class="p">한줄</div>
+            <script type="text/html">
+<p class="tip_info">한줄 형태로 지원되는 가이드 텍스트입니다.</p>
+<p class="tip_info fc_posi">한줄 형태로 지원되는 가이드 텍스트입니다.</p>
+<p class="tip_info fc_nega">한줄 형태로 지원되는 가이드 텍스트입니다.</p>
+            </script>
+            <div data-class="p">여러줄</div>
+            <script type="text/html">
+<ul class="tip_info">
+    <li>간편설계 결과를 가져오지 못하였습니다.<br>실제 설계를 통해 확인해보세요.</li>
+    <li class="fc_posi">간편설계 결과를 가져오지 못하였습니다.</li>
+    <li class="fc_nega">간편설계 결과를 가져오지 못하였습니다.</li>
+</ul>
+            </script>
+            <div data-class="p">투자경고문</div>
+            <script type="text/html">
+<p class="invest_alert">투자경고문입니다.</p>
+            </script>
+
+            <div data-class="h2">Mix</div>
+            <div data-class="p">기본 : 16px</div>
+            <script type="text/html">
+<ul class="depth bul">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.
+        <ul class="depth dash">
+            <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+            <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+        </ul>
+    </li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+</ul>
+            </script>
+
+            <div data-class="p">Small : 14px</div>
+            <script type="text/html">
+<ul class="depth bul sm">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.
+        <ul class="depth dash">
+            <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+            <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+        </ul>
+    </li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.
+        <div class="table">
+            <table>
+                <caption>테이블 제목 정보</caption>
+                <colgroup>
+                    <col style="width:50%">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">제목</th>
+                        <th scope="col">제목</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>내용</td>
+                        <td>내용</td>
+                    </tr>
+                    <tr>
+                        <td>내용</td>
+                        <td class="center">내용</td>
+                    </tr>
+                    <tr>
+                        <td>내용</td>
+                        <td class="right">내용</td>
+                    </tr>
+                </tbody>
+            </table>   
+            <p class="depth info">작업코드명은 0000기준을 따릅니다.</p> 
+        </div>
+    </li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+</ul>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">안내문구</div>
+            <div data-class="h2">컨텐츠 상단 > 안내문구</div>
+            <script type="text/html">
+<div class="inform_top_wrap">
+    <p class="inform_tit">KB골드투자통장 사전안내</p>
+    <ul class="depth bul">
+        <li>휴면계좌의 종류 및 잔액에 따라 환급방법이 다릅니다.</li>
+        <li>계좌번호 위에 표시된 를 눌러 환급방법을 확인해보세요.</li>
+        <li>계좌번호 위에 표시된 를 눌러 환급방법을 확인해보세요.</li>
+    </ul>
+    <p class="depth">블릿없이 한줄일때 .depth</p>
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">버튼영역</a>
+    </div>
+</div>
+            </script> 
+            <div data-class="h2">컨텐츠 하단 > 알려드립니다.</div>
+            <script type="text/html">
+<div class="inform_btm_wrap">
+    <button class="tit js_toggle" aria-expanded="false" aria-controls="notice_1_1">알려드립니다</button>
+    <div class="toggle_panel" role="region" id="notice_1_1">
+        <ul class="depth bul">
+            <li>서민금융진흥원에 출연된 휴면예금은 잔액에 따라, 계좌통합관리서비스(www.payinfo.or.kr) 또는 서민금융진흥원(https://sleepmoney.kinfa.or.kr)에서 제공하는 서비스를 이용하여  해지 및 환급받을 수 있습니다.</li>
+            <li>다음과 같은 휴면예금을 보유하고 있는 고객님은 신분증을 가지고 가까운 지점을 방문하여 문의해주세요.
+                <ul class="depth dash">
+                    <li>서민금융진흥원에 출연한 휴면예금을 보유 중인 고객으로서 해당 사이트에서 환급해주는 금액 이상의 예금을 보유한 고객</li>
+                    <li>잔액이 0원인 계좌를 보유한 고객</li>
+                </ul>
+            </li>
+            <li>KB스타뱅킹에 고시되는 환율은 USD(미국 달러) 환산 1만 달러<sup>주1)</sup> 미만 거래 시 적용되는 환율이며, USD(미국 달러) 환산 1만 달러 이상<sup>주2)</sup> 거래 시에는 가까운 지점에 문의해주세요.
+                <ul class="depth sup">
+                    <li><span class="sup_tit">주1)</span>USD(미국 달러), EUR(유럽연합 유로), JYP(일본 엔), GBP(영국 파운드), CAD(캐나다 달러), NZD(뉴질랜드 달러), AUD(호주 달러), CNY(중국 위안), CHF(스위스 프랑), HKD(홍콩 달러), SGD(싱가포르 달러), AED(아랍 에미리트 디르함), THB(태국 바트)를 제외한 그 밖에 통화는 USD(미국 달러) 환산 5만 달러 미만입니다.</li>
+                    <li><span class="sup_tit">주2)</span>그 밖에 통화는 USD(미국 달러) 환산 5만 달러 이상입니다.</li>
+                </ul>
+            </li>
+            <li>각주가 하나일 때의 예시<sup>주)</sup>입니다.
+                <p class="depth sup"><span class="sup_tit">주)</span>각주가 하나일때는 숫자가 안들어갑니다.</p>
+            </li>  
+        </ul>
+        <p class="depth"><strong>중간 타이틀 텍스트</strong></p>
+        <ul class="depth bul">
+            <li>서민금융진흥원에 출연된 휴면예금은 잔액에 따라, 계좌통합관리서비스(www.payinfo.or.kr) 또는 서민금융진흥원(https://sleepmoney.kinfa.or.kr)에서 제공하는 서비스를 이용하여  해지 및 환급받을 수 있습니다.</li>
+            <li>다음과 같은 휴면예금을 보유하고 있는 고객님은 신분증을 가지고 가까운 지점을 방문하여 문의해주세요.
+                <ul class="depth dash">
+                    <li>서민금융진흥원에 출연한 휴면예금을 보유 중인 고객으로서 해당 사이트에서 환급해주는 금액 이상의 예금을 보유한 고객</li>
+                    <li>잔액이 0원인 계좌를 보유한 고객</li>
+                </ul>
+            </li> 
+        </ul>
+        <p class="depth">블릿없이 한줄일때 .depth</p>
+        <div class="btn_wrap btm">
+            <a href="#none" class="btn_txt ico_arr">버튼영역</a>
+        </div>
+    </div>
+</div>
+        </script> 
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

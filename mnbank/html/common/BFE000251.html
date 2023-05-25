@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>캘린더 바텀시트</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+
+    <div id="content" class="cate_카테고리명">
+        <h1 class="hidden">날짜</h1>
+
+        <div class="section">
+            
+            <!-- 캘린더 -->
+            <div class="calendar_wrap">
+                <div class="cal_month">                    
+                    <button type="button" class="btn btn_ico first" disabled><span class="hidden">전년도</span></button> <!-- 개발 : 전년도,이전달,다음달,다음년도 버튼 비활성화시 속성 'disabled' 추가-->
+                    <button type="button" class="btn btn_ico prev" disabled><span class="hidden">이전달</span></button>                    
+                    <span class="year_txt"><span class="number">2018.03</span></span> <!-- 210623 수정 -->
+                    <button type="button" class="btn btn_ico next"><span class="hidden">다음달</span></button>
+                    <button type="button" class="btn btn_ico end"><span class="hidden">다음년도</span></button>
+                    <button type="button" class="btn today">오늘<span class="hidden">선택</span></button>                    
+                </div>
+                <table class="cal_tbl">
+                    <caption>달력-일,월,화,수,목,금,토 항목으로 구성</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="sunday">일</th>
+                            <th scope="col">월</th>
+                            <th scope="col">화</th>
+                            <th scope="col">수</th>
+                            <th scope="col">목</th>
+                            <th scope="col">금</th>
+                            <th scope="col" class="saturday">토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<!-- 210712 : 날짜표기방법수정(A 태그-> button 태그로 변경/title 속성 추가/.today 클래스 button 태그로 이동/'선택됨' .on 클래스로 교체) --> 
+                        <tr>
+                            <td class="sunday"></td>
+                            <td></td>
+                            <td></td>
+                            <td><button type="button">1</button></td>
+                            <td><button type="button">2</button></td>
+                            <td><button type="button">3</button></td>
+                            <td class="saturday"><button type="button">4</button></td>
+                        </tr>
+                        <tr>
+                            <td class="sunday"><button type="button">5</button></td><!-- 비활성화 disabled -->
+                            <td><button type="button" class="on" title="선택 됨">6</button></td><!-- 선택 됨 -->
+                            <td><button type="button" class="today" title="오늘 날짜">7</button></td> <!-- 오늘 날짜 표시 -->
+                            <td><button type="button">8</button></td>
+                            <td><button type="button" class="today on" title="오늘 날짜, 선택 됨">9</button></td><!-- 오늘 날짜 + 선택 -->
+                            <td><button type="button">10</button></td>
+                            <td class="saturday"><button type="button">11</button></td>
+                        </tr>
+                        <tr>
+                            <td class="sunday"><button type="button">12</button></td>
+                            <td><button type="button">13</button></td>
+                            <td><button type="button" class="disabled" disabled>14</button></td> <!-- 선택불가 -->
+                            <td><button type="button" class="disabled" disabled>15</button></td> <!-- 선택불가 -->
+                            <td><button type="button" class="disabled" disabled>16</button></td> <!-- 선택불가 -->
+                            <td><button type="button">17</button></td>
+                            <td class="saturday"><button type="button">18</button></td>
+                        </tr>
+                        <tr>
+                            <td class="sunday"><button type="button">19</button></td>
+                            <td><button type="button">20</button></td>
+                            <td><button type="button">21</button></td>
+                            <td><button type="button">22</button></td>
+                            <td><button type="button">23</button></td>
+                            <td><button type="button">24</button></td>
+                            <td class="saturday"><button type="button">25</button></td>
+                        </tr>
+                        <tr>
+                            <td class="sunday"><button type="button">26</button></td>
+                            <td><button type="button">27</button></td>
+                            <td><button type="button">28</button></td>
+                            <td><button type="button">29</button></td>
+                            <td><button type="button">30</button></td>
+                            <td><button type="button">31</button></td>
+                            <td class="saturday"></td>
+                        </tr>
+<!-- //210712 : 날짜표기방법수정 -->                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- //캘린더 -->
+
+        </div>
+
+        <div class="btn_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg">취소</button></span>  
+                <span><button type="button" class="btn primary lg">확인</button></span>  
+            </div>
+        </div>
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script>
+    /* 업무 SCRIPT */
+</script>
+
+</body>
+</html>

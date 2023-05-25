@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">메시지</div>
+        <div data-class="box">
+            <span><a href="/mnbank/guide/sample/end.html" target="_blank" title="새창" data-class="button">완료페이지 샘플</a></span>
+        </div>
+
+        <div data-class="box">
+            <div data-class="p">완료메시지 페이지는 Header 영역을 삭제한다.</div>
+<!--             <div data-class="p">문장 내 &lt;br&gt; 처리<br>
+- 타이틀성 : 최소사이즈(320px) 에 맞춰서 &lt;br&gt; 처리 할 수 있다.<br>
+- 문장 : &lt;br&gt; 처리 하지 않는다.<br>
+- 한글 : 단어 기준(keep-all)으로 줄바꿈 한다.<br>
+- 외국어 : width 사이즈에 맞게 글자 기준(break-all)으로 줄바꿈 한다. </div>-->
+
+        </div>
+        
+        <div data-class="section">   
+            <div data-class="h1">Type</div>         
+            <div data-class="h2">완료</div>
+            <script type="text/html">
+<div class="result success">
+    <p class="tit">상품가입 완료</p>
+    <p class="txt">보조텍스트가 오는 라인 보조텍스트가 오는 라인 보조텍스트가 오는 라인</p>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section"> 
+            <div data-class="h2">오류</div>
+            <script type="text/html">
+<div class="result fail">
+    <p class="tit">상품가입 실패</p>
+    <p class="txt">보조텍스트가 오는 라인 보조텍스트가 오는 라인 보조텍스트가 오는 라인</p>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section"> 
+            <div data-class="h2">안내</div>
+            <script type="text/html">
+<div class="result info">
+    <p class="tit">안내메시지</p>
+    <p class="txt">보조텍스트가 오는 라인 보조텍스트가 오는 라인 보조텍스트가 오는 라인</p>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">  
+            <div data-class="h2">확인</div>
+            <div data-class="h3">이체예비거래</div>
+            <div data-class="p">KB</div>
+        <script type="text/html">
+<div class="result check">
+    <p class="txt_trans">김국민 님께<br><strong class="number">100,000,000</strong><strong class="num_unit">원</strong> 자동이체를<br>등록하시겠습니까?</p>
+    <p class="caption">수수료예상 총액 : <span class="number">500</span><span class="num_unit">원</span></p>
+</div>
+        </script>
+
+        <div data-class="p">다른은행</div>
+        <script type="text/html">
+<div class="result check">
+    <div class="acc_bank col">
+        <span class="icon_bank_003 lg"></span> <!-- 0831 예비거래 은행CI 노출 -->
+        <span class="bk_name">기업</span>
+        <span class="bk_num number">574498-90-009768</span>
+    </div>
+    <p class="txt_trans">김국민 님께<br><strong class="number">100,000,000</strong><strong class="num_unit">원</strong> 자동이체를<br>등록하시겠습니까?</p>
+    <p class="caption">수수료예상 총액 : <span class="number">500</span><span class="num_unit">원</span></p>
+</div>
+        </script>
+        
+        <div data-class="p">다건이체 예비거래</div><!-- [전담반 Biz-008,190] 220314 케이스 추가 -->
+        <script type="text/html">
+<div class="result check many">
+    <p class="txt_trans">총 <span class="number">3</span>건<br><strong class="number">710,000</strong><span class="num_unit">원</span>을 이체합니다.</p>
+</div>
+        </script>
+
+        <div data-class="h3">이체본거래</div>
+        <script type="text/html">
+<div class="result finish">
+    <div class="result_ani">
+        <img src="/mnbank/app/img/common/result_ani.gif" alt="애니메이션 더미 이미지">
+    </div>
+    <p class="txt_trans"><strong>홍길동 님께</strong><br><strong class="number">100,000,000</strong><strong class="num_unit">원</strong><br>이체가 완료되었습니다.</p>
+</div>
+        </script>
+    </div>
+
+    <div data-class="section">   
+            <div data-class="h2">No Data</div>
+            <div data-class="h3">기본</div>
+            <div data-class="box">
+                <div data-class="p">60px 아이콘이 기본<br>
+                조회 버튼 클릭시 나오는 디바이더가 있을 경우에만 48px 아이콘 사용</div>
+            </div>
+            <script type="text/html">
+<div class="result nodata">
+    <p class="tit">조회하신 정보가 없습니다.</p>
+    <p class="txt">보조텍스트가 오는 라인 보조텍스트가 오는 라인 보조텍스트가 오는 라인</p>
+    <div class="btn_cnt_wrap">
+        <span><a href="#none" class="btn outline md">신입금계좌 등록/관리</a></span>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">컨텐츠 > No Data</div>
+            <div data-class="box">
+                <div data-class="p">조회버튼 눌렀을때 디바이더와 함께 결과값으로 노출되는 컨텐츠, 바텀시트, 레이어팝업에 사용</div>
+            </div>
+            <script type="text/html">
+<div class="result nodata sm">
+    <p class="tit">조회하신 정보가 없습니다.</p>
+    <div class="list_btm_wrap">
+        <button type="button" class="btn outline sm">출금계좌 등록</button>
+    </div>
+</div>
+            </script>
+        </div>
+
+    <div data-class="section">            
+        <div data-class="h2">조회중</div>
+        <script type="text/html">
+<div class="result read sm">
+    <div class="loading2"><span id="loadingAni2" class="loading_ani2"></span></div>
+    <p class="tit">조회하신 정보가 없습니다.</p>
+</div>
+        </script>
+
+    </div>
+</div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    <script src="/mnbank/app/js/library/lottie.min.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+
+    <script>
+        var locaLoading = lottie.loadAnimation({
+            container: document.getElementById('loadingAni2'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/mnbank/app/js/json/loadingAni2.json'
+        });
+    </script>
+</body>
+</html>

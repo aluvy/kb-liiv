@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<!--<link rel="stylesheet" href="/mnbank/app/css/library/swiper.min.css">-->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    <style>
+        .swiper-button-next, 
+        .swiper-button-prev {margin-top:-45px; color:#fff;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">슬라이드</div>
+        <div data-class="box">
+            <div data-class="list disc">
+                <div>
+                    - 기본슬라이드.<br>
+                    - 디자인 대로 간격, 사이즈 등 재정의 해서 사용<br>
+                    - 페이지 하단에 슬라이드용 플러그인 추가 : &lt;script src="/mnbank/app/js/library/swiper.min.js"&gt;&lt;/script&gt; &lt!-- 슬라이드용 플러그인 --&gt;<br>
+                    - 이전, 다음버튼 디자인 없음<br>
+                    //슬라이드 실행 : 페이지 하단에 추가
+                </div>
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">슬라이드</div>
+
+            <div data-class="h2">기본형</div>
+            <script type="text/html">
+<div class="swiper-container slide_wrap"> 
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/main/cura_bnn2_01.jpg" alt=""></p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/main/cura_bnn2_01.jpg" alt=""></p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/main/cura_bnn2_01.jpg" alt=""></p>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-button-next"><span class="hidden">다음슬라이드</span></div>
+    <div class="swiper-button-prev"><span class="hidden">이전슬라이드</span></div>
+    <div class="swiper-pagination"></div>
+</div>
+            </script>    
+            
+            <div data-class="p">Script</div>
+            <div data-class="box" style="font-size:12px">
+<pre>
+var swiper1 = new Swiper('.slide_wrap', {
+    spaceBetween: 34,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function(idx, className) {
+            var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+            return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+        }
+    },
+    on: {
+        afterInit: function() {
+            this.$el.each(function() {
+                var _this = $(this);
+                _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+            });
+        },
+        transitionEnd: function() {
+            this.$el.find('.swiper-slide').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-slide-active')) {
+                    _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                }
+            });
+            this.$el.find('.swiper-pagination-bullet').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-pagination-bullet-active')) {
+                    _this.attr('title', '선택됨').siblings().attr('title', '');
+                };
+            });
+        },
+    },
+});
+</pre>
+            </div>
+            </div>
+
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+
+    <!-- Loading Script -->
+    <script src="/mnbank/app/js/library/swiper.min.js"></script> <!-- 슬라이드용 플러그인 -->
+    <script>
+//슬라이드
+var swiper1 = new Swiper('.slide_wrap', {
+    spaceBetween: 34,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function(idx, className) {
+            var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+            return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+        }
+    },
+    on: {
+        afterInit: function() {
+            this.$el.each(function() {
+                var _this = $(this);
+                _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+            });
+        },
+        transitionEnd: function() {
+            this.$el.find('.swiper-slide').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-slide-active')) {
+                    _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                }
+            });
+            this.$el.find('.swiper-pagination-bullet').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-pagination-bullet-active')) {
+                    _this.attr('title', '선택됨').siblings().attr('title', '');
+                };
+            });
+        },
+    },
+});
+    </script>
+</body>
+</html>

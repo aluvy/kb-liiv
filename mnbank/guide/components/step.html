@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">스텝</div>
+        <div data-class="box">
+            <div data-class="list disc">
+                <div>Scroll animation</div>
+                <div>정보입력, 약관동의부터 스탭으로 카운트됨</div>
+                <div>완료까지 4단계 이상 되어야만 스탭이 노출됨</div>
+                <div>완료페이지에서는 상단 앱바, 스탭 사라짐</div>
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+
+            <div data-class="h2">기본</div>
+            <div data-class="box">
+                <a href="/mnbank/guide/sample/step.html" target="_blank" title="새창" data-class="button">Step Sample Code</a>
+            </div>
+            <script type="text/html">
+<div class="step_wrap js_step">    
+    <div class="step" role="img" aria-label="총 5단계 중 현재 1단계">
+        <span class="current">1</span><span class="mark">/</span><span class="total">5</span>
+    </div>
+    <h2 class="h1">타이틀</h2>
+    <p class="step_txt">타이틀 내용입니다.</p>
+    <a href="#none" class="btn_txt ico_arr">바로가기</a>
+</div>
+            </script>
+
+            <div data-class="h2">기본 + 바로가기</div>
+            <script type="text/html">
+<div class="step_wrap js_step">
+    <div class="step" role="img" aria-label="총 5단계 중 현재 1단계">
+        <span class="current">1</span><span class="mark">/</span><span class="total">5</span>
+    </div>
+    <h2 class="h1">타이틀</h2>
+    <p class="step_txt">타이틀 내용입니다.</p>
+    <a href="#none" class="btn_txt ico_arr">바로가기</a>
+</div>
+            </script>
+        </div>
+    </div>`
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

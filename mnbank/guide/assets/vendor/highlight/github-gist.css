@@ -1,0 +1,63 @@
+code {
+    color: #6f624d;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Consolas, 'Noto Sans KR';
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+}
+
+.hljs-comment,.hljs-meta {
+    color: #9c968a;
+}
+
+.hljs-variable,.hljs-template-variable,.hljs-strong,.hljs-emphasis,.hljs-quote {
+    color: #6f624d
+}
+
+.hljs-keyword,.hljs-selector-tag,.hljs-type {
+    color: #6f624d;
+}
+
+.hljs-literal,.hljs-symbol,.hljs-bullet,.hljs-attribute {
+    color: #6f624d;
+}
+
+.hljs-section,.hljs-name {
+    color: #6f624d;
+}
+
+.hljs-tag {
+    color: #6f624d;
+}
+
+.hljs-title,.hljs-attr,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo {
+    color: #6f624d;
+    font-weight: 700;
+}
+
+.hljs-addition {
+    color: #6f624d;
+    background-color: #eaffea;
+}
+
+.hljs-deletion {
+    color: #6f624d;
+    background-color: #ffecec;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
+
+.hljs-number {
+    color: #6f624d;
+}
+
+.hljs-string {
+    color: #544429;
+    font-weight: 700;
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>신분증 촬영안내+고객신분증제출</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body> 
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    
+    <div id="content" class="cate_regist">
+<!-- 210601 수정 -->        
+        <h1 class="hidden">진행 프로세스명</h1> <!-- 개발 : 페이지 진행 프로세스명을 넣어주세요  -->
+
+        <!-- 신분증 촬영안내 (촬영전 노출) -->
+        <div>
+            <h2 class="h1">신분증 촬영안내</h2>
+            
+            <div class="section">
+                <div class="alg_image_guide videocall">
+                    <div class="item_l item03">
+                        <div class="txt_inner">주민등록증</div>
+                    </div>
+                    <div class="item_r item04">
+                        <div class="txt_inner">운전면허증</div>
+                    </div>
+                </div>
+    
+                <div class="center gap_md">
+                    <p class="p fc_gray3">
+                        <span class="fc_posi">신분증을 촬영하여 본인확인을 합니다.</span> <!-- 210831 문구수정 -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <ul class="depth bul">
+<!-- 210831 문구수정 -->
+                    <li>반드시 신분증 원본을 촬영해야 합니다.</li>
+                    <li>빛 반사와 흔들림에 주의하여 초점을 잘 맞춰 촬영해주세요.</li>
+                    <li>신분증보다 짙은 색 배경 위에 신분증을 올려놓고 촬영해주세요.</li>
+                    <li>정보확인이 어렵거나 훼손된 신분증, 유효하지 않은 신분증은 거래가 제한(거절)될 수 있습니다.</li>
+<!-- //210831 문구수정 -->
+                </ul>
+            </div>
+
+            <div class="section">
+                <ul class="list_link lg">
+                    <li>
+                        <a href="#none" class="link">
+<!-- 210831 문구수정 -->
+                            여권 촬영하기
+                            <p class="txt_sub">주민등록증, 운전면허증이 없다면 여권을 사용할 수 있습니다.</p>
+<!-- //210831 문구수정 -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+<!-- 210831 문구수정 -->
+                            여권 촬영하기
+                            <p class="txt_sub">주민등록증, 운전면허증이 없다면 여권을 사용할 수 있습니다. 해당 거래를 위해서는 <span class="fc_posi">추가 서류(온라인으로 발급한 등본/초본) 제출과 영상통화 인증이 필요합니다.</span></p>
+<!-- //210831 문구수정 -->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- page bottom button -->
+            <div class="btn_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn primary lg" title="새창">신분증 촬영</button></span>
+                </div>
+            </div>
+
+        </div>
+<!-- //210601 수정 -->
+
+        <!-- 고객신분증제출 (촬영 후 노출) -->
+        <div>
+            <h2 class="hidden">신분증 확인</h2>
+
+            <div class="section">
+                <div class="img_wrap samp_wrap">
+                    신분증 이미지 영역<!-- 추후 디자인 적용할 영역 -->
+                </div>
+<!-- [전담반 Biz-070] 210118 재촬영 버튼 삭제 -->           
+            </div>
+
+            <!-- 자동차운전면허증 정보 case -->
+            <div class="section gap_lg"> <!-- [전담반 Biz-070] 210118 클래스명 변경 -->
+                <h3 class="h2">자동차운전면허증 정보</h3>
+
+                <div class="fieldset">
+                    <div class="form_group js_trans"> <!-- 210601 수정 -->
+                        <div class="form_tit">이름</div>
+                        <div class="form_row">
+                            <div class="input">
+                                <input type="text" value="김국민" title="이름" placeholder="이름"> <!-- 210601 수정 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_tit">주민등록번호</div>
+                        <div class="form_row col jumin">
+                            <div class="input" role="button">
+                                <input type="tel" maxlength="6" title="주민등록번호 앞자리" value="800000" readonly> <!-- 210831 수정 -->
+                            </div>
+                            <span class="space">-</span>
+                            <div class="input">
+                                <input type="password" maxlength="7" title="주민등록번호 뒷자리" value="0000000">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 210601 수정 -->
+                    <div class="form_group car_license">
+                        <div class="form_tit">면허번호</div>
+                        <div class="form_row">
+                            <div class="select">
+                                <button type="button" class="select_btn" title="면허번호 첫번째 자리 선택">12</button>
+                            </div>
+                        </div>
+                        <div class="form_row col">
+                            <div class="input" role="button">
+                                <input type="tel" value="12" maxlength="2" title="면허번호 두번째 자리" readonly>
+                            </div>
+                            <div class="input" role="button">
+                                <input type="tel" value="12" title="면허번호 세번째 자리">
+                            </div>
+                            <div class="input" role="button">
+                                <input type="tel" value="00" maxlength="2" title="면허번호 네번째 자리" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //210601 수정 -->
+                    <div class="form_group js_trans"> <!-- 210601 수정 -->
+                        <div class="form_tit">발급일자</div>
+                        <div class="form_row">
+                            <div class="input" role="button">
+                                <input type="tel" maxlength="8" title="발급일자" value="2014.09.26" placeholder="발급일자"> <!-- 210601 수정 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //자동차운전면허증 정보 case -->
+
+            <!-- 주민등록증 정보 case -->
+            <div class="section gap_lg"> <!-- [전담반 Biz-070] 210118 클래스명 변경 -->
+                <h3 class="h2">주민등록증 정보</h3>
+
+                <div class="fieldset">
+                    <div class="form_group js_trans">
+                        <div class="form_tit">이름</div>
+                        <div class="form_row">
+                            <div class="input">
+                                <input type="text" value="김국민" title="이름" placeholder="이름">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_tit">주민등록번호</div>
+                        <div class="form_row col jumin">
+                            <div class="input" role="button">
+                                <input type="tel" maxlength="6" title="주민등록번호 앞자리" value="800000" readonly> <!-- 210831 수정 -->
+                            </div>
+                            <span class="space">-</span>
+                            <div class="input">
+                                <input type="password" maxlength="7" title="주민등록번호 뒷자리" value="0000000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group js_trans">
+                        <div class="form_tit">발급일자</div>
+                        <div class="form_row">
+                            <div class="input" role="button">
+                                <input type="tel" maxlength="8" title="발급일자" value="2014.09.26" placeholder="발급일자">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //주민등록증 정보 case -->
+
+            <!-- 여권 정보 case -->
+            <div class="section gap_lg"> <!-- [전담반 Biz-070] 210118 클래스명 변경 -->
+                <h3 class="h2">주민등록증 정보</h3>
+
+                <div class="fieldset">
+                    <div class="form_group js_trans">
+                        <div class="form_tit">한글이름</div>
+                        <div class="form_row">
+                            <div class="input">
+                                <input type="text" value="" title="한글이름" placeholder="한글이름">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_tit">영문이름</div>
+                        <div class="form_row col">
+                            <div class="input">
+                                <input type="text" value="" title="영문이름(성)" placeholder="영문이름(성)">
+                            </div>
+                            <div class="input">
+                                <input type="text" value="" title="영문이름(나머지)" placeholder="영문이름(나머지)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group js_trans">
+                        <div class="form_tit">여권번호</div>
+                        <div class="form_row">
+                            <div class="input">
+                                <input type="text" value="" title="여권번호" placeholder="여권번호">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group js_trans">
+                        <div class="form_tit">발급일자</div>
+                        <div class="form_row">
+                            <div class="input" role="button">
+                                <input type="tel" value="" title="발급일자" placeholder="발급일자" readonly> <!-- 210831 수정 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_tit">MRZ1</div>
+                        <div class="form_row">
+                            <div class="input" role="button">
+                                <input type="tel" value="" title="MRZ1" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_group">
+                        <div class="form_tit">MRZ2</div>
+                        <div class="form_row">
+                            <div class="input" role="button">
+                                <input type="tel" value="" title="MRZ2" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //여권 정보 case -->       
+
+            <div class="inform_btm_wrap">
+                <button class="tit js_toggle" aria-expanded="false" aria-controls="notice_1_1">알려드립니다</button>
+                <div class="toggle_panel" role="region" id="notice_1_1">
+                    <ul class="depth bul">
+                        <li>잘못된 정보가 스캔된 경우 직접 정보를 수정해 주세요.</li> 
+                        <li>빛 반사와 흔들림에 주의하여 촬영해 주세요.</li> 
+                        <li>신분증보다 짙은 색 배경 위에 신분증을 올려 놓고 촬영해 주세요.</li> 
+                    </ul>
+                </div>
+            </div>
+
+            <!-- page bottom button -->
+            <div class="btn_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn secondary lg">재촬영</button></span> <!-- [전담반 Biz-070] 210118 재촬영 버튼 추가 -->
+                    <span><button type="button" class="btn primary lg">다음</button></span>
+                </div>
+            </div>
+            <!-- //page bottom button -->
+        </div>
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/docs.css">
+</head>
+<body>
+    <div class="contents">
+        <div class="docs-name">CSS 규칙</div>
+
+        <div class="paper">
+            <div class="h1">작은 따옴표 사용 범위</div>
+            <ul class="ul">
+				<li>폰트의 선언, filter, content에 작은 따옴표('')를 사용한다. 그 외의 경우는 사용하지 않는다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">.class_name {font-family:'dotum'}
+.class_name:after{content:'.'}
+.class_name {background:url(img.gif) no-repeat}</xmp>
+            </div>
+            
+            <div class="h1">세미콜론</div>
+            <ul class="ul">
+				<li>마지막 선언된 속성에도 세미콜론(;)을 사용한다.</li>
+            </ul>
+            
+            <div class="h1">공백의 사용</div>
+            <ul class="ul">
+				<li>선택자 간, 중괄호간 한칸의 공백을 사용한다, 중괄호 안쪽 좌우에는 공백은 사용하지 않는다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">.class_name,
+.class_name .child_class {background:url(../img/img.gif) no-repeat;}
+.class_name {padding:0; margin:0;}
+.class_name {padding:0; margin:0;}</xmp>
+            </div>
+            
+            <div class="h1">들여쓰기 줄바꿈</div>
+            <ul class="ul">
+				<li>CSS 코드 작성시 들여쓰기는 허용하지 않는다.</li>
+                <li>공통으로 사용되는 속성의 선택자간의 줄 바꿈은 허용하며 이 외의 줄바꿈은 허용하지 않는다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">h4.class_name {font-size:1.25em; letter-spacing:-1px; margin:0.5em 0 0 0;}
+
+.class_name,
+.class_name .child_class {background:url(../img/img.gif) no-repeat;}</xmp>
+            </div>
+            
+            <div class="h1">단위</div>
+            <ul class="ul">
+				<li>모바일과 같이 유동적인 레이아웃 구현 시 상대단위(em, rem, %)를 사용한다.</li>
+				<li>1px과 text-indent:-9999em, border 단위는 예외로 한다.</li>
+            </ul>
+            
+            <div class="h1">z-index</div>
+            <ul class="ul">
+				<li>z-index 값은 최소 10부터 시작하며 최고 9999이며 10 단위로 증감한다. 단, 중간에 변수가 생기면 예외로 1단위 값을 지정할 수 있다.</li>
+            </ul>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 30%">
+                        <col style="width: 30%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>단위</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>인라인</td>
+                            <td>1</td>
+                            <td>우선순위 1씩 증가, 기본요소 0</td>
+                        </tr>
+                        <tr>
+                            <td>그룹</td>
+                            <td>10</td>
+                            <td>우선순위 1씩 증가, 기본요소 10</td>
+                        </tr>
+                        <tr>
+                            <td>구조</td>
+                            <td>100</td>
+                            <td>우선순위 1씩 증가, 기본요소 100</td>
+                        </tr>
+                        <tr>
+                            <td>팝업</td>
+                            <td>1000</td>
+                            <td>우선순위 1씩 증가, 기본요소 1000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="h1">주석 / 빈줄</div>
+            <ul class="ul">
+				<li>종료 주석은 작성하지 않는다.</li>
+                <li>코드 그룹 간 1줄의 빈 줄을 허용한다. 단, 1줄을 초과하지 않는다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">/* title */
+.title_type1 {margin:30px 0 10px 0;}
+    
+/* description */
+.desc1 {padding:2px 0 0 15px; font-size:0.917em;}</xmp>
+            </div>
+            
+            <div class="h1">속성선언순서</div>
+            <ul class="ul">
+                <li>밴더속성과 핵속성은 해당 속성 뒤에 선언한다.<br>
+                    예) .btn {border:1px solid #f60; *border:2px solid #f60; border-radius:2px; -webkit-border-radius:2px}
+                </li>
+                <li><span class="point">!important 사용은 지양한다.</span></li>
+            </ul>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 8%">
+                        <col style="width: 20%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>순서</th>
+                            <th>구분</th>
+                            <th>속성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Layout</td>
+                            <td>display, visibility, overflow</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>위치</td>
+                            <td>position, float, clear, z-index</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">3</td>
+                            <td rowspan="2">크기/간격</td>
+                            <td>width, height</td>
+                        </tr>
+                        <tr>
+                            <td>margin, padding</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">4</td>
+                            <td rowspan="2">모양/배경</td>
+                            <td>border</td>
+                        </tr>
+                        <tr>
+                            <td>background</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>폰트/정렬</td>
+                            <td>font, color, text-align, vertical-align</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>기타</td>
+                            <td>언급되지 않은 속성들은 후순위로 적용한다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="h1">큰글씨 설정</div>
+            <ul class="ul">
+                <li>조회(일부), 이체 카테고리에서만 적용한다.</li>
+                <li>큰글씨모드는 최상위 선택자에 .big_mode 클래스를 선언한다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">html.big_mode {font-size:11px !important;}</xmp>
+            </div>
+            
+            <div class="h1">다크테마 설정</div>
+            <ul class="ul">
+                <li>기본 color값은 :root 에 변수처리 한다.<br>
+                예) background:var(--fc_11, #fff);</li>
+                <li>변수명은 일반테마/ 다크테마 동일하며, color값만 변경한다.</li>
+                <li>다크테마는 최상위 선택자에 .dark_mode 클래스를 선언한다.</li>
+                <li>다크테마 관련 예외케이스는 각 CSS 제일 하단에 추가한다.</li>
+            </ul>
+            <div class="code only">
+                <xmp class="html">/* common.css */
+:root{
+    --fc_01: #000;
+    --fc_02: #26282c;
+    --fc_03: #484b51;
+    --fc_04: #696e76;
+    --fc_05: #8c949e;
+    --fc_06: #aab0b8;
+    --fc_07: #c6cbd0;
+    --fc_08: #dde1e4;
+    --fc_09: #ebeef0;
+    --fc_10: #f7f7f8;
+    --fc_11: #fff;
+    --bg_01: #fff;     /* Contents BG */
+    --bg_02: #f7f7f8;  /* Contents Notice */
+    --bdc_01: #ebeef0; /* Line Default */
+    --bdc_02: #696e76; /* Line Design Type */
+    --bdc_03: #c6cbd0; /* Data List Header */
+    --bdc_04: #484b51; /* Accordion Open Header */
+}
+
+:root.dark_mode{
+    --fc_01: #000;
+    --fc_02: #fff;
+    --fc_03: #f7f7f8;
+    --fc_04: #ebeef0;
+    --fc_05: #dde1e4;
+    --fc_06: #c6cbd0;
+    --fc_07: #aab0b8;
+    --fc_08: #8c949e;
+    --fc_09: #696e76;
+    --fc_10: #484b51;
+    --fc_11: #26282c;
+    --bg_01: #212224;
+    --bg_02: #34363a;
+    --bdc_01: #45484d;
+    --bdc_02: #86888a;
+    --bdc_03: #65696e;
+    --bdc_04: #8c8c8e; 
+}</xmp>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/js/docs.js"></script>
+</body>
+</html>

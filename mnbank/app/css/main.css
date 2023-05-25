@@ -1,0 +1,1025 @@
+@charset "utf-8";
+
+/* @Font */
+@font-face {
+    font-family:'NanumPen';font-style:normal;font-weight:400;    
+	src:url('/mnbank/app/css/fonts/NanumPen.otf') format('opentype');
+}
+
+:root{-webkit-touch-callout:none; -webkit-user-select:none; user-select:none; -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color:transparent;}
+/* Header */
+#header {height:4.8rem; background:var(--bg_01, #fff);}
+#header::after {content:''; display:block; clear:both;}
+#header .tmnu_kbpay {float:left; margin-left:2.6rem; font-size:1.4rem; font-weight:700; line-height:4.8rem; vertical-align:middle;}
+#header .tmnu_kbpay::before {content:''; display:inline-block; width:2rem; height:4.8rem; margin-right:1rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat; background-size:25rem; vertical-align:middle;}
+#header .nav_wrap {float:right; position:static; margin-right:1.6rem;}
+#header .nav_wrap > [class^=tmnu_] {display:inline-block; width:4.5rem; height:4.8rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat; background-size:25rem;}
+#header .nav_wrap .tmnu_notice {position:relative; background-position:-3rem 0;}
+#header .nav_wrap .tmnu_notice .ico_new {display:block; position:absolute; top:1.2rem; right:.4rem; width:.6rem; height:.6rem; border-radius:50%; background:#f23f3f; text-indent:-9999em;}
+#header .nav_wrap .tmnu_search {background-position:-7.5rem 0;}
+#header .nav_wrap .tmnu_menu {background-position:-12rem 0;}
+/* 20220812 : KB Wallet 추가 */
+#header .nav_wrap .tmnu_wallet{position:relative; background:none !important}
+#header .nav_wrap .tmnu_wallet:after{content:''; position:absolute; width:2.4rem; height:2.4rem; left:50%; top:50%; transform:translate(-50%, -50%); background:url(/mnbank/app/img/main/mov_icon_kbwallet.gif) no-repeat 0% 0%/2.4rem auto;}
+#header .nav_wrap .tmnu_wallet .tooltip{width:0rem; border-radius:0.5rem; background-color:#e3e1d3; padding:0.3rem 0; position:absolute; left:50%; bottom:0; will-change:width;}
+#header .nav_wrap .tmnu_wallet .tooltip em{color:#424242; position:relative; z-index:3; transform:translate(1rem, 0rem); opacity:0; font-size:1.2rem; text-align:center; line-height:2rem; font-weight:bold; overflow:hidden; white-space: nowrap; display:block; margin:0 auto; z-index:3;}
+#header .nav_wrap .tmnu_wallet .tooltip:after{content:''; background-color:#e3e1d3; position:absolute; opacity:0; left:50%; top:0rem; width:1rem; height:1rem; transform: translate(-0.6rem, -0.1rem) rotate(60deg) skewX(30deg);}
+#header .nav_wrap .tmnu_wallet .tooltip{animation:tmnu_wallet_ani1 7s 1s cubic-bezier(0, 0, 0.2, 1) forwards}
+#header .nav_wrap .tmnu_wallet .tooltip em{animation:tmnu_wallet_ani2 6.2s 1.8s cubic-bezier(0.18, 0.89, 0.32, 1.3) forwards;}
+#header .nav_wrap .tmnu_wallet .tooltip:after{animation:tmnu_wallet_ani3 5.5s 2s forwards}
+@keyframes tmnu_wallet_ani1{
+	0%{width:2.6rem; margin-left:-1.3rem; transform:scale(0); bottom:0; border-radius:100% }
+	4%{width:2.6rem; margin-left:-1.3rem; transform:scale(0.5); bottom:-3rem; border-radius:100%}
+	7%{width:2.6rem; margin-left:-1.3rem; transform:scale(0.5); bottom:-2.1rem; border-radius:100%}
+	14%{width:7.5rem; margin-left:-3.8rem; transform:scale(1); bottom:-2.4rem; border-radius:0.5rem}
+	90%{width:7.5rem; margin-left:-3.8rem; bottom:-2.4rem}
+	95%{width:8.5rem; margin-left:-4.3rem; bottom:-2.4rem}
+	100%{width:0rem; margin-left:0rem; bottom:-2.4rem}
+}
+@keyframes tmnu_wallet_ani2{
+	0%{width:100%; opacity:0; transform:translate(1rem, 0rem);}
+	10%{width:100%; opacity:1; transform:translate(0rem, 0rem);}
+	95%{width:100%; opacity:1; transform:translate(0rem, 0rem);}
+	100%{width:100%; opacity:0; transform:translate(0rem, 0rem);}
+}
+@keyframes tmnu_wallet_ani3{
+	0%{opacity:0}
+	10%{opacity:1}
+	95%{opacity:1;}
+	100%{opacity:0}
+}
+
+/* 로그인 정보 */
+#content.cate_main {padding:4.8rem 2rem 12rem; padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 12rem); padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 12rem);}
+.member_wrap {margin:2rem .6rem 0;}
+.member_wrap::after {content:''; display:block; clear:both;}
+.member_wrap .name {float:left; position:relative; padding-right:1.6rem; font-size:2.2rem;}
+.member_wrap .name::after {content:''; display:inline-block; position:absolute; top:50%; right:.2rem; width:.9rem; height:.9rem; margin-top:-.5rem; border-top:1px solid var(--fc_04, #696e76); border-right:1px solid var(--fc_04, #696e76); transform:rotate(45deg); background:none;}
+.member_wrap .btn_grade {float:right; font-size:1.4rem; line-height:3rem; text-decoration:underline;}
+
+/* 스타링크 라운지 */
+.starlink_wrap {position:relative; height:8.8rem; margin:1.6rem 0 0 .6rem; font-size:1.6rem; color:var(--fc_03, #484b51); z-index:1;}
+.starlink_wrap .btn_link {display:block; padding-top:.1rem; font-size:1.8rem; font-weight:700; color:var(--fc_03, #484b51); text-decoration:underline;}
+.starlink_wrap .starlink_ani {display:inline-block; position:absolute; bottom:0; right:-.4rem; width:15.8rem; height:8.6rem; z-index:-1;}
+
+/* 대표카드 */
+.home_card {position:relative; z-index:1}
+.home_card > .btn_move,
+.home_card .inner > .btn_move{top:1.6rem; height:22rem;}
+.home_card .acc_wrap .acc_info_wrap .acc_info .tit {width:auto;}
+.represent {margin:0 -2rem; padding:2.4rem 2rem 0; z-index:11;}
+.represent .acc_wrap {display:block; overflow:hidden; width:100%; height:22rem; padding:2rem 1.6rem; border-radius:.8rem; border-bottom-left-radius:.8rem; background:var(--bg_01, #fff);}
+
+.home_card .acc_wrap.btn_move {position:static;} 
+.represent .acc_wrap .txt {font-size:1.6rem;}
+.represent .swiper-slide-active .acc_wrap {box-shadow:.2rem .4rem 1.8rem 0 rgba(0, 0, 0, .18);}
+.represent .acc_wrap .acc_name {display:block; padding-left:0; padding-right:3rem; font-size:1.4rem; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.represent .acc_wrap .acc_num {display:inline-block; padding-top:.3rem; padding-left:0; font-size:1.7rem; font-weight:400;}
+.represent .acc_wrap .acc_bank {margin-top:0; padding-top:0; font-size:1.8rem;}
+.represent .acc_wrap .acc_bank > .front_unit {display:inline-block; font-size: 1.6rem;}
+.represent .acc_wrap .acc_bank > .bk_num {display:inline-block; font-size: 1.9rem;}
+.represent .acc_wrap .acc_info_wrap {margin-top:0; padding-left:4.2rem;}
+.represent .acc_wrap .acc_info > .tit {font-size:1.4rem; color:var(--fc_05, #8c949e);}
+.represent .acc_wrap .acc_info > .number {font-size:1.5rem; color:var(--fc_05, #8c949e);}
+.represent .acc_wrap .acc_txt {margin-top:0.2rem; padding-left:4.2rem; font-size:1.4rem; color:var(--fc_02, #26282c);}
+.represent .acc_wrap .acc_pay + .acc_pay {margin-top:-1rem;}
+.represent .acc_sum_wrap {position:absolute; bottom:6rem; left:1.6rem; right:1.6rem; text-align:center;}
+.represent .acc_sum_wrap .acc_pay .unit {color:var(--fc_03, #484b51); font-size:1.4rem; vertical-align:baseline;}
+.represent .acc_sum_wrap .acc_pay .number {margin-left:.6rem; font-size:2.8rem; font-weight:700; vertical-align:baseline;}
+.represent .acc_sum_wrap .acc_pay .num_unit {padding-left:.2rem; font-size:2.4rem; font-weight:700; vertical-align:.2rem;}
+.represent .acc_sum_wrap.sm .acc_pay .number {font-size:1.8rem;}
+.represent .acc_sum_wrap.sm .acc_pay .num_unit {margin-left:0; font-size:1.5rem; vertical-align:baseline;}
+.represent .acc_sum_wrap.sm .acc_pay + .acc_pay {margin-top:0;}
+.represent .acc_sum_wrap .nodata {display:block; padding-bottom:.6rem; font-size:2rem; color:var(--fc_05, #8c949e);} /* 211103 추가 */
+.represent .btn_area {position:absolute; bottom:2rem; left:1.6rem; right:1.6rem; text-align:center;}
+.represent .btn_area a {display:inline-block; min-width:8rem; height:3.4rem; margin:0 .2rem; /* padding:0 2.4rem; */padding:0 1.6rem; border-radius:3.2rem; line-height:3.4rem; background:var(--fc_09, #ebeef0); font-size:1.5rem;}
+.represent .btn_area a.secondary {background:var(--fc_09, #ebeef0);}
+.represent .btn_area a.primary {background:#ffda48; color:#26282c;}
+.represent .btn_menu {display:block; position:absolute; right:0; top:0; width:5rem; height:6rem;}
+.represent .btn_menu > .ico_menu {content:''; display:block; position:absolute; right:1.6rem; top:2rem; width:1.9rem; height:1.9rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat 0 -5.5rem; background-size:25rem auto;}
+.represent .swiper-slide.add .txt {display:block; position:absolute; top:50%; left:50%; width:90%; text-align:center; transform:translate(-50%, -50%); box-shadow:none;}
+.represent .swiper-slide.add .txt:before {content:''; display:block; width:4rem; height:4rem; margin:0 auto 1.4rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -13.8rem -18rem; background-size:25rem;}
+.represent .swiper-pagination {left:50%; bottom:0; margin-top:.1rem; transform:translateX(-50%);}
+
+/* 최근이체 */
+.transfer {width:auto; height:2.4rem; margin:1.7rem -2rem 0 -2rem; overflow:hidden; overflow-x:scroll; -webkit-overflow-scrolling:touch;}
+.transfer::-webkit-scrollbar {display:none;}
+.transfer .transfer_list {display:inline-block; height:2.4rem; white-space:nowrap;}
+.transfer .transfer_list > li {display:inline-block; margin-left:1.6rem;}
+.transfer .transfer_list > li:first-child {margin-left:2.4rem;}
+.transfer .transfer_list > li:last-child {margin-right:2rem;}
+.transfer button {font-size:1.4rem; line-height:2.4rem;}
+.transfer button > [class^=icon_bank_] {margin:-.3rem .4rem 0 0; vertical-align:middle;}
+
+/* 맞춤 메뉴 */
+.home_adjust {position:relative; padding:0; margin-top:2.4rem; z-index:1;}
+.home_adjust .tit {position:relative; display:block; width:100%; height:6rem; padding:0 3rem 0 1.8rem; border-radius:.8rem; background:#ffda48; font-size:1.6rem; color:var(--fc_02, #26282c); font-weight:700; line-height:6rem; text-align:left; box-shadow:.2rem .4rem 1rem rgba(0,0,0,0.18);}
+.home_adjust .tit::after {content:''; display:block; position:absolute; top:.8rem; right:.8rem; width:2.4rem; height:2.4rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -4.5rem -5.5rem; background-size:25rem;}
+.btn_move {position:absolute; top:0; bottom:0; right:0; width:100%; font-size:0; z-index:10;}
+.home_adjust .btn_move {top:0rem;}
+
+/* 큐레이션 */
+.home_curation {position:relative; width:100%; height:auto; margin:2.4rem 0 0rem; padding:0 0 2rem 0; border-radius:.8rem; background: transparent; box-shadow:none; z-index:3;}
+.home_curation.one {padding-bottom:0;}
+.home_curation .inner{height:13.2rem; padding: 2rem 1.8rem 1.2rem; background: #423f3f;  border-radius: .8rem; box-shadow: 0.2rem 0.4rem 1rem rgba(0,0,0,0.18);}
+.home_curation .tit {padding-right:2rem; font-size:1.6rem; color:var(--fc_11, #fff); font-weight:700;}
+.home_curation .tit::after {content:''; display:block; position:absolute; top:.8rem; right:.8rem; width:2.4rem; height:2.4rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -6.9rem -5.5rem; background-size:25rem;}
+.home_curation .img {display:block; width:100%; height:8rem;}
+.home_curation .img img {width:100%; height:100%;}
+.home_curation .pop_bg {background:#423f3f;}
+.home_curation .btn_move {top:0;}
+.home_curation .curation_swiper .swiper-slide .btn_move{position:static}
+.btn_open {position:absolute; display:block; top:1.6rem; right:0; width:4rem; height:4rem; z-index:11; font-size:0;}
+.home_curation .btn_open {top:0;}
+
+.curation_swiper{position:relative; z-index:11;}
+.curation_swiper .banner_wrap {margin-top:0;}
+.curation_swiper .banner_wrap .swiper-slide {padding:0;}
+.curation_swiper .swiper-slide {width:100%; height:8rem;}
+.curation_swiper .swiper-slide .img {margin:0 auto; width:100%; height:auto; max-width:29.7rem; max-height:8rem; background:transparent; overflow:hidden;}
+.curation_swiper .swiper-pagination .swiper-pagination-bullet {background:#616164;}
+.curation_swiper .swiper-pagination .swiper-pagination-bullet-active {background:var(--fc_06, #aab0b8);}
+.curation .curation_swiper .swiper-slide {height:8.8rem;}
+.curation .curation_swiper .swiper-slide .img {max-width:32.7rem; max-height:8.8rem; overflow:hidden;}
+.home_curation .curation_swiper .swiper-slide .img{max-width:inherit;}
+.home_curation .curation_swiper .swiper-slide .img img{max-width:29.7rem;}
+.home_curation .swiper-pagination {margin-top:1.1rem;}
+.home_curation .swiper-pagination .swiper-pagination-bullet {background:var(--fc_08, #dde1e4);}
+.home_curation .swiper-pagination .swiper-pagination-bullet-active {background:#8c949e;}
+
+/* [팝업] 맞춤메뉴 */
+#content.cate_main.noappbar {padding-bottom:0;}
+.adjust {display:none; position:fixed; top:100%; left:0; width:100%; height:100%; padding:4rem 2rem 12rem; padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 12rem); padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 12rem); border-top-left-radius:1rem; border-top-right-radius:1rem; background:#ffda48; overflow-y:auto; z-index:110;}
+.pop_tit {display:block; position:absolute; top:0; left:0; right:0; height:8rem; border-top-left-radius:1rem; border-top-right-radius:1rem; background:#ffda48;}
+.pop_tit.on {position:fixed; top:1.2rem; z-index:12;}
+.pop_tit::before {content:''; display:block; position:absolute; top:.9rem; left:50%; width:3.6rem; height:0.5rem; margin-left:-1.8rem; border-radius:.5rem; background:var(--fc_11, #fff); opacity:.7;}
+.adjust .adjust_h1 {display:block; padding-top:4rem; font-size:2rem; font-weight:700; text-align:center; color:#26282c;}
+.adjst_setting {width:100%; margin-top:4.3rem; text-align:center;}
+.btn_setting {display:inline-block; font-size:1.6rem;}
+.btn_setting::before {content:''; display:inline-block; width:1.9rem; height:1.9rem; margin-right:.7rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -2.2rem -5.5rem; background-size:25rem auto; vertical-align:-0.3rem;}
+.adjust_list li .adjust_h2 {position:relative; width:100%; height:4rem; margin:3.6rem 0 0; padding-left:2.2rem; border-radius:10rem; background:#fff0b6; font-size:1.6rem; line-height:4rem;}
+.adjust_list li .adjust_h2::before {content:''; display:block; position:absolute; bottom:-1.6rem; right:0; width:6.5rem; height:11.5rem; background:url(/mnbank/app/img/main/adjust_character1.png) no-repeat; background-size:6.5rem auto;}
+.adjust_list li:nth-child(2) .adjust_h2::before {width:6.3rem; height:9.4rem; background:url(/mnbank/app/img/main/adjust_character2.png) no-repeat; background-size:6.3rem auto;}
+.adjust_list li:nth-child(3) .adjust_h2::before {width:7.2rem; height:8.2rem; background:url(/mnbank/app/img/main/adjust_character3.png) no-repeat; background-size:7.2rem auto;}
+.adjust_list ul {width:100%; padding:.5rem 0 0 2.2rem;}
+.adjust_list ul::after {content:''; display:block; clear:both;}
+.adjust_list ul > li {display:inline-block; position:relative; width:49%; vertical-align:top;}
+.adjust_list ul > li::before {content:''; display:inline-block; position:absolute; top:1.9rem; left:0; width:.4rem; height:.4rem; border-radius:50%; background:#26282c;}
+.adjust_list .link {display:block; width:100%; padding:1.2rem 0 0 1.4rem; font-size:1.6rem; text-overflow:ellipsis; color:#26282c;}
+.btn_pop_close {display:block; position:fixed; bottom:1.6rem; bottom:calc(constant(safe-area-inset-bottom) / 2 + 1.6rem); bottom:calc(env(safe-area-inset-bottom) / 2 + 1.6rem); left:50%; width:8rem; height:8rem; margin-left:-4rem; text-indent:-9999em; z-index:10;}
+.btn_pop_close::after {content:''; display:block; position:absolute; top:0; left:0; width:4.8rem; height:4.8rem; margin:1.6rem 0 0 1.6rem; border-radius:50%; box-shadow:.4rem .4rem 1.2rem rgba(0,0,0,0.24); background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -4.5rem -18rem; background-size:25rem auto;}
+
+/* [팝업] 추천 */
+.curation {display:none; position:fixed; top:100%; left:0; width:100%; height:100%; padding:8rem 2.4rem 12rem; padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 12rem); padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 12rem); border-top-left-radius:1rem; border-top-right-radius:1rem; background:#423f3f; overflow-y:scroll; z-index:110;}
+.curation .pop_tit {background: #423f3f;}
+.curation .pop_tit::before {opacity:.2;}
+.curation .curation_h1 {display:inline-block; padding:4rem 2.4rem 0; font-size:2rem; font-weight:700; color:var(--fc_11, #fff);}
+.curation .news {overflow:hidden; margin-top:2rem; padding:2rem 0; border-top:1px solid #555; border-bottom:1px solid #555; font-size:1.6rem; color:var(--fc_08, #dde1e4);}
+.curation .news .tit {float:left; padding-right:1.6rem; color:var(--fc_11, #fff); font-weight:700;}
+.curation .news .tit::before {content:''; display:inline-block; width:1.8rem; height:1.7rem; margin-right:1.6rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -12rem -5.7rem; background-size:25rem auto; vertical-align:-.3rem; margin-left:0.6rem}
+.curation .news .txt {float:left; overflow:hidden; width:70%; white-space:nowrap; text-overflow:ellipsis;}
+.curation .cura_bnn {position:relative;}
+.curation .cura_bnn > .inr {margin-left:3.4rem; padding:2.5rem 2.4rem 2rem 8.5rem; border-top-left-radius:1rem; background:#3f3f42; font-size:1.6rem; color:var(--fc_09, #ebeef0);}
+.curation .cura_bnn::before {content:''; display:block; position:absolute; left:2.4rem; bottom:-.2rem; width:8.2rem; height:7.2rem; background:url(/mnbank/app/img/main/main_recomm_bnn01.png) no-repeat; background-size:8.2rem auto;}
+.curation .cura_bnn span {display:block; padding-bottom:.6rem; font-size:1.4rem; color:var(--fc_07, #c6cbd0);}
+.curation .cura_area {margin-top:4rem;}
+.curation .cura_area:first-child {}
+.curation .cura_area .cura_tit {position:relative; height:3.2rem; padding-left:4.2rem; font-size:1.4rem; line-height:3.2rem; color:var(--fc_11, #fff); font-weight:700;}
+.curation .cura_area .cura_tit:before {content:''; display:inline-block; position:absolute; top:0; left:0; width:3.2rem; height:3.2rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat 0 -14.3rem; background-size:25rem;}
+.curation .cura_area.assistant .cura_tit:before {background-position:0 -14.3rem;} /* 211028 수정 */
+.curation .cura_area.agency .cura_tit:before {background-position:-3.3rem -14.3rem;} /* 211028 수정 */
+.curation .cura_area.recipe .cura_tit:before {background-position:-6.6rem -14.3rem;} /* 211028 수정 */
+.curation .cura_area.pick .cura_tit:before {background-position:-9.9rem -14.3rem;} /* 211028 수정 */
+.curation .cura_area.pick{padding-bottom:8rem; padding-bottom: calc(constant(safe-area-inset-bottom) / 2 + 8rem); padding-bottom: calc(env(safe-area-inset-bottom) / 2 + 8rem);}
+
+
+.curation .cura_area .chat_wrap {margin-top:1.6rem;}
+.curation .cura_area .chat_wrap:first-of-type {margin-top:1.2rem;}
+.curation .cura_area .btn_more {display:block; width:100%; margin-top:1.6rem; padding-top:1rem; border-top:1px solid #2b2b2b; font-size:1.4rem; color:var(--fc_07, #c6cbd0);}
+.curation .cura_area .btn_more:after {content:''; display:inline-block; width:.9rem; height:.9rem; margin-left:1rem; border-top:1px solid #828891; border-right:1px solid #828891; transform:translateY(-.3rem) rotate(135deg);}
+.curation .kb_conts {width:auto; height:18.5rem; margin:1rem -2.4rem 0 0; margin-left:-6.5rem; overflow:hidden; overflow-x:scroll;}
+.curation .kb_conts::-webkit-scrollbar {display:none;}
+.curation .kb_conts .kb_conts_inr {display:inline-block; padding:0 2.4rem 0 6.5rem; white-space:nowrap;}
+.curation .kb_conts .conts_bnn {display:inline-block; position:relative; overflow:hidden; width:24rem; height:18.5rem; margin-left:1rem; border-radius:.8rem;}
+.curation .kb_conts .conts_bnn:first-child {margin-left:0;}
+.curation .kb_conts .conts_bnn .img {display:block; position:relative; width:24rem; height:11rem; overflow:hidden;}
+.curation .kb_conts .conts_bnn .img img {width:100%; height:11rem;}
+.curation .kb_conts .kb_conts_inr iframe {width:100%; height:11rem; border-top-left-radius:.8rem; border-top-right-radius:.8rem; background:#423f3f;}
+.curation .kb_conts .conts_bnn .cont {height:7.6rem; padding:1.4rem 1.8rem 0; background:var(--fc_09, #ebeef0);}
+.curation .kb_conts .conts_bnn .tit {display:block; font-size:1.6rem; color:var(--fc_02, #26282c); font-weight:700; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.curation .kb_conts .conts_bnn .txt {display:block; height:3.4rem; margin-top:.5rem; font-size:1.4rem; color:var(--fc_03, #484b51); overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.curation .kb_conts .conts_bnn .btn_wrap {margin-top:1.6rem;}
+.curation .kb_conts .conts_bnn .btn_wrap button {width:100%;}
+.curation .kb_conts .conts_bnn .conts_btn {display:block; position:absolute; top:0; left:0; width:100%; height:100%; border-radius:.8rem; background:transparent; z-index:2;}
+.curation .kb_service {width:auto; height:auto; margin:1rem -2.4rem 0; overflow:hidden; overflow-x:scroll;}
+.curation .kb_service::-webkit-scrollbar {display:none;}
+.curation .kb_service .kb_service_inr {display:inline-block; padding:0 2.4rem; white-space:nowrap;}
+.curation .kb_service .service_bnn {display:inline-block; position:relative; width:16rem; height:12.7rem; margin-left:1rem; padding:2rem 1.8rem 10rem; border-radius:.8rem; background:var(--fc_09, #ebeef0);} 
+.curation .kb_service .service_bnn:first-child {margin-left:0;}
+.curation .kb_service .service_bnn:after {content:''; display:block; position:absolute; bottom:1.8rem; right:1.8rem; width:3.2rem; height:3.2rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat -13.2rem -14.3rem; background-size:25rem auto;}
+/*.curation .kb_service .service_bnn:nth-child(2)::after {background:url(/mnbank/app/img/main/liivm_icon.png) 0 0 no-repeat; background-size:100%; auto; width:32px; height:32px;}*/
+/*.curation .kb_service .service_bnn:nth-child(3)::after {background-position:-19.8rem -14.3rem;} */
+/*.curation .kb_service .service_bnn:nth-child(4)::after {background-position:-16.5rem -14.3rem;} */
+
+/* 서비스픽 아이콘 추가 */
+.curation .kb_service .service_bnn.pick_01::after {background-position:-13.2rem -14.3rem;} /* KB증권 */
+.curation .kb_service .service_bnn.pick_02::after {background:url(/mnbank/app/img/main/liivm_icon.png) 0 0 no-repeat; background-size:100%;} /* 리브엠 */
+.curation .kb_service .service_bnn.pick_03::after {background-position:-19.8rem -14.3rem;} /* 실손보험빠른청구 */
+.curation .kb_service .service_bnn.pick_04::after {background-position:-16.5rem -14.3rem;} /* 세금계산기 */
+.curation .kb_service .service_bnn.pick_05::after {background:url(/mnbank/app/img/main/pick_golden_icon.png) 0 0 no-repeat; background-size:100%;} /* 골든라이프X */
+.curation .kb_service .service_bnn.pick_06::after {background:url(/mnbank/app/img/main/pick_kbbudongsan_icon.png) 0 0 no-repeat; background-size:100%;} /* KB부동산 */
+.curation .kb_service .service_bnn.pick_07::after {background:url(/mnbank/app/img/main/pick_chachacha_icon.png) 0 0 no-repeat; background-size:100%;} /* KB차차차 */
+/* 서비스픽 아이콘 추가 */
+
+
+
+.curation .kb_service .service_bnn .tit {font-size:1.6rem; color:var(--fc_02, #26282c); font-weight:700;}
+.curation .kb_service .service_bnn .txt {height:6rem; margin-top:.5rem; font-size:1.4rem; color:var(--fc_03, #484b51); overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; word-wrap:break-word; text-overflow:ellipsis; -webkit-line-clamp:3;}
+
+/* [팝업] 추천 > Chat */
+.chat_wrap .btn_wrap {display:table; table-layout:fixed; width:100%; border-top:1px solid #d7dadc;}
+.chat_wrap .btn_wrap > span {display:table-cell; position:relative; width:50%;}
+.chat_wrap .btn_wrap > span:not(:first-child)::before {content:''; display:inline-block; position:absolute; top:50%; left:0; width:1px; height:1.6rem; margin-top:-.8rem; background:#d7dadc; vertical-align:middle;}
+.chat_wrap .btn_wrap > span:first-child {padding-left:0; border:0;}
+.chat_wrap .btn_wrap > span:last-child {padding-right:0;}
+.chat_wrap .btn_wrap button {width:100%; height:4.8rem; border-bottom-left-radius:.8rem; border-bottom-right-radius:.8rem; font-size:1.4rem; line-height:4.8rem;}
+.chat_wrap .chat {position:relative; margin-top:1rem; border-radius:.8rem; background:var(--fc_09, #ebeef0);}
+.cura_area.assistant .chat_wrap .chat.noti {background:#fcf5dc;}
+.cura_area.agency .chat_wrap .chat.noti {background:#c6e5de; font-family:'NanumPen'; font-size:2.3rem; line-height:1.2;}
+.cura_area.agency .chat_wrap .btn_wrap {border-color:#b6d2cc;}
+.cura_area.recipe .chat_wrap .chat.noti {background:#c2d5f2;}
+.cura_area.pick .chat_wrap .chat.noti {background:#d7d3ef;}
+.chat_wrap .chat.noti.birth::after {content:''; display:block; position:absolute; bottom:1.4rem; right:1.4rem; width:9.4rem; height:9.8rem; background:url(/mnbank/app/img/main/main_cura_birth.png) no-repeat 0 0; background-size:9.4rem 9.8rem;}
+.chat_wrap .txt {padding:2rem 1.8rem 1.8rem;}
+.chat_wrap .time {width:100%; margin-top:1rem; padding-right:.8rem; font-family:'roboto'; font-size:1.3rem; color:var(--fc_05, #8c949e); text-align:right;}
+
+/* 드래그 */
+.sortable-ghost,
+.blue-background-class {opacity:0;}
+.sortable-fallback.sortable-drag {opacity:1;}
+.list-group-item.sortable-chosen{background:transparent;}
+.list-group-item.sortable-chosen .inner{transform:scale(0.94); transition-duration:0.2s;}
+
+/* Bottom Appbar */
+.btm_appbar {position:fixed; bottom:0; left:0; right:0; padding:0 1.4rem; padding-bottom:calc(constant(safe-area-inset-bottom) / 2); padding-bottom:calc(env(safe-area-inset-bottom) / 2); box-shadow: 0 -.1rem .8rem rgba(0,0,0,.2); background:var(--bg_01, #fff); z-index:100;}
+.btm_appbar ul {display:table; table-layout:fixed; width:100%;} 
+.btm_appbar li {display:table-cell; position:relative; width:25%; padding:.8rem 0 1.5rem; text-align:center;}
+.btm_appbar li .btn_appbar {display:block; width:100%; height:100%; font-size:1.2rem; color:var(--fc_03, #484b51);}
+.btm_appbar li .btn_appbar::before {content:''; display:block; width:3.2rem; height:3.2rem; margin:.4rem auto .6rem; background:url(/mnbank/app/img/main/main_spr_icon.png) no-repeat 0 -10.9rem; background-size:25rem;}
+.btm_appbar li:nth-child(2) .btn_appbar::before {background-position:-3.2rem -10.9rem;}
+.btm_appbar li:nth-child(3) .btn_appbar::before {background-position:-6.4rem -10.9rem;}
+.btm_appbar li:nth-child(4) .btn_appbar::before {background-position:-9.6rem -10.9rem;}
+.btm_appbar li:nth-child(5) .btn_appbar::before {position:absolute; top:-2.6rem; left:50%; width:7rem; height:6.5rem; margin-left:-3.5rem; background-position:-17.5rem 0;}
+.btm_appbar li:nth-child(5) .btn_appbar .chatbot {display:block; position:absolute; top:.5rem; left:50%; width:2.4rem; height:2.4rem; margin-left:-.8rem;}
+/* Floating (챗봇) */
+.floating_chat {bottom:11.2rem;}
+
+@media all and (max-width:320px) {
+    .represent .btn_area a {font-size:1.3rem; padding:0 1.2rem;}
+}
+
+/* 홈화면로드시 볼드체 렌더링이 늦어지는이슈로 stroke로 변경(2021-12-15) */
+#header .tmnu_kbpay{font-weight:400 !important; -webkit-text-stroke: 0.03rem #000;}
+.home_adjust .tit{font-weight:400 !important; -webkit-text-stroke: 0.07rem #000; letter-spacing:0}
+.member_wrap .name strong{font-weight:400 !important; -webkit-text-stroke: 0.07rem #000;}
+.home_curation .tit{font-weight:400 !important; -webkit-text-stroke: 0.07rem var(--fc_11, #fff); letter-spacing:0;}
+
+/* 고객님을위한 맞춤/추천 메뉴 개선 */
+.adjust.v1{left:2rem; right:2rem; width:auto; height:6rem; padding: 0 3rem 0 1.8rem; overflow:hidden; border-radius:0.8rem; will-change: auto;}
+.adjust.v1 .pop_tit{opacity:0; top:2rem}
+.adjust.v1 .pop_tit:before{top:-6rem; transition-duration:0.2s;}
+.adjust.v1 .adjst_setting{margin-top:0; opacity:0}
+.adjust.v1 .adjust_list{opacity:0}
+.adjust.v1 .btn_pop_close{transform:translate(0px, 10rem); transition-duration:0.3s;}
+.adjust.v1.open .pop_tit{position:fixed; top:1.2rem !important; z-index:11;}
+.adjust.v1.open .pop_tit::before{top: .9rem;}
+.adjust.v1.open .btn_pop_close{transform:translate(0px, 0rem)}
+.home_curation.v1{margin-top:5.7rem}
+.home_curation.v1 .tit{width:100%; font-size:1.6rem; color:var(--fc_02, #26282c); -webkit-text-stroke: 0.07rem var(--fc_02, #26282c); position:absolute; left:0.6rem; top:-3.1rem}
+.home_curation.v1 .tit::after{top:0; right:0.6rem; background-position:-4.5rem -5.5rem}
+.home_curation.v1 .inner{padding:1.2rem 2.2rem; height:10.4rem}
+.home_curation.v1 .inner > .btn_move{margin-top:-3rem;}
+.home_curation.v1 .curation_swiper .swiper-slide .img img{max-width:29.1rem;}
+.home_curation.v1 .curation_swiper{text-align: center;}
+.home_curation.v1 .swiper-pagination{margin:1.8rem 0 1.2rem; width:auto; display:inline-block; vertical-align:top;}
+.home_curation.v1 .play-control{display:inline-block; width:38px; height:38px; vertical-align:top; font-size:0; line-height:0; transform:translate(0, 0.9rem);}
+.home_curation.v1 .play-control:after{content:''; position:absolute; left:50%; top:50%; width:0.9rem; height:1.2rem; transform:translate(-1rem, 0rem); background:url('/mnbank/app/img/main/icon_main.png') 0 0 no-repeat; background-size:5rem 2.5rem;}
+.home_curation.v1 .play-control.stop:after{background-position:0 100%}
+.home_curation.v1 .play-control.play:after{background-position:0 0}
+
+.curation.v1{left:2rem; right:2rem; width:auto; height:10.4rem; padding:1.2rem 2.2rem; overflow:hidden; border-radius:1rem; will-change: auto;}
+.curation.v1 .pop_tit{height:auto;}
+.curation.v1 .pop_tit .curation_h1{padding:0; font-size:2rem; color:var(--fc_11, #fff); -webkit-text-stroke:0.07rem var(--fc_11, #fff); position:absolute; left:2.5rem; top:4rem; opacity:0}
+.curation.v1 .curation_swiper{margin:0 -2.4rem}
+.curation.v1 .curation_swiper .banner_wrap{padding-bottom:5.4rem}
+.curation.v1 .curation_swiper .swiper-slide{width:100%; box-sizing:border-box; padding:0 2.4rem; height:11.6rem;}
+.curation.v1 .curation_swiper .swiper-slide .img{background-color:#423f3f; box-shadow:0; border-radius:5px; max-width:100%; max-height:100%; height:8rem; padding-top:0}
+.curation.v1 .curation_swiper .swiper-slide .img img{max-width:29.1rem; height:8rem}
+.curation.v1 .news{margin-top:0}
+.curation.v1 .news .tit::before{background:url('/mnbank/app/img/main/icon_main.png') -2.5rem 0 no-repeat; background-size:5rem 2.5rem; width:2rem; height:1.8rem}
+.curation.v1 .curation_wrap{opacity:0}
+.curation.v1 .pop_tit:before{top:-1rem; transition-duration:0.2s}
+.curation.v1 .btn_pop_close{transform:translate(0px, 10rem); transition-duration:0.3s;}
+.curation.v1 .curation_swiper .swiper-slide-prev,
+.curation.v1 .curation_swiper .swiper-slide-next{transition-duration:0.3s}
+.curation.v1 .curation_swiper .swiper-pagination{opacity:0; transition-duration:0.3s; bottom:-1.9rem}
+.curation.v1.open .pop_tit::before{top: .9rem;}
+.curation.v1.open .btn_pop_close{transform:translate(0px, 0rem)}
+.curation.v1.open .curation_swiper .swiper-slide .img{box-shadow:2px 4px 18px rgba(0,0,0,0.3);}
+.curation.v1.open .curation_swiper .swiper-slide-prev{transform:translate(1.8rem, 0); padding:0}
+.curation.v1.open .curation_swiper .swiper-slide-next{transform:translate(-1.8rem, 0); padding:0}
+.curation.v1.open .curation_swiper .swiper-pagination{opacity:1; transition-duration:0.3s}
+
+/* 계열사 추가 : 2022-03-02 */
+.curation .app_link{padding:3rem 0 0}
+.curation .app_link ul{display:flex;}
+.curation .app_link ul li{flex:1;}
+.curation .app_link ul li a{display:block; text-align:center; color:var(--fc_11, #fff); font-size:1.4rem; font-weight:bold;}
+.curation .app_link ul li a:before{content:''; display:block; margin:0 auto 0.7rem; width:5rem; height:5rem; background:url('/mnbank/app/img/main/icon_curation_app.png') 0 0 no-repeat; background-size:15rem 5rem}
+.curation .app_link ul li a:after{content:''; display:inline-block; background:url('/mnbank/app/img/main/icon_curation_arr.png') 0 0 no-repeat; background-size:100% auto; width:0.6rem; height:0.9rem; margin-left:0.5rem}
+.curation .app_link ul li a.app_liiv_m:before{background-position:0rem 0rem}
+.curation .app_link ul li a.app_kb_land:before{background-position:-5rem 0rem}
+.curation .app_link ul li a.app_liiv_next:before{background-position:-10rem 0rem}
+
+
+/* 홈리뉴얼 : 2022-03-25 */
+#wrap.renew2022 #header{overflow:unset}
+#wrap.renew2022 #header .tmnu_kbpay{font-size:0; background:url('/mnbank/app/img/main/motion_KBPay.gif') 0 0 no-repeat; background-size:100% auto; width:10.2rem; height:3.5rem; margin-top:0.7rem; transform: translate(-0.8rem, 0);}
+#wrap.renew2022 #header .tmnu_kbpay:before{display:none;}
+#wrap.renew2022 .swiper-pagination .swiper-bottom .swiper-pagination{overflow:hidden;}
+#wrap.renew2022 .swiper-pagination .swiper-pagination-bullet{width:0.5rem; height:0.3rem; background-color:#dce0e3; border-radius:3px; margin:0 0.2rem;}
+#wrap.renew2022 .swiper-pagination .swiper-pagination-bullet-active{width:1rem; background-color:#8b939d}
+#wrap.renew2022 .member_wrap .name{font-size:1.8rem}
+
+/* 대표계좌 */
+#wrap.renew2022 .home_card{min-height:24rem;}
+#wrap.renew2022 .home_card .represent{padding: 1.4rem 0 2.8rem; transition-duration:0.3s}
+#wrap.renew2022 .home_card .represent .acc_wrap{box-shadow:0 0 0 0 !important; height:auto; padding:1.8rem 1.6rem 0; height:100%;}
+#wrap.renew2022 .home_card .represent .btn_area a{border-radius:0.4rem;}
+#wrap.renew2022 .home_card .acc_bank .acc_name{display:block; font-size:1.4rem; line-height:2rem;}
+#wrap.renew2022 .home_card .acc_bank .acc_num{font-size:1.7rem; line-height:2.4rem}
+#wrap.renew2022 .home_card .acc_sum_wrap{min-height:3.5rem;}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_pay{display:inline-block; vertical-align: text-bottom;}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_pay .number{font-size:2.5rem;}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_pay .num_unit{font-size:2.2rem}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_sum_group{display:inline-block; text-align: left;vertical-align: 0.5rem;;}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_sum_group .acc_pay{display:table-row;line-height:2.1rem; margin:0}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_sum_group .acc_pay >span{display:table-cell; line-height:2.1rem}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_sum_group .acc_pay .unit{text-align: left; padding-right:1rem;}
+#wrap.renew2022 .home_card .acc_sum_wrap .acc_sum_group .acc_pay >span{text-align: right;}
+
+#wrap.renew2022 .home_card .acc_sum_wrap.sm .acc_sum_group .unit{font-size:1.4rem}
+#wrap.renew2022 .home_card .acc_sum_wrap.sm .acc_sum_group .number{font-size:1.8rem;}
+#wrap.renew2022 .home_card .acc_sum_wrap.sm .acc_sum_group .num_unit{font-size:1.5rem}
+
+#wrap.renew2022 .home_card .acc_sum_wrap .nodata{display:inline-block; vertical-align:1.1rem; padding-bottom:0}
+#wrap.renew2022 .home_card .btn_acc_balance{display:inline-block; margin-left:0.5rem; font-size:1.3rem; line-height:2.4rem; width:4rem; text-align:center; box-shadow:0 0.1rem 0.4rem rgba(0,0,0,0.15); border-radius:1.2rem; position:relative; vertical-align:text-bottom; transform: translate(0, -0.8rem); background-color:var(--fc_11, #fff);}
+#wrap.renew2022 .home_card .btn_acc_balance input{position:absolute; left:0; bottom:0; width:100%; height:100%; z-index:3; opacity:0.3;}
+#wrap.renew2022 .home_card .btn_acc_balance label{font-size:1.2rem; color:var(--fc_03, #484b51); position:relative;}
+#wrap.renew2022 .home_card .btn_acc_balance label span{display:block;}
+#wrap.renew2022 .home_card .swiper-slide{width:calc(100% - 4rem);}
+#wrap.renew2022 .home_card .swiper-slide:nth-child(1) .inner{transform: translate(20px, 0);}
+#wrap.renew2022 .home_card .swiper-slide:nth-child(2) .inner{transform: translate(40px, 0);}
+#wrap.renew2022 .home_card .swiper-slide .inner{border:1px solid #ececec; border-radius:0.8rem; box-shadow:0 0.3rem 0.8rem rgba(0,0,0,0.1) !important; height:19.6rem; overflow:hidden;}
+#wrap.renew2022 .home_card .swiper-slide >.inner{padding:1.8rem 1.6rem 0}
+#wrap.renew2022 .home_card .swiper-slide >.inner > .acc_bank{z-index:3;}
+#wrap.renew2022 .home_card .swiper-slide >.inner > .acc_sum_wrap{z-index:3;}
+#wrap.renew2022 .home_card .swiper-slide >.inner > .btn_area{z-index:3}
+#wrap.renew2022 .home_card .swiper-slide >.inner > .acc_wrap.btn_move{position:absolute; left:0; top:0; width:100%; height:100%; z-index:1 !important}
+#wrap.renew2022 .home_card .swiper-slide >.inner > .acc_txt {z-index:3; margin-top:0.2rem; padding-left:4.2rem; font-size:1.4rem; color:var(--fc_02, #26282c);   position:relative;}
+
+
+#wrap.renew2022 .home_card .swiper-slide-active .inner{transform:translate(0,0) scale(1) !important; height:23rem}
+#wrap.renew2022 .home_card .swiper-slide-prev .inner{transform:translate(2rem, 0) scale(0.85) !important}
+#wrap.renew2022 .home_card .swiper-slide-next .inner{transform:translate(-2rem, 0) scale(0.85) !important}
+#wrap.renew2022 .home_card .swiper-pagination{position:absolute; margin:0}
+#wrap.renew2022 .home_card .transfer{position:absolute; bottom:1rem; width:auto; left:-2rem; right:-2rem; z-index:13; margin:0; height:3.4rem}
+#wrap.renew2022 .home_card .transfer .transfer_list{height:3.4rem}
+#wrap.renew2022 .home_card .represent.trans_lst{padding: 1.4rem 0 5.6rem;}
+#wrap.renew2022 .home_card .represent + .transfer .transfer_list{opacity:0; transform:translate(0,1rem); transition-duration:0.2s; transition-delay:0.2s}
+#wrap.renew2022 .home_card .represent.trans_lst + .transfer .transfer_list{opacity:1;  transform:translate(0,0);}
+#wrap.renew2022 .home_card .swiper-slide-active.default,
+#wrap.renew2022 .home_card .swiper-slide-active.default .inner,
+#wrap.renew2022 .home_card .swiper-slide-active.add,
+#wrap.renew2022 .home_card .swiper-slide-active.add .inner,
+#wrap.renew2022 .home_card .swiper-slide-duplicate-active{height:21rem}
+#wrap.renew2022 .home_card .swiper-slide-active{height:23rem}
+
+#wrap.renew2022 .home_card .swiper-slide.add .inner{border:1px dashed #dcdcdc; height:21rem;}
+#wrap.renew2022 .home_card .swiper-slide.add .inner .acc_wrap{padding:0}
+#wrap.renew2022 .home_card .swiper-slide.add .inner .acc_wrap .txt{top:4rem; transform:translate(-50%,0);}
+#wrap.renew2022 .home_card .swiper-slide.add .inner .acc_wrap .txt:before{background-position:-18rem -18rem}
+#wrap.renew2022 .home_card .swiper-slide.add .inner .btn_openbank{position:absolute; left:50%; bottom:2.6rem; transform:translate(-50%, 0); border:1px solid #e5e9ed; border-radius:0.4rem; font-size:1.5rem; padding:0.7rem 1.5rem}
+
+#wrap.renew2022 .home_card .btn_alarm{position:absolute; right:0; top:0; width:6.2rem; height:5.2rem;}
+#wrap.renew2022 .home_card .btn_alarm input{position:absolute; left:0; top:0; width:100%; height:100%; background:transparent; z-index:3;}
+#wrap.renew2022 .home_card .btn_alarm label{position:relative; font-size:0; display:block; z-index:2; background:transparent;}
+#wrap.renew2022 .home_card .btn_alarm label:before{content:''; position:absolute; top:1rem; right:2rem; width:3.2rem; height:3.2rem; border-radius:50%; z-index:3; box-shadow: 0px 1px 4px rgba(0,0,0,0.15); transition-duration:0.3s; transition-timing-function:cubic-bezier(0.18, 0.89, 0.32, 1.28); background:url('/mnbank/app/img/main/icon_home_spr.png') 0rem -5.2rem no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .home_card .btn_alarm >input:checked + label:before{background-position:-3.2rem -5.2rem; background-size:8.7rem auto; transform:translateX(0);}
+
+#wrap.renew2022 .home_card .btn_acc_copy{vertical-align: middle; padding:1rem; transform: translate(-0.5rem, 0);}
+#wrap.renew2022 .home_card .btn_acc_copy span{display:block; font-size:0; border:1px solid #aaa; width:1.2rem; height:1.2rem; border-radius:0.2rem; position:relative;}
+#wrap.renew2022 .home_card .btn_acc_copy span:after{content:''; position:absolute; left:-0.4rem; top:-0.4rem; width:0.8rem; height:0.8rem; border-radius:0.2rem; border-width:1px 0 0 1px; border-style:solid; border-color:#aaa;}
+
+#wrap.renew2022 .home_card.sortable-chosen .swiper-slide-prev,
+#wrap.renew2022 .home_card.sortable-chosen .swiper-slide-next{opacity:0;}
+#wrap.renew2022 .home_card.sortable-chosen .swiper-pagination{opacity:0 !important}
+
+/* KB금융비서 */
+#wrap.renew2022 .home_curation{margin:1.6rem 0 0 0; padding:0}
+#wrap.renew2022 .home_curation .inner{background-color:var(--fc_11, #fff); height:0; padding:0; border-radius:.8rem; box-shadow:0rem 0.3rem 0.8rem rgba(0,0,0,0.1); border:1px solid #ececec; transition-duration:0.3s; transition-timing-function:ease-out; overflow:hidden;}
+#wrap.renew2022 .home_curation.open .inner{height:10rem; padding:1.2rem 0 0.7rem}
+#wrap.renew2022 .home_curation .hd_area{margin-bottom:1.2rem; position:relative;}
+#wrap.renew2022 .home_curation .hd_area .tit{display:inline-block; vertical-align:middle; color:var(--fc_02, #26282c); -webkit-text-stroke: 0.07rem var(--fc_02, #26282c); font-size:1.6rem; line-height:2.3rem; margin:0 0 0 2.1rem; padding:0}
+#wrap.renew2022 .home_curation .hd_area .tit::after{top:0rem; background-position:-4.5rem -5.5rem;}
+#wrap.renew2022 .home_curation .hd_area .msg_num{display:inline-block; vertical-align:middle; border-radius:50%; width:1.8rem; height:1.8rem; background-color:#EBDDC4; text-align:center;}
+#wrap.renew2022 .home_curation .hd_area .msg_num strong{display:block; font-size:1.3rem;}
+#wrap.renew2022 .home_curation .inner .first_word{border-top:1px solid #ececec; margin:0 2.3rem; overflow:hidden}
+#wrap.renew2022 .home_curation .inner .first_word p{padding:1.2rem 0; line-height:2.3rem; white-space: nowrap}
+
+/* 고객님을 위한 맞춤메뉴 */
+#wrap.renew2022 .home_adjust{margin-top:1.6rem;}
+#wrap.renew2022 .home_adjust .inner{position:relative; border-radius:0.8rem; box-shadow:0px 3px 8px rgba(197,157,0,0.25); background:#ffda48; color:#26282c; overflow:hidden;}
+#wrap.renew2022 .home_adjust .tit{height:9.6rem; box-shadow:0 0 0 0; border-radius:0; background:transparent; line-height:2.3rem; padding: 1.2rem 0 1.6rem 1.9rem; color:#26282c; -webkit-text-stroke: 0.07rem #26282c;}
+#wrap.renew2022 .home_adjust .tit:after{top:1.8rem}
+#wrap.renew2022 .home_adjust .adjust_menu{position:absolute; left:0; right:0; bottom:1rem; height:3.4rem}
+#wrap.renew2022 .home_adjust .adjust_menu:before,
+#wrap.renew2022 .home_adjust .adjust_menu:after{content:''; position:absolute; top:0; height:100%; width:1.6rem; z-index:3; background:linear-gradient(90deg, rgba(255,218,72,1) 0%, rgba(255,218,72,0) 100%);}
+#wrap.renew2022 .home_adjust .adjust_menu:before{left:0}
+#wrap.renew2022 .home_adjust .adjust_menu:after{right:0; transform:rotate(180deg)}
+#wrap.renew2022 .home_adjust .adjust_menu_scroll{position:relative; overflow-x:auto; width:100%}
+#wrap.renew2022 .home_adjust .adjust_menu_scroll .adjust_menu_list{display:inline-block; white-space: nowrap; margin-left:1.5rem}
+#wrap.renew2022 .home_adjust .adjust_menu_scroll .adjust_menu_list li{display:inline-block; margin-left:0.1rem;}
+#wrap.renew2022 .home_adjust .adjust_menu_scroll .adjust_menu_list li button{font-size:1.5rem; line-height:3.4rem; padding:0 2.3rem 0 1.1rem; background-color:rgba(255,255,255,0.2); border-radius:2.3rem; position:relative;}
+#wrap.renew2022 .home_adjust .adjust_menu_scroll .adjust_menu_list li button:after{content:''; position:absolute; right:1.3rem; top:50%; transform:translate(0, -50%); width:0.5rem; height:0.9rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -5.7rem 0rem no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .home_adjust .btn_move{bottom:4rem}
+#wrap.renew2022 .home_adjust.sortable-chosen .adjust_menu_scroll{overflow:hidden}
+
+/* 이벤트배너 */
+#wrap.renew2022 .event_banner_wrap{margin:1.6rem -2rem -1.6rem; height:12.4rem}
+#wrap.renew2022 .event_banner_wrap .swiper-container{text-align:center;}
+#wrap.renew2022 .event_banner_wrap .swiper-wrapper{display:block; height:9rem; overflow:hidden;}
+#wrap.renew2022 .event_banner_wrap .swiper-container.swiper-container-initialized .swiper-wrapper{display:flex; overflow:unset;}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide{box-sizing:border-box; width:calc(100% - 4rem);}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide .img{padding:0.5rem 2.3rem 0.5rem; text-align: center; background-color:#423f3f; border-radius:0.8rem; transition-duration:0.2s; transition-timing-function: ease-in-out;}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide .img img{height:8rem; width:auto;}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide-active .img{opacity:1;}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide-prev .img,
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide-next .img{opacity:0.3 !important;}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide:nth-child(1){transform:translate(2rem, 0)}
+#wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide:nth-child(1) .img{opacity:1}
+
+#wrap.renew2022 .event_banner_wrap .swiper-container.swiper-container-initialized .swiper-slide:nth-child(1){transform:translate(0rem, 0)}
+#wrap.renew2022 .event_banner_wrap .swiper-container.swiper-container-initialized .swiper-slide:nth-child(1) .img{opacity:unset}
+
+#wrap.renew2022 .event_banner_wrap .swiper-bottom{position:relative; display:inline-block; padding:0; opacity:0; height:1.3rem; margin-top:1rem}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .swiper-pagination{width:auto; display:inline-block; vertical-align:top; padding-top:0.5rem; overflow:hidden;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .swiper-pagination button{vertical-align:middle; float:left;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control{position:absolute; font-size:0; right:-4.5rem; top:50%; transform:translate(0, -50%); width:3.8rem; height:1.3rem; overflow:hidden;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control:after,
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control:before{content:''; position:absolute; left:0%; top:50%; transition-duration:0.2s;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control:before{background-color:var(--fc_05, #8c949e);}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control:after{background-color:var(--bg_01, #fff); transform:translate(0.3rem, -50%); width:0.3rem;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control.play:before{margin-top:0.3rem; transform:translate(-0.5rem, -0.8rem) rotate(45deg); transform-origin:50% 0%; width:1.4rem; height:2.2rem; z-index:3}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control.stop:before{margin-top:0rem; transform:translate(0rem, -50%) rotate(0deg); width:0.9rem; height:1rem;}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control.play:after{height:0rem; z-index:1}
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control.stop:after{height:1rem; transition-delay:0.2s}
+#wrap.renew2022 .event_banner_wrap .swiper-container.swiper-container-initialized .swiper-bottom{opacity:1;}
+#wrap.renew2022 .event_banner_wrap.sortable-chosen .swiper-slide{opacity:0}
+#wrap.renew2022 .event_banner_wrap.sortable-chosen .swiper-slide-active{opacity:1}
+#wrap.renew2022 .event_banner_wrap.sortable-chosen .swiper-bottom{opacity:0 !important}
+#wrap.renew2022 .event_banner_wrap.sortable-chosen .transfer{}
+
+/* KB콘텐츠 */
+#wrap.renew2022 .kbcontent_wrap{margin:2.2rem -2rem 0}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide{width:calc(100% - 4rem); padding-top:0.8rem}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide .inner{padding: 2rem 1.1rem 1.1rem; border:1px solid #ececec; border-radius: .8rem; box-shadow: 0rem 0.3rem 0.8rem rgba(0,0,0,0.1); overflow:hidden}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide .inner .tit{position:relative; z-index:1;}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide .inner .tit + section{position:relative; z-index:3; background-color:var(--bg_01, #fff);}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide:after{content:''; position:absolute; right:0; top:-1.2rem; background:url('/mnbank/app/img/main/icon_ct_group_character.png') no-repeat; background-size:40rem auto; width:9rem; height:8.5rem;}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide.ct_advice:after{background-position:0 0}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide.ct_group:after{background-position:-10rem 0}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide.ct_quotient:after{background-position:-20rem 0}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide.ct_life:after{background-position:-30rem 0}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide:nth-child(1){opacity:1;transform:translate(2rem, 0)}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide:nth-child(2){transform:translate(4rem, 0)}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-active,
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-prev,
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-next{transform:translate(0, 0) !important}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-prev .inner,
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-next .inner{height:49rem}
+#wrap.renew2022 .kbcontent_wrap .swiper-slide-active .inner{height:auto;}
+#wrap.renew2022 .kbcontent_wrap .inner h2.tit{font-size:1.7rem; line-height:2.3rem; margin-bottom:2rem; margin-left:0.9rem}
+#wrap.renew2022 .kbcontent_wrap .swiper-pagination{margin-top:0.4rem}
+#wrap.renew2022 .kbcontent_wrap a{display:block}
+/* KB콘텐츠 : 빠른상담 */
+#wrap.renew2022 .kbcontent_wrap .ct_advice section{color:var(--fc_04, #696e76); font-size:1.4rem; line-height:2rem; padding:1.7rem 0 1.5rem 2.2rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice h3{font-size:1.8rem; margin-bottom:1.4rem; display:inline-block; position:relative; padding-right:1.7rem}
+#wrap.renew2022 .kbcontent_wrap .ct_advice h3:after{content:''; position:absolute; right:0; top:50%; transform:translate(0, -50%); width:0.7rem; height:1.2rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -5rem 0 no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .s_txt{color:var(--fc_02, #26282c); font-size:1.6rem; line-height:2.3rem}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .txt{margin-top:2.3rem}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .return_appl{background-color:#e2f0fb !important; border-radius:0.4rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .return_appl:after{content:''; position:absolute; right:0; bottom:0; width:7.5rem; height:7rem; background:url('/mnbank/app/img/main/icon_ct_advice.png') 0 0 no-repeat; background-size:14rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .alarm_conf{border-radius:0.4rem; margin:1rem 0 0}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .alarm_conf:after{content:''; position:absolute; right:0; bottom:0; width:7.5rem; height:7rem; background:url('/mnbank/app/img/main/icon_ct_advice.png') -7rem 0 no-repeat; background-size:14rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report{background-color:#f0f7fd; margin-top:0.6rem; border-radius:0.4rem}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report h3:after{display:none}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number{display:flex; position:relative;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number li{flex:1; position:relative;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number li a{color:var(--fc_02, #26282c); font-size:1.8rem; line-height:2rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number li:first-child{padding-right:1.5rem; margin-right:1.3rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number li:first-child:before{content:''; position:absolute; right:0; top:50%; transform:translate(0, -50%); background-color:#bababa; width:0.1rem; height:1.6rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number + .txt{margin-top:1.2rem; text-align:center}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number a{display:inline-block; position:relative; padding-right:2.7rem}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number a:before{content:''; position:absolute; right:0; top:0; width:1.7rem; height:1.7rem; background-color:var(--fc_11, #fff); box-shadow:0px 1px 4px rgba(0,0,0,0.15); border-radius:1.2rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report .tel_number a:after{content:''; position:absolute; right:0.4rem; top:0.4rem; width:0.5rem; height:0.8rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -6.3rem 0 no-repeat; background-size:8.7rem auto}
+
+/* KB콘텐츠 : 금융그룹 */
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list ul{display:grid; grid-template-columns: repeat(2,1fr); background-color:#f8f7f7; border-radius:0.8rem; padding:0.3rem 0.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li{font-size:1.6rem; line-height:2.3rem; border-top:1px solid #ebe5e5}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(1),
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(2){border-top:none}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li a{padding:1.7rem 0 1.7rem 5rem; position:relative; color:#71675D; font-weight:bold}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li a:before{content:''; position:absolute; left:1.4rem; top:50%; transform:translate(0, -50%); width:2rem; height:2rem; background:url('/mnbank/app/img/main/icon_ct_group.png') no-repeat; background-size:15rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(1) a:before{background-position:0 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(2) a:before{background-position:-2.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(3) a:before{background-position:-5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(4) a:before{background-position:-7.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(5) a:before{background-position:-10rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_list li:nth-child(6) a:before{background-position:-12.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service{margin:0.5rem 1.3rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li{border-top:1px solid var(--bdc_01, #ebeef0);}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li:first-child{border-top:0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li a{padding:1.7rem 0 1.4rem 6.5rem; position:relative;}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li:last-child a{padding-bottom:0}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li a:after{content:''; position:absolute; left:0; top:2rem; width:4.5rem; height:3.5rem; background:url('/mnbank/app/img/main/icon_ct_group.png') no-repeat; background-size:15rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li:nth-child(1) a:after{background-position:0 -2.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li:nth-child(2) a:after{background-position:-5rem -2.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li:nth-child(3) a:after{background-position:-10rem -2.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li a strong{display:block; font-size:1.8rem; line-height:2.3rem; margin-bottom:0.3rem}
+#wrap.renew2022 .kbcontent_wrap .ct_group .group_service li a span{display:block; color:var(--fc_04, #696e76); font-size:1.4rem; line-height:2.3rem}
+/* KB콘텐츠 : 금융지수 */
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .inner > section{border-radius:0.4rem; padding-top:2rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .sec_quot{border-top:1px solid #ececec;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .hd{display:flex; padding-bottom:1rem; line-height:2.3rem; position:relative;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .hd h3{flex:1; font-size:1.6rem; padding:0 0 0 1.1rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .hd .date{font-size:1.4rem; color:var(--fc_04, #696e76);display:inline-block; vertical-align:top;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .sec_quot .date{margin-right:4rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .hd .btn_reset{display:inline-block; font-size:0; width:3rem; height:3rem; border-radius:50%; vertical-align: middle; box-shadow:0px 1px 4px rgba(0,0,0,0.15); position:absolute; right:0; top:-6px}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .hd .btn_reset:after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:1.4rem; height:1.6rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -1.5rem 0 no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .table{margin-top:0; overflow:hidden; border-radius:0.4rem; height:15rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .table table{border-top:0}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .table th{background-color:#edeaea; border:0; font-size:1.5rem; padding:0.9rem .8rem 0.8rem; color:#26282c;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .table td{background-color:#f8f7f7; border-right:0; border-bottom:0; border-top:1px solid #e5e5e5; font-size:1.5rem; padding:0.7rem 1.2rem 0.8rem; color:#26282c;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .table tr:first-child td{border-top:0}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .country_v >span{display:inline-block; vertical-align:middle; line-height:2.2rem; font-size:1.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .country_v .country_flag_im{margin-right:0.4rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .quot_kos{display:grid; grid-template-columns: repeat(2,1fr); gap:0.6rem 0.5rem; margin-bottom:0.4rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .quot_kos >div{flex:1; text-align:right; height:12.2rem; line-height:2.3rem; background-color:#eff6f8; border-radius:0.4rem; padding:1.5rem 2.2rem 0 1.9rem; box-sizing:border-box; border-radius:0.4rem; color:#26282c;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .quot_kos h4{font-size:1.6rem; font-weight:normal; margin-bottom:1.6rem; text-align:left; color:var(--fc_02,#26282c);}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .quot_kos strong{font-size:2rem; display:block; margin-bottom:0.8rem}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap button{display:block; width:100%; border-radius:0.4rem; padding:1.8rem 0 1.7rem 5.6rem; text-align:left;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap button:before{content:''; position:absolute; left:2.2rem; top:50%; transform:translate(0, -50%); width:2.5rem; height:2.5rem; background:url('/mnbank/app/img/main/icon_ct_quotient.png') no-repeat; background-size:2.5rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap button:after{content:''; position:absolute; right:1.5rem; top:50%; transform:translate(0, -50%); width:0.7rem; height:1.2rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -5rem 0 no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_easy_deal{background-color:#dfeef1; color:#26282c;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_easy_deal:before{background-position:0 0}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_sec_exc{background-color:#f3eeeb; color:#26282c; margin-top:0.4rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_sec_exc:before{background-position:0rem -2.5rem}
+/* 230328 로그인후 메인 내 KB환율픽 버튼 추가건 */
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap.ex_rate{display:grid; grid-template-columns: repeat(2,1fr); gap:0.5rem 0.5rem; }
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap.ex_rate .btn_sec_exc:before{content: none;}
+#wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap.ex_rate .btn_sec_exc{position: relative;display: inline-block;padding-left:1.8rem;flex: 1;}
+
+/* KB콘텐츠 : KB라이프 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul{display:grid; grid-template-columns: repeat(2,1fr); gap:0.5rem 0.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li{}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li a{position:relative; background-color:#f4f8f9; height:12rem; font-size:1.5rem; line-height:2.3rem; padding:1rem 0.3rem 0 1.4rem; position:relative; box-sizing:border-box; color:#26282c; border-radius:0.4rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li a:after{content:''; position:absolute; right:1rem; bottom:0.4rem; width:6rem; height:4.5rem; background:url('/mnbank/app/img/main/icon_ct_life.png') no-repeat; background-size:39rem auto;  transform:scale(0.77)}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico01 a:after{background-position:0 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico02 a:after{background-position:-6.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico03 a:after{background-position:-13rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico04 a:after{background-position:-19.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico05 a:after{background-position:-26rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico06 a:after{background-position:-32.5rem 0}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico07 a:after{background-position:0rem -4.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico08 a:after{background-position:-6.5rem -4.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico09 a:after{background-position:-19.5rem -4.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico10 a:after{background-position:-13rem -4.5rem}/* 모바일쿠폰샵 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico11 a:after{background-position: -26rem -4.5rem;}/* 국민비서 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico12 a:after {background-position: 0rem -9rem; width:7.1rem; height:7.3rem}/* 환율우대 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico13 a:after{background-position: -32.5rem -4.5rem;}/* 재산세 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico14 a:after{background-position: -7.0rem -9rem;}/* 포춘쿠키 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico15 a:after{background-position: -13rem -9rem;}/* 입출금알림 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico16 a:after{background-position: -19.5rem -9rem;}/* 캠핑 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico17 a:after{background-position: -26rem -9rem;}/* 내게맞는 대출찾기 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico18 a:after{background-position:-32.5rem -9rem;}/* 신년운세 */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico19 a:after{background-position:-7rem -14rem;}/* 부동산 */
+/* 아이콘추가(230315) */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico20 a:after{background-position:-13rem -14rem;}/* 모임통장 */
+/* 방문모드(230320) */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico21 a:after {background-position: 0rem -18.5rem; width:7rem; height:7.2rem;}/* 은행가서 기다리지 않는 방법 */
+/* 부동산 등기변동 알림서비스(230328) */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico22 a:after{background-position: -19.5rem -14rem;}/* 부동산 등기변동 */
+/* 종합소득세안내(230405) */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico23 a:after{background-position: -26rem -14rem;}/* 종합소득세 */
+/* 스타뱅킹 내 리브 Next 콘텐츠 브릿지 페이지 (230428) */
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.ico24 a:after{background-position: -32.5rem -14rem;}/* 종합소득세 */
+
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .bg_b a{background-color:#e6f4f8;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .new a:before{content:'New'; font-family:'Roboto'; display:block; width:3.3rem; height:1.6rem; background:#00a9f2 url('/mnbank/app/img/main/main_spr_icon.png') 0 -8.5rem no-repeat; background-size:25rem auto; text-align:center; font-size:0; border-radius:0.3rem; box-shadow:0 0.3rem 0.6rem rgba(0,169,242,0.1); overflow:hidden; position:absolute; right:1.7rem; top:1.4rem;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips{margin-bottom:0.6rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips a{display:block; height:9.8rem; background-color:#e6f4f8; border-radius:0.4rem; box-sizing:border-box; padding:1rem 1.4rem 0; font-size:1.5rem; position:relative;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips a:after{content:''; position:absolute; right:0.7rem; bottom:1.3rem; width:6.5rem; height:4.5rem; background:url('/mnbank/app/img/main/icon_ct_life.png') -13rem -4.5rem no-repeat; background-size:39rem auto;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips strong{display:block; font-size:1.6rem; margin-bottom:0.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips a:before{content:'New'; font-family:'Roboto'; display:block; width:3.3rem; height:1.6rem; background:#00a9f2 url('/mnbank/app/img/main/main_spr_icon.png') 0 -8.5rem no-repeat; background-size:25rem auto; text-align:center; font-size:0; border-radius:0.3rem; box-shadow:0 0.3rem 0.6rem rgba(0,169,242,0.1); overflow:hidden; margin-bottom:0.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul.full{display:block; margin-bottom:0.5rem}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul.full >li a{height:8.8rem !important}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul.full >li.new a:before{position:static; margin-bottom:0.6rem}
+
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.col{grid-column:1/3;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.col a{background-color:#e6f4f8;height:8.85rem !important;}
+#wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul >li.col a:after{right:1.8rem;bottom:1rem;transform:scale(1);}
+
+/* 새소식 */
+#wrap.renew2022 .news{margin-top:3.3rem}
+#wrap.renew2022 .news .inner{display:flex; white-space: nowrap;}
+#wrap.renew2022 .news .inner .tit{color:var(--fc_04, #696e76); font-size:1.6rem; line-height:2rem; font-weight:normal; padding:0 0.9rem 0 2.6rem; position:relative;}
+#wrap.renew2022 .news .inner .tit:after{content:''; position:absolute; left:0; top:50%; transform:translate(0, -50%); width:1.9rem; height:1.7rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -3rem 0 no-repeat; background-size:8.7rem auto}
+#wrap.renew2022 .news .inner .msg{flex:1; font-size:1.6rem; color:var(--fc_02, #26282c); line-height:2rem; text-overflow: ellipsis; overflow: hidden;}
+
+/* 상품카테고리 */
+#wrap.renew2022 .prod_category{margin:3rem -2rem 0;}
+#wrap.renew2022 .prod_category .swiper-container{padding:0 2rem; perspective: 1500px;}
+#wrap.renew2022 .prod_category .swiper-slide {padding:0}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate{border-radius:0.4rem; background-color:#f5f2f2; font-size:1.4rem; padding-top:5.7rem; width:9rem; height:9rem; display:block; margin:0 auto; transition-duration:0.2s; transform:translateX(0); border:2px solid #f5f2f2; color:var(--fc_02, #26282c);} /* 2022-06-28 */
+#wrap.renew2022 .prod_category .swiper-slide-active .btn_cate{background-color:var(--bg_01, #fff); color:var(--fc_02, #26282c); border-color:#ffda48}
+#wrap.renew2022 .prod_category .swiper-slide-prev .btn_cate{transform:translateX(1rem)}
+#wrap.renew2022 .prod_category .swiper-slide-next .btn_cate{transform:translateX(-1rem)}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate::before{content:''; position:absolute; left:50%; top:1.4rem; transform:translate(-50%, 0); display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/main/icon_prod_category.png) no-repeat 0 0; background-size:31.5rem auto; opacity:0.6}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod1::before {background-position:0 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod2::before {background-position:-4.5rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod3::before {background-position:-9rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod4::before {background-position:-13.5rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod5::before {background-position:-18rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod6::before {background-position:-22.5rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod7::before {background-position:-27rem 0;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod8::before {background-position:0rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod9::before {background-position:-4.5rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod10::before {background-position:-9rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod11::before {background-position:-13.5rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod12::before {background-position:-18rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod13::before {background-position:-22.5rem -4.5rem;}
+#wrap.renew2022 .prod_category .swiper-slide .btn_cate.prod14::before {background-position:0rem -9rem;}
+#wrap.renew2022 .prod_category .swiper-slide-active .btn_cate::before{opacity:1}
+#wrap.renew2022 .prod_category .swiper-control{text-align:center;}
+#wrap.renew2022 .prod_category .swiper-control .inner{position:relative; display:inline-block; padding:0 1.6rem}
+#wrap.renew2022 .prod_category .swiper-control .inner .swiper-btn{width:0.8rem; height:0.8rem; margin:0; border-style:solid; border-width:1px 1px 0 0; border-color:#8b939d; color:transparent !important}
+#wrap.renew2022 .prod_category .swiper-control .inner .swiper-btn:after{display:none}
+#wrap.renew2022 .prod_category .swiper-control .inner .swiper-button-prev{left:0; transform: rotate(225deg);}
+#wrap.renew2022 .prod_category .swiper-control .inner .swiper-button-next{right:0; transform: rotate(45deg);}
+
+/* 앱바 */
+#wrap.renew2022 .btm_appbar{background-color:var(--fc_11,#fff); transform:translate(0, 10rem)}
+#wrap.renew2022 .btm_appbar ul{transform:translate(0, 10rem)}
+#wrap.renew2022 .btm_appbar li:nth-child(3) .btn_appbar::before{background:url('/mnbank/app/img/main/icon_home_spr.png') 0 -2rem no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .btm_appbar li:nth-child(4) .btn_appbar::before{background:url('/mnbank/app/img/main/icon_home_spr.png') -3.2rem -2rem no-repeat; background-size:8.7rem auto;}
+#wrap.renew2022 .btm_appbar li:nth-child(5) .btn_appbar{font-size:0}
+#wrap.renew2022 .btm_appbar li:nth-child(5) .btn_appbar::before{background:#dbd4cc; width:5.4rem; height:5.4rem; border:0.5rem solid var(--fc_11, #fff);; box-shadow:0 -0.2rem 0.4rem rgba(0,0,0,0.1); border-radius:50%; top: 0; transform: translate(-50%, -1rem); margin:0}
+#wrap.renew2022 .btm_appbar li:nth-child(5) .btn_appbar::after{content:''; position:absolute; left:50%; top:0; width:3.8rem; height:3.8rem; background:url('/mnbank/app/img/main/icon_appbar_kbgroup.gif') 50% 50% no-repeat; background-size:4.4rem auto; transform: translate(-50%, -0.2rem); border-radius:50%}
+#wrap.renew2022 .btm_appbar li:nth-child(5):after{content:''; position:absolute; left:0; top:5rem; display:block; width:100%; height:1.5rem; background:url('/mnbank/app/img/main/Menu_Group_txt_44.gif') 50% 0 no-repeat; background-size:7rem 1.5rem;}
+
+/* 스타링크 */
+#wrap.renew2022 .starlink_wrap{height:auto; margin:2.7rem 0 0 .6rem}
+#wrap.renew2022 .starlink_wrap .starlink_ani{width:9.5rem; height:5.2rem; background:url('/mnbank/app/img/main/icon_starlink.gif') 0 0 no-repeat; background-size:100% auto;}
+
+/* 팝업 : 고객님을 위한 맞춤메뉴 */
+.adjust.renew2022{left:2rem; right:2rem; width:auto; height:10rem; padding:0; border-radius:.8rem;}
+.adjust.renew2022 .pop_tit{ opacity:0; z-index:3; background-color:transparent}
+.adjust.renew2022 .pop_tit:before{opacity:0}
+.adjust.renew2022.open .pop_tit:before{opacity:0.7}
+.adjust.renew2022 .adjust_list{opacity:0; margin-top:4.7rem}
+.adjust.renew2022 .adjust_list .hd_box{position:relative; height:4rem; line-height:4rem; padding:0 0 0 2.2rem; margin-bottom:2.7rem; background-color:#ffea74; border-radius:0.8rem; box-shadow:0 0.3rem 0.8rem rgba(197,157,0,0.25);}
+.adjust.renew2022 .adjust_list .hd_box:after{content:''; position:absolute; right:0; top:-3.4rem; width:6.5rem; height:9.7rem; background:url('/mnbank/app/img/main/icon_adjust_character.png') 0 0 no-repeat; background-size:15rem auto;}
+.adjust.renew2022 .adjust_list .my_menu .hd_box:after{background-position:0 0}
+.adjust.renew2022 .adjust_list .recommend_menu .hd_box:after{background-position:-7.5rem 0}
+.adjust.renew2022 .adjust_list .hd_box .adjust_h2{font-size:1.8rem; line-height:4rem; display:inline-block; color:#26282c;}
+.adjust.renew2022 .adjust_list .my_menu ul{margin-top:-1.2rem}
+.adjust.renew2022 .adjust_list .my_menu .hd_box .adjst_setting{display:inline-block; width:auto; text-align:left; margin:0 0 0 0.5rem}
+.adjust.renew2022 .adjust_list .my_menu .hd_box .adjst_setting button{font-size:0; width:3rem; height:3rem; background-color:#e9d772; border-radius:50%; vertical-align:middle;}
+.adjust.renew2022 .adjust_list .my_menu .hd_box .adjst_setting button:before{margin:0 auto; display:block;}
+.adjust.renew2022 .adjust_list .adjust_setting_msg a{display:block; text-align:center; line-height:2.3rem; margin:3rem 0 3.6rem 0; color:#26282c;}
+.adjust.renew2022 .adjust_list .adjust_setting_msg a span{position:relative; display:inline-block; padding-right:1rem}
+.adjust.renew2022 .adjust_list .adjust_setting_msg a span:after{content:''; display:inline-block; position:absolute; right:0; bottom:0.8rem; width:0.5rem; height:0.9rem; background:url('/mnbank/app/img/main/icon_home_spr.png') -5.7rem 0rem no-repeat; background-size:8.7rem auto;}
+.adjust.renew2022 .adjust_list .recommend_menu section{margin-top:3.1rem}
+.adjust.renew2022 .adjust_list .recommend_menu section h3{line-height:2.3rem; padding:0 0 0.6rem 1.9rem; border-bottom:2px solid #ffea7a; color:#26282c;}
+.adjust.renew2022 .btn_pop_close{transform:translate(0,10rem); transition-duration:0.25s; transition-timing-function: ease-out}
+.adjust.renew2022.open .btn_pop_close{transform:translate(0,0)}
+
+/* 팝업 : KB금융비서 */
+.curation.renew2022{background-color:var(--bg_01, #fff); height:11rem; padding:1.3rem 0.6rem 0.7rem; border-radius:.8rem; left:2rem; right:2rem; width:auto; border:1px solid #ececec;}
+.curation.renew2022 .pop_tit{background-color:transparent; opacity:0; z-index:3}
+.curation.renew2022.open .pop_tit:before{opacity:0.7}
+.curation.renew2022 .pop_tit .curation_h1{color:var(--fc_02, #26282c); font-weight:700; padding:4rem 0 0; font-size:2rem; letter-spacing:0; display:block; text-align: center;}
+.curation.renew2022 .pop_tit:before{content: ''; display: block; position: absolute; top: .9rem; left: 50%; width: 3.6rem; height: 0.5rem; margin-left: -1.8rem; border-radius: .5rem; background: #e8e8e8; opacity:0;}
+.curation.renew2022 .curation_wrap{opacity:0}
+.curation.renew2022 .curation_wrap .cura_area.assistant{position:relative; margin-top:4.8rem;}
+.curation.renew2022 .curation_wrap .cura_area.assistant:after{content:''; position:absolute; right:0; top:0; width:10rem; height:10.1rem; background:url('/mnbank/app/img/main/icon_curation_character.png') 0 0 no-repeat; background-size:10rem 10.1rem; transform:translateY(-7rem);}
+.curation.renew2022 .cura_area .cura_tit{color:var(--fc_02, #26282c)}
+.curation.renew2022 .btn_pop_close{transform:translate(0,10rem); transition-duration:0.25s; transition-timing-function: ease-out;}
+.curation.renew2022.open .btn_pop_close{transform:translate(0,0);}
+.curation.renew2022 .cura_area .timeline{position:relative; margin-top:2.5rem; z-index:3}
+.curation.renew2022 .cura_area .timeline ul{position:relative; padding:0 0 0 1.1rem}
+.curation.renew2022 .cura_area .timeline ul:after{content:''; position:absolute; left:0; top:0; width:1px; height:100%; border-left:2px dotted #e3e3e3}
+.curation.renew2022 .cura_area .timeline .time{width: 100%; font-family: 'roboto'; font-size: 1.3rem; color:var(--fc_02, #26282c);}
+.curation.renew2022 .cura_area .btn_more{color:var(--fc_02, #26282c); border-top:1px solid #ccc}
+.curation.renew2022 .chat_wrap .chat{background-color:#d9eef3}
+.curation.renew2022 .chat_wrap .chat .btn_wrap{border-top:0; padding:0 0.4rem 0.7rem; display:table;}
+.curation.renew2022 .chat_wrap .chat .btn_wrap span{display:table-cell; width:100%; padding:0 0.3rem}
+.curation.renew2022 .chat_wrap .chat .btn_wrap .btn{border-radius:0.4rem; width:100%}
+.curation.renew2022 .chat_wrap .chat .btn_wrap > span:first-child .btn{background-color:#e9fbff}
+.curation.renew2022 .chat_wrap .chat .btn_wrap > span:last-child .btn{background-color:var(--fc_11, #fff);}
+.curation.renew2022 .chat_wrap .chat.noti.birth .txt{padding-right:12rem}
+.curation.renew2022 .chat_wrap .chat.noti.birth:after{bottom:auto; top:-2rem}
+.curation.renew2022 .chat_wrap .btn_wrap > span:not(:first-child)::before{display:none;}
+.curation.renew2022 .cura_area.agency .chat_wrap{background-color:#c6e5de; border-radius:0.8rem; padding:1.6rem 0 0 0}
+.curation.renew2022 .cura_area.agency .chat_wrap .chat{background-color:transparent; border-radius:0; margin-top:1.3rem}
+.curation.renew2022 .cura_area.agency .chat_wrap .chat .txt{padding:0 1.8rem}
+.curation.renew2022 .cura_area.agency .cura_tit{padding:0 0 0 1.8rem; height:auto;}
+.curation.renew2022 .cura_area.agency .cura_tit:before{display:none}
+.curation.renew2022 .cura_area.agency .chat_wrap .noti .btn_wrap{display:table; margin-top:1.3rem}
+.curation.renew2022 .cura_area.agency .chat_wrap .noti .btn_wrap span{margin:0 0 0 auto}
+.curation.renew2022 .cura_area.agency .chat_wrap .noti .btn_wrap .btn{background-color:var(--fc_11, #fff);}
+
+/* 팝업 : 큰글씨뱅킹 */
+.ly_cnt .section .big_text {color:var(--fc_03, #484b51); text-align:center}
+.ly_cnt .section .big_text:before {content:''; display:block; width:11.6rem; height:4.8rem; background:url(/mnbank/app/img/setting/ico_big_text.png) no-repeat; background-size:11.6rem; margin:0 auto 2.4rem;}
+
+/* 20220613 KB컨텐츠 수정 */
+#wrap.renew2022 .kbcontent_wrap.v1 {margin:2.4rem -2rem 0; border-bottom:1rem solid var(--fc_10, #f7f7f8) !important; padding-bottom:3rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent{padding:0 0 0 2rem; margin-bottom:3rem; position:relative;}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent ul{display:flex; padding-bottom:1.2rem; border-bottom:1px solid var(--fc_08, #dde1e4)}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent ul li{margin-right:1.8rem; position:relative;}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent ul li button{font-size:1.6rem; font-weight:bold; color:var(--fc_04, #696e76);}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent ul li button.-active{color:var(--fc_02, #26282c)}
+#wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent .bar{background-color:#ffda48; position:absolute; left:2rem; bottom:0; width:5.8rem; height:0.4rem; transition:width,left, 0.3s ease-out;}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide:after{display:none}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide.ct_quotient:after{display:none}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide:after{display:none}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide .inner{border:0; padding:0; box-shadow:0 0 0 0; border-radius:0}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide{padding:0 2rem; width:100%}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide:nth-child(1){opacity:1;transform:translate(0, 0);}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide:nth-child(2){transform:translate(0, 0)}
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-pagination{margin:0}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_quotient .inner > section{border:0; padding:0}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_quotient .hd h3{font-size:1.5rem; padding:0}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_quotient .sec_exc{margin-top:2rem}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_advice .alarm_conf{margin-top:1.3rem; padding-bottom:0; position:relative;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_advice .alarm_conf:after{bottom:auto; top:50%; transform: translate(0, -0.8rem);}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_advice .return_appl{position:relative;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .group_list ul{border-radius:0.4rem}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .group_service{margin:0.7rem 0 0 0}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .group_service li a{padding: 1.7rem 0 1.4rem 8.5rem; position: relative;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .group_service li a:after{left:2rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .group_service li:last-child a{padding-bottom:0}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_life .inner .sec_life ul >li a{height:11rem}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_life .inner .sec_life .ips a:after{transform: scale(0.85);}
+
+/* 금융그룹 고도화 */
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .fnc_home_link {position: relative; display: block; padding: 1rem 1.2rem; border-radius: .8rem; background-color: var(--bg_02, #f7f7f8); font-size: 0;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .fnc_home_link .txt {display: inline-block; width: calc(100% - 8rem); padding-left: 1rem; font-size: 1.4rem; vertical-align: middle; word-break: keep-all; color: var(--fc_02, #26282c);}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .fnc_home_link .em {display: block; font-size: 1.8rem; font-weight: 700;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .fnc_home_link::before {content: ''; display: inline-block; width: 7.4rem; height: 7.4rem; background: url('/mnbank/app/img/main/ico_ct_group.png') no-repeat 0 -12.5rem/37.5rem auto; vertical-align: middle;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group {position: relative; margin-top: 1.2rem; padding: 0 .4rem 1px; overflow:hidden;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link {position: relative; float: left; width: 50%; padding: 1.9rem 1.6rem 1.9rem 5.6rem; font-size: 1.6rem; font-weight: 700;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link::before {content: ''; display: block; position: absolute; top: 50%; left: .4rem; width: 4rem; height: 4rem; margin-top: -2rem; background: url("/mnbank/app/img/main/ico_ct_group.png") no-repeat 0 0/24rem auto;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item1::before {background-position: 0rem 0rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item2::before {background-position: -4rem 0rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item3::before {background-position: -8rem 0rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item4::before {background-position: -12rem 0rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item5::before {background-position: -16rem 0rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item6::before {background-position: 0rem -4rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item7::before {background-position: -4rem -4rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item8::before {background-position: -8rem -4rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item9::before {background-position: -12rem -4rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link.item10::before {background-position: -16rem -4rem;}
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_group .biz_link_group .link:nth-child(odd)::after {content: ''; display: block; position: absolute; top: 100%; left: 0; width: 200%; height: 1px; background-color: var(--bdc_01, #ebeef0);}
+
+/***** [전담반 Biz-220] 만보기(로그인 메인) *****/
+/* 만보기 공통 */
+#wrap.renew2022 .kbcontent_wrap.v1 .swiper-slide.ct_life .inner {padding:0; margin:0;} /* 하단 간격 조절 2022-06-24 */
+.m_section.mwalking.login_after {position:relative; padding:2rem 0 0 0; min-height:14.5rem} /* 하단 간격 조절 2022-06-24 */
+.m_section.mwalking.login_after .h2 {font-size:1.5rem; margin-bottom:0; padding:0 2rem 0 1.5rem; line-height:2.3rem;} /* 하단 간격 조절 2022-06-24 */
+.m_section.mwalking.login_after .more {position:absolute; top:2.3rem;right:0} /* 상단간격 조절 2022-06-27 */
+.m_section.mwalking.login_after .more span {font-size:1.4rem; display:block; padding-right:2.4rem; position:relative;}
+.m_section.mwalking.login_after .more span::before {content:''; display:block; position:absolute; top:50%; right:1rem; margin-top:-1.1rem; width:.9rem; height:.9rem; margin-top: -.5rem; border-top: 1px solid var(--fc_03, #484b51); border-right:1px solid var(--fc_03, #484b51); transform: rotate(45deg); background: none; background:none;} /* 꺾쇠 */
+.m_section.mwalking.login_after .w_mwalking {position:relative; padding:0 2rem 0 1.5rem; min-height:9.4rem; color:var(--fc_02,#26282c); letter-spacing:-0.02em; } /* kcal 시간 영역 없는케이스 대응 min-height 추가 2022-06-24 */
+
+/* 미연동시 */
+.m_section.mwalking.login_after .w_mwalking .w_msg {position:relative; display:inline-block; padding:1.6rem 10rem 0 0; text-align:left; font-size:1.6rem; line-height:2.3rem;}
+.m_section.mwalking.login_after .w_mwalking::before {content:''; display:inline-block; clear:both; position:absolute; right:0; bottom:0; width:11rem; height:9.2rem; background-image:url(/mnbank/app/img/main/spr_mwalking.png); background-repeat:no-repeat; background-size:40rem auto; background-position:-24rem -11rem;} /* 2022-06-14 */
+.m_section.mwalking.login_after .w_mwalking .w_msg .btn { margin-top:1rem; padding-left:1.2rem; padding-right:1.2rem; min-width:auto;}
+.m_section.mwalking.login_after .w_mwalking .img_mwalking {position:absolute; left:0; bottom:0; width:11.9rem; height:5rem; background-image:url(/mnbank/app/img/main/spr_mwalking.png); background-repeat:no-repeat; background-size:40rem auto; background-position:0rem -11rem;} /* 곰돌이 위치 좀더 하단으로 조정 2022-06-24 */
+
+/* 연동시 : 동의 data 있는 경우 */
+.m_section.mwalking.login_after.data .w_mwalking::before {display:none;} 
+.m_section.mwalking.login_after.data .w_mwalking .w_data {position:absolute; right:2rem; bottom:2rem;}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_walk {text-align: right;}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_walk .num_walk {font-size:2.4rem; font-weight:bold; line-height:3.3rem}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl {margin-top:0; font-size:1.4rem; text-align:right; color:var(--fc_04, #696e76)}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl .number {font-size:1.5rem}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl,
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl * {vertical-align:baseline; line-height:2rem; letter-spacing:-0.01em;}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl .num_kal {margin-right:0.6rem;}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl .num_time {position:relative; padding-left:0.7rem;}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .p_dtl .num_time:after {display:block; content:''; clear:both; position:absolute; left:0; top:0.3rem; bottom:0.3rem; width:1rem; border-left:1px solid var(--fc_08,#dde1e4)}
+.m_section.mwalking.login_after.data .w_mwalking .w_data .txt_unit {font-size:1.4rem; margin-left:0.4rem;}
+.m_section.mwalking.login_after.data .w_mwalking .w_mchart {position:absolute; left:0; right:0; bottom:0} /* 위치조정 2022-06-24 */
+.m_section.mwalking.login_after.data .w_mwalking .w_mchart {left:auto; width:100%;}
+.m_section.mwalking.login_after.data .w_mwalking .w_mchart .mchart_bar {width:100%; height:0.6rem; background-color:#d4eef5; border-radius:10rem; box-shadow:0px 0.5rem 0.5rem rgba(209,240,249,0.3);}
+
+/* 연동 */
+.m_section.mwalking.login_after.connected .btn.round {padding:0.4rem 1.2rem; line-height:2rem;}
+.m_section.mwalking.login_after.connected .w_mwalking::before { right:0; bottom:0; width:10rem; height:8.2rem; background-position:-12rem -11rem;} /* 2022-06-14 */
+.m_section.mwalking.login_after.connected .w_mwalking .w_msg strong {display:block; font-size:1.8rem; line-height:2.5rem;}
+.m_section.mwalking.login_after.connected .w_mwalking .w_msg::before {display:none;}
+/***** //[전담반 Biz-220] 만보기 (비로그인 메인) *****/  
+
+#wrap.renew2022 .kbcontent_wrap.v1 .ct_life .inner > section {padding:0; border:0} /* 하단 간격 2022-06-24 kiok */
+#wrap.renew2022 .event_banner_wrap .swiper-bottom .play-control.stop:after {height:1.1rem}
+
+
+
+
+
+/*************************************** 다크테마 s ***************************************/
+.dark_mode .represent .acc_wrap {background:#28292b; will-change:transform; border-radius:0; border-bottom-left-radius:0}
+.dark_mode .cate_main .starlink_wrap {color:#ebeef0;}
+.dark_mode .cate_main #header .tmnu_kbpay,
+.dark_mode .cate_main .home_adjust .tit,
+.dark_mode .cate_main .member_wrap .name strong {-webkit-text-stroke: 0.07rem #fff;}
+.dark_mode #wrap.renew2022 .home_card .swiper-slide .inner {border-color:transparent;}
+.dark_mode #wrap.renew2022 .home_card .swiper-slide.add .inner {border-color:#45484d;}
+.dark_mode #wrap.renew2022 .kbcontent_wrap.v1 .tab_kbcontent ul {border-color:#565b61;}
+.dark_mode #wrap.renew2022 .prod_category .swiper-slide .btn_cate {background-color:#302e2f; border-color:#302e2f}
+.dark_mode #wrap.renew2022 .prod_category .swiper-slide-active .btn_cate {border-color:#ffda48} /* 다크필요 */
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .bg_b a {background-color:#31343a}
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(5) .btn_appbar::before {background:#26282c}
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(5) .btn_appbar::after {filter:brightness(.7)}
+.dark_mode #header .nav_wrap > .tmnu_search,
+.dark_mode #header .nav_wrap > .tmnu_menu {filter:invert(1) contrast(.79) brightness(1.35);}
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(1) .btn_appbar::before,
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(2) .btn_appbar::before {filter:invert(1) contrast(.79) brightness(1.35);}
+.dark_mode #wrap.renew2022 .home_curation .inner {border-color:#28292b; background-color:#28292b;}
+.dark_mode #wrap.renew2022 .home_curation .inner .first_word {border-color:#3b3e42;}
+.dark_mode #wrap.renew2022 .home_curation .hd_area .msg_num {background-color:#77684c;}
+.dark_mode #wrap.renew2022 .home_curation .hd_area .tit::after {filter:invert(1)}
+.dark_mode #wrap.renew2022 .event_banner_wrap .swiper-container .swiper-slide .img{background-color:#3f4043 !important;}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .quot_kos > div {background-color:#272a2d !important; color:#fff}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_easy_deal {background-color:#373f42; color:#ebecec}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .table th {background-color:#353333; color:#fff}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .table td {background-color:#292829; color:#fff; border-color:#37383b}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .btn_wrap .btn_sec_exc {background-color:#3e3a3a; color:#fff}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_group .group_list ul {background-color:#292829; color:#c2aea7}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_group .group_list li a {color:#c2aea7}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_group .group_list li {border-color:#37383b}
+.dark_mode #wrap.renew2022 .kbcontent_wrap.v1 {border-color:#1a1b1d !important}
+.dark_mode #wrap.renew2022 .home_adjust .inner,
+.dark_mode .adjust {background-color:#d3b541}
+.dark_mode .adjust.renew2022 .adjust_list .hd_box {background-color:#e9cf5d}
+.dark_mode .adjust.renew2022 .adjust_list .recommend_menu section h3 {border-color:#e9cf5d}
+.dark_mode .adjust.renew2022 .adjust_list .my_menu .hd_box .adjst_setting button {background-color:#dec659}
+.dark_mode #wrap.renew2022 #header .tmnu_kbpay {filter:invert(1) contrast(.77) brightness(1.20);}
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(5):after {filter:invert(1) contrast(.82) brightness(1.75)}
+.dark_mode .curation.renew2022 {border-color:transparent}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_advice .return_appl,
+.dark_mode .curation.renew2022 .cura_area.agency .chat_wrap {background-color:#31343a !important;}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_advice .ars_report,
+.dark_mode .curation.renew2022 .cura_area.agency .chat_wrap .noti .btn_wrap .btn,
+.dark_mode .curation.renew2022 .chat_wrap .chat .btn_wrap > span .btn {background-color:#2c2f33}
+.dark_mode .curation.renew2022 .chat_wrap .chat .btn_wrap > span:first-child .btn {background-color:#43484c}
+.dark_mode #wrap.renew2022 .home_adjust .adjust_menu:before, 
+.dark_mode #wrap.renew2022 .home_adjust .adjust_menu:after{background:linear-gradient(90deg, rgba(211,181,65,1) 0%, rgba(211,181,65,0) 100%)}
+.dark_mode #wrap.renew2022 .home_card .btn_acc_balance {background-color:#37393c; box-shadow:0 0.2rem 0.4rem rgba(0,0,0,0.18)}
+.dark_mode .represent .swiper-slide.add .txt:before {border-radius:50%; box-shadow:0 0.1rem 0.4rem rgba(0,0,0,0.15)}
+.dark_mode #wrap.renew2022 .home_card .btn_alarm label:before,
+.dark_mode #wrap.renew2022 .home_card .btn_alarm >input:checked + label:before{background-color:#37393c;; box-shadow:0 0.1rem 0.4rem rgba(0,0,0,0.15)}
+.dark_mode .curation.renew2022 .chat_wrap .chat {background-color:#32363a} 
+.dark_mode .represent .btn_area a.secondary {background-color:#43484c} 
+.dark_mode .member_wrap .name::after {border-color:#dde1e4} 
+.dark_mode #wrap.renew2022 .btm_appbar {box-shadow: 0 -0.4rem 1rem rgba(0,0,0,.2);}
+.dark_mode #wrap.renew2022 .swiper-pagination .swiper-pagination-bullet{background-color:#565A60;}
+.dark_mode #wrap.renew2022 .swiper-pagination .swiper-pagination-bullet-active{background-color:#dce0e3}
+.dark_mode .play-control:after, .dark_mode .swiper-autoplay-controls > button::after {filter:none}
+.dark_mode .curation.renew2022 .cura_area .timeline ul:after {border-color:#3c3e42}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .hd .date {color:#86888a}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_quotient .hd .btn_reset {background-color:none; box-shadow:none} /* 2022-07-04 kiok */
+.dark_mode #wrap.renew2022 .starlink_wrap .starlink_ani {background-position:0 -5.2rem;}
+.dark_mode #wrap.renew2022 .news .inner .tit:after {filter:invert(1)}
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(3) .btn_appbar::before,
+.dark_mode #wrap.renew2022 .btm_appbar li:nth-child(4) .btn_appbar::before {filter:invert(1) contrast(.79) brightness(1.35)}
+
+/* 다크용 이미지 */
+.dark_mode #header .nav_wrap .tmnu_notice {background-position:-14.1rem -5.3rem;} 
+.dark_mode #wrap.renew2022 .home_card .swiper-slide.add .inner .acc_wrap .txt:before {background-position:-21rem -7rem}
+/* 만보기 다크테마 */
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life ul > li a {color:#fff; background-color:#272a2d;}
+.dark_mode #wrap.renew2022 .kbcontent_wrap .ct_life .inner .sec_life .ips a {background-color:#34363a}
+.dark_mode .m_section.mwalking.login_after.data .w_mwalking .w_mchart .mchart_bar {background-color:#b0c5cb; box-shadow:none !important;} 
+
+/* 20220812 : KB Wallet 추가 */
+.dark_mode #header .nav_wrap .tmnu_wallet:after{background-position:0 100%}
+/*************************************** 다크테마 e ***************************************/
+
+/* 마이데이타 콘텐츠 추가 : 2022-07-20 */
+#wrap.renew2022 .home_mydata{margin-top:1.6rem;}
+#wrap.renew2022 .home_mydata .inner{position:relative; background:var(--bg_01,#fff);border-radius:8px;}
+#wrap.renew2022 .home_mydata .inner .btn_move{position:relative; font-size:inherit}
+#wrap.renew2022 .home_mydata .inner .box_wrap{box-shadow:0px 3px 8px rgba(0,0,0,0.05); border:1px solid #ececec; border-radius:8px; background: var(--fc_11, #fff);}
+#wrap.renew2022 .home_mydata .inner .box_wrap .mydata_ct >a{margin:0; padding:1.3rem 0.5rem 1.3rem 6.6rem;}
+#wrap.renew2022 .home_mydata .inner .tab_wrap{margin-top:-0.5rem}
+#wrap.renew2022 .home_mydata .inner .tab_wrap [class^=section]:first-of-type{padding-top:0; margin:0}
+#wrap.renew2022 .home_mydata .inner .tab_wrap [class^=section].box_wrap{margin:0}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list{padding-left:0; height:3.7rem}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list:after{left:0}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list .scroll_wrap > div > button{height:3.7rem; line-height:3.7rem}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list .scroll_wrap > div{padding-left:1.9rem}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list .scroll_wrap > div:last-of-type{padding-right:1.9rem}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_list .scroll_wrap > div:first-child{padding-left:0}
+#wrap.renew2022 .home_mydata .inner .tab_wrap .tab_panel .mydata_ct .ico{transform:scale(0.9)}
+#wrap.renew2022 .home_mydata .inner .tab_wrap [role='tab']{font-size:1.6rem}
+
+#wrap.renew2022 .home_mydata .inner .mydata_ct a{display:block; position:relative; margin-top:1.7rem; padding:0 0 0 5.2rem; font-size:1.4rem !important; line-height:2rem; min-height:4.5rem}
+#wrap.renew2022 .home_mydata .inner .mydata_ct a >div:first-of-type{margin-bottom:0.2rem}
+#wrap.renew2022 .home_mydata .inner .mydata_ct a .strong.number{font-size:1.5rem !important}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .assets_wrap{display:inline-block; overflow:hidden; white-space: nowrap; vertical-align: top;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .assets_wrap strong{display:block; transform: translate(0, 0.2rem);}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .assets_wrap .hidden_msg{display:none; color:var(--fc_05,#8c949e); font-weight:bold; font-size:1.6rem; transform: translate(0px, 0.2rem); margin-left: 0.4rem;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico_arr{transform:translate(0.7rem, -0.1rem)}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico_arr:after{transform: rotate(45deg) scale(0.7);}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico_arr_blue{line-height:2.4rem;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico_arr_blue:after{transform: rotate(45deg) scale(0.7);}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .btn_assets{display:inline-block; text-align:center; background-color:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.15); border-radius:1.2rem; transform:translate(4px,-2px); position:relative;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .btn_assets input{position:absolute; left:0; top:0; width:4rem; height:2.4rem; z-index:3;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .btn_assets span{display:block;width:4rem; line-height:2.4rem; font-size:1.3rem; transform:translate(0px,1px);}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .state_arr{margin-right:0.9rem; font-size:1.5rem}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .date{font-size:1.4rem; color:var(--bdc_02, #696e76)}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico{position:absolute; left:0rem; top:0.3rem; width:4.4rem; height:4.5rem; background:url('/mnbank/app/img/main/icon_mydata.png') 0 0 no-repeat; background-size:18rem auto;}	
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico.i01{background-position:0 0}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico.i02{background-position:-4.5rem 0}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico.i03{background-position:-9rem 0}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico.i04{background-position:-13.5rem 0}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico.i05{background-position:0rem -4.5rem}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico .rank{display:inline-block; color:#fff; text-align: center; font-size:1.3rem; line-height:2.5rem; transform: translate(0.7rem, 0.3rem);}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico + div{padding-bottom:0.1rem;}
+#wrap.renew2022 .home_mydata .inner .mydata_ct .ico + div p{margin-bottom:0.1rem}
+#wrap.renew2022 .home_mydata .inner #mydata_case1_2.mydata_ct .ico + div strong{display:inline-block; transform:translate(0,0.2rem)}
+#wrap.renew2022 .home_mydata .inner #mydata_case2_1.mydata_ct .ico + div strong{display:inline-block; transform:translate(0,-0.1rem)}
+#wrap.renew2022 .home_mydata .inner .box_wrap .mydata_ct .ico{left:1.4rem; top:1.4rem; transform: scale(1) !important;}
+#wrap.renew2022 .home_mydata .inner .box_wrap .mydata_ct a{min-height:7rem}
+
+/* 홈화면 간편모드 바로가기 배너 추가 : 2022-12-14 */
+#wrap.renew2022 .banner_simplemode{margin-top:2.4rem; border-radius:.8rem; background-color:var(--fc_11, #fff); box-shadow:0rem 0.3rem 0.8rem rgba(0,0,0,0.1); border:1px solid #dde1e4;}
+#wrap.renew2022 .banner_simplemode button{display:flex; justify-content: center; align-items: center; width:100%; padding:0.8rem 0; font-size:1.6rem}
+#wrap.renew2022 .banner_simplemode button:before{content:''; width:5.4rem; height:4.4rem; display:block; margin-right:1rem; background:url('/mnbank/app/img/main/icon_adjust_character.png') 0 -10rem/15rem auto no-repeat;}
+
+.dark_mode #wrap.renew2022 .home_mydata .inner .box_wrap{border-color:var(--fc_11)}
+.dark_mode #wrap.renew2022 .home_mydata .inner .mydata_ct .btn_assets{background-color:#37393c; color:#fff;}
+.dark_mode #wrap.renew2022 .banner_simplemode{border-color:#484b51}
+
+/* 간편모드 추가 : 2022-11-16 */
+.simple_mode{font-size:1.6rem;}
+.simple_mode .home_card .represent{padding-top:0.4rem !important;}
+.simple_mode .fixed_menu_wrap{background:var(--bg_01, #fff); border-radius:0.8rem; border:1px solid #ececec; padding:0 2rem; margin-top:1.5rem}
+.simple_mode .fixed_menu_wrap ul{overflow:hidden;}
+.simple_mode .fixed_menu_wrap ul li{float:left; width:50%; border-top:1px solid var(--fc_09, #696e76)}
+.simple_mode .fixed_menu_wrap ul li:nth-child(1),
+.simple_mode .fixed_menu_wrap ul li:nth-child(2){border:0 !important}
+.simple_mode .fixed_menu_wrap ul li a{display:block; color: var(--fc_02, #26282c); font-weight:bold; line-height:3.2rem; position:relative; padding-left:4rem; margin:1.4rem 0}
+.simple_mode .fixed_menu_wrap ul li a:after{content:''; width:3.2rem; height:3.2rem; position:absolute; left:0; top:0; background:url('/mnbank/app/img/main/icon_simple_menu.png') 0 0/17.5rem auto no-repeat;}
+.simple_mode .fixed_menu_wrap ul li.ico01 a:after{background-position:0rem 0rem}
+.simple_mode .fixed_menu_wrap ul li.ico02 a:after{background-position:-3.5rem 0rem}
+.simple_mode .fixed_menu_wrap ul li.ico03 a:after{background-position:-7rem 0rem}
+.simple_mode .fixed_menu_wrap ul li.ico04 a:after{background-position:-10.5rem 0rem}
+.simple_mode .fixed_menu_wrap ul li.ico05 a:after{background-position:-14rem 0rem}
+.simple_mode .fixed_menu_wrap ul li.full{clear:both; width:100% !important;}
+.simple_mode .event_wrap{margin:1.2rem 0 -1.7rem;}
+.simple_mode .event_wrap a{display:block; position:relative; color:#fff; background-color:#6b5b54; border-radius:0.8rem; line-height:5.8rem; padding:0 0 0 2rem; font-weight:bold; height:5.6rem; overflow:hidden;}
+.simple_mode .event_wrap a:after{content:''; position:absolute; right:0rem; top:0; display:block; width:8rem; height:5.6rem; background:url('/mnbank/app/img/main/icon_simple_event.png') 0 0/8rem auto no-repeat;}
+.mode_change_wrap{text-align:center; margin-top:2.1rem}
+.mode_change_wrap button{position:relative; padding:1.2rem 2rem; border-radius:0.8rem; border:1px solid var(--fc_07,#c6cbd0); color:var(--fc_03,#484b51); font-weight:bold; background-color:var(--fc_11,fff)}
+.simple_mode #content.cate_main{padding:4.8rem 2rem 5.3rem; padding-bottom:calc(constant(safe-area-inset-bottom) / 2 + 5.3rem); padding-bottom:calc(env(safe-area-inset-bottom) / 2 + 5.3rem); background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(247,247,248,1) 50%, rgba(255,255,255,1) 70%)}
+#wrap.renew2022.simple_mode .home_card .swiper-slide .inner{box-shadow:0 0 0 0 !important}
+
+/* 간편모드 홈 다크모드 적용 */
+.dark_mode .simple_mode #content.cate_main{background:var(--bg_01, #fff)}
+.dark_mode .simple_mode .fixed_menu_wrap{background: #28292b; border-color: transparent;}
+.dark_mode .simple_mode .fixed_menu_wrap ul li{float:left; width:50%; border-top:1px solid var(--fc_10, #484b51)}
+.dark_mode .mode_change_wrap button{border-color:var(--fc_09,#696e76); color:var(--fc_04,#ebeef0)}
+
+/* 계좌복사하기 : 2022-12-26 */
+.acco_copy_wrap{background-color:var(--bdc_01,#ebeef0); border-radius:0.8rem; position:relative; margin-top:0.5rem}
+.acco_copy_wrap a{display:block; position:relative; z-index:1; padding:0.9rem 1.6rem 0.8rem; font-size:1.4rem; color:var(--fc_03,#484b51); line-height:1.8rem;}
+.acco_copy_wrap a p i.arr{display:inline-block; transform:translate(-0.2rem, -0.2rem) rotate(45deg); vertical-align:middle; width: 0.8rem; height: 0.8rem; border-style: solid; border-width: 1px 1px 0 0; border-color: #8b939d;}
+.acco_copy_wrap .copy_acc{margin-bottom:0.2rem; display:block;}
+.acco_copy_wrap .btn_acc_close{position:absolute; right:1.6rem; top:50%; transform:translate(0, -50%); z-index:3}
+.acco_copy_wrap .btn_acc_close i{ transform:scale(0.9);}

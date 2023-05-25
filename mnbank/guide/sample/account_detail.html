@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>거래내역 조회전용</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/service.css">
+    <!-- // -->
+    <style>
+        .acc_pannel.top:not(:first-child) {margin-top:4.8rem;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_category"><!-- 구분자: 카테고리명 -->
+        <div class="acc_pannel top">
+            <div class="acc_wrap inc_btn"> <!-- inc_btn : 관리버튼 들어갈때 넣어주세요! -->
+                <!-- 210719: 마크업 추가 : 송희 -->
+                <div class="acc_top_info">
+                    <span class="badge approval">승낙 완료</span>    
+                    <span class="badge refusal">승낙 거절</span>  
+                    <span class="badge refusal">승낙 미확인</span>    
+                    <span class="badge approval">일부 승낙</span>   
+                    <span class="badge approval">숙려기간중</span>
+                    <div class="tooltip_limited">
+                        <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+                        <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                            <p class="tooltip_tit hidden">투자자 숙려제도 관련 안내</p>
+                            <div class="tooltip_cont"> 
+                                투자자 숙려제도 대상인 경우 승낙기간 내 승낙이 완료된 계좌만 최종 신규가 확정되며, 승낙이 완료되지 않은 계좌는 신규가 취소됩니다. (‘승낙 완료’는 승낙을 완료한 경우, ‘승낙 거절’은 승낙을 거절한 경우, ‘승낙 미확인’은 아직 승낙을 하지 않은 경우에 표시됩니다.)<br>ARS 1833-3938로 직접 연결하여 승낙 가능
+                            </div>
+                            <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+                        </div>
+                    </div>   
+                </div>                      
+                <!-- //210719: 마크업 추가 : 송희 -->
+                <!-- 210721: 카드사 선택 타입 추가 - 송희 -->
+                <div class="acc_bank col md">
+                    <span class="icon_bank_004"></span>
+                    <span class="bk_name top"><button type="button" class="btn_txt ico_arrdown"><span>현대카드</span></button></span>
+                </div>
+                <div class="acc_name big_md"><button type="button" class="btn_txt ico_arrdown"><span>현대카드M Edition<span class="number">2</span></span>&nbsp;<strong class="number">4521</strong></button></div>
+                <!-- //210721: 카드사 선택 타입 추가 - 송희 -->
+                <div class="acc_name">KB실버웰빙 연금신탁 채권형</div>
+                <div class="acc_name"><button type="button" class="btn_txt ico_pencil">KB실버웰빙 연금신탁 채권형 하나원큐적금</button></div>
+                <div class="acc_num"><span class="number">400407-01-023569</span></div>
+                <div class="acc_num"><button type="button" class="btn_txt ico_arrdown"><span class="number">400407-01-023569</span></button></div>
+                <div class="acc_num"><button type="button" class="btn_txt ico_copy"><span class="number">400407-01-023569</span></button></div>
+                <div class="acc_bank col md">
+                    <span class="icon_bank_004"></span>
+                    <span class="bk_name">KB국민</span>
+                    <span class="bk_num number">574498-90-009768</span>
+                </div>
+                <div class="acc_bank col md">
+                    <span class="icon_bank_004"></span>
+                    <span class="bk_name big">KB국민</span>
+                    <span class="bk_num big number">574498-90-009768</span>
+                </div>
+                <div class="acc_sum_wrap">
+                    <div class="acc_pay">
+                        <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                    </div>
+                    <div class="acc_sum">출금가능금액 <span class="number">37,018,600</span><span class="num_unit">원</span></div>
+                </div>
+                <div class="acc_sum_wrap">
+                    <div class="acc_pay">총금액
+                        <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                    </div>
+                </div>
+                <!-- 210721: 카드사 선택 타입 추가 - 송희 -->
+                <div class="acc_sum_wrap sm">
+                    <div class="acc_pay">
+                        <span class="pay_sm"><span class="number">6</span>월 청구금액</span>
+                        <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                    </div>
+                </div>
+                <!-- //210721: 카드사 선택 타입 추가 - 송희 -->
+                <div class="acc_day_info">
+                    <div class="graph_area">
+                        <div class="default">
+                            <div class="active" style="width:49%"></div> <!-- d-day 값이랑 같이 바꿔주세요 -->
+                        </div>
+                        <div class="d-day" style="left:99%"><strong class="number">D-1095</strong></div> <!-- active 값이랑 같이 바꿔주세요 -->
+                    </div>
+                    <div class="day_info">
+                        <p>신규일 <span class="number">2020.05.31</span></p>
+                        <p>만기일 <span class="number">2021.05.31</span></p>
+                    </div>
+                </div>
+                <button type="button" class="btn_admin"><span class="hidden">관리</span></button>
+            </div>
+            <div class="btn_area">
+                <span><a href="#">스마트출금</a></span>
+                <span><a href="#">모으기</a></span>
+                <span><a href="#" class="primary">이체</a></span>
+            </div>
+            <!-- 210719: 마크업 추가 : 송희 -->
+            <div class="acc_p_btn">
+                <div class="btn_wrap btm">
+                    <a href="#none" class="btn_txt ico_arr">최근판매상품 조회</a>
+                </div>
+            </div>
+            <!-- //210719: 마크업 추가 : 송희 -->
+        </div>
+
+        <div class="acc_pannel top">
+            <div class="acc_wrap">
+                <div class="acc_name">주거래 우대통장</div>
+                <div class="acc_name">
+                    <button type="button" class="btn_txt ico_pencil">주거래 우대통장</button>
+                </div>
+                <div class="acc_bank md col">
+                    <span class="icon_bank_088"></span>
+                    <span class="bk_name">신한</span>
+                    <span class="bk_num number">574498-90-009768</span>
+                </div>
+                <div class="acc_bank md col">
+                    <span class="icon_bank_088"></span>
+                    <button type="button" class="btn_txt ico_arrdown">
+                        <span class="bk_name">KB국민</span>
+                        <span class="bk_num number">574498-90-009768</span>
+                    </button>
+                </div>
+                <div class="acc_sum_wrap">
+                    <div class="acc_pay">
+                        <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        <div class="acc_pannel top">
+            <div class="acc_wrap">
+                <div class="acc_name big">KB실버웰빙 연금신탁 채권형</div>
+                <div class="acc_num"><button type="button" class="btn_txt ico_copy"><span class="number">400407-01-023569</span></button></div>
+                <div class="acc_btn_area">
+                    <button type="button" class="btn_txt ico_help">상품설명서</button>
+                    <button type="button" class="btn_txt ico_pay">기준가격</button>
+                    <button type="button" class="btn_txt ico_doc">특정금신탁계약서</button>
+                </div>
+            </div>
+            <ul class="list_data">
+                <li>
+                    <div class="key">수익률 
+                        <div class="tooltip_limited">
+                            <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+                            <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                                <p class="tooltip_tit">툴팁 타이틀영역 : 타이틀없을때 히든타이틀 넣으래요 오차장님이!</p>
+                                <div class="tooltip_cont"> 
+                                    기본형과 타이틀형이 있습니다. <br>
+                                    현재 툴팁은 타이틀형입니다.. <br>
+                                    툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                                    툴팁 영역으로 기본형과 타이틀형이 있습니다.
+                                </div>
+                                <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value"><span class="state_arr up" role="text"><em class="hidden">상승</em>0.19</span><span class="num_unit">%</span></div>
+                </li>
+                <li>
+                    <div class="key">수익금액</div>
+                    <div class="value"><span class="number fc_posi">897,017</span><span class="num_unit">원</span></div>
+                </li>
+                <li>
+                    <div class="key">만기일</div>
+                    <div class="value"><span class="number">2020.02.02</span></div>
+                </li>
+                <li>
+                    <div class="key">투자수익률</div>
+                    <div class="value"><a href="#none" class="btn_txt ico_arr"><span class="state_arr down" role="text"><em class="hidden">하락</em>11.15</span><span class="num_unit">%</span></a></div>
+                </li>
+            </ul>
+            <div class="toggle_sm_wrap"> 
+                <div class="toggle_panel" role="region">
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">수익금액</div>
+                            <div class="value"><span class="number fc_posi">897,017</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">만기일</div>
+                            <div class="value"><span class="number">2020.02.02</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="tit js_toggle" aria-expanded="false">자세히보기</button>
+            </div>
+            <div class="btn_area">
+                <span><a href="#">추가입금</a></span>
+                <span><a href="#">일부해지 예약</a></span>
+                <span><a href="#">전부해지 예약</a></span>
+            </div>
+        </div>
+        <!-- 조건검색 -->
+        <div class="sort_wrap">
+            <div class="sort_detail">
+                <button class="btn_txt ico_arrdown" title="조회기간설정">
+                    <span>1개월</span>
+                    <span>전체</span>
+                    <span>최신순</span>
+                </button>
+            </div>
+            <div class="acc_menu">
+                <button type="button" class="btn_type list"><span class="hidden">리스트형</span></button>
+                <button type="button" class="btn_type cal"><span class="hidden">캘린더형</span></button>
+            </div>
+            <div class="sort_tag">
+                <span>#1,000~10,000</span> 
+                <span>#급여</span> 
+                <span>#적요검색결과값 텍스트영역입니다</span>
+            </div>
+        </div>
+        <!-- //조건검색 -->
+
+        <!-- 조회날짜 출력 -->
+        <div class="sort_data">
+            <div class="col">
+                <p class="p">
+                    <span class="number">2021.01.27</span> ~ <span class="number">2021.04.26</span>
+                </p>
+            </div>
+            <div class="col col_r">
+                <span class="switch right">
+                    <input type="checkbox" id="switch1" checked>
+                    <label for="switch1"><span>잔액표기</span></label>
+                </span>
+            </div>
+        </div>
+        <!-- //조회날짜 출력 -->
+
+        <!-- -->
+        <div class="section">
+            <h2 class="h3">거래내역(<span class="number">3</span>회차)</h2>
+            <ul class="list_comp noline">
+                <li>
+                    <div class="list_top_info">
+                        <strong><em class="number">3</em>회차</strong>
+                        <span class="fc_gray4"><em class="number fc_gray4">2021.03</em>월분</span>
+                    </div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">납입일자</div>
+                            <div class="value"><span class="number">202.03.10</span></div>
+                        </li>
+                        <li>
+                            <div class="key">납입금액(회분)</div>
+                            <div class="value"><span class="number fc_posi">100,000</span><span class="num_unit">원</span>(1회)</div>
+                        </li>
+                        <li>
+                            <div class="key">납입 후 잔액</div>
+                            <div class="value"><span class="number">300,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">취급점</div>
+                            <div class="value">강남역</div>
+                        </li>
+                    </ul>
+                    <div class="list_btm_info">
+                        <span>여의도전경련</span>
+                        <span>김서욱</span>
+                        <span>기일입금</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info md">
+                        <strong><em class="number">2</em>회차</strong>
+                        <span class="fc_gray4"><em class="number fc_gray4">2021.03</em>월분</span>
+                    </div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">납입일자</div>
+                            <div class="value"><span class="number">202.02.10</span></div>
+                        </li>
+                        <li>
+                            <div class="key">납입금액(회분)</div>
+                            <div class="value"><span class="number fc_posi">100,000</span><span class="num_unit">원</span>(1회)</div>
+                        </li>
+                        <li>
+                            <div class="key">납입 후 잔액</div>
+                            <div class="value"><span class="number">300,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">취급점</div>
+                            <div class="value">강남역</div>
+                        </li>
+                        <li>
+                            <div class="key">기타</div>
+                            <div class="value">
+                                <span>허상환</span>
+                                <span class="status">스마트입금</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="list_top_info md">
+                        <strong><em class="number">1</em>회차</strong>
+                        <span class="fc_gray4"><em class="number fc_gray4">2021.03</em>월분</span>
+                    </div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">납입일자</div>
+                            <div class="value"><span class="number">202.01.10</span></div>
+                        </li>
+                        <li>
+                            <div class="key">납입금액(회분)</div>
+                            <div class="value"><span class="number fc_posi">100,000</span><span class="num_unit">원</span>(1회)</div>
+                        </li>
+                        <li>
+                            <div class="key">납입 후 잔액</div>
+                            <div class="value"><span class="number">300,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">취급점</div>
+                            <div class="value">강남역</div>
+                        </li>
+                        <li>
+                            <div class="key">기타</div>
+                            <div class="value">신규</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="btn_list_btm more">
+                <button type="button" class="btn">더보기</button>
+            </div>
+        </div>
+        <!-- // -->
+
+        <!-- 입출금 거래내역전용 -->
+        <div class="section gap_lg">
+            <ul class="list_comp">
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number fc_gray2">2021.05.06</span>
+                        <span>입금</span>
+                    </div>
+                    <div class="row in_acc">
+                        <div class="col">
+                            <div class="acc_num"><strong class="number">204215648582</strong></div>
+                        </div>
+                        <div class="col col_r">
+                            <div class="acc_pay"><strong class="number fc_posi">25,120,000</strong><span class="num_unit">원</span></div>
+                            <div class="acc_sum">잔액 <span class="number">30,000,000</span><span class="num_unit">원</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number fc_gray2">2021.05.06</span>
+                        <span>출금</span>
+                    </div>
+                    <div class="row in_acc">
+                        <div class="col">
+                            <div class="acc_num"><strong class="number">204215648582</strong></div>
+                        </div>
+                        <div class="col col_r">
+                            <div class="acc_pay"><strong class="number fc_nega">25,120,000</strong><span class="num_unit">원</span></div>
+                            <div class="acc_sum">잔액 <span class="number">30,000,000</span><span class="num_unit">원</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number">2021.04.01 16:00</span>
+                        <span>취소</span>
+                    </div>
+                    <div class="row in_acc">
+                        <div class="col">
+                            <div class="p"><strong>파리바게트</strong></div>
+                        </div>
+                        <div class="col col_r">
+                            <div class="acc_pay"><strong class="number line_through">25,120,000</strong><span class="num_unit">원</span></div>
+                            <div class="acc_sum">
+                                <span><em class="fc_nega">할인 </em><em class="number">70</em><em class="num_unit">원</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info md">
+                        <span class="number">2021.04.01 16:00</span>
+                        <span>할부<em class="number">6</em></span>
+                    </div>
+                    <div class="row in_acc">
+                        <div class="col">
+                            <div class="p"><strong>파리바게트</strong></div>
+                        </div>
+                        <div class="col col_r">
+                            <div class="acc_pay"><strong class="number">7,200</strong><span class="num_unit">원</span></div>
+                            <div class="acc_sum">
+                                <span><em class="fc_nega">할인 </em><em class="number">70</em><em class="num_unit">원</em></span>
+                                <span class="status"><em class="fc_posi">적립 </em><em class="number">7</em><em class="fs15">P</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number">2020.12.10 10:10:10</span>
+                        <span class="fc_nega">거래취소</span>
+                    </div>
+                    <div class="in_acc">
+                        <div class="col">
+                            <div class="p"><strong>일일향코스요리일일향코스요리일일향코스요리</strong></div>
+                            <p class="p_sub">#동기모임회식비동기모임회식비동기모임회식비</p>
+                        </div>
+                        <div class="col col_r">
+                            <div class="acc_pay">
+                                <span class="unit">출금</span>
+                                <strong class="number fc_nega">25,120,000</strong><span class="num_unit">원</span>
+                            </div>
+                            <div class="acc_sum">잔액 <span class="number">30,000,000</span><span class="num_unit">원</span></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn_list_btm more">
+                <button type="button" class="btn">더보기</button>
+            </div>
+        </div>
+        <!-- //입출금 거래내역전용 -->
+
+        <div class="section gap_lg"> <!-- section 에 margin-top:48 없을떄 .section.gap_lg -->
+            <ul class="list_comp">
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number">2021.05.06</span>
+                        <span>자동이체</span>
+                        <span>신탁단체입금</span>
+                        <span>정상</span>
+                    </div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">거래금액</div>
+                            <div class="value"><span class="number fc_posi">200,000,009</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">기준가격</div>
+                            <div class="value"><span class="number">200,000,009</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">취급점</div>
+                            <div class="value">서여의도 영업부</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number">2021.05.06</span>
+                        <span>연금출금</span>
+                        <span>정상</span>
+                    </div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">거래금액</div>
+                            <div class="value"><span class="number fc_posi">200,000,009</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">기준가격</div>
+                            <div class="value"><span class="number">200,000,009</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">취급점</div>
+                            <div class="value">서여의도 영업부</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="btn_list_btm more">
+                <button type="button" class="btn">더보기</button>
+            </div>
+        </div>
+
+        <!-- 선불 상세내역조회 0726 송희 추가 -->
+        <div class="section gap_sm">
+            <ul class="list_comp noline">
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number fc_gray2">2021.07.15 15:21:10</span>
+                    </div>
+                    <div class="fill_acc">
+                        <div class="p"><strong>국민</strong> <strong class="number">9545-15**-****-1475</strong></div>
+                        <ul class="list_data">
+                            <li>
+                                <div class="key">페이 머니</div>
+                                <div class="value"><strong class="number fc_posi">20,000</strong><span class="num_unit">원</span></div>
+                            </li>
+                            <li>
+                                <div class="key">충전잔액</div>
+                                <div class="value"><strong class="number">20,000</strong><span class="num_unit">원</span></div>
+                            </li>
+                            <li>
+                                <div class="key">거래유형</div>
+                                <div class="value">충전</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number fc_gray2">2021.07.15 15:21:10</span>
+                    </div>
+                    <div class="fill_acc">
+                        <div class="p"><strong>국민</strong> <strong class="number">9545-15**-****-1475</strong></div>
+                        <ul class="list_data">
+                            <li>
+                                <div class="key">페이 머니</div>
+                                <div class="value">
+                                    <strong class="number fc_nega">20,000</strong><span class="num_unit">원</span>
+                                    <div class="acc_sum">배달의 민족<br>콤비네이션 <span class="number">1</span><span class="num_unit">건</span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key">충전잔액</div>
+                                <div class="value"><strong class="number">0</strong><span class="num_unit">원</span></div>
+                            </li>
+                            <li>
+                                <div class="key">거래유형</div>
+                                <div class="value">결제(온라인)</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_top_info sm">
+                        <span class="number fc_gray2">2021.07.15 15:21:10</span>
+                    </div>
+                    <div class="fill_acc">
+                        <div class="p"><strong>국민</strong> <strong class="number">9545-15**-****-1475</strong></div>
+                        <ul class="list_data">
+                            <li>
+                                <div class="key">페이 머니</div>
+                                <div class="value">
+                                    <strong class="number fc_nega">20,000</strong><span class="num_unit">원</span>
+                                    <div class="acc_sum">GS<span class="number">25</span>편의점</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="key">충전잔액</div>
+                                <div class="value"><strong class="number">2,000,000</strong><span class="num_unit">원</span></div>
+                            </li>
+                            <li>
+                                <div class="key">거래유형</div>
+                                <div class="value">결제(오프라인)</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn_list_btm more">
+                <button type="button" class="btn">더보기</button>
+            </div>
+        </div>
+        <!-- //선불 상세내역조회 0726 송희 추가 -->
+
+        <div class="acc_detail_wrap"> <!-- 토글일때만 .acc_detail_wrap 로 감싸주세요!!! -->
+            <!-- 토글일때 -->
+            <div class="section">
+                <div class="hgroup js_toggle">
+                    <h2 class="h2">타이틀 : 토글일때</h2>
+                    <button type="button" aria-expanded="false" class="btn_toggle"></button>
+                </div>
+                <div class="toggle_panel" role="region">
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">신규일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">만기일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">최종거래일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">계좌상태</div>
+                            <div class="value">정상</div>
+                        </li>
+                        <li>
+                            <div class="key">관리지점</div>
+                            <div class="value">서여의도 영업부</div>
+                        </li>
+                        <li>
+                            <div class="key">입출금 가능여부</div>
+                            <div class="value">입 출금 가능</div>
+                        </li>
+                        <li>
+                            <div class="key">총입금액</div>
+                            <div class="value"><span class="number">0</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">수익률</div>
+                            <div class="value"><span class="number">0</span><span class="num_unit">%</span></div>
+                        </li>
+                        <li>
+                            <div class="key">투자일임보고서 수령방법</div>
+                            <div class="value">E-mail</div>
+                        </li>
+                        <li>
+                            <div class="key">ISA 가입유형</div>
+                            <div class="value">ISA 일반형</div>
+                        </li>
+                        <li>
+                            <div class="key">비과세한도</div>
+                            <div class="value"><span class="number">2,000,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">연간납입한도</div>
+                            <div class="value"><span class="number">20,000,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">의무가입기간</div>
+                            <div class="value"><span class="number">3</span><span class="num_unit">년</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //토글일때 -->
+            <div class="section">
+                <div class="hgroup js_toggle">
+                    <h2 class="h2">타이틀 : 토글일때</h2>
+                    <button type="button" aria-expanded="false" class="btn_toggle"></button>
+                </div>
+                <div class="toggle_panel" role="region">
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">신규일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">만기일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">최종거래일</div>
+                            <div class="value"><span class="number">2021.01.04</span></div>
+                        </li>
+                        <li>
+                            <div class="key">계좌상태</div>
+                            <div class="value">정상</div>
+                        </li>
+                        <li>
+                            <div class="key">관리지점</div>
+                            <div class="value">서여의도 영업부</div>
+                        </li>
+                        <li>
+                            <div class="key">입출금 가능여부</div>
+                            <div class="value">입 출금 가능</div>
+                        </li>
+                        <li>
+                            <div class="key">총입금액</div>
+                            <div class="value"><span class="number">0</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">수익률</div>
+                            <div class="value"><span class="number">0</span><span class="num_unit">%</span></div>
+                        </li>
+                        <li>
+                            <div class="key">투자일임보고서 수령방법</div>
+                            <div class="value">E-mail</div>
+                        </li>
+                        <li>
+                            <div class="key">ISA 가입유형</div>
+                            <div class="value">ISA 일반형</div>
+                        </li>
+                        <li>
+                            <div class="key">비과세한도</div>
+                            <div class="value"><span class="number">2,000,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">연간납입한도</div>
+                            <div class="value"><span class="number">20,000,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">의무가입기간</div>
+                            <div class="value"><span class="number">3</span><span class="num_unit">년</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 토글아닐때일때 -->
+        <div class="section">
+            <h2 class="h2">타이틀 : 토글아닐때</h2>
+            <ul class="list_data">
+                <li>
+                    <div class="key">신규일</div>
+                    <div class="value"><span class="number">2021.01.04</span></div>
+                </li>
+                <li>
+                    <div class="key">만기일</div>
+                    <div class="value"><span class="number">2021.01.04</span></div>
+                </li>
+                <li>
+                    <div class="key">최종거래일</div>
+                    <div class="value"><span class="number">2021.01.04</span></div>
+                </li>
+            </ul>
+        </div>
+        <!-- //토글아닐때일때 -->
+        <div class="section">
+            <h2 class="h2">타이틀</h2>
+            <ul class="list_data">
+                <li>
+                    <div class="key">일자</div>
+                    <div class="value"><span class="number">2021.01.04</span></div>
+                </li>
+                <li>
+                    <div class="key">금액</div>
+                    <div class="value"><span class="number">10,000</span><span class="num_unit">원</span></div>
+                </li>
+                <li>
+                    <div class="key">잔액</div>
+                    <div class="value"><span class="number">120,000</span><span class="num_unit">원</span></div>
+                </li>
+                <li>
+                    <div class="key">관리지점</div>
+                    <div class="value">광화문</div>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <ul class="list_comp noline">
+                <li>
+                    <div class="list_top_info"><strong>1회차</strong></div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">일자</div>
+                            <div class="value"><span class="number">2021.03.25</span></div>
+                        </li>
+                        <li>
+                            <div class="key">금액</div>
+                            <div class="value"><span class="number">10,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">금액</div>
+                            <div class="value"><span class="number">310,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">관리지점</div>
+                            <div class="value">광화문</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="list_top_info"><strong>2회차</strong></div>
+                    <ul class="list_data">
+                        <li>
+                            <div class="key">일자</div>
+                            <div class="value"><span class="number">2021.03.25</span></div>
+                        </li>
+                        <li>
+                            <div class="key">금액</div>
+                            <div class="value"><span class="number">10,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">금액</div>
+                            <div class="value"><span class="number">310,000</span><span class="num_unit">원</span></div>
+                        </li>
+                        <li>
+                            <div class="key">관리지점</div>
+                            <div class="value">광화문</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hr_divide"></div>
+        <!-- 관리하기 다른케이스 -->
+        <div class="section">
+            <ul class="list_link lg">
+                <li>
+                    <a href="#none" class="link">계좌상세내역 </a>
+                </li>
+                <li>
+                    <a href="#none" class="link">거래내역</a>
+                </li>
+                <li>
+                    <a href="#none" class="link">계좌이율보기</a>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 class="h2">관리하기</h2>
+            <ul class="list_link">
+                <li>
+                    <a href="#none" class="link">입금</a>
+                </li>
+                <li>
+                    <a href="#none" class="link">일부매도 예약</a>
+                </li>
+                <li>
+                    <a href="#none" class="link">통지이메일 관리</a>
+                </li>
+            </ul>
+            <div class="btn_wrap btm">
+                <a href="#none" class="btn_txt ico_arr">계좌등록 해제</a>
+            </div>
+        </div>
+        
+        <!-- 알려드립니다 -->
+		<div class="inform_btm_wrap">
+			<button class="tit js_toggle" aria-expanded="false" aria-controls="notice_1">알려드립니다</button>
+			<div class="toggle_panel" role="region" id="notice_1">
+				<ul class="depth bul">
+                    <li>알려드립니다 내용1</li>
+                    <li>알려드립니다 내용2</li>
+				</ul>
+			</div>
+		</div>
+        <!--// 알려드립니다 -->
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<div id="htmlTest" class="layerHTML">
+    <!-- 레이어팝업 -->
+</div>
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+<script>
+    /* 업무 SCRIPT */
+</script>
+</body>
+</html>

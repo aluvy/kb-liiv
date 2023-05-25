@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    <style>
+        .menu_wrap {position: relative;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">탭</div>
+
+        <div data-class="section">
+            <div data-class="box">
+                탭메뉴는 크게 상단 탭메뉴, 하단 탭메뉴로 구성되며, 선택 메뉴, 뱃지(알림표시)를 통해 상태를 표시한다.
+            </div> 
+
+            <div data-class="h1">Type</div>
+            <div data-class="h2">기본</div>
+            <div data-class="box">
+                가로스크롤
+            </div>
+            <script type="text/html">
+<div class="tab_wrap">
+    <div class="tab_list" role="tablist">
+        <div class="scroll_wrap">
+            <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpanel_1">메뉴명 1</button></div>
+            <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_2">메뉴명메뉴명 2</button></div>
+            <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_3">메뉴명메뉴명 3</button></div>
+            <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_4">메뉴명 2</button></div>
+            <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_5">메뉴명 3</button></div>
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpanel_1">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            탭메뉴 1 콘텐츠 
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpanel_2">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            탭메뉴 2 콘텐츠 
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpanel_3">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            탭메뉴 3 콘텐츠 
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpanel_4">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            탭메뉴 3 콘텐츠 
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpanel_5">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            탭메뉴 3 콘텐츠 
+        </div>
+    </div>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h2">서브탭</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div>가로 100%</div>
+                    <div>콘텐츠 내에서 사용하는 탭, 구분자 type2</div>
+                </div>
+            </div>
+            <script type="text/html">
+<div class="tab_wrap box">
+    <div class="tab_list" role="tablist">
+        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab2panel1_1">은행</button></div>
+        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab2panel1_2">증권사</button></div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tab2panel1_1">
+        <h3 class="hidden">숨은 제목</h3>
+        탭메뉴 1 콘텐츠 
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tab2panel1_2">
+        <h3 class="hidden">숨은 제목</h3>
+        탭메뉴 2 콘텐츠 
+    </div>
+</div>
+            </script>
+            <script type="text/html">
+<div class="tab_wrap box">
+    <div class="tab_list" role="tablist">
+        <div><button type="button" role="tab" aria-selected="true" aria-controls="tab2panel2_1">은행</button></div>
+        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab2panel2_2">증권사</button></div>
+        <div><button type="button" role="tab" aria-selected="false" aria-controls="tab2panel2_3">증권사</button></div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tab2panel2_1">
+        <h3 class="hidden">숨은 제목</h3>
+        탭메뉴 1 콘텐츠 
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tab2panel2_2">
+        <h3 class="hidden">숨은 제목</h3>
+        탭메뉴 2 콘텐츠 
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tab2panel2_3">
+        <h3 class="hidden">숨은 제목</h3>
+        탭메뉴 3 콘텐츠 
+    </div>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h2">Mix</div>
+            <!-- <div data-class="h2">가로 100%</div> -->
+            <script type="text/html">
+<div class="tab_wrap ">
+    <div class="tab_list" role="tablist">
+        <div class="scroll_wrap">
+            <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpane5_1">메뉴명 1</button></div>
+            <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpane5_2">메뉴명 2</button></div>
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpane5_1">    
+        <h2 class="hidden">숨은 제목</h2>                    
+        <div class="section">
+            <div class="tab_wrap box tab_list_sub">
+                <div class="tab_list" role="tablist">
+                    <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpane5_1_1">은행</button></div>
+                    <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpane5_1_2">증권사</button></div>
+                </div>
+                <div class="tab_panel" role="tabpanel" id="tabpane5_1_1">
+                    <h3 class="hidden">숨은 제목</h3>
+                    탭메뉴 1-1 콘텐츠 
+                </div>
+                <div class="tab_panel" role="tabpanel" id="tabpane5_1_2">
+                    <h3 class="hidden">숨은 제목</h3>
+                    탭메뉴 1-2 콘텐츠 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab_panel" role="tabpanel" id="tabpane5_2">
+        <h2 class="hidden">숨은 제목</h2>
+        <div class="section">
+            <div class="tab_wrap box tab_list_sub">
+                <div class="tab_list" role="tablist">
+                    <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpane5_2_1">은행</button></div>
+                    <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpane5_2_2">증권사</button></div>
+                </div>
+                <div class="tab_panel" role="tabpanel" id="tabpane5_2_1">
+                    <h3 class="hidden">숨은 제목</h3>
+                    탭메뉴 2-1 콘텐츠 
+                </div>
+                <div class="tab_panel" role="tabpanel" id="tabpane5_2_2">
+                    <h3 class="hidden">숨은 제목</h3>
+                    탭메뉴 2-2 콘텐츠 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </script>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

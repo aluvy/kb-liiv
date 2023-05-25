@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>전체계좌조회</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/reference.css">
+    <!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+
+    <div id="content" class="cate_reference">
+        <h1 class="hidden">전체계좌조회</h1>
+        <div class="tab_wrap account_all">  <!-- [전담반 Biz-021] account_all class 추가 -->
+            <div class="tab_list" role="tablist">
+                <div class="scroll_wrap">
+                    <div><button role="tab" aria-selected="true" aria-controls="tabpanel_1">KB국민은행</button></div>
+                    <div><button role="tab" aria-selected="false">다른금융</button></div>
+                </div>
+            </div>
+            <div class="tab_panel" role="tabpanel" id="tabpanel_1">
+                <h2 class="hidden">KB국민은행 전체계좌조회</h2>
+                <div class="section reference_info"> <!-- [전담반 Biz-021] class 수정(.reference_info) -->
+                    <ul class="list_link icon">
+                        <li>
+                            <a href="#none" class="link">매일매일 내 자산현황을 확인해보세요!</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="acc_pannel acc_all">
+                    <div class="fold_box">
+                        <div class="acc_wrap">
+                            <div class="acc_txt">
+                                총 잔액 <div class="tooltip_limited">
+                                    <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+                                    <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                                        <div class="tooltip_cont"> 
+                                            예금·적금/펀드/신탁 계좌의 총 잔액을 의미합니다. 
+                                        </div>
+                                        <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+                                    </div>
+                                </div>
+                                <span class="switch">    
+                                    <input type="checkbox" id="switch5" checked >
+                                    <label for="switch5"><span class="hidden">총잔액노출</span></label> <!-- 210730 접근성수정 --> 
+                                </span>
+                            </div>
+                            <div class="acc_sum_wrap">
+                                <div class="acc_pay">
+                                    <span class="number">25,120,000</span><span class="num_unit">원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_area">
+                            <span><a href="#none">모으기</a></span>
+                            <span><a href="#none" class="primary">이체</a></span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr_divide" aria-hidden="true"> <!-- [전담반 Biz-021] hr 추가 -->
+                <div class="section_f">
+                    <div class="list_top_wrap acc_menu">
+                        <div class="col">
+                            <button type="button" class="btn_add">다른금융등록</button>
+                        </div>
+                        <div class="col col_r">
+                            <button type="button" class="btn_type list">목록형</button>
+                            <button type="button" class="btn_type card" title="선택됨">카드형</button> <!-- 210930 접근성수정 -->
+                            <button type="button" class="btn_turn">순서변경</button>
+                        </div>
+                    </div>
+                    <!-- 예금/적금 -->
+                    <div class="acc_acco_list">
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle on" role="button"  aria-expanded="true"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">예금 ・ 적금</strong>
+                                <span class="pay"><strong class="number">1,780,000</strong><span class="num_unit">원</span></span><!-- 210702: 태그 수정 -->
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <div class="result nodata sm">
+                                    <p class="tit">조회된 내용이 없습니다.</p>
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria1_1"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_top_info"> 
+                                            <span class="badge line">한도제한계좌</span>
+                                            <span class="badge line">만기예정</span>
+                                        </div>
+                                        <div class="acc_name">KB종합통장</div>
+
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay">
+                                                <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" id="layer_more" aria-describedby="aria1_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria1_1">모으기</a></span> <!-- 210730 접근성수정 -->
+                                            <span><a href="javascript:void(0)" aria-describedby="aria1_1">이체</a></span> <!-- 210730 접근성수정 -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria1_1">모으기</a></span> <!-- 210730 접근성수정 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acc_pannel">
+                                    <!-- 211014 추가(수정) -->
+                                    <div class="acc_top_info_link">
+                                        <button type="button" class="badge line fc_posi">출금계좌등록 &gt;</button>
+                                        <span class="badge line">한도제한계좌</span>
+                                    </div>
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria1_2"> <!-- 210730 접근성수정 -->
+                                    <!-- //211014 추가(수정) -->
+                                        <div class="acc_name">KB종합통장</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <!-- <div class="acc_txt fc_nega">이체를 위해 출금계좌 등록이 필요합니다.</div> 211014 삭제 -->
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay">
+                                                <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria1_2"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <!-- 211014 수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria1_2">출금계좌 등록</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+                                    <!-- //211014 수정 -->
+                                    <div class="btn_hidden">
+                                        <!-- <a href="#none" class="btn_txt ico_arr_error" aria-describedby="aria1_2">출금등록</a> 211014 삭제 --> <!-- 210730 접근성수정 -->
+                                    </div>
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria1_3"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">KB마이핏통장</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay">
+                                                <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria1_3"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria1_3">출금계좌 등록</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+
+                                    <div class="toggle_sm_wrap">
+                                        <button class="tit js_toggle" aria-expanded="false">머니쪼개기</button>
+                                        <div class="toggle_panel money" role="region">
+                                            <h2 class="h3">머니쪼개기 이용현황</h2>
+                                            <ul class="list_link money_list">
+                                                <li>
+                                                    <a href="#none" class="link">
+                                                        <strong class="tit">기본비</strong>
+                                                        <p class="p_sub">모든 입금과 출금</p>
+                                                        <p class="pay">
+                                                            <strong class="number">5,000,000</strong><span class="num_unit">원</span>
+                                                        </p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="link">
+                                                        <strong class="tit">생활비</strong>
+                                                        <p class="p_sub">KB체크카드로 쓸 돈 따로 관리</p>
+                                                        <p class="pay">
+                                                            <strong class="number">5,000,000</strong><span class="num_unit">원</span>
+                                                        </p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="link">
+                                                        <strong class="tit">비상금</strong>
+                                                        <p class="p_sub">비상시 쓸 돈 따로 보관(최대 2백만원)</p>
+                                                        <p class="pay">
+                                                            <span class="txt">설정하기 </span>
+                                                        </p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria1_4"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">KB X BTS 적금 Ⅱ</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2015.06.16</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">만기일</span><span class="number">2022.07.30</span> (D-<span class="number">30</span>)
+                                            </div>
+                                        </div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay">
+                                                <strong class="number">25,120,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria1_4"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria1_4">해지예상조회</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+                                    <div class="btn_area right">
+                                        <button type="button" class="btn_txt ico_arrow sm" aria-describedby="aria1_4">전용화면</button> <!-- 210730 접근성수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 대출 -->
+                    <div class="acc_acco_list">
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">대출</strong>
+                                <span class="pay"><strong class="number">29,780,000</strong><span class="num_unit">원</span></span><!-- 210702: 태그 수정 -->
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria2_1"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">KB 금융전문인 우대대출</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">이수일</span><span class="number">2015.06.16</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">만기일</span><span class="number">2022.07.30</span> (D-<span class="number">30</span>)
+                                            </div>
+                                        </div>
+                                        <div class="acc_txt fc_nega">연체되었습니다.</div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">대출잔액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                            <div class="acc_pay"><span class="unit">대출원금</span>
+                                                <strong class="number">5,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria2_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria2_1">상환</a></span> <!-- 210730 접근성수정 -->
+                                        <span><a href="javascript:void(0)" aria-describedby="aria2_1">이자납부</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 펀드 -->
+                    <div class="acc_acco_list fund"> <!-- 0916 접근성수정 : class 추가 -->
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">펀드</strong>
+                                <div class="pay"><strong class="number">29,780,000</strong><span class="num_unit">원</span></div>
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <!-- 0916 접근성수정 : 도움말위치 변경 -->
+                            <button type="button" class="btn_tip" id="layerHelper"><span class="hidden">펀드 도움말</span></button><!-- 210702: type="button" 추가 -->                                
+                            <!-- //0916 접근성수정 : 도움말 위치변경 -->
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria3_1"> <!-- 210730 접근성수정 -->
+                                        <!-- 210727: SR 추가 -->
+                                        <div class="acc_top_info">
+                                            <span class="badge approval">승낙 완료</span>    
+                                            <span class="badge refusal">승낙 거절</span>  
+                                            <span class="badge refusal">승낙 미확인</span>  
+                                        </div>                      
+                                        <!-- //210727: SR 추가 -->
+                                        <div class="acc_name">KB스타 베트남 VN30 인덱스 증권자투자신탁(주식-파생형) A-E</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">수익률</span><span class="state_arr up" role="text"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="acc_txt fc_nega">입금 또는 환매 진행 중입니다.</div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">총 평가금액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria3_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_1">운용비율등록변경</a></span>
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_1">운용펀드개별매매</a></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_1">펀드입금</a></span>
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_1">펀드 환매신청</a></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_1">펀드 환매신청</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria3_2"> <!-- 210730 접근성수정 -->
+                                        <!-- 210727: SR 추가 -->
+                                        <div class="acc_top_info">
+                                            <span class="badge approval">승낙 완료</span>    
+                                            <span class="badge refusal">승낙 거절</span>  
+                                            <span class="badge refusal">승낙 미확인</span> 
+                                        </div>                      
+                                        <!-- //210727: SR 추가 -->
+                                        <div class="acc_name">로보 쌤 적극투자형 포트폴리오</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">완료예정일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">수익률</span><span class="state_arr down" role="text"><em class="hidden">하락</em>11.15</span><span class="num_unit">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">총 평가금액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_2">포트폴리오 입금</a></span>
+                                            <span><a href="javascript:void(0)" aria-describedby="aria3_2">포트폴리오 환매</a></span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn_menu" aria-describedby="aria3_2"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="toggle_sm_wrap">
+                                        <button class="tit js_toggle" aria-expanded="false">포트폴리오 상세</button>
+                                        <div class="toggle_panel" role="region">
+                                            <ul class="list_comp noline">
+                                                <li>
+                                                    <div class="acc_pannel">
+                                                        <a href="#none" class="acc_wrap inc_btn" id="aria3_21"> <!-- 210730 접근성수정 -->
+                                                            <div class="acc_name">한화 단기 하이일드 증권자투자신탁(채권) C-E인</div>
+                                                            <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                                            <div class="acc_num">
+                                                                <span class="number">400407-01-023569</span>
+                                                                <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                                            </div>
+                                                            <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                                            <div class="acc_info_wrap">
+                                                                <div class="acc_info">
+                                                                    <span class="tit">신규일</span><span class="number">2015.06.16</span>
+                                                                </div>
+                                                                <div class="acc_info">
+                                                                    <span class="tit">수익률</span><span class="state_arr up" role="text"><em class="hidden">상승</em></em>11.15</span><span class="num_unit">%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="acc_sum_wrap">
+                                                                <div class="acc_pay"><span class="unit">평가액</span>
+                                                                    <strong class="number">120,000</strong><span class="num_unit">원</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn_menu" aria-describedby="aria3_21"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="acc_pannel">
+                                                        <a href="#none" class="acc_wrap inc_btn" id="aria3_22"> <!-- 210730 접근성수정 -->
+                                                            <div class="acc_name">KB 글로벌 주식 솔루션 증권자투자신탁(주식-재간접형)(UH)CE</div>
+                                                            <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                                            <div class="acc_num">
+                                                                <span class="number">400407-01-023569</span>
+                                                                <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                                            </div>
+                                                            <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                                            <div class="acc_info_wrap">
+                                                                <div class="acc_info">
+                                                                    <span class="tit">신규일</span><span class="number">2015.06.16</span>
+                                                                </div>
+                                                                <div class="acc_info">
+                                                                    <span class="tit">만기일</span><span class="number">2022.07.30</span> (D-<span class="number">30</span>)
+                                                                </div>
+                                                                <div class="acc_info">
+                                                                    <span class="tit">수익률</span><span class="state_arr down" role="text"><em class="hidden">하락</em></em>11.15</span><span class="num_unit">%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="acc_sum_wrap">
+                                                                <div class="acc_pay"><span class="unit">평가액</span>
+                                                                    <strong class="number">120,000</strong><span class="num_unit">원</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn_menu" aria-describedby="aria3_22"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 신탁·ISA -->
+                    <div class="acc_acco_list">
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">신탁 ・ ISA</strong>
+                                <div class="pay">
+                                    <strong class="number">1,780,000</strong><span class="num_unit">원</span>
+                                    <span class="s_pay"><strong>ISA :</strong> <strong class="number">0</strong><span class="num_unit">원</span></span>
+                                </div>
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <!-- 0916 접근성수정 : 도움말위치 변경 -->
+                            <button type="button" class="btn_tip" id="layerHelper1"><span class="hidden">신탁 ・ ISA 도움말</span></button><!-- 210702: id값 변경, type="button" 추가 -->
+                            <!-- //0916 접근성수정 : 도움말 위치변경 -->
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria4_1"> <!-- 210730 접근성수정 -->
+                                        <!-- 210727: SR 추가 -->
+                                        <div class="acc_top_info">
+                                            <span class="badge approval">승낙 완료</span>    
+                                            <span class="badge refusal">승낙 거절</span>  
+                                            <span class="badge refusal">승낙 미확인</span> 
+                                        </div>                      
+                                        <!-- //210727: SR 추가 -->
+                                        <div class="acc_name">(ELS 20-718호 원금비보장형)</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">만기일</span><span class="number">2022.07.30</span> (D-<span class="number">30</span>)
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">기대수익률</span>연 <span class="state_arr up" role="text"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">잔액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria4_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria4_2"> <!-- 210730 접근성수정 -->
+                                        <!-- 210727: SR 추가 -->
+                                        <div class="acc_top_info">
+                                            <span class="badge approval">승낙 완료</span>    
+                                            <span class="badge refusal">승낙 거절</span>  
+                                            <span class="badge refusal">승낙 미확인</span> 
+                                        </div>                      
+                                        <!-- //210727: SR 추가 -->
+                                        <div class="acc_name">KB국민 만능 ISA(일임형)</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">만기일</span><span class="number">2022.07.30</span> (D-<span class="number">30</span>)
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">(전영업일)수익률</span><span class="state_arr up" role="text"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">잔액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                            <div class="acc_pay"><span class="unit">평가액</span>
+                                                <strong class="number">5,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria4_2"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria4_2">추가 입금</a></span> <!-- 210730 접근성수정 -->
+                                            <span><a href="javascript:void(0)" aria-describedby="aria4_2">해지</a></span> <!-- 210730 접근성수정 -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria4_2">입금</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 외화·골드 -->
+                    <div class="acc_acco_list">
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">외화 ・ 골드</strong>
+                                <div class="pay">
+                                    <strong class="number">1,780,000</strong><span class="num_unit">원</span>
+                                </div>
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <!-- 0916 접근성수정 : 도움말위치 변경 -->
+                            <button type="button" class="btn_tip" id="layerHelper2"><span class="hidden">외화 ・ 골드 도움말</span></button><!-- 210702: id값 변경, type="button" 추가 -->
+                            <!-- //0916 접근성수정 : 도움말 위치변경 -->
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <div class="acc_pannel">
+                                    <!-- [전담반 Biz-174] 220209 버튼추가 --> 
+                                    <div class="acc_top_info_link">
+                                        <button type="button" class="badge line fc_posi">출금계좌등록 &gt;</button>
+                                    </div>
+                                    <!-- //[전담반 Biz-174] 220209 버튼추가 -->
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria_5_1"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">외화보통예금</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_sum_wrap exchange">
+                                            <div class="acc_pay"><span class="unit">USD</span>
+                                                <strong class="number">104,00.00</strong>
+                                            </div>
+                                            <div class="acc_pay"><span class="unit">EUR</span>
+                                                <strong class="number">5,000.00</strong>
+                                            </div>
+                                            <div class="acc_pay"><span class="unit">JPY</span>
+                                                <strong class="number">10,000</strong>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- 0727 이동 -->
+                                    <div class="toggle_sm_wrap exchange"> <!-- 외환리스트 : exchange -->
+                                        <div class="toggle_panel" role="region">
+                                            <div class="acc_sum_wrap exchange">
+                                                <div class="acc_pay"><span class="unit">AUD</span>
+                                                    <strong class="number">0.000000</strong>
+                                                </div>
+                                                <div class="acc_pay"><span class="unit">CAD</span>
+                                                    <strong class="number">0.000000</strong>
+                                                </div>
+                                                <div class="acc_pay"><span class="unit">CHF</span>
+                                                    <strong class="number">0.000000</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="tit js_toggle" aria-expanded="false">통화더보기</button>
+                                    </div>
+                                    <!-- //0727 이동 -->
+                                    <button type="button" class="btn_menu" aria-describedby="aria5_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria5_1">이체</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+                                </div>
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria5_2"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">KB골드투자</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_sum_wrap exchange">
+                                            <div class="acc_pay"><span class="unit">XAU</span>
+                                                <strong class="number">1.10</strong><span class="num_unit">(gram)</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria5_2"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria5_2">추가입금</a></span> <!-- 210730 접근성수정 -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria5_2">출금계좌 등록</a></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 보험·공제 -->
+                    <div class="acc_acco_list">
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">보험 ・ 공제</strong>
+                                <div class="pay">
+                                    <strong class="number">1,780,000</strong><span class="num_unit">원</span>
+                                </div>
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <!-- 0916 접근성수정 : 도움말위치 변경 -->
+                            <button type="button" class="btn_tip" id="layerHelper3"><span class="hidden">보험 ・ 공제 도움말</span></button><!-- 210702: id값 변경, type="button" 추가 -->
+                            <!-- //0916 접근성수정 : 도움말 위치변경 -->
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <!-- 계좌없음 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap">
+                                        <!-- 211026 클래스 변경(result nodata -> join_prod) -->
+                                        <div class="join_prod">
+                                            <p class="tit">보험・공제 가입하기</p>
+                                            <p class="txt">이제는 저축보험도, 보장보험도<br>인터넷으로 간편하게!</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- //계좌없음 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria6_1"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">(무)KB스타플래티넘연금보험</div>
+                                        <div class="acc_num"><span class="bank">KB생명</span> <span class="number">9912801-00-285003</span></div>
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">계약일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria6_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div class="btn_area">
+                                        <span><a href="javascript:void(0)" aria-describedby="aria6_1">추가입금</a></span> <!-- 210730 접근성수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 퇴직연금 -->
+                    <div class="acc_acco_list irp"> <!-- 0916 접근성수정 : class 추가 -->
+                        <!-- 0825 접근성 수정 -->
+                        <div class="tit_area js_toggle" role="button"  aria-expanded="false"> <!--  role="button" 추가 -->
+                            <div class="tit btn_toggle"> <!-- div로 변경  -->
+                                <strong class="cate">퇴직연금</strong>
+                                <div class="pay">
+                                    <strong class="number">1,780,000</strong><span class="num_unit">원</span>
+                                </div>
+                            </div>       
+                        </div>
+                        <!-- //0825 접근성 수정 -->
+                        <div class="toggle_panel">
+                            <!-- 0916 접근성수정 : 도움말위치 변경 -->
+                            <button type="button" class="btn_tip" id="layerHelper4"><span class="hidden">퇴직연금 도움말</span></button><!-- 210702: type="button" 추가 -->
+                            <!-- //0916 접근성수정 : 도움말 위치변경 -->
+                            <div class="acc_list_wrap type_list"> <!-- 0813 수정 : default 변경 -->
+                                <!-- 계좌없음 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap">
+                                        <!-- 211026 클래스 변경(result nodata -> join_prod) -->
+                                        <div class="join_prod">
+                                            <p class="tit">퇴직연금 가입하기</p>
+                                            <p class="txt">돈 있을 때 미리 자유롭게 저축하면<br>소득공제도 받고 노후생활 걱정도 끝!</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- //계좌없음 -->
+                                <div class="acc_pannel">
+                                    <a href="#none" class="acc_wrap inc_btn" id="aria7_1"> <!-- 210730 접근성수정 -->
+                                        <div class="acc_name">개인형IRP(퇴직용)</div>
+                                        <!-- [전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_num">
+                                            <span class="number">400407-01-023569</span>
+                                            <button type="button" class="btn_txt ico_copy"><span class="hidden">계좌번호 복사하기</span></button>
+                                        </div>
+                                        <!-- //[전담반 Biz-021] 아이콘추가 영역 수정 -->
+                                        <div class="acc_info_wrap">
+                                            <div class="acc_info">
+                                                <span class="tit">신규일</span><span class="number">2021.02.26</span>
+                                            </div>
+                                            <div class="acc_info">
+                                                <span class="tit">수익률</span><span class="state_arr up" role="text"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="acc_sum_wrap">
+                                            <div class="acc_pay"><span class="unit">납입잔액</span>
+                                                <strong class="number">3,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                            <div class="acc_pay"><span class="unit">평가액</span>
+                                                <strong class="number">5,000,000</strong><span class="num_unit">원</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn_menu" aria-describedby="aria7_1"><span class="ico_menu"></span><span class="hidden">메뉴</span></button> <!-- 210730 접근성수정 -->
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria7_1">기간별 수익률 조회</a></span> <!-- 210730 접근성수정 -->
+                                            <span><a href="javascript:void(0)" aria-describedby="aria7_1">입금</a></span> <!-- 210730 접근성수정 -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn_area">
+                                            <span><a href="javascript:void(0)" aria-describedby="aria7_1">나의 퇴직연금</a></span>
+                                            <span><a href="javascript:void(0)" aria-describedby="aria7_1">상품변경</a></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 마케팅배너영역(이미지 임시) -->
+            <div class="banner_wrap">
+                <a href="#none" class="banner_area type1">
+                    <p class="img"><img src="/mnbank/app/img/common/temp/banner_img.png" alt="입출금상품 2건 : 전환가입이 가능한 맞춤 보험상품"></p>
+                </a>
+            </div>
+            <!-- //마케팅배너영역(이미지 임시) -->
+        </div>
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- layer -->
+<div id="htmlHelper" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <ul class="depth bul">
+                <li>도움말도움말 도움말 <br>각 메뉴별 화면ID참고</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <span><button type="button" class="btn primary lg" data-action="close">확인</button></span>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<!-- layer -->
+<div id="htmlMore" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <ul class="list_item_select">
+                <li class="hidden_more"><a href="#none">이체</a></li> <!-- 0811 수정 -->
+                <li class="hidden_more"><a href="#none">모으기</a></li> <!-- 0811 수정 -->
+                <li><a href="#none">계좌별명 변경</a></li>
+                <li><a href="#none">계좌번호 복사</a></li>
+                <!-- // S [전담반 Biz-022] 210128 리스트 추가 : 통장사본 보기 -->
+                <li><a href="#none">통장사본 보기</a></li>
+                <!--  // E [전담반 Biz-022] 210128 리스트 추가 : 통장사본 보기 -->
+                <li><a href="#none">QR코드 만들기</a></li>
+                <li><a href="#none">계좌숨기기</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+<script>
+    $(function (){
+        $('#layerHelper, #layerHelper1, #layerHelper2, #layerHelper3, #layerHelper4').click(function(e){
+            e.stopPropagation();
+            
+            $.ohyLayer({
+                title:'도움말',          
+                content:'#htmlHelper',
+                type:'confirm',
+                closeUse:false,
+            });
+        })
+
+        $('#layer_more').on('click', function(){
+            $.ohyLayer({
+                titleUse:true,
+                title:"더보기 메뉴",
+                content:'#htmlMore',
+                type:'bottom',
+                closeUse:true,
+            });
+        });
+
+        //목록형-카드형 퍼블확인용 스크립트
+        $selText = $(' <span class="hidden">으로변경</span> '); //0924 접근성수정
+        $('.btn_type.list').hide(); //0813 기본형 수정
+        $('.btn_type.card').append($selText); //0924 접근성수정
+
+        $('.btn_type').click(function(e){ 
+            if( $(this).hasClass('list') ){
+                $(this).hide().attr('title', '').find('.hidden').remove();  //0930 접근성수정 //0924 접근성수정
+                $('.btn_type.card').show().attr('title','선택됨').focus().append($selText); //0930 접근성수정 //0924 접근성수정 // 210730 접근성수정 
+                $('.acc_list_wrap').addClass('type_list');
+                $('.list_item_select').find('.hidden_more').show(); //0811 수정
+            }else{
+                $('.btn_type.card').hide().attr('title', '').find('.hidden').remove(); //0930 접근성수정  //0924 접근성수정
+                $('.btn_type.list').show().attr('title','선택됨').focus().append($selText); //0930 접근성수정  //0924 접근성수정 // 210730 접근성수정 
+                $('.acc_list_wrap').removeClass('type_list');
+                $('.list_item_select').find('.hidden_more').hide(); //0811 수정
+            }
+            e.preventDefault(); 
+        })
+        
+    })
+</script>
+
+</body>
+</html>

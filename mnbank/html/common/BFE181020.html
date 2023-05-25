@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>검색</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+    <!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="챗봇" href="https://zmnbank.kbstar.com/mnbank/app/css/chatbot.css">
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_regist">
+        <h1 class="hidden">검색</h1>
+
+        <div class="total_search_wrap">
+            <div class="search_input">
+                <div class="input">
+                    <input type="text" class="inp" title="검색어" placeholder="검색어를 입력해주세요.">
+                    <button type="submit" class="btn_sch"><span class="hidden">검색</span></button>
+                </div>
+                <button type="button" class="btn_sch_voice" title="새창"><span class="hidden">음성으로 검색</span></button>
+            </div>
+        </div>
+        
+        <div class="tab_wrap total_sch_tab"> <!-- 210719 수정(.total_sch_tab 클래스 추가) -->
+            <div class="tab_list" role="tablist">
+                <div class="scroll_wrap">
+                    <div><button role="tab" aria-selected="false">챗봇검색 결과</button></div>
+                    <div><button role="tab" aria-selected="true" aria-controls="tabpanel_2">통합검색 결과(100)</button></div>
+                </div>
+            </div>
+            <div class="tab_panel" role="tabpanel" id="tabpanel_2">
+                <h2 class="hidden">통합검색 결과</h2>
+
+                <!-- 연관검색어 -->
+                <div class="section">
+                    <h3 class="h2">연관검색어</h3>
+                    <div class="relate_word">
+                        <a href="javascript:;" role="button" class="hash_text">#펀드 추가 없음</a>
+                        <a href="javascript:;" role="button" class="hash_text">#펀드 추천</a>
+                        <a href="javascript:;" role="button" class="hash_text">#처축</a>
+                        <a href="javascript:;" role="button" class="hash_text">#펀드환매</a>
+                        <a href="javascript:;" role="button" class="hash_text">#연금저축펀드</a>
+                    </div>
+                </div>
+                <!-- //연관검색어 -->
+
+                <!-- 키워드 보정 -->
+                <div class="section">
+                    <div class="word_correct">
+                        <p class="txt">&quot;펀느&quot;가 &quot;펀드&quot;로 수정되었습니다.</p>
+                        <a href="#" class="txt_link">&quot;펀느&quot; 검색결과 보기</a>
+                    </div>
+                </div>
+                <!-- //키워드 보정 -->
+
+                <hr class="hr_divide gap_sm_3">
+
+                <div class="tab_wrap sch_subtab">
+                    <div class="tab_list" role="tablist">
+                        <div class="scroll_wrap">
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpanesub1_1_1">전체(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">메뉴(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">상품(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">FAQ(<span class="number">20</span>)</button></div>
+<!-- 210910 수정 -->
+                            <div><button type="button" role="tab" aria-selected="false">새소식(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">이벤트(<span class="number">20</span>)</button></div>
+<!-- //210910 수정 -->
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tabpanesub1_1_1">
+                        <div class="section gap_md">
+                            <!-- 메뉴 -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">메뉴(<span class="number">20</span>)</h3>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" role="button" class="arr_btn"><span class="hidden">메뉴</span><span class="txt">더보기</span></a> <!-- 210914 수정 -->
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- 메뉴 list -->
+                                <ul class="sch_menu">
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</a>
+                                    </li>
+                                </ul>
+                                <!-- //메뉴 list -->
+                            </div>
+                            <!-- //메뉴 -->
+                        </div>
+
+                        <div class="section">
+                            <!-- 상품 -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">상품(<span class="number">20</span>)</h3>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" role="button" class="arr_btn"><span class="hidden">상품</span><span class="txt">더보기</span></a> <!-- 210914 수정 -->
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- 상품 list -->
+                                <ul class="sch_prd">
+                                    <li>
+                                        <a href="#">
+                                            <!-- <span class="badge pdt1">입출금</span>
+                                            <span class="badge pdt2">예금적금</span>
+                                            <span class="badge pdt3">대출</span>
+                                            <span class="badge pdt4">펀드</span>
+                                            <span class="badge pdt5">보험공제</span>
+                                            <span class="badge pdt6">퇴직연금</span>
+                                            <span class="badge pdt7">신탁ISA</span>
+                                            <span class="badge pdt8">증권</span>
+                                            <span class="badge pdt9">외화골드</span> -->
+                                            <span class="badge pdt4">펀드</span>
+                                            <p class="tit">KB스타 재팬 인텍스 증권 투자신탁(주식-파생형)</p>
+                                            <p class="sch_cate">주식형-인텍스형-적립식-온라인 전용 <span class="fc_posi">펀드</span></p>
+                                        </a>
+                                        <a href="#none" class="btn_ico"><span class="ico_cart"></span><span class="hidden">장바구니</span></a>  <!-- 210721 수정 -->
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="badge pdt4">펀드</span>
+                                            <p class="tit">KB스타 재팬 인텍스 증권 투자신탁(주식-파생형)-C-E KB스타 재팬 인텍스 증권 (주식)</p>
+                                            <p class="sch_cate">주식형-인텍스형-적립식-온라인 전용 <span class="fc_posi">펀드</span></p>
+                                        </a>
+                                        <a href="#none" class="btn_ico"><span class="ico_cart"></span><span class="hidden">장바구니</span></a>
+                                    </li>
+                                </ul>
+                                <!-- //상품 list -->
+                            </div>
+                            <!-- //상품 -->
+                        </div>
+
+                        <div class="section">
+                            <!-- FAQ -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">FAQ(<span class="number">20</span>)</h3>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" role="button" class="arr_btn"><span class="hidden">faq</span><span class="txt">더보기</span></a> <!-- 210914 수정 -->
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- FAQ list -->
+                                <ul class="sch_faq">
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit"><span class="fc_posi">펀드</span>를 담보로 예금담보 대출을 받을 수 있나요?</p>
+                                            <p class="cts_txt"><span class="fc_posi">펀드</span>를 담보로 대출이 가능합니다. 단 <span class="fc_posi">펀드</span> 상품 종류에 따라 담보인정비율이 다르게 적용되고 있습니다. <span class="fc_posi">펀드</span>를 담보로 대출이 가능합니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit"><span class="fc_posi">펀드</span>를 담보로 예금담보 대출을 받을 수 있나요?</p>
+                                            <p class="cts_txt"><span class="fc_posi">펀드</span>를 담보로 대출이 가능합니다. 단 <span class="fc_posi">펀드</span> 상품 종류에 따라 담보인정비율이 다르게 적용되고 있습니다. <span class="fc_posi">펀드</span>를 담보로 대출이 가능합니다.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //FAQ list -->
+                            </div>
+                            <!-- //FAQ -->
+                        </div>
+
+                        <div class="section">
+                            <!-- 새소식 -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">새소식(<span class="number">20</span>)</h3> <!-- 210910 수정 -->
+                                </div>
+                                <div>
+                                    <a href="javascript:;" role="button" class="arr_btn"><span class="hidden">새소식</span><span class="txt">더보기</span></a> <!-- 210914 수정 --> <!-- 210910 수정(문구수정) -->
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- 새소식 list -->
+                                <ul class="sch_notice">
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit">[새소식] 너도? 나도! 모두의 재테크, 적립식 <span class="fc_posi">펀드</span> 개설 룰렛 이벤트~</p>
+                                            <!-- <p class="info"><span class="number">2121.03.04</span></p> 210910 삭제 -->
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit">[새소식] <span class="fc_posi">펀드</span> 만들고 싶어요! 펀드 시작 방법은?</p>
+                                            <!-- <p class="info"><span class="number">2121.03.04</span></p> 210910 삭제 -->
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //새소식 list -->
+                            </div>
+                            <!-- //새소식/이벤트 -->
+                        </div>
+
+<!-- 210910 수정(이벤트 추가) -->
+                        <div class="section">
+                            <!-- 이벤트 -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">이벤트(<span class="number">20</span>)</h3>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" role="button" class="arr_btn"><span class="hidden">이벤트</span><span class="txt">더보기</span></a> <!-- 210914 수정 --></a>
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- 이벤트 list -->
+                                <ul class="sch_notice">
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit">[이벤트] 너도? 나도! 모두의 재테크, 적립식 <span class="fc_posi">펀드</span> 개설 룰렛 이벤트~</p>
+                                            <p class="info"><span class="number">2021.04.01 ~ 2021.04.30</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <p class="tit">[이벤트] <span class="fc_posi">펀드</span> 만들고 싶어요! 펀드 시작 방법은?</p>
+                                            <p class="info"><span class="number">2021.04.01 ~ 2021.04.30</span></p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //이벤트 list -->
+                            </div>
+                            <!-- //이벤트 -->
+                        </div>
+<!-- //210910 수정(이벤트 추가) -->
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script>
+    /* 업무 SCRIPT */
+</script>
+</body>
+</html>

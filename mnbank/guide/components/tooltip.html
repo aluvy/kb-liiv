@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">툴팁</div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">기본형</div>
+            <div data-class="box">
+                .js_tooltip<br>
+                .btn_tooltip 버튼에 .js_tooltip 스크립트 클래스 추가<br>
+                툴팁 레이어는 디바이스 위치에 따라 상하 자동 노출<br>
+                툴팁 타이틀 : 툴팁 옆에 있는 텍스트 + 안내 로 일괄 처리</div>
+            </div>
+
+            <!-- <div data-class="h2">아이템 단위</div> -->
+            <script type="text/html">
+<div class="h2"><h2>타이틀 </h2>
+    <div class="tooltip_limited">
+        <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+        <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+            <p class="tooltip_tit">툴팁 타이틀영역</p>
+            <div class="tooltip_cont"> 
+                기본형과 타이틀형이 있습니다. <br>
+                현재 툴팁은 타이틀형입니다.. <br>
+                툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                툴팁 영역으로 기본형과 타이틀형이 있습니다.
+            </div>
+            <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+        </div>
+    </div>
+</div>
+            </script>
+            <script type="text/html">
+<div class="h3"><h3>타이틀 </h3>
+    <div class="tooltip_limited">
+        <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+        <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+            <p class="tooltip_tit">툴팁 타이틀영역</p>
+            <div class="tooltip_cont"> 
+                기본형과 타이틀형이 있습니다. <br>
+                현재 툴팁은 타이틀형입니다.. <br>
+                툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                툴팁 영역으로 기본형과 타이틀형이 있습니다.
+            </div>
+            <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+        </div>
+    </div>
+</div>
+            </script>
+            <script type="text/html">
+<div class="p_sub">툴팁이 나오면...
+    <div class="tooltip_limited">
+        <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+        <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+            <p class="tooltip_tit">툴팁 타이틀영역</p>
+            <div class="tooltip_cont"> 
+                기본형과 타이틀형이 있습니다. <br>
+                현재 툴팁은 타이틀형입니다.. <br>
+                툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                툴팁 영역으로 기본형과 타이틀형이 있습니다.
+            </div>
+            <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+        </div>
+    </div>
+</div>
+            </script>
+        </div>
+
+<!--
+       <div data-class="section">
+            <div data-class="h1">타이틀형</div>
+             <script type="text/html">
+<p class="tooltip"><span>월 납입방식 : </span> <button type="button" class="btn_tooltip js_tooltip"><span class="hidden">툴팁 열기</span></button></p>
+<div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+    <p class="tooltip_tit">툴팁 타이틀영역</p>
+    <div class="tooltip_cont">
+        <ul class="depth bul">
+            <li>툴팁 영역으로 기본형과 타이틀형이 있습니다. </li>
+            <li>툴팁 영역으로 기본형과 타이틀형이 있습니다. </li>
+        </ul>
+    </div>
+    <button type="button" class="btn_tooltip_x"><span class="hidden">툴팁 닫기</span></button>
+</div>
+            </script>
+        </div>
+    </div>
+-->
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

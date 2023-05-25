@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>튜토리얼</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+
+    <div id="content" class="cate_regist type2">
+        <h1 class="hidden">튜토리얼</h1>
+        
+        <div class="section">
+            <div class="first_tutorial_swiper">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="tit_wrap">
+                                <h2 class="tit_h1"><span class="num_unit">Only</span> <span class="number">1</span> <span class="num_unit">for you!</span></h2>
+                                <p class="p">많이쓰는 계좌는 맨 앞에서 빠르게!</p>
+                            </div>
+                            <p class="img"><img src="/mnbank/app/img/common/img_tutorial_1.png" alt="홈화면 대표계좌 이용안내 화면"></p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tit_wrap">
+                                <h2 class="tit_h1"><span class="num_unit">Only</span> <span class="number">1</span> <span class="num_unit">for you!</span></h2>
+                                <p class="p">나만을 위한 정보를 한눈에!</p>
+                            </div>
+                            <p class="img"><img src="/mnbank/app/img/common/img_tutorial_2.png" alt="홈화면 고객님을 위한 추천 컨텐츠 안내 화면"></p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tit_wrap">
+                                <h2 class="tit_h1"><span class="num_unit">Need Only</span> <span class="number">1</span></h2>
+                                <p class="p">드디어 알림이 KB스타뱅킹에!</p>
+                            </div>
+                            <p class="img"><img src="/mnbank/app/img/common/img_tutorial_3.png" alt="홈화면 알림함 접속 안내"></p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tit_wrap">
+                                <h2 class="tit_h1"><span class="num_unit">Need Only</span> <span class="number">1</span></h2>
+                                <p class="p">자동로그인으로 더 빨라진 KB스타뱅킹!</p>
+                            </div>
+                            <p class="img"><img src="/mnbank/app/img/common/img_tutorial_4.png" alt="자동로그인 이용안내"></p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tit_wrap">
+                                <h2 class="tit_h1"><span class="num_unit">Special</span> <span class="number">1</span> <span class="num_unit">for you!</span></h2>
+                                <p class="p">똑똑한 내 자산 주치의 ‘마이자산관리’</p>
+                            </div>
+                            <p class="img"><img src="/mnbank/app/img/common/img_tutorial_5.png" alt="마이자산관리 이용안내"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="first_tutorial_wrap">
+            <div class="fix_button">
+                <button type="button" class="btn_tutorial_left">다시 보지 않기</button>
+                <button type="button" class="btn_tutorial_right">닫기</button>
+            </div>
+        </div>
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script src="/mnbank/app/js/library/swiper.min.js"></script> <!-- 슬라이드용 플러그인 -->
+<!-- 211015 수정 -->
+<script>
+    $(function (){
+
+        var imgHeightMotion = function(){
+            var _html = $('html').height(),
+                _htmlWidth = $('html').width(),
+                _topGaq = 206, // 이미지 위의 간격
+                _bottomGaq = $('.first_tutorial_wrap .fix_button').outerHeight(), // 아미지 아래 간격
+                _visImgWrap = $('.first_tutorial_swiper .img'),
+                _visImg = _visImgWrap.find('img'),
+                _visImgHeight = _html - (_topGaq + _bottomGaq),
+                _swiperSlide = $('.first_tutorial_swiper .swiper-slide'),
+                _swiperSlideHeight = _html - (_bottomGaq + 16);
+            
+            _visImgWrap.css('height', _visImgHeight).find(_visImg).css('height', _visImgHeight);
+            if (_visImg.width() > _htmlWidth) {
+                _visImg.css({'width':'100%','height':'auto'});
+                _visImgWrap.css({'width':'100%','height':_visImg.height()});
+            }
+            _swiperSlide.css({'width':_htmlWidth,'height':_swiperSlideHeight});
+        }
+        imgHeightMotion();
+
+        $(window).resize(function(){
+            imgHeightMotion();
+        })
+
+        var swiper = new Swiper('.first_tutorial_swiper .swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            pagination : { 
+                el : '.first_tutorial_swiper .swiper-pagination',
+                clickable: true,
+                renderBullet: function(idx, className) {
+                    var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+                    return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+                }    
+            },
+            on: { 
+                afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        _this.parent().find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    });
+                },
+                transitionEnd: function() {
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                    this.$el.parent().find('.swiper-pagination-bullet').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-pagination-bullet-active')) {
+                            _this.attr('title', '선택됨').siblings().attr('title', '');
+                        };
+                    });
+                },
+            }
+        });
+    })
+</script>
+<!-- //211015 수정 -->
+
+</body>
+</html>

@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    
+    <style>
+    .g_ele_tit {margin:2rem 0 .6rem; font-weight:700;}
+    .rdoChk_group.inline + .rdoChk_group.inline {display:block;}
+    .switch + .switch {margin-left:2rem;}
+
+    /* 라디오박스 샘플 : 해당이미지 및 class 는 카테고리.css 에 정의 */
+    .baby_sel li .selection .label:before { background-image:url(/mnbank/app/img/reference/img_baby_radio.png); background-size:15.3rem auto;} 
+    .baby_sel li.item2 .selection .label:before {background-position:-5.1rem 0;}
+    .baby_sel li.item3 .selection .label:before {background-position:-10.2rem 0;}
+
+    /* 체크박스 박스 샘플 : 해당이미지 및 class 는 카테고리.css 에 정의 (라디오박스 샘플과 동일) */
+    .card_fin_tech li .selection .label:before{width:3.2rem; height:3.2rem; position:static; border:0; background-image:url(/mnbank/app/img/common/spr_ico_bank.png); background-size:32rem auto;}
+    .card_fin_tech li.item2 .selection .label:before {background-position:0 0;}
+    .card_fin_tech li.item3 .selection .label:before {background-position:0 0;}
+    .card_fin_tech li.item4 .selection .label:before {background-position:0 0;}
+    .card_fin_tech li.item5 .selection .label:before {background-position:0 0;}
+    .card_fin_tech li.item6 .selection .label:before {background-position:0 0;}
+
+    .card_fin_tech li .selection .label:before{background:transparent url(/mnbank/app/img/common/spr_ico_bank.png) !important; background-size:32rem auto !important;} /* 가이드를 위한 임시 css */
+
+    </style>
+</head>
+<body>
+    <div data-class="contents">     
+
+        <div data-class="component-name">폼</div>
+<!--         <div data-class="box">
+            <a href="/mnbank/guide/components/forms.html" target="_blank" title="새창" data-class="button">Form Component Sample</a>
+        </div> -->        
+        <div data-class="box">
+            <div data-class="list disc">
+                <div>readonly, disabled일 경우:<br> 
+                    form_group 에 해당 속성명으로 구분자를 넣어준다. ex) class="form_group"
+                </div>                
+                <div>타이틀 인터렉션:<br> 
+                    레이블 고정으로 최종 결정됨
+                </div>
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">개발전용</div>
+            <div data-class="h2" style="color:red">(보안키패드, 커스텀키패드 호출용 / 안드로이드 접근성 대응)</div>
+            <div data-class="h3">Input폼 > readonly</div>
+            <div data-class="box">
+                input에 .bg_white 클래스를 추가한다.
+            </div>
+            <div data-class="box">
+                div에 <span style="color:red">role="button" aria-label="변경된 value값, title명 입력"</span> 추가<br>
+                input 에 <span style="color:red">aria-hidden="true"</span> 추가<br>
+                * [이체금액] 버튼을 클릭해서 value값이 변경될 때마다 aria-label 에 변경되는 값이 적용되어야 함
+            </div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">개발 키패드 호출용 (.bg_white + readonly)</div>
+    <div class="form_row">        
+        <div class="input" role="button" aria-label="출금계좌정보 입력" onclick="">            
+            <input type="tel" aria-hidden="true" placeholder="입력내용" title="출금계좌정보" value="" class="bg_white" readonly>
+        </div>
+    </div>    
+</div>
+<div class="form_group">
+    <div class="form_tit">개발 키패드 완료 (.bg_white.finished + readonly)</div>
+    <div class="form_row">        
+        <div class="input" role="button" aria-label="000000-00-000000, 출금계좌정보 입력" onclick="">            
+            <input type="tel" aria-hidden="true" placeholder="입력내용" title="출금계좌정보" value="000000-00-000000" class="bg_white" readonly>
+        </div>
+    </div>    
+</div>
+<div class="form_group">
+    <div class="form_tit">개발 키패드 완료 (.bg_white.finished + readonly)</div>
+    <div class="form_row">        
+        <div class="input" role="button" aria-label="4자리 입력됨, 비밀번호 입력" onclick="">            
+            <input type="password" aria-hidden="true" placeholder="" title="비밀번호" value="****" class="bg_white" readonly>
+        </div>
+    </div>    
+</div>
+<div class="form_group">
+    <div class="form_tit">Input : Default</div>
+    <div class="form_row"> 
+        <div class="input unit js_unit" role="button" aria-label="상단버튼을 클릭할 때 변경되는 금액, 이체금액 입력" onclick="">
+            <input type="tel" aria-hidden="true" maxlength="16" placeholder="숫자만 입력" title="이체금액" data-unit="원">
+        </div>
+    </div>
+</div>
+<div class="form_group">
+    <div class="form_tit">개발 키패드 호출용 (.bg_white + readonly)</div>
+    <div class="form_row"> 
+        <div class="input unit js_unit" role="button" aria-label="상단버튼을 클릭할 때 변경되는 금액, 이체금액 입력" onclick="">
+            <input type="tel" aria-hidden="true" maxlength="16" placeholder="숫자만 입력" title="이체금액" data-unit="원" readonly class="bg_white">
+        </div>
+    </div>
+</div>
+            </script>
+
+
+            <div data-class="h2">오류 메시지</div>
+            <div data-class="h3">Success</div>
+            <script type="text/html">
+<div class="form_group success"> 
+    <div class="form_tit">타이틀</div>    
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명">
+        </div>
+    </div>
+    <p class="tip">개발전용 : 정상 텍스트 메시지 (html파일에는 넣지말것, 개발에 백차장님이 공통전달 예정)</p><!-- 개발전용 : validation 결과 메세지 -->
+</div>
+            </script>
+
+            <div data-class="h3">Error</div>
+            <script type="text/html">
+<div class="form_group error"> 
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input"><input type="text" placeholder="입력내용" title="타이틀명"></div>
+    </div>
+    <p class="tip">개발전용 : 오류 텍스트 메시지 (html파일에는 넣지말것, 개발에 백차장님이 공통전달 예정)</p><!-- 개발전용 : validation 결과 메세지 -->
+</div>
+            </script>   
+
+            <div data-class="h3">셀렉트박스 > readonly</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number readonly" title="출금계좌정보">000000-00-000000</button>
+        </div>
+    </div>    
+</div>
+            </script>  
+
+        </div>
+        <div data-class="section">
+
+            <div data-class="h2">부가기능</div>
+            <div data-class="h3">(확인용)그룹에 오는 요소들 위치</div>
+            <div data-class="box">
+                폼 그룹안에 위치되는 요소들<br>
+                폼 그룹 하단의 outline 버튼이 오는 경우 버튼의 위치가 formGroup안이든 밖이든 버튼영역의 클래스를 샘플처럼 "form_btm_full_wrap"으로 통일해서 사용하세요.
+            </div>
+            <script type="text/html">   
+<!-- formgroup -->
+<div class="form_group">
+    <div class="form_tit">금액</div>
+    <div class="form_row">
+        <div class="input" role="button">
+            <input type="tel" placeholder="입력내용" title="타이틀명">
+        </div>
+    </div>
+    <p class="form_hangul" aria-hidden="true">삼만구천육백원</p>        
+    <div class="form_btm_wrap right">
+        <p class="sum_hint">출금가능금액 : <span class="number fc_posi">1,787,888,000</span><span class="num_unit">원</span></p>
+        <p class="sum_hint">1일 이체잔여한도 : <span class="number fc_nega">21,787,888,000</span><span class="num_unit">원</span></p>                
+    </div>
+    <p class="tip_info">안내메세지</p>         
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">버튼 레벨1</a>
+    </div>       
+    <div class="form_btm_full_wrap">
+        <span><button type="button" class="btn outline md">버튼 레벨2</button></span>
+    </div>     
+</div>
+<!-- //formgroup -->
+               </script>
+        </div>
+
+    <div data-class="section">
+        <div data-class="h1">Type</div>
+            <div data-class="h2">Input</div>
+            <div data-class="box">
+                <div data-class="list disc">                                        
+                    <div>Input Type 구분<br>
+                        문자 : text / 숫자 : tel / 문자 + 숫자 : text / 비밀번호: password
+                    </div>                    
+                </div>
+            </div>
+
+            <div data-class="h3">Default</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명">
+        </div>
+    </div>   
+    <p class="tip_info">안내메세지</p> 
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">버튼</a>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">Filled (디자인 확인용 / 기능X)</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" title="타이틀명" value="텍스트" class="finished">
+        </div>
+    </div>   
+    <p class="tip_info">안내메세지</p> 
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">버튼</a>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">Readonly</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명" value="텍스트" readonly>
+        </div>
+    </div>  
+</div>
+            </script>
+
+            <div data-class="h3">Disabled</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명" value="텍스트" disabled>
+        </div>
+    </div>  
+</div>
+            </script>
+            
+            <div data-class="h3">네이티브키패드 호출</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">입력전</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명" value="" readonly class="bg_white">
+        </div>
+    </div>
+    <div class="form_tit">입력후</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" placeholder="입력내용" title="타이틀명" value="텍스트" readonly class="bg_white">
+        </div>
+    </div>  
+</div>
+            </script>
+
+            <div data-class="h3">Input + Unit</div>
+            <div data-class="box">
+                input 오른쪽에 단위가 붙을때 사용
+            </div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="input unit js_unit" role="button">
+            <input type="tel" maxlength="16" placeholder="숫자만 입력" title="이체금액" data-unit="%">
+        </div>
+    </div>
+</div>                
+            </script>
+
+        </div>
+        
+        <div data-class="section">
+            <div data-class="h2">Selectbox</div>
+            <div data-class="box">버튼형. Bottom Sheet 호출용</div>
+            <div data-class="h3">Default</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="출금계좌정보 선택">선택하세요</button><!-- 개발 : 버튼에 값이 들어갈 경우 클래스 "active" 추가 : ex) class="select_btn active" -->
+        </div>
+    </div>
+    <p class="tip_info">안내 메세지</p>
+</div>
+            </script>
+
+            <div data-class="h3">Active</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="출금계좌정보 선택">000000-00-000000</button>
+        </div>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">disabled</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="출금계좌정보" disabled>000000-00-000000</button>
+        </div>
+    </div>    
+</div>
+            </script>
+
+            <div data-class="h3">Readonly</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number readonly" title="출금계좌정보">000000-00-000000</button>
+        </div>
+    </div>    
+</div>
+            </script>
+
+
+            <div data-class="h3">Success</div>
+            <script type="text/html">
+<div class="form_group success">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="출금계좌정보 선택">000000-00-000000</button>
+        </div>
+    </div>    
+</div>
+            </script>
+
+            <div data-class="h3">Error</div>
+            <script type="text/html">
+<div class="form_group error">
+    <div class="form_tit">출금계좌정보</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="출금계좌정보 선택">000000-00-000000</button>
+        </div>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">Box Type</div>
+            <script type="text/html">
+<div class="select outline">
+    <button type="button" class="select_btn number active" title="출금계좌정보 선택">000000-00-000000</button>
+</div>
+<br>
+<div class="select outline lg">
+    <button type="button" class="select_btn number active" title="출금계좌정보 선택">000000-00-000000</button>
+</div>
+            </script>
+        </div>
+        
+        <div data-class="section">
+            <div data-class="h2">Textarea</div>
+            <div data-class="notice">4/17 디자인 - 레이블 없이 heading 타이틀만 노출하는 것인지 확인 필요</div>
+            <div data-class="h3">Default</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea">
+            <textarea title="타이틀명" placeholder="내용을 입력해주세요."></textarea>        
+            <p class="num_info"><span><em class="curr">3</em> / 200</span></p>            
+        </div> 
+    </div>
+</div>
+</script>
+
+<div data-class="p">No Byte</div>
+<script type="text/html">
+<div class="form_row">
+    <div class="textarea nobyte">
+        <textarea title="타이틀명" placeholder="내용을 입력해주세요."></textarea>      
+    </div> 
+</div>
+            </script>
+    
+            <div data-class="h3">Disabled</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea">
+            <textarea name="frm_cont" title="타이틀명" disabled>입력텍스트</textarea>        
+            <p class="num_info"><span><em class="curr">3</em> / 200</span></p>            
+        </div>   
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h3">Readonly</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea">
+            <textarea name="frm_cont" title="타이틀명" readonly>입력텍스트</textarea>        
+            <p class="num_info"><span><em class="curr">3</em> / 200</span></p>    
+        </div>        
+    </div>
+</div>
+            </script>
+
+            <div data-class="h3">Error</div>
+            <script type="text/html">
+<div class="form_group error">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea">
+            <textarea title="타이틀명" placeholder="내용을 입력해주세요."></textarea>        
+            <p class="num_info"><span><em class="curr">3</em> / 200</span></p>            
+        </div>
+    </div>
+    <p class="tip">에러문구입니다.</p>
+</div>
+            </script>
+        
+        <div data-class="h3">auto Height</div>
+            <script type="text/html">
+<div class="form_group error">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea auto_height">
+            <textarea title="타이틀명" placeholder="내용을 입력해주세요."></textarea>
+        </div>
+    </div>
+</div>
+
+
+$('.textarea.auto_height >textarea').innerHeight($('#inputString5').prop('scrollHeight'));//화면로드시 placeholder값체크후 높이값변경
+
+$('.textarea.auto_height >textarea').on({//세부내용 textarea처리
+	'click':function(){
+		if($(this).val() == ''){
+			var _pholder = ($(this).attr('placeholder'));
+			$(this).val(_pholder)
+		}
+	},
+	'keyup':function(){//텍스트 입력시 높이값 변경
+		if($(this).innerHeight() !==  $(this).prop('scrollHeight')){
+			$(this).innerHeight($(this).prop('scrollHeight'));
+		}
+	},
+	'focusout':function(){//텍스트 입력후 높이값 변경
+		$(this).innerHeight('4.6rem')
+		$(this).innerHeight($(this).prop('scrollHeight'));
+	}
+});
+			</script>
+        </div>
+        
+        <div data-class="section">
+            <div data-class="h2">Radio</div>
+            <div data-class="h3">Default</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div>class="rdoChk_group"으로 그룹핑</div>                
+                    <div>4개 이하, 한 줄 처리 - 가로형 박스 라디오<br>
+                        5개 이상, 한 줄을 넘을 경우 - 셀렉트박스로 변환
+                    </div>
+                </div>
+            </div>
+
+            <div data-class="p">Horizontal</div>   
+            <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="rdoChk_group inline">
+    <span class="selection">
+        <input type="radio" id="radioH1" name="radio_h" checked>
+        <label for="radioH1" class="label"><em>항목1</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioH2" name="radio_h">
+        <label for="radioH2" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioH3" name="radio_h" disabled>
+        <label for="radioH3" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioH4" name="radio_h2" checked disabled>
+        <label for="radioH4" class="label"><em>비활성화(checked)</em></label>
+    </span>
+    <span class="selection alone">
+        <input type="radio" id="radioH5" name="radio_h2">
+        <label for="radioH5" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="p">Vertical</div>  
+            <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="rdoChk_group">
+    <span class="selection">
+        <input type="radio" id="radioV1" name="radio_v" checked>
+        <label for="radioV1" class="label">
+            <em>항목1</em>
+            <span class="label_txt">ddddddddddddddd</span>
+        </label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioV2" name="radio_v">
+        <label for="radioV2" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioV3" name="radio_v" disabled>
+        <label for="radioV3" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioV4" name="radio_v2" checked disabled>
+        <label for="radioV4" class="label"><em>비활성화(checked)</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioV5" name="radio_v2">
+        <label for="radioV5" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="p">2단</div>  
+            <script type="text/html">
+<ul class="rdoChk_ul2">
+    <li>
+        <div class="selection">
+            <input type="radio" id="radioul5" name="radio_ul" checked>
+            <label for="radioul5" class="label">
+                <em>항목1</em>                
+            </label>
+            <div class="selection_in">항목만 클릭</div>
+        </div>
+    </li>
+    <li>
+        <div class="selection">
+            <input type="radio" id="radioul6" name="radio_ul">
+            <label for="radioul6" class="label">
+                <em>항목2</em>                
+            </label>
+            <div class="selection_in">항목만 클릭</div>
+        </div>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="p">Middle</div>
+            <script type="text/html">
+<ul class="rdoChk_ul2">
+    <li>
+        <span class="selection mid">
+                <input type="radio" id="mid1" name="mid" checked>
+                <label for="mid1" class="label">
+                    <em>항목1</em>
+                    <span>전체클릭</span>
+                </label>
+        </span>
+    </li>
+    <li>
+        <span class="selection mid">
+                <input type="radio" id="mid2" name="mid">
+                <label for="mid2" class="label">
+                    <em>항목2</em>
+                    <span>전체클릭</span>
+                </label>
+        </span>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h3">Box</div>
+            <div data-class="box">
+                class="rdoChk_box"으로 그룹핑
+            </div>
+            <script type="text/html">
+<div class="rdoChk_box">
+    <span class="selection">
+        <input type="radio" id="radioBox1" name="radio_box1" checked>
+        <label for="radioBox1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBox2" name="radio_box1">
+        <label for="radioBox2" class="label"><em>항목</em></label>
+    </span>
+</div>
+            </script>
+            <div data-class="p">다단</div>
+            <script type="text/html">
+<p>default : 2개 </p>
+<div class="rdoChk_box_hor">
+    <span class="selection">
+        <input type="radio" id="radioBoxHor1_1" name="radio_box_hor1" checked>
+        <label for="radioBoxHor1_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor1_2" name="radio_box_hor1">
+        <label for="radioBoxHor1_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor1_3" name="radio_box_hor1">
+        <label for="radioBoxHor1_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor1_4" name="radio_box_hor1">
+        <label for="radioBoxHor1_4" class="label"><em>항목</em></label>
+    </span>
+</div>
+
+<p> 3개 col3</p>
+<div class="rdoChk_box_hor col3">
+    <span class="selection">
+        <input type="radio" id="radioBoxHor2_1" name="radio_box_hor2" checked>
+        <label for="radioBoxHor2_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor2_2" name="radio_box_hor2">
+        <label for="radioBoxHor2_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor2_3" name="radio_box_hor2">
+        <label for="radioBoxHor2_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor2_4" name="radio_box_hor2">
+        <label for="radioBoxHor2_4" class="label"><em>항목</em></label>
+    </span>
+</div>
+
+<p> 4개 col4</p>
+<div class="rdoChk_box_hor col4">
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_1" name="radio_box_hor3" checked>
+        <label for="radioBoxHor3_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_2" name="radio_box_hor3">
+        <label for="radioBoxHor3_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_3" name="radio_box_hor3">
+        <label for="radioBoxHor3_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_4" name="radio_box_hor3">
+        <label for="radioBoxHor3_4" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_5" name="radio_box_hor3">
+        <label for="radioBoxHor3_5" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor3_6" name="radio_box_hor3">
+        <label for="radioBoxHor3_6" class="label"><em>항목</em></label>
+    </span>
+</div>
+
+<p> 특이 case : rdoChk_type1</p>
+<div class="rdoChk_box_hor rdoChk_type1">
+    <span class="selection full">
+        <input type="radio" id="radioBoxHor4_1" name="radio_box_hor4" checked="">
+        <label for="radioBoxHor4_1" class="label"><em>전체</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor4_2" name="radio_box_hor4">
+        <label for="radioBoxHor4_2" class="label"><em>원화</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHor4_3" name="radio_box_hor4">
+        <label for="radioBoxHor4_3" class="label"><em>외화</em></label>
+    </span>
+</div>
+            </script>
+            <div data-class="p">다단 + 여백</div>
+            <script type="text/html">
+<p>default : 2개 </p>
+<div class="rdoChk_box_hor_gap">
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap1_1" name="radio_box_hor_gap1" disabled>
+        <label for="radioBoxHorGap1_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap1_2" name="radio_box_hor_gap1" checked>
+        <label for="radioBoxHorGap1_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap1_3" name="radio_box_hor_gap1">
+        <label for="radioBoxHorGap1_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap1_4" name="radio_box_hor_gap1">
+        <label for="radioBoxHorGap1_4" class="label"><em>항목</em></label>
+    </span>
+</div>
+
+<p> 3개 col3</p>
+<div class="rdoChk_box_hor_gap col3">
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap2_1" name="radio_box_hor_gap2" disabled>
+        <label for="radioBoxHorGap2_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap2_2" name="radio_box_hor_gap2" checked>
+        <label for="radioBoxHorGap2_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap2_3" name="radio_box_hor_gap2">
+        <label for="radioBoxHorGap2_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap2_4" name="radio_box_hor_gap2">
+        <label for="radioBoxHorGap2_4" class="label"><em>항목</em></label>
+    </span>
+</div>
+
+<p> 4개 col4</p>
+<div class="rdoChk_box_hor_gap col4">
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap3_1" name="radio_box_hor_gap3" disabled>
+        <label for="radioBoxHorGap3_1" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap3_2" name="radio_box_hor_gap3" checked>
+        <label for="radioBoxHorGap3_2" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap3_3" name="radio_box_hor_gap3">
+        <label for="radioBoxHorGap3_3" class="label"><em>항목</em></label>
+    </span>
+    <span class="selection">
+        <input type="radio" id="radioBoxHorGap3_4" name="radio_box_hor_gap3">
+        <label for="radioBoxHorGap3_4" class="label"><em>항목</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="h3">이미지형</div>
+            <div data-class="box">
+                class="rdoChk_item class명"
+            </div>
+            <script type="text/html">
+<ul class="rdoChk_item baby_sel">
+    <li class="item1">
+        <span class="selection">
+                <input type="radio" id="radio_item_1" name="radio_item">
+                <label for="radio_item_1" class="label">
+                    <em>여자</em>
+                </label>
+        </span>
+    </li>
+    <li class="item2">
+        <span class="selection">
+                <input type="radio" id="radio_item_2" name="radio_item">
+                <label for="radio_item_2" class="label">
+                    <em>남자</em>
+                </label>
+        </span>
+    </li>
+    <li class="item3">
+        <span class="selection">
+            <input type="radio" id="radio_item_3" name="radio_item">
+            <label for="radio_item_3" class="label">
+                <em>태아</em>
+            </label>
+        </span>
+    </li>
+</ul>
+            </script>
+        </div>
+        
+        <div data-class="section">
+            <div data-class="h2">Checkbox</div>
+            <div data-class="h3">Default</div>
+            <div data-class="box">
+                그룹 체크박스인 경우
+            </div>
+            <script type="text/html">
+<div class="rdoChk_group inline">
+    <span class="selection">
+        <input type="checkbox" id="checkSize1" checked>
+        <label for="checkSize1" class="label"><em>항목1</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkSize2" >
+        <label for="checkSize2" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkSize3" disabled>
+        <label for="checkSize3" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkSize4" checked disabled>
+        <label for="checkSize4" class="label"><em>체크상태 : 비활성화</em></label>
+    </span>
+    <span class="selection alone">
+        <input type="checkbox" id="checkSize5">
+        <label for="checkSize5" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="p">vertical</div>
+            <script type="text/html">
+<div class="rdoChk_group">
+    <span class="selection">
+        <input type="checkbox" id="checkChecked" checked>
+        <label for="checkChecked" class="label"><em>항목1</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="check" >
+        <label for="check" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkDisabled" disabled>
+        <label for="checkDisabled" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkCheckedDisabled" checked disabled>
+        <label for="checkCheckedDisabled" class="label"><em>체크상태 : 비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkAlone">
+        <label for="checkAlone" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="p">Horizontal</div> 
+            <script type="text/html">
+<div class="rdoChk_group inline">
+    <span class="selection">
+        <input type="checkbox" id="checkInline1" checked>
+        <label for="checkInline1" class="label"><em>항목1</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkInline2" >
+        <label for="checkInline2" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkInlinea" disabled>
+        <label for="checkInlinea" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkInlineb" checked disabled>
+        <label for="checkInlineb" class="label"><em>체크상태 : 비활성화</em></label>
+    </span>
+    <span class="selection">
+        <input type="checkbox" id="checkInline3">
+        <label for="checkInline3" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="p">수직 정렬</div>
+            <script type="text/html">
+<ul class="rdoChk_ul2">
+    <li>
+        <span class="selection mid">
+                <input type="checkbox" id="mid3" checked>
+                <label for="mid3" class="label">
+                    <em>항목1</em>
+                    <div>전체클릭</div>
+                </label>
+        </span>
+    </li>
+    <li>
+        <span class="selection mid">
+                <input type="checkbox" id="mid4">
+                <label for="mid4" class="label">
+                    <em>항목2</em>
+                    <div>전체클릭</div>
+                </label>
+        </span>
+    </li>
+</ul>
+            </script>
+
+            
+        <div data-class="h3">Check</div>
+        <div data-class="box">
+            그룹 체크박스에 포함된 개별 체크박스인 경우<br>
+            class="chk" 추가
+        </div>
+        <script type="text/html">
+<div class="rdoChk_group inline">
+    <span class="selection chk">
+        <input type="checkbox" id="checkCHK" checked>
+        <label for="checkCHK" class="label"><em>항목1</em></label>
+    </span>
+    <span class="selection chk">
+        <input type="checkbox" id="checkCHK" >
+        <label for="checkCHK" class="label"><em>항목2</em></label>
+    </span>
+    <span class="selection chk">
+        <input type="checkbox" id="checkCHK" disabled>
+        <label for="checkCHK" class="label"><em>비활성화</em></label>
+    </span>
+    <span class="selection chk">
+        <input type="checkbox" id="checkCHK" checked disabled>
+        <label for="checkCHK" class="label"><em>체크상태 : 비활성화</em></label>
+    </span>
+    <span class="selection chk">
+        <input type="checkbox" id="checkCHK">
+        <label for="checkCHK" class="label"><em class="hidden">단독사용</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="h3">이미지형</div>
+            <script type="text/html">
+<ul class="checkChk_item col3 card_fin_tech">
+    <li class="item1">
+        <span class="selection">
+            <input type="checkbox" id="check_item_1" checked>
+            <label for="check_item_1" class="label">
+                <em>KB국민카드</em>
+            </label>
+        </span>
+    </li>
+    <li class="item2">
+        <span class="selection">
+            <input type="checkbox" id="check_item_2">
+            <label for="check_item_2" class="label">
+                <em>NH농협은행</em>
+            </label>
+        </span>
+    </li>
+    <li class="item3">
+        <span class="selection">
+            <input type="checkbox" id="check_item_3">
+            <label for="check_item_3" class="label">
+                <em>우리카드</em>
+            </label>
+        </span>
+    </li>
+    <li class="item4">
+        <span class="selection">
+            <input type="checkbox" id="check_item_4">
+            <label for="check_item_4" class="label">
+                <em>BC카드<br>(SC제일은행)</em><!-- 텍스트가 두 줄일 경우를 나타내기 위해, '(SC제일은행)'을 임시로 추가해놓았습니다. -->
+            </label>
+        </span>
+    </li>
+    <li class="item5">
+        <span class="selection">
+            <input type="checkbox" id="check_item_5">
+            <label for="check_item_5" class="label">
+                <em>삼성카드</em>
+            </label>
+        </span>
+    </li>
+    <li class="item6">
+        <span class="selection">
+            <input type="checkbox" id="check_item_6">
+            <label for="check_item_6" class="label">
+                <em>신한카드</em>
+            </label>
+        </span>
+    </li>
+</ul>
+            </script>
+        </div>
+
+                
+        <div data-class="section">
+            <div data-class="h2">Switch</div>
+            <div data-class="box">
+                <a href="/mnbank/html/setting/BFE020000.html" target="_blank" title="새창" data-class="button">Switch List Sample</a>
+            </div>
+            <div data-class="h3">Default</div>
+            <script type="text/html">
+<div style="margin-top:.4rem;">
+    <span class="switch right">    
+        <input type="checkbox" id="switch1" checked>
+        <label for="switch1"><span>활성</span></label>
+    </span>
+    <span class="switch">    
+        <input type="checkbox" id="switch2" checked>
+        <label for="switch2"><span>활성</span></label>
+    </span>
+    <span class="switch">    
+        <input type="checkbox" id="switch3" disabled>
+        <label for="switch3"><span>비활성</span></label>
+    </span>
+    <span class="switch">    
+        <input type="checkbox" id="switch4" checked disabled>
+        <label for="switch4"><span>체크된 상태의 비활성</span></label>
+    </span>
+    <span class="switch">    
+        <input type="checkbox" id="switch5" checked >
+        <label for="switch5"><span class="hidden">단독사용</span></label>
+    </span>
+</div>
+            </script>
+            
+            <div data-class="h3">상승/하락</div>    
+            <script type="text/html">
+<span class="switch rate">    
+    <input type="checkbox" id="switch_rate" name="switch_rate">
+    <label for="switch_rate"><span class="hidden">상승</span></label>
+</span>
+            </script>
+
+            <div data-class="h3">푸시알림</div>    
+            <script type="text/html">
+<div class="hgroup">
+    <div>
+        <div class="h2">
+            <h3>입출금 푸시 알림 신청</h3>
+        </div>
+    </div>
+    <div>
+        <span class="switch">
+            <input type="checkbox" id="switch1_1_1">
+            <label for="switch1_1_1"><span class="hidden">알림(Push) 동의</span></label>
+        </span>
+    </div>
+</div>
+<div class="setting_push_list">
+    <span class="selection chk gap_xs_2">
+        <input type="checkbox" id="push_noti1_1">
+        <label for="push_noti1_1" class="label"><em>맞춤상품&middot;혜택 알림</em></label>
+    </span>
+</div>
+            </script>
+
+            <div data-class="h2">폼 타이틀 + 텍스트</div>
+            <div data-class="box">
+                form_group > form_row에 폼요소가 아닌 일반 텍스트가 오는 경우 사용
+            </div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="form_txt">한줄 일반 텍스트</div>	
+    </div>
+</div>
+
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="form_txt">
+            <p>두 줄 일반 텍스트</p>
+            <p>두줄이 올 경우 p태그를 사용해도 되며, br을 써도 됨.</p>
+        </div>	
+    </div>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Component</div>
+            <div data-class="h2">이름</div>
+            <script type="text/html">
+<div class="form_group js_trans error">
+    <div class="form_tit">이름</div>
+    <div class="form_row">
+        <div class="input"><input type="text" value="" title="이름"></div>
+    </div>
+    <div class="form_btm_wrap">
+        <div class="tip_info">안내메세지
+            <!-- tooltip -->
+            <div class="tooltip_limited">
+                <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+                <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                    <p class="tooltip_tit">툴팁 타이틀영역 : 타이틀없을때 빼세요!</p>
+                    <div class="tooltip_cont"> 
+                        기본형과 타이틀형이 있습니다. <br>
+                        현재 툴팁은 타이틀형입니다.. <br>
+                        툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                        툴팁 영역으로 기본형과 타이틀형이 있습니다.
+                    </div>
+                    <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+                </div>
+            </div>
+            <!-- //tooltip -->
+        </div>
+        
+        <p class="tip">오류 텍스트 메시지</p>
+        <p class="tip">오류 텍스트 메시지</p>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">성별</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">성별</div>
+    <div class="form_row">
+        <div class="rdoChk_box">
+            <span class="selection">
+                <input type="radio" id="gender1" name="gender" checked>
+                <label for="gender1" class="label"><em>남</em></label>
+            </span>
+            <span class="selection">
+                <input type="radio" id="gender2" name="gender">
+                <label for="gender2" class="label"><em>여</em></label>
+            </span>
+        </div>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">이메일주소</div>
+            <script type="text/html">
+<div class="form_group email">
+    <div class="form_tit">이메일</div>
+    <div class="form_row col">
+        <div class="input">
+            <input type="text" title="ID" placeholder="아이디" value="">
+        </div>
+        <span class="space">@</span>
+        <div class="select">
+            <button type="button" class="select_btn" title="도메인 선택">도메인</button>
+        </div>
+    </div>
+    <div class="form_row">
+        <div class="input"><input type="text" value="" title="도메인 직접입력"></div>
+    </div>
+    <div class="form_btm_wrap">
+        <span class="selection">
+            <input type="checkbox" id="noEmail">
+            <label for="noEmail" class="label"><em>이메일 없음</em></label>
+        </span>
+    </div>
+</div>    
+            </script>
+    
+            <div data-class="h2">자택 전화번호(선택)</div>
+            <script type="text/html">
+<div class="form_group tel success">
+    <div class="form_tit">자택 전화번호(선택)</div>
+    <div class="form_row col">
+        <div class="select">
+            <button type="button" class="select_btn number" title="지역번호 선택">02</button>
+        </div>
+        <div class="input" role="button">
+            <input type="tel" value="" title="자택 전화번호">
+        </div>
+    </div>
+    <p class="tip">정상 텍스트 메시지</p>
+    <div class="form_btm_wrap">
+        <span class="selection">
+            <input type="checkbox" id="frm_no_tel" name="frm_no_tel">
+            <label for="frm_no_tel" class="label"><em>자택 전화없음</em></label>
+        </span>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">휴대폰</div>
+            <div data-class="h3">기본형</div>
+            <script type="text/html">
+<div class="form_group tel">
+    <div class="form_tit">휴대폰</div>
+    <div class="form_row col">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="휴대폰번호 앞자리">010</button>
+        </div>
+        <div class="input">
+            <input type="tel" value="" maxlength="8" title="휴대폰번호">
+        </div>
+    </div>
+    <div class="form_btm_wrap">
+        <span class="selection">
+            <input type="checkbox" id="noPhone1">
+            <label for="noPhone1" class="label"><em>휴대폰 없음</em></label>
+        </span>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h3">통합형</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">휴대폰</div>
+    <div class="form_row">
+        <div class="input" role="button">
+            <input type="tel" value="" maxlength="11" title="휴대폰번호">
+        </div>
+    </div>
+    <div class="form_btm_wrap">
+        <span class="selection">
+            <input type="checkbox" id="noPhone2">
+            <label for="noPhone2" class="label"><em>휴대폰 없음</em></label>
+        </span>
+    </div>
+</div>
+            </script>            
+            
+            <div data-class="h3">보안형</div>
+            <script type="text/html">
+<div class="form_group tel">
+    <div class="form_tit">휴대폰</div>
+    <div class="form_row col col3">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="휴대폰번호 앞자리">010</button>
+        </div>
+        <div class="input" role="button">
+            <input type="tel" value="" maxlength="4" title="휴대폰번호 중간자리">
+        </div>
+        <div class="input" role="button">
+            <input type="password" value="" maxlength="4" title="휴대폰번호 뒷자리">
+        </div>
+    </div>
+    <div class="form_btm_wrap">
+        <span class="selection">
+            <input type="checkbox" id="noPhone1">
+            <label for="noPhone1" class="label"><em>휴대폰 없음</em></label>
+        </span>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h3">통신사포함</div>
+            <div data-class="notice">접근성 : 인증번호 연장기능 제공 필요(기획 확인)</div>
+            <script type="text/html">
+<div class="form_group tel">
+    <div class="form_tit">휴대폰</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="통신사 선택">통신사</button>
+        </div>
+    </div>
+    <div class="form_row col">
+        <div class="select">
+            <button type="button" class="select_btn number active" maxlength="4" title="휴대폰번호 앞자리">010</button>
+        </div>
+        <div class="input" role="button">
+            <input type="tel" value="" maxlength="8" title="휴대폰번호 뒷자리">
+        </div>
+    </div>
+
+    <!-- ios일때 노출 -->
+    <div class="form_cert_ios">
+        <div class="cert_txt">입력하신 정보로 통신사의 휴대폰 명의를 확인합니다. [휴대폰 명의확인]을 눌러 인증을 위한 문자메시지를 전송해주세요.</div>
+        <div class="form_btm_full_wrap">
+            <span><button type="button" class="btn outline md">휴대폰 명의확인</button></span>
+        </div>
+    </div>
+    <!-- //ios일때 노출 -->
+
+    <div class="form_cert_proc">
+        <div class="cert_txt">입력하신 휴대폰번호로 SMS 인증번호를 전송합니다. [인증번호요청]을 눌러 SMS 인증번호를 입력해주세요.</div>
+        <div class="form_btm_full_wrap">
+            <span><button type="button" class="btn outline md">인증번호 요청</button></span>
+        </div>
+        <div class="form_btm_full_wrap"> <!-- 인증번호 요청 후 재요청 버튼으로 변경  -->
+            <span><button type="button" class="btn outline md">인증번호 재요청</button></span>
+        </div>
+    </div>
+</div>
+
+<div class="form_group js_trans">
+    <div class="form_tit">인증번호</div>
+    <div class="form_row">
+        <div class="input" role="button">
+            <input type="tel" title="인증번호">
+        </div>      
+    </div>
+    <div class="form_btm_wrap row">
+        <div class="col col_l">
+            <p role="text" class="count_time"><span class="tit">잔여시간</span><span class="number">2:59</span></p>
+        </div>
+        <div class="col col_r">
+            <!-- 해당 영역의 outline 버튼은 여기에서만 사용, 다른 form_btm_wrap에서는 사용 불가 -->
+            <button type="button" class="btn outline xs">인증시간연장</button>
+        </div>
+    </div>
+    <div class="btn_wrap certify_btm">
+        <button type="button" id="btn_certify_number" class="btn_txt ico_arr">인증번호가 오지않나요?</button> <!-- 210625 수정(button 으로 수정) --> <!-- 210525 수정 -->
+    </div>
+</div>
+
+<!-- 210525 추가 (알림팝업추가) -->
+<!-- layer -->
+<div id="popup_certify_number" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <ul class="depth bul">
+                <li>1600-1522 번호가 스팸으로 등록되면, 인증번호를 받을 수 없습니다.</li>
+                <li>스팸등록을 해제후 다시 시도해주세요.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <span><button type="button" class="btn primary lg" data-action="close">확인</button></span>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+<!-- //210525 추가 (알림팝업추가) -->
+            </script>
+
+            <div data-class="p">예) 업무 공통 &gt; <a href="/mnbank/html/common/BFE010000.html" target="_blank" class="fc_posi underline">휴대폰 본인 인증</a></div>
+    
+            <div data-class="h2">주민등록번호</div>
+            <div data-class="h3">Default</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">주민등록번호</div>
+    <div class="form_row col jumin">
+        <div class="input">
+            <input type="tel" maxlength="6" title="주민등록번호 앞자리">
+        </div>
+        <span class="space">-</span>
+        <div class="input">
+            <input type="password" maxlength="7" title="주민등록번호 뒷자리">
+        </div>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h3">마스킹</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">주민등록번호</div>
+    <div class="form_row col jumin">
+        <div class="input">
+            <input type="tel" maxlength="6" title="주민등록번호 앞자리">          
+        </div>
+        <span class="space">-</span>
+        <div class="input masking">
+            <input type="tel" maxlength="1" title="주민등록 뒷번호 첫번째자리 입력" placeholder="1" disabled>   
+            <i class="dot" aria-hidden="true"></i>  
+        </div>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">사업자번호</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">
+        사업자번호
+    </div>
+    <div class="form_row col business_num">
+        <span class="input"><input type="tel" maxlength="3" placeholder="3자리" title="사업자번호 첫번째 3자리"></span>
+        <span class="input"><input type="tel" maxlength="2" placeholder="2자리" title="사업자번호 중간 2자리"></span>
+        <span class="input"><input type="tel" maxlength="5" placeholder="5자리" title="사업자번호 마지막 5자리"></span>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">소득확인증명서 발급번호</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">
+        가입자격확인서류 정보입력
+    </div>
+    <div class="form_row income_num">
+        <span class="input"><input type="tel" maxlength="4" placeholder="4자리" title="소득확인증명서 발급번호 첫번째 4자리"></span>
+        <span class="input"><input type="tel" maxlength="3" placeholder="3자리" title="소득확인증명서 발급번호 두번째 3자리"></span>
+        <span class="input"><input type="tel" maxlength="4" placeholder="4자리" title="소득확인증명서 발급번호 세번째 4자리"></span>
+        <span class="input"><input type="tel" maxlength="3" placeholder="3자리" title="소득확인증명서 발급번호 네번째 3자리"></span>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">아파트 동/호수</div>
+            <script type="text/html">
+<div class="form_group apart">
+    <div class="form_tit">아파트 동/호수</div>
+    <div class="form_row col">
+        <div class="input">
+            <input type="tel" value="" maxlength="4" title="아파트 동">
+            <span class="unit">동</span>
+        </div>
+        <div class="input">
+            <input type="tel" value="" maxlength="4" title="아파트 호수">                        
+            <span class="unit">호</span>
+        </div>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">주소</div>
+            <script type="text/html">
+<div class="form_group address">
+    <div class="addr_tit">주소</div>
+    <!-- 공통태그(공통영역) -->
+    <div class="addr_sch">
+        <button type="button" class="btn point sm round">주소검색</button>
+        <!-- 주소 검색 후 노출 -->
+        <div class="addr_cts">
+            <span class="addr_post number">07343</span>
+            <p>서울특별시 영등포구 국제금융로 108-6(여의도동, 진주아파트)</p>
+            <p>301동 1507호</p>
+        </div>
+        <!-- //주소 검색 후 노출 -->
+    </div>
+    <!-- //공통태그(공통영역) -->
+    <div class="addr_check_wrap">
+        <span class="selection">
+            <input type="checkbox" id="sameAddr2" name="">
+            <label for="sameAddr2" class="label"><em>자택주소와 동일</em></label>
+        </span>
+    </div>
+</div>
+            </script>
+
+<!--             <div data-class="h3">주소검색(실제개발적용된소스&lt;참고용&gt;)</div>
+            <script type="text/html">
+<div class="form_group address">
+    <div class="addr_tit">주소</div>
+    <div>
+        <div class="form_group address">
+            <div class="addr_sch">
+                <button type="button" class="btn point sm round">주소검색</button>
+                <div class="addr_cts">
+                    <span class="addr_post number">07343</span>
+                    <p>서울특별시 영등포구 국제금융로 108-6(여의도동, 진주아파트)</p>
+                    <p>301동 1507호</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addr_check_wrap">
+        <span class="selection">
+            <input type="checkbox" id="sameAddr2" name="">
+            <label for="sameAddr2" class="label"><em>자택주소와 동일</em></label>
+        </span>
+    </div>
+</div>
+            </script> -->
+    
+            <div data-class="h2">자동이체일</div>
+            <div data-class="h3">기본 셀렉트박스</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">자동이체일</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="자동이체일 선택">자동이체일</button>
+        </div>
+    </div>
+</div>
+<div class="form_group">
+    <div class="form_tit">자동입금 일자</div>
+    <div class="form_row">
+        <div class="ele_ul_hor">
+            <div class="select">
+                <button type="button" class="select_btn number" title="자동입금 일자 선택">매월 21일</button>
+            </div>
+            <div class="space type2">마다</div>
+        </div>
+    </div>
+    <p class="depth info">입력하신 일자가 없는 달은 해당월 말일에 금액이 이동됩니다.</p>
+</div>
+            </script>
+    
+            <div data-class="h3">Date Picker 노출 방식</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">자동이체일</div>
+    <div class="form_row">
+        <button type="button" class="select_btn number" title="자동이체 시작일 선택">자동이체 시작일</button>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">생년월일</div>
+            <div data-class="h3">직접입력</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">생년월일</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="tel" maxlength="6" title="생년월일" placeholder="생년월일">
+        </div> 
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h3">달력 UI 제공</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">기간선택
+        <!-- tooltip -->
+        <div class="tooltip_limited">
+            <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+            <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                <p class="tooltip_tit">툴팁 타이틀영역 : 타이틀없을때 빼세요!</p>
+                <div class="tooltip_cont"> 
+                    기본형과 타이틀형이 있습니다. <br>
+                    현재 툴팁은 타이틀형입니다.. <br>
+                    툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                    툴팁 영역으로 기본형과 타이틀형이 있습니다.
+                </div>
+                <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+            </div>
+        </div>
+        <!-- //tooltip -->
+    </div>
+    <div class="form_row">
+        <div class="input date">
+            <input type="tel" maxlength="6" title="생년월일" placeholder="날짜입력">
+            <button type="button" class="btn_cal"><span class="hidden">날짜선택</span></button>
+        </div>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">기간선택</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">기간선택
+        <!-- tooltip -->
+        <div class="tooltip_limited">
+            <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+            <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                <p class="tooltip_tit">툴팁 타이틀영역 : 타이틀없을때 빼세요!</p>
+                <div class="tooltip_cont"> 
+                    기본형과 타이틀형이 있습니다. <br>
+                    현재 툴팁은 타이틀형입니다.. <br>
+                    툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                    툴팁 영역으로 기본형과 타이틀형이 있습니다.
+                </div>
+                <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+            </div>
+        </div>
+        <!-- //tooltip -->
+    </div>
+    <div class="form_row">
+        <div class="rdoChk_box">
+            <span class="selection">
+                <input type="radio" id="period1" name="period" checked>
+                <label for="period1" class="label"><em>1개월</em></label>
+            </span>
+            <span class="selection">
+                <input type="radio" id="period2" name="period">
+                <label for="period2" class="label"><em>3개월</em></label>
+            </span>
+            <span class="selection">
+                <input type="radio" id="period3" name="period">
+                <label for="period3" class="label"><em>6개월</em></label>
+            </span>
+            <span class="selection">
+                <input type="radio" id="period4" name="period">
+                <label for="period4" class="label"><em>직접입력</em></label>
+            </span>
+        </div>
+        <div class="form_date_term">
+            <div class="input date">
+                <input type="tel" title="시작일 입력" maxlength="8" value ="20210301">
+                <button type="button" class="btn_cal" title="시작일 선택"></button>                    
+            </div>
+            <span class="space">~</span>
+            <div class="input date">
+                <input type="tel" title="종료일 입력" maxlength="8" value ="20210331"> 
+                <button type="button" class="btn_cal" title="종료일 선택"></button>                              
+            </div>
+        </div>              
+    </div>
+</div>
+            </script>
+
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">기간선택</div>
+    <div class="form_row">
+        <div class="ele_ul_hor">
+            <div class="select">
+                <button type="button" class="select_btn number" title="시작일 선택">선택하세요</button>
+            </div>
+            <div class="select">
+                <button type="button" class="select_btn number" title="종료일 선택">선택하세요</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form_group">
+    <div class="form_tit">기간선택</div>
+    <div class="form_row">
+        <div class="ele_ul_hor">
+            <div class="select">
+                <button type="button" class="select_btn number" title="시작일 선택">선택하세요</button>
+            </div>
+            <div class="space">~</div>
+            <div class="select">
+                <button type="button" class="select_btn number" title="종료일 선택">선택하세요</button>
+            </div>
+        </div>
+    </div>
+</div>
+             </script>
+    
+            <div data-class="h2">검색</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">검색</div>
+    <div class="form_row">
+        <div class="input int_btn">
+            <input type="text" title="검색어" placeholder="입력내용">
+            <button type="button" class="btn point sm round">검색</button>
+        </div>
+    </div>
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr"><span>자세히 보기</span></a>
+    </div>
+</div>
+            </script>
+    
+            <div data-class="h2">지로번호</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">지로번호</div>
+    <div class="form_row">
+        <div class="input int_giro">
+            <input type="tel" title="지로번호">
+        </div>
+    </div>
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">자주쓰는 지로번호</a>
+    </div>
+</div>
+            </script>
+
+
+            <div data-class="h2">인증번호 재요청</div>
+            <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">SMS 인증번호</div>
+    <div class="form_row">
+        <div class="input int_btn crt_num">
+            <input type="tel" value="" placeholder="" title="SMS 인증번호">
+            <button type="button" class="btn point sm round">인증번호 재요청</button>
+        </div>
+    </div>
+    <p class="tip_info">고객정보에 등록된 휴대전화로 전송된 인증번호를 입력해주세요.</p>
+</div>
+            </script>
+
+            <div data-class="h2">권유직원 선택</div>
+            <script type="text/html">
+<!-- 권유직원 선택/관리희망직원 선택 -->
+<div class="section">
+    <h3 class="h2">권유직원 선택</h3> <!-- 퍼블 : 타이틀은 단위설계서에 정의된 대로 작성 -->
+    <!-- 공통태그(공통영역) -->
+    <div class="staff_hope">
+    </div>
+    <!-- //공통태그(공통영역) -->
+</div>
+<!-- //권유직원 선택/관리희망직원 선택 -->
+                            </script>
+    
+           <!--  <div data-class="h2">권유직원 선택(개발확인용)</div>
+            <script type="text/html">
+<div class="section">
+    <h3 class="h2">권유직원 선택</h3>
+    <div class="staff_hope">
+        <ul class="list_comp check">
+            <li>
+                <span class="selection">
+                    <input type="radio" id="rad_staff1" name="rad_staff">
+                    <label for="rad_staff1" class="label">
+                        <em>
+                            <span class="staff">김국민</span>
+                            <span class="office">역삼동 영업점 내점 상담</span>
+                            <span class="hope_date number">2021.05.23</span>
+                        </em>
+                    </label>
+                </span>
+            </li>
+            <li>
+                <span class="selection">
+                    <input type="radio" id="rad_staff2" name="rad_staff">
+                    <label for="rad_staff2" class="label">
+                        <em>
+                            <span class="staff">이국민</span>
+                            <span class="office">역삼동 영업점 내점 상담</span>
+                            <span class="hope_date number">2021.04.23</span>
+                        </em>
+                    </label>
+                </span>
+            </li>
+        </ul>
+        <p class="depth info">고객님의 상품 가입에 가장 도움이 된 상담직원 또는 전담직원을 선택해 주시기 바랍니다.</p>
+        <div class="staff_hope_sel">
+            <div class="rdoChk_box">
+                <span class="selection">
+                    <input type="radio" id="staff_hope_1" name="staff_hope">
+                    <label for="staff_hope_1" class="label"><em>지점명</em></label>
+                </span>
+                <span class="selection">
+                    <input type="radio" id="staff_hope_2" name="staff_hope">
+                    <label for="staff_hope_2" class="label"><em>직원이름</em></label>
+                </span>
+                <span class="selection">
+                    <input type="radio" id="staff_hope_3" name="staff_hope">
+                    <label for="staff_hope_3" class="label"><em>직원번호</em></label>
+                </span>
+                <span class="selection">
+                    <input type="radio" id="staff_hope_4" name="staff_hope" checked>
+                    <label for="staff_hope_4" class="label"><em>없음</em></label>
+                </span>
+            </div>
+        </div>
+        <div class="staff_hope_cts">
+            <div class="form_group">
+                <div class="form_tit hidden">지점명</div>
+                <div class="form_row">
+                    <div class="select outline lg">
+                        <button type="button" class="select_btn active" title="지점명 선택">지점명</button>
+                    </div>                  
+                </div>
+                <div class="form_row">
+                    <span class="input int_btn">
+                        <input type="text" title="지점명 직접입력" placeholder="지점명">
+                        <button type="button" class="btn point sm round">검색</button>
+                    </span>
+                </div>
+                <div class="form_btm_full_wrap">
+                    <span><button type="button" class="btn outline md">검색초기화</button></span>
+                </div>
+            </div>
+        </div>
+        <div class="staff_hope_cts">
+            <div class="form_group">
+                <div class="form_tit hidden">직원이름</div>
+                <div class="form_row">
+                    <span class="input int_btn">
+                        <input type="text" title="직원이름 직접입력" placeholder="직원이름">
+                        <button type="button" class="btn point sm round">검색</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="staff_hope_cts">
+            <div class="form_group">
+                <div class="form_tit hidden">직원번호</div>
+                <div class="form_row">
+                    <span class="input int_btn">
+                        <input type="text" title="직원번호 직접입력" placeholder="직원번호">
+                        <button type="button" class="btn point sm round">검색</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </script> -->
+    
+            <div data-class="h2">출금계좌번호</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">출금계좌번호</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number active" title="출금계좌번호 선택">000000-00-000000</button>
+        </div>
+    </div>
+    <div class="form_btm_wrap right">
+        <p class="sum_hint">출금가능금액 : <span class="number fc_posi">1,787,888,000</span><span class="num_unit">원</span></p>
+        <p class="sum_hint">1일 이체잔여한도 : <span class="number fc_nega">21,787,888,000</span><span class="num_unit">원</span></p>                
+    </div>
+    <div class="btn_wrap btm">
+        <a href="#none" class="btn_txt ico_arr">잔액/수수료 확인</a>
+    </div>
+</div>
+            </script>
+            <div data-class="p">은행ci포함</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">금융사</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn acc_bank md active" title="금융사 선택"><!-- 개발 : 버튼에 값이 들어갈 경우 클래스 "active" 추가, 선택전이면 클래스 "active" 삭제 : ex) class="select_btn active" -->
+                <span class="icon_bank_004"></span>
+                <span class="bk_name">상상인플러스저축은행</span>
+            </button>
+        </div>     
+    </div>
+</div>            
+            </script>
+    
+            <div data-class="h2">이체금액</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div><strong>[정책]</strong><br>
+                        원, 만원, 개, %, g, kg 단위는 우측에 고정 / placeholder는 좌측 정렬 / 숫자는 우측 정렬</div>
+                    <div><strong>[단위가 있을 경우]</strong><br>
+                        .input 클래스에 .unit.js_unit / input 태그에 data-unit 추가
+                    </div>
+                </div>
+            </div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">이체금액</div>
+    <div class="form_row">
+        <p class="hidden">이체금액 단축키로 입력 </p>
+        <div class="btn_trans_group">
+            <span><button type="button" class="btn"><em class="number">1</em><em class="num_ubit">만원</em></button></span>
+            <span><button type="button" class="btn"><em class="number">5</em><em class="num_ubit">만원</em></button></span>
+            <span><button type="button" class="btn"><em class="number">10</em><em class="num_ubit">만원</em></button></span>
+            <span><button type="button" class="btn"><em class="number">100</em><em class="num_ubit">만원</em></button></span>
+            <span><button type="button" class="btn">전액</button></span>
+        </div>    
+    </div>
+    <div class="form_row"> 
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="16" placeholder="숫자만 입력" title="이체금액" data-unit="원">
+        </div>
+        <p class="form_hangul" aria-hidden="true">삼만구천육백원</p>
+    </div>
+</div>
+            </script>
+    
+    
+            <div data-class="h2">Input 양쪽 정렬</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div><strong>[정책]</strong><br>
+                        원, 만원, 개, %, g, kg 단위는 우측에 고정 / placeholder는 좌측 정렬 / 숫자는 우측 정렬</div>
+                    <div><strong>[단위가 있을 경우]</strong><br>
+                        .input 클래스에 .unit.js_unit / input 태그에 data-unit 추가
+                    </div>
+                </div>
+            </div>
+            <script type="text/html">
+<div class="form_group between">
+    <div class="form_row">
+		<span class="row_tit">10g</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" placeholder="0" title="10g 갯수" data-unit="개">
+        </div>
+    </div>
+</div>
+<div class="form_group between">
+    <div class="form_row">
+		<span class="row_tit">10g</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" value="999" title="10g 갯수" data-unit="개">
+        </div>
+    </div>
+</div>
+<div class="form_group between">
+    <div class="form_row">
+		<span class="row_tit">100g</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" placeholder="0" title="100g 갯수" data-unit="개" disabled>
+        </div>
+    </div>
+</div>
+<div class="form_group between">
+    <div class="form_row">
+		<span class="row_tit">1kg</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" value="999" placeholder="0" title="1kg 갯수" data-unit="개" readonly>
+        </div>
+    </div>
+</div>
+<div class="form_group between">
+    <div class="form_row">
+		<span class="row_tit">1%</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" placeholder="0" value="999" title="1kg 갯수" data-unit="%">
+        </div>
+    </div>
+</div>
+
+<div class="form_group between">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+		<span class="row_tit">1kg</span>
+        <div class="input unit js_unit">
+            <input type="tel" maxlength="10" placeholder="0" value="999" title="1kg 갯수" data-unit="kg">
+        </div>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">소숫점 Input</div>
+            <div data-class="box">
+                폼요소가 점(dot)으로 결합된 유형, 원하는 폼요소가 30%로 줄어들 경우 클래스 "short" 사용
+            </div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_row col ele_ul_hor">
+        <div class="input">
+            <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="0">
+        </div>
+        <div class="dot">.</div>
+        <div class="input unit js_unit">
+            <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="" data-unit="g">                            
+        </div>
+    </div>
+</div>       
+            </script>
+
+
+
+        <!-- 220126 : [전담반 Biz-072]-->
+        <script type="text/html">
+            <div class="form_group intl">
+                <!-- form_row -->
+                <div class="form_row col ele_ul_hor dot_unit">
+                    <div class="input">
+                        <div class="row_tit">USD1</div>
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="">
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="">                            
+                    </div>         
+                </div>  
+                <!-- //form_row -->
+                <!-- form_row -->
+                <div class="form_row col ele_ul_hor dot_unit">
+                    <div class="input">
+                        <div class="row_tit">USD2</div>
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="" readonly>
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="" readonly>                            
+                    </div>         
+                </div>  
+                <!-- //form_row -->
+                <!-- form_row -->
+                <div class="form_row dot_unit">
+                    <div class="input" role="button">
+                        <div class="row_tit">JPY</div>
+                        <input type="tel" class="right" title="이체금액" value="" placeholder="0">
+                    </div>
+                </div>
+                <!-- //form_row -->
+            </div>
+            <div class="form_group">
+                <!-- <div class="form_row col ele_ul_hor dot_unit">
+                    <div class="row_tit">USD</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="">
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="">                            
+                    </div>         
+                </div>     -->
+                
+                <!-- <div class="form_row col ele_ul_hor dot_unit">
+                    <div class="select">
+                        <button type="button" class="select_btn" title="통화 선택">USD</button>
+                    </div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="">
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="">                            
+                    </div>         
+                </div>    -->
+                <div class="form_row col ele_ul_hor volume">
+                    <div class="row_tit"><span>USD</span><strong class="number">100</strong></div>
+                    <div class="row_volume">
+                        <button type="button" class="btn_ico ico_volume plus"><span class="hidden">증가</span></button>
+                        <div class="input">
+                            <input type="text" value="0" title="지폐수량">
+                        </div>
+                        <button type="button" class="btn_ico ico_volume minus"><span class="hidden">증감</span></button>
+                    </div>
+                </div>
+            </div>  
+        </script>
+        <script type="text/html">
+            <div class="form_group">
+                <!-- form_row -->
+                <div class="form_row">
+                    <div class="select currency_sel">
+                        <button type="button" class="select_btn" title="조회통화 선택"><!-- 개발 : 버튼에 값이 들어갈 경우 클래스 "active" 추가, 선택전이면 클래스 "active" 삭제 : ex) class="select_btn active" -->
+                            <!-- 개발 : 선택 전일 때 노출
+                                선택하세요.
+                            //개발 : 선택 전일 때 노출  -->
+
+                            <!-- 개발 : 값을 선택했을 때 노출 -->
+                            <span class="country_flag_im sm usd"></span><!-- 개발 : 국기 이미지는 통화로 클래스를 넣어주세요. ex)class="country_flag_im sm usd" -->
+                            <span class="country_name">USD (미국 달러)</span>
+                            <!-- //개발 : 값을 선택했을 때 노출 -->
+                        </button>
+                    </div>     
+                </div>
+                <!-- //form_row -->
+                <!-- form_row -->
+                <div class="form_row">
+                    <div class="select">
+                        <button type="button" class="select_btn" title="통화 선택">USD</button>
+                    </div>
+                </div>
+                <!-- //form_row -->
+                <div class="form_row col ele_ul_hor currency_int">
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="">
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="">                            
+                    </div>          
+                </div>
+                <div class="form_row col ele_ul_hor currency_int">
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="0" title="소수점 앞 입력" value="">
+                    </div>
+                    <div class="dot">.</div>
+                    <div class="input short">
+                        <input type="tel" class="right" placeholder="00" title="소수점 뒤 입력" value="">                            
+                    </div>          
+                </div>
+            </div>                     
+        </script>
+        <!-- //220126 : [전담반 Biz-072]-->
+
+        <script type="text/html">
+            <div class="form_group">
+                <!-- form_row -->
+                <div class="form_row">
+                    <div class="input" role="button">
+                        <input type="tel" class="right" title="이체금액" value="" placeholder="0">
+                    </div>
+                </div>
+                <!-- //form_row -->
+                <div class="form_row col ele_ul_hor">
+                    <div class="input short">
+                        <input type="tel" class="right" placeholder="0" title="앞자리 입력" value="">
+                    </div>
+                    <div class="input">
+                        <input type="tel" class="right" placeholder="00" title="뒤자리 입력" value="">                            
+                    </div>          
+                </div>                    
+            </div>
+        </script>
+    
+            <div data-class="h2">내용 입력</div>
+            <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">타이틀</div>
+    <div class="form_row">
+        <div class="textarea">
+            <textarea id="frm_cont" name="frm_cont" placeholder="내용을 입력해주세요."></textarea>        
+            <p class="num_info"><span><em class="curr">3</em> / 200</span> byte</p>            
+        </div>       
+    </div>
+</div>
+            </script>
+
+
+            <div data-class="h2">보안문자 입력</div>
+            <script type="text/html">
+<div class="form_group captcha">
+    <div class="form_tit">보안문자 정보</div>
+    <div class="form_row col">
+        <span class="img_captcha"><img src="/mnbank/app/img/common/temp/img_captcha.png" alt=""></span>
+        <span class="right"><button type="button" class="btn_txt ico_reset sm">새로고침</button></span>
+    </div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" value="" placeholder="보안문자" title="보안문자입력">
+        </div>
+    </div>
+    <p class="tip_info">그림에 표시된 보안문자를 입력해주세요.</p>
+</div>
+            </script>
+
+            <div data-class="h2">면허번호</div>
+            <script type="text/html">
+<div class="form_group car_license">
+    <div class="form_tit">면허번호</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="면허번호 첫번째 자리 선택">12</button>
+        </div>
+    </div>
+    <div class="form_row col">
+        <div class="input">
+            <input type="tel" value="12" maxlength="2" title="면허번호 두번째 자리" readonly>
+        </div>
+        <div class="input">
+            <input type="tel" value="12" title="면허번호 세번째 자리">
+        </div>
+        <div class="input">
+            <input type="tel" value="00" maxlength="2" title="면허번호 네번째 자리" readonly>
+        </div>
+    </div>
+</div>
+            </script>
+
+        <div data-class="h2">Pencil 버튼</div>
+        <script type="text/html">
+<div class="form_group">
+    <div class="form_tit">전화번호</div>
+    <div class="form_row">
+        <div class="input int_pencil">
+            <input type="tel" maxlength="11" value="01011111111" title="전화번호">
+            <button type="button" class="btn_pencil"><span class="hidden">전화번호 등록/수정</span></button>    
+        </div>
+    </div>
+</div>
+        </script>
+
+    </div>
+    
+        <div data-class="section">
+            <div data-class="h1">Sample</div>
+            <div data-class="h2">form_group으로만 구성</div>
+            <script type="text/html">
+<div class="form_group js_trans error">
+    <div class="form_tit">이름</div>
+    <div class="form_row">
+        <div class="input">
+            <input type="text" value="" title="이름">
+        </div>
+    </div>
+    <div class="form_btm_wrap">
+        <p class="tip_info">안내 메시지</p> 
+        <p class="tip">오류 텍스트 메시지</p>
+    </div>
+</div>
+<div class="form_group">
+    <div class="form_tit">성별</div>
+    <div class="form_row">
+        <div class="rdoChk_box">
+            <span class="selection">
+                <input type="radio" id="inp_sex1" name="sex" checked>
+                <label for="sex1" class="label"><em>남</em></label>
+            </span>
+            <span class="selection">
+                <input type="radio" id="sex2" name="sex">
+                <label for="sex2" class="label"><em>여</em></label>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="form_group">
+    <div class="form_tit">자동이체일</div>
+    <div class="form_row">
+        <div class="select">
+            <button type="button" class="select_btn number" title="자동이체일 선택">자동이체일</button>
+        </div>
+    </div>
+</div>
+            </script>
+            <div data-class="h2">list 안에 사용시(outline형 form요소)</div>
+            <script type="text/html">
+<ul class="list_comp check">
+    <li>
+        <span class="selection">
+            <input type="checkbox" id="chk1_1" name="chk1" checked="">
+            <label for="chk1_1" class="label"><em class="hidden">상품 선택</em></label>
+        </span>
+        <ul class="list_data">
+            <li>
+                <div class="key">상품명</div>
+                <div class="value">수협은행ISA정기예금3개월제</div>
+            </li>
+            <li>
+                <div class="key">최저신규금액</div>
+                <div class="value"><span class="number">10,000</span><span class="num_unit">원</span></div>
+            </li>
+            <!-- 비율같이 작은 자리 숫자가 들어갈 때는 양쪽으로 양분되는 key, value에 들어갑니다. -->
+            <li>
+                <div class="key">운용비율</div>
+                <div class="value between"><!-- between 클래스 넣어주세요 -->
+                    <span class="number">10000</span><span class="num_unit">원</span>
+                    <button type="button" class="btn_txt link">저장</button>
+                </div>
+            </li>
+            <li>
+                <div class="key">운용비율</div>
+                <div class="value between"><!--  between 클래스 넣어주세요 -->
+                    <div class="input outline unit js_unit" style="width:40%"><!-- 디자인에 따라 short 클래스 넣어주세요/ short클래스로 해결안되는 너비는 인라인으로 주세요. -->
+                        <input type="tel" title="운용비율" data-unit="%">
+                    </div>
+                    <button type="button" class="btn_txt link">저장</button>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">매수신청금액</div>
+                <div class="value">
+                    <div class="input outline unit js_unit">
+                        <input type="tel" title="매수신청금액" data-unit="만원">
+                    </div>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">운용보고서 통보방법</div>
+                <div class="value">
+                    <div class="select outline">
+                        <button type="button" class="select_btn active" title="운용보고서 통보방법 선택">이메일 통보</button>
+                    </div>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">
+                    자동이체일자
+                </div>
+                <div class="value row">
+                    <div class="ele_ul_hor">
+                        <div class="select outline">
+                            <button type="button" class="select_btn number" title="시작일 선택">선택하세요</button>
+                        </div>
+                        <div class="select outline">
+                            <button type="button" class="select_btn number" title="종료일 선택">선택하세요</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span class="selection">
+            <input type="checkbox" id="chk1_2" name="chk1" checked="">
+            <label for="chk1_2" class="label"><em class="hidden">상품 선택</em></label>
+        </span>
+        <ul class="list_data">
+            <li>
+                <div class="key">상품명</div>
+                <div class="value">수협은행ISA정기예금3개월제</div>
+            </li>
+            <li>
+                <div class="key">최저신규금액</div>
+                <div class="value"><span class="number">10,000</span><span class="num_unit">원</span></div>
+            </li>
+            <li class="rows">
+                <div class="key">매수신청금액</div>
+                <div class="value">
+                    <div class="input outline unit js_unit">
+                        <input type="tel" title="매수신청금액" data-unit="원">
+                    </div>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">매수신청금액</div>
+                <div class="value">
+                    <div class="input outline unit js_unit">
+                        <input type="tel" value="999" title="매수신청금액" data-unit="%">
+                    </div>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">매수신청금액</div>
+                <div class="value">
+                    <div class="input outline unit js_unit">
+                        <input type="tel" placeholder="999" title="매수신청금액" data-unit="g">
+                    </div>
+                </div>
+            </li>
+            <li class="rows">
+                <div class="key">매수신청금액</div>
+                <div class="value">
+                    <div class="input outline unit js_unit">
+                        <input type="tel" value="123" title="매수신청금액" data-unit="원" readonly>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">방카슈랑스 사후관리직원 선택</div>
+            <div data-class="p">개발공통 영역입니다. 작업시 참고해주세요</div>
+            <script type="text/html">
+<div class="section">
+    <h2 class="h2">방카슈랑스 사후관리직원 선택</h2>
+    <div class="rdoChk_box">
+        <span class="selection">
+            <input type="radio" id="staffs1" name="staffs" checked>
+            <label for="staffs1" class="label"><em>지점명</em></label>
+        </span>
+        <span class="selection">
+            <input type="radio" id="staffs2" name="staffs">
+            <label for="staffs2" class="label"><em>직원이름</em></label>
+        </span>
+        <span class="selection">
+            <input type="radio" id="staffs3" name="staffs">
+            <label for="staffs3" class="label"><em>없음</em></label>
+        </span>
+    </div>
+
+    <!-- 지점명 선택시 show -->
+    <div class="form_group gap_xs_2">
+        <div class="form_tit">지점명</div>
+        <div class="form_row">
+            <div class="select">
+                <button type="button" class="select_btn" title="지점명 선택">선택하세요</button>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="input int_btn">
+                <input type="text" value="" title="지점명 입력">
+                <button type="button" class="btn point sm round">검색</button>
+            </div>
+        </div>
+    </div>
+    <!-- //지점명 선택시 show -->
+
+    <!-- 직원이름 선택시 show -->
+    <div class="form_group gap_xs_2">
+        <div class="form_tit">직원명</div>
+        <div class="form_row">
+            <div class="select">
+                <button type="button" class="select_btn" title="직원명 선택">선택하세요</button>
+            </div>
+        </div>
+        <div class="form_row">
+            <div class="input int_btn">
+                <input type="text" value="" title="직원명 입력">
+                <button type="button" class="btn point sm round">검색</button>
+            </div>
+        </div>
+    </div>
+    <!-- //직원이름 선택시 show -->
+
+    <p class="depth gap_xs_2">가입한 보험계약의 사후 관리를 위해 지점 또는 직원정보를 입력해주세요. (방카슈랑스 판매인만 직원을 선택하실 수 있습니다.)</p>
+</div>
+            </script>
+        </div>
+
+        <div data-class="h2">[이체용] 금액 입력폼</div>
+        <script type="text/html">
+<div class="form_group js_trans">
+    <div class="form_tit">
+        <label for="form_money">이체금액</label>
+    </div>
+    <div class="form_row"> 
+        <div class="input">
+            <input type="tel" id="form_money" name="form_money" class="js_money" maxlength="16" placeholder="숫자만 입력" data-unit="원">
+        </div>
+        <p class="form_hangul" aria-hidden="true">삼만구천육백원</p>
+    </div>
+</div>
+        </script>
+
+    </div>
+
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    <script src="/mnbank/guide/assets/js/publish.js"></script><!-- 권유직원 선택 입력폼 include JS -->
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    
+    <script>
+        /* 업무 SCRIPT */
+        $(function(){
+    /* 210525 수정 start */
+            $('#btn_certify_number').on('click', function(){
+                $.ohyLayer({
+                    title:'알림',
+                    titleUse : false,
+                    content:'#popup_certify_number',
+                    type:'confirm',
+                    scroll:false,
+                    height:100,
+                    closeUse:false,
+                });
+            });
+    /* 210525 수정 end */      
+    
+    
+    $('.textarea.auto_height >textarea').innerHeight($('#inputString5').prop('scrollHeight'));//화면로드시 placeholder값체크후 높이값변경
+
+	$('.textarea.auto_height >textarea').on({//세부내용 textarea처리
+		'click':function(){
+			if($(this).val() == ''){
+				var _pholder = ($(this).attr('placeholder'));
+				$(this).val(_pholder)
+			}
+		},
+		'keyup':function(){//텍스트 입력시 높이값 변경
+			if($(this).innerHeight() !==  $(this).prop('scrollHeight')){
+				$(this).innerHeight($(this).prop('scrollHeight'));
+			}
+		},
+		'focusout':function(){//텍스트 입력후 높이값 변경
+			$(this).innerHeight('4.6rem')
+			$(this).innerHeight($(this).prop('scrollHeight'));
+		}
+	});
+        });
+    </script>  
+</body>
+</html>

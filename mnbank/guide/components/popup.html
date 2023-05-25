@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    
+    <style>
+        #wrap {
+            height: auto;
+        }
+        [data-class="demo"] .layer_wrap {
+            position: relative;
+            z-index: 0;
+            padding: 5px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        [data-class="demo"] .layer_wrap .ly_in {
+            position: relative;
+            bottom: 0;
+        }
+        .note_txt {margin-left:.5rem; font-size:1.5rem; color:#777;}
+        .p-tit {font-size: 18px; font-weight: bold; margin-bottom: 5px;}
+        .p-tit2 {color:#1733bf; font-weight: bold;}
+        .p-list li{position: relative; font-size:1.5rem; color:#666; line-height: 1.8; padding-left:10px;}
+        .p-list li::before{content: '-'; position: absolute; left: 0; top:0;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">팝업</div>
+        <div data-class="box">
+            <a href="/mnbank/guide/sample/popup.html" target="_blank" title="새창" data-class="button">Popup Sample</a>
+        </div>
+
+        <div data-class="box">
+            <div data-class="p">
+                <p class="p-tit">1.알림, 컨펌 팝업</p>
+                <ul class="p-list">
+                    <li><strong class="p-tit2">단순 메세지성 컨펌 및 알림 팝업</strong> : 네이티브로 작업. (퍼블 작업 없음)</li>
+                    <li><strong class="p-tit2">풀팝업</strong> : 퍼블은 일반 페이지로 작업, 구현은 네이티브로 작업</li>
+                    <li><strong class="p-tit2">안내성(디자인) 레이어 팝업</strong> : 퍼블 작업</li>
+                    <li><strong class="p-tit2">딤 클릭 이벤트</strong> : 미지원</li>
+                </ul>                
+            </div>
+            <div data-class="p">
+                <p class="p-tit">2.바텀시트 정책</p>
+                <ul class="p-list">
+                    <li><strong class="p-tit2">일반 바텀시트</strong> : max값 95%만 적용하며 높이는 컨텐츠길이만큼 자동으로 지원. 컨텐츠가 95%이상이면 스크롤 자동 지원</li>
+                    <li><strong class="p-tit2">탭이 있는 바텀시트</strong> : 고정값 적용, 사용 디바이스의 70% 고정값 사용, 확장/축소 기능 지원</li>
+                    <li><strong class="p-tit2">예외 처리</strong> : 탭이 있는 이체의 계좌선택 바텀시트만 고정값 적용, 바닥 컨텐츠의 남은 여백만큼 바텀시트 높이 지정</li>
+                    <li><strong class="p-tit2">딤 클릭이벤트</strong> : 사용여부로 지원</li>
+                </ul>                
+            </div>
+            <div data-class="p">
+                <p class="p-tit">2-1.바텀시트 딤 클릭 이벤트 정책</p>
+                <ul class="p-list">
+                    <li><strong class="p-tit2">디폴트</strong> : 딤 클릭 이벤트 지원</li>
+                    <li><strong class="p-tit2">사용여부</strong> : 바텀시트내에 오른쪽 상단 X(닫기)버튼 존재여부로 사용여부 판단.<br>
+                        ㄱ. 오른쪽 상단 X(닫기)버튼 있을 때 : [딤 클릭 이벤트] 지원<br>
+                        ㄴ. 오른쪽 상단 X(닫기)버튼 없을 때 : [딤 클릭 이벤트] 미지원<br>             
+                        <p style="font-size:1.4rem; padding-left:2.2rem;">※ 만약 오른쪽 상단 X(닫기)버튼이 있는데, 딤드 이벤트를 제외해야 하는 케이스가 발생하면 바텀시트에서 X(닫기) 버튼을 제외하는것으로 처리<br>             </p>
+                        ㄷ. 오른쪽 상단 X(닫기)버튼이 있는데, 닫기 기능을 개발에서 컨트롤하는 경우에는 딤 클릭 지원 안됨 (closeAct:false).
+                    </li>              
+                </ul>                
+            </div>
+        </div>
+
+        <!-- section : 팝업 설명 -->
+        <div data-class="section">
+            <div data-class="h1">사용법</div>
+            <div data-class="h2">레이어 호출 설명</div>
+            <!-- 레이어 호출 설명 영역 -->
+            <div data-class="box">
+                <div data-class="list number">
+                    <div>종류 : 총 3타입(alert, confirm, bottom)</div>
+                    <div>
+                        특징
+                        <div data-class="list disc">
+                            <div>alert : html 호출없이 옵션의 텍스트 입력만으로 구현</div>
+                            <div>confirm : 가장 많이 사용하는 일반 타입</div>
+                            <div>
+                                bottom : 하단에 위치하는 타입
+                                <div data-class="list dash">
+                                    <div>타입별 고정 max-height값에 따른 스크롤 자동 지원</div>                                                                                                                                                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        옵션 (true : 사용, false : 사용안함)
+                        <div data-class="list disc">                                                                
+                            <div>title : '타이틀' <span class="note_txt">//<em class="fc_nega">(필수)</em> 타이틀 입력</span></div>
+                            <div>titleUse : true 혹은 false <span class="note_txt">//default:true, 타이틀 사용여부 지정</span></div>
+                            <div>closeUse : true 혹은 false <span class="note_txt">//default:true, 오른쪽 상단 닫기버튼 사용여부 지정</span></div>                                
+                            <div>closeAct: true 혹은 false <span class="note_txt">//default "true", 오른쪽 상단 "닫기 버튼"의 닫기 기능 사용여부 지정</span></div>
+                            <div>content :'#ID' <span class="note_txt">//<em class="fc_nega">(필수)</em> 호출할 HTML컨텐츠 ('#ID명'), 레이어창 닫기의 아이디명으로 사용(id="ID명_dev"), 알림창일 경우 텍스트 입력 ('알림창입니다.')</span></div>
+                            <div>type : '타입정의' <span class="note_txt">//<em class="fc_nega">(필수)</em> default:'confirm', 레이어 타입 지정 (alert, confirm, bottom) </span></div>
+                            <div>openAuto : true, <span class="note_txt">//변수 레이어에서만 반드시 정의, 변수 레이어를 사용하지않을 경우 따로 정의하지않는다.</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        HTML 구조
+                        <div data-class="list number">
+                            <div>
+                                클래스 "layerHTML"에 호출할 아이디 지정,  레이어 컨텐츠 마크업 위치<br>
+                                <div data-class="list disc">
+                                    <div>레이어 컨텐츠 마크업은 주석 <u>&lt;-- html 컨텐츠 --&gt;레이어 내용&lt;-- //html 컨텐츠 --&gt;</u> 부분</div>
+                                </div>
+                            </div>
+                            <div><u class="fc_nega">하단 버튼 "취소"에 레이어 닫기 기능 구현시 속성 <strong>data-action="close"</strong> 추가</u></div>
+                            <div>구현시 ID 규칙 : 버튼 id "pop_아이디", 불러올 HTML id "popup_아이디"<br>
+                                <span class="note_txt">ex) 버튼 : &lt;button type="button" id="pop_아이디" &gt;클릭&lt;/button&gt;</span><br>
+                                <span class="note_txt">ex) html 컨텐츠 : &lt;div id="popup_아이디" class="layerHTML" &gt;내용정의&lt;/div&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        바로실행
+                        <div> :레이어팝업을 바로 실행 
+                            <pre>
+$.ohyLayer({    
+    title:'타이틀',     
+    titleUse : true, 
+    closeUse : false,  
+    content:'#ID',  
+    type:'confirm', 
+});
+</pre>
+                            </div>
+                    </div>                        
+                </div>
+            </div>
+
+            <script type="text/html" data-type="script">
+$(function(){
+    <!-- layer : 실행코드 -->
+    $('버튼 아이디명').on('click', function(){
+        $.ohyLayer({            
+            title:'타이틀',    //필수입력
+            titleUse : true,  //default:true, 타이틀 사용여부
+            closeUse : false  //default:true, 오른쪽 상단 닫기버튼 사용여부
+            content:'#ID',    //필수입력, 호출할 HTML컨텐츠 ('#ID명'), 알림창일 경우 텍스트 입력 ('알림창입니다.')
+            type:'confirm',   //필수입력, default:'confirm', 레이어 타입 지정 (confirm, bottom)             
+        });
+    });
+    <!-- //layer : 실행코드 -->
+});
+
+<!-- layer html : default -->
+<div id="아이디명" class="layerHTML">
+    <div class="ly_cnt">
+        레이어 내용
+    </div>
+    <div class="btn_pop_confirm_wrap">
+        <div class="btn_area">
+            <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+            <span><button type="button" class="btn primary lg">확인</button></span>
+        </div>
+    </div>
+</div>
+<!-- //layer html : default -->
+            </script>
+            <!-- //레이어 호출 설명 영역 -->
+
+            <div data-class="h2">탭 레이아웃</div>
+            <!-- 탭 레이아웃 설명 영역 -->
+            <div data-class="box">탭일경우 해당 탭 레이아웃 사용, 단, tabpanel을 ly_cnt로 감싼다.</div>
+            <script type="text/html" data-type="script">
+<!-- layer html : tab type -->
+<div id="아이디명" class="layerHTML">
+    <div class="tab_wrap">
+        <div class="tab_list" role="tablist">
+            <div class="scroll_wrap">
+                <div><button role="tab" aria-selected="false" aria-controls="tabpanel4_1">탭메뉴 1</button></div>
+                <div><button role="tab" aria-selected="true" aria-controls="tabpanel4_2">탭메뉴 2</button></div>
+                <div><button role="tab" aria-selected="false" aria-controls="tabpanel4_3">탭메뉴 3</button></div>
+            </div>
+        </div>
+        <div class="ly_cnt">
+            <div role="tabpanel" id="tabpanel4_1">
+                <div class="section">
+                    <h3 class="hidden">숨은 타이틀</h3>
+                    1 레이어 내용
+                </div>
+            </div>
+            <div role="tabpanel" id="tabpanel4_2">
+                <div class="section">
+                    <h3 class="hidden">숨은 타이틀</h3>
+                    2 레이어 내용
+                </div>
+            </div>
+            <div role="tabpanel" id="tabpanel4_3">
+                <div class="section">
+                    <h3 class="hidden">숨은 타이틀</h3>
+                    3 레이어 내용
+                </div>
+            </div>
+        </div>           
+    </div>
+</div>
+<!-- //layer html : tab type -->
+            </script>
+            <!-- //탭 레이아웃 설명 영역 -->
+
+            <div data-class="h2">알림 사용법</div>
+            <!-- 알림 사용법 설명 -->
+            <div data-class="box">별도의 html 필요없이 스크립트 옵션만으로 구현가능</div>
+            <script type="text/html" data-type="script">
+$(function(){
+    <!-- layer : 실행코드 -->
+    $.ohyLayer({                                                      
+        content:'얼랏내용 입력',
+        type:'alert',                
+    });
+    <!-- //layer : 실행코드 -->
+});
+            </script>
+            <!-- //알림 사용법 -->
+
+            <div data-class="h2">팝업 컨텐츠 마크업시 주의사항</div>
+            <!-- 팝업 컨텐츠 마크업 주의사항 -->
+            <div data-class="box">
+                컨텐츠 마크업 속성값으로 margin의 마이너스값을 주지말것.
+            </div>
+            <!-- //팝업 컨텐츠 마크업 주의사항 -->
+        </div>
+        <!-- //section : 팝업 설명 -->
+
+
+        <!-- section : 레이아웃 확인용 -->
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="box">다음은 타입별 레이아웃 참고용입니다. 실제 구현시 상단의 [Popup Sample]을 참고하세요.</div>
+
+            <div data-class="h2">Alert</div>
+            <div data-class="box">
+                <div data-class="p">별도의 html없이 옵션에서 지정만으로 구현. 옵션 => <u>content:'알림창 내용입력을 합니다.'</u></div>                    
+            </div>
+            <script type="text/html">
+<div class="layer_wrap type1 alert">
+    <div class="ly_in">
+        <div class="ly_hd"><h1 class="pop_h1">알림</h1></div>
+        <div class="ly_con">
+            <div class="ly_cnt">
+                <div class="section">레이어 내용</div>            
+            </div>            
+        </div>
+        <button type="button" class="btn btn_ico close"><span class="hidden">레이어창 닫기</span></button>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">Confirm</div>
+            <div data-class="box">
+                일반적인 레이어 팝업
+            </div>
+            <script type="text/html">
+<div class="layer_wrap type1">
+    <div class="ly_in noBtn">
+        <div class="ly_hd"><h1 class="pop_h1">컨펌 레이어</h1></div>
+        <div class="ly_con">
+            <!-- html 컨텐츠 -->
+            <div class="ly_cnt">
+                <div class="section">레이어 내용</div>
+            </div>
+            <div class="btn_pop_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                    <span><button type="button" class="btn primary lg">확인</button></span>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">Bottom Sheet</div>
+            <div data-class="box">
+                일반 바텀시트
+            </div>
+            <script type="text/html">
+<div class="layer_wrap type2 bottom">
+    <div class="ly_in">
+        <div class="ly_hd"><h1 class="pop_h1">레이어 제목</h1></div>
+        <div class="ly_con">
+            <div class="ly_cnt">                
+                <div class="section">레이어 내용</div>
+            </div>
+            <div class="btn_pop_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn secondary lg" data-action="close">취소</button></span>
+                    <span><button type="button" class="btn primary lg">확인</button></span>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn_ico close"><span class="hidden">레이어창 닫기</span></button>
+    </div>
+</div>
+            </script>
+
+            <div data-class="box">
+                <div data-class="p">탭 레이아웃의 바텀시트</div>                
+            </div>
+<script type="text/html">
+<div class="layer_wrap type2 bottom">
+    <div class="ly_in">
+        <div class="ly_hd"><h1 class="pop_h1">레이어 제목</h1></div>
+        <div class="ly_con">
+            <div class="tab_wrap">
+                <div class="tab_list" role="tablist">
+                    <div class="scroll_wrap">
+                        <div><button role="tab" aria-selected="true" aria-controls="tabpanel_1">메뉴명 1</button></div>
+                        <div><button role="tab" aria-selected="false" aria-controls="tabpanel_2">메뉴명 2</button></div>
+                        <div><button role="tab" aria-selected="false" aria-controls="tabpanel_3">메뉴명 3</button></div>
+                        <div><button role="tab" aria-selected="false" aria-controls="tabpanel_2">메뉴명 2</button></div>
+                        <div><button role="tab" aria-selected="false" aria-controls="tabpanel_3">메뉴명 3</button></div>
+                    </div>
+                </div>
+                <div class="ly_cnt">
+                    <div class="tab_panel" role="tabpanel" id="tabpanel_1">  
+                        <div class="section">
+                            <h3 class="hidden">숨은 타이틀</h3>
+                            탭메뉴 1 콘텐츠
+                        </div>                        
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tabpanel_2">                         
+                        <div class="section">
+                            <h3 class="hidden">숨은 타이틀</h3>                                         
+                            탭메뉴 2 콘텐츠
+                        </div>                        
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tabpanel_3">                          
+                        <div class="section">
+                            <h3 class="hidden">숨은 타이틀</h3>                                        
+                            탭메뉴 3 콘텐츠 
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn_ico close"><span class="hidden">레이어창 닫기</span></button>
+    </div>
+</div>
+<br>
+<div class="layer_wrap type2 bottom">
+    <div class="ly_in">
+        <div class="ly_hd"><h1 class="pop_h1">레이어 제목</h1></div>
+        <div class="ly_con">
+            <div class="tab_wrap">
+                <div class="tab_list" role="tablist">
+                    <div class="scroll_wrap">
+                        <div><button role="tab" aria-selected="true" aria-controls="tab2panel3_1">탭1</button></div>
+                        <div><button role="tab" aria-selected="false" aria-controls="tab2panel3_2">탭2</button></div>
+                    </div>
+                </div>
+                <div class="ly_cnt">
+                    <div class="tab_panel" role="tabpanel" id="tab2panel3_1">                          
+                        <div class="section">
+                            <h3 class="hidden">숨은 타이틀</h3> 
+                            <!-- sub-tab -->
+                            <div class="tab_wrap box tab_list_sub">
+                                <div class="tab_list" role="tablist">
+                                    <div><button type="button" role="tab" aria-selected="true" aria-controls="subtabpanel1_1">서브탭 1-1</button></div>
+                                    <div><button type="button" role="tab" aria-selected="false" aria-controls="subtabpanel1_2">서브탭 1-2</button></div>
+                                </div>
+                                <div class="tab_panel" role="tabpanel" id="subtabpanel1_1">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역1-1
+                                </div>
+                                <div class="tab_panel" role="tabpanel" id="subtabpanel1_2">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역1-2
+                                </div>
+                            </div>
+                            <!-- //sub-tab -->
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tab2panel3_2">                        
+                        <div class="section">
+                            <h3 class="hidden">숨은 타이틀</h3>
+                            <!-- sub-tab -->
+                            <div class="tab_wrap box tab_list_sub">
+                                <div class="tab_list" role="tablist">
+                                    <div><button type="button" role="tab" aria-selected="true" aria-controls="subtabpanel2_1">서브탭 2-1</button></div>
+                                    <div><button type="button" role="tab" aria-selected="false" aria-controls="subtabpanel2_2">서브탭 2-2</button></div>
+                                </div>
+                                
+                                <div class="tab_panel" role="tabpanel" id="subtabpanel2_1">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역2-1
+                                </div>
+                                <div class="tab_panel" role="tabpanel" id="subtabpanel2_2">
+                                    <h4 class="hidden">숨은 타이틀</h4>
+                                    서브텝의 콘텐츠 영역2-2
+                                </div>
+                            </div>
+                            <!-- // sub-tab -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn_ico close"><span class="hidden">레이어창 닫기</span></button>
+    </div>
+</div>
+                </script>
+
+                <div data-class="h2">Full Popup</div>
+                <div data-class="box">
+                    웹뷰 사용 (본문 컨텐츠와 레이아웃 동일)
+                </div>
+
+        </div>   
+        <!-- //section : 레이아웃 확인용 -->                
+        
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    <script>
+        $(function(){
+            $('[data-class="fold"]').eq(0).trigger('click');
+
+       
+        });
+       </script>
+</body>
+</html>

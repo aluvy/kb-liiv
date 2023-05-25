@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>검색</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+    <!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="챗봇" href="https://zmnbank.kbstar.com/mnbank/app/css/chatbot.css">
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_regist">
+        <h1 class="hidden">검색</h1>
+
+        <div class="total_search_wrap">
+            <div class="search_input">
+                <div class="input">
+                    <input type="text" class="inp" title="검색어" placeholder="검색어를 입력해주세요.">
+                    <button type="submit" class="btn_sch"><span class="hidden">검색</span></button>
+                </div>
+                <button type="button" class="btn_sch_voice" title="새창"><span class="hidden">음성으로 검색</span></button>
+            </div>
+        </div>
+        
+        <div class="tab_wrap total_sch_tab"> <!-- 210719 수정(.total_sch_tab 클래스 추가) -->
+            <div class="tab_list" role="tablist">
+                <div class="scroll_wrap">
+                    <div><button role="tab" aria-selected="false">챗봇검색 결과</button></div>
+                    <div><button role="tab" aria-selected="true" aria-controls="tabpanel_2">통합검색 결과(100)</button></div>
+                </div>
+            </div>
+            <div class="tab_panel" role="tabpanel" id="tabpanel_2">
+                <h2 class="hidden">통합검색 결과</h2>
+
+                <div class="section">
+                    <h3 class="h2">연관검색어</h3>
+                    <div class="relate_word">
+                        <a href="javascript:;" role="button" class="hash_text">#펀드 추가 없음</a>
+                        <a href="javascript:;" role="button" class="hash_text">#펀드 추천</a>
+                        <a href="javascript:;" role="button" class="hash_text">#처축</a>
+                        <a href="javascript:;" role="button" class="hash_text">#펀드환매</a>
+                        <a href="javascript:;" role="button" class="hash_text">#연금저축펀드</a>
+                    </div>
+                </div>
+
+                <hr class="hr_divide gap_sm_3">
+
+                <div class="tab_wrap sch_subtab">
+                    <div class="tab_list" role="tablist">
+                        <div class="scroll_wrap">
+                            <div><button type="button" role="tab" aria-selected="false">전체(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="true" aria-controls="tabpanesub1_1_2">메뉴(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">상품(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">FAQ(<span class="number">20</span>)</button></div>
+<!-- 210910 수정 -->
+                            <div><button type="button" role="tab" aria-selected="false">새소식(<span class="number">20</span>)</button></div>
+                            <div><button type="button" role="tab" aria-selected="false">이벤트(<span class="number">20</span>)</button></div>
+<!-- //210910 수정 -->
+                        </div>
+                    </div>
+                    <div class="tab_panel" role="tabpanel" id="tabpanesub1_1_2">
+                        <div class="section gap_md">
+                            <!-- 메뉴 -->
+                            <div class="hgroup_sch">
+                                <div>
+                                    <h3 class="h2">메뉴(<span class="number">20</span>)</h3>
+                                </div>
+                            </div>
+                            <div class="sch_rs_list">
+                                <!-- 메뉴 list -->
+                                <ul class="sch_menu">
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</a>
+                                    </li>
+                                </ul>
+                                <!-- //메뉴 list -->
+
+                                <div class="btn_list_btm more">
+                                    <button type="button" class="btn">더보기</button>
+                                </div>
+                            </div>
+                            <!-- //메뉴 -->
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script>
+    /* 업무 SCRIPT */
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/docs.css">
+</head>
+<body>
+    <div class="contents">
+        <div class="docs-name">HTML 규칙</div>
+
+        <div class="paper">
+            <div class="h1">들여쓰기</div>
+            <ul class="ul">
+				<li>1탭 들여쓰기 하며, 1탭의 크기는 공백 4칸으로 설정한다.</li>
+            </ul>
+
+            <div class="h1">빈줄</div>
+            <ul class="ul">
+				<li>가독성을 고려하여 빈 줄을 추가한다. 단, 1줄을 초과하지 않는다.</li>
+            </ul>
+
+            <div class="h1">주석</div>
+            <ul class="ul">
+				<li>기본형식 <xmp><!-- 주석내용 --><!-- //주석내용 --></xmp></li>
+				<li>수정 <xmp><!-- 210401 수정내용 --><!-- //210401 수정내용 --></xmp></li>
+            </ul>
+
+            <div class="h1">특수기호 Entity name</div>
+            <ul class="ul">
+				<li>특수기호(&lt;, &gt;, &amp;)는 Entity name을 사용하여 entity 코드로 변환한다.</li>
+            </ul>
+
+            <div class="h1">속성선언순서</div>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 8%">
+                        <col style="width: 20%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>순서</th>
+                            <th>구분</th>
+                            <th>속성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>기능</td>
+                            <td>href, src, type</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>이름</td>
+                            <td>name, id</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>정보</td>
+                            <td>value, title, alt</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>옵션</td>
+                            <td>target, tabindex</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>꾸미기</td>
+                            <td>class</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>역할</td>
+                            <td>role</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>속성</td>
+                            <td>aria-controls, aria-describedby, aria-labelledby, aria-popup, aria-modal 등</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>상태</td>
+                            <td>checked, disabled, selected, required, aria-selected, aria-current, aria-hidden 등</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code">
+                <xmp class="html"><a href="#none" title="새창열기" target="" class="">인쇄하기</a>
+<iframe src="about:blank" title="빈프레임"></iframe>
+<img src="img.gif" alt="대체텍스트">
+<input type="text" name="" ue="" title="" class="" style="" disabled=""></xmp>
+            </div>
+
+            <div class="h1">노치디자인(아이폰X Safe Area) 대응</div>
+            <ul class="ul">
+				<li>Viewport 설정
+                    <div class="code only">
+<xmp class="html"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></xmp>
+                    </div>
+                </li>
+                <li>인디케이터 영역 설정<br>
+                    iOS 11 constant() / iOS 11.2 이상 env() 사용
+                    <div class="code only">
+<xmp class="html">// iOS 11.0 버전
+constant(safe-area-inset-top)
+constant(safe-area-inset-right)
+constant(safe-area-inset-bottom)
+constant(safe-area-inset-left)
+
+// iOS 11.2 이상
+env(safe-area-inset-top)
+env(safe-area-inset-right)
+env(safe-area-inset-bottom)
+env(safe-area-inset-left)</xmp>
+                    </div>
+                </li>
+                <li>iPhoneX(v12.3.1) 세로모드
+                    <div class="code only">
+<xmp class="html">.btn {
+    padding:15px 0 calc(constant(safe-area-inset-bottom) + 15px); 
+    padding:15px 0 env(constant(safe-area-inset-bottom) + 15px);
+}</xmp>
+                    </div>
+                </li>
+                <li>iPhoneX(v12.3.1) 가로모드
+                    <div class="code only">
+<xmp class="html">.wrap {
+    padding-right:constant(safe-area-inset-right) + 15px); 
+    padding-left:constant(safe-area-inset-left) + 15px); 
+    padding-right:env(safe-area-inset-right) + 15px); 
+    padding-left:env(safe-area-inset-left) + 15px);
+}
+.btn {
+    padding:15px 0 calc(constant(safe-area-inset-bottom) + 15px); 
+    padding:15px 0 env(constant(safe-area-inset-bottom) + 15px);
+}
+</xmp>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/js/docs.js"></script>
+</body>
+</html>

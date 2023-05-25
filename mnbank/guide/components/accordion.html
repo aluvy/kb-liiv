@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">아코디언</div>
+        <div data-class="box">
+            <div data-class="p">ul태그에 .js_accordion 클래스 추가</div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">기본</div>
+            <div data-class="h3">클릭영역 : 전체</div>
+            <div data-class="h4">닫혔을 때</div>
+            <script type="text/html">
+<ul class="list_acco js_accordion">
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">제목 1</a>
+        <div class="toggle_panel" role="region">
+            <div>콘텐츠 
+                <div class="tooltip_limited">
+                    <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">도움말 자세히보기</span></button></p>
+                    <div class="tooltip_wrap" role="tooltip" aria-hidden="true">
+                        <p class="tooltip_tit">툴팁 타이틀영역</p>
+                        <div class="tooltip_cont"> 
+                            기본형과 타이틀형이 있습니다. <br>
+                            현재 툴팁은 타이틀형입니다.. <br>
+                            툴팁 영역으로 기본형과 타이틀형이 있습니다. 
+                            툴팁 영역으로 기본형과 타이틀형이 있습니다.
+                        </div>
+                        <button type="button" class="btn_tooltip_x"><span class="hidden">도움말 닫기</span></button>
+                    </div>
+                </div>
+            </div>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">제목 2</a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">제목 3</a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+</ul>
+            </script>
+            
+            <div data-class="h4">펼쳤을 때</div>
+            <script type="text/html">
+<ul class="list_acco js_accordion">
+    <li class="on">
+         <a href="#none" role="button" class="tit" aria-expanded="true">제목 1</a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li>
+         <a href="#none" role="button" class="tit" aria-expanded="false">제목 2</a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li>
+         <a href="#none" role="button" class="tit" aria-expanded="false">제목 3</a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h3">클릭영역 : 버튼</div>
+            <script type="text/html">
+<ul class="list_acco js_accordion">
+    <li>
+        <div class="tit">
+            타이틀이 노출 되는 곳      
+            <a href="#none" role="button" class="link">링크</a>  
+            <button type="button" class="btn_acco" aria-expanded="false"></button>                  
+        </div>        
+        <div class="toggle_panel">
+            텍스트가 오는 영역 텍스트가 오는 영역 텍스트가 오는 영역
+            텍스트가 오는 영역 텍스트가 오는 영역 텍스트가 오는 영역  
+        </div>
+    </li>
+    <li>
+        <div class="tit">
+            타이틀이 노출 되는 곳      
+            <a href="#none" role="button" class="link">링크</a>  
+            <button type="button" class="btn_acco" aria-expanded="false"></button>                  
+        </div>   
+        <div class="toggle_panel">
+            텍스트가 오는 영역 텍스트가 오는 영역 텍스트가 오는 영역
+            텍스트가 오는 영역 텍스트가 오는 영역 텍스트가 오는 영역  
+        </div>
+    </li>
+</ul>  
+            </script>
+
+        </div>
+            
+        <div data-class="section">
+            <div data-class="h2">아이콘</div>
+            <script type="text/html">
+<ul class="list_acco js_accordion icon">
+    <li class="item1">
+        <a href="#none" role="button" class="tit" aria-expanded="false">
+            텍스트
+            <p class="txt_sub">텍스트</p>
+        </a>
+        <div class="toggle_panel" role="region">
+            내용
+        </div>
+    </li>
+    <li class="item2">
+        <a href="#none" role="button" class="tit" aria-expanded="false">
+            텍스트
+            <p class="txt_sub">텍스트</p>
+        </a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li class="item3">
+        <a href="#none" role="button" class="tit" aria-expanded="false">
+            텍스트
+            <p class="txt_sub">텍스트</p>
+        </a>
+        <div class="toggle_panel" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+</ul>
+            </script>
+
+        </div>
+            
+        <div data-class="section">
+
+            <div data-class="h2">서브 아코디언</div>
+            <script type="text/html">
+<ul class="list_acco js_accordion tree">
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="true">제목 1</a>
+        <div class="toggle_panel" role="region">
+            <ul class="list_acco js_accordion">
+                <li><a href="#none" role="button" class="tit link">증명서 신청</a></li>
+                <li>
+                    <a href="#none" role="button" class="tit" aria-expanded="false">발급 신청</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="list_link squarebul">
+                            <li><a href="#none" class="link">OTP 최초발급</a></li>
+                            <li><a href="#none" class="link">OTP 재발급</a></li>
+                            <li><a href="#none" class="link">보안카드 재발급</a></li>
+                            <li><a href="#none" class="link">통장 재발급</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#none" role="button" class="tit" aria-expanded="false">오류해제/분실신고</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="list_link squarebul">
+                            <li><a href="#none" class="link">인터넷뱅킹 이용제한 해제</a></li>
+                            <li><a href="#none" class="link">계좌 비밀번호 오류 해제</a></li>
+                            <li><a href="#none" class="link">장기미사용 이체제한 해제</a></li>
+                            <li><a href="#none" class="link">보안카드 비밀번호 오류 해제</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#none" role="button" class="tit" aria-expanded="false">등록/변경</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="list_link squarebul">
+                            <li><a href="#none" class="link">계좌비밀번호 변경</a></li>
+                            <li><a href="#none" class="link">이체한도 조회/변경</a></li>
+                            <li><a href="#none" class="link">출금계좌 등록/해지</a></li>
+                            <li><a href="#none" class="link">보안카드 등록</a></li>
+                            <li><a href="#none" class="link">OTP 등록</a></li>
+                            <li><a href="#none" class="link">스마트OTP 등록</a></li>
+                            <li><a href="#none" class="link">타기관 OTP등록</a></li>
+                            <li><a href="#none" class="link">이용폰지정 서비스 신청</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#none" role="button" class="tit link">은행에 서류제출</a></li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">제목 2</a>
+        <div class="toggle_panel default" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">제목 3</a>
+        <div class="toggle_panel default" role="region">
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+            <p>콘텐츠 영역</p>
+        </div>
+    </li>
+</ul>
+            </script>
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

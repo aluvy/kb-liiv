@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">게시판</div>
+        <div data-class="box">
+            <span><a href="/mnbank/html/customer/BFE005000.html" target="_blank" title="새창" data-class="button">목록 샘플페이지</a></span>
+            <span><a href="/mnbank/html/customer/BFE005010.html" target="_blank" title="새창" data-class="button">상세 샘플페이지</a></span>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">리스트</div>
+            <div data-class="h3">기본</div>
+            <script type="text/html">
+<div class="search_wrap">
+    <div class="input">
+        <input type="text" class="inp" title="검색어" placeholder="검색어를 입력해주세요.">
+        <button type="submit" class="btn_sch"><span class="hidden">검색</span></button>
+    </div>
+    <p class="search_txt"><strong>전산시스템</strong>으로 검색한 결과입니다.</p>
+</div>
+
+<!-- 개발 : 결과값이 있을 때 노출 -->
+<div class="section board_list_wrap">  
+    <div class="list_top_wrap">
+        <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><em class="num_unit">건</em></span></div>
+    </div>
+    <ul class="board_list">
+        <li>
+            <a href="#none">
+                <p class="tit ico_pdf"><span class="hidden">pdf파일 첨부</span>「청년우대형동영상 업로드 테스트</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit ico_wrd"><span class="hidden">word파일 첨부</span>「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                <div class="info"><span class="number">2121.03.04</span></div>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                <p class="info"><span class="number">2121.03.04</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none" class="no_ellp">
+                <p class="tit">「청년우대형「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                <p class="info"><span class="number">2121.03.04</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                퍼블 : 타이틀 한줄만 나오는 경우 사용
+            </a>
+        </li>
+    </ul>
+    <div class="paging">
+        <a href="#none" class="first"><span>처음</span></a>
+        <a href="#none" class="prev on"><span>이전</span></a>
+        <span class="curr"><em>현재 페이지</em>1</span><span class="total"><em>전체 페이지</em>100</span>
+        <a href="#none" class="next on"><span>다음</span></a>
+        <a href="#none" class="end on"><span>끝</span></a>
+    </div>
+</div>
+<!-- //개발 : 결과값이 있을 때 노출 -->
+
+<!-- 개발 : 결과값이 없을 때 노출 -->
+<div class="result nodata">
+    <p class="tit">검색결과가 없습니다.</p>
+</div>
+<!-- //개발 : 결과값이 없을 때 노출 -->
+            </script>
+
+            <div data-class="h3">카테고리유형</div>
+            <script type="text/html">
+<div class="search_wrap">
+    <div class="input">
+        <input type="text" id="sch" name="sch" class="inp" placeholder="검색어를 입력해주세요.">
+        <button type="submit" class="btn_sch"><span class="hidden">검색</span></button></div>    
+</div>
+
+<div class="board_top_sort">
+    <div class="form_group">
+        <div class="form_tit">카테고리 유형</div>
+        <div class="form_row">
+            <div class="select">
+                <button type="button" class="select_btn">선택하세요</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 개발 : 검색 결과가 있을 때 -->
+<div class="section board_list_wrap"> 
+    <div class="list_top_wrap">
+        <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><em class="num_unit">건</em></span></div>
+    </div>
+   
+    <ul class="board_list">
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형동영상 업로드 테스트</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형동영상 업로드 테스트</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형동영상 업로드 테스트</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit">「청년우대형동영상 업로드 테스트</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </a>
+        </li>
+    </ul>
+    <div class="btn_list_btm more">
+        <button type="button" class="btn">더보기</button>
+    </div>   
+</div>
+<!-- //개발 : 검색 결과가 있을 때 -->
+
+<!-- 개발 : 결과값이 없을 때 노출 -->
+<div class="section board_list_wrap"> 
+    <div class="list_top_wrap">
+        <div class="col col_l"><span class="total_num">전체 <em class="number">0</em><em class="num_unit">건</em></span></div>
+    </div>
+    <div class="result nodata">
+        <p class="tit">검색결과가 없습니다.</p>
+    </div>
+</div>
+<!-- //개발 : 결과값이 없을 때 노출 -->
+            </script>
+
+            <div data-class="h3">첨부파일</div>
+            <script type="text/html">
+<div class="section board_list_wrap">
+    <!-- 리스트 상단 -->
+    <div class="list_top_wrap">
+        <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><em class="num_unit">건</em></span></div>
+    </div>
+    <!-- //리스트 상단 -->
+
+    <!-- list -->
+    <ul class="board_list">
+        <li>
+            <a href="#none">
+                <p class="tit"><span class="ico_20_pdf"></span>주간환율동향(2021년 1월 셋째주)</p>
+                <p class="info"><span class="number">2021.01.15 16:13:13</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit"><span class="ico_20_pdf"></span>주간환율동향(2021년 1월 셋째주)</p>
+                <p class="info"><span class="number">2021.01.15 16:13:13</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit"><span class="ico_20_pdf"></span>주간환율동향(2021년 1월 셋째주)</p>
+                <p class="info"><span class="number">2021.01.15 16:13:13</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <p class="tit"><span class="ico_20_pdf"></span>주간환율동향(2021년 1월 셋째주)</p>
+                <p class="info"><span class="number">2021.01.15 16:13:13</span><span><em>조회수</em><em class="number">152</em></span></p>
+            </a>
+        </li>
+    </ul>
+    <!-- //list -->
+
+    <!-- paging -->
+    <div class="paging">
+        <a href="#none" class="first"><span>처음</span></a>
+        <a href="#none" class="prev on"><span>이전</span></a>
+        <span class="curr"><em>현재 페이지</em>1</span><span class="total"><em>전체 페이지</em>100</span>
+        <a href="#none" class="next on"><span>다음</span></a>
+        <a href="#none" class="end on"><span>끝</span></a>
+    </div>
+    <!-- //paging -->
+</div>
+            </script>
+
+            <div data-class="h3">상세페이지 없음</div>
+            <script type="text/html">
+<div class="section board_list_wrap">  
+    <ul class="board_list noline"> <!-- 첫번째 라인선이 없을 경우 .noline 클래스 추가  -->
+        <li>
+            <div class="board_list_item">
+                <p class="tit">「청년우대형 주택청약종합저축 비과세 요건을 충족하였습니다. 2021.03.06 에 가입신청할 예정입니다.</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="board_list_item">
+                <p class="tit">고객님, 오늘 상담내용 정리하면 개인형IRP를 가입하고자 하시면 금주 금요일까지 등본 준비해서 연락해주세요</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="board_list_item">
+                <p class="tit">「청년우대형 주택청약종합저축 비과세 요건을 충족하였습니다. 2021.03.06 에 가입신청할 예정입니다.</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="board_list_item">
+                <p class="tit">고객님, 오늘 상담내용 정리하면 개인형IRP를 가입하고자 하시면 금주 금요일까지 등본 준비해서 연락해주세요</p>
+                <p class="info"><span class="number">2121.03.04</span></p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="paging">
+        <a href="#none" class="first"><span>처음</span></a>
+        <a href="#none" class="prev on"><span>이전</span></a>
+        <span class="curr"><em>현재 페이지</em>1</span><span class="total"><em>전체 페이지</em>100</span>
+        <a href="#none" class="next on"><span>다음</span></a>
+        <a href="#none" class="end on"><span>끝</span></a>
+    </div>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h2">상세</div>
+            <script type="text/html">               
+<div class="section board_view">
+    <div class="board_sns_wrap">
+        <button type="button" class="btn_txt ico_facebook2"><span class="hidden">페이스북전송</span></button>
+        <button type="button" class="btn_txt ico_kakao2"><span class="hidden">카카오톡전송</span></button>
+    </div>
+    <div class="board_view_tit">
+        <h2 class="h2">유안타증권의 전산시스템 작업에 따른 관련 금융거래 일시중단 안내 전산시스템 작업에 따른 관련 금융거래 일시중단 안내</h2>
+        <p class="info"><span class="number">2121.03.04</span><span><em>조회수</em><em class="number">152</em></span></p>
+    </div>
+    <div class="file_attach">
+        <span><button type="button" class="btn_attach ico_pdf">유안타증권의 전산시스템 안내.pdf</button></span>
+        <span><button type="button" class="btn_attach ico_pdf">첨부파일.jpg</button></span>
+        <span><button type="button" class="btn_attach ico_pdf">첨부파일.hwp</button></span>
+    </div>
+    <div class="board_view_cont">
+        다음과 같이 약관 변경 내용을 안내합니다.변경된 약관은 KB국민은행 영업점 또는 인터넷 홈페이지(www.kbstar.com > 전체서비스 > 고객센터 > 서식/약관/설명서 > 대출 > 약관)에서 조회 및 교부 가능합니다. <br><br>
+        다음과 같이 약관 변경 내용을 안내합니다.변경된 약관은 KB국민은행 영업점 또는 인터넷 홈페이지(www.kbstar.com > 전체서비스 > 고객센터 > 서식/약관/설명서 > 대출 > 약관)에서 조회 및 교부 가능합니다. 
+    </div>
+    <div class="btn_cnt_wrap gap_lg">
+        <span><button type="button" class="btn outline md">이전</button></span>
+        <span><button type="button" class="btn outline md">다음</button></span>
+    </div>
+</div>
+            </script>
+        </div>
+
+
+        <div data-class="section">
+        <div data-class="h2">FAQ</div>
+        <script type="text/html">
+<!-- 개발 : 결과값이 있을 때 노출 -->
+<div class="section board_list_wrap">  
+    <div class="list_top_wrap">
+        <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><em class="num_unit">건</em></span></div>
+    </div>
+    <ul class="list_acco js_accordion">
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">KB 비대면 외화보통예금 신규란?</a>
+            <div class="toggle_panel" role="region">                               
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">이용 대상 고객은 어떻게 되나요? 개인/개인사업자/임의단체 모두 이용가능 한가요?</a>
+            <div class="toggle_panel" role="region">
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">KB 비대면 외화보통예금 신규란?</a>
+            <div class="toggle_panel" role="region">                               
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">이용 대상 고객은 어떻게 되나요? 개인/개인사업자/임의단체 모두 이용가능 한가요?</a>
+            <div class="toggle_panel" role="region">
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">KB 비대면 외화보통예금 신규란?</a>
+            <div class="toggle_panel" role="region">                               
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">이용 대상 고객은 어떻게 되나요? 개인/개인사업자/임의단체 모두 이용가능 한가요?</a>
+            <div class="toggle_panel" role="region">
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">KB 비대면 외화보통예금 신규란?</a>
+            <div class="toggle_panel" role="region">                               
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+        <li>
+            <a href="#none" role="button" class="tit" aria-expanded="false">이용 대상 고객은 어떻게 되나요? 개인/개인사업자/임의단체 모두 이용가능 한가요?</a>
+            <div class="toggle_panel" role="region">
+                지점 방문 없이 비대면 실명확인 방식으로 모바일을 통해 외화요구불예금을 신규 개설하는 서비스를 말합니다.
+            </div>
+        </li>
+    </ul>
+    <!-- 개발 : 페이징 없음 -->
+</div>
+<!-- //개발 : 결과값이 있을 때 노출 -->
+        </script>
+    </div>
+</div>
+    
+<script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+<script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+<script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+<script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+<script src="/mnbank/guide/assets/js/components.js"></script>
+
+<!-- Loading Custom Script -->
+<script src="/mnbank/app/js/common_ui.js"></script>
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

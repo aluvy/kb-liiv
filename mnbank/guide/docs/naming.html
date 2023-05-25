@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/docs.css">
+</head>
+<body>
+    <div class="contents">
+        <div class="docs-name">네이밍 규칙</div>
+
+        <div class="paper">
+            <div class="h1">공통 규칙</div>
+            <ul class="ul">
+                <li>naming은 영문 소문자, 숫자, 언더바( _ )로 작성한다.</li>
+                <li>단어조합시, [형태+의미+숫자+상태]의 형태로 작성한다.</li>
+                <li>숫자가 없으면 '1'이라는 숫자가 생략된 것으로 간주한다.</li>
+                <li>약속어를 기본으로 작성하나, 없으면 종류와 특성을 나타내도록 naming한다.</li>
+            </ul>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col style="width: 20%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>종류</th>
+                            <th>구분</th>
+                            <th>번호</th>
+                            <th>예시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>ID Selector</th>
+                            <td>카멜표기법<br>(camelCase)</td>
+                            <td>한 자리수<br>(생략가능, 2, 3)</td>
+                            <td>errorMesage, controlCenter, controlCenter2</td>
+                        </tr>
+                        <tr>
+                            <th>Class Selector</th>
+                            <td>스네이크 표기법<br>(snake_case)</td>
+                            <td>한 자리수<br>(생략가능, 2, 3)</td>
+                            <td>tab_page, tbl_type1, tbl_type2</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td>스네이크 표기법<br>(snake_case)</td>
+                            <td>두 자리수<br>(01, 02, 03)</td>
+                            <td>btn_cancle01_off.gif</td>
+                        </tr>
+                        <tr>
+                            <th>파일 및 폴더</th>
+                            <td>스네이크 표기법<br>(snake_case)</td>
+                            <td>두 자리수<br>(01, 02, 03)</td>
+                            <td>cyber_center</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h1">ID 선택자</div>
+            <ul class="ul">
+                <li>id는 카멜표기법을 사용한다. 예) tabType1</li>
+                <li>최상위 레이아웃, 폼 요소, 책갈피를 제외하고 id를 사용하지 않는다.</li>
+                <li>동일한 이름의 id는 문서에서 한번만 사용이 가능하다.</li>
+            </ul>
+
+            <div class="h1">CLASS 선택자</div>
+            <ul class="ul">
+                <li>class는 언더바( _ )방식을 사용한다. 예) tab_type1</li>
+                <li>다중의 클래스 지정을 허용하며 최대 3개 이상 사용하지 않도록 주의한다.</li>
+            </ul>
+
+            <div class="h1">이미지 Naming</div>
+            <ul class="ul">
+                <li>네이밍 공통 규칙에 따른다.</li>
+            </ul>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 30%">
+                        <col style="width: 30%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>분류</th>
+                            <th>파일명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>버튼</td>
+                            <td>btn_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>아이콘</td>
+                            <td>ico_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>화살표</td>
+                            <td>arr_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>블릿</td>
+                            <td>bul_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>배경</td>
+                            <td>bg_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>비주얼</td>
+                            <td>visual_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>썸네일</td>
+                            <td>thumb_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>배너</td>
+                            <td>bnn_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>일반 이미지</td>
+                            <td>img_</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>임시</td>
+                            <td>@</td>
+                            <td>모든 임시파일은 temp 폴더에 넣는다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h1">파일 Naming</div>
+            <ul class="ul">
+                <li>HTML파일은 화면ID로 작업한다. 예) 화면ID.html</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/js/docs.js"></script>
+</body>
+</html>

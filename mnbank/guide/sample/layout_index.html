@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>레이아웃 인덱스</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/service.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_service"><!-- 구분자: 카테고리명 -->
+        <h1 class="hidden">페이지화면명</h1>
+
+        <div class="section">
+            <h2 class="h2">슬로건화면 기본</h2>
+            <div class="slogan_wrap">
+                <p class="tit">나는 슬로건 타이틀</p>
+                <p class="txt">나는 슬로건 설명!<br>슬로건 화면은 index화면외에 여러곳에서 쓰입니다.<br>슬로건 txt는 font-size:16px입니다. <span class="caption">(간혹 15px로 되어있는것은 디자인이 잘못되어 나온것!!)</span><br>슬로건 화면 확장형은 <a href="../components/heading.html" target="_blank" class="fc_posi">가이드_heading > slogan_wrap 확장</a>을 참고 하시고, 다른 유형의 디자인이면 만드세요!</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">슬로건화면에 full 이미지가 있는 case</h2>
+            <style>
+                .cate_service .slogan_XX .img {height:20.8rem; margin-left:-2.4rem; margin-right:-2.4rem; background:#d4d4d5 url(/mnbank/app/img/reference/img_onecomi_pop_3.png) no-repeat 50% 0; background-size:auto 20.8rem;} /* 각 카테고리 css 안에 넣어주시되, .cate_service 와 같이 카테고리 구분자 아래에 정의해주세요 */
+            </style>
+            <div class="slogan_wrap slogan_XX"><!-- 이미지가 있는 경우 클래스명 추가 -->
+                <p class="tit">슬로건타이틀</p>
+                <p class="txt">슬로건텍스트(#484b51): 타이틀 밑에 나오는 텍스트의 색상은 #484b51 입니다.</p>
+                <div class="img" role="img"></div>
+                <p class="txt">슬로건텍스트(#26282c)-위의 이미지는 양쪽이 꽉차는 full 이미지입니다. full이미지는 배경색상을 css에 넣어주세요</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">슬로건화면에 이미지가 있는 case</h2>
+            <style>
+                .cate_service .slogan_XXX .img {height:14.7rem; background:url(/mnbank/app/img/forex/forex_slogan_pickguide.png) no-repeat 50% 0; background-size:auto 14.7rem;}
+            </style>
+            <div class="slogan_wrap slogan_XXX"><!-- 이미지가 있는 경우 클래스명 추가 -->
+                <p class="tit">슬로건타이틀</p>
+                <p class="txt">슬로건텍스트(#484b51): 타이틀 밑에 나오는 텍스트의 색상은 #484b51 입니다.</p>
+                <div class="img" role="img"></div>
+                <p class="txt">슬로건텍스트(#26282c)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">list_index 기본형</h2>
+            <ul class="list_index">
+                <li>
+                    <a href="#none" class="link">메뉴1</a>
+                </li>
+                <li>
+                    <a href="#none" class="link">메뉴2</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">list_index 아이콘형</h2>
+            <ul class="list_index icon 메뉴명$"><!-- 메뉴명$ : isa1, isa2  각 메뉴별 css 맨상단에 넣어주세요. 예시) pdt_manage.css -->
+                <li class="item1">
+                    <a href="#none" class="link">메뉴1</a>
+                </li>
+                <li class="item2">
+                    <a href="#none" class="link">메뉴2</a>
+                </li>
+                <li class="item$">
+                    <a href="#none" class="link">메뉴3</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">list_index sub index형</h2>
+            <ul class="list_index js_accordion"> <!-- 'list_index' 'js_accordion(sub link 가 있을 경우)' -->
+                <li>
+                    <a href="#none" class="link">메뉴1<br>메뉴1<br>메뉴1</a>
+                </li>
+                <li>
+                    <a href="#none" role="button" class="tit" aria-expanded="false">메뉴2</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="sub_index">
+                            <li><a href="#none" class="s_link">메뉴2_1</a></li>
+                            <li><a href="#none" class="s_link">메뉴2_2</a></li>
+                            <li><a href="#none" class="s_link">메뉴2_3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#none" role="button" class="tit" aria-expanded="false">메뉴3</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="sub_index">
+                            <li><a href="#none" class="s_link">메뉴3_1</a></li>
+                            <li><a href="#none" class="s_link">메뉴3_2</a></li>
+                            <li><a href="#none" class="s_link">메뉴3_3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#none" class="link">메뉴4<br>메뉴4<br>메뉴4</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="h2">list_index sub index형 + icon</h2>
+             <ul class="list_index icon 메뉴명$ js_accordion"><!-- 메뉴명$ : isa1, isa2  각 메뉴별 css 맨상단에 넣어주세요. 예시) pdt_manage.css -->
+                <li class="item1">
+                    <a href="#none" class="link">메뉴1<br>메뉴1<br>메뉴1</a>
+                </li>
+                <li class="item2">
+                    <a href="#none" role="button" class="tit" aria-expanded="false">메뉴2</a>
+                    <div class="toggle_panel" role="region">
+                        <ul class="sub_index">
+                            <li><a href="#none" class="s_link">메뉴2_1</a></li>
+                            <li><a href="#none" class="s_link">메뉴2_2</a></li>
+                            <li><a href="#none" class="s_link">메뉴2_3</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- 레이어팝업 START -->
+<div id="htmlTest" class="layerHTML">
+
+</div>
+<!-- //레이어팝업 END -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+<!-- 업무 SCRIPT START -->
+<script>
+
+</script>
+<!-- //업무 SCRIPT END -->
+</body>
+</html>

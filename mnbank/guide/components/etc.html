@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">기타</div>
+
+        
+        <div data-class="section">
+            <div data-class="h1">강조문구</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div><strong>[정책]</strong><br>
+                        verifi_num의 num_unit은 bold가 기본<br>
+                        verifi_num의 기본사이즈(ex:30 명) 30px<br>
+                        verifi_num에서 금액조합(ex:9,000 원)인경우 : number-28px, num-unit-24px
+                    </div>
+                    <div><strong>[verifi_tit이 없는 경우]</strong><br>
+                        계좌번호 단독으로 나오는 경우 24px(fs24)<br>
+                        휴대폰번호 단독으로 나오는 경우 20px(fs20)
+                    </div>
+                </div>
+            </div>
+
+            <div data-class="p">default</div>
+            <div data-class="box">
+                border색상 : #8c949e
+            </div>
+            <script type="text/html">
+<div class="verifi_wrap">
+    <p class="verifi_tit">영상통화 대기고객</p>
+    <p class="verifi_num"><span class="number">20</span><span class="num_unit">명</span></p>
+</div>
+            </script>
+
+            <div data-class="box">
+                border색상 : #ebeef0
+            </div>
+            <script type="text/html">
+<div class="verifi_wrap type1">
+    <p class="verifi_tit">영상통화 대기고객</p>
+    <p class="verifi_num"><span class="number">20</span><span class="num_unit">명</span></p>
+</div>
+            </script>
+            <div data-class="p">완료화면에서 사용</div>
+            <script type="text/html">
+<div class="verifi_wrap">
+    <p class="verifi_tit"><strong>매수가능금액(미운용자산)</strong></p>
+    <p class="verifi_num amount"><span class="number">100,000,000</span><strong class="num_unit">원</strong></p>
+</div>
+            </script>
+
+            <script type="text/html">
+<div class="verifi_wrap type1">
+    <strong class="number fs20 fc_posi">010-1324-****</strong>
+</div>
+<div class="verifi_wrap">
+    <strong class="number fs20 fc_posi">010-1324-****</strong>
+</div>
+<div class="verifi_wrap">
+    <strong class="number fs24 fc_posi">12345-748-3940550</strong>
+</div>
+            </script>
+
+            <div data-class="p">자산관리에서 사용</div>
+            <script type="text/html">
+<div class="verifi_wrap">
+    <p class="verifi_tit">지수 비교 기준일</p>
+    <p class="verifi_num"><span class="number">2021.03.07</span></p>
+    <p class="verifi_txt">(입금예정일 <span class="number">2021. 03. 31</span>)</p>
+</div>
+            </script>
+
+            <div data-class="p">텍스트 한줄 강조</div>
+            <div data-class="box">
+               폭 작은 사이즈
+            </div>
+            <script type="text/html">
+<div class="verifi_wrap sm">
+    <strong class="fs18 fc_posi">평택고덕</strong>
+</div>
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">지도</div>
+            <script type="text/html" data-sprite="/mnbank/app/img/common/map/ico_map.png" data-img-width="192">
+<!-- 지도 영역 -->
+<div class="map_wrap">
+    <img src="/mnbank/app/img/common/map/pin_01.png" style="width:24px; height:28px; position:absolute; top:0; left:0;" alt="1">
+    <img src="/mnbank/app/img/common/map/pin_02.png" style="width:24px; height:28px; position:absolute; top:0; left:24px;" alt="2">
+    <img src="/mnbank/app/img/common/map/pin_03.png" style="width:24px; height:28px; position:absolute; top:0; left:48px;" alt="3">
+    <img src="/mnbank/app/img/common/map/pin_04.png" style="width:24px; height:28px; position:absolute; top:0; left:72px;" alt="4">
+    <img src="/mnbank/app/img/common/map/pin_05.png" style="width:24px; height:28px; position:absolute; top:0; left:96px;" alt="5">
+    <img src="/mnbank/app/img/common/map/pin_06.png" style="width:24px; height:28px; position:absolute; top:0; left:120px;" alt="6">
+    <img src="/mnbank/app/img/common/map/pin_07.png" style="width:24px; height:28px; position:absolute; top:0; left:144px;" alt="7">
+    <img src="/mnbank/app/img/common/map/pin_08.png" style="width:24px; height:28px; position:absolute; top:0; left:168px;" alt="8">
+    <img src="/mnbank/app/img/common/map/pin_09.png" style="width:24px; height:28px; position:absolute; top:0; left:192px;" alt="9">
+    <img src="/mnbank/app/img/common/map/pin_10.png" style="width:24px; height:28px; position:absolute; top:0; left:216px;" alt="10">
+    <img src="/mnbank/app/img/common/map/pin_11.png" style="width:24px; height:28px; position:absolute; top:28px; left:0;" alt="11">
+    <img src="/mnbank/app/img/common/map/pin_12.png" style="width:24px; height:28px; position:absolute; top:28px; left:24px;" alt="12">
+    <img src="/mnbank/app/img/common/map/pin_13.png" style="width:24px; height:28px; position:absolute; top:28px; left:48px;" alt="13">
+    <img src="/mnbank/app/img/common/map/pin_14.png" style="width:24px; height:28px; position:absolute; top:28px; left:72px;" alt="14">
+    <img src="/mnbank/app/img/common/map/pin_15.png" style="width:24px; height:28px; position:absolute; top:28px; left:96px;" alt="15">
+    <img src="/mnbank/app/img/common/map/pin_16.png" style="width:24px; height:28px; position:absolute; top:28px; left:120px;" alt="16">
+    <img src="/mnbank/app/img/common/map/pin_17.png" style="width:24px; height:28px; position:absolute; top:28px; left:144px;" alt="17">
+    <img src="/mnbank/app/img/common/map/pin_18.png" style="width:24px; height:28px; position:absolute; top:28px; left:168px;" alt="18">
+    <img src="/mnbank/app/img/common/map/pin_19.png" style="width:24px; height:28px; position:absolute; top:28px; left:192px;" alt="19">
+    <img src="/mnbank/app/img/common/map/pin_20.png" style="width:24px; height:28px; position:absolute; top:28px; left:216px;" alt="20">
+    <img src="/mnbank/app/img/common/map/pin_21.png" style="width:24px; height:28px; position:absolute; top:56px; left:0;" alt="21">
+    <img src="/mnbank/app/img/common/map/pin_22.png" style="width:24px; height:28px; position:absolute; top:56px; left:24px;" alt="22">
+    <img src="/mnbank/app/img/common/map/pin_23.png" style="width:24px; height:28px; position:absolute; top:56px; left:48px;" alt="23">
+    <img src="/mnbank/app/img/common/map/pin_24.png" style="width:24px; height:28px; position:absolute; top:56px; left:72px;" alt="24">
+    <img src="/mnbank/app/img/common/map/pin_25.png" style="width:24px; height:28px; position:absolute; top:56px; left:96px;" alt="25">
+    <img src="/mnbank/app/img/common/map/pin_26.png" style="width:24px; height:28px; position:absolute; top:56px; left:120px;" alt="26">
+    <img src="/mnbank/app/img/common/map/pin_27.png" style="width:24px; height:28px; position:absolute; top:56px; left:144px;" alt="27">
+    <img src="/mnbank/app/img/common/map/pin_28.png" style="width:24px; height:28px; position:absolute; top:56px; left:168px;" alt="28">
+    <img src="/mnbank/app/img/common/map/pin_29.png" style="width:24px; height:28px; position:absolute; top:56px; left:192px;" alt="29">
+    <img src="/mnbank/app/img/common/map/pin_30.png" style="width:24px; height:28px; position:absolute; top:56px; left:216px;" alt="30">
+    <img src="/mnbank/app/img/common/map/pin_31.png" style="width:24px; height:28px; position:absolute; top:84px; left:0;" alt="31">
+    <img src="/mnbank/app/img/common/map/pin_32.png" style="width:24px; height:28px; position:absolute; top:84px; left:24px;" alt="32">
+    <img src="/mnbank/app/img/common/map/pin_33.png" style="width:24px; height:28px; position:absolute; top:84px; left:48px;" alt="33">
+    <img src="/mnbank/app/img/common/map/pin_34.png" style="width:24px; height:28px; position:absolute; top:84px; left:72px;" alt="34">
+    <img src="/mnbank/app/img/common/map/pin_35.png" style="width:24px; height:28px; position:absolute; top:84px; left:96px;" alt="35">
+    <img src="/mnbank/app/img/common/map/pin_36.png" style="width:24px; height:28px; position:absolute; top:84px; left:120px;" alt="36">
+    <img src="/mnbank/app/img/common/map/pin_37.png" style="width:24px; height:28px; position:absolute; top:84px; left:144px;" alt="37">
+    <img src="/mnbank/app/img/common/map/pin_38.png" style="width:24px; height:28px; position:absolute; top:84px; left:168px;" alt="38">
+    <img src="/mnbank/app/img/common/map/pin_39.png" style="width:24px; height:28px; position:absolute; top:84px; left:192px;" alt="39">
+    <img src="/mnbank/app/img/common/map/pin_40.png" style="width:24px; height:28px; position:absolute; top:84px; left:216px;" alt="40">
+    <img src="/mnbank/app/img/common/map/pin_41.png" style="width:24px; height:28px; position:absolute; top:112px; left:0;" alt="41">
+    <img src="/mnbank/app/img/common/map/pin_42.png" style="width:24px; height:28px; position:absolute; top:112px; left:24px;" alt="42">
+    <img src="/mnbank/app/img/common/map/pin_43.png" style="width:24px; height:28px; position:absolute; top:112px; left:48px;" alt="43">
+    <img src="/mnbank/app/img/common/map/pin_44.png" style="width:24px; height:28px; position:absolute; top:112px; left:72px;" alt="44">
+    <img src="/mnbank/app/img/common/map/pin_45.png" style="width:24px; height:28px; position:absolute; top:112px; left:96px;" alt="45">
+    <img src="/mnbank/app/img/common/map/pin_46.png" style="width:24px; height:28px; position:absolute; top:112px; left:120px;" alt="46">
+    <img src="/mnbank/app/img/common/map/pin_47.png" style="width:24px; height:28px; position:absolute; top:112px; left:144px;" alt="47">
+    <img src="/mnbank/app/img/common/map/pin_48.png" style="width:24px; height:28px; position:absolute; top:112px; left:168px;" alt="48">
+    <img src="/mnbank/app/img/common/map/pin_49.png" style="width:24px; height:28px; position:absolute; top:112px; left:192px;" alt="49">
+    <img src="/mnbank/app/img/common/map/pin_50.png" style="width:24px; height:28px; position:absolute; top:112px; left:216px;" alt="50">
+    <img src="/mnbank/app/img/common/map/pin_point.png" style="width:40px; height:40px; position:absolute; top:152px; left:0;" alt="현재 위치">
+
+    <div class="map_control">
+        <button class="btn_map location"><span class="hidden">현재위치</span></button>
+        <button class="btn_map reset"><span class="hidden">재설정</span></button>
+        <button class="btn_map plus"><span class="hidden">확대</span></button>
+        <button class="btn_map minus"><span class="hidden">축소</span></button>
+    </div>
+</div>
+<!-- //지도 영역 -->
+            </script>
+        </div>
+        <div data-class="section">
+            <div data-class="h1">캘린더</div>
+
+            <div data-class="box">
+               <a href="/mnbank/guide/sample/popup.html" class="underline" target="_blank">달력선택팝업</a>은 ly_calendar 아래로 css 재정의되며<br>
+               나머지 바닥페이지 팝업은 calendar_wrap + type$ 로 재정의 해주세요.
+            </div>
+            <div data-class="p">입출금 화면</div>
+            <script type="text/html">
+<div class="calendar_wrap type1">
+    <div class="cal_month">                    
+        <button type="button" disabled class="btn btn_ico first"><span class="hidden">전년도</span></button> <!-- 개발 : 전년도,이전달,다음달,다음년도 버튼 비활성화시 속성 'disabled' 추가-->
+        <button type="button" disabled class="btn btn_ico prev"><span class="hidden">이전달</span></button>                    
+        <span class="year_txt"><span class="number">2018.03</span></span>
+        <button type="button" class="btn btn_ico next"><span class="hidden">다음달</span></button>
+        <button type="button" class="btn btn_ico end"><span class="hidden">다음년도</span></button>
+    </div>
+    <table class="cal_tbl">
+        <caption>달력-일,월,화,수,목,금,토 항목으로 구성</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="sunday">일</th>
+                <th scope="col">월</th>
+                <th scope="col">화</th>
+                <th scope="col">수</th>
+                <th scope="col">목</th>
+                <th scope="col">금</th>
+                <th scope="col" class="saturday">토</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sunday"></td>
+                <td><button type="button" disabled>1</button></td>
+                <td><button type="button" disabled>2</button></td>
+                <td><button type="button" disabled>3</button></td>
+                <td><button type="button" title="선택됨">4</button>
+                    <span class="info">
+                        <span class="in"><span class="hidden">입금</span>10</span>
+                        <span class="out"><span class="hidden">출금</span>1</span>
+                    </span>
+                </td>
+                <td><button type="button" disabled>5</button></td>
+                <td class="saturday"><button type="button" disabled>6</button></td>
+            </tr>
+            <tr>
+                <td class="sunday"><button type="button" disabled>7</button></td>
+                <td><button type="button">8</button>
+                    <span class="info">
+                        <span class="in"><span class="hidden">입금</span>10</span>
+                        <span class="out"><span class="hidden">출금</span>1</span>
+                    </span>
+                </td>
+                <td><button type="button" disabled>9</button></td>
+                <td><button type="button" disabled>10</button></td>
+                <td><button type="button" disabled>11</button></td>
+                <td><button type="button">12</button>
+                    <span class="info">
+                        <span class="in"><span class="hidden">입금</span>10</span>
+                        <span class="out"><span class="hidden">출금</span>1</span>
+                    </span>
+                </td>
+                <td class="saturday"><button type="button" disabled>13</button></td>
+            </tr>
+            <tr>
+                <td class="sunday"><button type="button" disabled>14</button></td>
+                <td><button type="button" disabled>15</button></td>
+                <td><button type="button" disabled>16</button></td>
+                <td><button type="button" disabled>17</button></td>
+                <td><button type="button" disabled>18</button></td>
+                <td><button type="button" disabled>19</button></td>
+                <td class="saturday"><button type="button" disabled>20</button></td>
+            </tr>
+            <tr>
+                <td class="sunday"><button type="button" disabled>21</button></td>
+                <td><button type="button" disabled>22</button></td>
+                <td><button type="button" disabled>23</button></td>
+                <td><button type="button">24</button>
+                    <span class="info">
+                        <span class="in"><span class="hidden">입금</span>10</span>
+                        <span class="out"><span class="hidden">출금</span>1</span>
+                    </span>
+                </td>
+                <td><button type="button" disabled>25</button></td>
+                <td><button type="button" disabled>26</button></td>
+                <td class="saturday"><button type="button" disabled>27</button></td>
+            </tr>
+            <tr>
+                <td class="sunday"><button type="button" disabled>28</button></td>
+                <td><button type="button" disabled>29</button></td>
+                <td><button type="button" disabled>30</button></td>
+                <td><button type="button">31</button>
+                    <span class="info">
+                        <span class="in"><span class="hidden">입금</span>10</span>
+                        <span class="out"><span class="hidden">출금</span>1</span>
+                    </span>
+                </td>
+                <td><button type="button" disabled></button></td>
+                <td><button type="button" disabled></button></td>
+                <td class="saturday"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="cal_legend">
+        <span class="legend in">입금</span>
+        <span class="legend out">출금</span>
+    </div>
+    <div class="cal_amount">
+        <strong class="tit_amount">3월 4일 거래내역</strong>
+        <ul class="list_data">
+            <li>
+                <div class="key">월 입금총액</div>
+                <div class="value"><strong class="number fc_posi">10,000,000,000</strong><span class="num_unit">원</span></div>
+            </li>
+            <li>
+                <div class="key">월 출금총액</div>
+                <div class="value"><strong class="number fc_nega">10,000,000,000</strong><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+    </div>
+</div>  
+            </script>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div data-class="section">
+            <div data-class="h1">로딩</div>
+            
+            <div data-class="h2">루프 애니메이션 - spinner</div> -->
+            <!-- aria-live="polite" aria-label="로딩중" -->
+            <!-- <div data-class="notice">디자인 없음, 사용유무 알 수 없음, 선작업 </div>
+            <script type="text/html">
+<div class="loader" role="status"><span class="hidden">로딩중</span></div>
+            </script>
+        </div> -->
+
+        <!-- <div data-class="section">
+            <div data-class="h1">토스트 toast notification</div>
+            
+            <div data-class="h2">기본형</div>
+            <div data-class="p"> 
+                Toast 알림 테스트 명령어 : Toast.show(message, status)<br>
+                디자인 및 기능 확인 필요 
+            </div>
+            <script type="text/html">
+<div>
+    <button type="button" onclick="Toast.show('텍스트 레이블이 들어가는 영역입니다. 한 줄 혹은 두 줄 케이스가 있습니다.', 'success')" class="btn primary sm">Success</button>
+    <button type="button" onclick="Toast.show('오류 안내 토스트 메시지!', 'error')" class="btn primary sm">Error</button>
+</div>
+            </script>
+        </div> -->
+
+        <!-- <div data-class="section">
+            <div data-class="h1">프로그레스 바</div>
+
+            <div data-class="h2">기본형</div>
+            <div data-class="notice">디자인 없음, 사용유무 알 수 없음, 선작업</div> -->
+            <!-- role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" aria-valuetext="" -->
+            <!-- <script type="text/html">
+<div class="progressbar">
+    <div class="pbar"></div>
+    <div class="ptext">0%</div>
+</div>
+<div class="mt15"><button type="button" class="btn primary sm" onclick="updateProgressBar()">Start Progress Bar</button></div>
+            </script> -->
+
+            <!-- <div data-class="h1">배경색</div>
+            <div class="g_desc">[ * DSGv.01 에 따라 우선 모두 정의했으나 추후 가감 ]</div>
+            <script type="text/html">
+<div class="bgwhite">하양 배경</div>          
+<br>
+<div class="bgblack fcgray">검정 배경</div>
+<br>
+<div class="bgprime">프라임 컬러 배경 1</div>
+<br>
+<div class="bgprimel">프라임 컬러 배경 2</div>
+            </script> -->
+        <!-- </div>
+
+        <div data-class="section">
+            <div data-class="h1">뱃지</div> -->
+            <!-- <div data-class="h2">색상 - 배경</div> -->
+            <!-- <div data-class="notice">[ * 디자인 필요 ] 선작업 </div>
+            <script type="text/html">
+<button type="button" class="ico_button">
+    <span class="ico_alert ani"></span>
+    <span class="ico_button_badge">2</span>
+</button>
+            </script>
+        </div> -->
+
+        <!-- <div data-class="section">
+            <div data-class="h1">자동 숫자 카운터</div> -->
+            <!-- <div data-class="h2">색상 - 배경</div> -->
+            <!-- <div data-class="notice">[ * 디자인 필요 ] 선작업 </div>
+            <script type="text/html">
+<div class="numberCountCon" data-value="14569875332"></div>
+            </script>
+        </div>
+    </div> -->
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

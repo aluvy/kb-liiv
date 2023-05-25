@@ -1,0 +1,1884 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+	<title>메인</title>
+	<base href="https://zmnbank.kbstar.com">
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <script type="text/javascript" id="expanPlfm" src="/mnbank/app/js/bfa/cmn/mn.expanPlfm.js"></script> <!-- 확장형 플랫폼 js -->
+    <script src="/mnbank/app/js/library/swiper.min.js"></script>
+    <script src="/mnbank/app/js/library/sortable.min.js"></script>
+    <script src="/mnbank/app/js/library/gsap.min.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+	<!--<link rel="stylesheet" href="/mnbank/app/css/library/swiper.min.css">-->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/main.css">
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="renew2022"><!-- 홈개선작업 : renew2022클래스 추가 -->
+    <!-- header -->
+	<header id="header">
+		<button type="button" class="tmnu_kbpay">KB Pay</button>
+		<div class="nav_wrap">
+			<button type="button" class="tmnu_notice" onclick="javascript:window.PG_1047458.fn_goPage('D001294');" id="알림버튼"><span class="hidden">알림</span></button>
+			<button type="button" class="tmnu_search" onclick="javascript:window.PG_1047458.fn_goPage('D002299');"><span class="hidden">검색</span></button>
+			<button type="button" class="tmnu_menu" onclick="javascript:window.PG_1047458.fn_openAllMenu();"><span class="hidden">전체메뉴</span></button>
+		</div>
+	</header>
+	<!--// header -->
+    <!-- content -->
+	<div id="content" class="cate_main">
+		<h1 class="hidden">KB국민은행 홈</h1>
+		<div class="member_wrap">
+			<a href="#none" class="name"><strong>김국민</strong>님</a>
+			<a href="#none" class="btn_grade">프리미엄스타</a>
+		</div>
+		<!-- @스타링크 -->
+		<div class="starlink_wrap" style="display:block">
+			<p class="txt">우수고객님을 위한 특별한 공간</p>
+			<a href="#none" class="btn_link">스타링크 라운지</a>
+			<span id="starlinkAni" class="starlink_ani"></span>
+		</div>
+		<!--// @스타링크 -->
+        <!-- 계좌복사 : 2022-12-26 -->
+        <div class="acco_copy_wrap">
+            <a href="#" aria-label="복사한 계좌번호로 이체하기">
+                <strong class="copy_acc"><span class="acc_name">KB국민</span> <span class="acc_num">3333255042248</span></strong>
+                <p>복사한 계좌번호로 이체할까요? <i class="arr"></i></p>
+            </a>
+            <button type="button" aria-label="복사한 계좌번호영역 숨기기" class="btn_acc_close"><i class="ico_20_x"></i></button>
+        </div>
+        <!--// 계좌복사 : 2022-12-26 -->
+
+		<!-- @드래그 영역(대표계좌/맞춤메뉴/KB금융비서)-->
+		<div id="drag" class="home">
+			<!-- @@대표계좌영역 -->
+			<div class="list-group-item home_card">
+				<div class="inner">
+					<div class="swiper-container represent">
+						<div class="swiper-wrapper" id="DIV대표계좌정보">
+
+							<div class="swiper-slide default"><!-- 2022-04-04 : 예적금의 경우 default 클래스 추가-->
+								<div class="inner">
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB국민ONE통장·저축예금</span>
+											<span class="acc_num number">574498-90-009768</span>
+											<button type="button" class="btn_acc_copy" onclick="javascript:window.PG_1047458.copyAcnoEvent(event); return false;"><span>계좌복사하기</span></button><!-- 2022-04-04 : 계좌복사하기 추가-->
+										</div>
+										<div class="acc_txt fc_nega">해당 기관 잔액 정보를 받지 못했습니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="number">5,000,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="primary" onclick="alert('이체')">이체</a></span>
+									</div>
+									<!-- 2022-04-04 : 알림설정 동의-->
+									<div class="btn_alarm">
+										<input type="checkbox" id="알림btn" onclick="javascript:window.PG_1047458.fn_notiStupOnOff();">
+										<label for="알림btn"><span>알림설정 동의</span></label>
+									</div>
+									<!--// 2022-04-04 : 알림설정 동의-->
+								</div>
+                            </div>
+                            <div class="swiper-slide default">
+								<div class="inner">
+									<!-- @조회실패 케이스 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB국민ONE통장·저축예금</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">만기가 얼마 남지 않았습니다.</div>
+										<div class="acc_sum_wrap">
+											<span class="nodata">조회 실패</span>
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="primary">이체</a></span>
+									</div>
+								</div>
+                                <!-- // -->
+                            </div>
+                            <div class="swiper-slide default">
+								<div class="inner">
+									<!-- @입출금 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB국민ONE통장·저축예금</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">723,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">운용비율등록변경</a></span>
+										<span><a href="#none" class="secondary">운용펀드개별매매</a></span> <!-- @이체|입금|추가입금 만 primary / 그외 secondary -->
+									</div>
+									<button type="button" class="btn_menu"><span class="ico_menu"></span><span class="hidden">KB종합통장 메뉴 더보기</span></button>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @예적금 만기 관련 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB마이핏적금</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">만기일</span><span class="number">2015.06.16 (D-5)</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">만기가 얼마 남지 않았습니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">해지예상조회</a></span>
+										<span><a href="#none" class="primary">추가입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @퇴직연금 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">개인형IRP(퇴직용)</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">수익률</span><span class="state_arr up"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_sum_group">
+												<div class="acc_pay">
+													<span class="unit">잔액</span>
+													<span class="number">60,916,000</span><span class="num_unit">원</span>
+												</div>
+												<div class="acc_pay">
+													<span class="unit">평가액</span>
+													<span class="number">25,120,000</span><span class="num_unit">원</span>
+												</div>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">기간별 수익률 조회</a></span>
+										<span><a href="#none" class="primary">입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @신탁 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">(ELS 20-718호 원금비보장형)</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">기대수익률 연</span><span class="state_arr up"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">해지 예약중 입니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="unit">잔액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @ISA -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB국민 만능 ISA(일임형)</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">수익률</span><span class="state_arr up"><em class="hidden">수익률</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">해지 예약중 입니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="unit">잔액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">해지</a></span>
+										<span><a href="#none" class="primary">입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @골드 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB골드투자</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="unit">XAU</span>
+												<span class="number">1.10</span>
+												<span class="unit">(gram)</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="primary">추가입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @펀드 1 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB스타 베트남 VN30 인덱스 증권자투자신탁(주식-파생형)</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">수익률</span><span class="state_arr up"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">전부환매 예약중</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="unit">평가액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">환매신청</a></span>
+										<span><a href="#none" class="primary">추가입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @펀드 2 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">로보 쌤 적극투자형 포트폴리오</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">수익률</span><span class="state_arr up"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">입금 또는 환매 진행중 입니다.</div>
+									</a>
+									<div class="acc_sum_wrap">
+										<div class="acc_pay">
+											<span class="unit">총 평가금액</span>
+											<span class="number">25,120,000</span><span class="num_unit">원</span>
+										</div>
+										<span class="nodata" style="display:none">잔액 보기</span>
+										<!-- 2022-04-04 : 잔액숨기기 추가-->
+										<div class="btn_acc_balance">
+											<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+											<label for="잔액btn"><span>숨김</span></label>
+										</div>
+										<!--// 2022-04-04 : 잔액숨기기 추가-->
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @외화 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">외화보통예금</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_sum_wrap sm"><!-- @2줄이상노출: .sm 추가 -->
+											<div class="acc_sum_group">
+												<div class="acc_pay">
+													<span class="unit">USD</span>
+													<span class="number">1,500,194.05</span>
+												</div>
+												<div class="acc_pay">
+													<span class="unit">EUR</span>
+													<span class="number">0.00</span>
+												</div>
+												<div class="acc_pay">
+													<span class="unit">JPY</span>
+													<span class="number">0.00</span>
+												</div>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="primary">이체</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @적금 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">차량구매</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">만기일</span><span class="number">2015.06.16</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">만기가 얼마 남지 않았습니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">해지예상조회</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @펀드 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">개인형IRP(퇴직용)</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">수익률</span><span class="state_arr up"><em class="hidden">상승</em>11.15</span><span class="num_unit">%</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">일부환매 예약중</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="unit">평가액</span>
+												<span class="number">25,120,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">환매신청</a></span>
+										<span><a href="#none" class="primary">추가입금</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide">
+								<div class="inner">
+									<!-- @대출 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">KB 금융전문인 우대대출</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">연체되었습니다.</div>
+										<div class="acc_sum_wrap sm"><!-- @2줄이상노출: .sm 추가 -->
+											<div class="acc_sum_group">
+												<div class="acc_pay">
+													<span class="unit">대출잔액</span>
+													<span class="number">25,120,000</span><span class="num_unit">원</span>
+												</div>
+												<div class="acc_pay">
+													<span class="unit">대출원금</span>
+													<span class="number">25,120,000</span><span class="num_unit">원</span>
+												</div>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">상환</a></span>
+										<span><a href="#none" class="secondary">이자납부</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @[다른금융] 재인증일자가 현재일이거나 과거일일 경우 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">위탁종합</span>
+											<span class="front_unit">키움</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">조회를 위한 재인증이 필요합니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">10,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">재인증</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @[다른금융] 재인증일자가 현재일이거나 과거일일 경우 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">위탁종합</span>
+											<span class="front_unit">키움</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">해당 기관 잔액 정보를 받지 못했습니다.</div>
+									</a>
+									<div class="acc_sum_wrap">
+										<div class="acc_pay">
+											<span class="hidden">잔액</span>
+											<span class="number">?</span><span class="num_unit">원</span>
+										</div>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @[다른금융] 재동의일자가 현재일이거나 과거일일 경우 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004"></span>
+											<span class="acc_name">위탁종합</span>
+											<span class="front_unit">키움</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">조회를 위한 재인증이 필요합니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">10,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">재동의</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @[다른금융] 입출금, 증권종합 계좌(오픈뱅킹계좌종류구분 "1", "T") 이고 출금동의가 되어있지않았고(출금동의여부 "0") 상품명이 "세이프박스" 가 아닌 경우 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">위탁종합</span>
+											<span class="front_unit">키움</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">출금 등록이 필요합니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">10,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">출금등록</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @[다른금융] 참가은행응답코드값이 "415" 일 경우 --> 
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<div class="acc_bank" role="text">
+											<span class="icon_bank_004">KB국민은행</span>
+											<span class="acc_name">위탁종합</span>
+											<span class="front_unit">키움</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_txt fc_nega">해지되어 이용할 수 없습니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="hidden">잔액</span>
+												<span class="number">?</span><span class="num_unit">원</span>
+											</div>
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">계좌등록해제</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+                            <div class="swiper-slide other"><!-- @타행: .other 추가 -->
+								<div class="inner">
+									<!-- @타행 -->
+									<a href="#none" class="acc_wrap btn_move"> 
+										<div class="acc_bank" role="text"><!-- 210915 접근성수정 -->
+											<span class="icon_bank_004">KB국민은행</span><!-- 210910 접근성수정 -->
+											<span class="acc_name">주거래우대적금</span>
+											<span class="front_unit">신한</span>
+											<span class="acc_num number">574498-90-009768</span>
+										</div>
+										<div class="acc_info_wrap">
+											<div class="acc_info">
+												<span class="tit">만기일</span><span class="number">2015.06.16</span>
+											</div>
+										</div>
+										<div class="acc_txt fc_nega">조회를 위한 재인증이 필요합니다.</div>
+										<div class="acc_sum_wrap">
+											<div class="acc_pay">
+												<span class="number">5,000,000</span><span class="num_unit">원</span>
+											</div>
+											<span class="nodata" style="display:none">잔액 보기</span>
+											<!-- 2022-04-04 : 잔액숨기기 추가-->
+											<div class="btn_acc_balance">
+												<input type="checkbox" id="잔액btn" onclick="javascript:window.PG_1047458.fn_balStupOnOff(event);" />
+												<label for="잔액btn"><span>숨김</span></label>
+											</div>
+											<!--// 2022-04-04 : 잔액숨기기 추가-->
+										</div>
+									</a>
+									<div class="btn_area">
+										<span><a href="#none" class="secondary">재인증</a></span>
+									</div>
+									<!-- // -->
+								</div>
+                            </div>
+							<div class="swiper-slide add">
+								<div class="inner">
+									<!-- @대표계좌 미설정 -->
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<span class="txt">대표계좌를 설정해주세요.</span>
+									</a>
+									<!-- @최초 접속시 노출 가능한 계좌가 없는 경우
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<span class="txt">입출금 계좌를 만들어 보세요.</span>
+									</a> -->
+									<!-- @1번째 계좌가 전자금융이용제한, 계좌숨기기 등의 상태인 경우
+									<a href="#none" class="acc_wrap btn_move" onclick="alert('계좌상세이동')"> 
+										<span class="txt">대표계좌를 다시 설정해주세요.</span>
+									</a> -->
+									<button type="button" class="btn_openbank"><span>다른금융 등록</span></button><!-- 2022-04-04 : 다른금융 등록 버튼 추가-->
+									<!-- // -->
+								</div>
+                            </div>
+
+						</div>
+						<div class="swiper-pagination"></div> 
+					</div>
+					<div class="transfer">
+						<ul class="transfer_list" id="UL이체내역">
+							<li><button type="button"><span class="icon_bank_004 xs">KB국민은행</span>나신한</button></li>
+							<li><button type="button"><span class="icon_bank_020 xs">우리은행</span>박우리</button></li>
+							<li><button type="button"><span class="icon_bank_081 xs">하나은행</span>송하나기업</button></li>
+							<li><button type="button"><span class="icon_bank_003 xs">기업은행</span>송하나기업</button></li>
+							<li><button type="button"><span class="icon_bank_088 xs">신한은행</span>나신한</button></li>
+							<li><button type="button"><span class="icon_bank_020 xs">우리은행</span>박우리</button></li>
+							<li><button type="button"><span class="icon_bank_081 xs">하나은행</span>송하나기업</button></li>
+							<li><button type="button"><span class="icon_bank_003 xs">기업은행</span>송하나기업</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--// @@대표계좌영역 -->
+
+            <!-- @@마이데이터콘텐츠 : 2022-07-20 -->
+            <div class="list-group-item home_mydata">
+                <div class="inner btn_move" id="mydata_cont">
+					<!-- 1) ‘가입이 가능한 대상자’ 限 ‘신용관리 서비스가입 유도’ 콘텐츠 추천 -->
+					<div class="box_wrap">
+						<div class="mydata_ct" aria-hidden="false" style="display:block"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+							<a href="#none" onclick="alert('페이지이동');">
+								<div class="ico i01"></div>
+								<div>
+									고객님들의 <strong class="bold">신용평점 평균은 <em class="number">871</em>점</strong>이에요
+								</div>
+								<div>
+									<span class="btn_txt ico_arr_blue bold fs14">신용평점 올리기</span>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!--// 1) ‘가입이 가능한 대상자’ 限 ‘신용관리 서비스가입 유도’ 콘텐츠 추천 -->
+
+					<div class="tab_wrap" style="display:block">
+						<div class="tab_list" role="tablist">
+							<div class="scroll_wrap">
+								<div><button type="button" role="tab" aria-selected="true" aria-controls="tabpanel_1">자산</button></div>
+								<div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_2">지출</button></div>
+							</div>
+						</div>
+						<!-- 자산 탭 상세 -->
+						<div class="tab_panel active" role="tabpanel" id="tabpanel_1">
+							<h2 class="hidden">자산</h2>
+							<div class="section">
+								<!-- 2) ‘마이데이터 기가입자‘ AND ‘총자산콘텐츠 설정값이 없거나 ON으로 설정된 고객’ 대상 ‘총자산’ 콘텐츠 추천 : 자산금액이 있는 경우 -->
+								<div class="mydata_ct" aria-hidden="false" style="display:block"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+									<a href="#none" onclick="alert('페이지이동');">
+										<div class="ico i02"></div>
+										<div>
+											총자산
+											<div class="assets_wrap">
+												<strong class="bold fs16"><em class="fs17 number">80,000,000,000</em> 원</strong>
+												<p class="hidden_msg">자산 숨김</p>
+											</div>
+											<div class="btn_assets">
+												<input type="checkbox" id="자산btn" onclick="javascript:window.PG_1047458.fn_balStup1(event,this);">
+												<label for="자산btn"><span>숨김</span></label>
+											</div>
+										</div>
+										<div>
+											<span class="state_arr down" role="text"><em class="hidden">하락</em>-0.19</span>
+											<span class="date">22.05.24 12:01 기준</span>
+										</div>
+									</a>
+								</div>
+								<!--// 2) ‘마이데이터 기가입자‘ AND ‘총자산콘텐츠 설정값이 없거나 ON으로 설정된 고객’ 대상 ‘총자산’ 콘텐츠 추천 : 자산금액이 있는 경우 -->
+								<!-- 2) ‘마이데이터 기가입자‘ AND ‘총자산콘텐츠 설정값이 없거나 ON으로 설정된 고객’ 대상 ‘총자산’ 콘텐츠 추천 : 자산금액이 없는 경우 -->
+								<div class="mydata_ct" aria-hidden="true" style="display:none"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+									<a href="#none" onclick="alert('페이지이동');">
+										<div class="ico i02"></div>
+										<div>
+											<strong class="bold fs16">내 자산은 얼마일까요?</strong>
+										</div>
+										<div>30대 평균 순자산 <strong class="strong number">2.53</strong> 억원</div>
+									</a>
+								</div>
+								<!--// 2) ‘마이데이터 기가입자‘ AND ‘총자산콘텐츠 설정값이 없거나 ON으로 설정된 고객’ 대상 ‘총자산’ 콘텐츠 추천 : 자산금액이 없는 경우 -->
+							</div>
+						</div>
+						<!--// 자산 탭 상세 -->
+
+						<!-- 지출 탭 상세 -->
+						<div class="tab_panel" role="tabpane2" id="tabpanel_2">
+							<h2 class="hidden">지출</h2>
+							<div class="section">								
+								<!-- 3) ‘마이데이터 기가입자‘ AND ‘총자산 콘텐츠 OFF’ AND ‘카드결제(예정)금액 有’대상 ‘카드결제(예정)금액’ 콘텐츠 추천 -->
+								<div class="mydata_ct" aria-hidden="true" style="display:none"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+									<a href="#none" onclick="alert('페이지이동');">
+										<div class="ico i04"></div>
+										<div>
+											<p><span>7월 카드</span>(<span>국민,신한,현대</span>)</p>
+											<p class="fs16">결재예정금액은 <strong class="bold"><em class="number">831,340</em>원</strong>이에요<span class="btn_txt ico_arr" style="transform: translate(0rem, -0.1rem);"></span></p>
+										</div>
+										<div>
+											<span class="date">22.05.24 12:01 기준</span>
+										</div>
+									</a>
+								</div>
+								<!--// 3) ‘마이데이터 기가입자‘ AND ‘총자산 콘텐츠 OFF’ AND ‘카드결제(예정)금액 有’대상 ‘카드결제(예정)금액’ 콘텐츠 추천 -->
+								<!-- 4) ‘마이데이터 기가입자’ AND ‘총자산 콘텐츠 설정값 OFF’ AND ‘카드결제(예정)금액 無’  대상 ‘마이데이터 지출패턴’ 콘텐츠 추천 -->
+								<div class="mydata_ct" aria-hidden="true" style="display:none"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+									<a href="#none" onclick="alert('페이지이동');">
+										<div class="ico i03"><span class="rank">2위</span></div>
+										<div>
+											지난달 고객님들은 <span>여가생활</span>에
+										</div>
+										<div>
+											<strong class="bold fs16"><em class="number fs17">831,340</em>원 썼어요</strong>
+											<span class="btn_txt ico_arr fs14">1위 확인하기</span>
+										</div>
+									</a>
+								</div>
+								<!--// 4) ‘마이데이터 기가입자’ AND ‘총자산 콘텐츠 설정값 OFF’ AND ‘카드결제(예정)금액 無’  대상 ‘마이데이터 지출패턴’ 콘텐츠 추천 -->
+								<!-- 5) 서비스 장애(지연) 발생 시 default 콘텐츠 노출 -->
+								<div class="mydata_ct" aria-hidden="true" style="display:none"><!-- 활성화시 aria-hidden="false" style="display:block" 으로 변경-->
+									<a href="#none" onclick="alert('페이지이동');">
+										<div class="ico i01"></div>
+										<div>
+											신용관리 서비스로 신용평점을 올리세요
+										</div>
+										<div>
+											<span class="btn_txt ico_arr_blue bold fs14">신용평점 올리기</span>
+										</div>
+									</a>
+								</div>
+								<!--// 5) 서비스 장애(지연) 발생 시 default 콘텐츠 노출 -->
+							</div>
+						</div>
+						<!--// 지출 탭 상세 -->
+					</div>
+
+                    <button type="button" class="btn_move" aria-controls="마이데이터콘텐츠 영역" tabindex="0">
+						마이데이터콘텐츠 이동하기(이중탭하고 누른 채로 있다가 위아래로 드래그하여 재정렬 하십시오)
+					</button>
+                </div>
+            </div>
+			<!--// @@마이데이터콘텐츠 : 2022-07-20 -->
+
+			<!-- @@맞춤메뉴영역 : 2022-03-29(수정) -->
+			<div class="list-group-item home_adjust" id="고객맞춤메뉴">
+				<div class="inner">
+					<input type="hidden" id="고객맞춤메뉴조회여부" value="" />
+					<h2 class="tit">나를 위한 맞춤메뉴</h2>
+					<div class="adjust_menu">
+						<div class="adjust_menu_scroll">
+							<ul class="adjust_menu_list" id="맞춤메뉴내역">
+								<li><button type="button"><span>전체계좌조회</span></button></li>
+								<li><button type="button"><span>Easy 주식매매</span></button></li>
+								<li><button type="button"><span>이벤트</span></button></li>
+								<li><button type="button"><span>쿠폰함</span></button></li>
+								<li><button type="button"><span>KB스타드림서비스</span></button></li>
+								<li><button type="button"><span>더드림존</span></button></li>
+								<li><button type="button"><span>반려동물관리</span></button></li>
+								<li><button type="button"><span>실손보험 빠른청구</span></button></li>
+							</ul>
+						</div>
+					</div>
+					<button type="button" class="btn_move" aria-controls="나를위한맞춤메뉴영역" onclick="javascript:window.PG_1047458.fn_toggleCustCstzMenu();" tabindex="0">
+						나를위한맞춤메뉴 이동하기(이중탭하고 누른 채로 있다가 위아래로 드래그하여 재정렬 하십시오)
+					</button>
+				</div>
+			</div>
+			<!--// @@맞춤메뉴역 -->
+			<!-- @@이벤트배너영역 -->
+			<div class="list-group-item event_banner_wrap">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="img btn_move"><img src="/mnbank/app/img/banner/bnn_h_220314_car.png" alt="누구나 참여 가능한 놀라운 혜택"></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="img btn_move"><img src="/mnbank/app/img/banner/bnn_h_220302_mydata.png" alt="누구나 참여 가능한 놀라운 혜택"></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="img btn_move"><img src="/mnbank/app/img/banner/bnn_h_220221_htech.png" alt="누구나 참여 가능한 놀라운 혜택"></div>
+						</div>
+					</div>
+					<div class="swiper-bottom">
+						<div class="play-control stop">멈춤</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+			<!--// @@이벤트배너영역 -->			
+		</div>
+		<!--// @드래그 영역(대표계좌/맞춤메뉴/KB금융비서)-->
+		<!-- @@KB금융비서(2022-03-28(수정) : 위치이동) -->
+		<div class="home_curation" id="KB금융비서메뉴">
+			<div class="inner">
+				<div class="hd_area">
+					<h2 class="tit">KB금융비서</h2>
+					<div class="msg_num"><strong class="number">2</strong></div>
+				</div>
+				<div class="first_word">
+					<p id="금융비서내용">대출이자 납입이 지연되고 있습니다. 대출이자 납입이 지연되고 있습니다.</p>
+				</div>
+				<button type="button" class="btn_move" aria-controls="KB금융비서영역" onclick="javascript:window.PG_1047458.fn_toggleCurtnArea();" tabindex="0"></button>
+			</div>
+		</div>
+		<!--// @@KB금융비서 -->	
+        <!-- @@간편모드 배너 -->
+        <div class="banner_simplemode">
+            <button type="button" id="banner_simplemode">
+                <span>주요 거래를 쉽게 <strong>간편모드 보기</strong></span>
+            </button>
+        </div>
+        <!--// @@간편모드 배너 -->
+		<!-- @KB콘텐츠 영역 -->
+		<div class="kbcontent_wrap v1">
+            <!-- 20220614 : 상단 탭추가 -->
+            <div class="tab_kbcontent" role="tablist">
+                <ul class="tab_scroll_wrap">
+                    <li><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_1">KB Pick</button></li> <!-- 220628 [금융그룹 고도화] 버튼명 수정 -->
+                    <li><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_2">증시&middot;환율</button></li>
+                    <li><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_3">생활금융</button></li> <!-- 220628 [금융그룹 고도화] 버튼명 수정 -->
+                    <li id="사고신고tab"><button type="button" role="tab" aria-selected="true" aria-controls="tabpanel_0">사고신고</button></li>
+                </ul>
+                <div class="bar"></div>
+            </div>
+            <!--// 20220614 : 상단 탭추가 -->
+            
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- @@KB라이프 -->
+					<div class="swiper-slide ct_life" role="tabpanel" id="tabpanel_1">
+						<div class="inner">
+							<section class="sec_life">
+								<!-- 2022-04-18 : strong추가 -->
+								<ul>
+                                    <!-- 2022-12-01 위치 및 아이콘변경 -->
+                                    <li class="ico17"><a href="#" onclick="javascript:window.PG_1047458.fn_goPage('D007388');"><strong>내게맞는</strong><br>대출찾기</a></li><!-- 내게맞는대출찾기 20230302 신규-->
+                                    <li class="ico18"><a href="#" onclick="javascript:window.PG_1047458.fn_goPage('D006631');"><strong>KB운세서비스</strong><br>10가지 운세!</a></li>
+                                    <li class="ico16"><a href="#" onclick="javascript:window.PG_1047458.fn_goPage('D012521');"><strong>캠핑/글램핑</strong><br>떠나요</a></li><!-- 캠핑/글램핑 : 2022-10-27 -->                                 
+                                    <li class="ico19"><a href="#" onclick="window.navi.navigateWithInit('/mquics?page=D012865','', function(){});"><strong>부동산 반등</strong><br>'이 신호'를<br>주목하세요</a></li>
+                                    <li class="ico05"><a href="#" onclick="javascript:window.PG_1047458.fn_goPage('D000906');"><strong>지점찾기/<br>번호표발행</strong></a></li>
+                                    <li class="ico11"><a href="#" onclick="window.navi.navigateWithInit('/mquics?page=D007038','', function(){});"><strong>모바일쿠폰샵</strong><br>매일 쏟아지는<br>할인혜택!</a></li><!-- 모바일쿠폰샵 : 2022-06-27 -->								
+                                </ul>
+                                <!--// 2022-04-18 : strong추가 -->
+							</section>
+                            <!-- [전담반 Biz-220] 만보기 -->
+                            <!-- 연동 Case 1 : 동의/data있는경우 data class 추가 2022-06-02 -->
+                            <div class="m_section mwalking login_after data">
+                                <h3 class="h2">오늘의 걸음</h3>
+                                <div class="w_mwalking">
+                                    <div class="w_data">
+                                        <p class="p_walk">
+                                            <span class="number num_walk">8,969</span>
+                                            <span class="txt_unit">걸음</span>
+                                        </p>
+                                        <p class="p_dtl">
+                                            <span class="num_kal"><span class="number">12.50</span> kal</span><span class="num_time"><span class="number">1</span>시간 <span class="number">20</span>분</span>
+                                        </p>
+                                    </div>
+                                    <!-- 2022-06-02  -->
+                                    <div class="w_mchart">
+                                        <div class="mchart_bar"></div>
+                                    </div>
+                                    <div class="img_mwalking">
+                                        <!-- <img src="/mnbank/app/img/main_non/img_mwalking.png"> 움직이는 이미지 --><!-- 2022-06-10 -->
+                                    </div>
+                                    <!-- //2022-06-02 -->
+                                </div>
+                                <a href="#none"><span class="more"><span>더보기</span></span></a><!-- 2022-06-02  -->
+                            </div>
+                            <!-- //연동 Case 1 -->
+                            <!-- 연동 Case 2 : 미동의 -->
+                            <div class="m_section mwalking login_after connected"> <!-- 연동시 'connected' 클래스 추가 -->
+                                <h3 class="h2">오늘의 걸음</h3>
+                                <div class="w_mwalking">
+                                    <div class="w_msg">
+                                        <p>걸을수록 건강한 일상<strong>쌓이는 혜택</strong></p>
+                                        <!-- 2022-06-02 -->
+                                        <button type="button" class="btn xs outline round">동의하고 시작하기</button>
+                                        <!-- //2022-06-02 -->
+                                    </div>
+                                    <!-- 2022-06-09 -->
+                                    <!-- <div class="w_mchart" >
+                                        <div class="mchart_bar"></div>
+                                    </div>                                    
+                                    <div class="img_mwalking">
+                                        <img src="/mnbank/app/img/main_non/img_mwalking.png"> 
+                                    </div> -->
+                                    <!-- //2022-06-09 -->
+                                </div>
+                                <a href="#none"><span class="more"><span>더보기</span></span></a>
+                            </div>
+                            <!-- //연동 Case 2 -->
+                            <!-- 미연동 Case 3 -->
+                            <div class="m_section mwalking login_after">
+                                <h3 class="h2">오늘의 걸음</h3>
+                                <div class="w_mwalking">
+                                    <div class="w_msg">
+                                        <p>서비스 이용을 위해<br>앱 업데이트가 필요합니다.</p><!-- 문구수정 : 2022-06-20 -->
+                                        <button type="button" class="btn xs outline round">확인하기</button>
+                                    </div>
+                                </div>
+                                <!-- <a href="#none" class="mwalking_link" title="오늘의 걸음 상세보기">
+                                </a> --><!-- 2022-06-10 -->
+                            </div>
+                            <!-- //미연동 Case 3 -->
+                            <!-- //[전담반 Biz-220] 만보기 -->
+						</div>
+					</div>
+					<!--// @@KB라이프 -->
+					<!-- @@경제지표 -->
+					<div class="swiper-slide ct_quotient" role="tabpanel" id="tabpanel_2">
+						<div class="inner">
+							<!-- @@@주가지수 -->
+							<section class="sec_quot">
+								<div class="hd">
+									<h3>오늘의 증시</h3>
+									<div class="cont_r">
+										<div class="date">
+											<span id="국내증시시간">2020.07.01 09:03:40</span>
+										</div>
+										<button type="button" class="btn_reset" id="skprcIndxRefresh" onclick="javascript:window.PG_1047458.fn_skprcIndx();"><span>새로고침</span></button>
+									</div>
+								</div>
+								<div class="quot_kos">
+									<div class="kospi" id="kospi">
+										<h4>KOSPI</h4>
+										<strong id="kospi주가지수" class="ct">2,126.33</strong>
+										<div>
+											<span class="state_arr up" role="text" id="kospi주가변동률">
+												<em class="hidden">상승</em>
+												<span class="ct">18</span>
+												(+<span class="ct">0.85</span>%)
+											</span>
+										</div>
+									</div>
+									<div class="kosdaq" id="kosdaq">
+										<h4>KOSDAQ</h4>
+										<strong id="kosdaq주가지수">742.03</strong>
+										<div>
+											<span class="state_arr up" role="text" id="kosdaq주가변동률">
+												<em class="hidden">상승</em>4.06 (+0.55%)
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="btn_wrap">
+									<button type="button" class="btn_easy_deal">Easy 주식매매</button><!-- 2022-03-30 : 문구수정 -->
+								</div>
+							</section>
+							<!--// @@@주가지수 -->
+							<!-- @@@환율 -->
+							<section class="sec_exc">
+								<div class="hd">
+									<h3>환율</h3>
+									<div class="cont_r">
+										<div class="date" id="환율시간">
+											<span>2022.02.11</span>
+											<span>16:56:24</span>
+										</div>
+									</div>
+								</div>
+								<div class="table">
+									<table>
+										<caption>통화,현찰사실때,현찰파실때 정보로 구성된 테이블</caption>
+										<colgroup>
+											<col>
+											<col style="width:35%">
+											<col style="width:35%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">통화</th>
+												<th scope="col">현찰 사실 때</th>
+												<th scope="col">현찰 파실 때</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="country_v">
+														<span class="country_flag_im sm usd"></span>
+														<span class="name">USD</span>
+													</div>
+												</td>
+												<td class="right"><span class="fc_nega">1,192.37</span></td>
+												<td class="right"><span class="fc_posi">1,234.83</span></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="country_v">
+														<span class="country_flag_im sm jpy"></span>
+														<span class="name">JPY</span>
+													</div>
+												</td>
+												<td class="right"><span class="fc_nega">983.23</span></td>
+												<td class="right"><span class="fc_posi">1,018.25</span></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="country_v">
+														<span class="country_flag_im sm eur"></span>
+														<span class="name">EUR</span>
+													</div>
+												</td>
+												<td class="right"><span class="fc_nega">1,311.39</span></td>
+												<td class="right"><span class="fc_posi">1,364.35</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="btn_wrap ex_rate"><!-- 230328 class="ex_rate" 추가 -->
+									<!-- 230328 마크업 변경 -->
+									<button type="button" class="btn_sec_exc" onclick="">환전신청</button>
+									<button type="button" class="btn_sec_exc" onclick="">KB환율픽 </button>
+									<!-- // 230328 마크업 변경 -->
+								</div>
+							</section>
+							<!--// @@@환율 -->
+						</div>
+					</div>
+					<!--// @@경제지표 -->					
+					<!-- @@KB금융그룹 -->
+					<div class="swiper-slide ct_group" role="tabpanel" id="tabpanel_3">
+						<div class="inner">
+                        	<!-- 220628 [금융그룹 고도화 3차] 금융그룹 콘텐츠 수정 -->
+                            <section class="fnc_services">
+                                <h3 class="h2">테마별 서비스</h3>
+                                <a href="#none" class="fnc_home_link">
+                                    <span class="txt">
+                                        일상을 더 특별하게
+                                        <span class="em">KB금융그룹 서비스</span>
+                                    </span>
+
+                                </a>
+                                <div class="biz_link_group">
+                                    <a href="#none" class="link item1">주식</a>
+                                    <a href="#none" class="link item2">카드</a>
+                                    <a href="#none" class="link item3">보험</a>
+                                    <a href="#none" class="link item4">대출</a>
+                                    <a href="#none" class="link item5">자동차</a>
+                                    <a href="#none" class="link item6">통신</a>
+                                    <a href="#none" class="link item7">여행</a>
+                                    <a href="#none" class="link item8">부동산</a>
+                                    <a href="#none" class="link item9">건강</a>
+                                    <a href="#none" class="link item10">쇼핑</a>
+                                </div>
+                            </section>
+						</div>
+					</div>
+					<!--// @@KB금융그룹 -->
+					<!-- @@빠른상담 -->
+					<div class="swiper-slide ct_advice" id="빠른상담area" role="tabpanel" id="tabpanel_0">
+						<div class="inner">
+							<!-- @@@착오송금 반환신청 : 2022-03-31 수정 -->
+							<section class="return_appl">
+								<h3>착오송금 반환신청</h3>
+								<p class="s_txt">오픈뱅킹을 통해 잘못 이체하신 경우<br />자금반환을 신청할 수 있습니다.</p>
+								<p class="txt">KB국민은행 계좌에서 잘못 이체하신<br />경우에는 지점방문/ARS를 통해<br />신청해 주시기 바랍니다.</p>
+							</section>
+							<!--// @@@착오송금 반환신청 -->
+							<!-- @@@ARS 사고 신고 : 2022-03-31 수정 -->
+							<section class="ars_report">
+								<h3>ARS 사고신고</h3>
+								<ul class="tel_number">
+									<li><a href="tel:1599-9999">1599-9999</a></li>
+									<li><a href="tel:1588-9999">1588-9999</a></li>
+								</ul>
+								<p class="txt">(0번을 누르시면 상담직원과 연결)</p>
+							</section>
+							<!--// @@@ARS 사고 신고 -->
+							<!-- @@@입출금 알림 확인 : 2022-03-31 수정 -->
+							<section class="alarm_conf">
+								<h3>나에게 꼭 맞는 알림정보</h3>
+								<p class="s_txt">KB스타뱅킹으로 한번에!</p>
+							</section>
+							<!--// @@@입출금 알림 확인 -->
+						</div>
+					</div>
+					<!--// @@빠른상담 -->
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!--// @KB콘텐츠 영역 -->		
+		<!-- @상품카테고리 : 2022-04-04 추가 -->
+        <div class="prod_category">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod1" onclick="javascript:window.PG_1047458.fn_goPage('D008814');">입출금+카드</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod2" onclick="javascript:window.PG_1047458.fn_goPage('D010071');">적금</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod3" onclick="javascript:window.PG_1047458.fn_goPage('D010343');">정기예금</button>
+                    </div>                        
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod5" onclick="javascript:window.PG_1047458.fn_goPage('D011002');">대출</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod6" onclick="javascript:window.PG_1047458.fn_goPage('D009228');">펀드</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod7" onclick="javascript:window.PG_1047458.fn_goPage('D010996');">신탁</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod8" onclick="javascript:window.PG_1047458.fn_goPage('D011001');">ISA</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod9" onclick="javascript:window.PG_1047458.fn_goPage('D010998');">청약/채권</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod10" onclick="javascript:window.PG_1047458.fn_goPage('D011222');">퇴직연금</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod11" onclick="javascript:window.PG_1047458.fn_goPage('D009304');">보험</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod12" onclick="javascript:window.PG_1047458.fn_goPage('D010999');">은행-증권</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod14" onclick="javascript:window.PG_1047458.fn_goPage('D011000');">골드/실버</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn_cate prod4" onclick="javascript:window.PG_1047458.fn_goPage('D010511');">외환</button>
+                    </div>
+                </div>
+                <div class="swiper-control">
+                    <div class="inner">
+                        <div class="swiper-button-prev swiper-btn"></div>
+                        <div class="swiper-button-next swiper-btn"></div>
+                        <div class="swiper-pagination"></div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// @상품카테고리 : 2022-04-04 추가 -->
+
+		<!-- @새소식 -->
+		<div class="news" id="새소식영역">
+			<div class="inner">
+				<h2 class="tit">공지</h2>
+				<a href="#none" class="msg">제2차 경기도 재난기본소득 신고안내제2차 경기도 재난기본소득 신고안내</a>
+			</div>
+		</div>
+		<!--// @새소식 -->
+
+        <!-- @간편모드 보기 추가 -->
+		<div class="mode_change_wrap">
+			<button type="button" id="btn_mode_change">
+				<span>간편모드 보기</span>
+			</button>
+		</div>
+		<!--// @간편모드 보기 추가 -->
+	</div>
+	<!--// content -->
+	<!-- appbar -->
+	<div class="btm_appbar">
+		<ul>
+			<li><button type="button" class="btn_appbar" onclick="javascript:window.PG_1047458.fn_goPage('D002350');">전계좌조회</button></li>
+			<li><button type="button" class="btn_appbar" onclick="javascript:window.PG_1047458.fn_goPage('D004895');">금융상품</button></li>
+			<li><button type="button" class="btn_appbar" onclick="javascript:window.PG_1047458.fn_goAsstPage();">자산관리</button></li>
+			<li><button type="button" class="btn_appbar" onclick="javascript:window.PG_1047458.fn_goPage('D000853');">챗봇/상담</button></li>
+			<li><button type="button" class="btn_appbar" onclick="javascript:window.PG_1047458.fn_goPage('D001373');">KB금융그룹</button></li>
+		</ul>
+	</div>
+	<!--// appbar -->
+</div>
+<!--// wrap -->
+
+<!-- @팝업 : 맞춤메뉴(renew2022클래스 추가) : 2022-03-30 수정 -->
+<div role="dialog" class="adjust renew2022" id="나를위한맞춤메뉴">
+    <div class="pop_tit">
+        <h1 class="adjust_h1">나를 위한 맞춤메뉴</h1><!-- 2022-03-29(수정) : 문구수정 -->
+    </div>    
+    <div class="pop_cont adjust_list">
+		<!-- @@My메뉴 노출 -->
+		<div class="my_menu">
+			<div class="hd_box">
+				<h2 class="adjust_h2">My메뉴</h2>
+				<!-- 설정메뉴가 있을경우에만 버튼 노출 -->
+				<div class="adjst_setting"><button type="button" class="btn_setting" onclick="javascript:window.PG_1047458.fn_goPage('D002296');">My메뉴 설정</button></div>
+				<!--// 설정메뉴가 있을경우에만 버튼 노출 -->
+			</div>
+			<ul id="UL고객맞춤메뉴">
+				<li><a href="#none" class="link">전체계좌조회</a></li>
+				<li><a href="#none" class="link">Easy 주식매매</a></li>
+				<li><a href="#none" class="link">이체</a></li>
+				<li><a href="#none" class="link">운용비율변경</a></li>
+				<li><a href="#none" class="link">포트폴리오 계좌조회</a></li>
+				<li><a href="#none" class="link">이벤트</a></li>
+			</ul>
+			<!-- 설정메뉴가 없을경우 -->
+			<div class="adjust_setting_msg">
+				<a href="javascript:void(0);" onclick="javascript:window.PG_1047458.fn_goPage('D002296');"><span>My메뉴를 설정하여<br />편리하게 이용하세요</span></a>
+			</div>
+			<!--// 설정메뉴가 없을경우 -->			
+		</div>
+		<!--// @@My메뉴 노출 -->
+		<!-- @@추천메뉴 노출 -->
+		<div class="recommend_menu">
+			<div class="hd_box">
+				<h2 class="adjust_h2">추천메뉴</h2>
+			</div>
+			<section>
+				<h3>은행</h3>
+				<ul>
+					<li><a href="#none" class="link">전계좌조회</a></li>
+					<li><a href="#none" class="link">잔액모으기</a></li>
+					<li><a href="#none" class="link">운용비율변경</a></li>
+					<li><a href="#none" class="link">포트폴리오 계좌조회</a></li>
+					<li><a href="#none" class="link">예금 신규결제조회</a></li>
+					<li><a href="#none" class="link">연금상품몰</a></li>
+				</ul>
+			</section>
+			<section>
+				<h3>KB금융그룹</h3>
+				<ul>
+					<li><a href="#none" class="link">Easy 주식매매</a></li>
+					<li><a href="#none" class="link">KB손해보험 보장분석</a></li>
+					<li><a href="#none" class="link">KB Pay 간편결제</a></li>
+					<li><a href="#none" class="link">팔아줘 차차차</a></li>
+					<li><a href="#none" class="link">KB생명 정기보험</a></li>
+					<li><a href="#none" class="link">KB저축은행 꿀적금</a></li>
+				</ul>
+			</section>
+			<section>
+				<h3>생활/혜택</h3>
+				<ul>
+					<li><a href="#none" class="link">이벤트</a></li>
+					<li><a href="#none" class="link">쿠폰함</a></li>
+					<li><a href="#none" class="link">KB스타드림서비스</a></li>
+					<li><a href="#none" class="link">더드림존</a></li>
+					<li><a href="#none" class="link">반려동물관리</a></li>
+					<li><a href="#none" class="link">실손보험 빠른청구</a></li>
+				</ul>
+			</section>
+        </div>
+		<!--// @@추천메뉴 노출 -->
+    </div>
+    <button type="button" class="btn_pop_close" onclick="javascript:window.PG_1047458.fn_closeLayer(event, '나를위한맞춤메뉴영역');">나를 위한 맞춤메뉴 닫기</button>
+</div>
+<!--// @팝업 : 고객님을 위한 맞춤메뉴 -->
+<!-- @팝업 : KB금융비서(renew2022클래스 추가) : 2022-03-30 수정 -->
+<div role="dialog" class="curation renew2022" id="KB금융비서">
+    <div class="pop_tit">
+        <h1 class="curation_h1">KB금융비서</h1>
+    </div>
+    <div class="pop_cont curation_wrap">
+		<div class="cura_area assistant"  id="KB금융비서영역내용">
+			<!-- 2022-03-30 : 타임라인형식으로 ui 변경 --->
+			<div class="timeline">
+				<p class="time">2021.04.22</p>
+				<ul>
+					<li>
+						<div class="chat_wrap">
+							<div class="chat noti birth">
+								<p class="txt"><span class="fc_point">김국민</span> 고객님!<br>생일을 진심으로 축하드립니다.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="chat_wrap">
+							<div class="chat">
+								<p class="txt">대출이자 납입이 지연되고 있습니다.</p>
+								<div class="btn_wrap">
+									<span><button type="button" class="btn">대출계좌조회</button></span>
+									<span><button type="button" class="btn">대출이자납입</button></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--// 2022-03-30 : 타임라인형식으로 ui 변경 --->
+			<!-- 2022-03-30 : 타임라인형식으로 ui 변경 --->
+			<div class="timeline">
+				<p class="time">2021.04.22</p>
+				<ul>
+					<li>
+						<div class="chat_wrap">
+							<div class="chat">
+								<p class="txt">보유하신 펀드(<span class="fc_point">3451</span>)에 가입하신 지 1년 지났습니다. 현재 <span class="fc_point">수익률 17.1%</span>입니다.</p>
+								<div class="btn_wrap">
+									<span><button type="button" class="btn">펀드계좌조회</button></span>
+									<span><button type="button" class="btn">My펀드진단</button></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--// 2022-03-30 : 타임라인형식으로 ui 변경 --->
+        </div>
+        <div class="cura_area agency" id="큐레이션영업점메시지영역">
+			<!-- 2022-03-30 : 타임라인형식으로 ui 변경 --->
+			<div class="timeline">
+				<p class="time">2021.04.22</p>
+				<ul>
+					<li>
+						<div class="chat_wrap">
+							<p class="cura_tit">경산공단종합금융센터지점 김국민</p>
+							<div class="chat noti pen">
+								<p class="txt">금일 업무 처리해드린 김국민 차장입니다.<br>
+									앞으로도 친절하게 상담해드릴게요. 감사합니다!
+								</p>
+								<div class="btn_wrap">
+									<span><button type="button" class="btn">지점 방문 예약</button></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--// 2022-03-30 : 타임라인형식으로 ui 변경 --->
+		</div>
+    </div>
+    <button type="button" class="btn_pop_close" onclick="javascript:window.PG_1047458.fn_closeLayer(event, 'KB금융비서영역');">KB금융비서 닫기</button>
+</div>
+<!--// @팝업 : KB금융비서 -->
+<!-- 업무 SCRIPT START -->
+<script type="text/javascript">
+	/**
+	* !!!! 중요 !!!!
+	* 네임스페이스는 'PG_파일코드' 규칙준수
+	* 파일코드는 스타루트에서 파일 신규생성시 자동으로 부여되므로 개발자 임의 수정/삭제 불가
+	* 네임스페이스 명 변경불가.
+	*/
+
+	const PG_1047458 = function () {
+
+		/////로컬 확인용[s]
+		$(window).on('load', function(){
+			$("#빠른상담area").remove();//큰글씨 설정할경우 빠른상담 slider 제거
+			fn_setRpsntAcnSwiper();//대표계좌 swiper JS
+			fn_eventBanner();//이벤트배너 swiper JS
+			setTimeout(function(){//KB금융비서메뉴 노출
+				fn_kbContent();//KB콘텐츠 swiper JS
+			},10000)
+			fn_prod_category();//상품카테고리 swiper JS
+
+			/* 화면로드시 앱바 노출 애니메이션 추가(2022-04-14) */
+            gsap.to($('.btm_appbar'),0.5,{ease:Power3.easeOut, y:'0rem', delay:1})
+			gsap.to($('.btm_appbar ul'),0.6,{ease:Power3.easeOut, y:'0rem', delay:1.1})
+
+
+			setTimeout(function(){//KB금융비서메뉴 노출
+				$('#KB금융비서메뉴').show().addClass('open');
+			},1000);
+		});
+		/////로컬 확인용[e]
+        
+        new Sortable(drag, {//순서변경
+			delay: 200,
+			axis: 'y',
+			animation: 150,
+			item: 'list-group-item',
+			cancel: '.transfer',
+			handle: '.btn_move',
+			forceFallback: true,
+		}); 
+
+		//대표계좌 swiper JS
+		function fn_setRpsntAcnSwiper(){
+			if($('.represent .swiper-slide').length >= 2 ){
+				window.PG_1047458.rpsntAcnSwiper = new Swiper(".represent", {
+				spaceBetween:0,
+				slidesPerView:'auto',
+				centeredSlides:true,
+				loop:true,
+				autoHeight:true,
+				
+				speed:300,
+				touchRatio:0.5,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+					renderBullet: function(idx, className) {
+						var txt = (idx + 1) + "/" + this.$el.find(".swiper-slide").length;
+						return "<button class=" + className + "><span class='hidden'>" + txt + "</span></button>";
+					}
+				},
+				on:{
+					afterInit: function() {
+						this.$el.each(function() {
+							var _this = $(this);
+							_this.find(".swiper-slide").eq(0).attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+							_this.find(".swiper-pagination-bullet").eq(0).attr("title", "선택됨").siblings().attr("title", "");
+						});
+					},
+					slideChangeTransitionStart:function(){
+						if(this.$el.find(".swiper-slide").eq(this.activeIndex).hasClass('default') || this.$el.find(".swiper-slide").eq(this.activeIndex).hasClass('add')){
+							swiper_h = '21rem'
+						}else{
+							swiper_h = '23rem'
+						}
+
+						if(this.realIndex == 0){
+							$('#UL이체내역 li').show()
+							$('#wrap.renew2022 .home_card .represent').addClass('trans_lst');//이체거래내역 노출시
+						}else{
+							$('#UL이체내역 li').hide()
+							$('#wrap.renew2022 .home_card .represent').removeClass('trans_lst');//이체거래내역 미노출시
+						}
+
+						gsap.to(this.$el.find(".swiper-slide").eq(this.activeIndex).prev().find('.inner'),0.3,{ease:Power2.easeInOut,x:'2rem', height:'19.6rem', scale:0.85})
+						gsap.to(this.$el.find(".swiper-slide").eq(this.activeIndex).next().find('.inner'),0.3,{ease:Power2.easeInOut,x:'-2rem', height:'19.6rem', scale:0.85})
+						gsap.to(this.$el.find(".swiper-slide").eq(this.activeIndex).find('.inner'),0.3,{ease:Power2.easeInOut, x:0, height:swiper_h, scale:1})
+					},
+					transitionEnd: function() {
+						this.$el.find(".swiper-slide").each(function() {
+							var _this = $(this);
+							if (_this.is(".swiper-slide-active")) {
+								_this.attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+							}
+						});
+						this.$el.find(".swiper-pagination-bullet").each(function() {
+							var _this = $(this);
+							if (_this.is(".swiper-pagination-bullet-active")) {
+								_this.attr("title", "선택됨").siblings().attr("title", "");
+							}
+							$("#drag .home_card .btn_move").css("z-index", 10);
+						});						
+					}	
+				},
+				watchOverflow: true,
+				observer: true,
+				observeParents: true
+			});
+			}
+		}
+
+		//고객맞춤메뉴 JS(2022-03-30 수정)
+		function fn_toggleCustCstzMenu() {
+			var el_pop = $("#나를위한맞춤메뉴");
+			var el_home = $(".home_adjust");
+			fn_toggleOpen(el_pop,el_home);//공통팝업열기
+		}
+
+		//KB금융비서 JS(2022-03-30 수정)
+		function fn_toggleCurtnArea(){
+			var el_pop = $("#KB금융비서");
+			var el_home = $(".home_curation");
+			fn_toggleOpen(el_pop,el_home);//공통팝업열기
+		}
+
+		//팝업열기(고객맞춤메뉴/KB금융비서)(2022-03-30 추가)
+		function fn_toggleOpen(el_pop,el_home){
+			var pos = el_home.offset().top-$(window).scrollTop();
+			var h = el_home.innerHeight();
+
+			gsap.to(el_pop.css({'top':pos,'transform':'scale(0.97)','height':h}).show(), 0.1, {ease:Power2.easeInOut, autoAlpha:1, delay:0.1});
+			gsap.to(el_pop,0.4,{ease:Power2.easeInOut, scale:1, top:0, left:0, right:0, height:'100%', padding:'7.8rem 2rem 12rem', delay:0.18, onComplete:function(){
+				el_pop.find("h1").attr("tabindex",0).focus();
+				$("#wrap").attr("aria-hidden","true");
+				el_pop.css({'overflow-y':'scroll','transform':''}).addClass('open');
+			}});
+			gsap.to(el_pop.find(".pop_tit"),0.2,{ease:Power2.easeInOut, autoAlpha:1, delay:0.1});
+			gsap.to(el_pop.find(".pop_cont"),0.3,{ease:Power2.easeInOut, autoAlpha:1, delay:0.3});
+			gsap.to(el_home,0.2,{ease:Power2.easeOut, scale:'0.96'});
+		}
+
+		//팝업닫기(고객맞춤메뉴/KB금융비서)(2022-03-30 수정)
+		function fn_closeLayer(e,id){
+			var el_pop = "";
+			var el_pos = "";
+			var el_h = "";
+
+			if(id == "나를위한맞춤메뉴영역"){
+				el_pop = $("#나를위한맞춤메뉴");
+				el_home = $('.home_adjust');
+				
+			}else if(id == "KB금융비서영역"){
+				el_pop = $("#KB금융비서");
+				el_home = $('.home_curation');
+			}		
+			el_pop.find('.btn_pop_close').hide()
+			el_pos = el_home.offset().top-$(window).scrollTop();
+			el_h = el_home.innerHeight();
+			gsap.to(el_pop.removeClass('open'),0.45,{ease:Power2.easeInOut, scale:0.97, top:el_pos, left:'2rem', right:'2rem', height:el_h, padding:'1.2rem 2.2rem', scrollTop:0, delay:0.15});
+			gsap.to(el_pop.find(".pop_tit"),0.2,{ease:Power2.easeInOut, autoAlpha:0, delay:0.35});
+			gsap.to(el_pop.find(".pop_cont"),0.2,{ease:Power2.easeInOut, autoAlpha:0, delay:0.35});
+			gsap.to(el_pop,0.2,{ease:Power2.easeInOut, autoAlpha:0, delay:0.5});
+			gsap.to(el_home, 0.2, {ease: Power2.easeOut, scale:1, delay:0.5, onComplete:function(){
+				el_home.attr('style','');
+				el_pop.hide().attr('style','').find("h1").removeAttr("tabindex");
+				el_pop.find(".pop_tit").attr('style','');
+				el_pop.find(".pop_cont").attr('style','');
+				el_pop.find('.btn_pop_close').attr('style','');
+			}});
+			$("#wrap").removeAttr("aria-hidden");
+			$("[aria-controls='" + id + "']").attr("tabindex", 0).focus().siblings().removeAttr("tabindex");
+			if(e != null){
+				e.preventDefault(); 
+			}
+		}
+
+		//이벤트배너 swiper JS
+		function fn_eventBanner(){
+			if($('.event_banner_wrap .swiper-slide').length >= 2 ){//배너가 2개 이상일경우에만 swiper동작처리
+				var swiperCurationMain = new Swiper(".event_banner_wrap .swiper-container", {
+					speed:500,
+					spaceBetween:5,
+					slidesPerView:'auto',
+					centeredSlides:true,
+					loop:true,
+					touchRatio:0.5,
+					autoplay:{
+						delay:2500,
+						disableOnInteraction: true,
+					},
+					pagination: {
+						el: ".event_banner_wrap .swiper-pagination",
+						clickable: true,
+						renderBullet: function(idx, className){
+							var txt = (idx + 1) + "/" + this.$el.find(".swiper-slide").length;
+							return "<button class=" + className + "><span class='hidden'>" + txt + "</span></button>";
+						}
+					},
+					on: {
+						init : function(){
+							this.$el.find(".swiper-slide").removeAttr("aria-label");
+						},
+						afterInit: function() {
+							this.$el.each(function() {
+								var _this = $(this);							
+								_this.find(".swiper-slide").eq(0).attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+								_this.find(".swiper-pagination-bullet").eq(0).attr("title", "선택됨").siblings().attr("title", "");
+							});
+						},
+						transitionEnd: function() {
+							this.$el.find(".swiper-slide").each(function() {
+								var _this = $(this);
+								if (_this.is(".swiper-slide-active")) {
+									_this.attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+								}
+							});
+							this.$el.find(".swiper-pagination-bullet").each(function() {
+								var _this = $(this);
+								if (_this.is(".swiper-pagination-bullet-active")) {
+									_this.attr("title", "선택됨").siblings().attr("title", "");
+								}
+							});
+						}
+					},
+					observer: true,
+					observeParents: true,
+					watchOverflow: true
+				});
+			}
+			swiperCurationMain.on('autoplayStop', function(){
+				$('.event_banner_wrap .play-control').attr('class','play-control play').text('재생');
+			});
+			swiperCurationMain.on('autoplayPlay', function(){
+				$('.event_banner_wrap .play-control').attr('class','play-control stop').text('멈춤');
+			});
+
+			$('.event_banner_wrap .play-control').on('click', function(){
+				if($(this).hasClass('stop')){
+					$(this).attr('class','play-control play').text('재생');
+					swiperCurationMain.autoplay.stop();
+				}else{
+					$(this).attr('class','play-control stop').text('멈춤');
+					swiperCurationMain.autoplay.start();
+				}
+			});
+		}
+
+		//KB콘텐츠 swiper JS
+		function fn_kbContent(){
+			var swiperCurationMain = new Swiper(".kbcontent_wrap .swiper-container", {
+				spaceBetween: 5,
+				slidesPerView:'auto',
+				centeredSlides:true,
+				speed:300,
+				touchRatio:0.5,
+				autoHeight:true,
+				pagination: {
+					el: ".kbcontent_wrap .swiper-pagination",
+					clickable: true,
+					renderBullet: function(idx, className){
+						var txt = (idx + 1) + "/" + this.$el.find(".swiper-slide").length;
+						return "<button class=" + className + "><span class='hidden'>" + txt + "</span></button>";
+					}
+				},
+				on: {
+					init : function(){
+						this.$el.find(".swiper-slide").removeAttr("aria-label");
+					},
+					afterInit: function() {
+						this.$el.each(function() {
+							var _this = $(this);
+							_this.find(".swiper-slide").eq(0).attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+							_this.find(".swiper-pagination-bullet").eq(0).attr("title", "선택됨").siblings().attr("title", "");
+						});
+					},
+					transitionEnd: function() {
+						this.$el.find(".swiper-slide").each(function() {
+							var _this = $(this);
+							if (_this.is(".swiper-slide-active")) {
+								_this.attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+							}
+						});
+						this.$el.find(".swiper-pagination-bullet").each(function() {
+							var _this = $(this);
+							if (_this.is(".swiper-pagination-bullet-active")) {
+								_this.attr("title", "선택됨").siblings().attr("title", "");
+							}
+						});
+						
+					}
+				},
+				observer: true,
+				observeParents: true,
+				watchOverflow: true
+			});
+            $('.kbcontent_wrap .tab_kbcontent .tab_scroll_wrap li').on('click', function(){
+                var idx = $(this).index();
+                $(this).attr('aria-selected','true').siblings().attr('aria-selected','false')
+                tabBarAnimation(idx);
+                swiperCurationMain.slideTo(idx);
+            })
+
+            function tabBarAnimation(i){
+                var _pos = $('.kbcontent_wrap .tab_kbcontent ul li').eq(i).find('button').offset();
+                var _wid = $('.kbcontent_wrap .tab_kbcontent ul li').eq(i).find('button').innerWidth();
+
+                $('.kbcontent_wrap .tab_kbcontent ul li button').removeClass('-active');
+                $('.kbcontent_wrap .tab_kbcontent ul li').eq(i).find('button').addClass('-active');
+                $('.kbcontent_wrap .tab_kbcontent .bar').css({'left':_pos.left,'width':_wid});
+            }    
+		}		
+
+		//상품카테고리 swiper JS
+		function fn_prod_category(){
+			let st = $('#wrap.renew2022 .prod_category').offset().top
+			let first = false
+			$(window).on('scroll', function(){
+				if(first){
+					return
+				}else{
+					if(($(window).scrollTop()+$(window).innerHeight())-220 >= st){
+						first = true
+						var swiperCurationMain = new Swiper(".prod_category .swiper-container", {
+							spaceBetween:30,
+							slidesPerView:3,
+							centeredSlides:true,
+							effect:"coverflow",
+							touchRatio:0.5,
+							speed:300,
+							coverflowEffect:{
+								rotate:0,
+								stretch:0,
+								depth:100,
+								modifier:3,
+								slideShadows:false
+							},
+							loop:true,
+							loopAdditionalSlides:2,
+							on: {
+								init : function(){
+									this.$el.find(".swiper-slide").removeAttr("aria-label");
+								},
+								afterInit: function() {
+									this.$el.each(function() {
+										var _this = $(this);
+										_this.find(".swiper-slide").eq(0).attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+									});
+								},
+								slideChangeTransitionStart: function(){
+									var _this = $(this);
+									this.$el.find(".swiper-slide").removeClass('swiper-slide-show')
+									this.$el.find(".swiper-slide").eq(this.activeIndex).prev().prev().addClass('swiper-slide-show')
+									this.$el.find(".swiper-slide").eq(this.activeIndex).next().next().addClass('swiper-slide-show')
+								},
+								transitionEnd: function() {
+									this.$el.find(".swiper-slide").each(function() {
+										var _this = $(this);
+										if (_this.is(".swiper-slide-active")) {
+											_this.attr("aria-hidden", false).siblings().attr("aria-hidden", true);
+										}
+									});
+								}
+							},
+							observer: true,
+							observeParents: true,
+							watchOverflow: true
+						});
+					}
+				}
+			});
+		}
+
+		function copyAcnoEvent(e){//계좌복사하기 JS
+			e.stopPropagation(); 
+			alert('계좌복사하기');
+		}
+
+		function fn_balStupOnOff(e){//잔액숨기기 JS
+			e.stopPropagation(); 
+			var el_acc = $('#wrap.renew2022 .home_card .acc_sum_wrap');
+			if($("#잔액btn").is(":checked") == false ){ //잔액 보이기
+				el_acc.find('.acc_pay').show()
+				el_acc.find('.nodata').hide()
+				el_acc.find('.btn_acc_balance label span').text('숨김');
+			} else{ //잔액 숨기기
+				el_acc.find('.acc_pay').hide()
+				el_acc.find('.nodata').show()
+				el_acc.find('.btn_acc_balance label span').text('보기');
+			}
+		}
+
+		function fn_notiStupOnOff(){//알림설정 JS
+			var el_alarm = $('#wrap.renew2022 .home_card .btn_alarm');
+			if($("#알림btn").prop("checked") == true ){ //알림 On
+				el_alarm.find('label span').text('알림설정 동의')
+            } else{ //알림 Off
+				el_alarm.find('label span').text('알림설정 미동의')
+            }
+		}
+
+		/**
+		* 외부에 노출시킬 속성 정의
+		*/
+		return {
+			fn_setRpsntAcnSwiper,
+			fn_toggleCustCstzMenu,
+			fn_toggleCurtnArea,
+			fn_closeLayer,
+			fn_eventBanner,
+			fn_kbContent,
+			fn_prod_category,
+			copyAcnoEvent,
+			fn_balStupOnOff,
+			fn_notiStupOnOff
+		}
+	};
+
+	/**
+	 * 생성된 네임스페이스를 window 객체에 주입
+	 */
+		window.PG_1047458 = new PG_1047458();
+</script>
+<!--// 업무 SCRIPT END -->
+</body>
+</html>

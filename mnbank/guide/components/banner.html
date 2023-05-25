@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">배너</div>
+        <div data-class="box">
+            <div data-class="list disc">
+                <div data-class="p">배너 공통 : 양쪽 여백 24px / bg color(회색) 100% / 배너 이미지 사이즈 고정 / 이미지,인디케이터 center 정렬 </div>
+                <div>배너(단독 사용) : 상단 여백 48px</div>
+                <div>배너(타이틀 아래 위치할 때) : 상단 여백은 타이틀 margin값 만큼</div>
+                <div>배너 + 배너 사이 간격 32px</div>
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">마케팅배너(어드민등록)</div>
+            
+<!--             <div data-class="h2">통이미지</div>
+            <script type="text/html">
+<div class="banner_wrap">
+    <a href="#none" class="banner_area type1">
+        <p class="img"><img src="/mnbank/app/img/common/temp/banner_img.png" alt="입출금상품 2건 : 전환가입이 가능한 맞춤 보험상품"></p>
+    </a>
+</div>
+            </script> -->
+                <div data-class="box">
+                    <p data-class="p">통이미지 + 스와이프<br>
+                        .banner_wrap 추가 (서브메인성/자산관리는 별도 클래스 사용)</p>
+                </div>
+<script type="text/html">
+<div class="swiper-container banner_wrap">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/common/temp/banner_img.png" alt=""></p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/common/temp/banner_img.png" alt=""></p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide_area">
+                <p class="img"><img src="/mnbank/app/img/common/temp/banner_img.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div> 
+</div>
+</script>
+            
+            <div data-class="h2">예외케이스</div>
+            <div data-class="box">
+                <p data-class="p">텍스트 + 이미지 + 배경컬러<br>
+                    background-color:#f8f8ff<br>
+                    img size : 266 * 212</p>
+            </div>
+            <script type="text/html">
+<div class="banner_wrap type2">
+    <a href="#none" class="banner_area" style="background-color:#f1f4ff;">
+        <p class="tit">입출금상품 <span class="number">2</span><span class="num_unit">건</span></p>
+        <p class="txt">전환가입이 가능한<br>맞춤 보험상품</p>
+        <p class="img"><img src="/mnbank/app/img/common/temp/bg_banner_prod.png" alt=""></p>
+    </a>
+</div>
+            </script>
+            
+            <script type="text/html">
+<div class="banner_wrap type2">
+    <a href="#none" class="banner_area">
+        <p class="tit">하나투어 여행상품권 할인</p>
+        <p class="txt">여행상품권 3% 우대<br><span class="btn_txt ico_arr">바로가기</span></p>
+        <p class="img"><img src="/mnbank/app/img/reference/img_banner_coupon.png" alt=""></p>
+    </a>
+</div>
+            </script>
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    <script src="/mnbank/app/js/library/swiper.min.js"></script> <!-- 슬라이드용 플러그인 -->
+
+<script>
+var swiper1 = new Swiper('.swiper-container.banner_wrap', {
+    spaceBetween: 34,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function(idx, className) {
+            var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+            return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+        }
+    },
+    on: {
+        afterInit: function() {
+            this.$el.each(function() {
+                var _this = $(this);
+                _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+            });
+        },
+        transitionEnd: function() {
+            this.$el.find('.swiper-slide').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-slide-active')) {
+                    _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                }
+            });
+            this.$el.find('.swiper-pagination-bullet').each(function() {
+                var _this = $(this);
+                if (_this.is('.swiper-pagination-bullet-active')) {
+                    _this.attr('title', '선택됨').siblings().attr('title', '');
+                };
+            });
+        },
+    },
+});
+</script>
+</body>
+</html>

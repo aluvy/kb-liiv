@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>타이틀</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <button type="button" id="confirm_btn" class="btn secondary sm">클릭</button><br><br>
+</div>
+
+<!-- layer -->
+<div id="confirm_html" class="layerHTML">
+    <div class="ly_cnt">
+        <div class="section">
+            <p class="p gap_sm_3">KB Pay Back! 결제한 돈은 돌아오는거야~!(최대 3,000 포인트리) KB Pay 페이백 이벤트</p>
+            <button type="button" class="btn outline xs round gap_xs_2">바로가기</button>
+            <div class="right">
+                <a href="#none" class="btn_txt link">다시보지않기</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //layer -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script>
+    /* 업무 SCRIPT */
+    $(function(){
+        $('#confirm_btn').on('click', function(){
+            $.ohyLayer({                 
+                titleUse:false,
+                content:'#confirm_html',
+                type:'confirm', 
+                closeUse:true,                 
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

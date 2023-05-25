@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no">
+    <title>약관 및 상품설명서</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- // -->
+    <!-- 페이지별선언 -->
+	<!--<link rel="stylesheet" href="/mnbank/app/css/library/swiper.min.css">-->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    
+    <div id="content" class="cate_regist pdt_0 pdb_0"> <!-- 210908 수정 -->
+        <h1 class="hidden">약관 및 상품설명서</h1>
+        <div class="viewer_agree">
+            <div class="viewer_header">
+                <h2 class="vw_dep1">약관 및 상품설명서</h2>
+                <div class="vw_search">
+                    <button type="button" class="btn_vw_sch" aria-expanded="false"><span class="hidden">약관 검색</span></button> <!-- 210909 접근성수정(aria-expanded 속성 추가) -->
+                    <div class="layer_vw_search close" aria-hidden="true">
+                        <div class="sch_wrap">
+                            <div class="input">
+                                <input type="text" class="inp" title="검색어" placeholder="검색어 입력"> <!-- 210823 수정 -->
+                                <button type="submit" class="btn outline sm" onclick="pdfViewerMotion().searchResultLayerShow();">검색</button> <!-- 211005 수정(.js_vw_sch 클래스 삭제, [개발]검색결과 레이어가 열릴 경우 pdfViewerMotion().searchResultLayerShow(); 호출) -->
+                                <button type="submit" class="btn_sch_prev" disabled><span class="hidden">search previous text</span></button>
+                                <button type="submit" class="btn_sch_next" disabled><span class="hidden">search next text</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layer_vw_nodata close" aria-hidden="true"> <!-- 210914 접근성수정 -->
+                        <!-- case 1 -->
+                        <p>열람 중인 약관 내 <strong class="fc_posi">&quot;ㄱ&quot;</strong>을 찾을 수 없습니다.</p>
+                        <p>이어서 다음 약관을 검색하시겠습니까?</p>
+                        <div class="gap_sm center">
+                            <button type="submit" class="btn outline sm gray" onclick="pdfViewerMotion().searchResultLayerHide();">확인</button> <!-- 211005 수정(.js_vw_sch 클래스 삭제, [개발]검색결과 레이어가 닫힐 경우 pdfViewerMotion().searchResultLayerHide(); 호출) -->
+                        </div>
+                        <!-- //case 1 -->
+
+                        <!-- case 2 -->
+                        <p>열람 중인 약관 내 <strong class="fc_posi">&quot;ㄱ&quot;</strong>을 찾을 수 없습니다.</p>
+                        <p>이어서 다음 약관을 검색하시겠습니까?</p>
+                        <div class="gap_sm center">
+                            <button type="submit" class="btn outline sm gray" onclick="pdfViewerMotion().searchResultLayerHide();">취소</button><button type="submit" class="btn outline sm">검색</button>
+                        </div>
+                        <!-- //case 2 -->
+                    </div>
+                </div>
+                <div class="vw_menu">
+                    <button type="button" class="btn_vw_menu" aria-expanded="false"><span class="hidden">약관 목록 보기</span></button> <!-- 210909 접근성수정(aria-expanded 속성 추가) -->
+                    <div class="layer_vw_menu close" aria-hidden="true">
+                        <div class="inner">
+<!-- 210805 수정 -->
+                            <ul class="vw_menu_acco js_pdf_accordion">
+                                <li class="on">
+                                    <a href="#none" role="button" class="tit" aria-expanded="true">채권/신탁(타이틀미정)</a>
+                                    <div class="toggle_panel" role="region">
+                                        <ul class="vw_menu_list">
+                                            <li class="on" aria-expanded="true"><a href="#none" onclick="pdfViewerMotion().menuLayerHide();">동양 단기 채권 증권 투자 신탁(채권)</a></li> <!-- 211005 수정([개발]메뉴 레이어가 닫힐 경우 pdfViewerMotion().menuLayerHide(); 호출) --> <!-- 선택된 메뉴의 li 태그에 .on 클래스 추가. aria-expanded true 값 변경  -->
+                                            <li aria-expanded="false"><a href="#aaa">하나USB파워e단기채 증권자투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">동양 단기 채권 증권 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">삼성증권 단기채 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">동양 단기 채권 증권 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">삼성증권 단기채 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">동양 단기 채권 증권 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">삼성증권 단기채 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">동양 단기 채권 증권 투자 신탁(채권)</a></li>
+                                            <li aria-expanded="false"><a href="#none">삼성증권 단기채 투자 신탁(채권)</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+<!-- //210805 수정 -->
+                        </div>
+                        <span class="vw_dim"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="viewer_contents">
+                <div class="swiper-container pdf_viewer_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide_area"> <!-- 슬라이드컨텐츠영역 : .slide_area 안으로 컨텐츠정의 -->
+                                약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>약관 컨텐츠 1<br>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="aaa">
+                            <div class="slide_area">
+                                약관 컨텐츠 2
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_area">
+                                약관 컨텐츠 3
+                            </div>
+                        </div>
+                    </div>
+                    <button class="swiper-button-next"><span class="hidden">다음슬라이드</span></button> <!-- 다음버튼 -->
+                    <button class="swiper-button-prev"><span class="hidden">이전슬라이드</span></button> <!-- 이전버튼 -->                 
+                </div>
+<!-- 211123 수정 -->
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <span><button type="button" class="btn secondary lg">동의안함</button></span>
+                        <span><button type="button" class="btn primary lg">동의함</button></span>
+                    </div>
+                </div>
+<!-- //211123 수정 -->
+            </div>
+        </div>
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script src="/mnbank/app/js/library/swiper.min.js"></script>
+
+<script>
+    /* 업무 SCRIPT */
+    // $(function(){ //211005 삭제
+        // 퍼블 산출물에서만 사용함(개발산출물엔 사용하지 않음) start
+        var swiper = new Swiper('.pdf_viewer_slide', {
+            slidesPerView: '1', //슬라이드노출 수
+            navigation: { //이전, 다음버튼 있을때 사용
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                    });
+                },
+                transitionEnd: function() {
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                },
+/*                 afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                    });
+                },
+                transitionEnd: function() {
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                }, */
+            }
+        });
+        // 퍼블 산출물에서만 사용함(개발산출물엔 사용하지 않음) end
+        
+//211005 수정 start
+        var pdfViewerMotion = function(){
+            var viewerSearch = $('.viewer_agree .btn_vw_sch');
+            var viewerSearchLayer = $('.viewer_agree .layer_vw_search');
+            var viewerMenu = $('.viewer_agree .btn_vw_menu');
+            var viewerMenuLayer = $('.viewer_agree .layer_vw_menu');
+            var viewerContents = $('.viewer_agree .viewer_contents');
+            var viewerSearchResultLayer  = $('.viewer_agree .layer_vw_nodata');
+            var height = $(window).outerHeight();
+            var viewerHeaderHeight = $('.viewer_agree .viewer_header').outerHeight();
+            var headerHeight =  $('#header').outerHeight();
+            (!$('#header').outerHeight()) ? headerHeight = 0 : headerHeight = headerHeight;
+            var viewerContentsHeight =  height - headerHeight - viewerHeaderHeight;
+
+            return {
+                init: function(){
+                    this.viewerHeight();
+                    this.pdfViewerMenu();
+                    this.pdfViewerSearch();
+                    this.pdfAccordion();
+                },
+                viewerHeight : function(){
+                    viewerHeaderHeight = $('.viewer_agree .viewer_header').outerHeight();
+                    viewerContentsHeight =  height - headerHeight - viewerHeaderHeight;
+                    
+                    viewerContents.css('height', viewerContentsHeight);
+                    viewerMenuLayer.css('height', viewerContentsHeight).find('.inner').css('height', viewerContentsHeight);
+                },
+                /* menu layer show */
+                menuLayerShow : function(){
+                    pdfViewerMotion().searchLayerHide();
+                    pdfViewerMotion().searchResultLayerHide();
+                    viewerMenuLayer.removeClass('close').addClass('open').attr('aria-hidden', false).show();
+                    viewerMenu.attr('aria-expanded', true);
+                    viewerContents.attr('aria-hidden', true).closest('.viewer_agree').find('.viewer_header').css('z-index', '110');
+                    setTimeout(function(){
+                        pdfViewerMotion().viewerHeight();
+                    },400);
+                },
+                /* menu layer hide */
+                menuLayerHide : function(){
+                    viewerMenuLayer.removeClass('open').addClass('close').attr('aria-hidden', true).hide();
+                    viewerMenu.attr('aria-expanded', false);
+                    viewerContents.attr('aria-hidden', false).closest('.viewer_agree').find('.viewer_header').css('z-index', '0');
+                    $('.swiper-slide-active').focus();
+                },
+                /* search layer show */
+                searchLayerShow : function(){
+                    pdfViewerMotion().menuLayerHide();
+                    viewerSearchLayer.removeClass('close').addClass('open').attr('aria-hidden', false).closest('.viewer_header').addClass('open');
+                    viewerSearch.attr('aria-expanded', true).closest('.viewer_agree').find('.viewer_header').css('z-index', '110');;
+                    setTimeout(function(){
+                        pdfViewerMotion().viewerHeight();
+                    },400);
+                },
+                /* search layer hide */
+                searchLayerHide : function(){
+                    viewerSearchLayer.removeClass('open').addClass('close').attr('aria-hidden', true).closest('.viewer_header').removeClass('open');
+                    viewerSearch.attr('aria-expanded', false).closest('.viewer_agree').find('.viewer_header').css('z-index', '0');;
+                    if (viewerSearchResultLayer.hasClass('open')) {
+                        viewerSearchResultLayer.removeClass('open').addClass('close').attr('aria-hidden', true);
+                        viewerSearchLayer.attr('aria-hidden', false);
+                        viewerContents.attr('aria-hidden', false);
+                    }
+                    setTimeout(function(){
+                        pdfViewerMotion().viewerHeight();
+                    },400);
+                },
+                /* search result layer show */
+                searchResultLayerShow : function(){
+                    viewerSearchResultLayer.removeClass('close').addClass('open').attr('aria-hidden', false);
+                    viewerSearchLayer.attr('aria-hidden', true);
+                    if (viewerSearchLayer.hasClass('close')) {viewerSearchLayer.attr('aria-hidden', false);}else {viewerSearchLayer.attr('aria-hidden', true);}
+                    viewerContents.attr('aria-hidden', true);
+                },
+                /* search result layer hide */
+                searchResultLayerHide : function(){
+                    viewerSearchResultLayer.removeClass('open').addClass('close').attr('aria-hidden', true);
+                    if (viewerSearchLayer.hasClass('close')) {viewerSearchLayer.attr('aria-hidden', true);}else {viewerSearchLayer.attr('aria-hidden', false);}
+                    viewerContents.attr('aria-hidden', false);
+                },
+                
+                pdfAccordion : function(){
+                    if ($('.js_pdf_accordion li').hasClass('on')){
+                        $('.js_pdf_accordion li.on').find('.toggle_panel').css('display','block');
+                    }
+
+                    $(document).off('click', '.js_pdf_accordion a.tit').on('click', '.js_pdf_accordion a.tit', function(e){
+                        e.preventDefault();
+                        var _this = $(this),
+                            _li = _this.parents('li'),
+                            spd = 100;
+                        
+                        if(_li.hasClass('on')){
+                            _this.attr('aria-expanded', false).parents('li').removeClass('on').find('.toggle_panel').slideUp(spd);
+                        } else {
+                            _this.attr('aria-expanded', true).parents('li').find('.toggle_panel').slideDown(spd).parents('li').addClass('on');
+                            _li.siblings('li').removeClass('on').find('.btn_acco').attr('aria-expanded', false);
+                            _li.siblings('li').find('.toggle_panel').slideUp(spd);
+                        }
+                    });
+                },
+                pdfViewerMenu : function(){
+                    $(viewerMenu).on('click', function(){
+                        if (viewerMenuLayer.hasClass('close')) {
+                            pdfViewerMotion().menuLayerShow();
+                        }else{
+                            pdfViewerMotion().menuLayerHide();
+                        }
+                    })
+                },
+                pdfViewerSearch : function(){
+                    $(viewerSearch).on('focus, click', function(){
+                        if (viewerSearchLayer.hasClass('close')) {
+                            pdfViewerMotion().searchLayerShow();
+                            
+                        }else{
+                            pdfViewerMotion().searchLayerHide();
+                        }
+                    })
+                }
+            }
+        }
+//211005 수정 end
+        pdfViewerMotion().init();
+        pdfViewerMotion().menuLayerHide();
+    // }); //211005 삭제
+
+    
+
+</script>
+</body>
+</html>

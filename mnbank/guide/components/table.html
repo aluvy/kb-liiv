@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">테이블</div>
+
+        <div data-class="section">
+            <div data-class="box">
+                <div data-class="p">가로형 테이블 1행만 있을 경우<br>
+                    - 텍스트 모두 중앙정렬</div>
+                <div data-class="p">가로형 테이블 2행 이상<br> 
+                    - 라디오, 체크박스, 인풋요소, 버튼: 중앙정렬<br> 
+                    - 텍스트: 좌측정렬<br> 
+                    - 숫자: 우측정렬
+                </div>
+            </div>
+            <div data-class="box">
+                <div data-class="p">
+                    td : 좌측정렬 기본<br>
+                    td.center / table.center td : 중앙정렬<br>
+                    td.right / table.right td  : 우측정렬<br>
+                    td.element : 버튼, 폼요소
+                </div>
+                <div data-class="p">caption규칙 : 테이블 간단 설명 문구&lt;/caption&gt;</div>
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">기본</div>
+<script type="text/html">
+<div class="table">
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:25%">
+            <col style="width:40%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+                </script>  
+
+            <div data-class="h2">가로형</div>
+            <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="center">내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="right">내용</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>
+            </script>
+
+            <div data-class="h2">세로형</div>
+            <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:30%">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            </script> 
+        </div>
+
+        <div data-class="section">
+        <div data-class="h1">정렬</div>
+
+        <div data-class="h2">Left</div>
+        <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <div class="table_top_wrap">
+        <div class="col col_l">(기준: <span class="number">2021.02.19 15:37:43</span>)</div>
+        <div class="col col_r">오른쪽 영역</div>
+    </div>
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>
+        </script>
+
+        <div data-class="h2">Center</div>
+        <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <div class="table_top_wrap">
+        <div class="col col_l">(기준: <span class="number">2021.02.19 15:37:43</span>)</div>
+        <div class="col col_r">오른쪽 영역</div>
+    </div>
+    <table class="center">
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>
+        </script>
+
+        <div data-class="h2">Right</div>
+        <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <div class="table_top_wrap">
+        <div class="col col_l">(기준: <span class="number">2021.02.19 15:37:43</span>)</div>
+        <div class="col col_r">오른쪽 영역</div>
+    </div>
+    <table class="right">
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>
+        </script>
+
+        <div data-class="h2">요소별</div>
+        <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="table">
+    <div class="table_top_wrap">
+        <div class="col col_l">(기준: <span class="number">2021.02.19 15:37:43</span>)</div>
+        <div class="col col_r">오른쪽 영역</div>
+    </div>
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="center">내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="right">내용</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>
+        </script>
+    </div>
+
+
+<div data-class="section">
+    <div data-class="h1">Component</div>
+    <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<div class="box_line">
+    <p class="tit_sub">거래가격 기준</p>
+    <ul class="depth dash sm">
+        <li>사실 때 : 기준가격 x 중량 x ( 1 + 판매마진율 )</li>
+        <li>파실 때 : 기준가격 x 중량 x ( 1 - 판매마진율 )</li>
+    </ul>
+</div>
+<div class="table">
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:50%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="center">내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td class="right">내용</td>
+            </tr>
+        </tbody>
+    </table>   
+    <p class="depth info">작업코드명은 0000기준을 따릅니다.</p> 
+</div>
+    </script>
+
+
+    <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<ul class="depth bul">
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+    <li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. </li>
+</ul>
+<div class="table">
+    <div class="table_top_wrap">
+        <div class="col col_l">(기준: <span class="number">2021.02.19 15:37:43</span>)</div>
+        <div class="col col_r">오른쪽 영역</div>
+    </div>
+    <table>
+        <caption>테이블 제목 정보</caption>
+        <colgroup>
+            <col style="width:20%">
+            <col style="width:40%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목<br>(타이틀 2줄 케이스)</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td class="right"><span class="number">123,456,789</span><span class="num_unit">원</span></td>
+                <td class="center">-</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>
+                    내용
+                    <div class="btn_wrap v gap_xxs">
+                        <span><a href="#none" class="btn outline xs">바로가기</a></span>
+                    </div>
+                </td>
+                <td class="center">내용</td>
+                <td class="element"><a href="#none" class="btn outline xs">바로가기</a></td>
+            </tr>
+            <tr>
+                <td>
+                    내용
+                    <div class="btn_wrap v gap_xxs">
+                        <span><a href="#none" class="btn outline xs">바로가기</a></span>
+                        <span><a href="#none" class="btn outline xs">바로가기</a></span>
+                    </div>
+                </td>
+                <td class="center">내용</td>
+                <td class="element"><a href="#none" class="btn outline xs">바로가기</a></td>
+            </tr>
+            <tr>
+                <td class="element">
+                    <span class="selection">
+                        <input type="radio" id="radio1_1" name="radio1" checked>
+                        <label for="radio1_1" class="label"><em class="hidden">단독사용</em></label>
+                    </span>
+                </td>
+                <td class="center">내용</td>
+                <td class="element"><a href="#none" class="btn outline xs">바로가기</a></td>
+            </tr>
+            <tr>
+                <td class="element">
+                    <span class="selection">
+                        <input type="radio" id="radio1_1" name="radio1">
+                        <label for="radio1_1" class="label"><em class="hidden">단독사용</em></label>
+                    </span>
+                </td>
+                <td class="right"><span class="number">2.43</span><span class="num_unit">%</span></td>
+                <td class="element"><a href="#none" class="btn outline xs">바로가기</a></td>
+            </tr>
+            <tr>
+                <td class="element">
+                    <span class="selection">
+                        <input type="radio" id="radio1_1" name="radio1">
+                        <label for="radio1_1" class="label"><em class="hidden">단독사용</em></label>
+                    </span>
+                </td>
+                <td class="right"><span class="number">123,456,789</span><span class="num_unit">원</span></td>
+                <td class="element"><a href="#none" class="btn outline xs">바로가기</a></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+<!-- //table -->
+                </script>
+            </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+	<link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">페이지네이션</div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+
+            <div data-class="h2">더보기</div>            
+            <script type="text/html">
+<div class="btn_list_btm more">
+    <button type="button" class="btn">더보기</button>
+</div>
+            </script>  
+            
+            <div data-class="h2">페이징</div>   
+            <script type="text/html">
+<div class="paging">
+    <a href="#none" class="first"><span>처음</span></a>
+    <a href="#none" class="prev on"><span>이전</span></a>
+    <span class="curr"><em>현재 페이지</em>1</span><span class="total"><em>전체 페이지</em>100</span>
+    <a href="#none" class="next on"><span>다음</span></a>
+    <a href="#none" class="end on"><span>끝</span></a>
+</div>
+            </script>
+            <!-- 페이징 backup 
+            <div class="paging_wrap">
+                <div class="page_btn before">
+                    <a href="#none" class="btn first" aria-label="처음"><span class="hidden">처음</span></a>
+                    <a href="#none" class="btn prev" aria-label="이전"><span class="hidden">이전</span></a>
+                </div>
+                <div class="page_num">
+                    <a href="#none" class="on"><span>1</span></a>
+                    <a href="#none"><span>2</span></a>
+                    <a href="#none"><span>3</span></a>
+                    <a href="#none"><span>4</span></a>
+                    <a href="#none"><span>5</span></a>
+                </div>
+                <div class="page_btn after">
+                    <a href="#none" class="btn next" aria-label="다음"><span class="hidden">다음</span></a>
+                    <a href="#none" class="btn end" aria-label="끝"><span class="hidden">끝</span></a>
+                </div>
+            </div>--> 
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    <!-- <script type="text/javascript" src="/mnbank/app/js/library/sortable.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+		var account_id = new Array(
+			'drag'
+		);
+		accountSetup(account_id);
+
+		function accountSetup(id){
+			for(var i = 0; i < id.length; i++){
+				Sortable.create( document.getElementById(id[i]), {
+					handle: '.btn_move',
+					animation: 150,
+					scrollSensitivity: 30,
+					onUpdate: function (){
+				     console.log('change');
+				  }
+				});
+			}
+		}
+	})
+    </script> -->
+</body>
+</html>

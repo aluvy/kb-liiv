@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    <style>
+        .section {margin:0;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">리스트</div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+            <div data-class="h2">일반형</div>
+            <div data-class="box">
+                <div data-class="list disc">
+                    <div>font size : 16px</div>
+                    <div>기본 : 상단 border 없음<br>
+                        상단 border 있을 시 .list에 list_top_bd 클래스 추가</div>
+                    <div>첫번째 li는 상단 여백 삭제</div>
+                </div>
+            </div>
+            <script type="text/html">
+<ul class="list">
+    <li>
+        텍스트
+    </li>
+    <li>
+        텍스트
+    </li>
+</ul>
+            </script>
+    
+            <div data-class="p">폰트사이즈 18px</div>
+            <script type="text/html">
+<ul class="list lg">
+    <li>텍스트</li>
+    <li>텍스트</li>
+</ul>
+            </script>
+        </div>
+            
+        <div data-class="section">
+            <div data-class="h2">Link형</div>   
+            <div data-class="h3">클릭영역 : 타이틀 전체</div>
+            <script type="text/html">
+<ul class="list_link">
+    <li>
+        <a href="#none" class="link">텍스트</a>
+    </li>
+    <li>
+        <a href="#none" class="link">텍스트</a>
+    </li>
+    <li>
+        <a href="#none" class="link">
+            <p class="p_sub fc_gray2">휴대폰</p>
+            <p class="gap_xxs"><strong class="number">010-28**-37**</strong></p>
+        </a>
+    </li>
+</ul>
+            </script>  
+              
+            <div data-class="p">폰트사이즈 18px</div>
+            <script type="text/html">
+<ul class="list_link lg">
+    <li>
+        <a href="#none" class="link">텍스트</a>
+    </li>
+    <li>
+        <a href="#none" class="link">텍스트</a>
+    </li>
+</ul>
+            </script> 
+
+            <div data-class="h3">클릭영역 : 버튼</div>
+<script type="text/html">
+<ul class="list_link">
+    <li>
+        <div class="inr">
+            텍스트
+            <button type="button" class="btn_link" title=""><span class="hidden">바로가기</span></button>
+        </div>
+    </li>
+    <li>
+        <div class="inr">
+            텍스트
+            <button type="button" class="btn_link" title=""><span class="hidden">바로가기</span></button>
+        </div>
+    </li>
+</ul>  
+</script> 
+</div>
+
+
+<div data-class="section">
+    <div data-class="h2">데이터형</div>
+    <div data-class="h3">Between</div>
+    <div data-class="h4">타이틀이 있는 경우</div>
+    <script type="text/html">
+<h2 class="h2">타이틀</h2>
+<ul class="list_data">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용<br>내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+</ul>
+    </script>
+
+    <div data-class="h4">타이틀이 없는 경우</div>
+    <script type="text/html">
+<ul class="list_data">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value"><a href="#none" class="btn_txt ico_arr sm">버튼</a></div>
+    </li>
+</ul>
+    </script>
+    <div data-class="h4">noline</div>
+    <script type="text/html">
+<ul class="list_data noline">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value"><a href="#none" class="btn_txt ico_arr sm">버튼</a></div>
+    </li>
+</ul>
+    </script>
+
+    <div data-class="h3">좌측 정렬</div>
+    <div data-class="h4">기본</div>
+    <script type="text/html">
+<ul class="list_data left">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value"><a href="#none" class="btn_txt ico_arr sm">버튼</a></div>
+    </li>
+</ul>
+    </script>
+    <div data-class="h4">key 6글자 이하</div>
+    <script type="text/html">
+<ul class="list_data left w_sm">
+    <li>
+        <div class="key">타이틀타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value"><a href="#none" class="btn_txt ico_arr sm">버튼</a></div>
+    </li>
+</ul>
+    </script>
+</div>
+            
+<div data-class="section">
+        <div data-class="h2">아이콘</div>   
+        <div data-class="h3">기본형</div>   
+        <script type="text/html">
+<ul class="list lg icon list_top_bd">
+    <li class="item1">텍스트
+        <p class="txt_sub">텍스트</p>
+    </li>
+    <li class="item2">텍스트</li>
+</ul>
+        </script>
+
+        <div data-class="h4">상단 라인 없음</div>
+        <script type="text/html">
+<div class="ly_cnt">
+<ul class="list lg icon">
+    <li class="item1">텍스트</li>
+    <li class="item2">텍스트</li>
+</ul>
+</div>
+        </script>
+
+        <div data-class="h4">중간 라인 없음</div>
+        <script type="text/html">
+<ul class="list icon lg li_noline"> <!-- 클래스넣어주세요 : 메뉴명+$ -->
+    <li class="item1">
+        텍스트
+        <p class="txt_sub">텍스트</p>
+    </li>
+    <li class="item2">
+        텍스트
+    </li>
+    <li class="item3">
+        텍스트
+    </li>
+</ul>
+        </script>
+
+    <div data-class="h3">링크형</div> 
+    <script type="text/html">
+<ul class="list_link lg icon list_top_bd"><!-- 클래스넣어주세요 : 메뉴명+$  ex)상품관리-ISA : isa1-->
+    <li class="item1"><!-- item1, item2... 넣어주세요 -->
+        <a href="#none" class="link">
+            텍스트<br>
+            텍스트
+        </a>
+    </li>
+    <li class="item2">
+        <a href="#none" class="link">
+            텍스트
+            <p class="txt_sub">텍스트</p>
+        </a>
+    </li>
+    <li class="item3">
+        <a href="#none" class="link">
+            텍스트
+        </a>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h4">상단 라인 없음</div>
+            <script type="text/html">
+<div class="ly_cnt">
+    <ul class="list_link lg icon">
+        <li>
+            <a href="#none" class="link">
+                텍스트<br>
+                텍스트
+            </a>
+        </li>
+        <li>
+            <a href="#none" class="link">
+                텍스트
+            </a>
+        </li>
+    </ul>
+</div>
+            </script>
+        </div>
+
+            <div data-class="section">
+                <div data-class="h2">순서변경</div>
+                <script type="text/html">
+    <ul class="list_drag type_drag"><!-- 0830 드래그변경 : id삭제, drag-> type_drag로 class변경 -->
+        <li class="li">
+            <div class="cnt">
+                내용이 오는 곳1
+            </div>
+            <!-- 0830 드래그변경 : 이동버튼으로 변경 -->
+            <div class="move_area">
+                <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+            </div>
+            <!--// 0830 드래그변경 : 이동버튼으로 변경 -->
+        </li> 
+        <li class="li">
+            <div class="cnt">
+                내용이 오는 곳1
+            </div>
+            <!-- 0830 드래그변경 : 이동버튼으로 변경 -->
+            <div class="move_area">
+                <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+            </div>
+            <!--// 0830 드래그변경 : 이동버튼으로 변경 -->
+        </li> 
+        <li class="li">
+            <div class="cnt">
+                내용이 오는 곳3
+            </div>
+            <!-- 0830 드래그변경 : 이동버튼으로 변경 -->
+            <div class="move_area">
+                <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+            </div>
+            <!--// 0830 드래그변경 : 이동버튼으로 변경 -->
+        </li>                                    
+    </ul>
+                </script>
+            </div>
+
+
+
+        <!-- <div data-class="h3">Index 화면용</div>
+        <div data-class="p"><a href="/mnbank/guide/sample/layout_index.html" target="_blank" class="fc_posi underline">layout_index</a>로 이동</div>
+
+        <div data-class="h3">조합형 noarrow(작업중입니다.)</div>
+        <script type="text/html">
+<ul class="list_link noarrow">
+<li>
+    <div class="inr grid">
+        <div class="col"><strong class="fs18">grid를 이용했습니다.</strong></div>
+        <div class="col append"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr row">
+        <div class="col"><strong class="fs18">row를 이용했습니다.</strong></div>
+        <div class="col col_r"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr grid">
+        <div class="col"><strong class="fs18">grid를 이용했습니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.</strong></div>
+        <div class="col append"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr row">
+        <div class="col"><strong class="fs18">row를 이용했습니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.길어지면이렇게됩니다.</strong></div>
+        <div class="col col_r"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr grid">
+        <div class="col"><strong class="fs18">grid를 이용했습니다.</strong></div>
+        <div class="col"><strong class="fs18">grid를 이용했습니다.grid를 이용했습니다.</strong></div>
+        <div class="col append"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr row">
+        <div class="col"><strong class="fs18">row를 이용했습니다.</strong></div>
+        <div class="col"><strong class="fs18">row를 이용했습니다.row를 이용했습니다.</strong></div>
+        <div class="col col_r"><a href="#none" class="btn_txt ico_arr">연결하기</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr grid">
+        <div class="col">
+            <strong class="fs20 number">210236-04-09623</strong>
+            <p class="p_sub fc_gray">미등록</p>
+        </div>
+        <div class="col append"><a href="#none" class="btn_txt ico_arr">등록</a></div>
+    </div>
+</li>
+<li>
+    <div class="inr grid">
+        <div class="col">
+            <strong class="fs20 number">210236-04-09623</strong>
+            <p class="p_sub fc_posi">등록</p>
+        </div>
+        <div class="col append"><a href="#none" class="btn_txt ico_arr">해지</a></div>
+    </div>
+</li>
+</ul>  
+        </script>
+    </div> -->
+
+<!--             <div data-class="h2">Small: font-size:14px</div>
+            <script type="text/html">
+<ul class="list_data sm">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+</ul>
+            </script> -->
+            
+<!--             <div data-class="h2">Line</div>
+            <script type="text/html">
+<ul class="list_data line">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+</ul>
+            </script>
+            <script type="text/html">
+<ul class="list_data line_tb">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+</ul>
+            </script> -->
+
+<!--             <div data-class="h2">Block</div>
+            <script type="text/html">
+<ul class="list_data">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+</ul>
+<ul class="list_data">
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li>
+    <li>
+        <div class="key">타이틀</div>
+        <div class="value">내용</div>
+    </li> 
+</ul>
+            </script> -->
+
+
+        <div data-class="section">
+            <div data-class="h1">정렬</div>
+            <div data-class="h2">상단영역</div>
+            <div data-class="p">리스트 상단에 요소가 위치하는 경우 사용.</div>
+            <script type="text/html">
+<div class="list_top_wrap">
+    <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><span class="num_unit">건</span></span></div>
+</div>
+                </script>
+    
+                <script type="text/html">
+<div class="list_top_wrap">
+    <div class="key">한줄일때</div>
+    <div class="value">2020.10.08 23:23:23</div>
+</div>
+                </script>
+    
+                <script type="text/html">
+<ul class="list_top_wrap">
+    <li class="row">
+        <div class="key">두줄이상일때</div>
+        <div class="value">2021.01.01(금)~2021.01.31(일)</div>
+    </li>
+    <li class="row">
+        <div class="key">조회일시</div>
+        <div class="value">2020.10.08 23:23:23</div>
+    </li>
+</ul>
+                </script>
+    
+                <div data-class="h2">하단영역</div>
+                <div data-class="p">리스트 하단에 요소가 위치하는 경우 사용.</div>
+                <script type="text/html">
+<div class="list_btm_wrap">
+    <div class="col col_l">왼쪽 영역</div>
+    <div class="col col_r">오른쪽 영역</div>
+</div>
+                </script> 
+
+                <div data-class="h2">list divider</div>
+                <div data-class="box">해당 리스트는 레이아웃 "section_f"에 넣어 사용하세요.</div>
+                <script type="text/html">
+<ul class="list_hr">
+    <li>내용</li>
+    <li>내용</li>
+</ul>
+                </script>
+            </div>
+
+
+        <div data-class="section">
+            <div data-class="h1">조합형</div>
+
+
+            <div data-class="h2">조회기간</div>
+            <div data-class="p">조회기준일시도 해당 UI로 사용</div>
+            <script type="text/html">
+<div class="sch_period">
+    <span class="tit">조회기간</span>
+    <span class="txt">2021.03.31~2021.03.31</span>
+</div>
+
+<br>
+
+<ul class="sch_period between">
+    <li>
+        <span class="tit">조회기준 고시회차</span>
+        <span class="txt">2021.02.04<br>(134회차 13:13:13)</span>
+    </li>
+</ul>
+
+<br>
+
+<ul class="sch_period between">
+    <li>
+        <span class="tit">조회대상일</span>
+        <span class="txt">2020.10.08</span>
+    </li>
+    <li>
+        <span class="tit">조회일시</span>
+        <span class="txt">2020.10.08 23:23:23</span>
+    </li>
+</ul>
+            </script>
+            <div data-class="p">조회기간안에 정보리스트나올경우</div>
+            <script type="text/html">
+<div class="sch_period">
+    <div class="row">
+        <span class="tit">조회기간</span>
+        <span class="txt">2021.03.31~2021.03.31</span>
+    </div>
+    <div class="row">
+        <ul class="list_data">
+            <li>
+                <div class="key">의뢰건수</div>
+                <div class="value">정상 <span class="number fc_posi">4</span><span class="num_unit">건</span> / 불능 <span class="number fc_nega">0</span><span class="num_unit">건</span></div>
+            </li>
+            <li>
+                <div class="key">의뢰금액</div>
+                <div class="value"><span class="number">100,000</span><span class="num_unit">원</span></div>
+            </li>
+            <li>
+                <div class="key">정상금액</div>
+                <div class="value"><span class="number">100,000</span><span class="num_unit">원</span></div>
+            </li>
+            <li>
+                <div class="key">불능금액</div>
+                <div class="value"><span class="number">0</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">타이틀 + Block형</div>
+            <script type="text/html">
+<div class="section">
+    <h2 class="h2">타이틀</h2>
+    <ul class="list_data">
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+    </ul>
+</div>
+<div class="section">
+    <h2 class="h2">타이틀</h2>
+    <ul class="list_data">
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+        <li>
+            <div class="key">타이틀</div>
+            <div class="value">내용</div>
+        </li>
+    </ul>
+</div>
+            </script>
+
+            <div data-class="h2">타이틀 + Block형 > Button</div>
+            <div data-class="box">
+                .list_comp 탑 라인이 없을 경우: .list_comp.noline 추가
+            </div>
+            <script type="text/html">
+<div class="section">
+    <h2 class="h2">타이틀</h2>
+    <ul class="list_comp">
+        <li>
+            <ul class="list_data">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+            <div class="btn_list_btm">
+                <span><button type="button" class="btn outline sm">채권취소</button></span>
+                <span><button type="button" class="btn outline sm">채권변경</button></span>
+            </div>
+        </li>
+        <li>
+            <ul class="list_data">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+            <div class="btn_list_btm">
+                <span><button type="button" class="btn outline sm">채권취소</button></span>
+                <span><button type="button" class="btn outline sm">채권변경</button></span>
+            </div>
+        </li>
+    </ul>
+</div>
+            </script>
+
+
+            <div data-class="h2">타이틀 + Block형 + Check</div>
+            <script type="text/html">
+<div class="section">
+    <h2 class="h2">타이틀</h2>
+    <ul class="list_comp check has_tit">
+        <li>
+            <span class="selection">
+                <input type="radio" id="rdo1_1" name="rdo1" checked>
+                <label for="rdo1_1" class="label"><strong class="number">2015.01</strong><span class="status">납기내</span></label>
+            </span>
+            <ul class="list_data">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="selection">
+                <input type="radio" id="rdo1_2" name="rdo1" disabled>
+                <label for="rdo1_2" class="label"><strong class="number">2015.01</strong><span class="status">납기내</span></label>
+            </span>
+            <ul class="list_data">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+            <div class="btn_list_btm">
+                <span><button type="button" class="btn outline sm">상세보기</button></span>
+            </div>
+        </li>
+    </ul>
+</div>
+            </script>
+
+            <div data-class="h2">타이틀 + Block형 > Button + Check</div>
+            <script type="text/html">
+<div class="section">
+    <h2 class="h2">계좌선택</h2>
+    <div class="list_top_wrap">
+        <p class="p">서비스 등록/해지 신청기간: 만기일로부터 1달 전</p>
+    </div>
+    <ul class="list_comp check">
+        <li>
+            <span class="selection">
+                <input type="checkbox" id="chk1_1" name="chk1" aria-describedby="account_1" checked>
+                <label for="chk1_1" class="label" aria-hidden="true"><em class="hidden">납부항목1</em></label>
+            </span>
+            <ul class="list_data" id="account_1" aria-hidden="true">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+            <div class="btn_list_btm">
+                <span><button type="button" class="btn outline sm"  aria-describedby="account_1">상세보기</button></span>
+            </div>
+        </li>
+        <li>
+            <span class="selection">
+                <input type="checkbox" id="chk1_2" name="chk1" aria-describedby="account_2">
+                <label for="chk1_2" class="label" aria-hidden="true"><em class="hidden">납부항목2</em></label>
+            </span>
+            <ul class="list_data" id="account_2" aria-hidden="true">
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+                <li>
+                    <div class="key">타이틀</div>
+                    <div class="value">내용</div>
+                </li>
+            </ul>
+            <div class="btn_list_btm">
+                <span><button type="button" class="btn outline sm" aria-describedby="account_2">상세보기</button></span>
+            </div>
+        </li>
+        <li>
+            <span class="selection">
+                <input type="checkbox" id="fund1_1" name="chk1" aria-describedby="account_3" disabled>
+                <label for="fund1_1" class="label" aria-hidden="true"><em class="hidden">펀드계좌1</em></label>
+            </span>
+            <div class="acc_wrap" id="account_3" aria-hidden="true">
+                <div class="acc_name">주택청약종합저축</div>
+                <div class="acc_num"><span class="number">400407-01-023569</span></div>
+                <div class="acc_info_wrap">
+                    <div class="acc_info">
+                        <span class="tit">신규일</span>2015.06.16
+                    </div>
+                    <div class="acc_info">
+                        <span class="tit">만기일</span>2015.06.16
+                    </div>
+                    <div class="acc_info">
+                        <span class="tit">수익률</span><span class="state_arr up" role="text"><em class="hidden">상승</em>11.15 %</span>
+                    </div>
+                    <div class="acc_info">
+                        <span class="tit">수익률</span><span class="state_arr down" role="text"><em class="hidden">하락</em>11.15 %</span>
+                    </div>
+                </div>
+                <div class="acc_sum_wrap">
+                    <div class="acc_pay"><span class="unit">잔액</span>
+                        <strong class="number">25,120,000</strong><strong class="num_unit">원</strong>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+            </script>
+
+            <div data-class="h2">list_item_select</div>
+            <script type="text/html">
+<div class="section">
+    <ul class="list_item_select type_line">
+        <li>
+            <div class="data_wrap">
+                <strong class="number">6100085</strong>
+                <p class="tit">에스케이텔레콤</p>
+                <p class="caption">국민이 통신요금</p>
+                <div class="btn_list_btm">
+                    <span><button type="button" class="btn outline sm">수정</button></span>
+                    <span><button type="button" class="btn outline sm">삭제</button></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="data_wrap">
+                <strong class="number">6100085</strong>
+                <p class="tit">에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤</p>
+                <p class="caption">국민이 통신요금</p>
+                <div class="btn_list_btm">
+                    <span><button type="button" class="btn outline sm">수정</button></span>
+                    <span><button type="button" class="btn outline sm">삭제</button></span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="btn_list_btm more">
+        <button type="button" class="btn">더보기</button>
+    </div>
+</div>
+            </script>
+
+            <div data-class="h2">계좌선택 + 날짜</div>
+            <script type="text/html">
+<div class="section">
+    <div class="list_total">
+        <span class="selection">
+            <input type="checkbox" id="checkType1">
+            <label for="checkType1" class="label"><em>전체선택</em></label>
+        </span>
+    </div>
+    <ul class="list_comp check">
+        <li>
+            <div class="inr grid">
+                <div class="col">
+                    <span class="selection">
+                        <input type="checkbox" id="chk3_1" name="chk3" checked>
+                        <label for="chk3_1" class="label">
+                            <span class="acc_check">
+                                <span class="acc_name">김국민</span>
+                                <span class="acc_num"><span class="bank_name">KB증권</span><span class="number">400407-01-023569</span></span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="col append top"><span class="date number">2021.04.12</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="inr grid">
+                <div class="col">
+                    <span class="selection">
+                        <input type="checkbox" id="chk3_2" name="chk3" disabled>
+                        <label for="chk3_2" class="label">
+                            <span class="acc_check">
+                                <span class="acc_name">김국민</span>
+                                <span class="acc_num"><span class="bank_name">KB증권</span><span class="number">400407-01-023569</span></span>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <div class="col append top"><span class="date number">2021.04.12</span></div>
+            </div>
+        </li>
+    </ul>
+</div>
+            </script>
+
+            <script type="text/html">
+<ul class="list_comp check">
+    <li>
+        <span class="selection">
+            <input type="checkbox" id="chk1_1" name="chk1">
+            <label for="chk1_1" class="label"><em class="hidden">재인증이 필요한 계좌목록 선택</em></label>
+        </span>
+        <div class="acc">
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+            <span class="bk_pay"><em class="number">100,000</em><em class="num_unit">원</em></span>
+        </div>
+    </li>
+    <li>
+        <span class="selection">
+            <input type="checkbox" id="chk1_2" name="chk2" disabled>
+            <label for="chk1_1" class="label"><em class="hidden">재인증이 필요한 계좌목록 선택</em></label>
+        </span>
+        <div class="acc_bank">
+            <span class="icon_bank_004"></span>
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </div>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">출금계좌번호선택</div>
+            <script type="text/html">
+<ul class="acc_list">
+    <li>
+        <a href="#none" class="acc_bank">
+            <span class="icon_bank_004"></span>
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </a>
+    </li>
+    <li>
+        <a href="#none" class="acc_bank">
+            <span class="icon_bank_004"></span>
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </a>
+    </li>
+    <li>
+        <div class="acc_bank col">
+            <span class="icon_bank_004"></span>
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </div>
+    </li>
+</ul>
+            </script>
+
+            <script type="text/html">
+<div class="acc_bank col">
+    <span class="icon_bank_004"></span>
+    <span class="bk_name">KB국민</span>
+    <span class="bk_num number">574498-90-009768</span>
+</div>
+            </script>
+
+            <div data-class="h2">완료화면 > 총납부금액</div>
+            <script type="text/html">
+<ul class="list_result">
+    <li>
+        <div class="key">대학명</div>
+        <div class="value">전국대학교</div>
+    </li>
+    <li>
+        <div class="key">학생명</div>
+        <div class="value">김국민</div>
+    </li>
+    <li>
+        <div class="key">학번</div>
+        <div class="value"><span class="number">201811245</span></div>
+    </li>
+    <li>
+        <div class="key">필수납부금액</div>
+        <div class="value"><span class="number">5,200,000</span><span class="num_unit">원</span></div>
+    </li>
+    <li class="sum">
+        <div class="key">총 납부금액</div>
+        <div class="value"><span class="number">5,200,000</span><span class="num_unit">원</span></div>
+    </li>
+</ul>
+            </script>
+            <script type="text/html">
+<ul class="list_result only_sum">
+    <li class="sum">
+        <div class="key">총 납부금액</div>
+        <div class="value"><span class="number">5,200,000</span><span class="num_unit">원</span></div>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">셀렉트 바텀시트</div>
+            <div data-class="h3">기본선택형</div>
+                <script type="text/html">
+<ul class="list_item_select">
+    <li>
+        <span class="selection">
+            <input type="radio" id="radioType2_1_sm" name="radio_sm" checked>
+            <label for="radioType2_1_sm" class="label"><em>항목1</em></label>
+        </span>
+    </li>
+    <li>
+        <span class="selection">
+            <input type="checkbox" id="checkType1_1_sm" >
+            <label for="checkType1_1_sm" class="label"><em>항목1</em></label>
+        </span>
+    </li>
+</ul>
+        </script>
+        
+
+        <div data-class="h3">항목선택형 - 라인</div>
+        <script type="text/html">
+<ul class="list_item_select type_line">
+    <li>
+        <a href="#none">
+            <div class="data_wrap">
+                <strong class="number">6100085</strong>
+                <p class="tit">에스케이텔레콤</p>
+                <p class="caption">국민이 통신요금</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="#none">
+            <div class="data_wrap">
+                <strong class="number">6100085</strong>
+                <p class="tit">에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤에스케이텔레콤</p>
+                <p class="caption">국민이 통신요금</p>
+            </div>
+        </a>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">리스트 내 상세보기버튼포함</div>
+            <div data-class="notice">
+                기본타입 : ul.list_comp > li > ul.list_data > li +li<br>
+                상세보기버튼 : .btn_list_btm<br>
+                리스트상단라인제거 : ul.list_comp.noline<br>
+                .list_top_info : 1.6rem<br>
+                .list_top_info.md : 1.5rem <br>
+                .list_top_info.sm : 1.4rem
+            </div>
+            <script type="text/html">
+<ul class="list_comp noline">
+    <li>
+        <div class="acc_wrap">
+            <div class="acc_name big">계좌별명, 계좌명, 계좌상품명, 고객명, 계좌1~ 등등</div>
+        </div>
+        <ul class="list_data">
+            <li>
+                <div class="key">해지계좌번호</div>
+                <div class="value"><span class="number">195354-05-951354</span></div>
+            </li>
+            <li>
+                <div class="key">해지일자</div>
+                <div class="value"><span class="number">2021.02.16</span></div>
+            </li>
+            <li>
+                <div class="key">해지계좌종류</div>
+                <div class="value">ISA</div>
+            </li>
+            <li>
+                <div class="key">해지금액</div>
+                <div class="value"><span class="number">1,500,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <div class="btn_list_btm">
+            <span><button type="button" class="btn outline sm">채권취소</button></span>
+            <span><button type="button" class="btn outline sm">채권변경</button></span>
+        </div>
+    </li>
+    <li>
+        <div class="list_top_info">
+            <span class="number">2021.02.16</span>
+            <span>신탁</span>
+        </div>
+        <div class="list_top_info">
+            <strong><em class="number">3</em>회차 : 회차일 경우</strong>
+            <span class="number fc_gray4">2021.02.16</span>
+            <span class="fc_gray4"><em class="number fc_gray4">4</em>개월</span>
+        </div>
+        <ul class="list_data">
+            <li>
+                <div class="key">해지계좌번호</div>
+                <div class="value"><span class="number">195354-05-951354</span></div>
+            </li>
+            <li>
+                <div class="key">해지일자</div>
+                <div class="value"><span class="number">2021.02.16</span></div>
+            </li>
+            <li>
+                <div class="key">해지계좌종류</div>
+                <div class="value">ISA</div>
+            </li>
+            <li>
+                <div class="key">해지금액</div>
+                <div class="value"><span class="number">1,500,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <div class="list_btm_info">
+            <span>여의도전경련</span>
+            <span>김서욱</span>
+            <span>기일입금</span>
+        </div>
+    </li>
+    <li>
+        <div class="acc_wrap">
+            <div class="acc_top_info">청약</div>
+            <div class="acc_name">KB내맘대로적금(자유)</div>
+            <div class="acc_num"><span class="number">031503-04-076441</span></div>
+        </div>
+        <ul class="list_data">
+            <li>
+                <div class="key">해지계좌번호</div>
+                <div class="value"><span class="number">195354-05-951354</span></div>
+            </li>
+            <li>
+                <div class="key">해지일자</div>
+                <div class="value"><span class="number">2021.02.16</span></div>
+            </li>
+            <li>
+                <div class="key">해지계좌종류</div>
+                <div class="value">신탁</div>
+            </li>
+            <li>
+                <div class="key">해지금액</div>
+                <div class="value"><span class="number">500,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <p class="depth info">만기일에 3회(최초 계약기간 포함)까지 재예치합니다.</p>
+        <div class="btn_list_btm">
+            <span><button type="button" class="btn outline sm">신청</button></span>
+        </div>
+    </li>
+</ul>
+</script>
+            
+            <!--
+            <div data-class="h2">이체완료 : 계좌 요약 목록</div>
+            <div data-class="notice">
+                리스트에 계좌명 + 계좌번호(font:17) 일경우 : .list_comp.noline<br>
+            </div>
+            <script type="text/html">
+
+<ul class="list_comp noline">
+    <li>
+        <div class="acc_wrap">
+            <div class="acc_name">KB내맘대로적금(자유)</div>
+            <div class="acc_info"></div>
+            <div class="acc_num"><span class="number">031503-04-076441</span></div>
+        </div>
+        <ul class="list_data">
+            <li>
+                <div class="key">해지계좌번호</div>
+                <div class="value"><span class="number">195354-05-951354</span></div>
+            </li>
+            <li>
+                <div class="key">해지일자</div>
+                <div class="value"><span class="number">2021.02.16</span></div>
+            </li>
+            <li>
+                <div class="key">해지계좌종류</div>
+                <div class="value">신탁</div>
+            </li>
+            <li>
+                <div class="key">해지금액</div>
+                <div class="value"><span class="number">500,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <p class="depth info">만기일에 3회(최초 계약기간 포함)까지 재예치합니다.</p>
+        <div class="btn_list_btm">
+            <span><button type="button" class="btn outline sm">신청</button></span>
+        </div>
+    </li>
+</ul>
+            </script>
+            -->
+            <!-- 20210513 권지연 숨김 
+            <div data-class="h2">이체완료 : 계좌 요약 목록</div>
+            <script type="text/html">
+    <div class="article transfer_sum">
+    <ul class="list_data">
+        <li>
+            <div class="key">받는계좌</div>
+            <div class="value">
+                <p class="bank_wrap"><span class="bank">우리은행</span><span class="account">0721-04-0935-4535</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="key">출금계좌</div>
+            <div class="value">
+                <p class="bank_wrap"><span class="bank">국민은행</span><span class="account">1002-903-009846</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="key">출금 후 잔액</div>
+            <div class="value">
+                <p class="balance_wrap"><span class="balance">17,000,000</span><span class="unit">원</span></p>
+            </div>
+        </li>
+    </ul>
+    <ul class="list_data">
+        <li>
+            <div class="key"><a href="#none">자동이체</a></div>
+            <div class="value">
+                <button type="button" class="js_toggle">이체 상세정보</button>
+            </div>
+        </li>
+    </ul>
+    </div>
+            </script>
+        -->
+
+            <div data-class="h2">리스트 상세보기 토글</div>
+            <div data-class="h3">예시1</div>
+            <script type="text/html">
+<ul class="list_comp">
+    <li>
+        <ul class="list_data">
+            <li>
+                <div class="key">회차</div>
+                <div class="value"><span class="number">1</span></div>
+            </li>
+            <li>
+                <div class="key">가입자지급금액(A-B)</div>
+                <div class="value"><span class="number">51.356,312</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <div class="toggle_sm_wrap gap_xs_2">
+            <button class="tit js_toggle" aria-expanded="false">상세보기</button>
+            <div class="toggle_panel pdt_0" role="region">
+                <ul class="list_data sm">
+                    <li>
+                        <div class="key">세전금액(A)</div>
+                        <div class="value"><span class="number">51.356,312</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">세금합계(B)</div>
+                        <div class="value"><span class="number">51.356,312</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">수수료</div>
+                        <div class="value"><span class="number">51.356,312</span><span class="num_unit">원</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>
+            </script>
+            <div data-class="h3">예시2</div>
+            <script type="text/html">
+<ul class="list_comp check">
+    <li><!-- 개발 : 항목이 루프될때마다 id, label for, hidden 텍스트의 숫자 넘버링 맞춰주세요. -->
+        <span class="selection">
+            <input type="radio" id="radio_id_item1" name="radio_name_item" checked><!-- 개발 : id 카운팅 -->
+            <label for="radio_id_item1" class="label"><em class="hidden">일부해지예약 계좌1</em></label><!-- 개발 : label for, hidden 텍스트의 숫자 넘버링 맞춰주세요. -->
+        </span>
+        <ul class="list_data">
+            <li>
+                <div class="key">종목명</div>
+                <div class="value">종목명</div>
+            </li>
+            <li>
+                <div class="key">가능량</div>
+                <div class="value"><span class="number">strAbilQanty</span><span class="num_unit">g</span></div>
+            </li>
+            <li>
+                <div class="key">수익률(%)</div>
+                <div class="value"><span class="number">15.25</span><span class="num_unit">%</span></div>
+            </li>
+            <li>
+                <div class="key">손익금액</div>
+                <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <div class="toggle_sm_wrap type1">
+            <div class="toggle_panel" role="region">
+                <ul class="list_data">
+                    <li>
+                        <div class="key">종목코드</div>
+                        <div class="value">strItemsCd</div>
+                    </li>
+                    <li>
+                        <div class="key">보유량</div>
+                        <div class="value"><span class="number">strHoldzQanty</span><span class="num_unit">g</span></div>
+                    </li>
+                    <li>
+                        <div class="key">매입단가</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">매입금액</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">전일종가</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">평가금액</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                </ul>
+            </div>
+            <button class="tit js_toggle" aria-expanded="false">상세내역 보기</button>
+        </div>
+    </li>
+    <li>
+        <span class="selection">
+            <input type="radio" id="radio_id_item2" name="radio_name_item" disabled>
+            <label for="radio_id_item2" class="label"><em class="hidden">일부해지예약 계좌2</em></label>
+        </span>
+        <ul class="list_data">
+            <li>
+                <div class="key">종목명</div>
+                <div class="value">종목명</div>
+            </li>
+            <li>
+                <div class="key">가능량</div>
+                <div class="value"><span class="number">strAbilQanty</span><span class="num_unit">g</span></div>
+            </li>
+            <li>
+                <div class="key">수익률(%)</div>
+                <div class="value"><span class="number">15.25</span><span class="num_unit">%</span></div>
+            </li>
+            <li>
+                <div class="key">손익금액</div>
+                <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+            </li>
+        </ul>
+        <div class="toggle_sm_wrap type1">
+            <div class="toggle_panel" role="region">
+                <ul class="list_data">
+                    <li>
+                        <div class="key">종목코드</div>
+                        <div class="value">strItemsCd</div>
+                    </li>
+                    <li>
+                        <div class="key">보유량</div>
+                        <div class="value"><span class="number">strHoldzQanty</span><span class="num_unit">g</span></div>
+                    </li>
+                    <li>
+                        <div class="key">매입단가</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">매입금액</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">전일종가</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                    <li>
+                        <div class="key">평가금액</div>
+                        <div class="value"><span class="number">1,000,000</span><span class="num_unit">원</span></div>
+                    </li>
+                </ul>
+            </div>
+            <button class="tit js_toggle" aria-expanded="false">상세내역 보기</button>
+        </div>
+    </li>
+</ul>
+            </script>
+
+            <!-- <div data-class="h2">계좌 거래 내역</div>
+            <script type="text/html">
+    <div class="account_detail">
+    <ul class="list">
+        <li>
+            <div class="in">
+                <div class="date_wrap"><span class="date">2020.12.10</span> <span class="day">(목)</span></div>
+                <div class="row">
+                    <div class="col col_l">
+                        <p class="breakdown_wrap"><span class="breakdown">펀차이나코스요리</span></p>
+                        <p class="breakdown_wrap"><span class="breakdown_sub">식비</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <p class="breakdown_amount"><span class="balance">-320,000</span><span class="unit">원</span></p>
+                        <p class="balance_wrap"><span class="hidden">잔액</span><span class="balance">725,196</span><span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="in">
+                <div class="date_wrap"><span class="date">2020.12.10</span> <span class="day">(목)</span></div>
+                <div class="row">
+                    <div class="col col_l">
+                        <p class="breakdown_wrap"><span class="breakdown">KB손해보험</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <p class="breakdown_amount"><span class="balance">-55,000</span><span class="unit">원</span></p>
+                        <p class="balance_wrap"><span class="hidden">잔액</span><span class="balance">1,045,196</span><span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="in">
+                <div class="date_wrap"><span class="date">2020.12.10</span> <span class="day">(목)</span></div>
+                <div class="row">
+                    <div class="col col_l">
+                        <p class="breakdown_wrap"><span class="breakdown">조재영</span></p>
+                        <p class="breakdown_wrap"><span class="breakdown_sub">카카오뱅크 입금</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <p class="breakdown_amount income"><span class="balance">+100,000</span><span class="unit">원</span></p>
+                        <p class="balance_wrap"><span class="hidden">잔액</span><span class="balance">1,100,196</span><span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+	<div class="btn_list_btm more">
+		<button type="button" class="btn">최근 1개월 거래내역 더보기</button>
+	</div>
+</div>
+            </script>
+            
+            <div data-class="h2">계좌 검색 결과 목록</div>
+            <script type="text/html">
+    <div class="article account_detail">
+    <ul class="list">
+        <li>
+            <div class="in">
+                <div class="date_wrap"><span class="date">2020.12.10</span> <span class="day">(목)</span></div>
+                <div class="row">
+                    <div class="col col_l">
+                        <p class="breakdown_wrap"><span class="breakdown fcblue">대출원리금</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <p class="breakdown_amount"><span class="balance">-320,000</span><span class="unit">원</span></p>
+                        <p class="balance_wrap"><span class="hidden">잔액</span><span class="balance">725,196</span><span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="in">
+                <div class="date_wrap"><span class="date">2020.12.09</span> <span class="day">(목)</span></div>
+                <div class="row">
+                    <div class="col col_l">
+                        <p class="breakdown_wrap"><span class="breakdown fcblue">대출원리금</span></p>
+                    </div>
+                    <div class="col col_r">
+                        <p class="breakdown_amount"><span class="balance">-55,000</span><span class="unit">원</span></p>
+                        <p class="balance_wrap"><span class="hidden">잔액</span><span class="balance">1,045,196</span><span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    </div>
+            </script> -->
+
+            <div data-class="h2">계좌 목록</div>
+            <div data-class="notice">날짜 명도대비 3:1 (디자인 확인 필요)</div>
+            <script type="text/html">
+<ul class="acc_list">
+    <li>
+        <div class="acc_bank">
+            <span class="icon_bank_004"></span>
+            <span class="bk_user">김국민 (별명)</span>
+            <span class="bk_name">KB국민</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </div>
+        <button type="button" class="btn_favorite toggle" aria-pressed="false"><span class="hidden">즐겨찾기</span></button>
+    </li>
+    <li>
+        <a href="#none" class="link">
+            <span class="bk_user">나비보벳따우</span>
+            <span class="bk_num number">574498-90-009768</span>
+        </a>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">바틈시트 : 추가 본인 인증</div>
+            <script type="text/html">
+    <div class="article">
+    <ul class="certify_2nd">
+        <li>
+            <a href="#none">
+                <i class="ico_48_person_stroke round"></i>
+                <span class="desc">ARS 인증요청</span>
+            </a>
+        </li>
+        <li>
+            <a href="#none">
+                <i class="ico_48_square_stroke round"></i>
+                <span class="desc">해외출국확인</span>
+            </a>
+        </li>
+    </ul>
+    </div>
+            </script>
+<!--
+            <div data-class="h2">바틈시트 : 이체 정보 확인</div>
+            <script type="text/html">
+    <div class="article">
+    <div class="transfer_noti">
+        <strong>김국민</strong>님에게 <br>
+        <span class="balance">75,000,000</span><span class="unit">원</span> 을 이체합니다.
+    </div>
+    <div class="transfer_info">
+        <i class="ico_bank_kb s32"><span class="hidden">KB국민은행</span></i>
+        <span class="account_holder">박만세</span>
+        <span class="account">010-1123-00056</span>
+        <span class="bank">(KB국민)</span>
+    </div>
+    </div>
+            </script>
+        -->
+            <div data-class="h2">계좌그룹</div>
+            <script type="text/html">
+<ul class="acc_group_wrap js_accordion live">
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">기본</a>
+        <div class="toggle_panel" role="region">
+            <ul class="acc_list">
+                <li>
+                    <div class="acc_bank">
+                        <span class="icon_bank_004"></span>
+                        <span class="bk_user">김국민 (별명)</span>
+                        <span class="bk_name">KB국민</span>
+                        <span class="bk_num number">574498-90-009768</span>
+                    </div>
+                    <button type="button" class="btn_favorite toggle" aria-pressed="false"><span class="hidden">즐겨찾기</span></button>
+                </li>
+                <li>
+                    <a href="#none" class="link">
+                        <span class="bk_user">나비보벳따우</span>
+                        <span class="bk_num number">574498-90-009768</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <a href="#none" role="button" class="tit" aria-expanded="false">우리집</a>
+        <div class="toggle_panel" role="region">
+            <ul class="acc_list">
+                <li>
+                    <div class="acc_bank">
+                        <span class="icon_bank_004"></span>
+                        <span class="bk_user">김국민 (별명)</span>
+                        <span class="bk_name">KB국민</span>
+                        <span class="bk_num number">574498-90-009768</span>
+                    </div>
+                    <button type="button" class="btn_favorite toggle" aria-pressed="false"><span class="hidden">즐겨찾기</span></button>
+                </li>
+                <li>
+                    <a href="#none" class="link">
+                        <span class="bk_user">나비보벳따우</span>
+                        <span class="bk_num number">574498-90-009768</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
+            </script>
+            <script type="text/html">
+<ul class="acc_group_wrap">
+    <li>
+        <div class="tit">기본</div>
+        <ul class="acc_list">
+            <li>
+                <div class="acc_bank">
+                    <span class="icon_bank_004"></span>
+                    <span class="bk_user">김국민 (별명) <em class="number date">2021.01.30</em></span>
+                    <span class="bk_name">KB국민</span>
+                    <span class="bk_num number">574498-90-009768</span>
+                    <span class="bk_pay"><em class="number">100,000</em><em class="num_unit">원</em></span>
+                </div>
+                <div class="btn_list_btm">
+                    <span><button type="button" class="btn outline sm">상세보기</button></span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span class="bk_user">김국민 (별명) <em class="number date">2021.01.30</em></span>
+                    <span class="bk_name">KB국민</span>
+                    <span class="bk_num number">574498-90-009768</span>
+                    <span class="bk_pay"><em class="number">100,000</em><em class="num_unit">원</em></span>
+                </div>
+                <div class="btn_list_btm">
+                    <span><button type="button" class="btn outline sm">상세보기</button></span>
+                </div>
+            </li>
+            <li>
+                <a href="#none" class="link">
+                    <span class="bk_user">나비보벳따우</span>
+                    <span class="bk_num number">574498-90-009768</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+            </script>
+
+            <div data-class="h2">인증서</div>
+            <script type="text/html">
+<ul class="list_comp certify_icon noline">
+    <li>
+        <a href="#none" role="button" class="certify_pannel">
+            <span class="ico_state_def"><span class="hidden">일반</span></span> <!-- 210713 수정(아이콘 UI 수정. case1:일반) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number fc_point">2020.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number fc_point">2021.12.10</span>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <!-- 바텀시트가 실행시 -->
+        <a href="#none" role="button" class="certify_pannel">
+            <span class="ico_state_def"><span class="hidden">일반</span></span> <!-- 210713 수정(아이콘 UI 수정. case1:일반) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number">2020.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number">2021.12.10</span>
+                </div>
+            </div>
+        </a>
+        <!-- //바텀시트가 실행시 -->
+    </li>
+    <li>
+        <!-- 링크값이 없을 경우 : .certify_pannel 의 A 태그를 div 태그로 변경 -->
+        <div class="certify_pannel">
+            <span class="ico_state_def"><span class="hidden">일반</span></span> <!-- 210713 수정(아이콘 UI 수정. case1:일반) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number">2020.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number">2021.12.10</span>
+                </div>
+            </div>
+        </div>
+        <!-- //링크값이 없을 경우 : .certify_pannel 의 A 태그를 div 태그로 변경 -->
+    </li>
+    <li>
+        <!-- 갱신가능 인증서 -->
+        <a href="#none" role="button" class="certify_pannel">
+            <span class="ico_state_renew"><span class="hidden">갱신</span></span> <!-- 210713 수정(아이콘 UI 수정. case2:갱신) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number fc_point">2020.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number fc_point">2021.12.10</span> <span class="fc_nega">(20일전)</span>
+                </div>
+            </div>
+        </a>
+        <!-- //갱신가능 인증서 -->
+    </li>
+    <li>
+        <!-- 만료된 인증서 -->
+        <a href="#none" role="button" class="certify_pannel expir"> <!-- 210527 수정(A 태그로 수정) -->
+            <span class="ico_state_def"><span class="hidden">일반</span></span> <!-- 210713 수정(아이콘 UI 수정. case1:일반) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number fc_point">2019.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number fc_point">2020.12.10</span> <span class="hidden">(만료됨)</span> <!-- 210713 수정 (.fc_point 클래스가 .hidden 으로 변경) -->
+                </div>
+            </div>
+        </a>
+        <!-- //만료된 인증서 -->
+    </li>
+    <li>
+        <!-- 만료된 인증서_링크값이 없을 경우 : .certify_pannel 의 A 태그를 div 태그로 변경 -->
+        <div class="certify_pannel expir"> <!-- 210527 수정(A 태그로 수정) -->
+            <span class="ico_state_def"><span class="hidden">일반</span></span> <!-- 210713 수정(아이콘 UI 수정. case1:일반) -->
+            <div class="certify_name">김국민</div>
+            <div class="certify_num number">202033899092020338990</div>
+            <div class="certify_info_wrap">
+                <div class="certify_info">
+                    <span class="tit">은행개인</span><span class="number">yessing</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">발급일</span><span class="number fc_point">2019.12.10</span>
+                </div>
+                <div class="certify_info">
+                    <span class="tit">만료일</span><span class="number fc_point">2020.12.10</span> <span class="hidden">(만료됨)</span> <!-- 210713 수정 (.fc_point 클래스가 .hidden 으로 변경) -->
+                </div>
+            </div>
+        </div>
+        <!-- //만료된 인증서_링크값이 없을 경우 : .certify_pannel 의 A 태그를 div 태그로 변경 -->
+    </li>
+</ul>
+            </script>
+
+        </div>
+    </div>
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>   
+    
+    <!-- drag set -->
+    <script type="text/javascript" src="/mnbank/app/js/library/sortable.min.js"></script>
+    <script>     
+        $(function(){
+            var drag_id = new Array(
+                'drag' /* 연결 id명 */
+            );
+            accountSetup(drag_id);
+
+            var drag_id2 = new Array(
+                'drag2' 
+            );
+
+            accountSetup(drag_id2);
+            function accountSetup(id){
+                for(var i = 0; i < id.length; i++){
+                    Sortable.create( document.getElementById(id[i]), {
+                        handle: '.btn_move',
+                        animation: 150,
+                        scrollSensitivity: 30,
+                    });
+                }
+            }
+
+            var drag_id3 = new Array(
+                'drag3' 
+            );
+
+            accountSetup(drag_id3);
+            function accountSetup(id){
+                for(var i = 0; i < id.length; i++){
+                    Sortable.create( document.getElementById(id[i]), {
+                        handle: '.btn_move',
+                        animation: 150,
+                        scrollSensitivity: 30,
+                    });
+                }
+            }
+
+            
+            
+        });
+    </script>
+    <!-- //drag set -->
+    
+</body>
+</html>

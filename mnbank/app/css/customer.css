@@ -1,0 +1,422 @@
+@charset "utf-8"; 
+
+/* slogan */
+.cate_customer .slogan_consumer_protection .img {height:18rem; background:url(/mnbank/app/img/customer/cust_img04.png) no-repeat 50% 0; background-size:auto 18rem; margin-top:0;}
+
+/* 고객센터 > 고객상담_인덱스 */
+.cate_customer .list_index.counseling li::before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_counseling.png) no-repeat 0 0; background-size:36rem auto;}
+/*.cate_customer .list_index.counseling .item1::before {background-position:0 0;}*/
+.cate_customer .list_index.counseling .item1::before {background: url(/mnbank/app/img/customer/ico_store1.png) no-repeat 0 0 /8rem 4rem;} /* 아이콘 변경 (2022-09-29) */
+.cate_customer .list_index.counseling .item2::before {background-position:-4rem 0;}
+.cate_customer .list_index.counseling .item3::before {background-position:-8rem 0;}
+.cate_customer .list_index.counseling .item4::before {background-position:-12rem 0;}
+.cate_customer .list_index.counseling .item5::before {background-position:-16rem 0;}
+.cate_customer .list_index.counseling .item6::before {background-position:-20rem 0;}
+.cate_customer .list_index.counseling .item7::before {background-position:-24rem 0;}
+.cate_customer .list_index.counseling .item8::before {background-position:-28rem 0;}
+.cate_customer .list_index.counseling .item9::before {background-position:-32rem 0;}
+/* 전문가 상담 아이콘 추가 (220621) */
+.cate_customer .list_index.counseling .item10::before {background:url(/mnbank/app/img/customer/ico_counseling2.png) no-repeat 0 0 /4rem 4rem;}
+/* 전화상담 신청 아이콘 추가 (220810) */
+.cate_customer .list_index.counseling .item11::before {background: url(/mnbank/app/img/customer/ico_customer_220810.png) no-repeat 50% 50% /3rem 3rem;}
+
+/* list_link + icon */
+/* 지점찾기 > 내가 발행한 번호표 보기(store1) */
+.cate_customer .hr_divide + .list_link.store1 {margin-top:-2rem;}
+.cate_customer .hr_divide + .list_link.store1 li::before {background-image:url(/mnbank/app/img/customer/ico_store1.png); background-size:8rem auto;}
+.cate_customer .list_link.store1 .item1::before {background-position:0 0;}
+.cate_customer .list_link.store1 .item2::before {background-position:-4rem 0;}
+
+/* 지점찾기 > 지점찾기/번호표발행/조회_검색결과(T) */
+.cate_customer .list_link.store2 .item1::before {background-position:-12rem 0;}
+.cate_customer .list_link.store2 .item2::before {background-position:-12rem 0;}
+
+.cate_customer .list_link.store3 > li {border-radius:.8rem; border:1px solid var(--bdc_01, #ebeef0);}
+.cate_customer .list_link.store3 > li + li {margin-top:.8rem;}
+.cate_customer .list_link.store3 > li:before {width:4rem; height:4rem; top:50% !important; left:1.2rem; border-radius:0;}
+.cate_customer .list_link.store3 > li > .link::after {right:2.6rem; margin-top:-.2rem !important;}
+.cate_customer .list_link.store3 li:before{margin-top:-2rem; background-image:url(/mnbank/app/img/customer/ico_store3.png); background-size:12rem auto;}
+.cate_customer .list_link.store3 li.item3:before {background-position:-8rem 0;}
+/* [전담반 Biz-202] 지점찾기 화면 지점검색 UI개선 s */
+.cate_customer .list_link.icon.store3 {display:table; table-layout:fixed; width:100%;}
+.cate_customer .list_link.icon.store3 li {display:table-cell; width:49%; border:none;}
+.cate_customer .list_link.icon.store3 li:before {width:3.2rem; height:3.2rem; left:1rem; margin-top:-1.6rem; background:url(/mnbank/app/img/customer/ico_list_store3.png); background-size:6.4rem auto;}
+.cate_customer .list_link.icon.store3 li.item2:before {left:1.8rem; background-position:-3.2rem 0;}
+.cate_customer .list_link.store3 > li > .link {height:7.2rem; padding:1.6rem 1rem 1.6rem 5rem !important; border:1px solid var(--fc_08, #dde1e4); border-radius: .8rem; font-size:1.4rem; font-weight:400;} 
+.cate_customer .list_link.icon.store3 > li > .link::after {display:none;}
+.cate_customer .list_link.icon.store3 > li + li {width:51%; padding-left:.8rem;}
+/* [전담반 Biz-202] 지점찾기 화면 지점검색 UI개선 e */
+
+/* 고객상담 > 전화상담  */
+.cate_customer .list_link.ars1 li:first-child {margin-top:2.6rem;}
+.cate_customer .list_link.ars1 li::before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_ars.png) no-repeat 0 0; background-size:24rem auto;}
+.cate_customer .list_link.ars1 .item1::before {background-position:0 0;}
+.cate_customer .list_link.ars1 .item2::before {background-position:-4rem 0;}
+.cate_customer .list_link.ars1 .item3::before {background-position:-8rem 0;}
+.cate_customer .list_link.ars1 .item4::before {background-position:-12rem 0;}
+.cate_customer .list_link.ars2 li:before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_ars.png) no-repeat 0 0; background-size:24rem auto;}
+.cate_customer .list_link.ars2 .item1::before {background-position:-16rem 0;}
+.cate_customer .list_link.ars2 .item2::before {background-position:-20rem 0;}
+
+/* 금융소비자보호법 안내 */
+.cate_customer .list.customer_pro li:first-child {margin-top:2rem;}
+.cate_customer .list.customer_pro li::before {background:url(/mnbank/app/img/customer/ico_customer_pro.png) no-repeat; background-size:24rem auto;}
+.cate_customer .list.customer_pro .item01::before {background-position:0 0;}
+.cate_customer .list.customer_pro .item02::before {background-position:-4rem 0;}
+.cate_customer .list.customer_pro .item03::before {background-position:-8rem 0;}
+.cate_customer .list.customer_pro .item04::before {background-position:-12rem 0;}
+.cate_customer .list.customer_pro .item05::before {background-position:-16rem 0;}
+.cate_customer .list.customer_pro .item06::before {background-position:-20rem 0;}
+
+/* 금융소비자보호법 안내 */
+.cate_customer .list_link.customer_club .item1::before {background-position:-12rem 0;}
+.cate_customer .list_link.customer_club .item2::before {background-position:-12rem 0;}
+.cate_customer .list_link.customer_club .item3::before {background-position:-12rem 0;}
+
+/* 민원접수 */
+.cate_customer .list_link.tel li::before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_ars.png) no-repeat 0 0; background-size:24rem auto;}
+.cate_customer .list_link.tel .item1::before {background-position:-16rem 0;}
+.cate_customer .list_link.tel .item2::before {background-position:-20rem 0;}
+.cate_customer .list_link.tel .item3::before {background-position:0 -4rem;}
+
+/* list + icon */
+/* 사고신고 > 신고조회해제  */
+.cate_customer .list.icon.report li::before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_report.png) no-repeat 0 0; background-size:8rem auto;}
+.cate_customer .list.icon.report .item1::before {background-position:0 0;}
+
+/* 통합리워드 > 나의 서비스 */
+.cate_customer .list.icon.reward li::before {content:''; display:block; width:4rem; height:4rem; background:url(/mnbank/app/img/customer/ico_reward.png) no-repeat 0 0; background-size:16rem auto;}
+.cate_customer .list.icon.reward .item1::before {background-position:0 0;}
+.cate_customer .list.icon.reward .item2::before {background-position:-4rem 0;}
+.cate_customer .list.icon.reward .item3::before {background-position:-8rem 0;}
+.cate_customer .list.icon.reward .item4::before {background-position:-12rem 0;}
+
+/* 전화상담 */
+.cate_customer .list_link.ars2 li .link:after {width:2.4rem; height:2.4rem; background-image:url(/mnbank/app/img/common/spr_ico_24x.png); background-position:-2.4rem -12rem; background-size:25rem auto; margin-top:-1.2rem; border:0; -webkit-transform:rotate(0deg); transform:rotate(0deg);}
+
+/* 고객센터 인증연계(팝업) */
+.cate_customer .link_wrap {text-align:center; margin-top:4rem;}
+.cate_customer .link_wrap:before {content:''; display:block; width:4.8rem; height:4.8rem; background:url(/mnbank/app/img/customer/ico_customer_48x.png) no-repeat; background-size:19.2rem auto; background-position:0 0; margin:0 auto}
+.cate_customer .link_wrap .tit {padding:2.8rem 0 2rem; font-size:2.4rem; font-weight:700;}
+
+/* accordion + icon */
+/* KB스타뱅킹 길라잡이 */
+.cate_customer .list_acco.icon.starguide1 .tit::before {background:url(/mnbank/app/img/customer/ico_starguide1.png) no-repeat 0 0; background-size:20rem auto;}
+.cate_customer .list_acco.icon.starguide1 .item1 .tit::before {background-position:0 0;}
+.cate_customer .list_acco.icon.starguide1 .item2 .tit::before {background-position:-4rem 0;}
+.cate_customer .list_acco.icon.starguide1 .item3 .tit::before {background-position:-8rem 0;}
+.cate_customer .list_acco.icon.starguide1 .item4 .tit::before {background-position:-12rem 0;}
+.cate_customer .list_acco.icon.starguide1 .item5 .tit::before {background-position:-16rem 0;}
+.cate_customer .list_acco.icon.starguide1 .item6 .tit::before {background:url(/mnbank/app/img/customer/ico_starguide1_1.png) no-repeat 0 0; background-size:24rem auto;background-position:-20rem 0;} /*알림서비스*/
+
+/* 정예원 */
+/* 고객센터 > 고객상담_인덱스 */
+.cate_customer .slogan_wrap.counseling .txt {position:relative; height:13.6rem; color:var(--fc_04, #696e76) !important; z-index:1}
+.cate_customer .slogan_wrap.counseling .txt:after {content:''; display:block; position:absolute; top:1rem; right:0; width:18.3rem; height:12.6rem; background:url(/mnbank/app/img/customer/img_counseling_index.png) no-repeat; background-size:auto 12.6rem; z-index:-1;}
+
+/* 편의점 제휴 ATM찾기 */
+.cate_customer .section.office {margin-top:1.2rem;}
+.cate_customer .section.office .list li {padding:2rem 0;}
+.cate_customer .section.office > .list:first-child > li:first-child {padding-top:2rem;}
+.cate_customer .list .office_info .f_wrap {margin:1.2rem 0;}
+
+/* 통장/인감분실신고해제계좌선택 */
+/* .cate_customer .list_top_wrap {color:var(--fc_01, #000);} */
+.cate_customer .btn_txt.ico_arr.loss_faq {margin-bottom:4rem; width:100%; text-align:right;}
+.cate_customer .list_comp.loss {border-top:0;}
+.cate_customer .list_comp.loss .acc_name {font-weight:700;}
+.cate_customer .list_comp.loss .acc_num {font-weight:400; color:var(--fc_04, #696e76);}
+.cate_customer .list_comp.loss .acc_num .number {font-size:1.5rem;}
+.cate_customer .list_comp.loss .acc_info .tit {width:auto; font-size:1.4rem; color:#f23f3f;margin-right:0;} /*0924 sy*/
+
+/* 통장/인감/현검/직불카드 사고신고내역조회 */
+.cate_customer .list_data.inquiry {margin-bottom:3rem; border-top:1px solid var(--bdc_01, #ebeef0);border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.cate_customer .list_data.inquiry .key {font-weight:700; color:var(--fc_02, #26282c);}
+.cate_customer .list_data.inquiry .value {color:var(--fc_04, #696e76);}
+
+/* 나의 서비스 */
+.cate_customer .grade_info_wrap {margin-top:2.4rem;}
+.cate_customer .grade_info_wrap .badge[class *= rank] {margin:0 auto;}
+.cate_customer .grade_name {margin-top:2.8rem; text-align:center; font-size:2.8rem;}
+.cate_customer .grade_name .sub {display:block; margin-top:1.2rem; font-size:1.6rem; color:var(--fc_04, #696e76);}
+.cate_customer .grade_info {border-top:1px solid var(--bdc_01, #ebeef0); border-bottom:1px solid var(--bdc_01, #ebeef0); padding:2rem 0; margin-top:2rem;}
+.cate_customer .grade_wrap .h2 {font-size:2rem; border-bottom:1px solid var(--bdc_02, #696e76); padding-bottom:1.6rem;}
+.cate_customer .grade_wrap .h3 {font-size:1.8rem;}
+.cate_customer .grade_wrap .depth.sub {border-top:1px solid var(--bdc_01, #ebeef0); border-bottom:1px solid var(--bdc_01, #ebeef0); padding:2rem 0; margin-top:1.6rem;}
+.cate_customer .grade_wrap .depth.sub li {font-size:1.5rem; color:var(--fc_03, #484b51);}
+.cate_customer .grade_wrap .depth.sub li .depth.dash li {color:var(--fc_04, #696e76);}
+
+/* 통합리워드 내역조회 */
+.cate_customer .list_top_wrap.reward_sum {border-top:1px solid var(--fc_03, #484b51); border-bottom:1px solid var(--fc_03, #484b51); padding:2rem 0; margin-bottom:2.4rem;}
+.cate_customer .list_top_wrap.reward_sum .col_l {font-weight:700;}
+.cate_customer .list_top_wrap.reward_sum .col_r .total_num {font-size:1.8rem;}
+.cate_customer .list_top_wrap.reward_sum .col_r .total_num .number {font-size:1.9rem; font-weight:700;}
+.cate_customer .list_acco.reward_money .total_num {float:right;}
+.cate_customer .list_acco.reward_money .total_num .number {font-size:1.7rem; font-weight:700;}
+
+/* KB스타클럽 등급 */
+.grade_state_line {position:relative; min-height:9.6rem; padding:2.3rem 0 2.7rem 10.1rem; border-top:1px solid var(--fc_05, #8c949e); border-bottom:1px solid var(--fc_05, #8c949e); color:var(--fc_02, #26282c); font-size:1.8rem; line-height:1.4;}
+.grade_state_line .icon_star_grade {position:absolute; left:3rem; top:2rem; width:4.05rem; height:5.6rem; }
+
+.cate_customer .list.icon.report li {padding-right:0;}
+
+/* 영업시간 특화지점 찾기 */
+.cate_customer .map_wrap {margin-top:0; color:var(--fc_01,#000)}
+.cate_customer .map_wrap.first_gap {margin-top:-.6rem;}
+.cate_customer .tab_panel [class^=section] .search_wrap {padding-top:0;}
+.cate_customer .tab_wrap .tab_list ~ .map_wrap {margin-top:3.2rem;}
+
+/* 소비자정보포털 */
+.list_declare > li {position:relative; margin-top:1.2rem; padding:0 0.2rem 0 4.5rem;}
+.list_declare > li:before {content:'하나,'; position:absolute; top:0; left:0; margin-right:12px; font-weight:700;}
+.list_declare > li:first-child {margin-top:0;}
+.cate_customer .img_area {margin-bottom:4rem;}
+
+.cate_customer .article_tb_border {padding:1.6rem 0.2rem; border-top:1px solid var(--bdc_01, #ebeef0); border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.cate_customer .depth.num .list.icon {margin-left:-2.4rem;}
+
+/* 사고신고/신고하기/발행점번호 찾기 */
+.list_address {border-top:1px solid var(--bdc_01, #ebeef0);}
+.list_address > li {padding:2rem 0.2rem; border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.list_address .addr_wrap .addr_tit {font-size:1.7rem; color:var(--fc_02, #26282c); font-weight:700;}
+.list_address .addr_wrap .addr_name {font-size:1.6rem;}
+.list_address .addr_wrap .addr_name .number {font-size:1.7rem;}
+
+/* 지점찾기_지점찾기/번호표발행/조회_검색결과 */
+.cate_customer .waiting_wrap {position:relative; border:1px solid var(--bdc_01, #ebeef0); border-radius:.8rem;}
+.cate_customer .waiting_wrap a {display:block; width:100%; padding:2rem;}
+.cate_customer .waiting_wrap a:after {content:''; display:block; position:absolute; right:2.6rem; top:50%; width:.9rem; height:.9rem; border:solid #8c949e; border-width:0 1px 1px 0; -webkit-transform:rotate(-45deg) translateY(-50%); transform:rotate(-45deg) translateY(-50%);}
+.cate_customer .waiting_wrap .ticket {margin-top:.6rem; font-size:1.8rem; font-weight:700; line-height:1.2;} /* [전담반 Biz-202] 지점찾기 화면 지점검색 UI개선 : 수정 */
+.cate_customer .waiting_wrap .ticket .number {font-size:2rem;}
+.cate_customer .list_link.store2 li {width:48%; float:left; border:0; margin-bottom:2rem;}
+.cate_customer .list_link.store2 li + li {margin-left:4%;}
+.cate_customer .list_link.icon.store2 li:first-child a {padding-top:0;}
+.cate_customer .list_link.store2 li:before {top:0;}
+.cate_customer .list_link.store2 li .link:after {display:none;}
+.cate_customer .list_link.store2 a {padding:1rem 0 0 4.8rem; padding:0 0 0 4.8rem; font-size:1.6rem;}
+.cate_customer .list_link.store2 .btn_txt.ico_arr.sm {display:block; width:6.5rem; font-weight:400; margin:1.2rem 0 0;}
+.cate_customer .search_wrap {clear:both;}
+.cate_customer .filter {position:relative; height:4.8rem; margin:1.6rem 0 3.2rem; padding:0 2.4rem; background:var(--bg_02, #f7f7f8); font-size:1.4rem;}
+.cate_customer .filter_result {position:relative; padding-right:3rem;}
+.cate_customer .filter_area {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height:4.8rem;}
+.cate_customer .filter_area span:not(:first-child) {position:relative; padding-left:.7rem;}
+.cate_customer .filter_area span:not(:first-child):before {content:''; display:inline-block; position:absolute; left:0; top:50%; width:.2rem; height:.2rem; background:var(--fc_02, #26282c);}
+.cate_customer .filter .btn_ico_filter {position:absolute; top:50%; right:1.4rem; width:4.4rem; height:4.4rem; margin-top:-2.2rem;}
+.cate_customer .filter .btn_ico_filter:before {content:''; display:inline-block; width:2rem; height:2rem; margin-top:.5rem; background:url(/mnbank/app/img/common/spr_ico_20x.png) no-repeat -4rem -10rem; background-size:25rem auto;} /* [전담반] 다크테마 */
+.cate_customer .office_wrap .list_data {border-bottom:0; clear:both; padding:0; margin-top:1.6rem; margin-bottom:2rem;}
+.cate_customer .office_info {position:relative;}
+.cate_customer .office_info .tit {font-size:1.8rem; font-weight:700; position:relative; padding:0 2.4rem 0 4rem;}
+.cate_customer .office_info .pin {width:2.8rem; height:2.8rem; background:url(/mnbank/app/img/customer/ico_28_pin.png) no-repeat; background-size:100%; font-size:1.3rem; text-align:center; color:#fff; padding:.5rem 0; position:absolute; left:0; top:0; line-height:1;}
+.cate_customer .office_info .f_wrap {width:80%; min-height:2rem; margin:1.2rem 0 1.6rem -1rem; padding-left:4rem; float:left; color:var(--fc_04, #696e76);}
+.cate_customer .office_info .f_wrap span {margin-left:1rem;}
+.cate_customer .flag_customer {height:auto; font-size:1.4rem; border:0; line-height:1.2; top:auto; padding:0; text-align:left;}
+.cate_customer .office_info .distance {float:right; margin-top:1.2rem; margin-bottom:1.6rem; line-height:1.2;}
+.cate_customer .office_info .f_wrap ~ .distance {margin-bottom:0;}
+.cate_customer .office_info .addr {padding-left:4rem; clear:both;}
+.cate_customer .office_info .btn_favorite {position:absolute; top:0; right:0;}
+.cate_customer .office_info.wide {position:relative; z-index:1; margin-bottom:-1px; padding-bottom:1.6rem; border-bottom:1px solid var(--fc_07, #c6cbd0);}
+.cate_customer .office_info.wide .tit {padding:0;}
+.cate_customer .office_info.wide .f_wrap {margin-bottom:0; padding:0;}
+.cate_customer .office_info.wide .rightgap {padding-right:2.4rem;}
+.cate_customer .office_info.wide + .list_data {margin-top:0;}
+.cate_customer .tab_wrap.office {margin-top:2.4rem;}
+.cate_customer .tab_wrap.office .hr_divide {margin:3.2rem 0rem;}
+.cate_customer .tab_wrap.office .scroll_wrap > div:not(:first-child) {padding-left:.8rem;}
+.cate_customer .tab_wrap.office [role='tab'] {height:auto; padding:.8rem 2rem; border:1px solid var(--fc_07, #c6cbd0); border-radius:2rem; line-height:normal;}
+.cate_customer .tab_wrap.office [role='tablist'] {border-bottom:0;}
+.cate_customer .tab_wrap.office [role='tab'][aria-selected='true'] {background-color:#ffd338; border-color:#ffd338; color:#26282c;}
+.cate_customer .tab_wrap.office [role='tab'][aria-selected='true']::after {display:none;}
+.cate_customer .tab_wrap.office [role='tablist']:after,
+.cate_customer .tab_wrap.office [role='tablist'] .scroll_wrap:after {border-bottom:0;}
+.cate_customer .tab_wrap.office [role='tablist'] .scroll_wrap div+div {margin-left:.6rem;}
+.cate_customer .office_wrap .btn_list_btm {margin-top:.8rem;}
+.cate_customer .chart_wrap {font-family:'Droid Sans','Roboto',AppleSDGothicNeo,'AppleGothicNeoSD', Sans-serif; font-size:.9rem;}
+
+/* 지점찾기_내가 발행한 번호표 보기 */
+.cate_customer .ticket_wrap .box {padding:2.4rem; border-top:1px solid var(--bdc_02, #696e76); border-bottom:1px solid var(--bdc_02, #696e76); text-align:center;}
+.cate_customer .ticket_wrap .number {color:#287eff; font-size:3rem; font-weight:700;}
+.cate_customer .ticket_wrap .branch {margin-top:1rem; color:var(--fc_04, #696e76); font-size:1.4rem;}
+.cate_customer .ticket_wrap .type {margin-top:0.6rem;}
+.cate_customer .ticket_wrap .sub_type {margin-top:2.4rem; color:var(--fc_04, #696e76); font-size:1.4rem;}
+.cate_customer .ticket_wrap .msg {margin-bottom:1.6rem; font-size:1.8rem; font-weight:700;}
+
+/* 지점찾기_영업시간특화 지점 안내/찾기 */
+.cate_customer .branch_location_wrap .section_f ~ .section_f .h3 {padding-top:0; border-top:0;}
+.cate_customer .branch_location_wrap .h3 {margin:0; padding-top:2rem; padding-bottom:2rem; border-top:1px solid var(--bdc_02, #696e76);}
+.cate_customer .branch_location_wrap .list {border-top:1px solid var(--fc_07, #c6cbd0);}
+.cate_customer .branch_location_wrap .list .col_l {padding-right:2rem;}
+.cate_customer .branch_location_wrap .list .col_r {padding-left:2rem;}
+.cate_customer .branch_location_wrap .list .btn_txt[class*="ico_arr"] {display:block; text-align:left; font-size:1.6rem;}
+.cate_customer .branch_location_wrap .list .btn_txt[class*="ico_arr"]:after {top:10px;}
+
+/* 지점찾기_지점 방문상담 예약신청 */
+.cate_customer .divide_box {color:var(--fc_02, #26282c);}
+.cate_customer .divide_box > span + span:before {content:''; display:inline-block; width:1px; height:1.3rem; margin:-0.1rem 0 0 0.7rem; padding-left:1rem; border-left:1px solid var(--fc_08, #dde1e4); vertical-align:middle;}
+
+/* 지점찾기_지점검색 */
+.cate_customer .branch_history {margin-bottom:1.2rem;}
+.cate_customer .img_area.cust_img {height:19rem;background:url(/mnbank/app/img/customer/cust_img03.png) 50% 50%;background-size:auto 19rem;background-repeat: no-repeat;}
+
+/* 고객상담_나의 상담내역 */
+.cate_customer .board_list.qna {margin-top:0;}
+.cate_customer .board_list.qna li {position:relative; border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.cate_customer .board_list.qna.data li {padding:2rem 0 1.8rem 0;}
+.cate_customer .board_list.qna li > a {padding:2rem 3.5rem 1.8rem 0;}
+.cate_customer .board_list.qna li > a:after {content:''; display:block; position:absolute; right:.9rem; top:50%; width:.9rem; height:.9rem; border:solid var(--fc_05, #8c949e); border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg) translateY(-50%); -webkit-transform: rotate(-45deg) translateY(-50%);}
+.cate_customer .board_list.qna .badge + .tit {margin-top:.8rem;}
+.cate_customer .board_list.qna .type {margin-right:1.2rem; color:var(--fc_04, #696e76);}
+.cate_customer .board_list.qna .date {margin-top:.8rem; color:var(--fc_05, #8c949e); font-size:1.5rem;}
+.cate_customer .board_list.qna .name>strong {position:relative; padding-left:1.7rem;}
+.cate_customer .board_list.qna .name>strong:after {content:''; position:absolute; top:.3rem; left:.8rem; width:.1rem; height:1.5rem; background:var(--fc_09, #ebeef0);}
+.qna_top_wrap {margin-bottom:1.6rem;}
+.qna_top_wrap .period {font-size:1.6rem; font-weight:normal;}
+
+.qna_view .board_view_answer {margin:4.8rem -2.4rem 0; padding:3.2rem 2.4rem 4.8rem; background:var(--bg_02, #f7f7f8);}
+.qna_view .answer_wrap .tit {color:var(--fc_03, #484b51); font-size:2.2rem; font-weight:700;}
+.qna_view .answer_wrap .tit .badge {position:relative; top:-.3rem; margin-left:1rem;}
+.qna_view .answer_wrap .txt {margin-top:1.6rem;}
+.qna_view .survey_wrap {margin-top:3.2rem; padding-top:3.2rem; border-top:1px solid var(--fc_08, #dde1e4);}
+.qna_view .survey_wrap .tit {font-weight:700;}
+.qna_view .survey_wrap .txt {margin-top:2rem;}
+.qna_view .survey_wrap .rdoChk_ul2 {margin-top:2.4rem;}
+
+.safety_qna_wrap .h3 {margin:0 0 2.4rem 0;}
+.safety_qna_wrap .msg {margin:10rem 0; text-align:center;}
+.safety_qna_wrap .msg .tit {margin-top:2.8rem; font-size:2rem; font-weight:700;}
+.safety_qna_wrap .msg .txt {margin-top:1.6rem; color:var(--fc_03, #484b51);}
+.safety_qna_wrap .msg .ico_60_customer {width:4.8rem; height:4.8rem; background: url(/mnbank/app/img/customer/ico_customer_48x.png) no-repeat; background-size:19.2rem auto;}
+
+/* 지점 방문상담 예약 : 조광현 */
+.bul_bar {position:relative; margin:0 0 0 12px; padding:0 0 0 12px;}
+.bul_bar:after {
+    content:'ㅣ'; display:block; position:absolute; top:0; left:-7px; color:var(--fc_08, #dde1e4);
+}
+
+/* 지점찾기_청춘마루 */
+.cate_customer .maru_floor {width:100%; display:table; table-layout:fixed;}
+.cate_customer .maru_floor:first-of-type {border-top:1px solid var(--fc_05, #8c949e);}
+.cate_customer .maru_floor div {display:table-cell; width:50%; padding:1.6rem 0; text-align:center; border-right: 1px solid var(--bdc_01, #ebeef0); border-bottom:1px solid var(--bdc_01, #ebeef0);}
+.cate_customer .maru_floor div:nth-child(2n) {border-right:0;}
+.cate_customer .maru_floor .floor {margin:1.2rem 0 .2rem; font-weight:700;}
+.cate_customer .maru_floor div:before {content:''; display:block; width:8.8rem; height:8.8rem; margin:0 auto; background:url(/mnbank/app/img/customer/ico_maru_floor.png) no-repeat; background-size:35.2rem auto;}
+.cate_customer .maru_floor div.item1:before {background-position:0 0;}
+.cate_customer .maru_floor div.item2:before {background-position:-8.8rem 0;}
+.cate_customer .maru_floor div.item3:before {background-position:-17.6rem 0;}
+.cate_customer .maru_floor div.item4:before {background-position:-26.4rem 0;}
+.cate_customer .maru_txt {font-size:1.4rem; color:var(--fc_04, #696e76); margin-top: -0.7em;} 
+
+/* 내 정보 수정 */
+.cate_customer .form_group.reception {margin-top:2.4rem;}
+.cate_customer .form_group.reception .rdoChk_group {padding:.6rem 0 2.4rem;}
+.cate_customer .form_group.reception .rdoChk_group .selection input[type=checkbox] + .label {padding:0 0 0 3.4rem;}
+
+/* 새소식 : [전담반 Biz-110] 추가 */
+#content.news_list {padding:1.6rem 0 9.6rem; padding:1.6rem 0 calc(constant(safe-area-inset-bottom) / 2 + 9.6rem); padding:1.6rem 0 calc(env(safe-area-inset-bottom) / 2 + 9.6rem); background:var(--bg_01, #fff);}
+
+/* 개인(신용)정보 마케팅활용동의(은행/계열사) */
+.mktg-ag.list_data > li .key {min-width:5.6rem;}
+.mktg-ag.list_data > li .value {padding-left:0rem;}
+.mktg-ag .rdoChk_group.inline [class^=selection] {padding-right:1.2rem;}
+.mktg-ag .rdoChk_group.inline [class^=selection]:last-child {padding-right:0;}
+.mktg-ag .selection.chk input[type=checkbox] + .label {padding-left:2.5rem;}
+
+@media all and (max-width:320px) {
+	.mktg-ag.list_data > li .key {min-width:5rem;}
+	.mktg-ag .rdoChk_group.inline [class^=selection] {padding-right:0.5rem;}
+	.mktg-ag .selection.chk input[type=checkbox] + .label {padding-left:2.18rem;}
+}
+
+/* 알림서비스(2022-05-13)*/
+.cate_customer .slogan_alertsvc .img{height:18.15rem;background:url(/mnbank/app/img/customer/cust_img06.png) no-repeat 50% 0;background-size:auto 18.15rem;margin-top:2.4rem;}
+
+/* 청춘마루 안내 수정 (220720) */
+.maru .depth.gap_xs_2 > li {margin-top:2rem; color:var(--fc_04, #696e76);}
+.maru .depth.dash {margin-top:-0.8rem;}
+.maru .depth.dash + .fs14 {margin-top:2rem;}
+.maru .history_area {position:relative; height:195rem; padding-top:4.5rem; padding-left:6.4rem; margin-top:1.6rem; margin-bottom:-4rem;}
+.maru .history_area:before {content:''; display:block; position:absolute; top:0; left:6.4rem; width:.3rem; height:100%; background-color:#ffbc00;}
+.maru .history_area:after {content:''; display:block; position:absolute; top:0; left:5.4rem; width:2.4rem; height:2.4rem; background-color:#ffbc00; border-radius:50%;}
+.maru .history_area strong {position:relative; display:block; margin-top:2.6rem; margin-bottom:6.2rem; padding-left:4rem; font-size:2.2rem;}
+.maru .history_area strong:first-child {margin-top:0;}
+.maru .history_area strong:before {content:''; display:block; position:absolute; top:50%; left:0; width:3.4rem; height:.1rem; background-color:#ffbc00; transform:translateY(-50%);}
+.maru .history_area .date {padding-left:4rem; font-weight:700;}
+.maru .history_area .txt_area {padding-left:4rem;}
+.maru .history_area .txt_area p {margin-top:2.2rem; color:var(--fc_04, #696e76); font-size:1.4rem;}
+.maru .history_area .txt_area p:first-child {margin-top:.7rem;}
+.maru .history_area .txt_area .bul {position:relative; text-indent:1.2rem;}
+.maru .history_area .txt_area .bul:before {content:''; display:block; position:absolute; top:.8rem; left:.5rem; width:.2rem; height:.2rem; background-color:var(--fc_04, #696e76); border-radius:50%;}
+.maru .history_area .img {max-width:41.4rem; margin-top:3.7rem; margin-left:-6.4rem; box-shadow:0 2rem 3.5rem .03rem rgba(0,0,0,0.2);}
+.maru .history_area .img img {position:relative;}
+.maru .history_area .history_list {padding-left:4rem;}
+.maru .history_area .txt_area + .date {margin-top:1.5rem;}
+.maru .history_area .history_list li {position:relative; margin-top:0.9rem; color:var(--fc_04, #696e76); font-size:1.4rem; text-indent:1.2rem;}
+.maru .history_area .history_list li:before {content:''; display:block; position:absolute; top:.8rem; left:.5rem; width:.2rem; height:.2rem; background-color:var(--fc_04, #696e76); border-radius:50%;}
+.maru hr {height:.1rem; border:0; background-color:var(--fc_05, #8c949e);}
+
+.maru .floor_info {position:relative; height:14.5rem; text-align:center;}
+.maru .floor_info .swiper-slide {width:32.7rem; height:11.9rem;}
+.maru .floor_info .swiper-slide img {border-radius:.2rem;}
+.maru .swiper-pagination {bottom:-0.5rem; display:inline-block; width:auto; height:1.5rem;}
+.maru .swiper-pagination button {display:inline-block; vertical-align:middle;}
+.maru .play-control {display:inline-block; position:relative; bottom:-0.5rem; width:2rem; height:1.5rem; font-size:0; line-height:0; vertical-align:middle;}
+.maru .play-control:after {content:''; position:absolute; left:50%; top:50%; width:0.9rem; height:1.2rem; transform:translate(-50%,-50%); background:url('/mnbank/app/img/common/spr_autoplay.png') 0 0 no-repeat; background-size:5rem auto;}
+.maru .play-control.stop:after {background-position:0 100%;}
+.maru .play-control.play:after {background-position:0 0;}
+
+.maru .banner {position:relative; height:20.5rem; margin:5.5rem -2.4rem 0; text-align:center;}
+.maru .banner .swiper-slide {width:37.5rem; height:17.45rem;}
+
+/* 전화상담 신청 (220811) */
+.cate_customer .counsel .img_area {margin-bottom:2.5rem;}
+.cate_customer .counsel .form_group {margin-top:3.4rem;}
+
+/* 챗봇채팅 상담내역 조회 (2022-09-06) */
+.cate_customer .go_counsel_link {display:block;position:relative;min-height:3.2rem;margin:2.4rem 2.4rem 0;padding:.6rem 3rem .6rem 4.4rem;border-radius:.8rem;font-size:1.6rem;}
+.cate_customer .go_counsel_link::before, 
+.cate_customer .go_counsel_link::after {content:'';display:block;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+.cate_customer .go_counsel_link:before {left:0;width:3.2rem;height:3.2rem;background:url("/mnbank/app/img/customer/ico_counseling_list.png") no-repeat 0 0 /100% auto;}
+.cate_customer .go_counsel_link::after {right:0;width:2rem;height:2rem;background-image:url("/mnbank/app/img/common/spr_ico_20x.png");background-size:25rem auto;}
+@media all and (max-width:360px) {
+    .cate_customer .go_counsel_link .block {display:block;}
+}
+
+/* 보이스피싱 예방 가이드 (230512) */
+.voice_phishing .introduce {height:17.2rem; padding:3.7rem 0 1.5rem; color:var(--fc_02, #26282c); font-size:2.4rem; background:url(/mnbank/app/img/customer/visual_phishing01.png) no-repeat right 1rem top 1.6rem; background-size:14rem auto;}
+.voice_phishing .deal_scroll {overflow:hidden; overflow-x:auto; width:100%;}
+.voice_phishing .deal_scroll::-webkit-scrollbar {display:none;}
+.voice_phishing .mydeal_list {width:max-content; padding:0 2.4rem;}
+.voice_phishing .mydeal_list .deal {display:inline-block; min-height:3.4rem; height:auto; margin-right:.4rem; padding:.6rem 1.5rem 0; border:1px solid var(--fc_07, #c6cbd0); border-radius:2rem; background:var(--bg_01, #fff); color:var(--fc_05, #8c949e); font-size:1.5rem; white-space:nowrap; word-break:keep-all;}
+.voice_phishing .mydeal_list .deal.on {border:1px solid #ffd338; background:#ffd338; color:#26282c; font-weight:700;}
+.voice_phishing .board_list_wrap {margin-top:3.6rem;}
+.voice_phishing .board_list_wrap .event {border-top:0;}
+.voice_phishing .board_list_wrap .event >li >a {padding-bottom:2rem}
+.voice_phishing .board_list_wrap .event >li:first-child >a {padding-top:0}
+.voice_phishing .board_list.img_max_W {text-align: center;}
+.voice_phishing .board_list.img_max_W img {max-width:41.4rem;}
+
+.voice_phishing .top_tit_box {position:relative; height:22rem; padding:3.5rem 0 0 2.4rem; margin-top:-1.6rem; background:#ebf0ff url(/mnbank/app/img/customer/visual_phishing02.png) no-repeat right 4.3rem top 4.4rem; background-size:14rem auto;}
+.voice_phishing .top_tit_box h2 {font-size:2.2rem; color:#26282c;}
+.voice_phishing .visual_util {display:flex; position:absolute; bottom:1.6rem; right:2rem;}
+.voice_phishing .visual_util button {width:auto;}
+.voice_phishing .visual_util .share_area .btn_share {position:relative; width:3.6rem; height:3.6rem; border-radius:50%; background:rgba(255, 255, 255, 0.7);}
+.voice_phishing .visual_util .share_area .btn_share:after {display:block; content:''; position:absolute; top:50%; left:50%; width:2.4rem; height:2.4rem; background:url('/mnbank/app/img/assets/ico_24_new.png') no-repeat -13.7rem -3.4rem/16rem auto; transform:translate(-50%, -50%);}
+.voice_phishing .top_tit_box + .section {margin-top:3.2rem;}
+.voice_phishing .gray_bg_box {padding:0.4rem 2rem 3.2rem; margin-top:2rem; background-color:var(--bg_02, #f7f7f8);}
+.voice_phishing .depth .depth.num.round {margin-left:-1.1rem;}
+.voice_phishing .gray_bg_box + h3 {margin-top:4rem;}
+
+/* 스타클럽 등급 (230524) */
+.grade_info_wrap.type2 {margin-top:0 !important;}
+.grade_info_wrap.type2 .grade_name {margin-top:0;}
+.grade_info_wrap.type2 .badge[class *= rank]::before {display:block;content: "";clear:both;width:8rem;height:8rem;margin:0 auto .3rem;background: url(/mnbank/app/img/common/ico_badge_rank2.png) no-repeat;background-size: 32rem auto;}
+.grade_info_wrap.type2 .badge.rank0::before {background-position:-8rem -25.6rem;border-radius:50%;}
+.grade_info_wrap.type2 .badge.rank1::before {background-position:0 -17.6rem;}
+.grade_info_wrap.type2 .badge.rank2::before {background-position:-8rem -17.6rem;}
+.grade_info_wrap.type2 .badge.rank3::before {background-position:-16rem -17.6rem;}
+.grade_info_wrap.type2 .badge.rank4::before {background-position:-24rem -17.6rem;}
+.grade_info_wrap.type2 .badge.rank5::before {background-position:0 -25.6rem;}
+
+/*************************************** 다크테마 s ***************************************/
+.dark_mode .cate_customer .filter .btn_ico_filter:before {filter:brightness(1.5);}
+.dark_mode .cate_customer .list_link.ars2 li .link:after {filter:brightness(1.5);}
+/*************************************** 다크테마 e ***************************************/

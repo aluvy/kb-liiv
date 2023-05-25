@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no">
+    <title>My메뉴 설정</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+
+    <style>
+      
+/*         
+        .layer_wrap.type_mymn {
+            
+            height:95%; max-height:95%;
+        }
+        .layer_wrap.type_mymn .ly_in{
+            height:100%;
+        }
+        .layer_wrap.type_mymn .col_dim {
+            bottom:6rem;
+        }
+        .layer_wrap.type_mymn .ly_con {
+            position:static;
+
+        }
+
+        .layer_wrap.type_mymn .ly_in {
+            position:relative;
+        }
+        
+        .layer_wrap.type_mymn .ly_in .btn_pop_confirm_wrap {
+            position:fixed;
+            bottom:0;
+            z-index: inherit 100;
+        } */
+    </style>
+
+    <!-- // -->    
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_regist">
+        <h1 class="hidden">My메뉴 설정</h1>
+        <div class="inform_top_wrap">
+            <p class="depth">My메뉴는 최대 6개까지 등록할 수 있습니다.</p> 
+            <p class="depth">설정하신 My메뉴는 홈화면에 나타납니다</p> 
+        </div>
+
+<!-- [전담반 Biz-104] 마이메뉴설정 기능개선 : 2022-04-13 -->
+<!-- 210810 수정(P태그 div 교체. MY 메뉴 설정 도움말(툴팁) 추가) -->
+
+<!-- 210810 수정(P태그 div 교체. MY 메뉴 설정 도움말(툴팁) 추가) -->
+
+    <!-- case : 등록된 메뉴가 있을 경우 -->
+    <!-- <div class="reg_mymn_wrap">
+        <div id="drag" class="reg_mymn list_drag drag">
+            <span class="item_wrap">
+                <a href="#" class="btn_move">쿠폰</a>
+                <button type="button" class="btn_del" title="쿠폰"><span class="hidden">삭제</span></button>
+            </span>
+            <span class="item_wrap">
+                <a href="#" class="btn_move">환율픽</a>
+                <button type="button" class="btn_del" title="환율픽"><span class="hidden">삭제</span></button>
+            </span>
+            <span class="item_wrap">
+                <a href="#" class="btn_move">계좌이동서비스</a>
+                <button type="button" class="btn_del" title="계좌이동서비스"><span class="hidden">삭제</span></button>
+            </span>
+            <span class="item_wrap">
+                <a href="#" class="btn_move">이메일 상담</a>
+                <button type="button" class="btn_del" title="이메일 상담"><span class="hidden">삭제</span></button>
+            </span>
+        </div>
+        <div class="gap_sm right">
+            <button type="button" class="btn_all_del"><span class="txt">전체삭제</span></button>
+        </div>
+    </div> -->
+        <div class="section reg_mymn_section">
+            <!-- [전담반 Biz-104] 마이메뉴설정 기능개선 : 툴팁제거 -->
+            <!-- <div class="tooltip_limited js_onloadtooltip"> 
+                <p class="tooltip"><button type="button" class="btn_tooltip js_tooltip"><span class="hidden">MY 메뉴 설정 도움말 자세히보기</span></button></p>
+                <div class="tooltip_wrap">
+                    <div class="tooltip_cont"> 
+                        <ul class="depth bul">
+                            <li>메뉴 검색 후 선택하면 상단에 반영됩니다.</li>
+                            <li>상단에 추가된 메뉴에서 x를 선택하면 삭제됩니다.</li>
+                            <li>추가된 메뉴를 누른 후 원하는 위치로 끌어서 순서를 바꿀 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn_tooltip_x"><span class="hidden">MY 메뉴 설정 도움말 닫기</span></button>
+                </div>
+            </div> -->
+            <!-- // [전담반 Biz-104] 마이메뉴설정 기능개선 : 툴팁제거 -->
+            <div class="hgroup">
+                <h2 class="h2">설정된 My메뉴설정<span class="cate_num">(6개)</span></h2>
+                <div class="sel_drag_sort">
+                    <span class="selection drag_move">
+                        <input type="radio" id="radioDrag1" name="drag_sort" checked="">
+                        <label for="radioDrag1" class="label"><em class="hidden">드래그로 순서이동</em></label>
+                    </span>
+                    <span class="selection button_move">
+                        <input type="radio" id="radioSort" name="drag_sort">
+                        <label for="radioSort" class="label"><em class="hidden">위아래 버튼으로 순서이동</em></label>
+                    </span>
+                </div>
+            </div>
+
+            <ul id="drag" class="mymn_list list_drag sm drag new_list_drag"> 
+                <li class="li li_favl">
+                    <div class="cnt">
+                          
+                        <button type="button" class="btn_favorite sm toggle active" aria-pressed="true"><span class="hidden">즐겨찾기</span></button>
+                          
+                        <div class="mymn_wrap">
+                            <p class="mymn_wrap">전체계좌조회</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_move"><span class="hidden">드래그로 순서변경</span></button>
+                    <div class="move_area">
+                        <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                        <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+                    </div>
+                </li>
+                <li class="li li_favl">
+                    <div class="cnt">
+                          
+                        <button type="button" class="btn_favorite sm toggle active" aria-pressed="true"><span class="hidden">즐겨찾기</span></button>
+                          
+                        <div class="mymn_wrap">
+                            <p class="mymn_wrap">통합거래내역조회</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_move"><span class="hidden">드래그로 순서변경</span></button>
+                    <div class="move_area">
+                        <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                        <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+                    </div>
+                </li>
+                <li class="li li_favl">
+                    <div class="cnt">
+                          
+                        <button type="button" class="btn_favorite sm toggle active" aria-pressed="true"><span class="hidden">즐겨찾기</span></button>
+                          
+                        <div class="mymn_wrap">
+                            <p class="mymn_wrap">통합거래내역조회</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_move"><span class="hidden">드래그로 순서변경</span></button>
+                    <div class="move_area">
+                        <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                        <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+                    </div>
+                </li>
+                <li class="li li_favl">
+                    <div class="cnt">
+                          
+                        <button type="button" class="btn_favorite sm toggle active" aria-pressed="true"><span class="hidden">즐겨찾기</span></button>
+                          
+                        <div class="mymn_wrap">
+                            <p class="mymn_wrap">해지계좌조회</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_move"><span class="hidden">드래그로 순서변경</span></button>
+                    <div class="move_area">
+                        <button type="button" class="btn_up"><span class="hidden">순서위로</span></button>
+                        <button type="button" class="btn_down"><span class="hidden">순서아래로</span></button>
+                    </div>
+                </li>
+            </ul>
+        
+        <!-- case : 등록된 메뉴가 있을 경우 -->
+
+            <!-- case : 등록된 메뉴가 없을 경우 -->
+            <div class="result nodata"> <!-- 210730 수정(.sm 클래스 삭제) -->
+                <p class="tit">등록된 My메뉴가 없습니다.</p>
+            </div>
+            <!-- //case : 등록된 메뉴가 없을 경우 -->
+            <div class="form_btm_full_wrap">
+                <span><button type="button" class="btn outline md" id="btnMenuMng" onclick="openLayer(); return false">My메뉴 추가/삭제</button></span>
+            </div>
+        </div>
+        <div class="btn_confirm_wrap">
+            <div class="btn_area">
+                <div class="btn_confirm_wrap">
+                    <div class="btn_area">
+                        <span><button type="button" class="btn secondary lg">초기화</button></span>
+                        <span><button type="button" class="btn primary lg">저장</button></span>  
+                    </div>    
+                </div>
+            </div>
+        </div>
+<!-- //[전담반 Biz-104] 마이메뉴설정 기능개선 -->
+
+
+    </div><!-- //content -->
+
+    <!-- [전담반 Biz-104] 마이메뉴설정 기능개선(바텀) -->
+    <div id="botLayer" class="layerHTML">
+        <div class="ly_cnt">
+
+            <div class="section_f">
+                <div class="search_wrap">
+                    <div class="input">
+                        <input type="text" class="inp" title="메뉴 검색" placeholder="메뉴를 검색해보세요.">
+                        <button type="submit" class="btn_sch"><span class="hidden">검색</span></button>
+                        <!-- [전담반 Biz-104] 마이메뉴설정 기능개선 : 닫기 버튼 위치변경 -->
+                        <div class="w_btn_closely">
+                            <button type="button" class="btn_result_close"><span class="txt">닫기</span></button>
+                        </div> 
+                        <!-- // [전담반 Biz-104] 마이메뉴설정 기능개선 : 닫기 버튼 위치변경 -->
+                    </div>
+                </div>
+
+                <!-- 메뉴검색 결과 -->
+                <div class="search_result show" aria-hidden="true"> <!-- [개발] 메뉴 검색 결과 화면이 노출되면 .show 클래스 추가/aria-hidden="false" 닫히면 .hide 클래스 추가/aria-hidden="true" -->
+                    <!-- case : 메뉴검색된 결과가 있을 경우 -->
+                    <div class="result_wrap">
+                        <div class="scroll">
+                            <ul class="rs_list">
+                                <li>
+                                    <p><span class="fc_posi">펀드</span></p>
+                                    <div class="toggle_right">
+                                        <button type="button" class="ico_24_star toggle" aria-pressed="false" title="$메뉴명$"><span class="hidden">마이메뉴 설정</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="fc_posi">펀드</span> &gt; 조회 &gt; <span class="fc_posi">펀드</span>계좌조회</p>
+                                    <div class="toggle_right">
+                                        <button type="button" class="ico_24_star toggle" aria-pressed="false" title="펀드 > 조회 > 펀드 > 계좌조회"><span class="hidden">마이메뉴 설정</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="fc_posi">펀드</span> &gt; 조회 &gt; 거래내역조회</p>
+                                    <div class="toggle_right">
+                                        <button type="button" class="ico_24_star toggle" aria-pressed="false" title="$메뉴명$"><span class="hidden">마이메뉴 설정</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금</p>
+                                    <div class="toggle_right">
+                                        <button type="button" class="ico_24_star toggle" aria-pressed="false" title="$메뉴명$"><span class="hidden">마이메뉴 설정</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>상품관리 &gt; 펀드 &gt; <span class="fc_posi">펀드</span> 입금&gt; 연금<span class="fc_posi">펀드</span>입금</p>
+                                    <div class="toggle_right">
+                                        <button type="button" class="ico_24_star toggle" aria-pressed="false" title="$메뉴명$"><span class="hidden">마이메뉴 설정</span></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //case : 메뉴검색된 결과가 있을 경우 -->
+    
+                    <!-- case : 메뉴검색 결과가 없을 경우 -->
+                    <div class="noresult_wrap bdt_0"> <!-- bdt_0 클래스 추가 2022-05-02 -->
+                        <div class="result nodata sm">
+                            <p class="tit">메뉴 검색 결과가 없습니다.</p>
+                        </div>
+                    </div>
+                    <!-- //case : 메뉴검색 결과가 없을 경우 -->
+                    <!-- [전담반 Biz-104] 마이메뉴설정 기능개선 : 닫기 버튼 위치변경 -->
+                    <!-- <div class="rs_foot">
+                        <button type="button" class="btn_result_close"><span class="txt">닫기</span></button>
+                    </div> -->
+                    <!-- //[전담반 Biz-104] 마이메뉴설정 기능개선 : 닫기 버튼 위치변경  -->
+                </div>
+                <!-- //메뉴검색 결과 -->
+            </div>
+    
+
+            <div class="section_f mymn_tree show" aria-hidden="false"> <!-- [개발] 메뉴 검색 결과 화면이 노출되면 .hide 클래스 추가/aria-hidden="true" 닫히면 .show 클래스 추가/aria-hidden="false" : 2022-05-02 hide 클래스 추가시 -->
+       
+                <!-- 1depth -->
+                <ul class="mymn_set_acco js_accordion tree">
+                    <li class="dep1">
+                        <a href="#none" role="button" class="tit" aria-expanded="false">뱅킹
+                            <span class="hidden">등록된 마이메뉴 수</span><span class="cate_num">(3)</span><span class="hidden">개</span>
+                        </a>
+                        <div class="toggle_panel" role="region">
+                            <!-- 2depth -->
+                            <ul class="list_acco js_accordion">
+                                <li class="dep2">
+                                    <span class="selection">
+                                        <input type="checkbox" id="checkbox_1_1" name="checkbox_sel">
+                                        <label for="checkbox_1_1" class="label"><em>2depth</em></label>
+                                    </span>
+                                </li>
+                                <li class="dep2">
+                                    <a href="#none" role="button" class="tit" aria-expanded="false">2depth</a>
+                                    <div class="toggle_panel" role="region">
+                                        <!-- 3depth -->
+                                        <ul class="list_acco js_accordion">
+                                            <li class="dep3">
+                                                <span class="selection">
+                                                    <input type="checkbox" id="checkbox_1_2" name="checkbox_sel">
+                                                    <label for="checkbox_1_2" class="label"><em>3depth</em></label>
+                                                </span>
+                                            </li>
+                                            <li class="dep3">
+                                                <a href="#none" role="button" class="tit" aria-expanded="false">3depth</a>
+                                                <div class="toggle_panel" role="region">
+                                                    <!-- 4depth -->
+                                                    <ul class="list_mymn">
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_1_3" name="checkbox_sel">
+                                                                <label for="checkbox_1_3" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_1_4" name="checkbox_sel">
+                                                                <label for="checkbox_1_4" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //4depth -->
+                                                </div>
+                                            </li>
+                                        </ul> <!-- //3depth -->
+                                    </div>
+                                </li>
+                            </ul> <!-- //2depth -->
+                        </div>
+                    </li>
+                    <li class="dep1">
+                        <a href="#none" role="button" class="tit" aria-expanded="false">환경설정
+                            <span class="hidden">등록된 마이메뉴 수</span><span class="cate_num">(3)</span><span class="hidden">개</span>
+                        </a>
+                        <div class="toggle_panel" role="region">
+                            <!-- 2depth -->
+                            <ul class="list_acco js_accordion">
+                                <li class="dep2">
+                                    <span class="selection">
+                                        <input type="checkbox" id="checkbox_2_1" name="checkbox_sel">
+                                        <label for="checkbox_2_1" class="label"><em>2depth</em></label>
+                                    </span>
+                                </li>
+                                <li class="dep2">
+                                    <a href="#none" role="button" class="tit" aria-expanded="false">2depth</a>
+                                    <div class="toggle_panel" role="region">
+                                        <!-- 3depth -->
+                                        <ul class="list_acco js_accordion">
+                                            <li class="dep3">
+                                                <span class="selection">
+                                                    <input type="checkbox" id="checkbox_2_2" name="checkbox_sel">
+                                                    <label for="checkbox_2_2" class="label"><em>3depth</em></label>
+                                                </span>
+                                            </li>
+                                            <li class="dep3">
+                                                <a href="#none" role="button" class="tit" aria-expanded="false">3depth</a>
+                                                <div class="toggle_panel" role="region">
+                                                    <!-- 4depth -->
+                                                    <ul class="list_mymn">
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_2_3" name="checkbox_sel">
+                                                                <label for="checkbox_2_3" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_2_4" name="checkbox_sel">
+                                                                <label for="checkbox_2_4" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //4depth -->
+                                                </div>
+                                            </li>
+                                            <li class="dep3">
+                                                <span class="selection">
+                                                    <input type="checkbox" id="checkbox_2_5" name="checkbox_sel">
+                                                    <label for="checkbox_2_5" class="label"><em>3depth</em></label>
+                                                </span>
+                                            </li>
+                                        </ul> <!-- //3depth -->
+                                    </div>
+                                </li>
+                                <li class="dep2">
+                                    <span class="selection">
+                                        <input type="checkbox" id="checkbox_2_6" name="checkbox_sel">
+                                        <label for="checkbox_2_6" class="label"><em>2depth</em></label>
+                                    </span>
+                                </li>
+                            </ul> <!-- //2depth -->
+                        </div>
+                    </li>
+                    <li class="dep1">
+                        <a href="#none" role="button" class="tit" aria-expanded="false">고객센터
+                            <span class="hidden">등록된 마이메뉴 수</span><span class="cate_num">(3)</span><span class="hidden">개</span>
+                        </a>
+                        <div class="toggle_panel" role="region">
+                            <!-- 2depth -->
+                            <ul class="list_acco js_accordion">
+                                <li class="dep2">
+                                    <a href="#none" role="button" class="tit" aria-expanded="false">2depth</a>
+                                    <div class="toggle_panel" role="region">
+                                        <!-- 3depth -->
+                                        <ul class="list_acco js_accordion">
+                                            <li class="dep3">
+                                                <span class="selection">
+                                                    <input type="checkbox" id="checkbox_3_2" name="checkbox_sel">
+                                                    <label for="checkbox_3_2" class="label"><em>3depth</em></label>
+                                                </span>
+                                            </li>
+                                            <li class="dep3">
+                                                <a href="#none" role="button" class="tit" aria-expanded="false">3depth</a>
+                                                <div class="toggle_panel" role="region">
+                                                    <!-- 4depth -->
+                                                    <ul class="list_mymn">
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_3_3" name="checkbox_sel">
+                                                                <label for="checkbox_3_3" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                        <li class="dep4">
+                                                            <span class="selection">
+                                                                <input type="checkbox" id="checkbox_3_4" name="checkbox_sel">
+                                                                <label for="checkbox_3_4" class="label"><em>4depth</em></label>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //4depth -->
+                                                </div>
+                                            </li>
+                                        </ul> <!-- //3depth -->
+                                    </div>
+                                </li>
+                                <li class="dep2">
+                                    <span class="selection">
+                                        <input type="checkbox" id="checkbox_3_1" name="checkbox_sel">
+                                        <label for="checkbox_3_1" class="label"><em>2depth</em></label>
+                                    </span>
+                                </li>
+                            </ul> <!-- //2depth -->
+                        </div>
+                    </li>
+                </ul> <!-- //1depth -->
+            </div>
+
+        </div>
+        <div class="btn_pop_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn primary lg" data-action="close">N개 저장</button></span>
+            </div>
+        </div>
+    </div>
+    <!-- // [전담반 Biz-104] 마이메뉴설정 기능개선(바텀) -->
+
+</div><!-- //wrap -->
+
+<!-- common ui init -->
+
+<script type="text/javascript" src="/mnbank/app/js/library/sortable.min.js"></script> 
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+<script>
+    /* 업무 SCRIPT */  
+    $(function(){
+        /* 아래는 기획 검수용 스크립트입니다. 개발 시 참고만 해주세요 */
+        $('.search_wrap .input input.inp').on('click', function(){
+            $(this).closest('.section_f').find('.search_result').removeClass('hide').addClass('show').attr('aria-hidden', 'true');
+            $('.mymn_tree').removeClass('show').addClass('hide').attr('aria-hidden', 'false');
+        });
+        $(document).on('click','.btn_result_close', function(){ 
+            $('.search_result').removeClass('show').addClass('hide').attr('aria-hidden', 'false');
+            $('.mymn_tree').removeClass('hide').addClass('show').addClass('gap_lg_0').attr('aria-hidden', 'true');
+        });
+        /* //아래는 기획 검수용 스크립트입니다. 개발 시 참고만 해주세요 */
+
+
+        // grag & button 순서변경
+        orderDragBtn.dragIs(); // [전담반 Biz-104] 마이메뉴설정 기능개선 : 2022-04-13 
+     
+
+    });
+
+    /* 210810 수정(MY 메뉴 설정 도움말(툴팁): 등록된 마이메뉴가 없을 경우 실행됨) start */
+
+    
+        /* [전담반 Biz-104] 마이메뉴설정 기능개선 2022-04-13: 툴팁제거 */
+        /* 
+        var onloadTooltipButton = {
+            init : function(){
+                var _winW = $('body').width(),
+                    _this = $('.js_onloadtooltip').find('.js_tooltip'),
+                    _tooltipWrap = _this.parents('.tooltip_limited').find('.tooltip_wrap'),
+                    _tooltipWrapL = _this.offset().left -24,
+                    _tooltipWrapR = _winW-(_this.offset().left+44),
+
+                    deviceH = screen.height,
+                    offsetT = _this.offset().top,
+                    scrollT = $(document).scrollTop(),
+                    tipWrapT = offsetT - scrollT,
+                    tipWrapD = deviceH - (offsetT - scrollT);
+                
+                if( tipWrapT > tipWrapD ){
+                    _tooltipWrap.addClass('top');
+                }
+
+                $('.tooltip_wrap').hide().attr('aria-hidden', 'true').closest('.tooltip_limited').parent().css('z-index','').parent().css('z-index','');
+                
+                _this.closest('.tooltip_limited').parent().css('z-index', '11').parent().css('z-index', '11');
+                _tooltipWrap.show().attr('aria-hidden', 'false');
+
+                if( _tooltipWrap.parents('.acc_pannel').parents('div').hasClass('section_f') ){
+                    _tooltipWrap.css({'left':-_tooltipWrapL-8, 'right':-_tooltipWrapR-8});
+                } else {
+                    _tooltipWrap.css({'left':-_tooltipWrapL, 'right':-_tooltipWrapR});
+                }
+
+                $('.btn_tooltip_x').on('click', function() {
+                    $(this).closest('.tooltip_wrap').hide().attr('aria-hidden', 'true').closest('.tooltip_limited').parent().css('z-index','').parent().css('z-index','');
+                    setTimeout(function(){
+                        _this.focus();
+                    },100);
+                });
+                
+            }
+        }
+        onloadTooltipButton.init();
+        */
+        /* // [전담반 Biz-104] 마이메뉴설정 기능개선 2022-04-13: 툴팁제거 */
+    
+    /* 210810 수정(MY 메뉴 설정 도움말(툴팁): 등록된 마이메뉴가 없을 경우 실행됨) end */
+function openLayer() {
+    $.ohyLayer({
+        titleUse:true,
+        title:'My메뉴 추가/삭제',
+        content:'#botLayer',
+        type:'bottom',
+        closeUse:true                                 
+    });
+    $('.layer_wrap').addClass('type_mymn').addClass('type3');
+
+    let $ly_hd = $(".ly_hd").eq(0);
+    var $ly_hdH = ($ly_hd != undefined)?(parseInt($ly_hd.outerHeight(true)+($ly_hd.innerHeight()-$ly_hd.height()))):0; 
+
+    var $bottom_height =(parseInt(_front.$deviceH) * 0.95) - $ly_hdH - 13;
+    var $ly_con = $(".ly_con").eq(0);
+    var $ly_cnt = $(".ly_cnt").eq(0);
+    $ly_con.attr('style','max-height:'+$bottom_height+'px !important');
+    $ly_cnt.attr('style','max-height:'+$bottom_height+'px !important');
+    $ly_con.attr('style','min-height:'+$bottom_height+'px !important');
+    $ly_cnt.attr('style','min-height:'+$bottom_height+'px !important');
+}
+$(function(){
+    //$('#btnMenuMng').on('click',function() {
+
+
+    /* 2022-05-04 : 닫기 버튼 노출 스크립트 */
+    $(document).off('keydown').on('keydown','.input input',function(e) {
+            if($(this).val().length > 0){ 
+                let $btn_closely = $('.w_btn_closely');
+
+                $btn_closely.show().attr('style','display:block !important');
+                $('.btn_clear').show();
+                $('.search_result').removeClass('hide').addClass('show');
+                //$('.layer_wrap').addClass('type_mymn');
+
+            } else {
+                $btn_closely.hide();
+                $('.btn_clear').show();
+                $('.search_result').removeClass('show').addClass('hide');
+                //$('.layer_wrap').removeClass('type_mymn');
+            }
+        
+            // $('.btn_clear').on('click',function(e) {
+                
+            //     $(this).show();
+            // });
+    });
+
+    $(document).on('click','.btn_result_close',function(e) {    
+        $('.input input').removeClass('finished');
+        $(this).parent().css('display','none');
+        if($(this).val().length <= 0){
+            $('.btn_clear').hide();
+        }
+        var event = $.Event('onCloseBtnClick');
+        $(this).trigger(event);
+    });
+
+    $(document).on('click','.btn_clear',function(e) {
+        var event = $.Event('onClearBtnClick');
+        $(this).trigger(event);
+        //alert("test");
+        setTimeout(function() { $('.btn_clear').attr('style','right:6.2rem').show(); }, 100);   
+    });
+    
+    $(document).on('onClearBtnClick','.btn_clear',function(e) {
+        
+    });
+    $(document).on('onCloseBtnClick','.btn_result_close',function(e) {
+        // alert('test');
+        // $('.layer_wrap').removeClass('type_mymn');
+    });
+    /* //2022-05-04 : 닫기 버튼 노출 스크립트 */
+});
+</script>
+
+</body>
+</html>

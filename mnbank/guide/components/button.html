@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>New KB스타뱅킹</title>
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/components.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/vendor/highlight/github-gist.css">
+    
+    <!-- resource -->
+    <link rel="stylesheet" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" href="/mnbank/guide/assets/css/guide_common.css">
+    <style>
+        button, a {display:block; margin-right:15px;}
+        .btn_wrap button {margin-right:0;}
+        .btn_trans_group + .btn_trans_group {margin-top:10px;}
+        .btn_confirm_wrap {height:auto;}
+        .btn_confirm_wrap .btn_area {position: relative;}
+        [class^=btn_test] {display:inline-block;}
+    </style>
+</head>
+<body>
+    <div data-class="contents">
+        <div data-class="component-name">버튼</div>
+        <div data-class="box">
+            <div data-class="p">
+               <strong>a와 button 태그 사용시</strong> <br>
+1. 페이지 이동임이 명확하면 a 태그(풀팝업 포함)<br>
+2. 레이어팝업은 button 태그<br>
+3. 하나의 태그인데 상황에 따라 이동과 풀팝업을 혼용해서 쓸때는 button 태그
+            </div>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">Type</div>
+
+            <div data-class="h2">기본</div>
+            <div data-class="box">
+                버튼은 사용용도에 따라 a태그로 변경해서 사용가능
+            </div>
+            <script type="text/html">
+<button type="button" class="btn primary lg">버튼(lg)</button>
+<button type="button" class="btn secondary lg">버튼(lg)</button>
+<button type="button" class="btn point lg">버튼(lg)</button>
+<button type="button" class="btn outline lg">버튼(lg)</button>
+<button type="button" class="btn outline lg" disabled>버튼(disabled)</button>
+<button type="button" class="btn primary lg" disabled>버튼(disabled)</button>
+            </script>
+
+            <div data-class="h2">Round</div>
+            <div data-class="box">
+                기본 타입에서 라운드 적용할때 클래서 "round" 추가
+            </div>
+            <script type="text/html">
+<button type="button" class="btn primary lg round">버튼(lg)</button>
+<button type="button" class="btn secondary md round">버튼(md)</button>
+<button type="button" class="btn point sm round">버튼(sm)</button>
+<button type="button" class="btn outline xs round">버튼(xs)</button>
+<button type="button" class="btn primary xs round" disabled>버튼(disabled)</button>
+            </script>
+            
+            <div data-class="h2">text button</div>
+            <div data-class="p">기본 : size 16px </div>
+            <script type="text/html">
+<a href="#none" class="btn_txt link">일반링크</a>
+<a href="#none" class="btn_txt ico_arr">자세히 보기</a>&nbsp;
+<a href="#none" class="btn_txt ico_arr_error">오류</a>
+<button type="button" class="btn_txt ico_pencil">이국민</button>
+<button type="button" class="btn_txt ico_arrdown">바텀시트 실행</button>
+<button type="button" class="btn_txt ico_reset">초기화</button>
+<button type="button" class="btn_txt ico_reset sm2">새로고침</button>
+<button type="button" class="btn_txt ico_del right">삭제</button>
+<button type="button" class="btn_txt ico_del2 right">삭제</button>
+<button type="button" class="btn_txt ico_kakao">카카오톡전송</button>
+<button type="button" class="btn_txt ico_sms">SMS전송</button>
+<button type="button" class="btn_txt ico_help">도움말</button>
+<button type="button" class="btn_txt ico_addrbook">주소록</button>
+            </script>
+            <div data-class="p">.sm : size 14px</div>
+            <script type="text/html">
+<a href="#none" class="btn_txt link sm">일반링크</a>
+<a href="#none" class="btn_txt ico_arr sm">자세히 보기</a>
+<a href="#none" class="btn_txt ico_arr_error sm">오류</a>
+<button type="button" class="btn_txt ico_reset sm">새로고침</button>
+<button type="button" class="btn_txt ico_add sm">추가이체</button>
+<button type="button" class="btn_txt ico_away sm">회차번호</button>
+<button type="button" class="btn_txt ico_arrdown sm">바텀시트 실행</button>
+            </script>
+
+            <div data-class="h2">icon button</div>
+            <div data-class="box">
+                <a href="icon.html" class="btn_txt ico_arr xs"><span> 아이콘 참고</span></a>
+            </div>
+<!-- <button type="button" class="ico_24 tripledot"><span class="hidden">계좌상세메뉴더보기</span></button>
+<button type="button" class="ico_24 move"><span class="hidden">드래그</span></button>
+<button type="button" class="ico_24 calendar"><span class="hidden">날짜선택</span></button> -->
+            <script type="text/html">
+                <button type="button" class="btn_ico ico_volume plus"><span class="hidden">증가</span></button>
+                <button type="button" class="btn_ico ico_volume minus"><span class="hidden">증감</span></button>
+            </script>
+
+            <div data-class="h2">조회, 이체용</div>
+            <script type="text/html">
+<div class="btn_trans_group">
+    <span><button type="button" class="btn">자주쓰는</button></span>
+    <span><button type="button" class="btn">빠른이체</button></span>
+    <span><button type="button" class="btn">최근이체</button></span>
+    <span><button type="button" class="btn">내계좌</button></span>
+</div> 
+<div class="btn_trans_group">
+    <span><button type="button" class="btn"><em class="number">1</em><em class="num_unit">만원</em></button></span>
+    <span><button type="button" class="btn"><em class="number">5</em><em class="num_unit">만원</em></button></span>
+    <span><button type="button" class="btn"><em class="number">10</em><em class="num_unit">만원</em></button></span>
+    <span><button type="button" class="btn"><em class="number">100</em><em class="num_unit">만원</em></button></span>
+    <span><button type="button" class="btn">전액</button></span>
+</div> 
+<div class="btn_trans_group lg"><!-- BFE070350에 사용 -->
+    <span><button type="button" class="btn active">자주쓰는</button></span><!-- 선택시 active 추가, 팝업띄우지 않을 시에는 title 빼주세요 -->
+    <span><button type="button" class="btn">빠른이체</button></span>
+    <span><button type="button" class="btn">최근이체</button></span>
+    <span><button type="button" class="btn">내계좌</button></span>
+</div> 
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">크기</div>
+
+            <div data-class="h2">lg (48px)</div>
+            <div data-class="box">LV1. 페이지 하단 컨펌 버튼 (Sticky) - 60px<br>
+                LV2. 조회 버튼 (Solid) - 48px<br></div>
+            <script type="text/html">
+<button type="button" class="btn primary lg">버튼(lg)</button>
+<button type="button" class="btn secondary lg">버튼(lg)</button>
+<button type="button" class="btn point lg">버튼(lg)</button>
+<button type="button" class="btn outline lg">버튼(lg)</button>
+<button type="button" class="btn primary lg" disabled>버튼(disabled)</button>
+            </script>
+            <div data-class="h2">md (44px)</div>
+            <div data-class="box">LV3. 폼 하단, 리스트 하단 버튼 (Line)</div>
+            <script type="text/html">
+<button type="button" class="btn primary md">버튼(md)</button>
+<button type="button" class="btn secondary md">버튼(md)</button>
+<button type="button" class="btn point md">버튼(md)</button>
+<button type="button" class="btn outline md">버튼(md)</button>
+<button type="button" class="btn primary md" disabled>버튼(disabled)</button>
+            </script>  
+            
+            <div data-class="h2">mm (40px)</div>
+            <div data-class="box">전계좌조회 > 카드형에만 사용</div>
+            <script type="text/html">
+<button type="button" class="btn primary mm">버튼(mm)</button>
+<button type="button" class="btn secondary mm">버튼(mm)</button>
+<button type="button" class="btn point mm">버튼(mm)</button>
+<button type="button" class="btn outline mm">버튼(mm)</button>
+<button type="button" class="btn primary mm" disabled>버튼(disabled)</button>
+            </script>  
+
+            <div data-class="h2">sm (36px)</div>
+            <div data-class="box">라인형 종속</div>
+            <script type="text/html">
+<button type="button" class="btn primary sm">버튼(sm)</button>
+<button type="button" class="btn secondary sm">버튼(sm)</button>
+<button type="button" class="btn point sm">버튼(sm)</button>
+<button type="button" class="btn outline sm">버튼(sm)</button>
+<button type="button" class="btn primary sm" disabled>버튼(disabled)</button>
+            </script>
+
+            <div data-class="h2">xs (28px)</div>
+            <div data-class="box">테이블 안</div>
+            <script type="text/html">
+<button type="button" class="btn primary xs">버튼(xs)</button>
+<button type="button" class="btn secondary xs">버튼(xs)</button>
+<button type="button" class="btn point xs">버튼(xs)</button>
+<button type="button" class="btn outline xs">버튼(xs)</button>
+<button type="button" class="btn primary xs" disabled>버튼(disabled)</button>
+            </script>
+        </div>
+
+
+        <div data-class="section">
+            <div data-class="h1">정렬</div>
+            <div data-class="box">
+                버튼이 2개 이상일 때 btn_wrap 으로 감싸기
+            </div>
+            <div data-class="h2">Horizontal</div>
+            <div data-class="box">
+                Default
+            </div>
+            <script type="text/html">
+<!-- 버튼 영역 -->
+<div class="btn_wrap">
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+</div>
+<!-- //버튼 영역 -->
+            </script>
+            
+            <div data-class="h2">Vertical</div>
+            <div data-class="box">
+                v 클래스 추가
+            </div>
+            <script type="text/html">
+<!-- 버튼 영역 -->
+<div class="btn_wrap v">
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+</div>
+<!-- //버튼 영역 -->
+            </script>
+        </div>
+
+        <div data-class="section">
+            <div data-class="h1">위치</div>
+            <div data-class="h2">테이블 안</div>
+            <div data-class="box">
+                Table, List 안에 들어가는 margin 없는 기본 버튼<br>
+                1개 버튼은 button 단독 사용 가능
+            </div>
+            <script type="text/html">
+<div class="btn_wrap">
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+    <span><button type="button" class="btn outline xs">버튼(xs)</button></span>
+</div>
+            </script>
+
+            <div data-class="h2">폼</div>
+            <div data-class="p">폼 하단 full 버튼 : .form_btm_full_wrap</div>
+            <script type="text/html">
+<div class="form_btm_full_wrap">
+    <span><button type="button" class="btn outline md ">인증번호요청</button></span>
+</div>
+            </script>
+
+            <div data-class="h2">리스트</div>
+            <div data-class="p">리스트 > 버튼 : .btn_list_btm</div>
+            <div data-class="box">
+                리스트 라인 안에 위치하는 버튼
+            </div>
+            <script type="text/html">
+<div class="btn_list_btm">
+    <span><button type="button" class="btn outline sm">채권취소</button></span>
+    <span><button type="button" class="btn outline sm">채권변경</button></span>
+</div>
+                        </script>
+
+            <div data-class="p">리스트 하단 : .btn_list_btm</div>
+            <div data-class="box">
+                리스트 라인 아래 위치하는 버튼
+            </div>
+            <script type="text/html">
+<div class="btn_list_btm">
+    <span><button type="button" class="btn outline md">상세보기(.outline.md)</button></span>
+</div>
+<div class="btn_list_btm">
+    <span><button type="button" class="btn outline md">상세보기(.outline.md)</button></span>
+    <span><button type="button" class="btn outline md">상세보기(.outline.md)</button></span>
+</div>
+                            </script>
+                
+                            <div data-class="h2">컨텐츠</div>
+                            <div data-class="p">컨텐츠 요소 안 : .btn_wrap</div>
+                            <div data-class="box">
+                               마진값에 따라 구분자 적용하며, 위치에 따라 클래스 적용.<br>
+                               1.마진값 구분자 - mg_sm : 24px;, mg_md : 28px;<br>
+                               2.위치 구분자 - 상단 : top, 하단 : btm
+                            </div>
+                            <script type="text/html">
+<div class="btn_wrap btm mg_sm">
+    <span><button type="button" class="btn secondary mm">버튼(.mm)</button></span>
+    <span><button type="button" class="btn secondary mm">버튼(.mm)</button></span>
+</div>
+                                            </script>
+
+            <div data-class="p">조회 버튼 : .btn_cnt_wrap</div>
+            <script type="text/html">
+<div class="btn_cnt_wrap">
+    <span><button type="button" class="btn primary lg">조회(.primary.lg)</button></span>
+</div>
+
+<div class="btn_cnt_wrap">
+    <span><button type="button" class="btn secondary lg">버튼(lg)</button></span>
+    <span><button type="button" class="btn primary lg">버튼(lg)</button></span>
+</div>
+            </script>
+            
+
+            <div data-class="h2">페이지</div>
+            <div data-class="p">페이지 하단 Fixed Confirm 버튼</div>
+            <div data-class="box">
+                <div data-class="p">하단 버튼은 컨텐츠 영역인 #container의 1차 자식요소</div>
+                <div data-class="list disc">
+                    <div>기본 타입 : Fixed button</div>
+                    <div>입력폼 보안키패드 대응(개발) : 클래스 .nofix 추가</div>
+                </div>
+            </div>
+            <script type="text/html">
+<div class="btn_confirm_wrap">
+    <div class="btn_area">
+        <span><button type="button" class="btn primary lg">버튼(lg)</button></span>
+    </div>
+</div>
+            </script>
+            <script type="text/html">
+<div class="btn_confirm_wrap">
+    <div class="btn_area">
+        <span><button type="button" class="btn secondary lg">버튼(lg)</button></span>  
+        <span><button type="button" class="btn primary lg">버튼(lg)</button></span>  
+    </div>
+</div>
+            </script>
+        </div>
+    </div>
+
+    
+    <script src="/mnbank/guide/assets/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/lodash.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/highlight/highlight.min.js"></script>
+    <script src="/mnbank/guide/assets/vendor/clipboard.min.js"></script>
+    <script src="/mnbank/guide/assets/js/components.js"></script>
+    
+    <!-- Loading Custom Script -->
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

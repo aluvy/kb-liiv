@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>레이아웃 메인</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/service.css">
+	<!-- // -->
+    <style>
+        [class^=section] {border:1px solid blue;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_service"><!-- 구분자: 카테고리명 -->
+        <h1 class="hidden">페이지화면명</h1>
+        <div class="section">
+            section
+        </div>
+
+        <hr class="hr_divide">
+        <div class="section">
+            section
+        </div>
+
+        <hr class="hr_divide">
+        <div class="section">
+            section
+            <hr class="hr_line">
+            section
+        </div>
+
+		<div class="inform_btm_wrap">
+			<button class="tit js_toggle" aria-expanded="false" aria-controls="notice_1_1">알려드립니다</button>
+			<div class="toggle_panel" role="region" id="notice_1_1">
+				<ul class="depth bul">
+					<li>납부가능시간
+						<ul class="depth dash">
+							<li>가이드 텍스트가 나오는 라인입니다.</li>
+							<li>가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다. 가이드 텍스트가 나오는 라인입니다.</li>
+						</ul>
+					</li>
+					<li>조회납부 : 고지서상에 “전자납부가능”으로 표시되어있고, 전자납부번호가 있는 경우</li>
+					<li>KB스타뱅킹에 고시되는 환율은 USD(미국 달러) 환산 1만 달러 * 미만 거래 시 적용되는 환율이며, USD(미국 달러) 환산 1만 달러 이상 **거래 시에는 가까운 지점에 문의해주세요.
+						<p class="sub_info_txt">* USD(미국 달러), EUR(유럽연합 유로), JYP(일본엔) 환산 5만 달러 미만입니다.</p>
+						<p class="sub_info_txt">**그밖에 통화는 USD(미국 달러) 환산 5만 달러 이상입니다.</p>
+					</li>
+					<li>알려드립니다내용내용내용</li>
+				</ul>
+			</div>
+		</div>
+
+        <div class="btn_confirm_wrap">
+            <div class="btn_area">
+                <span><button type="button" class="btn secondary lg">버튼(lg)</button></span>  
+                <span><button type="button" class="btn primary lg">버튼(lg)</button></span>  
+            </div>
+        </div>
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- 레이어팝업 START -->
+<div id="htmlTest" class="layerHTML">
+
+</div>
+<!-- //레이어팝업 END -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+
+<!-- 업무 SCRIPT START -->
+<script>
+
+</script>
+<!-- //업무 SCRIPT END -->
+</body>
+</html>

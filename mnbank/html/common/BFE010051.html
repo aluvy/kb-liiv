@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no">
+    <title>추가서류 제출</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/regist.css">
+	<!-- // -->
+</head>
+<body>
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    <div id="content" class="cate_regist">
+        <h1 class="hidden">추가서류 촬영 안내</h1>
+
+        <!-- 추가서류 제출 -->
+        <div>
+            <h2 class="hidden">추가서류 제출</h2>
+            <div class="section">
+                <div class="slogan_wrap">
+                    <p class="tit">추가정보 확인을 위해<br>
+                        주민등록증/초본을 준비해주세요</p>
+                </div>
+            </div>
+
+            <div class="section">
+<!-- 210916 ui swiper로 수정 및 이미지 교체 작업 -->
+                <div class="registration_swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="/mnbank/app/img/common/img_registration.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/mnbank/app/img/common/img_registration_2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/mnbank/app/img/common/img_registration_3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+<!-- //210916 ui swiper로 수정 및 이미지 교체 작업 -->
+
+                <div class="list_btm_wrap gap_sm_3"><!-- 210826 .gap_sm_3 추가 -->
+                    <p class="depth">서류 하단 (<span class="round_bul">1</span>, <span class="round_bul">2</span>, <span class="round_bul">3</span>) 의 바코드를 하나씩 인식해주세요.</p>
+                </div>
+            </div>
+
+            <div class="section">
+<!-- 210719 수정 -->
+                <ul class="depth bul">
+                    <li><span class="fc_posi">정부24 홈페이지 또는 모바일앱에서 3개월 이내에 발급한 원본만 사용할 수 있습니다.</span></li>
+                    <li>서류가 여러 장인 경우, 순서에 관계 없이 모든 바코드를 인식해야 합니다.</li>
+                    <li>정보확인이 어렵거나, 훼손/유효하지 않은 서류는 거래가 제한(거절) 될 수 있습니다.</li>
+                </ul>
+<!-- //210719 수정 -->                
+            </div>
+            
+            <div class="btn_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn primary lg">추가서류 제출</button></span>
+                </div>    
+            </div>
+        </div>
+        <!-- //추가서류 제출 -->
+
+        <!-- 추가서류 확인 -->
+        <div>
+            <h2 class="hidden">추가서류 확인</h2>
+            <div class="section">
+                <div class="doc_scroll_wrap">
+                    <div class="scroll" style="height:21rem;">
+                        <div class="samp_wrap">이미지 영역</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h3 class="h2">추가서류 정보</h3>
+                <div class="form_group">
+                    <div class="form_tit">문서종류</div>
+                    <div class="form_row">
+                        <div class="input">
+                            <input type="text" title="문서종류" value="주민등록등본" readonly>
+                        </div>
+                    </div>  
+                </div>
+                <div class="form_group">
+                    <div class="form_tit">발급일자</div>
+                    <div class="form_row">
+                        <div class="input" role="button">
+                            <input type="tel" title="발급일자" value="2021.06.07" readonly>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="btn_confirm_wrap">
+                <div class="btn_area">
+                    <span><button type="button" class="btn primary lg">다음</button></span>
+                </div>    
+            </div>
+        </div>
+        <!-- //추가서류 확인 -->
+
+    </div><!-- //content -->
+</div><!-- //wrap -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+<script src="/mnbank/app/js/library/swiper.min.js"></script> <!-- 슬라이드용 플러그인 210908 수정(추가) -->
+
+<!-- 210908 수정(추가) -->
+<script>
+    /* 업무 SCRIPT */
+    var swiper = new Swiper('.registration_swiper .swiper-container', {
+            slidesPerView: '1',
+            pagination : {
+                el : '.registration_swiper .swiper-pagination',
+                clickable: true,
+                renderBullet: function(idx, className) {
+                    var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+                    return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+                }    
+            },
+            on: {
+                afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        _this.parent().find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    });
+                },
+                transitionEnd: function() {
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                    this.$el.parent().find('.swiper-pagination-bullet').each(function() {
+                        var _this = $(this);
+                        if (_this.is('.swiper-pagination-bullet-active')) {
+                            _this.attr('title', '선택됨').siblings().attr('title', '');
+                        };
+                    });
+                },
+            }
+        });
+</script>
+<!-- //210908 수정(추가) -->
+</body>
+</html>

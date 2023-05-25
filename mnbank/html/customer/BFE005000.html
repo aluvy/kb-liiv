@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="format-detection" content="telephone=no">
+    <title>새소식</title>
+	<!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+	<link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+	<link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+	<!-- // -->
+	<!-- 페이지별선언 -->
+    <link rel="stylesheet" data-description="고객센터" href="/mnbank/app/css/customer.css">
+	<!-- // -->
+</head>
+<body>
+<!-- 업무 관련 HTML 선언 START -->
+<div id="wrap">
+    <!-- 네이티브영역 -->
+    <header id="header"><script src="/mnbank/guide/assets/js/publish.js"></script></header>
+    <!-- //네이티브영역 -->
+    
+    <div id="content" class="cate_customer">
+        <h1 class="hidden">새소식</h1>
+        <div class="search_wrap">
+            <div class="input">
+                <input type="text" class="inp" title="검색어" placeholder="검색어를 입력해주세요.">
+                <button type="submit" class="btn_sch"><span class="hidden">검색</span></button>
+            </div>
+            <p class="search_txt"><strong>전산시스템</strong>으로 검색한 결과입니다.(총 5건)</p>
+        </div>
+        
+        <!-- 개발 : 결과값이 있을 때 노출 -->
+        <div class="section board_list_wrap">
+            <!-- 210707 추가 --> 
+            <div class="list_top_wrap">
+                <div class="col col_l"><span class="total_num">전체 <em class="number">17</em><em class="num_unit">건</em></span></div>
+            </div>
+            <!-- //210707 추가 --> 
+            <ul class="board_list">
+                <li>
+                    <a href="#none">
+                        <p class="tit">「청년우대형동영상 업로드 테스트</p>
+                        <p class="info"><span class="number">2121.03.04</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <p class="tit">「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                        <div class="info"><span class="number">2121.03.04</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <p class="tit">「청년우대형「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                        <p class="info"><span class="number">2121.03.04</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <p class="tit">「청년우대형「청년우대형 주택청약종합저축 비과세 요건「청년우대형 주택청약종합저축 비과세 요건</p>
+                        <p class="info"><span class="number">2121.03.04</span></p>
+                    </a>
+                </li>
+            </ul>
+            <div class="paging">
+                <a href="#none" class="first"><span>처음</span></a>
+                <a href="#none" class="prev on"><span>이전</span></a>
+                <span class="curr"><em>현재 페이지</em>1</span><span class="total"><em>전체 페이지</em>100</span>
+                <a href="#none" class="next on"><span>다음</span></a>
+                <a href="#none" class="end on"><span>끝</span></a>
+            </div>
+        </div>
+        <!-- //개발 : 결과값이 있을 때 노출 -->
+
+        <!-- 개발 : 결과값이 없을 때 노출 -->
+        <div class="result nodata">
+            <p class="tit">검색결과가 없습니다.</p>
+        </div>
+        <!-- //개발 : 결과값이 없을 때 노출 -->
+    </div><!-- //content -->
+</div><!-- //wrap -->
+<!-- //업무 관련 HTML 선언 End -->
+
+<!-- common ui init -->
+<script src="/mnbank/app/js/common_ui_init.js"></script>
+</body>
+</html>

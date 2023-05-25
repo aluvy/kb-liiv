@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ko" class="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>메인</title>
+    <!-- 전역선언(SPA 탬플릿에 선언 되어져 있음) -->
+    <link rel="stylesheet" data-description="공통 요소별 스타일" href="/mnbank/app/css/common.css">
+    <link rel="stylesheet" data-description="공통 혼합요소별 스타일" href="/mnbank/app/css/common_mix.css">
+    <link rel="stylesheet" data-description="운영 공통 적용 스타일" href="/mnbank/app/css/style.css">
+    <script src="/mnbank/app/js/library/jquery-3.3.1-min.js"></script>
+    <script src="/mnbank/app/js/library/jquery-ui.min.js"></script>
+    <script src="/mnbank/app/js/common_ui.js"></script>
+    <!-- // -->
+    <!-- 페이지별선언 -->
+    <!--<link rel="stylesheet" href="/mnbank/app/css/library/swiper.min.css">-->
+    <!-- <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/main_non_0521저녁_로컬.css"> -->
+    <link rel="stylesheet" data-description="컴포넌트별 스타일" href="/mnbank/app/css/main_non.css">
+    <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+        <!-- <header id="header">
+        <a href="" class="tmnu_login"><span>로그인</span></a>
+        <div class="nav_wrap">
+            <button type="button" class="tmnu_search"><span class="hidden">검색</span></button>
+            <button type="button" class="tmnu_menu"><span class="hidden">전체메뉴</span></button>
+        </div>
+    </header> -->
+        <!-- // [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+
+        <!-- <div id="content" class="cate_main_non"> [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+        <div id="content">
+            <!-- [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+            <h1 class="hidden">KB국민은행 로그인 전</h1>
+            <!-- 키 비주얼 영역 -->
+            <div class="key_contents">
+                <div class="swiper-container logout_main">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <img src="/mnbank/app/img/main_non/visual01.png" alt="이벤트 KB국민은행 X 솔드아웃 스뱅 ‘들어오'고, 한정판 ‘드로우' GO">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <img src="/mnbank/app/img/main_non/visual02.png" alt="오늘 개방 전 꼭 알아야 할 5가지.....">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <img src="/mnbank/app/img/main_non/visual01.png" alt="오늘 개방 전 꼭 알아야 할 5가지.....">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <img src="/mnbank/app/img/main_non/visual02.png" alt="오늘 개방 전 꼭 알아야 할 5가지.....">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class='play-control stop'>멈춤</div>
+                </div>
+            </div>
+            <div class="news_feed">
+                <h2 class="h2">뉴스피드</h2>
+                <ul class="news_feed_li">
+                    <li><a href="#none">오늘 투자 전에 알아야 할 5가지 (3.14)</a></li>
+                    <li><a href="#none">2022년 03월 온국민 투자가이드</a></li>
+                    <li><a href="#none">우크라이나 지정학적 리스크 증가에 따른 금융시장 어쩌고저쩌고</a></li>
+                </ul>
+                <a href="#none" class="more"><span>더보기</span></a>
+            </div>
+            <!-- // 키 비주얼 영역 -->
+            <hr class="hr_divide2">
+            <!-- tab contents -->
+
+            <div class="tab_swiper_wrap">
+                <div id="tabPaginationId" class="tab_pagination" role="tablist">
+                    <div class="tab_scroll_wrap">
+                        <!-- 220624 [금융그룹 고도화 3차] KB금융그룹 탭버튼 추가 & 탭버튼들의 arai-controls 속성값 순서 변경 & 꿀팁정보 버튼의 'active' 클래스 제거 -->
+                        <div><button type="button" class="-active" role="tab" aria-selected="true" aria-controls="tabpanel_0">생활금융</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_1">꿀팁정보</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_2">핫한상품</button></div>
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_3">내집마련</button></div>
+                        <!-- <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_4">KB차차차</button></div> -->
+                        <div><button type="button" role="tab" aria-selected="false" aria-controls="tabpanel_4">KB라이프</button></div>
+                    </div>
+                </div>
+                <div class="swiper-container tab_swiper">
+                    <div id="tabSwiperId" class="swiper-wrapper">
+                        <!-- 220624 [금융그룹 고도화 3차] 업권 콘텐츠 추가 -->
+                        <div class="swiper-slide" role="tabpanel" id="tabpanel_0" data-service="fnc">
+                            <div class="m_tab_panel">
+                                <div class="m_section fnc_services">
+                                    <h3 class="h2">테마별 서비스</h3>
+                                    <a href="#none" class="fnc_home_link">
+                                        <span class="txt">
+                                            일상을 더 특별하게
+                                            <span class="em">KB금융그룹 서비스</span>
+                                        </span>
+
+                                    </a>
+                                    <div class="biz_link_group">
+                                        <a href="#none" class="link item1">주식</a>
+                                        <a href="#none" class="link item2">카드</a>
+                                        <a href="#none" class="link item3">보험</a>
+                                        <a href="#none" class="link item4">대출</a>
+                                        <a href="#none" class="link item5">자동차</a>
+                                        <a href="#none" class="link item6">통신</a>
+                                        <a href="#none" class="link item7">여행</a>
+                                        <a href="#none" class="link item8">부동산</a>
+                                        <a href="#none" class="link item9">건강</a>
+                                        <a href="#none" class="link item10">쇼핑</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //220624 [고도화 3차] 업권 콘텐츠 추가 -->
+                        <div class="swiper-slide" role="tabpanel" id="tabpanel_1">
+                            <!-- <h2 class="hidden">꿀팁정보</h2> -->
+                            <!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                            <div class="m_tab_panel">
+                                <div class="m_section stock dummny">
+                                    <h3 class="h2">오늘의 증시</h3>
+                                    <div class="stock_info kospi">
+                                        <dl>
+                                            <dt>KOSPI</dt>
+                                            <dd>
+                                                <strong class="kospi" id="kospi">3,044.83</strong>
+                                                <span class="hidden">상승</span>
+                                                <span class="up">14.79 (+1.8%) </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="stock_info kosdaq">
+                                        <dl>
+                                            <dt>KOSDAQ</dt>
+                                            <dd>
+                                                <strong class="kosdaq" id="kosdaq">2,044.83</strong>
+                                                <span class="hidden">하락</span>
+                                                <span class="down">14.79 (-1.8%) </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="w_stock_time"><span class="stock_time">2022.03.11 13:46:45</span><a href="#none" class="_date_refresh">새로고침</a></div><!-- [전담반 Biz-069]  비로그인 메인 :2022-04-13 디자인수정 -->
+                                    <div class="stock_link"><a href="#none">Easy 주식매매</a></div>
+                                </div>
+                                <!-- [전담반 Biz-069]  비로그인 메인 > 지식UP연구소추가 -->
+                                <div class="m_section knowhow_lab">
+                                    <h3 class="h2">지식up 연구소</h3>
+                                    <a href="#none" class="knowhow_lab_link">
+                                        <!-- 220419 삭제 <img src="/mnbank/app/img/common/temp/banner_non_main_knowhow.png" alt="1인 가구의 생활분석 Report 1인 가구 어떻게 살고 있나요?"> -->
+                                    </a>
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+                                <!-- 220419 삭제 -->
+                                <!-- for dummy 2022-04-18 -->
+                                <!-- <div class="m_section knowhow_lab">
+                                <h3 class="h2">지식up 연구소</h3>
+                                <a href="#none" class="knowhow_lab_link dummy"></a>
+                                <a href="#none" class="more"><span>더보기</span></a>
+                            </div> -->
+                                <!-- //for dummy 2022-04-18 -->
+                                <!-- //220419 삭제 -->
+
+                                <!--// [전담반 Biz-069]  비로그인 메인 > 지식UP연구소추가 -->
+
+                                <div class="m_section financial_expert">
+                                    <h3 class="h2">금융 전문가의 비법</h3>
+                                    <ul>
+                                        <li class="tax"><a href="#none">
+                                                <span class="tit">세무 전문가</span>
+                                                <span>‘금퇴족’들에겐 5가지 공통점이 있다.</span>
+                                            </a></li>
+                                        <li class="finance"><a href="#none">
+                                                <span class="tit">재테크 전문가</span>
+                                                <span>올 투자 테마는 위드 코로나, 탈세계화, 인플레 해지</span>
+                                            </a></li>
+                                    </ul>
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+
+                                <!-- 220419 삭제 -->
+                                <!-- for dummy 2022-04-18  -->
+                                <!-- <div class="m_section financial_expert">
+                                <h3 class="h2">금융 전문가의 비법</h3>
+                                <ul class="dummy">
+                                    <li class="tax"><a href="#none">
+                                        <span class="tit"></span>
+                                        <span></span>
+                                    </a></li>
+                                    <li class="finance"><a href="#none">
+                                        <span class="tit"></span>
+                                        <span></span>
+                                    </a></li>
+                                </ul>
+                                <a href="#none" class="more"><span>더보기</span></a>
+                            </div> -->
+                                <!-- // for dummy 2022-04-18  -->
+                                <!-- //220419 삭제 -->
+
+                                <div class="m_section youtube_channel">
+                                    <h3 class="h2">돈되는 유튜브</h3>
+                                    <div class="swiper-container youtube">
+                                        <div class="swiper-wrapper">
+                                            <!-- [전담반 Biz-069]  비로그인 메인 : 20220405 개발피드백 수정 -->
+
+                                            <div class="swiper-slide" id="tabpanel_0_1">
+                                                <div class="youtube_banner">
+                                                    <span class="thumb" aria-hidden="true">
+                                                        <!--<iframe name="logger" title="여의도5번출구 유튜브 채널" allow="accelerometer; autoplay; clipboard-write; encrypted-dedia; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/videoseries?list=UUBWHo1UKcRRf2X075Hg-zSQ"></iframe>-->
+                                                        <!-- [전담반 Biz-069]  비로그인 메인 : 20220406 기획테스트 피드백 수정 2022-04-12 접근성관련 수정  -->
+
+                                                    </span>
+                                                    <span class="tit">여의도5번출구 </span>
+                                                </div>
+                                                <a href="#none" class="youtube_banner_link" title="여의도5번출구 유튜브 채널로 이동"></a><!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                                            </div>
+                                            <div class="swiper-slide" id="tabpanel_0_2">
+                                                <div class="youtube_banner">
+                                                    <span class="thumb" aria-hidden="true">
+                                                        <!-- <iframe name="logger" title="KB부동산TV 유튜브 채널" allow="accelerometer; autoplay; clipboard-write; encrypted-dedia; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/videoseries?list=UUBWHo1UKcRRf2X075Hg-zSQ"></iframe> -->
+                                                        <!-- [전담반 Biz-069]  비로그인 메인 : 20220406 기획테스트 피드백 수정 2022-04-12 접근성관련 수정  -->
+                                                    </span>
+                                                    <span class="tit">KB부동산TV</span>
+                                                </div>
+                                                <a href="#none" class="youtube_banner_link" title="KB부동산TV 유튜브 채널로 이동"></a><!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                                            </div>
+                                            <div class="swiper-slide" id="tabpanel_0_3">
+                                                <div class="youtube_banner">
+                                                    <span class="thumb" aria-hidden="true">
+                                                        <!-- <iframe name="logger" title="월요지식회 유튜브 채널" allow="accelerometer; autoplay; clipboard-write; encrypted-dedia; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/videoseries?list=UUBWHo1UKcRRf2X075Hg-zSQ"></iframe> -->
+                                                        <!-- [전담반 Biz-069]  비로그인 메인 : 20220406 기획테스트 피드백 수정  2022-04-12 접근성관련 수정 -->
+                                                    </span>
+                                                    <span class="tit">월요지식회</span>
+                                                    <a href="#none" class="youtube_banner_link" title="월요지식회 유튜브 채널로 이동"></a><!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                                                </div>
+                                            </div>
+                                            <!-- // [전담반 Biz-069]  비로그인 메인 : 20220405 개발피드백 수정 -->
+                                        </div>
+                                    </div>
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+                                <div class="m_section gold_wise">
+                                    <h3 class="h2">GOLD & WISE</h3>
+                                    <div class="gold_wise_info">
+                                        <div class="gold_wise_contents">
+                                            <!-- [전담반 Biz-069]  비로그인 메인 : 20220411 gold & wise 디자인 수정 반영 -->
+                                            <div class="gold_wise_item">
+                                                <a href="#none">
+                                                    <img src="/mnbank/app/img/main_non/img_goldnwise.png" alt="GOLD & WISE 바로가기">
+                                                    <span>2022.03</span>
+                                                </a>
+                                            </div>
+                                            <!-- // [전담반 Biz-069]  비로그인 메인 : 20220411 gold & wise 디자인 수정 반영 -->
+                                        </div>
+                                    </div>
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" role="tabpanel" id="tabpanel_2">
+                            <!-- <h2 class="hidden">핫한상품</h2> -->
+                            <!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                            <div class="m_tab_panel">
+                                <div class="m_section financial_products">
+                                    <h3 class="h2">KB금융상품</h3>
+                                    <ul class="products_list">
+                                        <li class="deposit_savings">
+                                            <a href="#none">
+                                                <span class="badge">예금&middot;적금</span>
+                                                <span class="hidden">상품명</span><strong> KB마이핏적금</strong>
+                                                <span class="description">KB마이핏통장이 있다면 우대금리 쑥쑥! 첫거래 고객에게 금리 최대 3.60%제공!</span>
+                                                <!-- [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+                                                <div class="rate">
+                                                    <span class="tit">최고</span>
+                                                    <span class="val"><em class="sub">연</em>3.60%</span>
+                                                </div>
+                                                <!-- // [전담반 Biz-069]  비로그인 메인 : for release v2 -->
+                                            </a>
+                                        </li>
+                                        <li class="deposit_withdrawal">
+                                            <a href="#none">
+                                                <span class="badge">입출금</span>
+                                                <span class="hidden">상품명</span><strong>KB able Plus 통장</strong>
+                                                <span class="description">통장 하나로 증권매매까지!</span>
+                                            </a>
+                                        </li>
+                                        <li class="foreign_gold">
+                                            <a href="#none">
+                                                <span class="badge">외화&middot;골드</span>
+                                                <span class="hidden">상품명</span><strong>KB두근두근외화적금</strong>
+                                                <span class="description">자유롭게 미달러를 모아 해외여행을 준비하는 외화적금</span>
+                                            </a>
+                                        </li>
+                                        <li class="loan">
+                                            <a href="#none">
+                                                <span class="badge">대출</span>
+                                                <span class="hidden">상품명</span><strong>신용대출 맞춤상품</strong>
+                                                <span class="description">이것 저것 알아보지 않아도, 알아서 척척 꼭 맞는 신용대출 제안</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+                                <div class="m_section kb_group">
+                                    <h3 class="hidden">KB금융그룹 상품</h3>
+                                    <div class="savings_bank">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>KB저축은행 꿀적금</strong>
+                                                <span>소액으로 시작하는 꿀맛 재테크<br> 매일매일 100일 저축</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="kb_life_insurance">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>KB생명 착한정기보험</strong>
+                                                <span>보장과 보상을 더 저렴하게!</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="m_section event">
+                                    <div class="insurance_specialist">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>나만의 보험전문가 찾기</strong>
+                                                <span>가입권유 없는 KB만의 <br>보험전문가와 만나보세요!</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" role="tabpanel" id="tabpanel_3">
+                            <!-- <h2 class="hidden">내집마련</h2> -->
+                            <!-- [전담반 Biz-069]  비로그인 메인  : 20220411 접근성 보완 -->
+                            <div class="m_tab_panel">
+                                <div class="m_section real_estate">
+                                    <!-- [전담반 Biz-069]  비로그인 메인  : 2022-04-13 디자인수정 -->
+                                    <h3 class="h2">부동산전문가 비법</h3>
+                                    <a href="#none" class="real_estate_link">
+                                        <!-- <span class="tit">부동산 전문가</span> -->
+                                        <!-- [전담반 Biz-069]  비로그인 메인 : -->
+                                        <p>개인투자자들이 해외부동산 펀드 투자시 간과하기 쉬운 쉬운 팁제공
+                                        </p>
+                                    </a>
+                                    <!-- [전담반 Biz-069]  비로그인 메인  : 2022-04-13 디자인수정 -->
+                                    <a href="#none" class="more"><span>더보기</span></a>
+                                </div>
+                                <div class="m_section real_estate_info">
+                                    <h3 class="hidden">KB 부동산 상세 정보</h3>
+                                    <div class="real_estate_quote">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>시세 조회 서비스</strong>
+                                                <span>빠르고 정확한 부동산 시세를 알고 싶다면?</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="real_estate_loan">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>부동산 담보대출</strong>
+                                                <span>알아서 찾아주는 고객 맞춤 대출</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="m_section event">
+                                    <div class="real_estate_sales">
+                                        <a href="#none">
+                                            <p>
+                                                <span>한번에 보는</span><!--  [전담반 Biz-069]  비로그인 메인 : 문구수정 2022-04-15 -->
+                                                <strong>KB스타뱅킹 분양정보</strong>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-slide" role="tabpanel" id="tabpanel_4" style>
+                            <div class="m_tab_panel">
+                                <div class="m_section car_info">
+                                    <h3 class="h2">내차 판매</h3>
+                                    <ul>
+                                        <li class="car_sale"><a href="#none">팔아줘 차차차</a></li>
+                                        <li class="inquiry"><a href="#none">차량시세조회</a></li>
+                                    </ul>
+                                </div>
+                                <div class="m_section car_loan_insurance">
+                                    <h3 class="hidden">KB차차차 상품</h3>
+                                    <div class="car_loan">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>KB 매직카 대출</strong>
+                                                <span>신차 ·중고차 구입을 빠르고 간편하게!</span>
+                                            </p>
+                                        </a>
+
+                                    </div>
+                                    <div class="car_insurance">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>다이렉트 자동차보험</strong>
+                                                <span>보험료 조회는 간편하게! 보상은 든든하게!</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="swiper-slide" role="tabpanel" id="tabpanel_5">
+                            <div class="m_tab_panel">
+                                <!-- ***** [전담반 Biz-220] 만보기 ***** -->
+                                <!-- 연동 Case 1 : 동의/data있는경우 data class 추가 2022-06-02 -->
+                                <div class="m_section mwalking data">
+                                    <h3 class="h2">오늘의 걸음</h3>
+                                    <div class="w_mwalking">
+                                        <div class="w_data">
+                                            <p class="p_walk">
+                                                <span class="number num_walk">8,969</span>
+                                                <span class="txt_unit">걸음</span>
+                                            </p>
+                                            <p class="p_dtl">
+                                                <span class="num_kal"><span class="number">1240.50</span> kal</span><span class="num_time"><span class="number">1</span>시간 <span class="number">20</span>분</span>
+                                            </p>
+                                        </div>
+                                        <!-- 2022-06-02  -->
+                                        <div class="w_mchart">
+                                            <div class="mchart_bar"></div>
+                                        </div>
+                                        <div class="img_mwalking">
+                                            <!-- <img src="/mnbank/app/img/main_non/img_mwalking.png"> 움직이는 이미지 : 2022-06-10 -->
+                                        </div>
+                                        <!-- //2022-06-02 -->
+                                    </div>
+                                    <a href="#none"><span class="more"><span>더보기</span></a><!-- 2022-06-02  -->
+                                </div>
+                                <!-- //연동 Case 1 -->
+
+                                <!-- 연동 Case 2 : 미동의 -->
+                                <div class="m_section mwalking connected">
+                                    <!-- 연동시 'connected' 클래스 추가 -->
+                                    <h3 class="h2">오늘의 걸음</h3>
+                                    <div class="w_mwalking">
+                                        <div class="w_msg">
+                                            <p>걸을수록 건강한 일상<strong>쌓이는 혜택</strong></p>
+                                            <!-- 2022-06-02 -->
+                                            <button type="button" class="btn xs outline round">동의하고 시작하기</button>
+                                            <!-- //2022-06-02 -->
+                                        </div>
+                                        <!-- 움직이는 이미지 제거 : 2022-06-09 -->
+                                        <!-- <div class="w_mchart" >
+                                        <div class="mchart_bar"></div>
+                                    </div>                                    
+                                     <div class="img_mwalking">
+                                        <img src="/mnbank/app/img/main_non/img_mwalking.png"> 
+                                    </div>  -->
+                                    </div>
+                                    <a href="#none"><span class="more"><span>더보기</span></a>
+                                </div>
+                                <!-- //연동 Case 2 -->
+                                <!-- 미연동 Case 3 -->
+                                <div class="m_section mwalking">
+                                    <h3 class="h2">오늘의 걸음</h3>
+                                    <div class="w_mwalking">
+                                        <div class="w_msg">
+                                            <p>서비스 이용을 위해<br>앱 업데이트가 필요합니다.</p><!-- 문구수정 : 2022-06-20 -->
+                                            <button type="button" class="btn xs outline round">확인하기</button>
+                                        </div>
+
+                                    </div>
+                                    <!-- <a href="#none" class="mwalking_link" title="오늘의 걸음 상세보기">
+                                </a> -->
+                                    <!-- 2022-06-10 -->
+                                    <!-- <a href="#none"><span class="more"><span>더보기</span></a> -->
+                                </div>
+                                <!-- //미연동 Case 3 -->
+                                <!-- // ***** [전담반 Biz-220] 만보기 ***** -->
+
+                                <!-- ***** 운세서비스 : 동기화 ***** -->
+                                <div class="m_section life_service">
+                                    <h3 class="h2">KB운세서비스</h3>
+                                    <ul>
+                                        <li class="star">
+                                            <a href="#">
+                                                <span>KB스타뱅킹을 통해</span>
+                                                <strong>10가지 운세를 즐겨보세요!</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- // ***** 운세서비스 : 동기화 ***** -->
+                                <div class="m_section life_service">
+                                    <h3 class="h2">편의서비스</h3>
+                                    <ul>
+                                        <li class="branch">
+                                            <a href="#none">
+                                                <strong>지점 검색 / 번호표 발행</strong>
+                                                <span>기다리지 마세요. 당신은 소중하니까요</span>
+                                            </a>
+                                        </li>
+                                        <li class="convenient">
+                                            <a href="#none">
+                                                <strong>편의점 제휴ATM 찾기</strong>
+                                                <span>24시간. 언제나 열려있습니다.</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="m_section kb_tour">
+                                    <h3 class="h2">KB와 함께하는 여행</h3>
+                                    <ul>
+                                        <li class="exchange_rate"><a href="#none">환율 조회</a></li>
+                                        <li class="currency_exchange"><a href="#none">환전 신청</a></li>
+                                    </ul>
+                                </div>
+                                <div class="m_section liiv_m">
+                                    <h3 class="h2">알뜰한 통신 습관 Liiv M</h3>
+                                    <ul>
+                                        <li class="liiv_m_info"><a href="#none">리브엠이란?</a></li>
+                                        <li class="liiv_m_product"><a href="#none">The주는 Liiv M적금</a></li>
+                                    </ul>
+                                </div>
+                                <div class="m_section event">
+                                    <div class="insurance_claim">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>실손보험 빠른 청구</strong>
+                                                <span>실손보험금 이젠 서류 제출없이 <br>간편하게 청구하세요!</span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="health_secretary">
+                                        <a href="#none">
+                                            <p>
+                                                <strong>나만을 위한 건강 비서</strong>
+                                                <span>건강상담부터 진료예약까지 </span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr_divide2 hidden">
+            <!-- tab contents -->
+            <div class="notice_evt">
+                <p class="notice"><a href="#none"><span class="tit">공지</span> <span class="param">‘KB 마이데이터’ 서비스 시범시행 안내 말줄임 테스트 말줄임 테스트 말줄임 테스트 말줄임 테스트</span></a></p>
+                <!-- [전담반 Biz-069] 2022-03-30 이미지에서 텍스트로 수정 -->
+                <div class="evt"><a href="">회원가입으로 다양한 혜택을!</a></div>
+            </div>
+        </div><!-- //content -->
+        <!-- // -->
+    </div><!-- //wrap -->
+
+
+    <!-- common ui init -->
+    <script src="/mnbank/app/js/library/swiper.min.js"></script>
+    <script src="/mnbank/app/js/library/sortable.min.js"></script>
+    <script src="/mnbank/app/js/library/jquery.ui.touch-punch.min.js"></script>
+    <!-- <script src="/mnbank/app/js/library/lottie.min.js"></script> -->
+    <script src="/mnbank/app/js/common_ui_init.js"></script>
+    <script>
+        /* 업무 SCRIPT */
+
+        // scroll시 TabScrollFixed 호출
+        $(window).scroll(function () {
+            var topVal = $(document).scrollTop();
+            goldWiseAni.init(topVal);
+            walkingAni.init(topVal);
+            TabScrollFixed.tabFixed(topVal); //[전담반 Biz-069]  비로그인 메인 : 20220406 기획테스트 수정
+        });
+
+        /* [전담반 Biz-069] : 220220408 추가수정 */
+
+        const mainUI = {
+            $notiH: 0,
+            $divH: 0,
+            init: function () {
+                $notice_evt = $(".notice_evt").eq(0);
+                $hr = $(".tab_swiper_wrap").eq(0).next('hr');
+                mainUI.$notiH = ($notice_evt != undefined) ? parseInt($notice_evt.innerHeight()) : 0;
+                mainUI.$divH = ($hr != undefined) ? (parseInt($hr.outerHeight(true) + ($hr.innerHeight() - $hr.height()))) : 0;
+            }
+        }
+        /* [전담반 Biz-069] : 220220408 추가수정 */
+
+        // gold & wise animation
+        const goldWiseAni = {
+            screenHeight: screen.availHeight * 0.9,
+            goldWiseWidth: $('.gold_wise_info').eq(0).outerWidth(),
+            goldWiseConWidth: $('.gold_wise_contents').eq(0).outerWidth(),
+            goldWiseOffset: $('.gold_wise_info').eq(0).offset().top,
+
+            init: function (_topVal) {
+                if (_topVal + goldWiseAni.screenHeight > goldWiseAni.goldWiseOffset) {
+                    $('.gold_wise_info .gold_wise_contents').eq(0).addClass('-active');
+                }
+            }
+        }
+
+        // tab top fixed
+        const TabScrollFixed = {
+            tabOffset: $('.tab_swiper_wrap').eq(0).offset().top,
+            tabHeight: $('.tab_pagination').eq(0).height(),
+
+            tabFixed: function (_topVal) {
+                if (_topVal > TabScrollFixed.tabOffset - TabScrollFixed.tabHeight - 5) { // [전담반 Biz-069] 마크업 유격 높이 '- 5' 추가
+                    $('.tab_swiper_wrap').eq(0).addClass('_fixed'); // [전담반 Biz-069] 2020-03-31 class명 교체
+                } else {
+                    $('.tab_swiper_wrap').eq(0).removeClass('_fixed'); // [전담반 Biz-069] 2020-03-31 class명 교체
+                }
+            }
+        }
+
+        // interaction 관련 css 애니메이션 class 추가
+        const microInter = {
+            init: function (_thisId) {
+                if ($('#' + _thisId).hasClass('swiper-slide-active')) {
+                    // var activeHeight = $('#'+_thisId).height(); // [전담반 Biz-069] 오픈 후 수정 : 불필요한 동작 삭제 2022-05-03
+
+                    // [전담반 Biz-069] swiper height 확인용 삭제 필            
+                    if (!$('#' + _thisId).hasClass('-micro')) {
+                        $('#' + _thisId).addClass('-micro');
+                    }
+                }
+            }
+        }
+
+        // tab button swiper
+        const tabActive = {
+            tabBtnList: $('.tab_scroll_wrap button'),
+            tabPaginationW: $('.tab_pagination').outerWidth(),
+            tabBtnArr: [],
+            swiperHeight: [],
+            swiperHeightState: false,
+            swiperTransform: document.getElementById('tabSwiperId'),
+            swiperContainerW: $('#tabSwiperId').outerWidth(),
+            btnCrront: 0,
+
+            /* tab 위치에 따라 숨어있는 탭 노출 위치 조정 */
+            tabScroll: function (_index) {
+                var currentIndex = _index.substr(_index.length - 1);
+                tabActive.tabindex = currentIndex;
+                var tabBtnArr_W = 0;
+                // 탭버튼 합산 width
+                for (var i = 0; i <= currentIndex; i++) {
+                    tabBtnArr_W = tabBtnArr_W + tabActive.tabBtnArr[i];
+                    //if(tabBtnArr_W > tabActive.tabPaginationW){ 
+                    if (tabBtnArr_W > tabActive.tabPaginationW - (tabBtnArr_W + 8)) {
+                        /* [전담반 Biz-069]  비로그인 메인 : 20220406 기획테스트 수정 : 추가수정 */
+                        $('.tab_pagination').scrollLeft(tabActive.tabPaginationW - (tabActive.tabBtnArr[currentIndex] + 8));
+                    } else {
+                        $('.tab_pagination').scrollLeft(0);
+                    }
+                }
+            },
+            /* swiper index 에 따라 탭 선택, 위치변경, 탭 aria 변경, tab fixed 상태일때 탭 패널 최상단으로 scrolltop 조정 */
+            swiperMove: function (_index) {
+                // 이전 선택된 버튼 확인
+                tabActive.tabBtnList.each(function (index, item) {
+                    if ($(this).hasClass('-active')) {
+                        tabActive.btnCrront = $(this).attr('aria-controls').substr($(this).attr('aria-controls').length - 1);
+                    }
+                });
+                // transform & height  읽어오기
+
+                /* [전담반 Biz-069] 오픈 후 수정 : 중복동작 삭제 tabSwiper.slideTo()와 중복 동작임 2022-05-03 */
+                /*
+                var swiperMatrix = window.getComputedStyle(tabActive.swiperTransform).transform;
+                const translate = swiperMatrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+                let x = translate[4];
+
+                if (_index > tabActive.btnCrront){
+                    var btween = _index -tabActive.btnCrront;
+                    x = (parseInt(x) - parseInt(tabActive.swiperContainerW * btween));
+                    
+                } else if (_index < tabActive.btnCrront) {
+                    var btween = tabActive.btnCrront - _index;
+                    x = (parseInt(x) + parseInt(tabActive.swiperContainerW * btween));
+                    
+                }else {
+                    
+                    return;
+                }
+                
+                $('#tabSwiperId').css({'transform': 'translate3d('+ x +'px, 0px, 0px)', 'transition-duration' :'300ms', 'height' : tabActive.swiperHeight[_index]+'px'});
+                */
+                /* [전담반 Biz-069] 오픈 후 수정 : 중복동작 삭제 tabSwiper.slideTo()와 중복 동작임 2022-05-03 */
+
+                // 접근성 & swiper-active 추가
+                $('#tabSwiperId > .swiper-slide').each(function (index, item) {
+                    $(this).attr('aria-hidden', true).removeClass('swiper-slide-active swiper-slide-prev swiper-slide-next');
+                    if (index == _index) {
+                        $(this).attr('aria-hidden', false).addClass('swiper-slide-active');
+                    }
+                });
+
+                // swiper 시 slider 상단 이동
+                if ($('.tab_swiper_wrap').eq(0).hasClass('_fixed')) { // [전담반 Biz-069] 2020-03-31 class명 교체
+                    /* [전담반 Biz-069]  비로그인 메인: 헤더제거 2022-04-15 */
+                    /* [전담반 Biz-069]  비로그인 메인 : for v4 2022-04-18 TabFixed scroll top function */
+                    //$(document).scrollTop(TabScrollFixed.tabOffset-TabScrollFixed.tabHeight);
+                    tabActive.scrolltoTabfix();
+                    /* //[전담반 Biz-069]  비로그인 메인 : for v4 2022-04-18 TabFixed scroll top function */
+                    /* //[전담반 Biz-069]  비로그인 메인: 헤더제거 2022-04-15 */
+                }
+
+            },
+
+            /* [전담반 Biz-069]  비로그인 메인 : for v4 2022-04-18 TabFixed scroll top function */
+            scrolltoTabfix: function () {
+                $(document).scrollTop(TabScrollFixed.tabOffset);
+                $('.tab_swiper_wrap').eq(0).addClass('_fixed');
+            },
+            /* //[전담반 Biz-069]  비로그인 메인 :for v4 2022-04-18 TabFixed scroll top function */
+
+            /* Swiper Active */
+            swiperCall: function () {
+                // mainUI.init(); // [전담반 Biz-069] 오픈 후 수정 : 호출 위치 변경 2022-05-03
+
+                tabSwiper.init(); // [전담반 Biz-069]  비로그인 메인: for v3 2022-04-15 
+                if (tabActive.swiperHeightState == false) {
+                    $('#tabSwiperId .m_tab_panel').each(function (index) {
+                        /* [전담반 Biz-069] : 20220407 swiper panner 높이가 device 크기보다 작을 경우 처리 :20220408 추가수정 */
+                        let thisHeight = $(this).outerHeight(true) + ($(this).innerHeight() - $(this).height());
+                        let gapHeight = (_front.$deviceH - (TabScrollFixed.tabHeight + mainUI.$divH + mainUI.$notiH)) - thisHeight; /* [전담반 Biz-069]  비로그인 메인: 헤더제거 2022-04-15 */
+
+                        if (gapHeight > 0) {
+                            $(this).css({
+                                'margin-bottom': gapHeight + 'px'
+                            });
+                        }
+                        tabActive.swiperHeight.push(thisHeight + gapHeight);
+                        // [전담반 Biz-069] swiper height 확인용 삭제 필
+                        /* [전담반 Biz-069] : 20220407 swiper panner 높이가 device 크기보다 작을 경우 처리 : 20220408 추가수정 */
+                    });
+                    tabActive.swiperHeightState = true;
+                }
+
+                tabActive.tabBtnList.each(function (index, item) {
+                    // 각 버튼의 width array
+                    //tabActive.tabBtnArr.push($(item).parent().outerWidth()); // for v4 2022-04-18 
+                    // tabActive.swiperHeight
+
+                    $(this).on('click', function () {
+                        var thisindex = $(this).attr('aria-controls').substr($(this).attr('aria-controls').length - 1);
+                        tabActive.swiperMove(thisindex); // [전담반 Biz-069] : swiper tab 불안정한 동작 수정 20220405 update
+                        tabSwiper.slideTo(thisindex); // [전담반 Biz-069] : swiper tab 불안정한 동작 수정 20220405 update
+                        // tab 버튼 활성화
+                        tabActive.init($(this).attr('aria-controls'));
+                        // tab Pagination scroll
+                        tabActive.tabScroll($(this).attr('aria-controls'));
+                        // micro-interaction
+                        microInter.init('tabpanel_' + thisindex);
+                    });
+                });
+            },
+            /* Swiper 최초 초기화 */
+            init: function (_thisId) {
+                tabActive.tabBtnList.each(function (index, item) {
+                    if ($(this).hasClass('-active')) {
+                        $(this).attr('aria-selected', false).removeClass('-active');
+                    }
+                    tabActive.tabBtnArr.push($(item).parent().outerWidth()); // for v4 2022-04-18 
+                    if ($(this).attr('aria-controls') == _thisId) {
+                        $(this).attr('aria-selected', true).addClass('-active');
+                    }
+                });
+            }
+        }
+
+
+        // tab swiper
+
+        var tabSwiper = new Swiper('.tab_swiper.swiper-container', {
+            /* 2022-04-12 : 이슈 수정 40번 */
+            spaceBetween: 0,
+            autoHeight: true,
+            speed: 300,
+            touchRatio: 0.1, // 2022-04-13 swiper 수정
+            resistance: true, // 2022-04-13 swiper 수정
+            resistanceRatio: 0.5, // 2022-04-13 swiper 수정  //2022-04-13 swiper저항값 추가수정 
+            noSwipingClass: 'youtube_channel', // 2022-04-13 swiper 수정
+            //initialSlide: 4, // [전담반 Biz-069]  비로그인 메인: for v3 2022-04-15 
+            init: false, // [전담반 Biz-069]  비로그인 메인: for v3 2022-04-15 
+            initialScroll: 4, // for v4 2022-04-18
+            //initialScroll: 560, // for v4 2022-04-18
+            on: {
+                // for v4 2022-04-18
+                beforeInit: function () {
+                    /* [전담반 Biz-069] 오픈 후 수정 : 중복,불필요 호출 제거 */
+                },
+                init: function () {
+                    /* [전담반 Biz-069] 오픈 후 수정 : 개발에 저장된 스크롤 높이값이 있는 경우 ex: history back */
+                    if (this.initialScroll > 0) {
+                        $(document).scrollTop(TabScrollFixed.tabOffset);
+                    }
+                    /* //[전담반 Biz-069] 오픈 후 수정 : 개발에 저장된 스크롤 높이값이 있는 경우 ex: history back */
+
+                    // 220624 [금융그룹 고도화 3차] 'KB금융그룹' 슬라이드 활성화 시, 탭 콘텐츠 다음에 오는 디바이더 숨기기
+                    fncSlideFn(this);
+                },
+                // for v4 2022-04-18
+                afterInit: function () {
+                    /* [전담반 Biz-069] 오픈 후 수정 : 개발에 저장된 탭index가 있는 경우, init과 동시에 slideChangetrasition 이벤트도 발생하므로 중복동작 제거 ex: history back */
+                    /* 
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        var _thisId = _this.attr('id');
+
+                        if (_this.hasClass('swiper-slide-active') ) { 
+                            $(window).scrollTop(tabSwiper.initialScroll); // for v4 2022-04-18
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);  
+                            tabActive.init(_thisId);
+                            tabActive.tabScroll('tabpanel_'+tabSwiper.activeIndex);
+                            //microInter.init(_thisId);
+                            if($('.tab_swiper_wrap').eq(0).hasClass('_fixed')){ 
+                                tabActive.scrolltoTabfix(); //[전담반 Biz-069]  비로그인 메인 : 2022-04-18 for v4 TabFixed scroll top function
+                            }
+                        }
+                    });
+                    */
+                    /* //[전담반 Biz-069] 오픈 후 수정 : 개발에 저장된 탭index가 있는 경우, init과 동시에 slideChangetrasition 이벤트도 발생하므로 중복동작 제거 ex: history back */
+
+                },
+                transitionStart: function () {
+
+                },
+                transitionEnd: function () {
+
+                },
+                slideChangeTransitionStart: function () {
+                    this.$el.find('.swiper-slide').each(function () {
+                        var _this = $(this);
+                        var _thisId = _this.attr('id');
+                        if (_this.hasClass('swiper-slide-active')) { //20220406 개발 피드백 수정 : 추가수정 : for v3
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                            // tab 버튼 활성화
+                            tabActive.init(_thisId);
+                            // tab Pagination scroll
+                            tabActive.tabScroll(_thisId);
+                            // micro-interaction 
+                            microInter.init(_thisId); //[전담반 Biz-069] 오픈 후 수정 2022-05-03
+                            // swiper 시 slider 상단 이동
+                            if ($('.tab_swiper_wrap').eq(0).hasClass('_fixed')) { // [전담반 Biz-069] 2020-03-31 class명 교체 
+                                //if(tabActive.tabindex == tabSwiper.activeIndex) {
+                                //} else {
+                                /* [전담반 Biz-069]  비로그인 메인: 헤더제거 2022-04-15 */
+                                //$(document).scrollTop(TabScrollFixed.tabOffset-TabScrollFixed.tabHeight);
+                                $(document).scrollTop(TabScrollFixed.tabOffset);
+                                /* // [전담반 Biz-069]  비로그인 메인: 헤더제거 2022-04-15 */
+                                //}
+                            }
+
+                        }
+                    });
+
+                    // 220624 [금융그룹 고도화 3차] 'KB금융그룹' 슬라이드 활성화 시, 탭 콘텐츠 다음에 오는 디바이더 숨기기
+                    fncSlideFn(this);
+                },
+                slideChangeTransitionEnd: function () {}
+            }
+            /* //2022-04-12 : 이슈 수정 40번 */
+
+        });
+
+        // 220624 [금융그룹 고도화 3차]
+        const fncSlideFn = function (swiper) {
+            var $activeSlide = $(swiper.slides[swiper.activeIndex]);
+            var $divider = $('.tab_swiper_wrap').next('hr');
+            if (!$divider.length) return;
+            if ($activeSlide.is('[data-service]') && $activeSlide.attr('data-service') == 'fnc') {
+                $divider.addClass('hidden');
+            } else {
+                $divider.removeClass('hidden');
+            }
+        }
+
+
+        // tab Height 호출
+        const tabSwiperTimeSet = setTimeout(function () {
+            mainUI.init(); //[전담반 Biz-069] 오픈 후 수정 : 호출 위치 변경 2022-05-03
+            tabActive.swiperCall();
+        }, 300);
+
+        // 돈되는 youtube swiper 2022-04-13 swiper 수정
+        /* swiper 2022-04-13 swiper 수정
+        var youtubeSwiper = new Swiper('.youtube', {
+            slidesPerView: 'auto',
+            nested: true,
+            on: {
+                
+                afterInit: function() {
+                    this.$el.each(function() {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        _this.find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    });
+                },
+                transitionEnd: function() {
+                    
+                    this.$el.find('.swiper-slide').each(function() {
+                        var _this = $(this);
+                        var _thisId = _this.attr('id');
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                }
+            }
+        });
+        // swiper 2022-04-13 swiper 수정 */
+
+        // key swiper
+        var keySwiper = new Swiper('.logout_main', {
+            speed: 500,
+            spaceBetween: 0,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false, // [전담반 Biz-069]  비로그인 메인 : for release v2
+            },
+            pagination: {
+                el: '.key_contents .swiper-pagination',
+                clickable: true,
+                renderBullet: function (idx, className) {
+                    var txt = (idx + 1) + '/' + this.$el.find('.swiper-slide').length;
+                    return '<button class=' + className + '><span class="hidden">' + txt + '</span></button>';
+                }
+            },
+            on: {
+                afterInit: function () {
+                    this.$el.each(function () {
+                        var _this = $(this);
+                        _this.find('.swiper-slide').eq(0).attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        _this.parent().find('.swiper-pagination-bullet').eq(0).attr('title', '선택됨').siblings().attr('title', '');
+                    });
+                },
+                transitionEnd: function () {
+                    this.$el.find('.swiper-slide').each(function () {
+                        var _this = $(this);
+                        if (_this.is('.swiper-slide-active')) {
+                            _this.attr('aria-hidden', false).siblings().attr('aria-hidden', true);
+                        }
+                    });
+                    this.$el.parent().find('.swiper-pagination-bullet').each(function () {
+                        var _this = $(this);
+                        if (_this.is('.swiper-pagination-bullet-active')) {
+                            _this.attr('title', '선택됨').siblings().attr('title', '');
+                        };
+                    });
+                },
+            }
+        });
+
+        const playStop = {
+            playStopEvt: function () {
+                $('.logout_main .play-control').off('click').on('click', function () {
+                    if ($(this).hasClass('stop')) {
+                        keySwiper.autoplay.stop();
+                        $(this).attr('class', 'play-control play').text('재생');
+                    } else {
+                        keySwiper.autoplay.start();
+                        $(this).attr('class', 'play-control stop').text('멈춤');
+                    }
+                });
+            }
+        }
+        playStop.playStopEvt();
+
+        //증시 카운팅
+        const numberCountAni = function () {
+            function numberCounter(target_frame, target_number, min, max, limit) {
+                this.count = 0;
+                this.diff = 0;
+                this.target_number = target_number;
+                this.target_frame = document.getElementById(target_frame);
+                this.timer = null;
+                this.min = min;
+                this.max = max;
+                this.limit = limit;
+                this.counter();
+            };
+            numberCounter.prototype.counter = function () {
+                var self = this;
+                var randomStr = this.count.toString();
+
+                self.count = Math.random() * (parseInt(this.max) - parseInt(this.min)) + parseInt(this.min);
+                this.target_frame.innerHTML = [randomStr.slice(0, this.limit).replace(/\B(?=(\d{3})+(?!\d))/g, ','), '.', randomStr.slice(3, 5)].join('');
+                this.count < Math.ceil(this.target_number) ? this.timer = setTimeout(function () {
+                    self.counter();
+                }, 80) : clearTimeout(this.timer);
+            };
+            new numberCounter('kospi', '304483', '100000', '300000', 4);
+            new numberCounter('kosdaq', '204483', '10000', '70000', 3);
+        }
+        numberCountAni();
+
+        // 만보기 Ani
+        const walkingAni = {
+            screenHeight: screen.availHeight * 0.9,
+            mwalkingOffset: $('.mwalking').eq(0).offset().top,
+            setPos: function () {
+                var data = $('.mchart_bar_pos').attr('data-walk');
+                if (data === undefined) {
+                    data = 0;
+                }
+                if (parseInt(data) > 90) {
+                    $('.m_section.mwalking .mchart_bar_pos_in').css('margin-right', '2.5rem')
+                }
+                $('.mchart_bar_pos').css('width', data + '%').addClass('-micro');
+            },
+            init: function (_topVal) {
+                if (_topVal + walkingAni.screenHeight > walkingAni.mwalkingOffset) {
+                    walkingAni.setPos();
+                    //$('.w_mwalking').eq(0).addClass('-micro');
+                }
+            }
+        }
+    </script>
+
+    <script>
+        //큰글시 테스트용(운영배포X)
+        $(function () {
+            var $opener = window.opener;
+            if ($opener) {
+                if ($opener._target.hasClass('big_link')) {
+                    $('head').append('<link rel="stylesheet" data-description="큰글씨" href="/mnbank/app/css/common_big.css">');
+                    $('html').removeAttr('class').addClass('big_mode');
+                } else if ($opener._target.hasClass('dark_link')) {
+                    $('script').eq(0).before('<link rel="stylesheet" data-description="다크모드" href="/mnbank/app/css/common_dark.css">');
+                    $('html').removeAttr('class').addClass('dark_mode')
+                    $('[rel=stylesheet]').eq(0).attr('href', '/mnbank/app/css/common_d.css');
+
+                    //추후삭제예정s
+                    var cssDk = $('[rel=stylesheet]').eq($('[rel=stylesheet]').length - 1);
+                    if (cssDk.attr('href').indexOf('common_dark.css') === -1) {
+                        var chgCssDk = cssDk.attr('href').replace('.css', '_d.css');
+                        cssDk.attr('href', chgCssDk);
+                    }
+                    //추후삭제예정e
+                }
+            }
+        })
+    </script>
+</body>
+</html>
