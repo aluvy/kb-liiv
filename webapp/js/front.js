@@ -415,6 +415,7 @@ $(function(){
             
             $(_this.content).trigger("onload");
             accordionButton.accordion_popup(_this.$el); // popup accordion
+            _front.switch_popup(_this.$el); // popup switch
 
             return true;
         },
@@ -1423,6 +1424,26 @@ var _front = {
         })
     },
     /**
+     * popup 내 스위치 이벤트 init: popup open 시 호출 함께 호출 됨
+     * @param {element} popup (_this.$el) => (ex) div.layer_wrap.open.confirm
+     */
+    switch_popup : function(popup){
+        // popup in switch
+        let switchItem = $(popup).find(".switch_item");
+
+        switchItem.each((idx, item)=>{
+            const checkbox = $(item).find("input[type='checkbox']")
+            let text = checkbox.is(":checked") ? "활성화" : "비활성화";
+            $(item).find("label .blind").text(text);
+    
+            // change
+            $(item).off("change").on("change", function(){
+                text = checkbox.is(":checked") ? "활성화" : "비활성화";
+                $(item).find("label .blind").text(text);
+            })
+        })
+    },
+    /**
      * 클릭 시 아래로 늘어나는 .btn_select
      * .form_group 안에 .select_inline 클래스가 있는지 체크 후,
      * 그 조건에 해당하는 .btn_select 에만 접근성마크 추가 및 클릭 이벤트 부여
@@ -1642,34 +1663,11 @@ const _aside = {
         // [05/08] [앱접근성] asidemenu close target a tag 추가
         let asideCloseFocus = _front.isMain() ? "inner_main" : "inner_sub";
         setTimeout(() => {
-            // main과 sub close_aside 분리
-            // if( _front.isMain() ){
-            //     $(document).find(`.header h1.title a`).attr("id", "close_aside").attr("tabindex", 1);     // [05/15] name속성 id로 교체
-            // } else {
-            //     $(document).find(".container .content h1.title").each((idx, item)=>{
-            //         const title = $(item).text();
-            //         $(item).html(`<a id="close_aside">${title}</a>`)
-            //         $(item).attr("tabindex", 1);     // [05/15] name속성 id로 교체
-            //     })
-            // // }
-            // $(".btn_open_aside").attr("id", "close_aside").attr("aria-label", "메뉴").html(""); // [05/23] 수정
-            // $(".btn_close_aside").attr("aria-label", "닫기"); // [05/23] 수정
-            // $(".header .aside_wrap .aside_head .title").attr("id", "open_aisde"); // [05/23] 수정
-            // // $(document).find(`.header .aside_wrap .aside_head .title`).html(`<a id="open_aside">전체</a>`);             // [05/15] name속성 id로 교체
-
-            // [05/23] focus-3
             $(".btn_open_aside").attr("aria-label", "메뉴").html("");
             $(".btn_close_aside").attr("aria-label", "닫기").html("");
         }, 0);
 
         $(document).find(".header .nav_list li a").each((idx, item)=>{
-            // $(item).attr("href", `#nav_${idx}`).attr("role", "button");     // [05/15] role 속성 추가
-            // let tit = $(document).find(".header .menu_area .menu_list > li").eq(idx).find(".title");
-            // let menu = tit.text();
-            // tit.html(`<a id="nav_${idx}">${menu}</a>`);     // [05/15] name속성 id로 교체
-
-            // [05/23] 포커스 이동 관련 수정
-            // $(item).attr("href", `#nav_${idx}`);
             let tit = $(document).find(".header .menu_area .menu_list > li").eq(idx).find(".title");
             tit.attr("id", `nav_${idx}`);
         })
@@ -1707,10 +1705,6 @@ const _aside = {
         
         _aside.reset(); // reset
 
-        // 포커스 이동
-        // $(document).find("a#open_aside").attr("tabindex", 1).focus();                       // [05/15] name속성 id로 교체
-        // setTimeout(() => { $(document).find("a#open_aside").removeAttr("tabindex") }, 0);   // [05/15] name속성 id로 교체
-
         // [05/23] focus-3
         setTimeout(() => {
             $(".aside_wrap .aside_head h2.title").attr("tabindex", 0).focus();
@@ -1735,9 +1729,6 @@ const _aside = {
 
         setTimeout(() => { $(document).find(".aside_wrap").css('visibility', 'hidden') }, 200); // 접근성 추가
 
-        // $(document).find("a#close_aside").attr("tabindex", 1).focus();                          // [05/15] name속성 id로 교체
-        // setTimeout(() => { $(document).find("a#close_aside").removeAttr("tabindex") }, 0);      // [05/15] name속성 id로 교체
-
         // [05/23] focus-3
         setTimeout(() => {
             $(".header .btn_open_aside").attr("tabindex", 0).focus();
@@ -1759,14 +1750,6 @@ const _aside = {
         _aside.isSticky ? manu.css({"margin-top": `${navH}px`}) : manu.css({"margin-top": 0});
     },
     navActive: function(target){
-
-        // 클릭 시에만 focus 이동 [05/23] 주석처리 (포커스 클릭 이벤트로 이동)
-        // if( target != undefined ){
-        //     let targetId = target.attr("href").replace("#", "");
-        //     $(document).find(`a#${targetId}`).attr("tabindex", 1).focus();      // [05/15] name속성 id로 교체
-        //     $(document).find(`a#${targetId}`).removeAttr("tabindex");           // [05/15] name속성 id로 교체
-        // }
-
 
         if( _aside.isClick ) return;     // nav_list 클릭인지 체크 (클릭 인 경우 true, 스크롤이벤트 무시)
         $(".nav_list li a").removeClass("on");
