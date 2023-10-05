@@ -1,24 +1,142 @@
 window.addEventListener("load", ()=>{
-
+  mobileChk();
   window.addEventListener('resize', setVh);
   setVh();
 
-  const index = document.querySelector(".section__type");
-  index.classList.add("active");
-
   containerPad();
   window.addEventListener("resize", containerPad);
-  isMobile ? document.querySelector("body").classList.add("mobile") : null;   // mobile check
   
   // ink__item
   const linkItem = Array.from(document.querySelectorAll('.link__item'));
   linkItem.forEach((item)=>{
-      item.addEventListener("click", (e)=>{
-          e.preventDefault();
-          if( $(item).hasClass("disabled") || $(item).attr("disabled") !== undefined  ){ return } // disabled check
-          pageChange(item.dataset.link)
-      })
+    item.addEventListener("click", (e)=>{
+      e.preventDefault();
+      if( $(item).hasClass("disabled") || $(item).attr("disabled") !== undefined  ){ return } // disabled check
+      pageChange(item.dataset.link)
+    })
   })
+
+
+  const step1Swiper = new Swiper(".step1__swiper", {
+    pagination: {
+      el: ".pagination",
+    },
+    on: {
+      slideChange: function(swiper){
+        const isEnd = swiper.isEnd;
+        isEnd ? $('.intro__btn').removeClass('disabled') : $('.intro__btn').addClass('disabled');
+      }
+    }
+  });
+
+  agree();
+
+
+
+  
+
+
+
+
+
+  $(window).scroll(function (event) {
+    let scroll = $(window).scrollTop();
+    
+    if(scroll > 60){
+      $('.float_billtype3_6').stop().fadeIn('fast');
+    }else{
+      $('.float_billtype3_6').stop().fadeOut('fast');
+    }
+  });
+
+  $("a").click(function(e){ 
+    if($(this).hasClass('disabled') || $(this).hasClass('disabled-type2') || $(this).attr('href') == '#'){
+      e.preventDefault(); 
+    }
+  }); 
+  
+  $(document).on("click", ".toastpopup", function (e) {
+    e.preventDefault();
+    $('.card__item-toastpopup').fadeIn('fast');
+    $('.card__item-toastpopup').addClass('active');
+    $('.card__item-toastpopup .container').css('transform','translateY(-100%)');
+    $('html').css('overflow','hidden');
+  });
+
+  $(document).on("click", ".toastpopup-close", function (e) {
+    e.preventDefault();
+    $('.card__item-toastpopup').fadeOut(function(){
+      $('.card__item-toastpopup').css('display','none');
+    })
+    $('.card__item-toastpopup').removeClass('active');
+    $('.card__item-toastpopup .container').css('transform','translateY(0%)');
+    $('html').css('overflow','auto');
+  });
+
+  $(document).on("click", ".billtype3-2", function (e) {
+    if(!$(this).hasClass('disabled')){
+      $('.section__billtype3-1').removeClass('active');
+      $('.section__billtype3-2').addClass('active');
+    }else{
+      e.preventDefault();
+    }
+  });
+
+  $(document).on("click", ".section__billtype3-3 .img_radio", function (e) {
+    if($(this).index() == 0){
+      $('.section__billtype3-3 .foot__btn a').removeClass('disabled');
+    }else{
+      $('.section__billtype3-3 .foot__btn a').addClass('disabled');
+    }
+  });
+
+  $(document).on("click", ".section__billtype3-3-1 .img_radio", function (e) {
+    if($(this).index() == 1){
+      $('.section__billtype3-3-1 .foot__btn a').removeClass('disabled');
+    }else{
+      $('.section__billtype3-3-1 .foot__btn a').addClass('disabled');
+    }
+  });
+
+  $(document).on("keyup", "#usim-address2", function (e) {            
+    if($(this).val() != ''){
+      $('.section__billtype3-4 .foot__btn a').removeClass('disabled');
+    }else{
+      e.preventDefault();
+    }
+  });
+
+  $(document).on("keyup", "#user_phone", function (e) {            
+    if($(this).val() != ''){
+      $('.section__billtype3-5 .foot__btn a').removeClass('disabled');
+    }else{
+      e.preventDefault();
+    }
+  });
+  
+  $(document).on("change",".section__billtype3-1 .email_row.secend select",function(){
+    $('.section__billtype3-1 .billtype3-2.disabled').removeClass('disabled');
+  });
+
+  $(document).on("change",".section__billtype3-1 .email_row.secend select",function(){
+    $('.section__billtype3-1 .billtype3-2.disabled').removeClass('disabled');
+  });
+
+  $(document).on("click", ".btn-dropdown", function (e) {
+    $(this).hide().addClass('active');
+    $('.dropdown1').hide();
+    $('.dropdown2').fadeIn();   
+  });
+
+  $(".section__joincard .form__item-input.flex input").keyup (function () {
+    var charLimit = $(this).attr("maxlength");
+    if (this.value.length >= charLimit) {
+      $(this).parent().next().find('input').focus();
+      return false;
+    }
+  });
+
+
 
   // step1 유심 라디오버튼 임시
   // const radioSelect = Array.from(document.querySelectorAll(".rdo__item"));
@@ -39,24 +157,6 @@ window.addEventListener("load", ()=>{
   //     })
   // })
 
-  // step1 요금제 라디오버튼
-  const radioSelect = Array.from(document.querySelectorAll(".rdo__item"));
-  // const rdoResult = document.querySelectorAll(".rdo__result");
-  const flag = document.querySelectorAll(".rdo__result .flag");
-  const charge = document.querySelectorAll(".rdo__result .charge [data-charge]");
-  radioSelect.forEach((rdo)=>{
-      const rdoFlag = rdo.getAttribute("data-flag");
-      const rdoCharge = rdo.getAttribute("data-charge");
-      rdo.addEventListener("click", ()=>{
-        document.querySelector(".rdo__result").classList.add("active");
-        flag.forEach((result)=>{
-            result.innerHTML = rdoFlag;
-        });
-        charge.forEach((result)=>{
-            result.innerHTML = rdoCharge;
-        });
-      })
-  })
 
   // close 버튼 팝업
   // const btnClose = document.querySelector('header .btn__close');
@@ -76,23 +176,62 @@ window.addEventListener("load", ()=>{
 
   // step1 아코디언 버튼
   $(".acco__btn").each(function(){
-      $(this).on('click', function(){
-          $(this).closest('.acco__wrap').toggleClass('active');
-          $(this).siblings('.acco__cont').slideToggle(200);
-      })
+    $(this).on('click', function(){
+      $(this).closest('.acco__wrap').toggleClass('active');
+      $(this).siblings('.acco__cont').slideToggle(200);
+    })
   })
 
 })
+
 
 // 모바일 100vh 대응
 const setVh = () => { document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`) };
 
 // mobile check
-function chkMobile(agent) {
-  const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i]
-  return mobileRegex.some(mobile => agent.match(mobile))
+function mobileChk(agent) {
+  const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
+  const userAgent = window.navigator.userAgent;
+  const isMobile = mobileRegex.some(mobile => userAgent.match(mobile));
+  isMobile ? document.querySelector("html").classList.add("mobile") : document.querySelector("html").classList.add("pc");   // mobile check
+  return isMobile;
 }
-const isMobile = chkMobile(window.navigator.userAgent)
+
+// header, footer padding setting
+const containerPad = function(){
+  const head = document.querySelector(".active header") ?? 0;
+  const foot = document.querySelector(".active footer") ?? 0;
+  const contentWrap = document.querySelector(".active .container__wrap") ?? 0;
+  if( contentWrap == 0 ) return;
+  head ? contentWrap.style.paddingTop = `${head.offsetHeight}px` : contentWrap.style.paddingTop = "";
+  foot ? contentWrap.style.paddingBottom = `${foot.offsetHeight}px` : contentWrap.style.paddingBottom = "";
+}
+
+
+/**
+ * section__step1_2 radio 선택 시 선택된 요금제 show
+ * @param {*} a : this (input) 
+ */
+const step2Radio = function(a){
+  const result = document.querySelector('.active .rdo__result');
+  const button = document.querySelector('.active .link__item');
+  result.classList.add('active');
+  button.classList.remove('disabled');
+  const flag = a.dataset.flag;
+  const charge = a.dataset.charge;
+  result.querySelector('.flag').innerText = flag;
+  result.querySelector('.charge span').innerText = charge;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 // footer home bar check
@@ -101,18 +240,6 @@ const isMobile = chkMobile(window.navigator.userAgent)
 //     const footH = document.querySelector(".active .foot__btn") ? document.querySelector(".active .foot__btn").offsetHeight : 0;   // 하단 버튼 높이
 //     foot.forEach((item)=>{ item.style.bottom = `-${footH * 0.2}px`; })
 // }
-
-// header, footer padding setting
-const containerPad = function(){
-  const head = document.querySelector(".active header") ?? 0;
-  const foot = document.querySelector(".active footer") ?? 0;
-  const contentWrap = document.querySelectorAll(".container__wrap");
-  contentWrap.forEach((item)=>{
-      head ? item.style.paddingTop = `${head.offsetHeight}px` : item.style.paddingTop = "0";
-      foot ? item.style.paddingBottom = `${foot.offsetHeight}px` : item.style.paddingBottom = "0";
-  });
-
-}
 
 // page link
 const pageChange = function(link){
@@ -193,13 +320,13 @@ $(document).ready(function(){
 
   // form active
   $(document).find(".form__group input").on("propertychange change keyup keypress keydown paste input blur", function(){
-      if( $(this).val().length > 0 ){
-          $(this).parents(".form__item").addClass("active");
-          $(this).parents('.form__item-hasbtn').addClass("active");
-      } else {
-          $(this).parents(".form__item").removeClass("active");
-          $(this).parents('.form__item-hasbtn').removeClass("active");
-      }
+    if( $(this).val().length > 0 ){
+      $(this).parents(".form__item").addClass("active");
+      $(this).parents('.form__item-hasbtn').addClass("active");
+    } else {
+      $(this).parents(".form__item").removeClass("active");
+      $(this).parents('.form__item-hasbtn').removeClass("active");
+    }
   })
 
   // regNo text change 2******
@@ -257,6 +384,8 @@ $(document).ready(function(){
       const elem = $(document).find(".section__step1_1 .img_radio").eq(1);
       elem.hasClass("active") ? $(document).find(".section__step1_1 .foot__btn .link__item").removeClass("disabled") : null;
   })
+
+
 
   // disabled check - 요금제 선택
   $(document).on("click", ".section__step1_2 .img_radio", function(){
@@ -419,48 +548,10 @@ $(document).ready(function(){
   // })
 
 
-	// 약관 동의
-	$('.agr__group').on('click', '.chk__all', function(){
-		$(this).closest('.agr__group').find('input').prop('checked', $(this).is(':checked'));
-		if($('.chk__all').is(':checked')){
-			$('.chk__all').closest('.check__list__wrap').addClass('active');
-			$('.chk__all').closest('.content__section').find('.link__item').removeClass('disabled');
-		} else {
-			$('.chk__all').closest('.check__list__wrap').removeClass('active');
-			$('.chk__all').closest('.content__section').find('.link__item').addClass('disabled');
-		}
-	});
-	$('.agr__group').on('click', '.inp__chk', function(){
-		var is_checked = true;
-		$('.agr__group .inp__chk').each(function(){
-			is_checked = is_checked && $(this).is(':checked');
-		});
-		$('.chk__all').prop('checked', is_checked);
-	});
-	$('.check__wrap').each(function(){
-		let inpAll = $(this).find('.inp__all');
-		let inpSub = $(this).find('.inp__sub');
-		inpAll.on('click', function(){
-			$(this).closest('.check__wrap').find('.inp__sub').prop('checked', $(this).is(':checked'));
-		})
-		inpSub.on('click', function(){
-			var is_checked2 = true;
-			inpSub.each(function(){
-				is_checked2 = is_checked2 && $(this).is(':checked');
-			});
-			$(this).closest('.check__wrap').find('.inp__all').prop('checked', is_checked2)
-			console.log(is_checked2);
-		})
-	});
-	$('.agr__group').on('click', function(){
-		if($('.chk__all').is(':checked')){
-			$('.chk__all').closest('.check__list__wrap').addClass('active');
-			$('.chk__all').closest('.content__section').find('.link__item').removeClass('disabled');
-		} else {
-			$('.chk__all').closest('.check__list__wrap').removeClass('active');
-			$('.chk__all').closest('.content__section').find('.link__item').addClass('disabled');
-		}
-	})
+
+
+
+  
 
 
 
@@ -471,3 +562,45 @@ $(document).ready(function(){
       $(this).addClass("active");
   })
 })
+
+
+
+
+/**
+ * 약관동의 (관련 클래스 : agreeAll, agreeGroup, agreeItem);
+ */
+const agree = function(){
+  // 전체 동의
+  $(document).on('change', '.agreeAll', function(){
+    const isChecked = $(this).is(":checked");
+    $(document).find(".active input[type='checkbox']").prop('checked', isChecked);
+
+    const button = $(document).find('.active .link__item');
+    const wrap = $(this).parents(".check__list__wrap");
+
+    isChecked ? wrap.addClass('active') : wrap.removeClass('active');
+    isChecked ? button.removeClass('disabled') : button.addClass('disabled');
+  });
+  
+  // 그룹 동의
+  $(document).on('change', '.agreeGroup', function(){
+    const isChecked = $(this).is(":checked");
+    $(this).parents('.check__wrap').find('.agreeItem').prop('checked', isChecked).trigger('change');
+  });
+
+  // 동의 체크박스
+  $(document).on('change', '.agreeItem', function(){
+    const agreeGroup = $(this).parents(".check__wrap").find('.agreeGroup');
+    const agreeAll = $(this).parents(".agr__group").find(".agreeAll");
+
+    // group
+    const chkbox = $(this).parents(".check__wrap").find(".agreeItem");
+    let chkedBox = chkbox.filter( (idx, item) => $(item).is(":checked") );
+    ( chkbox.length == chkedBox.length ) ? agreeGroup.prop('checked', true) : agreeGroup.prop('checked', false);
+
+    // all
+    const allChkbox = $(this).parents(".agr__group").find(".agreeItem");
+    let allChkedBox = allChkbox.filter( (idx, item) => $(item).is(":checked") );
+    ( allChkbox.length == allChkedBox.length ) ? agreeAll.prop('checked', true) : agreeAll.prop('checked', false);
+  });
+}
