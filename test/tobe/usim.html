@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png">
+    <title>To-be usim/join | Liiv M(리브모바일)</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="usim_wrap">
+    <a href="#" class="elem active"><img src="./img/usim1.png"></a>
+    <a href="#" class="elem"><img src="./img/usim2.png"></a>
+  </div>
+
+<script>
+  window.addEventListener("load", ()=>{
+    isMobile();
+
+    const elem = Array.from(document.querySelectorAll('.elem'));
+    elem.forEach((a, idx)=>{
+      a.addEventListener("click", (e)=>{
+        a.classList.remove('active');
+        ( a.nextElementSibling !== null )
+        ? a.nextElementSibling.classList.add('active')
+        : elem[0].classList.add('active');
+      })
+    })
+  })
+
+  const isMobile = function(){
+    const userAgent = window.navigator.userAgent;
+    const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
+    const isMobile = mobileRegex.some(mobile => userAgent.match(mobile));
+    isMobile ? document.querySelector("html").classList.add("mobile") : document.querySelector("html").classList.add("pc");
+
+    return isMobile;
+  }
+</script>
+</body>
+</html>

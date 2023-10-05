@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png">
+    <title>To-be A type | Liiv M(리브모바일)</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <img src="./img/status-bar.png" alt="" class="mo_hide">
+      <img src="./img/header.png" alt="">
+    </header>
+      
+    <section class="container">
+      <div class="visual"><img src="./img/vis1.png" alt=""></div>
+      <div class="greeting">
+        <div class="greeting_wrap">
+          <span class="animation">
+            <img src="./img/greeting-gom.svg" class="gom" alt="">
+            <img src="./img/greeting-son.svg" class="son" alt="">
+            <svg class="heart_group" xmlns="http://www.w3.org/2000/svg" width="38" height="60" viewBox="0 0 38 60" fill="none">
+              <path class="heart1" d="M10.2011 20.0759C8.62799 20.8674 7.87605 21.926 7.13401 24.1225C4.87819 23.5585 3.58208 23.6179 2.06831 24.5183C-0.543695 26.0716 -0.632741 29.3267 1.52414 31.7013C3.35452 33.7196 8.30149 35.9952 12.4075 33.7592C16.5135 31.5232 17.2654 26.131 16.553 23.4992C15.722 20.4024 12.9319 18.7204 10.211 20.0759H10.2011Z" fill="#FBDBE5"/>
+              <path class="heart2" d="M22.7072 40.0659C21.7475 39.7097 21.0153 39.8186 19.7885 40.3726C19.1355 39.1952 18.6012 38.6808 17.6217 38.3938C15.9397 37.8991 14.5348 39.1458 14.3765 40.9959C14.2479 42.5691 15.2373 45.5472 17.7998 46.3881C20.3623 47.2291 22.9249 45.4284 23.756 44.0927C24.7355 42.5196 24.3397 40.6793 22.6973 40.0758L22.7072 40.0659Z" fill="#F4A8B5"/>
+              <path class="heart3" d="M32.9982 0.0541636C31.5537 0.291618 30.7028 0.954513 29.5749 2.51776C27.9226 1.51847 26.8838 1.24144 25.459 1.58773C23.0053 2.17147 22.1347 4.74389 23.2626 7.14812C24.2223 9.19617 27.5763 12.2237 31.3756 11.452C35.1749 10.6803 37.0943 6.59406 37.1834 4.32835C37.2823 1.66688 35.4915 -0.361382 32.9982 0.0541636V0.0541636Z" fill="#FBDBE5"/>
+            </svg>
+          </span>
+          <span class="text"><img src="./img/greeting-text.png" alt=""></span>
+        </div>
+        <div><img src="./img/greeting-btn.png" alt=""></div>
+      </div>
+      
+      <hr class="line" />
+      
+      <div class="banner">
+        <img src="./img/banner.png" alt="">
+        <img src="./img/banner-paging.png" class="paging" alt="">
+      </div>
+
+      <div class="card">
+        <img src="./img/card.png" class="item" alt="">
+        <img src="./img/card-paging.png" class="paging" alt="">
+      </div>
+
+      <div class="plan"><img src="./img/plan.png" alt=""></div>
+    </section>
+
+    <footer>
+      <div class="social"><img src="./img/footer-social.png"></div>
+      <hr class="line" />
+      <div class="copy"><img src="./img/footer.png" /></div>
+    </footer>
+
+    <div class="gnb">
+      <img src="./img/gnb.png" />
+      <img src="./img/gnb-chat.png" class="gnb-chat" />
+    </div>
+  </div>
+
+<script>
+  window.addEventListener("load", ()=>{
+    isMobile();
+    getHeadH();
+    window.addEventListener("resize", getHeadH);
+    window.addEventListener("scroll", gnbChatHide);
+  })
+
+  const getHeadH = function(){
+    const headH = document.querySelector("header").offsetHeight;
+    const container = document.querySelector(".container");
+    container.style.paddingTop = `${headH}px`;
+  }
+
+  const gnbChatHide = function(){
+    const gnbNotice = document.querySelector(".gnb-chat");
+    let scrollTop = window.scrollY;
+    if( scrollTop > 50 ){
+      gnbNotice.classList.add("hidden");
+      window.removeEventListener("scroll", gnbChatHide);
+      setTimeout(()=>{ gnbNotice.remove() }, 600);
+    }
+  }
+
+  const isMobile = function(){
+    const userAgent = window.navigator.userAgent;
+    const mobileRegex = [/Android/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
+    const isMobile = mobileRegex.some(mobile => userAgent.match(mobile));
+    isMobile ? document.querySelector("html").classList.add("mobile") : document.querySelector("html").classList.add("pc");
+
+    return isMobile;
+  }
+</script>
+</body>
+</html>
