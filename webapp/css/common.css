@@ -865,7 +865,7 @@ ul.dash_type.center > li {display:inline-block;}
 /* 달력 */
 .item_content.btn_date > .btn_type,
 .item_content.btn_s_date > .btn_type,
-.item_content.btn_e_date > .btn_type {flex:0 0 2rem; width:2rem; height:2rem; padding:0; margin-bottom:0.8rem; border-radius:0; border:0 none; background:url('/img/img/icon_calendar.png') 50% 50% no-repeat; background-size:2rem auto; text-indent:-9999px; overflow:hidden;}
+.item_content.btn_e_date > .btn_type {flex:0 0 2rem; width:2rem; height:2rem; padding:0; margin-bottom:0.8rem; border-radius:0; border:0 none; background:url('../img/img/icon_calendar.png') 50% 50% no-repeat; background-size:2rem auto; text-indent:-9999px; overflow:hidden;}
 /* 카메라 */
 .item_content.btn_camera > .btn_type {flex:0 0 2rem; height:2rem; padding:0; margin-bottom:0.8rem; border-radius:0; border:0 none; background:url('../img/img/icon_camera.png') 50% 50% no-repeat; background-size:100% auto; text-indent:-9999px; overflow:hidden;}
 /* timer 관련 */
