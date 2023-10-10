@@ -428,8 +428,9 @@
             });
 
             // 검색결과 없음
-            $('.none_data').css('padding', '0').height( ($('.content').height()) - ($('.none_data').offset().top) );
-
+            if( $('.none_data').length ){
+                $('.none_data').css('padding', '0').height( ($('.content').height()) - ($('.none_data').offset().top) );
+            }
         });
     </script>
 </body>

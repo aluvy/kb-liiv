@@ -337,11 +337,11 @@ table.table td:last-child {border-right:none;}
 .evt .membership_info .group {display: flex;}
 .evt .membership_info .group .ico_wrap {display: flex;align-items: center;justify-content: center;}
 .evt .membership_info .group .ico_wrap .ico_pic_ms {display: block; width: 4.0rem; height: 4.0rem; margin-right: 1.2rem; border-radius: 5.0rem; background-color: #f7f7f7;}
-.evt .membership_info .group .ico_wrap .ico_pic_ms.comveni {background-image: url(/img/evt_membership_comveni.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
-.evt .membership_info .group .ico_wrap .ico_pic_ms.cafe {background-image: url(/img/evt_membership_cafe.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
-.evt .membership_info .group .ico_wrap .ico_pic_ms.bakery {background-image: url(/img/evt_membership_bakery.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
-.evt .membership_info .group .ico_wrap .ico_pic_ms.ott {background-image: url(/img/evt_membership_ott.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
-.evt .membership_info .group .ico_wrap .ico_pic_ms.rate {background-image: url(/img/evt_membership_rate.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
+.evt .membership_info .group .ico_wrap .ico_pic_ms.comveni {background-image: url(../img/evt_membership_comveni.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
+.evt .membership_info .group .ico_wrap .ico_pic_ms.cafe {background-image: url(../img/evt_membership_cafe.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
+.evt .membership_info .group .ico_wrap .ico_pic_ms.bakery {background-image: url(../img/evt_membership_bakery.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
+.evt .membership_info .group .ico_wrap .ico_pic_ms.ott {background-image: url(../img/evt_membership_ott.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
+.evt .membership_info .group .ico_wrap .ico_pic_ms.rate {background-image: url(../img/evt_membership_rate.png);background-size: 2.2rem;background-repeat: no-repeat;background-position: center;}
 .evt .membership_info .group .comm {width: calc(100% - 5.2rem);border-bottom: 1px solid #f3f3f3;padding: 1.6rem 0;}
 .evt .membership_info .group .comm strong {color: #111;font-weight: 600;font-size: 1.4rem;}
 .evt .membership_info .group .comm ul {margin-top: 0.8rem;}

@@ -206,7 +206,7 @@
 /* í‚¤ì›Œë“œ */
 .search_keyword li:not(:first-of-type) {margin-top:2rem;}
 .search_keyword li button {position:relative; display:block; width:100%; padding-left:3.6rem; font-size:1.4rem; line-height:2.2rem; color:var(--gray_01, #222); text-align:left;}
-.search_keyword li button::before {content:''; position:absolute; top:0.1rem; left:0; width:2rem; height:2rem; background:url(/img/img/icon_search.png) no-repeat center / 100% auto; opacity:0.3;}
+.search_keyword li button::before {content:''; position:absolute; top:0.1rem; left:0; width:2rem; height:2rem; background:url(../img/img/icon_search.png) no-repeat center / 100% auto; opacity:0.3;}
 
 /* ìµœê·¼ê²€ìƒ‰ì–´ */
 .search_recent ul {padding:0 2rem; margin:0 -2rem; font-size:0; overflow:hidden; overflow-x:auto; white-space:nowrap;}
@@ -215,7 +215,7 @@
 .search_recent li {position:relative; display:inline-block; margin-right:0.4rem;}
 .search_recent li button:not(.del) {height:3.2rem; padding:0 3.4rem 0 1.6rem; border-radius:1.6rem; background-color:var(--bg_02, #F8F9FB); font-size:1.2rem; line-height:1.5rem; color:var(--gray_02, #555);}
 .search_recent li button.del {position:absolute; top:0; right:0; width:2.8rem; height:3.2rem;}
-.search_recent li button.del::before {content:''; position:absolute; top:1rem; right:1.6rem; width:1.2rem; height:1.2rem; background:url(/img/img/icon_close12.png) no-repeat center / 100% auto; opacity:0.3;}
+.search_recent li button.del::before {content:''; position:absolute; top:1rem; right:1.6rem; width:1.2rem; height:1.2rem; background:url(../img/img/icon_close12.png) no-repeat center / 100% auto; opacity:0.3;}
 
 /* ì¸ê¸°ê²€ìƒ‰ì–´ */
 .search_popular .search_tit .dat {display:none;}
@@ -396,7 +396,7 @@
 
 
 /*************************************************** [CSBR01] ê°€ê¹Œìš´ ìœ ì‹¬ ì°¾ê¸° ::start ***************************************************/
-.usim_map {position:fixed; left:0; top:0; width:100%; height:100%; background:url(/img/event/map_bg.png) center center; background-size:0.8rem auto;}
+.usim_map {position:fixed; left:0; top:0; width:100%; height:100%; background:url(../img/event/map_bg.png) center center; background-size:0.8rem auto;}
 .usim_map-head {position:fixed; left:0; top:calc(var(--sat) + 8rem); width:100%; padding:0 var(--sar_2) 0 var(--sal_2); text-align:center; z-index:10;}
 .usim_map-bottom {position:absolute; left:0; bottom:0; width:100%; height:calc(100% - var(--sat) - 6rem - 8.6rem); z-index:9; transform:translateY(calc(100% - var(--sab) - 17rem)); transition:transform .3s; z-index:20;}
 

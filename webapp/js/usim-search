@@ -56,20 +56,20 @@
 <meta name="description" content="일반통신사의 서비스를 동일하게 누리면서, 요금은 합리적으로 줄일 수 있는 KB국민은행 Liiv M(리브모바일)을 이용해보세요!">
 <title>KB Liiv M(KB리브모바일) - KB국민은행 알뜰폰 서비스</title>
 <!-- //SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
-<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-<link rel="icon" href="/img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<script type="text/javascript" src="/js/lib/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/lib/jQuery.Form.min.js"></script>
-<script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-<script type="text/javascript" src="/js/lib/nppfs-1.13.0.js"></script>
-<script type="text/javascript" src="/js/common/common.js"></script>
-<script type="text/javascript" src="/js/front.js"></script>
-<script type="text/javascript" src="/js/common/util.js"></script>
-<script type="text/javascript" src="/js/common/formatter.js"></script>
-<script type="text/javascript" src="/js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
-<script type="text/javascript" src="/js/lib/lottie-player.js"></script>
+<link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+<link rel="icon" href="../../../img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="../../../css/style.css">
+<script type="text/javascript" src="../../../js/lib/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/jQuery.Form.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/nppfs-1.13.0.js"></script>
+<script type="text/javascript" src="../../../js/common/common.js"></script>
+<script type="text/javascript" src="../../../js/front.js"></script>
+<script type="text/javascript" src="../../../js/common/util.js"></script>
+<script type="text/javascript" src="../../../js/common/formatter.js"></script>
+<script type="text/javascript" src="../../../js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
+<script type="text/javascript" src="../../../js/lib/lottie-player.js"></script>
 <script type="text/javascript">
 	let checkLoginStep = '1';
 	let tg = "dev";
@@ -90,7 +90,7 @@
         }
 	});
 </script>
-<script type="text/javascript" src="/js/common/certification.js"></script>
+<script type="text/javascript" src="../../../js/common/certification.js"></script>
 
 
 
@@ -2855,7 +2855,7 @@ function callTelno(brnTelno) {
 function loadingStart() {
     if (!$('.loading_wrap > div').hasClass('dimmed')) {
         $('body').addClass('no_scroll');
-        $('.loading_wrap').append('<div class="dimmed"></div><div class="lottie"><lottie-player src="/img/common/loading.json" background="transparent" speed="1" loop autoplay></lottie-player></div>');
+        $('.loading_wrap').append('<div class="dimmed"></div><div class="lottie"><lottie-player src="../../../img/common/loading.json" background="transparent" speed="1" loop autoplay></lottie-player></div>');
     }
 }
 
@@ -3093,7 +3093,7 @@ function fn_usimSearchErrCallback(tranId, xhr, status, error) {
 
 
 <!-- PUB SCRIPT ==================================================================================================== -->
-<script type="text/javascript" src="/js/support_usim_place.js"></script>
+<script type="text/javascript" src="../../../js/support_usim_place.js"></script>
 <script type="text/javascript">
 
     /** 검색 버튼 클릭 **/

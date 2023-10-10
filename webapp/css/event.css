@@ -311,7 +311,7 @@ ul.txt_desc > li > .sup_tit {margin-right:0.4rem; color:#0060E5; font-size:1rem;
 .coupon_unit .con::after {content:''; position:absolute; right:-3rem; width:4rem; height:4rem; border:1rem solid var(--gray_08, #fff); border-radius:50%; background:transparent;}
 .coupon_unit .con::before {top:-2rem; clip:rect(2rem, 2rem, auto, auto);}
 .coupon_unit .con::after {bottom:-2rem; clip:rect(auto, 2rem, 2rem, auto);}
-.coupon_unit .con .in {position:relative; width:calc(100% + 1rem); height:100%; display:flex; align-items:center; padding:1rem 2rem; background:url(/img/event/coupon_dash.png) right center repeat-y var(--gray_08, #fff); background-size:1px auto; z-index:1;}
+.coupon_unit .con .in {position:relative; width:calc(100% + 1rem); height:100%; display:flex; align-items:center; padding:1rem 2rem; background:url(../img/event/coupon_dash.png) right center repeat-y var(--gray_08, #fff); background-size:1px auto; z-index:1;}
     /* 쿠폰정보 */
 .coupon_unit .coupon_ico {flex:0 0 4rem; max-width:4rem;}
 .coupon_unit .coupon_info {flex: 1 1 calc(100% 6rem); max-width:calc(100% - 6rem); margin-left:1.2rem; }
@@ -535,7 +535,7 @@ ul.txt_desc > li > .sup_tit {margin-right:0.4rem; color:#0060E5; font-size:1rem;
 
 
 /* [EMSP01] 혜택 > 멤버십 > 멤버십 사용처 찾기 :: 멤버십 사용처 찾기 */
-.mbs_map {position:fixed; left:0; top:0; width:100%; height:100%; background:url(/img/event/map_bg.png) center center; background-size:0.8rem auto;}
+.mbs_map {position:fixed; left:0; top:0; width:100%; height:100%; background:url(../img/event/map_bg.png) center center; background-size:0.8rem auto;}
 .mbs_map-head {position:fixed; left:50%; top:calc(var(--sat) + 8rem); transform:translateX(-50%); z-index:9;}
 
 .mbs_map-bottom {position:absolute; left:0; bottom:0; width:100%; height:calc(100% - var(--sat) - 6rem); z-index:9; transform:translateY(calc(100% - var(--sab) - 17rem)); transition:transform .3s; z-index:20;}
@@ -879,10 +879,10 @@ ul.txt_desc > li > .sup_tit {margin-right:0.4rem; color:#0060E5; font-size:1rem;
 .event_mission .mis_area {margin:0 1.6rem; border-radius:3rem; background-color:var(--gray_08, #fff); overflow:hidden;}
 .event_mission .mis_progress {display:flex; justify-content:center; padding:1.8rem 0 2.3rem;}
 .event_mission .mis_progress > div {position:relative; padding:1rem 1.7rem; border-radius:0.9rem; background-color:#101010; font-weight:700; font-size:1.2rem; line-height:1.9rem; color:var(--gray_08, #fff);}
-.event_mission .mis_progress > div::before {content:''; position:absolute; bottom:-0.9rem; left:50%; width:1.4rem; height:1.2rem; background:url(/img/event/new/event_mission_polygon.png) no-repeat center / 100% auto; transform:translateX(-50%);}
-.event_mission .mis_progress > div::after {content:''; display:inline-block; width:1.5rem; height:1.5rem; background:url(/img/event/new/event_mission_icon01.png) no-repeat center / 100% auto; vertical-align:sub;}
+.event_mission .mis_progress > div::before {content:''; position:absolute; bottom:-0.9rem; left:50%; width:1.4rem; height:1.2rem; background:url(../img/event/new/event_mission_polygon.png) no-repeat center / 100% auto; transform:translateX(-50%);}
+.event_mission .mis_progress > div::after {content:''; display:inline-block; width:1.5rem; height:1.5rem; background:url(../img/event/new/event_mission_icon01.png) no-repeat center / 100% auto; vertical-align:sub;}
 .event_mission .mis_progress > div em {font-weight:700; color:#ffee5a;}
-.event_mission .mis_progress.comp > div::after {background-image:url(/img/event/new/event_mission_icon02.png);}
+.event_mission .mis_progress.comp > div::after {background-image:url(../img/event/new/event_mission_icon02.png);}
 .event_mission .mis_group ul {display:flex; justify-content:center; flex-wrap:wrap; padding:0 2rem 2rem;}
 .event_mission .mis_group ul > li {margin:0.2rem 0.3rem;}
 .event_mission .mis_group ul > li a {position:relative; display:block; width:9rem; height:9rem; background:no-repeat center / 100% auto;}
@@ -893,16 +893,16 @@ ul.txt_desc > li > .sup_tit {margin-right:0.4rem; color:#0060E5; font-size:1rem;
 .event_mission .mis_group ul > li.mis03 a .dat {bottom:1.9rem;}
 .event_mission .mis_group ul > li.mis04 a .dat {bottom:1.9rem;}
 .event_mission .mis_group ul > li.mis05 a .dat {bottom:1.2rem;}
-.event_mission .mis_group ul > li.mis01 a {background-image:url(/img/event/new/event_mission_01.png);}
-.event_mission .mis_group ul > li.mis02 a {background-image:url(/img/event/new/event_mission_02.png);}
-.event_mission .mis_group ul > li.mis03 a {background-image:url(/img/event/new/event_mission_03.png);}
-.event_mission .mis_group ul > li.mis04 a {background-image:url(/img/event/new/event_mission_04.png);}
-.event_mission .mis_group ul > li.mis05 a {background-image:url(/img/event/new/event_mission_05.png);}
-.event_mission .mis_group ul > li.mis01.on a {background-image:url(/img/event/new/event_mission_01on.png);}
-.event_mission .mis_group ul > li.mis02.on a {background-image:url(/img/event/new/event_mission_02on.png);}
-.event_mission .mis_group ul > li.mis03.on a {background-image:url(/img/event/new/event_mission_03on.png);}
-.event_mission .mis_group ul > li.mis04.on a {background-image:url(/img/event/new/event_mission_04on.png);}
-.event_mission .mis_group ul > li.mis05.on a {background-image:url(/img/event/new/event_mission_05on.png);}
+.event_mission .mis_group ul > li.mis01 a {background-image:url(../img/event/new/event_mission_01.png);}
+.event_mission .mis_group ul > li.mis02 a {background-image:url(../img/event/new/event_mission_02.png);}
+.event_mission .mis_group ul > li.mis03 a {background-image:url(../img/event/new/event_mission_03.png);}
+.event_mission .mis_group ul > li.mis04 a {background-image:url(../img/event/new/event_mission_04.png);}
+.event_mission .mis_group ul > li.mis05 a {background-image:url(../img/event/new/event_mission_05.png);}
+.event_mission .mis_group ul > li.mis01.on a {background-image:url(../img/event/new/event_mission_01on.png);}
+.event_mission .mis_group ul > li.mis02.on a {background-image:url(../img/event/new/event_mission_02on.png);}
+.event_mission .mis_group ul > li.mis03.on a {background-image:url(../img/event/new/event_mission_03on.png);}
+.event_mission .mis_group ul > li.mis04.on a {background-image:url(../img/event/new/event_mission_04on.png);}
+.event_mission .mis_group ul > li.mis05.on a {background-image:url(../img/event/new/event_mission_05on.png);}
 .event_mission .mis_info {background-color:#e0ffe9; font-weight:700; font-size:1.2rem; line-height:5rem; color:#59997b; text-align:center;}
 
 /* 경품팝업 */

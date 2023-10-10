@@ -180,7 +180,7 @@ body.bg_trans {background:transparent;}
 .header .inner_main {display:flex; position:fixed; justify-content:space-between; align-items:center; width:100%; height:calc(var(--sat) + 6rem); top:0; left:0; padding:var(--sat) var(--sar_1) 0 var(--sal_2); border-bottom:1px solid transparent; transition:all .15s ease-in-out; z-index:20;}
 .header.on .inner_main {top:0; border-bottom-color:#eaeced; background-color:#fff; }
 /* 05/16 오픈용 */
-.header .inner_main .liivm {width:6rem; height:2.7rem; background:url(../img/common/logo_kb_w.png) no-repeat center center; background-size:6rem auto;}
+.header .inner_main .liivm {width:6rem; height:2.7rem; background:url(../img/common/logo_kb) no-repeat center center; background-size:6rem auto;}
 .header.on .inner_main .liivm {width:6rem; height:2.7rem; background-image:url(../img/common/logo_kb.png); background-size:6rem auto;}
 
 .header .back_area,
@@ -1880,7 +1880,7 @@ select option:checked {background-color:#e5faff; color:#111;}
 /* 매인 하단 GNB 팝업 [MNMT0202] */
 /* .layer_wrap .ly_in.noHd .ly_cnt .section */
 .pop_kb_certification_noti {word-break:keep-all; padding-right:11.6rem;}
-.pop_kb_certification_noti::after {content:''; position:absolute; bottom:-4.8rem; right:0; display:block; width:11.6rem; height:13.2rem; background:url(/img/common/char_lolo_certify.png) no-repeat; background-size:100% auto;}
+.pop_kb_certification_noti::after {content:''; position:absolute; bottom:-4.8rem; right:0; display:block; width:11.6rem; height:13.2rem; background:url(../img/common/char_lolo_certify.png) no-repeat; background-size:100% auto;}
 .pop_kb_certification_noti h1 {position:relative; font-size:1.8rem; font-weight:700; line-height:2.4rem; letter-spacing:-0.02rem; padding-bottom:2rem;}
 .pop_kb_certification_noti .txt_alert {margin-top:0;}
 
@@ -2325,8 +2325,8 @@ select option:checked {background-color:#e5faff; color:#111;}
 /* none data */
 .none_data {display:flex; align-items:center; justify-content:center; padding:6rem 0; text-align:center;}
 .none_data p {font-size:1.4rem; color:var(--gray_03);}
-.none_data p::before {content:""; display:block; width:6rem; height:6rem; margin:0 auto 2rem; border-radius:6rem; background:url(/img/img/flat_search.png) #f8f9fb no-repeat center; background-size: 2.4rem auto;}
-.none_data.data_block p::before {background:url(/img/img/flat_data_block.png) #f8f9fb no-repeat center; background-size:2.4rem auto;}
+.none_data p::before {content:""; display:block; width:6rem; height:6rem; margin:0 auto 2rem; border-radius:6rem; background:url(../img/img/flat_search.png) #f8f9fb no-repeat center; background-size: 2.4rem auto;}
+.none_data.data_block p::before {background:url(../img/img/flat_data_block.png) #f8f9fb no-repeat center; background-size:2.4rem auto;}
 
 /* partner event list  css */
 .btm_gnb ul {display:flex; align-items:flex-end; width:100%;}
@@ -2372,7 +2372,7 @@ select option:checked {background-color:#e5faff; color:#111;}
 .kbplus_list .partner.group_07 {background-position:-31rem -1rem;}
 .kbplus_list .partner.group_08 {background-position:-36rem -1rem;}
 .kbplus_list > .btn {position:absolute; bottom:calc(var(--sabBtn) + 1.2rem); left:0; right:0rem; width:4rem; height:4rem; margin:auto; z-index:2;}
-.kbplus_list > .btn::before {content:''; position:absolute; top:0; bottom:0; left:0; right:0; width:2.4rem; height:2.4rem; margin:auto; background:url(/img/common/spr_icon_24.png) no-repeat -1rem -1rem; background-size:20rem auto;}
+.kbplus_list > .btn::before {content:''; position:absolute; top:0; bottom:0; left:0; right:0; width:2.4rem; height:2.4rem; margin:auto; background:url(../img/common/spr_icon_24.png) no-repeat -1rem -1rem; background-size:20rem auto;}
 .kbplus_list > ul > li a ,
 .kbplus_list > ul > li .title {opacity:0; transform:translateY(30%); transition:all 0.4s ease-in-out;}
 .kbplus_list > ul > li.on a,
