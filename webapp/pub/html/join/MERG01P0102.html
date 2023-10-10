@@ -1,20 +1,6 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
-
-
-
-
-
-
-
-
 
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -53,40 +39,38 @@
 <meta name="description" content="일반통신사의 서비스를 동일하게 누리면서, 요금은 합리적으로 줄일 수 있는 KB국민은행 Liiv M(리브모바일)을 이용해보세요!">
 <title>KB Liiv M(KB리브모바일) - KB국민은행 알뜰폰 서비스</title>
 <!-- //SEO관련 DB또는 script로 페이지 마다 재셋팅 되는 내용 -->
-<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-<link rel="icon" href="/img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<script type="text/javascript" src="/js/lib/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/lib/jQuery.Form.min.js"></script>
-<script type="text/javascript" src="/js/lib/swiper.min.js"></script>
-<script type="text/javascript" src="/js/lib/nppfs-1.13.0.js"></script>
-<script type="text/javascript" src="/js/common/common.js"></script>
-<script type="text/javascript" src="/js/front.js"></script>
-<script type="text/javascript" src="/js/common/util.js"></script>
-<script type="text/javascript" src="/js/common/formatter.js"></script>
-<script type="text/javascript" src="/js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
-<script type="text/javascript" src="/js/lib/lottie-player.js"></script>
+<link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
+<link rel="icon" href="../../../img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="../../../css/style.css">
+<script type="text/javascript" src="../../../js/lib/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/jQuery.Form.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="../../../js/lib/nppfs-1.13.0.js"></script>
+<script type="text/javascript" src="../../../js/common/common.js"></script>
+<script type="text/javascript" src="../../../js/front.js"></script>
+<script type="text/javascript" src="../../../js/common/util.js"></script>
+<script type="text/javascript" src="../../../js/common/formatter.js"></script>
+<script type="text/javascript" src="../../../js/service/apiKcb.js"></script><!--  KCB 인터페이스 전용 JS -->
+<script type="text/javascript" src="../../../js/lib/lottie-player.js"></script>
 <script type="text/javascript">
-	let checkLoginStep = '1';
-	let tg = "dev";
-	// 로그인 단계
-	$(function(){
+	// let checkLoginStep = '1';
+	// let tg = "dev";
+	// // 로그인 단계
+	// $(function(){
 
-	
-	
 
-		if(isEmpty(sessionStorage.getItem("UUID"))){
-			getDeviceInfo();
-		}
+	// 	if(isEmpty(sessionStorage.getItem("UUID"))){
+	// 		getDeviceInfo();
+	// 	}
 
-        //스타뱅킹 테마서비스에서 유입시 확장형플랫폼 js 선언
-        if(!isEmpty(sessionStorage.getItem("inPath")) && location.href.indexOf("/system/main/ssoBridge") === -1){
-            $('head').append('<script type="text/javascript" src="https://oimg1.kbstar.com/js/common/extendPlatform/extend_platform.js">');
-        }
-	});
+  //       //스타뱅킹 테마서비스에서 유입시 확장형플랫폼 js 선언
+  //       if(!isEmpty(sessionStorage.getItem("inPath")) && location.href.indexOf("/system/main/ssoBridge") === -1){
+  //           $('head').append('<script type="text/javascript" src="https://oimg1.kbstar.com/js/common/extendPlatform/extend_platform.js">');
+  //       }
+	// });
 </script>
-<script type="text/javascript" src="/js/common/certification.js"></script>
+<script type="text/javascript" src="../../../js/common/certification.js"></script>
 
 
 
