@@ -63,7 +63,7 @@ body {
     text-indent: 100%;
     width: 38px;
     height: 27px;
-    background: url(/mnbank/guide/assets/images/logo.png) no-repeat;
+    background: url(../images/logo.png) no-repeat;
 }
 
 .switch-page {

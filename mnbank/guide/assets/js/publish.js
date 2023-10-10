@@ -123,10 +123,10 @@ $(function(){
     var $opener = window.opener;
     if ($opener) {
         if ($opener._target.hasClass('big_link')) {
-            $('head').append('<link rel="stylesheet" data-description="큰글씨" href="../../mnbank/app/css/common_big.css">');
+            $('head').append('<link rel="stylesheet" data-description="큰글씨" href="../../app/css/common_big.css">');
             $('html').removeAttr('class').addClass('big_mode');
         } else if ($opener._target.hasClass('dark_link')) {
-            $('script').eq(0).before('<link rel="stylesheet" data-description="다크모드" href="../../../mnbank/app/css/common_dark.css">');
+            $('script').eq(0).before('<link rel="stylesheet" data-description="다크모드" href="../../app/css/common_dark.css">');
             $('html').removeAttr('class').addClass('dark_mode');
             //$('[rel=stylesheet]').eq(0).attr('href', '/mnbank/app/css/common_d.css'); 
 

@@ -490,12 +490,12 @@ body {
 }
 .list th.headerSortDown {
     padding-right: 20px;
-    background: url(/mnbank/guide/assets/images/icon-down.png) no-repeat 95% 50%;
+    background: url(../images/icon-down.png) no-repeat 95% 50%;
     background-size: 20px 20px;
 }
 .list th.headerSortUp {
     padding-right: 20px;
-    background: url(/mnbank/guide/assets/images/icon-up.png) no-repeat 95% 50%;
+    background: url(../images/icon-up.png) no-repeat 95% 50%;
     background-size: 20px 20px;
 }
 .list th.header:after {
@@ -659,10 +659,10 @@ body {
 .status.test  { color: #e8901a; }
 .status.done  { color: #75b900; }
 .status.defer { color: #f95a37; }
-.status.ing:before   { background-image: url(/mnbank/guide/assets/images/icon-ing.png); }
-.status.test:before  { background-image: url(/mnbank/guide/assets/images/icon-test.png); }
-.status.done:before  { background-image: url(/mnbank/guide/assets/images/icon-done.png); }
-.status.defer:before { background-image: url(/mnbank/guide/assets/images/icon-defer.png); }
+.status.ing:before   { background-image: url(../images/icon-ing.png); }
+.status.test:before  { background-image: url(../images/icon-test.png); }
+.status.done:before  { background-image: url(../images/icon-done.png); }
+.status.defer:before { background-image: url(../images/icon-defer.png); }
 
 .fold {
     margin-top: 10px;

@@ -1321,7 +1321,7 @@ caq.popup = function(){
             	$('#mnbankPop').remove();
             }
             var iframeDiv = "<div id='" + objId + "' style='position:fixed;left:0;top:0;display:none;background-color:#fff;z-Index:1002;'>";
-            iframeDiv += "  <iframe  src='/mnbank/cache/resource/html/docReadyFragment.html' id='" + objId + "-Iframe' name='" + objId + "-Iframe'></iframe>";
+            iframeDiv += "  <iframe  src='../../cache/resource/html/docReadyFragment.html' id='" + objId + "-Iframe' name='" + objId + "-Iframe'></iframe>";
             iframeDiv += "</div>";
             $("body").append(iframeDiv);
             var targetObj = $("#" + objId);

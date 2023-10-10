@@ -2295,7 +2295,7 @@ if (!kbstar.hasResource("HTTP")) {
                 templatePath = href.substring(0, href.indexOf("/app/")) + "/app/html/caq/template/";
             } else {
                 // 해당 URL 수정필요(?)
-                templatePath = "/mnbank/app/html/caq/template/";
+                templatePath = "../../app/html/caq/template/";
             }
             $.get(templatePath + "" + fileName, function(src) {
                 successCallback(src);
@@ -5338,13 +5338,13 @@ if (!kbstar.hasResource("DataBinder")) {
             // Orchestra Simulator : froxy 서버 관련으로 도메인 제거
             if (device.platform.match(kbstarCommon._BROWSER_TEST_PATTERN) || !window.COMMON.isNative()) {
                 if (fileInfo.indexOf("html") > -1) {
-                    TEMPLATE_PATH_SERVER = "/mnbank/app/html/" + fileInfo;
+                    TEMPLATE_PATH_SERVER = "../../app/html/" + fileInfo;
                 } else {
                     TEMPLATE_PATH_SERVER = "/mquics?asfilecode=" + fileInfo;
                 }
             } else {
                 if (fileInfo.indexOf("html") > -1) {
-                    TEMPLATE_PATH_SERVER = kbstarCommon._DOMAIN + "/mnbank/app/html/" + fileInfo;
+                    TEMPLATE_PATH_SERVER = kbstarCommon._DOMAIN + "../../app/html/" + fileInfo;
                 } else {
                     TEMPLATE_PATH_SERVER = kbstarCommon._DOMAIN + "/mquics?asfilecode=" + fileInfo;
                 }

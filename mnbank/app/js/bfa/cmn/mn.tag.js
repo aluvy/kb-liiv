@@ -720,7 +720,7 @@ var WebPagingTag = function() {
 	return  {
 		PAGING_DATA_LIST_ID: "",
 		PAGING_METHOD: "",
-		TEMPLATE_PATH_SERVER : "/mnbank/app/html/bfa/template/",
+		TEMPLATE_PATH_SERVER : "../../app/html/bfa/template/",
 		TEMPLATE_PAGING_00 : "PAGING_TAG_KEY_00",
 		TEMPLATE_PAGING_01 : "PAGING_TAG_KEY_01",
 		TEMPLATE_PAGING_03 : "PAGING_TAG_KEY_03",
