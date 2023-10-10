@@ -26,7 +26,7 @@ $(function(){
     
     $('#pipVideoScript').remove();
     var tag = document.createElement('script');
-    tag.src = 'https://zmnbank.kbstar.com/mnbank/app/js/bfa/cmn/pip.video.js';
+    tag.src = '../../../mnbank/app/js/bfa/cmn/pip.video.js';
     tag.id = 'pipVideoScript';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);    

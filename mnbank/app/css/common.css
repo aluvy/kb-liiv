@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("/mnbank/app/css/library/swiper.min.css");
+@import url("library/swiper.min.css");
 
 /* <UPLEAT> UI Dev Team
 	Roboto, KBText : normal = 400, bold = 700
@@ -8,7 +8,7 @@
 */
 
 /* @Font */
-@font-face {
+/* @font-face {
     font-family:'KBText';font-style:normal;font-weight:400;    
 	src:url('fonts/kbfg_text_l.woff') format('woff'), url('fonts/kbfg_text_l.otf') format('opentype');
 }
@@ -23,7 +23,7 @@
 @font-face {
 	font-family:'Roboto';font-style:normal;font-weight:700;
 	src:url('fonts/roboto_medium.woff') format('woff'), url('fonts/roboto_medium.ttf') format('opentype');
-}
+} */
 
 /* Reset */
 *,

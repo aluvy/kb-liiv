@@ -156,7 +156,7 @@ var Shortcut = (function() {
     }
 })();
 var darkHtml = (function() {
-    $('head').append('<link rel="stylesheet" data-description="다크모드" href="/mnbank/app/css/common_dark.css">');
+    $('head').append('<link rel="stylesheet" data-description="다크모드" href="../../../mnbank/app/css/common_dark.css">');
     $('[data-class=contents]').append('<button type="button" class="btn_dark" data-class="button">다크모드</button>');
     $('.btn_dark').on('click', function(){
         $('html').toggleClass('dark_mode');
