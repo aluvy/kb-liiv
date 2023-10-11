@@ -24,6 +24,22 @@
 	font-family:'Roboto';font-style:normal;font-weight:700;
 	src:url('fonts/roboto_medium.woff') format('woff'), url('fonts/roboto_medium.ttf') format('opentype');
 } */
+@font-face {
+    font-family:'KBText';font-style:normal;font-weight:400;    
+	src:url('fonts/KBFGTextL.woff') format('woff'), url('fonts/KBFGTextL.otf') format('opentype');
+}
+@font-face {
+    font-family:'KBText';font-style:normal;font-weight:700;    
+	src:url('fonts/KBFGTextB.woff') format('woff'), url('fonts/KBFGTextB.otf') format('opentype');
+}
+@font-face {
+	font-family:'Roboto';font-style:normal;font-weight:400;
+	src:url('fonts/Roboto-Regular.woff') format('woff'), url('fonts/Roboto-Regular.ttf') format('opentype');
+}
+@font-face {
+	font-family:'Roboto';font-style:normal;font-weight:700;
+	src:url('fonts/Roboto-Medium.woff') format('woff'), url('fonts/Roboto-Medium.ttf') format('opentype');
+}
 
 /* Reset */
 *,
